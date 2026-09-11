@@ -2,7 +2,7 @@
 
 > [Chỉ mục tài liệu](docs/index.md) · [GDD](docs/product/gdd-soccer-mobile-pro.md) · [Audit Unity](docs/implementation/unity-implementation-audit-and-backlog.md) · [Coverage audit](docs/research/fc-mobile-vn-coverage-audit.md) · [UI catalogue](docs/product/ui-design-system-and-screen-catalogue.md)
 
-**Mốc lập kế hoạch:** 11/09/2026 · **Baseline code:** `965f398b` (main) · **Unity:** 2022.3.62f3 · **Chủ sở hữu file:** Product + Tech Lead
+**Mốc lập kế hoạch:** 11/09/2026 · **Cập nhật tiến độ:** 11/09/2026 (P1-05a) · **Baseline code:** `965f398b` (main) · **Unity:** 2022.3.62f3 · **Chủ sở hữu file:** Product + Tech Lead
 
 ## 0. Mục lục
 
@@ -43,7 +43,7 @@
 | Phase | Tên | Trọng số | % hoàn thành | Trạng thái | Phụ thuộc |
 | --- | --- | ---: | ---: | --- | --- |
 | P0 | Foundation kỹ thuật (Match Core, Input, Platform contract) | 10% | 70% | Đang chạy, runtime integration chưa bật mặc định | — |
-| P1 | Meta foundation (Localization, Catalog, Player Items, Competition) và khóa tham chiếu FC Online M | 10% | 55% | Đang chạy, fake/file authority | P0 |
+| P1 | Meta foundation (Localization, Catalog, Player Items, Competition) và khóa tham chiếu FC Online M | 10% | 56% | Đang chạy, fake/file authority; khung research FC Online M xong, chưa xác minh nguồn | P0 |
 | P2 | Product shell và toàn bộ màn hình meta (SC-01…SC-12, SC-15) | 15% | 5% | Chưa bắt đầu ở mức production | P1 |
 | P3 | Match gameplay production (animation, physics, HUD, camera, AI, VAR, replay) | 15% | 15% | Prototype legacy | P0 |
 | P4 | Backend và live service (account, economy, market, competition, telemetry, CMS) | 15% | 3% | Chỉ có contract/fake adapter | P0, P1 |
@@ -81,13 +81,14 @@
 
 **Acceptance:** Quick Match và Cup chạy hoàn toàn trên Match Core; replay cùng seed cho cùng hash; input production trên touch/gamepad/keyboard; console không lỗi; APK smoke pass.
 
-### P1 — Meta foundation và khóa tham chiếu · 55%
+### P1 — Meta foundation và khóa tham chiếu · 56%
 
 - [x] P1-01 Localization `vi-VN`/`en`, typed settings registry, migration N/N-1, panel Settings trong MainMenu.
 - [x] P1-02 Football catalog entity, ID/FK validator, snapshot/delta, atomic store, local Addressables model resolver, generic fallback.
 - [x] P1-03 Player item domain: card instance, inventory, preview/receipt, skill/position/fusion, ledger atomic, rollback.
 - [x] P1-04 Competition foundation: rules version, Single Elimination/Round Robin, roster lock, reconnect, dispute.
-- [ ] P1-05 **Research FC Online M**: tạo `docs/research/fc-online-m/` (research, source register, feature/mechanic inventory, decision matrix) với nhãn bằng chứng; đối chiếu và cập nhật GDD, coverage audit, UI catalogue.
+- [x] P1-05a **Khung research FC Online M**: đã tạo [`docs/research/fc-online-m/`](docs/research/fc-online-m/fc-online-m-research.md) gồm research, sổ nguồn (14 slot), inventory 49 mechanic FOM-* ánh xạ đủ 40 dòng mục 5, adoption matrix và 6 decision `Proposed`. Toàn bộ claim ở mức `Unverified`.
+- [ ] P1-05b **Xác minh nguồn FC Online M**: điền URL/ngày truy cập cho 14 slot, nâng claim/status, trả lời FOM-Q01…Q10, cập nhật GDD, coverage audit, UI catalogue (SC-16…SC-18) và mục 5/6 file này trong cùng change set.
 - [ ] P1-06 Mở rộng domain theo FC Online M: Team Color/chemistry, lương đội hình (salary cap), nâng cấp +1…+10 với tỷ lệ công bố, huấn luyện (training points), mùa thẻ (season/class), HLV/chiến thuật.
 - [ ] P1-07 Nối fixture catalog/inventory vào scene chọn đội và trận đấu (thay texture/team name gắn Inspector).
 - [ ] P1-08 Localize toàn bộ legacy UI; brand font vi/en qua contrast test (UI-D01).
