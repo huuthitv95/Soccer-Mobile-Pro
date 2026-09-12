@@ -5,10 +5,11 @@ using System.Linq;
 
 namespace SoccerMobilePro.PlayerItems
 {
-    // P1-06 lo B2: duong ghi doi hinh.
-    // Day la diem duy nhat ap dung chinh sach luu: validate -> CanSave -> commit atomic kem receipt + so ke toan.
-    // Chua xu ly chuyen trang thai item (Available <-> InSquad) vi viec do cham vao inventory aggregate,
-    // can mot giao dich chung voi InventoryTransactionService -> de sang lo sau.
+    // P1-06 lo B2: duong ghi doi hinh KHONG cham inventory.
+    // Day la diem ap dung chinh sach luu: validate -> CanSave -> commit atomic kem receipt + so ke toan.
+    // Chuyen trang thai the (Available <-> InSquad) trong cung mot giao dich voi inventory
+    // nam o SquadLineupSaveService (lo B2b, SquadLineupTransactions.cs). Dung service nay khi
+    // storage chi co aggregate doi hinh (vi du: server chi so huu squad, inventory do dich vu khac giu).
 
     public static class SquadCanonical
     {
@@ -45,6 +46,28 @@ namespace SoccerMobilePro.PlayerItems
                 squad.BallId ?? string.Empty,
                 squad.RulesVersion ?? string.Empty);
         }
+    }
+
+    // Anh xa loi doi hinh sang ma loi giao dich de client xu ly giong cac luong P1-03.
+    // Dung chung cho SquadSaveService (B2) va SquadLineupSaveService (B2b): mot bang, mot hanh vi.
+    public static class SquadValidationFailureMap
+    {
+        public static TransactionFailureCode For(SquadValidationResult validation)
+        {
+            if (validation == null || validation.Errors == null || validation.Errors.Count == 0) return TransactionFailureCode.SquadInvalid;
+            if (Has(validation, SquadValidationCode.FeatureDisabled)) return TransactionFailureCode.FeatureDisabled;
+            if (Has(validation, SquadValidationCode.RulesVersionMismatch)) return TransactionFailureCode.StaleRules;
+            if (Has(validation, SquadValidationCode.OwnerMismatch)) return TransactionFailureCode.OwnerMismatch;
+            if (Has(validation, SquadValidationCode.ItemNotFound)) return TransactionFailureCode.ItemNotFound;
+            if (Has(validation, SquadValidationCode.DuplicateItem)) return TransactionFailureCode.DuplicateItem;
+            if (Has(validation, SquadValidationCode.ItemUnavailable)) return TransactionFailureCode.InvalidState;
+            if (Has(validation, SquadValidationCode.SalaryCapExceeded)) return TransactionFailureCode.SalaryCapExceeded;
+            if (Has(validation, SquadValidationCode.SquadSlotLimitExceeded)) return TransactionFailureCode.CapExceeded;
+            return TransactionFailureCode.SquadInvalid;
+        }
+
+        private static bool Has(SquadValidationResult validation, SquadValidationCode code)
+            => validation.Errors.Any(issue => issue.Code == code);
     }
 
     public sealed class SquadSaveCommand
@@ -139,7 +162,7 @@ namespace SoccerMobilePro.PlayerItems
             SquadValidationResult validation = validator.Validate(draft, inventory, next.SalaryCapExpansion);
             if (!SquadSavePolicy.CanSave(rules, validation))
             {
-                return Rejected(command.IdempotencyKey, payloadHash, FailureFor(validation), nowUtc, validation);
+                return Rejected(command.IdempotencyKey, payloadHash, SquadValidationFailureMap.For(validation), nowUtc, validation);
             }
 
             next.Squads = next.Squads ?? new List<SquadDefinition>();
@@ -179,24 +202,6 @@ namespace SoccerMobilePro.PlayerItems
                 ? new SquadSaveResult { Receipt = receipt, Validation = validation }
                 : Rejected(command.IdempotencyKey, payloadHash, TransactionFailureCode.AtomicCommitFailed, nowUtc, validation);
         }
-
-        // Anh xa loi doi hinh sang ma loi giao dich de client xu ly giong cac luong P1-03.
-        private static TransactionFailureCode FailureFor(SquadValidationResult validation)
-        {
-            if (validation == null || validation.Errors == null || validation.Errors.Count == 0) return TransactionFailureCode.SquadInvalid;
-            if (Has(validation, SquadValidationCode.FeatureDisabled)) return TransactionFailureCode.FeatureDisabled;
-            if (Has(validation, SquadValidationCode.RulesVersionMismatch)) return TransactionFailureCode.StaleRules;
-            if (Has(validation, SquadValidationCode.OwnerMismatch)) return TransactionFailureCode.OwnerMismatch;
-            if (Has(validation, SquadValidationCode.ItemNotFound)) return TransactionFailureCode.ItemNotFound;
-            if (Has(validation, SquadValidationCode.DuplicateItem)) return TransactionFailureCode.DuplicateItem;
-            if (Has(validation, SquadValidationCode.ItemUnavailable)) return TransactionFailureCode.InvalidState;
-            if (Has(validation, SquadValidationCode.SalaryCapExceeded)) return TransactionFailureCode.SalaryCapExceeded;
-            if (Has(validation, SquadValidationCode.SquadSlotLimitExceeded)) return TransactionFailureCode.CapExceeded;
-            return TransactionFailureCode.SquadInvalid;
-        }
-
-        private static bool Has(SquadValidationResult validation, SquadValidationCode code)
-            => validation.Errors.Any(issue => issue.Code == code);
 
         private static SquadSaveResult Rejected(
             string idempotencyKey,
