@@ -142,6 +142,12 @@ namespace SoccerMobilePro.PlayerItems
         SquadCountingScope SalaryCountingScope { get; }
         IReadOnlyList<string> FormationIds { get; }
         bool TryGetFormation(string formationId, out FormationDefinition formation);
+        bool TryGetSlotGroup(string positionSlotId, out string positionGroup);
+    }
+
+    public interface IPositionGroupResolver
+    {
+        bool TryResolveGroup(string itemDefinitionId, out string positionGroup);
     }
 
     public sealed class TeamColorTag
@@ -292,6 +298,19 @@ namespace SoccerMobilePro.PlayerItems
     public interface ISquadValidator
     {
         SquadValidationResult Validate(InventorySnapshot snapshot, SquadDefinition definition);
+    }
+
+    public static class SquadValidationPolicy
+    {
+        private static readonly SquadValidationCode[] SaveableCodes =
+        {
+            SquadValidationCode.BenchCountMismatch,
+            SquadValidationCode.SalaryCapExceeded
+        };
+
+        public static IReadOnlyList<SquadValidationCode> SaveableErrorCodes { get; } = Array.AsReadOnly(SaveableCodes);
+
+        public static bool IsSaveable(SquadValidationCode code) => Array.IndexOf(SaveableCodes, code) >= 0;
     }
 
     public interface ISquadRepository

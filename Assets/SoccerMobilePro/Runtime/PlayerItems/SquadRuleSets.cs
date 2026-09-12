@@ -177,6 +177,7 @@ namespace SoccerMobilePro.PlayerItems
     public sealed class FixedSquadRuleSet : ISquadRuleSet
     {
         private readonly Dictionary<string, FormationDefinition> formations;
+        private readonly Dictionary<string, string> positionSlotGroups;
 
         public FixedSquadRuleSet(
             string rulesVersion,
@@ -186,7 +187,8 @@ namespace SoccerMobilePro.PlayerItems
             long salaryCapBase,
             long salaryCapExpansionMax,
             SquadCountingScope salaryCountingScope,
-            IEnumerable<FormationDefinition> formations)
+            IEnumerable<FormationDefinition> formations,
+            IReadOnlyDictionary<string, string> positionSlotGroups)
         {
             RulesVersion = rulesVersion ?? throw new ArgumentNullException(nameof(rulesVersion));
             StartingCount = startingCount;
@@ -196,6 +198,7 @@ namespace SoccerMobilePro.PlayerItems
             SalaryCapExpansionMax = salaryCapExpansionMax;
             SalaryCountingScope = salaryCountingScope;
             this.formations = (formations ?? Array.Empty<FormationDefinition>()).ToDictionary(formation => formation.FormationId, StringComparer.Ordinal);
+            this.positionSlotGroups = (positionSlotGroups ?? new Dictionary<string, string>()).ToDictionary(pair => pair.Key, pair => pair.Value, StringComparer.Ordinal);
             FormationIds = this.formations.Keys.OrderBy(value => value, StringComparer.Ordinal).ToList().AsReadOnly();
         }
 
@@ -209,6 +212,8 @@ namespace SoccerMobilePro.PlayerItems
         public IReadOnlyList<string> FormationIds { get; }
 
         public bool TryGetFormation(string formationId, out FormationDefinition formation) => formations.TryGetValue(formationId ?? string.Empty, out formation);
+
+        public bool TryGetSlotGroup(string positionSlotId, out string positionGroup) => positionSlotGroups.TryGetValue(positionSlotId ?? string.Empty, out positionGroup);
     }
 
     public sealed class PlayerItemsRuleBundle
@@ -302,7 +307,9 @@ namespace SoccerMobilePro.PlayerItems
             public long SalaryCapBase { get; set; }
             public long SalaryCapExpansionMax { get; set; }
             public SquadCountingScope SalaryCountingScope { get; set; }
+            public string GoalkeeperPositionGroup { get; set; } = string.Empty;
             public List<FormationDefinition> Formations { get; set; } = new List<FormationDefinition>();
+            public Dictionary<string, string> PositionSlotGroups { get; set; } = new Dictionary<string, string>(StringComparer.Ordinal);
         }
     }
 
@@ -499,6 +506,10 @@ namespace SoccerMobilePro.PlayerItems
 
             List<FormationDefinition> formations = section.Formations ?? new List<FormationDefinition>();
             if (formations.Count == 0) throw new PlayerItemsRuleSetException("Squad rule set needs at least one formation.");
+            Dictionary<string, string> slotGroups = section.PositionSlotGroups ?? new Dictionary<string, string>(StringComparer.Ordinal);
+            string goalkeeperGroup = section.GoalkeeperPositionGroup ?? string.Empty;
+            if (string.IsNullOrWhiteSpace(goalkeeperGroup)) throw new PlayerItemsRuleSetException("Squad rule set needs a goalkeeper position group.");
+
             var formationIds = new HashSet<string>(StringComparer.Ordinal);
             foreach (FormationDefinition formation in formations)
             {
@@ -508,6 +519,16 @@ namespace SoccerMobilePro.PlayerItems
                 if (slots.Count != section.StartingCount) throw new PlayerItemsRuleSetException("Formation slot count must match the starting count: " + formation.FormationId);
                 if (slots.Distinct(StringComparer.Ordinal).Count() != slots.Count) throw new PlayerItemsRuleSetException("Formation slot ids must be unique: " + formation.FormationId);
                 if (slots.Any(string.IsNullOrWhiteSpace)) throw new PlayerItemsRuleSetException("Formation slot ids cannot be empty: " + formation.FormationId);
+
+                int goalkeepers = 0;
+                foreach (string slot in slots)
+                {
+                    if (!slotGroups.TryGetValue(slot, out string group) || string.IsNullOrWhiteSpace(group))
+                        throw new PlayerItemsRuleSetException("Formation slot needs a declared position group: " + slot);
+                    if (string.Equals(group, goalkeeperGroup, StringComparison.Ordinal)) goalkeepers++;
+                }
+
+                if (goalkeepers != 1) throw new PlayerItemsRuleSetException("Formation needs exactly one goalkeeper slot: " + formation.FormationId);
             }
 
             return new FixedSquadRuleSet(
@@ -518,7 +539,8 @@ namespace SoccerMobilePro.PlayerItems
                 section.SalaryCapBase,
                 section.SalaryCapExpansionMax,
                 section.SalaryCountingScope,
-                formations);
+                formations,
+                slotGroups);
         }
     }
 }

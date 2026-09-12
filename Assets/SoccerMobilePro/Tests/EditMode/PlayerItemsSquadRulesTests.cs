@@ -1,6 +1,5 @@
 using System;
 using System.Collections.Generic;
-using System.IO;
 using System.Linq;
 using NUnit.Framework;
 using SoccerMobilePro.PlayerItems;
@@ -9,25 +8,7 @@ namespace SoccerMobilePro.MatchCore.Tests
 {
     public sealed class PlayerItemsSquadRulesTests
     {
-        private static string FixtureJson()
-        {
-            string path = ResolveFixturePath();
-            Assert.That(path, Is.Not.Null, "Squad rules fixture was not found from the working directory.");
-            return File.ReadAllText(path);
-        }
-
-        private static string ResolveFixturePath()
-        {
-            var directory = new DirectoryInfo(Directory.GetCurrentDirectory());
-            while (directory != null)
-            {
-                string candidate = Path.Combine(directory.FullName, PlayerItemsFixtureFactory.SquadRulesFixtureRelativePath.Replace('/', Path.DirectorySeparatorChar));
-                if (File.Exists(candidate)) return candidate;
-                directory = directory.Parent;
-            }
-
-            return null;
-        }
+        private static string FixtureJson() => PlayerItemsSquadRulesFixture.ReadJson();
 
         private static PlayerItemsRuleBundle Bundle() => SquadRulesFixtureCodec.Parse(FixtureJson());
 
