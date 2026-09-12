@@ -1,0 +1,229 @@
+{
+  "schemaVersion": 1,
+  "fixtureId": "p1-06-squad-rules-fixture-v1",
+  "claimStatus": "hypothesis",
+  "sourceNote": "Gia tri gia dinh dung de kiem thu contract P1-06. Chua doi chieu voi san pham thuong mai; xem docs/implementation/p1-06-squad-rules-and-card-tiers-plan.md va cac cau hoi FOM-Q01..FOM-Q10.",
+  "rulesVersion": "000000000106",
+  "catalogVersion": "202607160001",
+  "cardSeasons": [
+    {
+      "seasonId": "SEASON_BASE",
+      "displayNameKey": "card.season.base",
+      "releasedAt": "2026-07-01T00:00:00+00:00",
+      "statProfileId": "stat-profile-base",
+      "marketClass": "standard",
+      "rightsVersion": "rights-2026-07",
+      "rulesVersion": "000000000106"
+    },
+    {
+      "seasonId": "SEASON_ICON_FIX",
+      "displayNameKey": "card.season.icon",
+      "releasedAt": "2026-08-15T00:00:00+00:00",
+      "statProfileId": "stat-profile-icon",
+      "marketClass": "premium",
+      "rightsVersion": "rights-2026-08",
+      "rulesVersion": "000000000106"
+    }
+  ],
+  "cardEconomy": {
+    "defaultSeasonId": "SEASON_BASE",
+    "salaryBands": [
+      { "minOverall": 0, "baseSalary": 30 },
+      { "minOverall": 65, "baseSalary": 55 },
+      { "minOverall": 72, "baseSalary": 90 },
+      { "minOverall": 78, "baseSalary": 140 }
+    ],
+    "overrides": [
+      { "itemDefinitionId": "fixture-item-01", "seasonId": "SEASON_ICON_FIX", "baseSalary": 260 },
+      { "itemDefinitionId": "fixture-item-12", "seasonId": "SEASON_ICON_FIX", "baseSalary": 220 }
+    ]
+  },
+  "upgradeTierRuleSet": {
+    "rulesVersion": "000000000106",
+    "maxTier": 10,
+    "insuranceItemId": "fixture-material-insurance",
+    "statScalingPerTierBasisPoints": [0, 150, 300, 450, 600, 800, 1000, 1250, 1500, 1800, 2150],
+    "salaryScalingPerTierBasisPoints": [0, 200, 400, 650, 900, 1200, 1500, 1900, 2300, 2800, 3400],
+    "tiers": [
+      {
+        "tier": 1,
+        "successRateBasisPoints": 9500,
+        "currencyCost": 500,
+        "failureOutcome": "Keep",
+        "materialCost": [{ "resourceId": "fixture-material-core", "amount": 2 }]
+      },
+      {
+        "tier": 2,
+        "successRateBasisPoints": 9000,
+        "currencyCost": 1000,
+        "failureOutcome": "Keep",
+        "materialCost": [{ "resourceId": "fixture-material-core", "amount": 4 }]
+      },
+      {
+        "tier": 3,
+        "successRateBasisPoints": 8200,
+        "currencyCost": 1500,
+        "failureOutcome": "Keep",
+        "materialCost": [{ "resourceId": "fixture-material-core", "amount": 6 }]
+      },
+      {
+        "tier": 4,
+        "successRateBasisPoints": 7400,
+        "currencyCost": 2000,
+        "failureOutcome": "Keep",
+        "materialCost": [{ "resourceId": "fixture-material-core", "amount": 8 }]
+      },
+      {
+        "tier": 5,
+        "successRateBasisPoints": 6500,
+        "currencyCost": 2500,
+        "failureOutcome": "Downgrade",
+        "materialCost": [{ "resourceId": "fixture-material-core", "amount": 10 }]
+      },
+      {
+        "tier": 6,
+        "successRateBasisPoints": 5600,
+        "currencyCost": 3000,
+        "failureOutcome": "Downgrade",
+        "materialCost": [{ "resourceId": "fixture-material-core", "amount": 12 }]
+      },
+      {
+        "tier": 7,
+        "successRateBasisPoints": 4700,
+        "currencyCost": 3500,
+        "failureOutcome": "Downgrade",
+        "materialCost": [{ "resourceId": "fixture-material-core", "amount": 14 }]
+      },
+      {
+        "tier": 8,
+        "successRateBasisPoints": 3800,
+        "currencyCost": 4000,
+        "failureOutcome": "Consume",
+        "materialCost": [
+          { "resourceId": "fixture-material-core", "amount": 16 },
+          { "resourceId": "fixture-material-rare", "amount": 1 }
+        ]
+      },
+      {
+        "tier": 9,
+        "successRateBasisPoints": 2900,
+        "currencyCost": 4500,
+        "failureOutcome": "Consume",
+        "materialCost": [
+          { "resourceId": "fixture-material-core", "amount": 18 },
+          { "resourceId": "fixture-material-rare", "amount": 2 }
+        ]
+      },
+      {
+        "tier": 10,
+        "successRateBasisPoints": 2000,
+        "currencyCost": 5000,
+        "failureOutcome": "Consume",
+        "materialCost": [
+          { "resourceId": "fixture-material-core", "amount": 20 },
+          { "resourceId": "fixture-material-rare", "amount": 3 }
+        ]
+      }
+    ]
+  },
+  "trainingRuleSet": {
+    "rulesVersion": "000000000106",
+    "maxLevel": 5,
+    "pointsRequiredPerLevel": [0, 100, 250, 450, 700, 1000],
+    "statGainPerLevelBasisPoints": [0, 80, 160, 240, 320, 400],
+    "pointSources": ["match-reward", "mission-reward", "exchange"]
+  },
+  "teamColorRuleSet": {
+    "rulesVersion": "000000000106",
+    "countedAttributes": ["Club", "Nation"],
+    "countingScope": "StartingXI",
+    "thresholds": [
+      { "minCount": 3, "bonusProfileId": "team-color-tier-1" },
+      { "minCount": 6, "bonusProfileId": "team-color-tier-2" },
+      { "minCount": 9, "bonusProfileId": "team-color-tier-3" }
+    ],
+    "bonusProfiles": [
+      {
+        "profileId": "team-color-tier-1",
+        "traceLabelKey": "squad.teamcolor.tier1",
+        "statModifiers": [{ "attributeId": "passing", "basisPoints": 100 }]
+      },
+      {
+        "profileId": "team-color-tier-2",
+        "traceLabelKey": "squad.teamcolor.tier2",
+        "statModifiers": [
+          { "attributeId": "passing", "basisPoints": 200 },
+          { "attributeId": "pace", "basisPoints": 100 }
+        ]
+      },
+      {
+        "profileId": "team-color-tier-3",
+        "traceLabelKey": "squad.teamcolor.tier3",
+        "statModifiers": [
+          { "attributeId": "passing", "basisPoints": 300 },
+          { "attributeId": "pace", "basisPoints": 200 }
+        ]
+      }
+    ]
+  },
+  "squadRuleSet": {
+    "rulesVersion": "000000000106",
+    "startingCount": 11,
+    "benchCount": 7,
+    "maxSquadSlots": 3,
+    "salaryCapBase": 1200,
+    "salaryCapExpansionMax": 400,
+    "salaryCountingScope": "StartingXI",
+    "allowInvalidSave": ["BenchIncomplete", "PositionMismatch"],
+    "formations": [
+      {
+        "formationId": "4-3-3",
+        "positionSlots": [
+          { "positionSlotId": "GK", "positionId": "GK" },
+          { "positionSlotId": "LB", "positionId": "LB" },
+          { "positionSlotId": "CB1", "positionId": "CB" },
+          { "positionSlotId": "CB2", "positionId": "CB" },
+          { "positionSlotId": "RB", "positionId": "RB" },
+          { "positionSlotId": "CM1", "positionId": "CM" },
+          { "positionSlotId": "CM2", "positionId": "CM" },
+          { "positionSlotId": "CM3", "positionId": "CM" },
+          { "positionSlotId": "LW", "positionId": "LW" },
+          { "positionSlotId": "ST", "positionId": "ST" },
+          { "positionSlotId": "RW", "positionId": "RW" }
+        ]
+      },
+      {
+        "formationId": "4-4-2",
+        "positionSlots": [
+          { "positionSlotId": "GK", "positionId": "GK" },
+          { "positionSlotId": "LB", "positionId": "LB" },
+          { "positionSlotId": "CB1", "positionId": "CB" },
+          { "positionSlotId": "CB2", "positionId": "CB" },
+          { "positionSlotId": "RB", "positionId": "RB" },
+          { "positionSlotId": "LM", "positionId": "LM" },
+          { "positionSlotId": "CM1", "positionId": "CM" },
+          { "positionSlotId": "CM2", "positionId": "CM" },
+          { "positionSlotId": "RM", "positionId": "RM" },
+          { "positionSlotId": "ST1", "positionId": "ST" },
+          { "positionSlotId": "ST2", "positionId": "ST" }
+        ]
+      },
+      {
+        "formationId": "4-2-3-1",
+        "positionSlots": [
+          { "positionSlotId": "GK", "positionId": "GK" },
+          { "positionSlotId": "LB", "positionId": "LB" },
+          { "positionSlotId": "CB1", "positionId": "CB" },
+          { "positionSlotId": "CB2", "positionId": "CB" },
+          { "positionSlotId": "RB", "positionId": "RB" },
+          { "positionSlotId": "DM1", "positionId": "DM" },
+          { "positionSlotId": "DM2", "positionId": "DM" },
+          { "positionSlotId": "LAM", "positionId": "LAM" },
+          { "positionSlotId": "CAM", "positionId": "CAM" },
+          { "positionSlotId": "RAM", "positionId": "RAM" },
+          { "positionSlotId": "ST", "positionId": "ST" }
+        ]
+      }
+    ]
+  }
+}
