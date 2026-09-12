@@ -54,6 +54,7 @@
 - [Kế hoạch P1-03 player items, skills và progression foundation](implementation/p1-player-items-skills-and-progression-plan.md)
 - [Nhật ký P1-03 player items, skills và progression](implementation/p1-player-items-skills-and-progression-implementation.md)
 - [Nhật ký P1-04 competition và integrity foundation](implementation/p1-competition-and-integrity-foundation.md)
+- [Kế hoạch P1-06 squad rules, Team Color, lương, nâng cấp bậc và huấn luyện](implementation/p1-06-squad-rules-and-card-tiers-plan.md)
 - [Sổ migration tên và cấu trúc Unity asset](implementation/asset-naming-migration-register.md)
 
 ## 7. Bản đồ phụ thuộc
