@@ -147,6 +147,7 @@ này, kèm ghi chú nâng lên 1 khi v2 xuất hiện.
 `SquadSaveService` **không** đổi `PlayerItemState` (`Available` ↔ `InSquad`) của các thẻ được xếp. Việc đó
 chạm vào aggregate inventory và cần một giao dịch chung với `InventoryTransactionService` (hai kho, một biên
 lai). Ghi nhận là nợ kỹ thuật của lô sau; hiện tại validator chỉ **đọc** trạng thái thẻ.
+**Đã trả nợ ở lô B2b (mục 12–16)** bằng `SquadLineupSaveService` trên kho chung `ISquadInventoryStore`.
 
 ### 9.4 Chỉ envelope giữ được trường lạ
 
@@ -188,9 +189,107 @@ sinh từ `hash(idempotencyKey|payloadHash)` nên tái lập được khi cần 
 4. `SquadRepositoryTests` tạo thư mục tạm trong `Path.GetTempPath()/soccer-mobile-squads` và tự dọn ở
    `[TearDown]`; nếu test bị huỷ giữa chừng, xoá thư mục đó thủ công.
 
-## 11. Lô tiếp theo (B3)
+## 11. Lô tiếp theo sau B2 (đã cập nhật)
 
-1. Dịch vụ nâng bậc: preview (tỉ lệ, chi phí, vật phẩm, bảo hiểm) + commit dùng `DeterministicUpgradeRollSource`.
-2. Biên lai nâng bậc và bút toán tiêu hao vật phẩm/tiền tệ, tái sử dụng `SquadSaveService` làm khuôn mẫu chính sách.
-3. Chuyển trạng thái thẻ giữa inventory và đội hình trong cùng một giao dịch (nợ kỹ thuật ở mục 9.3).
-4. Test EditMode cho: roll xác định, replay biên lai, thất bại có/không bảo hiểm, tiêu hao vật phẩm.
+Mục "chuyển trạng thái thẻ giữa inventory và đội hình trong cùng một giao dịch" (nợ kỹ thuật 9.3) đã tách thành
+lô **B2b** và triển khai ở mục 12–16. Các mục nâng bậc chuyển sang B3 (mục 16).
+
+---
+
+# Lô B2b — Lưu đội hình và chuyển trạng thái thẻ trong cùng một commit
+
+## 12. Phạm vi lô B2b
+
+1. `ISquadInventoryStore`: kho chung cho **hai aggregate** (đội hình + inventory) với một commit duy nhất: kiểm tra
+   revision của cả hai, kiểm tra idempotency key, kiểm tra sổ kế toán cân bằng, rồi mới ghi. Không tồn tại trạng
+   thái trung gian nào lộ ra ngoài lock.
+2. `InMemorySquadInventoryStore`: hiện thực in-memory, đồng thời là `ISquadRepository`, `IInventoryRepository`,
+   `ITransactionReceiptRepository`, `ILedger` để `SquadSaveService` (B2) và `InventoryTransactionService` (P1-03)
+   dùng chung **một** không gian receipt/ledger (idempotency key là duy nhất trên toàn owner store).
+3. `SquadLineupStateReconciler`: hàm thuần tính trạng thái thẻ từ **toàn bộ** snapshot đội hình (mọi slot), không
+   từ một đội hình đơn lẻ; trả về bản sao thẻ đã đổi trạng thái với revision +1, không sửa dữ liệu đầu vào.
+4. `SquadLineupSaveService`: validate → `CanSave` → upsert đội hình → reconcile → một commit với `InventoryDelta`
+   và bút toán cân bằng; replay theo idempotency key trả lại đúng receipt cũ kể cả delta.
+5. Tách `SquadValidationFailureMap` khỏi `SquadSaveService` để B2 và B2b dùng cùng một bảng ánh xạ lỗi.
+6. 10 test EditMode mới trong `SquadLineupTransactionTests`.
+
+## 13. File thay đổi (B2b)
+
+| File | Trạng thái |
+| --- | --- |
+| `Assets/SoccerMobilePro/Runtime/PlayerItems/SquadLineupTransactions.cs` | Mới |
+| `Assets/SoccerMobilePro/Runtime/PlayerItems/SquadSaveService.cs` | Sửa (tách `SquadValidationFailureMap`, cập nhật ghi chú phạm vi) |
+| `Assets/SoccerMobilePro/Tests/EditMode/SquadLineupTransactionTests.cs` | Mới |
+
+## 14. Quyết định thiết kế (B2b)
+
+### 14.1 Kho chung thay vì hai kho + bù trừ
+
+Phương án "ghi đội hình trước, ghi inventory sau, nếu hỏng thì bù trừ" bị loại: bù trừ cần bút toán ngược và mở ra
+cửa sổ thời gian mà thẻ đang thi đấu lại có trạng thái `Available`, đúng lỗ hổng mà lô này phải đóng (luồng
+fuse/tiêu huỷ P1-03 có thể nuốt mất cầu thủ đang ra sân). Kho chung (`ISquadInventoryStore.TryCommit` 7 tham số)
+là ranh giới atomic duy nhất; adapter file/backend sau này phải giữ đúng hợp đồng này (persist hai aggregate trong
+một lần ghi).
+
+### 14.2 Trạng thái thẻ suy ra từ toàn bộ snapshot đội hình
+
+Một thẻ có thể nằm trong nhiều slot đội hình (kế hoạch mục 6). Reconciler gom `MatchSquadItemIds()` của **mọi** đội
+hình sau upsert, nên thẻ chỉ về `Available` khi không còn slot nào dùng. Test
+`Save_KeepsSharedItemInSquadUntilEverySquadReleasesIt` chứng minh cả hai chiều.
+
+### 14.3 `Reserved`/`Consumed` không bị đụng
+
+Validator đã chặn hai trạng thái này khỏi đội hình (`ItemUnavailable`, không nằm trong `allowInvalidSave`).
+Reconciler bỏ qua chúng để không bao giờ "hồi sinh" thẻ đã tiêu huỷ hoặc phá lock của giao dịch đang giữ thẻ.
+
+### 14.4 Revision inventory chỉ tăng khi có thẻ đổi trạng thái
+
+Lưu lại đội hình y nguyên không được làm stale mọi preview P1-03 đang mở. Khi `changed.Count == 0`,
+`InventoryDelta.BaseRevision == TargetRevision`, không có bút toán `inventory:squadstate`, receipt vẫn mang delta
+rỗng (không null) để consumer không phải rẽ nhánh. Thẻ đổi trạng thái tăng `Revision` +1 để preview nâng cấp/fuse
+đang mở trên thẻ đó bị `StaleRevision` đúng như mong muốn.
+
+### 14.5 Bút toán
+
+`squad.lineup` (+1 owner / −1 system) luôn có; `inventory:squadstate` (+N / −N, N = số thẻ đổi trạng thái) chỉ khi
+N > 0. Tổng luôn bằng 0; `transactionId = "lineup-" + hash(idempotencyKey|payloadHash)[0..16]`.
+
+### 14.6 Thiếu inventory → `ItemNotFound`
+
+Cùng mã với `InventoryTransactionService.Execute` khi owner chưa có inventory: không có thẻ thì không có gì để xếp
+đội hình. Không thêm mã lỗi mới.
+
+### 14.7 Thứ tự kiểm tra revision
+
+Inventory được kiểm tra trước đội hình vì đội hình chưa tồn tại là hợp lệ (revision −1), còn inventory thì không.
+Cả hai cùng trả `StaleRevision` để client tải lại cả hai aggregate.
+
+## 15. Cổng kiểm chứng chưa đạt (B2b)
+
+- **Chưa chạy test.** Môi trường thực hiện không có Unity Editor và không có trình biên dịch C#; 10 test mới cùng
+  nền 102 EditMode + 19 PlayMode và 61 test B1/B2 **chưa được biên dịch và chưa được chạy**.
+- Chưa có `FileSquadInventoryStore`: bản file atomic cho hai aggregate cần một envelope chung hoặc two-file commit
+  với marker; dời sang B5 cùng lúc nối diagnostic panel.
+- Commit đẩy trực tiếp lên `main` theo yêu cầu chủ dự án (không qua MR).
+
+### Cách chạy kiểm chứng
+
+1. Mở project bằng Unity `2022.3.62f3`.
+2. `Window → General → Test Runner → EditMode → Run All`, chú ý nhóm
+   `SoccerMobilePro.MatchCore.Tests.SquadLineupTransactionTests` (10 case) và toàn bộ nhóm B1/B2 vẫn pass sau khi
+   tách `SquadValidationFailureMap`.
+3. Chạy tab `PlayMode` để xác nhận nền 19 test không hồi quy.
+
+## 16. Lô tiếp theo (B3)
+
+1. `UpgradeTierService`: `Preview(itemId, useInsurance)` → `UpgradeTierAttemptPreview` (hash gồm rules/catalog
+   version, tier, cost, outcome table, expiry) → `Confirm(UpgradeTierAttemptCommand)`.
+2. Authority: verify → reserve vật liệu/tiền tệ qua ledger → `IUpgradeRollSource.Roll(key, rulesVersion)` → áp
+   `Success` hoặc `FailureOutcome` (`Keep`/`Downgrade`/`Consume`) → receipt có `Outcome`, `RollAuditHash`,
+   `ResultTier`.
+3. Chặn `Consume` trên thẻ `Locked`/`InSquad` (`ProtectedItem`) **trước** roll; insurance không hợp lệ →
+   `InsuranceUnavailable` trước reserve.
+4. Dùng `InMemorySquadInventoryStore` làm kho để nâng bậc và đội hình cùng không gian receipt; `SalaryCapExceeded`
+   sau nâng bậc chỉ hạ `IsPlayable` của đội hình, không chặn nâng.
+5. Test EditMode: ba loại outcome, insurance, replay cùng key cùng outcome, stale preview, protected item, ledger
+   cân bằng, `RollAuditHash` ổn định theo key.
