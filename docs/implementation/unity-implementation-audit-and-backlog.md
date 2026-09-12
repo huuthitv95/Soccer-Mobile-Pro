@@ -112,6 +112,7 @@ Mỗi backlog được chấm độc lập theo bốn gate; `Đạt` không có 
 | P1-02 Catalog/model | Đạt cho foundation/fixture | Một phần: local Addressables adapter, chưa nối scene/catalog production | Đạt cho fixture: 15 EditMode + 4 PlayMode | Một phần: local build/rollback pass; chưa có device/CDN evidence |
 | P1-03 Player items/skills/progression | Đạt cho foundation | Một phần: file/fake authority và projection sau diagnostic flag, legacy scene chưa nối | Đạt: 22 EditMode + 2 PlayMode; full regression 83/83 + 18/18 | Chưa đạt: Android smoke bị tooling block; thiếu backend/device/human/economy evidence |
 | P1-04 Competition/integrity | Đạt cho foundation | Một phần: fake/file authority, feature gate mặc định tắt, legacy Cup chưa nối | Đạt: 19 EditMode + 1 PlayMode; full regression 102/102 + 19/19 | Chưa đạt: backend, packet-loss/device/operations rehearsal và Android APK |
+| P1-06 Squad rules/Team Color/lương/bậc thẻ (B1–B2) | Đạt cho domain: rule set versioned, squad validator, salary/Team Color calculator | Chưa đạt: chưa có adapter Unity, chưa gắn state item, chưa nối scene | Một phần: 44 test domain pass (NUnit trên .NET 8 với nguồn trong repo); Unity Test Runner chưa chạy trong session không có Editor | Chưa đạt |
 | P2 VAR/AI/telemetry | Một phần ở Match Core và heuristic AI | Chưa đạt mục tiêu | Một phần | Chưa đạt |
 
 | Hệ thống | Đã có | Giới hạn hiện tại |
@@ -239,6 +240,10 @@ Authority đặc tả cho các khoảng trống: [account/settings](../systems/a
 - **Accessibility:** stat delta có text/dấu, xác nhận chi phí, hold-to-confirm tùy chọn, không dựa riêng màu/animation.
 - **Tests:** economy invariants/property tests, concurrency/idempotency, stale config, rollback receipt, UI loading/empty/error và localization.
 - **Rollback:** disable recipe/skill bằng config; compensating ledger transaction, không sửa/xóa lịch sử; client fallback read-only inventory.
+
+### P1-06 — Squad rules, Team Color, lương và bậc thẻ
+
+**Trạng thái:** batch B1–B2 đã triển khai ở mức domain tại commit `ae8aac7`/`c579b71`; xem [nhật ký P1-06](p1-06-squad-rules-and-card-tiers-implementation.md). Contract, rule set fixture versioned, squad validator, salary/Team Color calculator và squad persistence có automated evidence ở mức domain thuần C#. Còn mở: commit state `InSquad` cùng transaction inventory (B2b), transaction nâng cấp bậc (B3) và huấn luyện (B4), projection/diagnostic panel + PlayMode (B5), Unity Test Runner, UI, backend và balance gate.
 
 ### P1-04 — Luật giải, kết quả, reconnect và competitive integrity
 

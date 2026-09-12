@@ -1,6 +1,6 @@
 # Soccer Mobile Pro — chỉ mục tài liệu
 
-> Cập nhật: 11/09/2026 · Mốc FC Mobile VN: 15/07/2026 · Mốc eFootball Mobile: 16/07/2026 · Mốc FC Online M: khung 11/09/2026, chưa xác minh · Ngôn ngữ chuẩn: tiếng Việt · [Mở thư mục dự án](../README.md) · [Kế hoạch TODO](../TODO.md)
+> Cập nhật: 12/09/2026 · Mốc FC Mobile VN: 15/07/2026 · Mốc eFootball Mobile: 16/07/2026 · Mốc FC Online M: khung 11/09/2026, chưa xác minh · Ngôn ngữ chuẩn: tiếng Việt · [Mở thư mục dự án](../README.md) · [Kế hoạch TODO](../TODO.md)
 
 Đây là cổng vào duy nhất của knowledge wiki. Tài liệu được chia theo domain để mỗi quyết định chỉ có một nơi chịu trách nhiệm, còn các trang khác dùng liên kết tương đối thay vì sao chép nội dung.
 
@@ -55,6 +55,7 @@
 - [Nhật ký P1-03 player items, skills và progression](implementation/p1-player-items-skills-and-progression-implementation.md)
 - [Nhật ký P1-04 competition và integrity foundation](implementation/p1-competition-and-integrity-foundation.md)
 - [Kế hoạch P1-06 squad rules, Team Color, lương, nâng cấp bậc và huấn luyện](implementation/p1-06-squad-rules-and-card-tiers-plan.md)
+- [Nhật ký P1-06 batch B1–B2 (contract, fixture, squad validator)](implementation/p1-06-squad-rules-and-card-tiers-implementation.md)
 - [Sổ migration tên và cấu trúc Unity asset](implementation/asset-naming-migration-register.md)
 
 ## 7. Bản đồ phụ thuộc
