@@ -1,0 +1,38 @@
+# Soccer Mobile Pro — GitLab CI
+#
+# Giai doan hien tai (khung P9-01): dong bo thu muc `wiki/` trong repo sang GitLab Wiki cua project.
+# Nguon su that cua wiki la thu muc `wiki/` tren `main`; KHONG sua truc tiep tren giao dien Wiki
+# vi lan dong bo ke tiep se ghi de.
+#
+# Dieu kien chay: bien CI/CD `WIKI_PUSH_TOKEN` (Settings > CI/CD > Variables, Masked) chua
+# Project Access Token scope `write_repository`, role Developer tro len. Thieu bien -> job khong duoc tao,
+# pipeline khong that bai.
+#
+# Cac job compile / EditMode / PlayMode / build Android-iOS se duoc bo sung theo TODO P9-01.
+
+stages:
+  - docs
+
+wiki:publish:
+  stage: docs
+  image: alpine:3.20
+  variables:
+    GIT_DEPTH: "1"
+    WIKI_REPO_URL: "https://oauth2:${WIKI_PUSH_TOKEN}@${CI_SERVER_HOST}/${CI_PROJECT_PATH}.wiki.git"
+  rules:
+    - if: '$CI_COMMIT_BRANCH == $CI_DEFAULT_BRANCH && $WIKI_PUSH_TOKEN'
+      changes:
+        - wiki/**/*
+        - .gitlab-ci.yml
+  before_script:
+    - apk add --no-cache git rsync
+    - git config --global user.name "soccer-mobile-pro-ci"
+    - git config --global user.email "ci@soccer-mobile-pro.invalid"
+  script:
+    - git clone --depth 1 "$WIKI_REPO_URL" .wiki || (mkdir -p .wiki && git -C .wiki init -b main && git -C .wiki remote add origin "$WIKI_REPO_URL")
+    - rsync -a --delete --exclude '.git' wiki/ .wiki/
+    - cd .wiki
+    - git add -A
+    - if git diff --cached --quiet; then echo "Wiki khong thay doi, bo qua push."; exit 0; fi
+    - git commit -m "docs(wiki) sync from ${CI_PROJECT_PATH}@${CI_COMMIT_SHORT_SHA}"
+    - git push origin HEAD:main
