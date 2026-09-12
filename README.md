@@ -5,6 +5,7 @@ Soccer Mobile Pro là prototype game bóng đá mobile xây dựng bằng Unity 
 ## Tài liệu
 
 - [Knowledge wiki](docs/index.md)
+- [GitLab Wiki](https://gitlab.com/fpt-college/Soccer-Mobile-Pro/-/wikis/home) — lớp định hướng cho người mới; nguồn trong thư mục [`wiki/`](wiki/), đồng bộ bằng job CI `wiki:publish`
 - [Game Design Document](docs/product/gdd-soccer-mobile-pro.md)
 - [Nghiên cứu FC Mobile VN](docs/research/fc-mobile-vn-research.md)
 - [Audit Unity và backlog](docs/implementation/unity-implementation-audit-and-backlog.md)
