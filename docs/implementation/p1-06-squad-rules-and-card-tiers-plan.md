@@ -2,7 +2,7 @@
 
 > [Chỉ mục](../index.md) · [TODO](../../TODO.md) · [Cards/progression spec](../systems/player-cards-skills-progression-market-and-exchange.md) · [P1-03 plan](p1-player-items-skills-and-progression-plan.md) · [Nghiên cứu FC Online M](../research/fc-online-m/fc-online-m-research.md) · [Adoption FC Online M](../research/fc-online-m/fc-online-m-adoption-decision-matrix.md)
 
-**Trạng thái:** `Planned` ngày 11/09/2026. Chưa có code. Kế hoạch này là handoff cho batch Unity kế tiếp; implementation phải chạy trong môi trường có Unity MCP để chạy test runner trước khi commit.
+**Trạng thái:** `InProgress` ngày 12/09/2026. Batch **B1 và B2 đã triển khai** ở mức domain qua tuyến `feat/p1-06-b1-squad-rules-contracts` / `feat/p1-06-b2-squad-validation`; xem [nhật ký P1-06](p1-06-squad-rules-and-card-tiers-implementation.md) để biết kết quả, sai khác so với kế hoạch và giới hạn. Các batch còn lại (B2b, B3–B6) phải chạy trong môi trường có Unity MCP để chạy test runner trước khi commit.
 
 ## 0. Mục lục
 
@@ -159,8 +159,9 @@ Fixture roster P1-03 được mở rộng để có: item đủ Team Color ngư�
 
 | Batch | Nội dung | Đầu ra | Ước lượng |
 | --- | --- | --- | --- |
-| B1 | Contract + rule set interface + fixture JSON v1; mở rộng `OwnedPlayerItem`, snapshot N/N-1 | Compile xanh, test persistence | 0.5 ngày |
-| B2 | `ISalaryCalculator`, `ITeamColorCalculator`, `ISquadValidator`, `ISquadRepository` in-memory/file | EditMode squad/Team Color/salary | 1 ngày |
+| B1 | Contract + rule set interface + fixture JSON v1; mở rộng `OwnedPlayerItem`, snapshot N/N-1 | Đã triển khai code; cần Unity Test Runner | 0.5 ngày |
+| B2 | `ISalaryCalculator`, `ITeamColorCalculator`, `ISquadValidator`, `ISquadRepository` in-memory/file | Đã triển khai code; cần Unity Test Runner | 1 ngày |
+| B2b | `SquadSaveService`: lưu đội hình và chuyển item `Available ↔ InSquad` trong cùng transaction inventory (tách ra từ B2) | EditMode state/idempotency | 0.5 ngày |
 | B3 | Upgrade tier preview/command/receipt + `IUpgradeRollSource` deterministic + ledger integration | EditMode upgrade + idempotency | 1 ngày |
 | B4 | Training preview/command | EditMode training | 0.5 ngày |
 | B5 | Projection + diagnostic panel sau flag; PlayMode | PlayMode 2 case, screenshot | 0.5 ngày |

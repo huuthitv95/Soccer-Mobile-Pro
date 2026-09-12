@@ -1,6 +1,6 @@
 # Player cards, skills, progression, market và exchange
 
-> [Chỉ mục](../index.md) · [GDD](../product/gdd-soccer-mobile-pro.md) · [Catalog](football-catalog-player-database-and-model-assets.md) · [Nghiên cứu eFootball](../research/efootball-mobile/efootball-mobile-research.md) · [P1-03 plan](../implementation/p1-player-items-skills-and-progression-plan.md)
+> [Chỉ mục](../index.md) · [GDD](../product/gdd-soccer-mobile-pro.md) · [Catalog](football-catalog-player-database-and-model-assets.md) · [Nghiên cứu eFootball](../research/efootball-mobile/efootball-mobile-research.md) · [P1-03 plan](../implementation/p1-player-items-skills-and-progression-plan.md) · [P1-06 plan](../implementation/p1-06-squad-rules-and-card-tiers-plan.md) · [P1-06 nhật ký B1–B2](../implementation/p1-06-squad-rules-and-card-tiers-implementation.md)
 
 ## 0. Mục lục
 
@@ -25,7 +25,8 @@ Mục tiêu: card instance, skill taxonomy, upgrade và market/exchange có prev
 ```text
 OwnedPlayerItem { itemId, ownerId, itemDefinitionId, catalogVersion,
   levelXp, progressionAllocation, additionalSkills,
-  positionProficiencies, lockState, state, revision, rulesVersion }
+  positionProficiencies, lockState, state, revision, rulesVersion,
+  seasonId, upgradeTier, trainingLevel, trainingPoints, salaryOverride }
 InventorySnapshot { ownerId, revision, catalogVersion, rulesVersion, items }
 InventoryDelta { baseRevision, targetRevision, upsertedItems, removedItemIds }
 SkillMoveDefinition { id, inputId, requirements, animationProfile,
@@ -39,6 +40,12 @@ UpgradeCommand { itemId, previewHash, itemRevision, idempotencyKey }
 UpgradeReceipt { transactionId, status, ledgerEntries, newItemRevision }
 FusionCommand { sourceItemId, targetItemId, sourceRevision,
   targetRevision, previewHash, idempotencyKey }
+SquadDefinition { squadId, ownerId, slotIndex, formationId, assignments,
+  benchItemIds, tacticProfileId, setPieceTakers, captainItemId,
+  kitId, stadiumId, ballId, salaryCapExpansion, isPlayable,
+  revision, rulesVersion, catalogVersion }
+SquadValidationResult { isValid, isPlayable, canSave, salaryTotal, salaryCap,
+  teamColor { attribute, valueId, count, bonusProfileId }, errors, warnings }
 ```
 
 Market listing có `listingId`, seller, item snapshot hash, price, currency, created/expiry, status/revision. Exchange recipe có version, eligibility, inputs, outputs, repeat limit và effective interval. Client nhận projection/preview; server giữ inventory, currency, lock/reservation, order matching, tax và grant ledger.
@@ -48,11 +55,14 @@ Market listing có `listingId`, seller, item snapshot hash, price, currency, cre
 ## 3. State machines và authority
 
 - Upgrade: `Draft → Previewed → Confirming → Committed|Rejected|Unknown`; `Unknown` poll receipt bằng idempotency key, không gửi lệnh mới.
-- Item: `Available → Locked|Reserved|InSquad → Consumed|Transferred`; state transition atomic với ledger.
+- Item: `Available → Locked|Reserved|InSquad → Consumed|Transferred`; state transition atomic với ledger. `Locked` chống tiêu hao chứ không chống ra sân: item khóa vẫn được xếp đội hình, nhưng bị từ chối khi outcome của giao dịch là consume.
+- Squad: `Draft → Validated → Saved(isPlayable=true|false)`; save chỉ nhận `canSave`, revision tăng đơn điệu theo `(ownerId, slotIndex)`.
 - Listing: `Draft → Active → Reserved → Sold|Cancelled|Expired`; price/revision đổi làm preview cũ invalid.
 - Exchange: `Eligible → Previewed → Reserved → Granted|Rejected`; input consume và output grant cùng transaction.
 
 Skill/Trait/PlayStyle modifier có trigger/context/cap/exclusion và trace; Trait là đặc tính thụ động, SkillMove là input/animation, PlayStyle là identity chiến thuật. Không tạo option mạnh hơn mọi mặt. Rank/Training/Skill là trục riêng; respec preview consequence và không mất điểm do timeout.
+
+P1-06 (batch B1–B2) bổ sung ba trục trên cùng luồng authority: `upgradeTier` (+1…+N), `trainingLevel/trainingPoints` và `seasonId` nằm trên card instance, còn `SquadDefinition` là aggregate riêng được validate bằng rule set nhưng **không** đi qua ledger vì không tiêu tài nguyên. Lương và Team Color là pure function của squad + catalog + rule set, không được lưu làm authority. Mỗi slot đội hình độc lập: item chỉ trở về `Available` khi rời mọi slot. Đội hình vượt cap lương hoặc thiếu dự bị vẫn lưu được nhưng `isPlayable = false`; mọi lỗi cấu trúc/ownership khác chặn lưu. Nâng cấp thành công không bị rollback chỉ vì đội hình vượt cap sau đó.
 
 Foundation P1-03 dùng direct fixture grant, deterministic skill assignment và eligible position choice. Random pack, random skill/position, Booster vượt cap, paid respec và market không nằm trong batch; xem [ma trận áp dụng eFootball](../research/efootball-mobile/efootball-mobile-adoption-decision-matrix.md#p1-slice).
 

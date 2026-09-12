@@ -88,8 +88,8 @@ Mục tiêu parity 100% nghĩa là **mọi tính năng đều có tương ứng 
 
 | ID | Quyết định | Owner | Gate | Trạng thái |
 | --- | --- | --- | --- | --- |
-| FOM-D01 | Rule thất bại khi nâng cấp thẻ (giữ/hạ/mất) và bảo hiểm | Economy + Product | FOM-Q02 xác minh; mô phỏng kinh tế | `Proposed` |
-| FOM-D02 | Tham số Team Color và lương đội hình phiên bản 1 | Product + Gameplay | FOM-Q04/Q05; scenario balance | `Proposed` |
+| FOM-D01 | Rule thất bại khi nâng cấp thẻ (giữ/hạ/mất) và bảo hiểm | Economy + Product | FOM-Q02 xác minh; mô phỏng kinh tế | `Proposed` (fixture P1-06 đã mô tả và test cả ba outcome; chờ transaction B3) |
+| FOM-D02 | Tham số Team Color và lương đội hình phiên bản 1 | Product + Gameplay | FOM-Q04/Q05; scenario balance | `Proposed` (P1-06 B1–B2 đã thêm rule set fixture versioned và test, chờ Unity runner/balance trước khi nâng lifecycle) |
 | FOM-D03 | Mở chuyển nhượng P2P chỉ sau anti-abuse tối thiểu | Economy + Integrity | P4-07 signal, rate limit, audit | `Proposed` |
 | FOM-D04 | Tuyển dụng pack production | Product + Legal | Odds, age/privacy, reconciliation, compliance | `Proposed` |
 | FOM-D05 | Chế độ Quản lý thuộc parity hay P8 | Product | FOM-Q01 | `Proposed` |

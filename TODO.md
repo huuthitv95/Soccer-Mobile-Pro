@@ -2,7 +2,7 @@
 
 > [Chỉ mục tài liệu](docs/index.md) · [GDD](docs/product/gdd-soccer-mobile-pro.md) · [Audit Unity](docs/implementation/unity-implementation-audit-and-backlog.md) · [Coverage audit](docs/research/fc-mobile-vn-coverage-audit.md) · [UI catalogue](docs/product/ui-design-system-and-screen-catalogue.md)
 
-**Mốc lập kế hoạch:** 11/09/2026 · **Cập nhật tiến độ:** 11/09/2026 (P1-05a, kế hoạch P1-06) · **Baseline code:** `965f398b` (main) · **Unity:** 2022.3.62f3 · **Chủ sở hữu file:** Product + Tech Lead
+**Mốc lập kế hoạch:** 11/09/2026 · **Cập nhật tiến độ:** 12/09/2026 (P1-06 batch B1–B2 domain) · **Baseline code:** `f47bcf9` (main sau merge nhánh P1-06 B2) · **Unity:** 2022.3.62f3 · **Chủ sở hữu file:** Product + Tech Lead
 
 ## 0. Mục lục
 
@@ -38,16 +38,16 @@
 
 ## 2. Bảng tiến độ tổng thể
 
-**Tiến độ toàn dự án (có trọng số): ≈ 17%** · Parity tính năng FC Online M: **≈ 12%** · Parity giao diện: **≈ 6%**
+**Tiến độ toàn dự án (có trọng số): ≈ 18%** · Parity tính năng FC Online M: **≈ 13%** · Parity giao diện: **≈ 6%**
 
 | Phase | Tên | Trọng số | % hoàn thành | Trạng thái | Phụ thuộc |
 | --- | --- | ---: | ---: | --- | --- |
 | P0 | Foundation kỹ thuật (Match Core, Input, Platform contract) | 10% | 70% | Đang chạy, runtime integration chưa bật mặc định | — |
-| P1 | Meta foundation (Localization, Catalog, Player Items, Competition) và khóa tham chiếu FC Online M | 10% | 56% | Đang chạy, fake/file authority; khung research FC Online M xong, chưa xác minh nguồn | P0 |
+| P1 | Meta foundation (Localization, Catalog, Player Items, Competition) và khóa tham chiếu FC Online M | 10% | 58% | Đang chạy, fake/file authority; P1-06 B1–B2 xong ở mức domain, chưa chạy Unity runner | P0 |
 | P2 | Product shell và toàn bộ màn hình meta (SC-01…SC-12, SC-15) | 15% | 5% | Chưa bắt đầu ở mức production | P1 |
 | P3 | Match gameplay production (animation, physics, HUD, camera, AI, VAR, replay) | 15% | 15% | Prototype legacy | P0 |
 | P4 | Backend và live service (account, economy, market, competition, telemetry, CMS) | 15% | 3% | Chỉ có contract/fake adapter | P0, P1 |
-| P5 | Hệ thống meta FC Online M (Squad/Team Color, Nâng cấp, Huấn luyện, Chuyển nhượng, Tuyển dụng, Ranked, Quản lý, CLB) | 15% | 10% | Domain foundation, chưa có UI/backend | P2, P4 |
+| P5 | Hệ thống meta FC Online M (Squad/Team Color, Nâng cấp, Huấn luyện, Chuyển nhượng, Tuyển dụng, Ranked, Quản lý, CLB) | 15% | 11% | Domain foundation (squad rules/Team Color/lương), chưa có UI/backend | P2, P4 |
 | P6 | Content pipeline bản quyền (dữ liệu cầu thủ/CLB/giải, model 3D, kit, sân, âm thanh, bình luận) | 8% | 5% | Fixture hư cấu, chưa nhập data thật | P1 |
 | P7 | LiveOps, monetization, membership, inbox, gift code, sự kiện | 5% | 0% | Spec xong, code chưa có | P4, P5 |
 | P8 | Phát triển vượt tham chiếu (tính năng và UX mới) | 4% | 0% | Ý tưởng | P5, P7 |
@@ -89,7 +89,7 @@
 - [x] P1-04 Competition foundation: rules version, Single Elimination/Round Robin, roster lock, reconnect, dispute.
 - [x] P1-05a **Khung research FC Online M**: đã tạo [`docs/research/fc-online-m/`](docs/research/fc-online-m/fc-online-m-research.md) gồm research, sổ nguồn (14 slot), inventory 49 mechanic FOM-* ánh xạ đủ 40 dòng mục 5, adoption matrix và 6 decision `Proposed`. Toàn bộ claim ở mức `Unverified`.
 - [ ] P1-05b **Xác minh nguồn FC Online M**: điền URL/ngày truy cập cho 14 slot, nâng claim/status, trả lời FOM-Q01…Q10, cập nhật GDD, coverage audit, UI catalogue (SC-16…SC-18) và mục 5/6 file này trong cùng change set.
-- [~] P1-06 Mở rộng domain theo FC Online M: Team Color/chemistry, lương đội hình (salary cap), nâng cấp +1…+10 với tỷ lệ công bố, huấn luyện (training points), mùa thẻ (season/class), squad definition/validator. Kế hoạch: [p1-06 plan](docs/implementation/p1-06-squad-rules-and-card-tiers-plan.md) (6 batch B1…B6, ước lượng 4 ngày). HLV card chuyển sang P5-02.
+- [~] P1-06 Mở rộng domain theo FC Online M: Team Color/chemistry, lương đội hình (salary cap), nâng cấp +1…+10 với tỷ lệ công bố, huấn luyện (training points), mùa thẻ (season/class), squad definition/validator. Kế hoạch: [p1-06 plan](docs/implementation/p1-06-squad-rules-and-card-tiers-plan.md); tiến độ: **B1 + B2 đã merge code** ở mức domain (contract, rule set fixture versioned, snapshot inventory vẫn schema 2, salary/Team Color calculator, squad validator, squad repository; [nhật ký](docs/implementation/p1-06-squad-rules-and-card-tiers-implementation.md)); còn B2b (state `InSquad` cùng transaction), B3 nâng cấp bậc, B4 huấn luyện, B5 projection/PlayMode, B6 docs, và **phải chạy Unity Test Runner trước khi tính automated evidence**. HLV card chuyển sang P5-02.
 - [ ] P1-07 Nối fixture catalog/inventory vào scene chọn đội và trận đấu (thay texture/team name gắn Inspector).
 - [ ] P1-08 Localize toàn bộ legacy UI; brand font vi/en qua contrast test (UI-D01).
 
@@ -135,7 +135,7 @@
 
 - [~] P5-01 Thẻ cầu thủ: mùa thẻ, OVR/chỉ số, đặc tính, skill moves, vị trí phụ, giá trị; projection từ catalog + inventory.
 - [ ] P5-02 Đội hình: formation editor, vai trò, chiến thuật (slider tấn công/phòng ngự, pressing, chiều rộng), người đá phạt, đội trưởng, nhiều slot đội hình, kit/sân/bóng.
-- [ ] P5-03 Team Color/chemistry và lương đội hình: rule set version, preview, cảnh báo vượt lương.
+- [~] P5-03 Team Color/chemistry và lương đội hình: rule set version, preview, cảnh báo vượt lương. Domain xong ở P1-06 B1–B2; còn UI, backend authority và áp modifier vào match core.
 - [ ] P5-04 Nâng cấp thẻ +1…+10: tỷ lệ công bố, vật liệu, bảo hiểm/khóa, lịch sử; server preview và receipt.
 - [ ] P5-05 Huấn luyện: training points, level, nguồn điểm, giới hạn.
 - [ ] P5-06 Chuyển nhượng (BP market): niêm yết, mua/bán, dải giá, thuế, lịch sử giá, bộ lọc, chống thao túng.
@@ -203,9 +203,9 @@ Nhãn: **Suy luận thiết kế** từ quan sát công khai FC Online M; cần 
 | 7 | Thẻ cầu thủ | Nâng cấp +1…+10 với tỷ lệ | Một phần | P5-04 | Domain preview/receipt có |
 | 8 | Thẻ cầu thủ | Huấn luyện (training) | Chưa | P5-05 | |
 | 9 | Thẻ cầu thủ | Vị trí phụ/đổi vị trí | Một phần | P1-03 | |
-| 10 | Đội hình | Formation editor, chiến thuật, vai trò | Chưa | P5-02 | Legacy chỉ chọn đội |
-| 11 | Đội hình | Team Color/chemistry | Chưa | P5-03 | |
-| 12 | Đội hình | Lương đội hình (salary cap) | Chưa | P5-03 | |
+| 10 | Đội hình | Formation editor, chiến thuật, vai trò | Chưa | P5-02 | Legacy chỉ chọn đội; P1-06 có SquadDefinition/validator domain, chưa có editor |
+| 11 | Đội hình | Team Color/chemistry | Một phần | P5-03 | Domain P1-06: rule set + calculator, chưa áp modifier vào match |
+| 12 | Đội hình | Lương đội hình (salary cap) | Một phần | P5-03 | Domain P1-06: cap + cảnh báo vượt lương, chưa có UI |
 | 13 | Đội hình | Nhiều slot đội hình, kit/sân/bóng | Chưa | P5-02 | |
 | 14 | Kinh tế | Chuyển nhượng BP (mua/bán/niêm yết) | Chưa | P5-06 | |
 | 15 | Kinh tế | Tuyển dụng pack với odds công bố | Chưa | P5-07 | Gate compliance |
@@ -235,7 +235,7 @@ Nhãn: **Suy luận thiết kế** từ quan sát công khai FC Online M; cần 
 | 39 | Nội dung | Dữ liệu cầu thủ/CLB/giải thật theo mùa | Chưa | P6-02 | |
 | 40 | Nội dung | Model/kit/sân/huy hiệu chính hãng | Chưa | P6-03, P6-04 | |
 
-**Tính toán:** 0 `Đạt` + 14 `Một phần` (×0.5 = 7) trên 40 dòng → **≈ 17.5% điểm parity thô**, hạ xuống **≈ 12%** vì các dòng `Một phần` chủ yếu chỉ đạt gate Contract/Automated, chưa có Runtime/Device.
+**Tính toán:** 0 `Đạt` + 16 `Một phần` (×0.5 = 8) trên 40 dòng → **≈ 20% điểm parity thô**, hạ xuống **≈ 13%** vì các dòng `Một phần` chủ yếu chỉ đạt gate Contract/Automated, chưa có Runtime/Device.
 
 <a id="ui-parity"></a>
 
