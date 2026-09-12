@@ -40,6 +40,11 @@ namespace SoccerMobilePro.PlayerItems
         public string CatalogVersion { get; set; } = string.Empty;
         public DateTimeOffset AcquiredAt { get; set; }
         public int LevelXp { get; set; }
+        public string SeasonId { get; set; } = string.Empty;
+        public int UpgradeTier { get; set; }
+        public int TrainingLevel { get; set; }
+        public int TrainingPoints { get; set; }
+        public long? SalaryOverride { get; set; }
         public Dictionary<string, int> ProgressionAllocation { get; set; } = new Dictionary<string, int>(StringComparer.Ordinal);
         public List<string> AdditionalSkills { get; set; } = new List<string>();
         public List<string> PositionProficiencies { get; set; } = new List<string>();
@@ -60,6 +65,11 @@ namespace SoccerMobilePro.PlayerItems
                 CatalogVersion = CatalogVersion,
                 AcquiredAt = AcquiredAt,
                 LevelXp = LevelXp,
+                SeasonId = SeasonId,
+                UpgradeTier = UpgradeTier,
+                TrainingLevel = TrainingLevel,
+                TrainingPoints = TrainingPoints,
+                SalaryOverride = SalaryOverride,
                 ProgressionAllocation = new Dictionary<string, int>(ProgressionAllocation ?? new Dictionary<string, int>(), StringComparer.Ordinal),
                 AdditionalSkills = new List<string>(AdditionalSkills ?? new List<string>()),
                 PositionProficiencies = new List<string>(PositionProficiencies ?? new List<string>()),
@@ -78,12 +88,14 @@ namespace SoccerMobilePro.PlayerItems
 
     public sealed class InventorySnapshot
     {
-        public int SchemaVersion { get; set; } = 2;
+        public int SchemaVersion { get; set; } = InventoryCodec.CurrentSchemaVersion;
         public string OwnerId { get; set; } = string.Empty;
         public long Revision { get; set; }
         public string CatalogVersion { get; set; } = string.Empty;
         public string RulesVersion { get; set; } = string.Empty;
         public List<OwnedPlayerItem> Items { get; set; } = new List<OwnedPlayerItem>();
+        [JsonIgnore]
+        public bool MigrationApplied { get; set; }
         [JsonExtensionData]
         public IDictionary<string, JToken> ExtensionData { get; set; } = new Dictionary<string, JToken>(StringComparer.Ordinal);
 
@@ -99,7 +111,8 @@ namespace SoccerMobilePro.PlayerItems
                 Revision = Revision,
                 CatalogVersion = CatalogVersion,
                 RulesVersion = RulesVersion,
-                Items = (Items ?? new List<OwnedPlayerItem>()).Select(item => item.Clone()).ToList()
+                Items = (Items ?? new List<OwnedPlayerItem>()).Select(item => item.Clone()).ToList(),
+                MigrationApplied = MigrationApplied
             };
             clone.ExtensionData = (ExtensionData ?? new Dictionary<string, JToken>()).ToDictionary(pair => pair.Key, pair => pair.Value?.DeepClone(), StringComparer.Ordinal);
             return clone;

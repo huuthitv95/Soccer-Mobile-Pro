@@ -1,0 +1,111 @@
+{
+  "fixtureVersion": "p1-06-fixture-v1",
+  "rulesVersion": "000000010601",
+  "claimLabel": "hypothesis",
+  "note": "Gia tri fixture P1-06 la de xuat noi bo Soccer Mobile Pro, chua xac minh nguon FC Online M (P1-05b). Khong dung lam so can bang production.",
+  "cardSeasons": {
+    "defaultSeasonId": "SEASON_BASE",
+    "seasons": [
+      {
+        "seasonId": "SEASON_BASE",
+        "displayNameKey": "card.season.base",
+        "releasedAt": "2026-01-01T00:00:00+00:00",
+        "statProfileId": "stat-profile-base",
+        "marketClass": "standard",
+        "rightsVersion": "licensed-full-2026"
+      },
+      {
+        "seasonId": "SEASON_ICON_FIX",
+        "displayNameKey": "card.season.icon",
+        "releasedAt": "2026-06-01T00:00:00+00:00",
+        "statProfileId": "stat-profile-icon",
+        "marketClass": "restricted",
+        "rightsVersion": "licensed-full-2026"
+      }
+    ],
+    "programSeasons": {
+      "fixture-base": "SEASON_BASE",
+      "fixture-icon": "SEASON_ICON_FIX"
+    }
+  },
+  "upgradeTiers": {
+    "maxTier": 10,
+    "steps": [
+      { "fromTier": 0, "successRateBasisPoints": 9500, "currencyCost": 100, "failureOutcome": "Keep", "materials": [{ "resourceId": "fixture-material-common", "amount": 1 }] },
+      { "fromTier": 1, "successRateBasisPoints": 8500, "currencyCost": 200, "failureOutcome": "Keep", "materials": [{ "resourceId": "fixture-material-common", "amount": 2 }] },
+      { "fromTier": 2, "successRateBasisPoints": 7500, "currencyCost": 350, "failureOutcome": "Keep", "materials": [{ "resourceId": "fixture-material-common", "amount": 3 }] },
+      { "fromTier": 3, "successRateBasisPoints": 6500, "currencyCost": 550, "failureOutcome": "Keep", "materials": [{ "resourceId": "fixture-material-rare", "amount": 1 }] },
+      { "fromTier": 4, "successRateBasisPoints": 5000, "currencyCost": 800, "failureOutcome": "Downgrade", "materials": [{ "resourceId": "fixture-material-rare", "amount": 2 }], "insuranceResourceId": "fixture-insurance-basic", "insuranceAmount": 1 },
+      { "fromTier": 5, "successRateBasisPoints": 4000, "currencyCost": 1100, "failureOutcome": "Downgrade", "materials": [{ "resourceId": "fixture-material-rare", "amount": 3 }], "insuranceResourceId": "fixture-insurance-basic", "insuranceAmount": 1 },
+      { "fromTier": 6, "successRateBasisPoints": 3000, "currencyCost": 1500, "failureOutcome": "Downgrade", "materials": [{ "resourceId": "fixture-material-epic", "amount": 1 }], "insuranceResourceId": "fixture-insurance-basic", "insuranceAmount": 2 },
+      { "fromTier": 7, "successRateBasisPoints": 2000, "currencyCost": 2000, "failureOutcome": "Consume", "materials": [{ "resourceId": "fixture-material-epic", "amount": 2 }], "insuranceResourceId": "fixture-insurance-premium", "insuranceAmount": 1 },
+      { "fromTier": 8, "successRateBasisPoints": 1200, "currencyCost": 2600, "failureOutcome": "Consume", "materials": [{ "resourceId": "fixture-material-epic", "amount": 3 }], "insuranceResourceId": "fixture-insurance-premium", "insuranceAmount": 2 },
+      { "fromTier": 9, "successRateBasisPoints": 700, "currencyCost": 3300, "failureOutcome": "Consume", "materials": [{ "resourceId": "fixture-material-legend", "amount": 1 }], "insuranceResourceId": "fixture-insurance-premium", "insuranceAmount": 3 }
+    ],
+    "statScalingBasisPoints": [0, 150, 300, 460, 620, 800, 1000, 1220, 1460, 1720, 2000]
+  },
+  "training": {
+    "maxLevel": 5,
+    "pointsRequiredPerLevel": [40, 90, 160, 260, 400],
+    "statGainBasisPoints": [0, 60, 130, 210, 300, 400],
+    "pointSources": ["training-item-consume", "training-match-win", "training-mission-daily"]
+  },
+  "teamColor": {
+    "countedAttributes": ["Club", "Nation"],
+    "countingScope": "StartingXI",
+    "thresholds": [
+      { "minCount": 3, "bonusProfileId": "tc-tier-1" },
+      { "minCount": 5, "bonusProfileId": "tc-tier-2" },
+      { "minCount": 8, "bonusProfileId": "tc-tier-3" }
+    ],
+    "bonusProfiles": [
+      {
+        "profileId": "tc-tier-1",
+        "traceLabelKey": "squad.teamcolor.tier1",
+        "statModifiers": [{ "attributeId": "passing", "basisPoints": 100 }]
+      },
+      {
+        "profileId": "tc-tier-2",
+        "traceLabelKey": "squad.teamcolor.tier2",
+        "statModifiers": [{ "attributeId": "passing", "basisPoints": 200 }, { "attributeId": "pace", "basisPoints": 100 }]
+      },
+      {
+        "profileId": "tc-tier-3",
+        "traceLabelKey": "squad.teamcolor.tier3",
+        "statModifiers": [{ "attributeId": "passing", "basisPoints": 350 }, { "attributeId": "pace", "basisPoints": 250 }]
+      }
+    ]
+  },
+  "salary": {
+    "bands": [
+      { "minOverall": 0, "baseSalary": 10 },
+      { "minOverall": 65, "baseSalary": 16 },
+      { "minOverall": 70, "baseSalary": 24 },
+      { "minOverall": 75, "baseSalary": 36 },
+      { "minOverall": 80, "baseSalary": 52 }
+    ],
+    "tierScalingBasisPoints": [0, 400, 850, 1350, 1900, 2500, 3200, 4000, 4900, 5900, 7000]
+  },
+  "squad": {
+    "startingCount": 11,
+    "benchCount": 7,
+    "maxSquadSlots": 3,
+    "salaryCapBase": 260,
+    "salaryCapExpansionMax": 60,
+    "salaryCountingScope": "StartingXI",
+    "formations": [
+      {
+        "formationId": "4-3-3",
+        "positionSlotIds": ["GK", "LB", "LCB", "RCB", "RB", "LCM", "CM", "RCM", "LW", "ST", "RW"]
+      },
+      {
+        "formationId": "4-4-2",
+        "positionSlotIds": ["GK", "LB", "LCB", "RCB", "RB", "LM", "LCM", "RCM", "RM", "LST", "RST"]
+      },
+      {
+        "formationId": "4-2-3-1",
+        "positionSlotIds": ["GK", "LB", "LCB", "RCB", "RB", "LDM", "RDM", "LAM", "CAM", "RAM", "ST"]
+      }
+    ]
+  }
+}

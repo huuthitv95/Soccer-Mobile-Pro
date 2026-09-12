@@ -7,6 +7,8 @@ namespace SoccerMobilePro.PlayerItems
 {
     public static class PlayerItemsFixtureFactory
     {
+        public const string SquadRulesFixtureRelativePath = "Assets/SoccerMobilePro/Runtime/PlayerItems/Fixtures/SquadRulesFixture.json";
+
         public static InventorySnapshot CreateInventory(CatalogSnapshot catalog, string ownerId, string rulesVersion, DateTimeOffset acquiredAt)
         {
             if (catalog == null) throw new ArgumentNullException(nameof(catalog));

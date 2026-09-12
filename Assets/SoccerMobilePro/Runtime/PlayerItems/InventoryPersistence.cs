@@ -20,7 +20,7 @@ namespace SoccerMobilePro.PlayerItems
 
     public sealed class InventoryCodec
     {
-        public const int CurrentSchemaVersion = 2;
+        public const int CurrentSchemaVersion = 3;
         public const int BackwardSchemaWindow = 1;
 
         private static readonly JsonSerializerSettings Settings = new JsonSerializerSettings
@@ -60,6 +60,15 @@ namespace SoccerMobilePro.PlayerItems
             {
                 snapshot.SchemaVersion = CurrentSchemaVersion;
                 snapshot.Items = snapshot.Items ?? new List<OwnedPlayerItem>();
+                snapshot.MigrationApplied = migrated;
+                if (!migrated) continue;
+                foreach (OwnedPlayerItem item in snapshot.Items)
+                {
+                    item.SeasonId = item.SeasonId ?? string.Empty;
+                    item.UpgradeTier = Math.Max(0, item.UpgradeTier);
+                    item.TrainingLevel = Math.Max(0, item.TrainingLevel);
+                    item.TrainingPoints = Math.Max(0, item.TrainingPoints);
+                }
             }
 
             return envelope;

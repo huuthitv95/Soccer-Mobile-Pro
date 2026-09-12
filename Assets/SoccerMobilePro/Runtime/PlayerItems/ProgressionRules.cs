@@ -189,7 +189,8 @@ namespace SoccerMobilePro.PlayerItems
             string allocations = string.Join(",", (item.ProgressionAllocation ?? new Dictionary<string, int>()).OrderBy(pair => pair.Key, StringComparer.Ordinal).Select(pair => $"{pair.Key}:{pair.Value}"));
             string skills = string.Join(",", (item.AdditionalSkills ?? new List<string>()).OrderBy(value => value, StringComparer.Ordinal));
             string positions = string.Join(",", (item.PositionProficiencies ?? new List<string>()).OrderBy(value => value, StringComparer.Ordinal));
-            return string.Join("~", item.ItemId, item.OwnerId, item.ItemDefinitionId, item.CatalogVersion, item.LevelXp, allocations, skills, positions, (int)item.LockState, (int)item.State, item.Revision, item.RulesVersion);
+            return string.Join("~", item.ItemId, item.OwnerId, item.ItemDefinitionId, item.CatalogVersion, item.LevelXp, allocations, skills, positions, (int)item.LockState, (int)item.State, item.Revision, item.RulesVersion,
+                item.SeasonId ?? string.Empty, item.UpgradeTier, item.TrainingLevel, item.TrainingPoints, item.SalaryOverride?.ToString(CultureInfo.InvariantCulture) ?? string.Empty);
         }
 
         private static string Sha256(string value)

@@ -27,7 +27,7 @@ namespace SoccerMobilePro.MatchCore.Tests
         [Test]
         public void Codec_RoundTripsUnknownFields()
         {
-            const string payload = "{\"schemaVersion\":2,\"inventories\":[],\"receipts\":[],\"ledgerEntries\":[],\"futurePolicy\":{\"value\":7}}";
+            const string payload = "{\"schemaVersion\":3,\"inventories\":[],\"receipts\":[],\"ledgerEntries\":[],\"futurePolicy\":{\"value\":7}}";
             var codec = new InventoryCodec();
 
             InventoryEnvelope envelope = codec.Deserialize(payload, out bool migrated);
@@ -42,10 +42,10 @@ namespace SoccerMobilePro.MatchCore.Tests
         public void Codec_MigratesNMinusOneAndRejectsNMinusTwo()
         {
             var codec = new InventoryCodec();
-            InventoryEnvelope migrated = codec.Deserialize("{\"schemaVersion\":1}", out bool didMigrate);
+            InventoryEnvelope migrated = codec.Deserialize("{\"schemaVersion\":2}", out bool didMigrate);
             Assert.That(didMigrate, Is.True);
-            Assert.That(migrated.SchemaVersion, Is.EqualTo(2));
-            Assert.Throws<InventoryPersistenceException>(() => codec.Deserialize("{\"schemaVersion\":0}", out _));
+            Assert.That(migrated.SchemaVersion, Is.EqualTo(3));
+            Assert.Throws<InventoryPersistenceException>(() => codec.Deserialize("{\"schemaVersion\":1}", out _));
         }
 
         [Test]
