@@ -29,7 +29,14 @@ namespace SoccerMobilePro.PlayerItems
         CapExceeded = 13,
         IdempotencyConflict = 14,
         AtomicCommitFailed = 15,
-        ReadOnly = 16
+        ReadOnly = 16,
+        FeatureDisabled = 17,
+        ProtectedItem = 18,
+        InsufficientMaterials = 19,
+        InsuranceUnavailable = 20,
+        SalaryCapExceeded = 21,
+        SquadInvalid = 22,
+        SquadNotFound = 23
     }
 
     public sealed class OwnedPlayerItem
@@ -47,6 +54,15 @@ namespace SoccerMobilePro.PlayerItems
         public PlayerItemState State { get; set; }
         public long Revision { get; set; }
         public string RulesVersion { get; set; } = string.Empty;
+
+        // P1-06: cac truc trang thai the (tier nang cap, training, mua the, luong ghi de).
+        // Snapshot N-1 khong co cac truong nay se load ve default an toan (0 / null / rong).
+        public int UpgradeTier { get; set; }
+        public int TrainingLevel { get; set; }
+        public int TrainingPoints { get; set; }
+        public long? SalaryOverride { get; set; }
+        public string SeasonId { get; set; } = string.Empty;
+
         [JsonExtensionData]
         public IDictionary<string, JToken> ExtensionData { get; set; } = new Dictionary<string, JToken>(StringComparer.Ordinal);
 
@@ -66,7 +82,12 @@ namespace SoccerMobilePro.PlayerItems
                 LockState = LockState,
                 State = State,
                 Revision = Revision,
-                RulesVersion = RulesVersion
+                RulesVersion = RulesVersion,
+                UpgradeTier = UpgradeTier,
+                TrainingLevel = TrainingLevel,
+                TrainingPoints = TrainingPoints,
+                SalaryOverride = SalaryOverride,
+                SeasonId = SeasonId
             };
             clone.ExtensionData = CloneExtensionData(ExtensionData);
             return clone;

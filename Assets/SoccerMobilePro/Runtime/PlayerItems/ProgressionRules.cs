@@ -189,7 +189,29 @@ namespace SoccerMobilePro.PlayerItems
             string allocations = string.Join(",", (item.ProgressionAllocation ?? new Dictionary<string, int>()).OrderBy(pair => pair.Key, StringComparer.Ordinal).Select(pair => $"{pair.Key}:{pair.Value}"));
             string skills = string.Join(",", (item.AdditionalSkills ?? new List<string>()).OrderBy(value => value, StringComparer.Ordinal));
             string positions = string.Join(",", (item.PositionProficiencies ?? new List<string>()).OrderBy(value => value, StringComparer.Ordinal));
-            return string.Join("~", item.ItemId, item.OwnerId, item.ItemDefinitionId, item.CatalogVersion, item.LevelXp, allocations, skills, positions, (int)item.LockState, (int)item.State, item.Revision, item.RulesVersion);
+            string canonical = string.Join("~", item.ItemId, item.OwnerId, item.ItemDefinitionId, item.CatalogVersion, item.LevelXp, allocations, skills, positions, (int)item.LockState, (int)item.State, item.Revision, item.RulesVersion);
+            string squadAxes = CanonicalSquadAxes(item);
+            return squadAxes.Length == 0 ? canonical : string.Join("~", canonical, squadAxes);
+        }
+
+        // P1-06: cac truc tier/training/luong/mua the phai nam trong hash de preview khong bi sua tay.
+        // Khi tat ca truc o gia tri default, chuoi canonical giu nguyen dinh dang P1-03 nen hash cu khong doi.
+        private static string CanonicalSquadAxes(OwnedPlayerItem item)
+        {
+            bool isDefault = item.UpgradeTier == 0
+                && item.TrainingLevel == 0
+                && item.TrainingPoints == 0
+                && !item.SalaryOverride.HasValue
+                && string.IsNullOrEmpty(item.SeasonId);
+            if (isDefault) return string.Empty;
+            string salary = item.SalaryOverride.HasValue ? item.SalaryOverride.Value.ToString(CultureInfo.InvariantCulture) : "-";
+            return string.Join(":",
+                "p106",
+                item.UpgradeTier.ToString(CultureInfo.InvariantCulture),
+                item.TrainingLevel.ToString(CultureInfo.InvariantCulture),
+                item.TrainingPoints.ToString(CultureInfo.InvariantCulture),
+                salary,
+                item.SeasonId ?? string.Empty);
         }
 
         private static string Sha256(string value)
