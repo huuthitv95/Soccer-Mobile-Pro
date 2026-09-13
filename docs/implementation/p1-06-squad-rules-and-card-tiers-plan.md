@@ -2,7 +2,7 @@
 
 > [Chỉ mục](../index.md) · [TODO](../../TODO.md) · [Cards/progression spec](../systems/player-cards-skills-progression-market-and-exchange.md) · [P1-03 plan](p1-player-items-skills-and-progression-plan.md) · [Nghiên cứu FC Online M](../research/fc-online-m/fc-online-m-research.md) · [Adoption FC Online M](../research/fc-online-m/fc-online-m-adoption-decision-matrix.md)
 
-**Trạng thái:** `InProgress` ngày 12/09/2026. Batch **B1, B2 và B2b đã triển khai** ở mức domain (B1/B2 qua tuyến `feat/p1-06-b1-squad-rules-contracts` / `feat/p1-06-b2-squad-validation`, B2b commit trực tiếp lên `main`); xem [nhật ký P1-06](p1-06-squad-rules-and-card-tiers-implementation.md) để biết kết quả, sai khác so với kế hoạch và giới hạn. Các batch còn lại (B3–B6) phải chạy trong môi trường có Unity MCP để chạy test runner trước khi commit; toàn bộ test B1–B2b cũng cần được chạy lần đầu.
+**Trạng thái:** `InProgress` ngày 12/09/2026. Batch **B1, B2, B2b và B3 đã triển khai** ở mức domain (B1/B2 qua tuyến `feat/p1-06-b1-squad-rules-contracts` / `feat/p1-06-b2-squad-validation`, B2b và B3 commit trực tiếp lên `main`); xem [nhật ký P1-06](p1-06-squad-rules-and-card-tiers-implementation.md) để biết kết quả, sai khác so với kế hoạch và giới hạn. Các batch còn lại (B4–B6) phải chạy trong môi trường có Unity MCP để chạy test runner trước khi commit; toàn bộ test B1–B3 cũng cần được chạy lần đầu.
 
 ## 0. Mục lục
 
@@ -162,7 +162,7 @@ Fixture roster P1-03 được mở rộng để có: item đủ Team Color ngư�
 | B1 | Contract + rule set interface + fixture JSON v1; mở rộng `OwnedPlayerItem`, snapshot N/N-1 | Đã triển khai code; cần Unity Test Runner | 0.5 ngày |
 | B2 | `ISalaryCalculator`, `ITeamColorCalculator`, `ISquadValidator`, `ISquadRepository` in-memory/file | Đã triển khai code; cần Unity Test Runner | 1 ngày |
 | B2b | `SquadLineupSaveService` + `ISquadInventoryStore` (`SquadLineupTransactions.cs`): lưu đội hình và chuyển item `Available ↔ InSquad` trong cùng một commit với inventory (tách ra từ B2) | Đã triển khai code (in-memory store, 10 EditMode); cần Unity Test Runner; file store hai aggregate dời sang B5 | 0.5 ngày |
-| B3 | Upgrade tier preview/command/receipt + `IUpgradeRollSource` deterministic + ledger integration | EditMode upgrade + idempotency | 1 ngày |
+| B3 | `UpgradeTierPreviewService` + `UpgradeTierService` (`UpgradeTierTransactions.cs`): preview/command/receipt, `IUpgradeRollSource` deterministic, số dư tài nguyên suy từ ledger, marker outcome cho replay | Đã triển khai code (12 EditMode); cần Unity Test Runner | 1 ngày |
 | B4 | Training preview/command | EditMode training | 0.5 ngày |
 | B5 | Projection + diagnostic panel sau flag; PlayMode | PlayMode 2 case, screenshot | 0.5 ngày |
 | B6 | Docs/evidence/TODO cập nhật; Understand diff; commit từng batch riêng theo convention `feat:`/`test:`/`docs:` | Nhật ký P1-06 | 0.5 ngày |

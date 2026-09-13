@@ -53,6 +53,19 @@ Luồng `SquadLineupSaveService.Save`: guard → replay → load inventory (thi�
 
 `IsValid` (không lỗi) ≠ `IsPlayable` (được ra sân) ≠ `CanSave` (mọi lỗi thuộc `allowInvalidSave`, fixture: `BenchIncomplete`, `PositionMismatch`). Người chơi lưu được đội hình thiếu dự bị nhưng không ra trận được.
 
+### 3.3 Nâng bậc thẻ (P1-06 B3)
+
+`UpgradeTierPreviewService.Build(snapshot, itemId, useInsurance)` → `UpgradeTierAttemptPreview` (tỉ lệ, chi phí, outcome hiệu lực, hash, hết hạn 5 phút) → `UpgradeTierService.Confirm(command, preview)`:
+
+1. Replay theo key (outcome dựng lại từ marker ledger, **không roll lại**).
+2. Guard: revision, catalog, rules, hash, `UseInsurance` khớp preview, tier khớp, số dư đủ.
+3. `ProtectedItem` nếu outcome hiệu lực là `Consume` và thẻ `Locked`/`InSquad` — **trước** roll.
+4. `roll = IUpgradeRollSource.Roll(key, rulesVersion)`; thành công khi `roll < successRateBasisPoints`.
+5. Áp Success (+1) / Keep / Downgrade (−1) / Consume (`State = Consumed`, giữ bản ghi). Bảo hiểm biến mọi thất bại thành Keep và luôn bị tiêu.
+6. Một commit: thẻ mới + bút toán `owner −N / sink:upgrade +N` cho từng tài nguyên + marker outcome.
+
+Số dư tài nguyên (`fixture-material-core`, `currency.bp`, bảo hiểm…) **suy từ ledger** qua `IResourceBalanceLedger`; kho từ chối mọi commit làm owner âm.
+
 ## 4. Lương và Team Color (pure function)
 
 - **Lương thẻ** = dải lương theo `BaseOverall` → override fixture theo `ItemDefinitionId` → `SalaryOverride` trên thẻ → nhân `salaryScalingPerTier[UpgradeTier]` (basis point, làm tròn nửa lên bằng `long`).
@@ -67,10 +80,9 @@ Luồng `SquadLineupSaveService.Save`: guard → replay → load inventory (thi�
 | `SquadRulesFixtures.Squad(bundle)` | Đội hình 4-3-3 hợp lệ, đội trưởng `owned-01`, penalty `owned-02`, corner `owned-12`. |
 | `SquadRulesFixture.json` | `maxTier 10`, ba `failureOutcome` (`Keep` 1–4, `Downgrade` 5–7, `Consume` 8–10), Team Color ngưỡng 3/6/9, cap 1200+400. |
 
-Nhóm test EditMode: `SquadRulesContractTests` (19), `SquadEconomyTests` + `SquadValidatorTests` + `SquadRepositoryTests` (42), `SquadLineupTransactionTests` (10). Tất cả **chưa chạy Unity Test Runner** — đây là gát đầu tiên cần đóng.
+Nhóm test EditMode: `SquadRulesContractTests` (19), `SquadEconomyTests` + `SquadValidatorTests` + `SquadRepositoryTests` (42), `SquadLineupTransactionTests` (10), `UpgradeTierTransactionTests` (12). Tất cả **chưa chạy Unity Test Runner** — đây là gát đầu tiên cần đóng.
 
 ## 6. Còn mở
 
-- **B3** nâng cấp bậc: preview/command/receipt, `IUpgradeRollSource` deterministic, `ProtectedItem` trước roll.
-- **B4** huấn luyện. **B5** projection + diagnostic panel + PlayMode + `FileSquadInventoryStore`. **B6** docs/evidence.
+- **B4** huấn luyện (training points là tài nguyên ledger, không randomness). **B5** projection + diagnostic panel + PlayMode + `FileSquadInventoryStore`. **B6** docs/evidence.
 - Backend authority thật, UI production (P2-06), áp Team Color vào match core (P5-03).

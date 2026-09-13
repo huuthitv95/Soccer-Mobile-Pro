@@ -293,3 +293,102 @@ Cả hai cùng trả `StaleRevision` để client tải lại cả hai aggregate
    sau nâng bậc chỉ hạ `IsPlayable` của đội hình, không chặn nâng.
 5. Test EditMode: ba loại outcome, insurance, replay cùng key cùng outcome, stale preview, protected item, ledger
    cân bằng, `RollAuditHash` ổn định theo key.
+
+---
+
+# Lô B3 — Nâng bậc thẻ (+1…+10)
+
+## 17. Phạm vi lô B3
+
+1. `IResourceBalanceLedger`: số dư tài nguyên (vật liệu, tiền, bảo hiểm) **suy từ ledger** theo `(accountId, resourceId)`;
+   grant là bút toán `owner +N / system −N`. Không đổi schema `InventorySnapshot`.
+2. `UpgradeTierPolicy`: hằng số (`currency.bp`, `sink:upgrade`, marker outcome), `EffectiveFailureOutcome`, `IsProtected`,
+   `IsSuccess(roll < rate)`, `TotalCost` gộp theo resource và sắp xếp ổn định.
+3. `UpgradeTierPreviewService.Build(snapshot, itemId, useInsurance, now)`: guard → `UpgradeTierAttemptPreview` (tỉ lệ, chi phí,
+   outcome hiệu lực, scaling, `ExpiresAt` +5 phút, hash canonical).
+4. `UpgradeTierService.Confirm(command, preview, now)`: replay theo key → chuỗi guard → roll deterministic → áp
+   Success/Keep/Downgrade/Consume → **một** commit inventory kèm bút toán tiêu hao và marker outcome.
+5. `InMemorySquadInventoryStore` implement `IResourceBalanceLedger` (map O(1)), thêm `SeedLedger`, **từ chối commit làm
+   owner âm** trên cả ba đường `TryCommit`.
+6. 12 test EditMode mới trong `UpgradeTierTransactionTests`.
+
+## 18. File thay đổi (B3)
+
+| File | Trạng thái |
+| --- | --- |
+| `Assets/SoccerMobilePro/Runtime/PlayerItems/UpgradeTierTransactions.cs` | Mới |
+| `Assets/SoccerMobilePro/Runtime/PlayerItems/SquadLineupTransactions.cs` | Sửa (`IResourceBalanceLedger`, `SeedLedger`, chặn overdraw) |
+| `Assets/SoccerMobilePro/Tests/EditMode/UpgradeTierTransactionTests.cs` | Mới |
+
+Không sửa contract B1: `UpgradeTierAttemptPreview/Command/Receipt`, `IUpgradeTierRuleSet`, `IUpgradeRollSource`,
+`DeterministicUpgradeRollSource` dùng nguyên.
+
+## 19. Quyết định thiết kế (B3)
+
+### 19.1 Số dư suy từ ledger, không thêm aggregate ví
+
+Thêm aggregate "wallet" thứ ba sẽ lặp lại bài toán atomic của B2b. Ledger đã là nguồn sự thật append-only và cân
+bằng; số dư = tổng bút toán. Kho duy trì map số dư để tra O(1). Hệ quả: **tiêu hao và đổi thẻ nằm trong cùng một
+commit** vì cùng đi qua `IInventoryRepository.TryCommit(..., entries)`.
+
+### 19.2 Owner không bao giờ âm; sink/system được âm
+
+Kho kiểm tra overdraw cho `AccountId == ownerId` trước khi ghi. Tài khoản `system`/`sink:upgrade` là nguồn/đích
+của bút toán cân bằng nên âm là bình thường. Service cũng kiểm tra số dư trước để trả mã lỗi đúng
+(`InsufficientMaterials` / `InsuranceUnavailable`); kho là lớp phòng thủ cuối.
+
+### 19.3 Marker outcome trong ledger để replay không roll lại
+
+`TransactionReceipt` là `sealed` và không có chỗ cho outcome. Thay vì đổi contract, mỗi giao dịch ghi một bút toán
+marker (`inventory:upgradetier.success|failure.keep|failure.downgrade|failure.consume`, cộng `.insurance` khi dùng).
+Replay đọc marker + `InventoryDelta.UpsertedItems[0].UpgradeTier` + tính lại `RollAuditHash` deterministic → trả đúng
+`UpgradeTierAttemptReceipt` cũ. Marker cũng là chỉ số audit miễn phí (đếm success/failure theo owner).
+
+### 19.4 Bảo hiểm: biến thất bại thành Keep, luôn bị tiêu, từ chối trên tier Keep
+
+`EffectiveFailureOutcome = InsuranceApplied ? Keep : step.FailureOutcome`. Bảo hiểm bị tiêu **kể cả khi thành công**
+(hypothesis fixture, chờ FOM-Q02). Dùng bảo hiểm ở tier có outcome Keep → `InsuranceUnavailable` để người chơi không
+phí vật phẩm. Preview ghi `FailureOutcome` = outcome **hiệu lực** để UI hiện đúng điều sẽ xảy ra.
+
+### 19.5 `ProtectedItem` trước roll
+
+Chỉ áp khi outcome hiệu lực là `Consume` và thẻ `Locked` hoặc `InSquad`. Thẻ `Locked` vẫn nâng được ở tier Keep/Downgrade
+hoặc khi có bảo hiểm (khác P1-03 vốn chặn mọi progression trên thẻ Locked; lock ở đây là khoá tiêu huỷ, xem 9.1).
+
+### 19.6 Consume giữ bản ghi
+
+Thẻ bị tiêu huỷ chuyển `State = Consumed`, giữ tier và nằm lại trong inventory để audit/support; không xóa như fuse
+P1-03. Preview/validator đã coi `Consumed` là terminal.
+
+### 19.7 Thất bại vẫn là giao dịch
+
+`Revision` thẻ và inventory tăng +1 kể cả outcome Keep: chi phí đã mất, preview cũ phải stale.
+
+### 19.8 Tiền tệ
+
+Fixture chỉ có `currencyCost` không có id tiền tệ. Service nhận `currencyResourceId` qua constructor, mặc định
+`currency.bp`; không hard-code trong domain.
+
+## 20. Cổng kiểm chứng chưa đạt (B3)
+
+- **Chưa chạy test.** Môi trường không có Unity Editor/compiler; 12 test mới cùng 71 test B1–B2b và nền 102 + 19
+  **chưa biên dịch, chưa chạy**.
+- `InMemoryInventoryStore` (P1-03) không chặn overdraw và không implement `IResourceBalanceLedger`; dùng
+  `InMemorySquadInventoryStore` cho mọi luồng có tài nguyên. File store cho ledger số dư dời sang B5.
+- FOM-D01 (rule thất bại) có thể chuyển `Proposed → TestReady` sau khi runner pass: cả ba `failureOutcome` và bảo hiểm
+  đều có test.
+
+### Cách chạy kiểm chứng
+
+1. Unity `2022.3.62f3` → Test Runner → EditMode Run All; nhóm `UpgradeTierTransactionTests` (12).
+2. Kiểm tra `SquadLineupTransactionTests` vẫn pass sau khi kho thêm overdraw guard (mọi bút toán owner ở B2b đều dương).
+
+## 21. Lô tiếp theo (B4 — huấn luyện)
+
+1. `TrainingPreviewService.Build(snapshot, itemId, pointsToSpend, now)`: điểm là tài nguyên ledger (`training.points`),
+   level up khi đạt `PointsRequiredForLevel`, không vượt `MaxLevel`, dư điểm giữ lại trên thẻ.
+2. `TrainingService.Confirm`: không randomness; cùng khuôn guard/replay/commit với B3; bút toán `training.points`
+   owner −N / `sink:training` +N.
+3. Test EditMode: level up đúng ngưỡng, nhiều level một lần, cap, dư điểm, idempotency, thiếu điểm.
+4. Sau B4: B5 projection (`OwnedPlayerItemProjection` + `upgradeTier/trainingLevel/salary/seasonId`), diagnostic panel,
+   PlayMode, `FileSquadInventoryStore`.

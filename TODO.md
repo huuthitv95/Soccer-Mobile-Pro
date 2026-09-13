@@ -2,7 +2,7 @@
 
 > [Chỉ mục tài liệu](docs/index.md) · [GDD](docs/product/gdd-soccer-mobile-pro.md) · [Audit Unity](docs/implementation/unity-implementation-audit-and-backlog.md) · [Coverage audit](docs/research/fc-mobile-vn-coverage-audit.md) · [UI catalogue](docs/product/ui-design-system-and-screen-catalogue.md)
 
-**Mốc lập kế hoạch:** 11/09/2026 · **Cập nhật tiến độ:** 12/09/2026 (P1-06 batch B1–B2b domain) · **Baseline code:** `main` sau commit P1-06 B2b (kế thừa `f47bcf9`) · **Unity:** 2022.3.62f3 · **Chủ sở hữu file:** Product + Tech Lead
+**Mốc lập kế hoạch:** 11/09/2026 · **Cập nhật tiến độ:** 12/09/2026 (P1-06 batch B1–B3 domain) · **Baseline code:** `main` sau commit P1-06 B3 (kế thừa `f47bcf9`) · **Unity:** 2022.3.62f3 · **Chủ sở hữu file:** Product + Tech Lead
 
 ## 0. Mục lục
 
@@ -89,7 +89,7 @@
 - [x] P1-04 Competition foundation: rules version, Single Elimination/Round Robin, roster lock, reconnect, dispute.
 - [x] P1-05a **Khung research FC Online M**: đã tạo [`docs/research/fc-online-m/`](docs/research/fc-online-m/fc-online-m-research.md) gồm research, sổ nguồn (14 slot), inventory 49 mechanic FOM-* ánh xạ đủ 40 dòng mục 5, adoption matrix và 6 decision `Proposed`. Toàn bộ claim ở mức `Unverified`.
 - [ ] P1-05b **Xác minh nguồn FC Online M**: điền URL/ngày truy cập cho 14 slot, nâng claim/status, trả lời FOM-Q01…Q10, cập nhật GDD, coverage audit, UI catalogue (SC-16…SC-18) và mục 5/6 file này trong cùng change set.
-- [~] P1-06 Mở rộng domain theo FC Online M: Team Color/chemistry, lương đội hình (salary cap), nâng cấp +1…+10 với tỷ lệ công bố, huấn luyện (training points), mùa thẻ (season/class), squad definition/validator. Kế hoạch: [p1-06 plan](docs/implementation/p1-06-squad-rules-and-card-tiers-plan.md); tiến độ: **B1 + B2 + B2b đã có code** ở mức domain (contract, rule set fixture versioned, snapshot inventory vẫn schema 2, salary/Team Color calculator, squad validator, squad repository, kho chung squad+inventory `ISquadInventoryStore` và chuyển state `Available ↔ InSquad` trong một commit; [nhật ký](docs/implementation/p1-06-squad-rules-and-card-tiers-implementation.md)); còn B3 nâng cấp bậc, B4 huấn luyện, B5 projection/PlayMode, B6 docs, và **phải chạy Unity Test Runner trước khi tính automated evidence**. HLV card chuyển sang P5-02.
+- [~] P1-06 Mở rộng domain theo FC Online M: Team Color/chemistry, lương đội hình (salary cap), nâng cấp +1…+10 với tỷ lệ công bố, huấn luyện (training points), mùa thẻ (season/class), squad definition/validator. Kế hoạch: [p1-06 plan](docs/implementation/p1-06-squad-rules-and-card-tiers-plan.md); tiến độ: **B1 + B2 + B2b + B3 đã có code** ở mức domain (contract, rule set fixture versioned, snapshot inventory vẫn schema 2, salary/Team Color calculator, squad validator, squad repository, kho chung squad+inventory `ISquadInventoryStore` và chuyển state `Available ↔ InSquad` trong một commit, nâng bậc +1…+10 với roll deterministic/bảo hiểm/`ProtectedItem` và số dư tài nguyên suy từ ledger; [nhật ký](docs/implementation/p1-06-squad-rules-and-card-tiers-implementation.md)); còn B4 huấn luyện, B5 projection/PlayMode, B6 docs, và **phải chạy Unity Test Runner trước khi tính automated evidence**. HLV card chuyển sang P5-02.
 - [ ] P1-07 Nối fixture catalog/inventory vào scene chọn đội và trận đấu (thay texture/team name gắn Inspector).
 - [ ] P1-08 Localize toàn bộ legacy UI; brand font vi/en qua contrast test (UI-D01).
 
