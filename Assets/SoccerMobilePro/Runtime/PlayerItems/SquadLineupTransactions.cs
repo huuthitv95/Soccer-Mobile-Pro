@@ -109,7 +109,7 @@ namespace SoccerMobilePro.PlayerItems
         }
     }
 
-    public sealed class InMemorySquadInventoryStore : ISquadInventoryStore, ISquadRepository, IInventoryRepository, ITransactionReceiptRepository, ILedger
+    public sealed class InMemorySquadInventoryStore : ISquadInventoryStore, ISquadRepository, IInventoryRepository, ITransactionReceiptRepository, ILedger, IResourceBalanceLedger
     {
         private readonly object sync = new object();
         private readonly Dictionary<string, SquadSnapshot> squads = new Dictionary<string, SquadSnapshot>(StringComparer.Ordinal);
@@ -117,10 +117,31 @@ namespace SoccerMobilePro.PlayerItems
         private readonly Dictionary<string, TransactionReceipt> receipts = new Dictionary<string, TransactionReceipt>(StringComparer.Ordinal);
         private readonly List<LedgerEntry> ledger = new List<LedgerEntry>();
 
+        // So du = tong but toan theo (accountId, resourceId); duy tri san de tra ve O(1) thay vi quet ledger.
+        private readonly Dictionary<string, long> balances = new Dictionary<string, long>(StringComparer.Ordinal);
+
         public void Seed(InventorySnapshot snapshot)
         {
             if (snapshot == null || string.IsNullOrWhiteSpace(snapshot.OwnerId)) throw new ArgumentException("A seeded inventory needs an owner.", nameof(snapshot));
             lock (sync) inventories[snapshot.OwnerId] = snapshot.Clone();
+        }
+
+        // Grant tai nguyen cho test/fixture: but toan phai can bang (owner +N / system -N). Khong kiem tra overdraw.
+        public void SeedLedger(IEnumerable<LedgerEntry> entries)
+        {
+            if (entries == null) throw new ArgumentNullException(nameof(entries));
+            List<LedgerEntry> list = entries.Where(entry => entry != null).ToList();
+            if (list.Sum(entry => entry.Amount) != 0L) throw new ArgumentException("Seeded ledger entries must balance to zero.", nameof(entries));
+            lock (sync) Append(list);
+        }
+
+        public long Balance(string accountId, string resourceId)
+        {
+            lock (sync)
+            {
+                long value;
+                return balances.TryGetValue(BalanceKey(accountId, resourceId), out value) ? value : 0L;
+            }
         }
 
         public void Seed(SquadSnapshot snapshot)
@@ -179,6 +200,7 @@ namespace SoccerMobilePro.PlayerItems
                 if (SquadRevision(ownerId) != expectedSquadRevision) return false;
                 if (InventoryRevision(ownerId) != expectedInventoryRevision) return false;
                 if (receipts.ContainsKey(receipt.IdempotencyKey)) return false;
+                if (WouldOverdraw(ownerId, entries)) return false;
 
                 squads[ownerId] = nextSquads.Clone();
                 inventories[ownerId] = nextInventory.Clone();
@@ -199,6 +221,7 @@ namespace SoccerMobilePro.PlayerItems
             {
                 if (SquadRevision(ownerId) != expectedRevision) return false;
                 if (receipts.ContainsKey(receipt.IdempotencyKey)) return false;
+                if (WouldOverdraw(ownerId, entries)) return false;
 
                 squads[ownerId] = next.Clone();
                 Record(receipt, entries);
@@ -213,6 +236,7 @@ namespace SoccerMobilePro.PlayerItems
             {
                 if (InventoryRevision(ownerId) != expectedRevision) return false;
                 if (receipts.ContainsKey(receipt.IdempotencyKey)) return false;
+                if (WouldOverdraw(ownerId, entries)) return false;
 
                 inventories[ownerId] = next.Clone();
                 Record(receipt, entries);
@@ -266,8 +290,46 @@ namespace SoccerMobilePro.PlayerItems
         private void Record(TransactionReceipt receipt, IReadOnlyList<LedgerEntry> entries)
         {
             receipts[receipt.IdempotencyKey] = receipt;
-            ledger.AddRange((entries ?? new List<LedgerEntry>()).Select(CloneEntry));
+            Append(entries ?? new List<LedgerEntry>());
         }
+
+        private void Append(IEnumerable<LedgerEntry> entries)
+        {
+            foreach (LedgerEntry entry in entries)
+            {
+                if (entry == null) continue;
+                ledger.Add(CloneEntry(entry));
+                string key = BalanceKey(entry.AccountId, entry.ResourceId);
+                long current;
+                balances[key] = balances.TryGetValue(key, out current) ? current + entry.Amount : entry.Amount;
+            }
+        }
+
+        // Owner khong bao gio duoc am; tai khoan system/sink duoc am vi chung la nguon/dich cua but toan can bang.
+        private bool WouldOverdraw(string ownerId, IReadOnlyList<LedgerEntry> entries)
+        {
+            if (entries == null) return false;
+            var deltas = new Dictionary<string, long>(StringComparer.Ordinal);
+            foreach (LedgerEntry entry in entries)
+            {
+                if (entry == null || !string.Equals(entry.AccountId, ownerId, StringComparison.Ordinal)) continue;
+                long current;
+                deltas[entry.ResourceId ?? string.Empty] = deltas.TryGetValue(entry.ResourceId ?? string.Empty, out current) ? current + entry.Amount : entry.Amount;
+            }
+
+            foreach (KeyValuePair<string, long> delta in deltas)
+            {
+                if (delta.Value >= 0L) continue;
+                long balance;
+                balances.TryGetValue(BalanceKey(ownerId, delta.Key), out balance);
+                if (balance + delta.Value < 0L) return true;
+            }
+
+            return false;
+        }
+
+        private static string BalanceKey(string accountId, string resourceId)
+            => (accountId ?? string.Empty) + "\u001f" + (resourceId ?? string.Empty);
 
         private static bool IsWellFormedInventory(string ownerId, InventorySnapshot next, TransactionReceipt receipt, IReadOnlyList<LedgerEntry> entries)
         {
