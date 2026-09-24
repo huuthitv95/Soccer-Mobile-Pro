@@ -1,0 +1,71 @@
+{
+    "unityVersion":  "2020.3.49f1",
+    "date":  "2026-09-24",
+    "compilationSucceeded":  true,
+    "offlineUiSucceeded":  true,
+    "gameplayRecovered":  false,
+    "passedTests":  4,
+    "originalGuidBaseline":  18054,
+    "assetIssues":  [
+                        {
+                            "path":  "Assets/gamedata/ui/windows/Win_GlobalConfig.prefab",
+                            "kind":  "prefab",
+                            "missingScripts":  1,
+                            "error":  ""
+                        }
+                    ],
+    "checks":  [
+                   "Pointer click through StandaloneInputModule changes panels exactly once",
+                   "Slider pointer input changes value and notifies once",
+                   "Three scene reloads and component reenabling do not duplicate listeners",
+                   "Text bounds, slider geometry and button raycasts at 1920x1080 and 2560x1080"
+               ],
+    "assetValidation":  [
+                            {
+                                "kind":  "scene",
+                                "count":  18
+                            },
+                            {
+                                "kind":  "prefab",
+                                "count":  2572
+                            },
+                            {
+                                "kind":  "shader",
+                                "count":  93
+                            },
+                            {
+                                "kind":  "Texture2D",
+                                "count":  10
+                            },
+                            {
+                                "kind":  "AudioClip",
+                                "count":  10
+                            },
+                            {
+                                "kind":  "Material",
+                                "count":  10
+                            },
+                            {
+                                "kind":  "Mesh",
+                                "count":  10
+                            }
+                        ],
+    "screenshots":  [
+                        {
+                            "sha256":  "D7DF4BE49A532B5A2186587D2E949CB3EE4991683E933944BCE4763C5C442C19",
+                            "path":  "Screenshots/team-1920x1080.png"
+                        },
+                        {
+                            "sha256":  "E5F5C6B630BC01DEBF4EF3D223F1BFF09D1DBFC0CEFCF0280C3A34FE53DB31A8",
+                            "path":  "Screenshots/team-2560x1080.png"
+                        },
+                        {
+                            "sha256":  "689CDC7D7575B1AD08991588F93753A83244141DAF2405E03D6FAFE0433F7652",
+                            "path":  "Screenshots/welcome-1920x1080.png"
+                        },
+                        {
+                            "sha256":  "5EEDC2670457B3C5BDD15CE21A2A569C8E4751D53AF585F316549B7E7FF2F211",
+                            "path":  "Screenshots/welcome-2560x1080.png"
+                        }
+                    ]
+}

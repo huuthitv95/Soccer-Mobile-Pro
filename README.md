@@ -1,5 +1,7 @@
 # Soccer-Mobile-Pro
 
+Offline UI milestone: see [opening instructions, controls and validation](Documentation/OFFLINE-UI.md). The isolated scene uses functional uGUI restored from the installed Unity 2020.3.49f1 source; original gameplay remains stubbed.
+
 Recovered Unity asset/type project for **Unity 2020.3.49f1**. Gameplay method bodies remain stubs; compilation does not mean functional gameplay recovery. Original export provenance is Unity 2022.3, so asset compatibility requires separate validation.
 
 Clone with Git LFS installed, run `git lfs pull`, and open this repository with Unity 2020.3.49f1. Keep the local directory named `Soccer-Mobile-Pro`. In Unity Preferences > External Tools, choose Visual Studio and regenerate project files to create `Soccer-Mobile-Pro.sln`. Solution and C# project files are generated locally and are not tracked.
