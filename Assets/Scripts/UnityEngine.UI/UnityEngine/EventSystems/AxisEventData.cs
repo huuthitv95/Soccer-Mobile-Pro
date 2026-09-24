@@ -1,14 +1,26 @@
+// Restored from Unity 2020.3.49f1 bundled uGUI. See RecoveryProvenance.md.
 namespace UnityEngine.EventSystems
 {
-	public class AxisEventData : global::UnityEngine.EventSystems.BaseEventData
-	{
-		public global::UnityEngine.Vector2 moveVector { get; set; }
+    /// <summary>
+    /// Event Data associated with Axis Events (Controller / Keyboard).
+    /// </summary>
+    public class AxisEventData : BaseEventData
+    {
+        /// <summary>
+        /// Raw input vector associated with this event.
+        /// </summary>
+        public Vector2 moveVector { get; set; }
 
-		public global::UnityEngine.EventSystems.MoveDirection moveDir { get; set; }
+        /// <summary>
+        /// MoveDirection for this event.
+        /// </summary>
+        public MoveDirection moveDir { get; set; }
 
-		public AxisEventData(global::UnityEngine.EventSystems.EventSystem eventSystem)
-			: base(null)
-		{
-		}
-	}
+        public AxisEventData(EventSystem eventSystem)
+            : base(eventSystem)
+        {
+            moveVector = Vector2.zero;
+            moveDir = MoveDirection.None;
+        }
+    }
 }

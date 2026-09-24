@@ -1,36 +1,102 @@
+// Restored from Unity 2020.3.49f1 bundled uGUI. See RecoveryProvenance.md.
+using System;
+using System.Collections.Generic;
+
 namespace UnityEngine.EventSystems
 {
-    public abstract class BaseRaycaster : global::UnityEngine.EventSystems.UIBehaviour
+    /// <summary>
+    /// Base class for any RayCaster.
+    /// </summary>
+    /// <remarks>
+    /// A Raycaster is responsible for raycasting against scene elements to determine if the cursor is over them. Default Raycasters include PhysicsRaycaster, Physics2DRaycaster, GraphicRaycaster.
+    /// Custom raycasters can be added by extending this class.
+    /// </remarks>
+    public abstract class BaseRaycaster : UIBehaviour
     {
-        private global::UnityEngine.EventSystems.BaseRaycaster m_RootRaycaster;
-        public abstract global::UnityEngine.Camera eventCamera { get; }
+        private BaseRaycaster m_RootRaycaster;
 
-        [global::System.Obsolete]
-        public virtual int priority => 0;
-        public virtual int sortOrderPriority => 0;
-        public virtual int renderOrderPriority => 0;
-        public global::UnityEngine.EventSystems.BaseRaycaster rootRaycaster => null;
+        /// <summary>
+        /// Raycast against the scene.
+        /// </summary>
+        /// <param name="eventData">Current event data.</param>
+        /// <param name="resultAppendList">List of hit Objects.</param>
+        public abstract void Raycast(PointerEventData eventData, List<RaycastResult> resultAppendList);
 
-        public abstract void Raycast(global::UnityEngine.EventSystems.PointerEventData eventData, global::System.Collections.Generic.List<global::UnityEngine.EventSystems.RaycastResult> resultAppendList);
+        /// <summary>
+        /// The camera that will generate rays for this raycaster.
+        /// </summary>
+        public abstract Camera eventCamera { get; }
+
+        [Obsolete("Please use sortOrderPriority and renderOrderPriority", false)]
+        public virtual int priority
+        {
+            get { return 0; }
+        }
+
+        /// <summary>
+        /// Priority of the raycaster based upon sort order.
+        /// </summary>
+        public virtual int sortOrderPriority
+        {
+            get { return int.MinValue; }
+        }
+
+        /// <summary>
+        /// Priority of the raycaster based upon render order.
+        /// </summary>
+        public virtual int renderOrderPriority
+        {
+            get { return int.MinValue; }
+        }
+
+        /// <summary>
+        /// Raycaster on root canvas
+        /// </summary>
+        public BaseRaycaster rootRaycaster
+        {
+            get
+            {
+                if (m_RootRaycaster == null)
+                {
+                    var baseRaycasters = GetComponentsInParent<BaseRaycaster>();
+                    if (baseRaycasters.Length != 0)
+                        m_RootRaycaster = baseRaycasters[baseRaycasters.Length - 1];
+                }
+
+                return m_RootRaycaster;
+            }
+        }
+
         public override string ToString()
         {
-            return null;
+            return "Name: " + gameObject + "\n" +
+                "eventCamera: " + eventCamera + "\n" +
+                "sortOrderPriority: " + sortOrderPriority + "\n" +
+                "renderOrderPriority: " + renderOrderPriority;
         }
 
         protected override void OnEnable()
         {
+            base.OnEnable();
+            RaycasterManager.AddRaycaster(this);
         }
 
         protected override void OnDisable()
         {
+            RaycasterManager.RemoveRaycasters(this);
+            base.OnDisable();
         }
 
         protected override void OnCanvasHierarchyChanged()
         {
+            base.OnCanvasHierarchyChanged();
+            m_RootRaycaster = null;
         }
 
         protected override void OnTransformParentChanged()
         {
+            base.OnTransformParentChanged();
+            m_RootRaycaster = null;
         }
     }
 }

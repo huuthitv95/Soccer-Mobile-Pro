@@ -1,14 +1,22 @@
+// Restored from Unity 2020.3.49f1 bundled uGUI. See RecoveryProvenance.md.
 namespace UnityEngine.UI
 {
-	internal class RectangularVertexClipper
-	{
-		private readonly global::UnityEngine.Vector3[] m_WorldCorners;
+    internal class RectangularVertexClipper
+    {
+        readonly Vector3[] m_WorldCorners = new Vector3[4];
+        readonly Vector3[] m_CanvasCorners = new Vector3[4];
 
-		private readonly global::UnityEngine.Vector3[] m_CanvasCorners;
+        public Rect GetCanvasRect(RectTransform t, Canvas c)
+        {
+            if (c == null)
+                return new Rect();
 
-		public global::UnityEngine.Rect GetCanvasRect(global::UnityEngine.RectTransform t, global::UnityEngine.Canvas c)
-		{
-			return default;
-		}
-	}
+            t.GetWorldCorners(m_WorldCorners);
+            var canvasTransform = c.GetComponent<Transform>();
+            for (int i = 0; i < 4; ++i)
+                m_CanvasCorners[i] = canvasTransform.InverseTransformPoint(m_WorldCorners[i]);
+
+            return new Rect(m_CanvasCorners[0].x, m_CanvasCorners[0].y, m_CanvasCorners[2].x - m_CanvasCorners[0].x, m_CanvasCorners[2].y - m_CanvasCorners[0].y);
+        }
+    }
 }

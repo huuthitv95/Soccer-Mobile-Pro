@@ -1,19 +1,24 @@
+// Restored from Unity 2020.3.49f1 bundled uGUI. See RecoveryProvenance.md.
+using System;
+using System.Collections.Generic;
+using UnityEngine;
+
 namespace UnityEngine.UI
 {
     internal static class ListPool<T>
     {
-        private static readonly global::UnityEngine.UI.ObjectPool<global::System.Collections.Generic.List<T>> s_ListPool;
-        private static void Clear(global::System.Collections.Generic.List<T> l)
+        // Object pool to avoid allocations.
+        private static readonly ObjectPool<List<T>> s_ListPool = new ObjectPool<List<T>>(null, Clear);
+        static void Clear(List<T> l) { l.Clear(); }
+
+        public static List<T> Get()
         {
+            return s_ListPool.Get();
         }
 
-        public static global::System.Collections.Generic.List<T> Get()
+        public static void Release(List<T> toRelease)
         {
-            return null;
-        }
-
-        public static void Release(global::System.Collections.Generic.List<T> toRelease)
-        {
+            s_ListPool.Release(toRelease);
         }
     }
 }

@@ -1,120 +1,357 @@
+// Restored from Unity 2020.3.49f1 bundled uGUI. See RecoveryProvenance.md.
+using System;
+using System.Collections.Generic;
+using UnityEngine.Events;
+using UnityEngine.Serialization;
+
 namespace UnityEngine.EventSystems
 {
-    public class EventTrigger : global::UnityEngine.MonoBehaviour, global::UnityEngine.EventSystems.IPointerEnterHandler, global::UnityEngine.EventSystems.IEventSystemHandler, global::UnityEngine.EventSystems.IPointerExitHandler, global::UnityEngine.EventSystems.IPointerDownHandler, global::UnityEngine.EventSystems.IPointerUpHandler, global::UnityEngine.EventSystems.IPointerClickHandler, global::UnityEngine.EventSystems.IInitializePotentialDragHandler, global::UnityEngine.EventSystems.IBeginDragHandler, global::UnityEngine.EventSystems.IDragHandler, global::UnityEngine.EventSystems.IEndDragHandler, global::UnityEngine.EventSystems.IDropHandler, global::UnityEngine.EventSystems.IScrollHandler, global::UnityEngine.EventSystems.IUpdateSelectedHandler, global::UnityEngine.EventSystems.ISelectHandler, global::UnityEngine.EventSystems.IDeselectHandler, global::UnityEngine.EventSystems.IMoveHandler, global::UnityEngine.EventSystems.ISubmitHandler, global::UnityEngine.EventSystems.ICancelHandler
+    [AddComponentMenu("Event/Event Trigger")]
+    /// <summary>
+    /// Receives events from the EventSystem and calls registered functions for each event.
+    /// </summary>
+    /// <remarks>
+    /// The EventTrigger can be used to specify functions you wish to be called for each EventSystem event.
+    /// You can assign multiple functions to a single event and whenever the EventTrigger receives that event it will call those functions in the order they were provided.
+    ///
+    /// NOTE: Attaching this component to a GameObject will make that object intercept ALL events, and no events will propagate to parent objects.
+    /// </remarks>
+    /// <example>
+    /// There are two ways to intercept events: You could extend EventTrigger, and override the functions for the events you are interested in intercepting; as shown in this example:
+    /// <code>
+    /// using UnityEngine;
+    /// using UnityEngine.EventSystems;
+    ///
+    /// public class EventTriggerExample : EventTrigger
+    /// {
+    ///     public override void OnBeginDrag(PointerEventData data)
+    ///     {
+    ///         Debug.Log("OnBeginDrag called.");
+    ///     }
+    ///
+    ///     public override void OnCancel(BaseEventData data)
+    ///     {
+    ///         Debug.Log("OnCancel called.");
+    ///     }
+    ///
+    ///     public override void OnDeselect(BaseEventData data)
+    ///     {
+    ///         Debug.Log("OnDeselect called.");
+    ///     }
+    ///
+    ///     public override void OnDrag(PointerEventData data)
+    ///     {
+    ///         Debug.Log("OnDrag called.");
+    ///     }
+    ///
+    ///     public override void OnDrop(PointerEventData data)
+    ///     {
+    ///         Debug.Log("OnDrop called.");
+    ///     }
+    ///
+    ///     public override void OnEndDrag(PointerEventData data)
+    ///     {
+    ///         Debug.Log("OnEndDrag called.");
+    ///     }
+    ///
+    ///     public override void OnInitializePotentialDrag(PointerEventData data)
+    ///     {
+    ///         Debug.Log("OnInitializePotentialDrag called.");
+    ///     }
+    ///
+    ///     public override void OnMove(AxisEventData data)
+    ///     {
+    ///         Debug.Log("OnMove called.");
+    ///     }
+    ///
+    ///     public override void OnPointerClick(PointerEventData data)
+    ///     {
+    ///         Debug.Log("OnPointerClick called.");
+    ///     }
+    ///
+    ///     public override void OnPointerDown(PointerEventData data)
+    ///     {
+    ///         Debug.Log("OnPointerDown called.");
+    ///     }
+    ///
+    ///     public override void OnPointerEnter(PointerEventData data)
+    ///     {
+    ///         Debug.Log("OnPointerEnter called.");
+    ///     }
+    ///
+    ///     public override void OnPointerExit(PointerEventData data)
+    ///     {
+    ///         Debug.Log("OnPointerExit called.");
+    ///     }
+    ///
+    ///     public override void OnPointerUp(PointerEventData data)
+    ///     {
+    ///         Debug.Log("OnPointerUp called.");
+    ///     }
+    ///
+    ///     public override void OnScroll(PointerEventData data)
+    ///     {
+    ///         Debug.Log("OnScroll called.");
+    ///     }
+    ///
+    ///     public override void OnSelect(BaseEventData data)
+    ///     {
+    ///         Debug.Log("OnSelect called.");
+    ///     }
+    ///
+    ///     public override void OnSubmit(BaseEventData data)
+    ///     {
+    ///         Debug.Log("OnSubmit called.");
+    ///     }
+    ///
+    ///     public override void OnUpdateSelected(BaseEventData data)
+    ///     {
+    ///         Debug.Log("OnUpdateSelected called.");
+    ///     }
+    /// }
+    /// </code>
+    /// or you can specify individual delegates:
+    /// <code>
+    /// using UnityEngine;
+    /// using UnityEngine.EventSystems;
+    ///
+    ///
+    /// public class EventTriggerDelegateExample : MonoBehaviour
+    /// {
+    ///     void Start()
+    ///     {
+    ///         EventTrigger trigger = GetComponent<EventTrigger>();
+    ///         EventTrigger.Entry entry = new EventTrigger.Entry();
+    ///         entry.eventID = EventTriggerType.PointerDown;
+    ///         entry.callback.AddListener((data) => { OnPointerDownDelegate((PointerEventData)data); });
+    ///         trigger.triggers.Add(entry);
+    ///     }
+    ///
+    ///     public void OnPointerDownDelegate(PointerEventData data)
+    ///     {
+    ///         Debug.Log("OnPointerDownDelegate called.");
+    ///     }
+    /// }
+    /// </code>
+    /// </example>
+    public class EventTrigger :
+        MonoBehaviour,
+        IPointerEnterHandler,
+        IPointerExitHandler,
+        IPointerDownHandler,
+        IPointerUpHandler,
+        IPointerClickHandler,
+        IInitializePotentialDragHandler,
+        IBeginDragHandler,
+        IDragHandler,
+        IEndDragHandler,
+        IDropHandler,
+        IScrollHandler,
+        IUpdateSelectedHandler,
+        ISelectHandler,
+        IDeselectHandler,
+        IMoveHandler,
+        ISubmitHandler,
+        ICancelHandler
     {
-        [global::System.Serializable]
-        public class TriggerEvent : global::UnityEngine.Events.UnityEvent<global::UnityEngine.EventSystems.BaseEventData>
-        {
-        }
+        [Serializable]
+        /// <summary>
+        /// UnityEvent class for Triggers.
+        /// </summary>
+        public class TriggerEvent : UnityEvent<BaseEventData>
+        {}
 
-        [global::System.Serializable]
+        [Serializable]
+        /// <summary>
+        /// An Entry in the EventSystem delegates list.
+        /// </summary>
+        /// <remarks>
+        /// It stores the callback and which event type should this callback be fired.
+        /// </remarks>
         public class Entry
         {
-            public global::UnityEngine.EventSystems.EventTriggerType eventID;
-            public global::UnityEngine.EventSystems.EventTrigger.TriggerEvent callback;
+            /// <summary>
+            /// What type of event is the associated callback listening for.
+            /// </summary>
+            public EventTriggerType eventID = EventTriggerType.PointerClick;
+
+            /// <summary>
+            /// The desired TriggerEvent to be Invoked.
+            /// </summary>
+            public TriggerEvent callback = new TriggerEvent();
         }
 
-        [global::UnityEngine.SerializeField]
-        private global::System.Collections.Generic.List<global::UnityEngine.EventSystems.EventTrigger.Entry> m_Delegates;
-        [global::System.Obsolete]
-        public global::System.Collections.Generic.List<global::UnityEngine.EventSystems.EventTrigger.Entry> delegates
-        {
-            get
-            {
-                return null;
-            }
+        [FormerlySerializedAs("delegates")]
+        [SerializeField]
+        private List<Entry> m_Delegates;
 
-            set
-            {
-            }
-        }
-
-        public global::System.Collections.Generic.List<global::UnityEngine.EventSystems.EventTrigger.Entry> triggers
-        {
-            get
-            {
-                return null;
-            }
-
-            set
-            {
-            }
-        }
+        [System.ComponentModel.EditorBrowsable(System.ComponentModel.EditorBrowsableState.Never)]
+        [Obsolete("Please use triggers instead (UnityUpgradable) -> triggers", true)]
+        public List<Entry> delegates { get { return triggers; } set { triggers = value; } }
 
         protected EventTrigger()
+        {}
+
+        /// <summary>
+        /// All the functions registered in this EventTrigger
+        /// </summary>
+        public List<Entry> triggers
         {
+            get
+            {
+                if (m_Delegates == null)
+                    m_Delegates = new List<Entry>();
+                return m_Delegates;
+            }
+            set { m_Delegates = value; }
         }
 
-        private void Execute(global::UnityEngine.EventSystems.EventTriggerType id, global::UnityEngine.EventSystems.BaseEventData eventData)
+        private void Execute(EventTriggerType id, BaseEventData eventData)
         {
+            var triggerCount = triggers.Count;
+
+            for (int i = 0, imax = triggers.Count; i < imax; ++i)
+            {
+                var ent = triggers[i];
+                if (ent.eventID == id && ent.callback != null)
+                    ent.callback.Invoke(eventData);
+            }
         }
 
-        public virtual void OnPointerEnter(global::UnityEngine.EventSystems.PointerEventData eventData)
+        /// <summary>
+        /// Called by the EventSystem when the pointer enters the object associated with this EventTrigger.
+        /// </summary>
+        public virtual void OnPointerEnter(PointerEventData eventData)
         {
+            Execute(EventTriggerType.PointerEnter, eventData);
         }
 
-        public virtual void OnPointerExit(global::UnityEngine.EventSystems.PointerEventData eventData)
+        /// <summary>
+        /// Called by the EventSystem when the pointer exits the object associated with this EventTrigger.
+        /// </summary>
+        public virtual void OnPointerExit(PointerEventData eventData)
         {
+            Execute(EventTriggerType.PointerExit, eventData);
         }
 
-        public virtual void OnDrag(global::UnityEngine.EventSystems.PointerEventData eventData)
+        /// <summary>
+        /// Called by the EventSystem every time the pointer is moved during dragging.
+        /// </summary>
+        public virtual void OnDrag(PointerEventData eventData)
         {
+            Execute(EventTriggerType.Drag, eventData);
         }
 
-        public virtual void OnDrop(global::UnityEngine.EventSystems.PointerEventData eventData)
+        /// <summary>
+        /// Called by the EventSystem when an object accepts a drop.
+        /// </summary>
+        public virtual void OnDrop(PointerEventData eventData)
         {
+            Execute(EventTriggerType.Drop, eventData);
         }
 
-        public virtual void OnPointerDown(global::UnityEngine.EventSystems.PointerEventData eventData)
+        /// <summary>
+        /// Called by the EventSystem when a PointerDown event occurs.
+        /// </summary>
+        public virtual void OnPointerDown(PointerEventData eventData)
         {
+            Execute(EventTriggerType.PointerDown, eventData);
         }
 
-        public virtual void OnPointerUp(global::UnityEngine.EventSystems.PointerEventData eventData)
+        /// <summary>
+        /// Called by the EventSystem when a PointerUp event occurs.
+        /// </summary>
+        public virtual void OnPointerUp(PointerEventData eventData)
         {
+            Execute(EventTriggerType.PointerUp, eventData);
         }
 
-        public virtual void OnPointerClick(global::UnityEngine.EventSystems.PointerEventData eventData)
+        /// <summary>
+        /// Called by the EventSystem when a Click event occurs.
+        /// </summary>
+        public virtual void OnPointerClick(PointerEventData eventData)
         {
+            Execute(EventTriggerType.PointerClick, eventData);
         }
 
-        public virtual void OnSelect(global::UnityEngine.EventSystems.BaseEventData eventData)
+        /// <summary>
+        /// Called by the EventSystem when a Select event occurs.
+        /// </summary>
+        public virtual void OnSelect(BaseEventData eventData)
         {
+            Execute(EventTriggerType.Select, eventData);
         }
 
-        public virtual void OnDeselect(global::UnityEngine.EventSystems.BaseEventData eventData)
+        /// <summary>
+        /// Called by the EventSystem when a new object is being selected.
+        /// </summary>
+        public virtual void OnDeselect(BaseEventData eventData)
         {
+            Execute(EventTriggerType.Deselect, eventData);
         }
 
-        public virtual void OnScroll(global::UnityEngine.EventSystems.PointerEventData eventData)
+        /// <summary>
+        /// Called by the EventSystem when a new Scroll event occurs.
+        /// </summary>
+        public virtual void OnScroll(PointerEventData eventData)
         {
+            Execute(EventTriggerType.Scroll, eventData);
         }
 
-        public virtual void OnMove(global::UnityEngine.EventSystems.AxisEventData eventData)
+        /// <summary>
+        /// Called by the EventSystem when a Move event occurs.
+        /// </summary>
+        public virtual void OnMove(AxisEventData eventData)
         {
+            Execute(EventTriggerType.Move, eventData);
         }
 
-        public virtual void OnUpdateSelected(global::UnityEngine.EventSystems.BaseEventData eventData)
+        /// <summary>
+        /// Called by the EventSystem when the object associated with this EventTrigger is updated.
+        /// </summary>
+        public virtual void OnUpdateSelected(BaseEventData eventData)
         {
+            Execute(EventTriggerType.UpdateSelected, eventData);
         }
 
-        public virtual void OnInitializePotentialDrag(global::UnityEngine.EventSystems.PointerEventData eventData)
+        /// <summary>
+        /// Called by the EventSystem when a drag has been found, but before it is valid to begin the drag.
+        /// </summary>
+        public virtual void OnInitializePotentialDrag(PointerEventData eventData)
         {
+            Execute(EventTriggerType.InitializePotentialDrag, eventData);
         }
 
-        public virtual void OnBeginDrag(global::UnityEngine.EventSystems.PointerEventData eventData)
+        /// <summary>
+        /// Called before a drag is started.
+        /// </summary>
+        public virtual void OnBeginDrag(PointerEventData eventData)
         {
+            Execute(EventTriggerType.BeginDrag, eventData);
         }
 
-        public virtual void OnEndDrag(global::UnityEngine.EventSystems.PointerEventData eventData)
+        /// <summary>
+        /// Called by the EventSystem once dragging ends.
+        /// </summary>
+        public virtual void OnEndDrag(PointerEventData eventData)
         {
+            Execute(EventTriggerType.EndDrag, eventData);
         }
 
-        public virtual void OnSubmit(global::UnityEngine.EventSystems.BaseEventData eventData)
+        /// <summary>
+        /// Called by the EventSystem when a Submit event occurs.
+        /// </summary>
+        public virtual void OnSubmit(BaseEventData eventData)
         {
+            Execute(EventTriggerType.Submit, eventData);
         }
 
-        public virtual void OnCancel(global::UnityEngine.EventSystems.BaseEventData eventData)
+        /// <summary>
+        /// Called by the EventSystem when a Cancel event occurs.
+        /// </summary>
+        public virtual void OnCancel(BaseEventData eventData)
         {
+            Execute(EventTriggerType.Cancel, eventData);
         }
     }
 }

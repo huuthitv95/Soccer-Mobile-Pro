@@ -1,24 +1,33 @@
+// Restored from Unity 2020.3.49f1 bundled uGUI. See RecoveryProvenance.md.
 namespace UnityEngine.EventSystems
 {
-	public class BaseEventData : global::UnityEngine.EventSystems.AbstractEventData
-	{
-		private readonly global::UnityEngine.EventSystems.EventSystem m_EventSystem;
 
-		public global::UnityEngine.EventSystems.BaseInputModule currentInputModule => null;
+    /// <summary>
+    /// A class that contains the base event data that is common to all event types in the new EventSystem.
+    /// </summary>
+    public class BaseEventData : AbstractEventData
+    {
+        private readonly EventSystem m_EventSystem;
+        public BaseEventData(EventSystem eventSystem)
+        {
+            m_EventSystem = eventSystem;
+        }
 
-		public global::UnityEngine.GameObject selectedObject
-		{
-			get
-			{
-				return null;
-			}
-			set
-			{
-			}
-		}
+        /// <summary>
+        /// >A reference to the BaseInputModule that sent this event.
+        /// </summary>
+        public BaseInputModule currentInputModule
+        {
+            get { return m_EventSystem.currentInputModule; }
+        }
 
-		public BaseEventData(global::UnityEngine.EventSystems.EventSystem eventSystem)
-		{
-		}
-	}
+        /// <summary>
+        /// The object currently considered selected by the EventSystem.
+        /// </summary>
+        public GameObject selectedObject
+        {
+            get { return m_EventSystem.currentSelectedGameObject; }
+            set { m_EventSystem.SetSelectedGameObject(value, this); }
+        }
+    }
 }

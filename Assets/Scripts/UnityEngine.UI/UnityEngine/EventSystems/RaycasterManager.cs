@@ -1,19 +1,33 @@
+// Restored from Unity 2020.3.49f1 bundled uGUI. See RecoveryProvenance.md.
+using System.Collections.Generic;
+
 namespace UnityEngine.EventSystems
 {
     public static class RaycasterManager
     {
-        private static readonly global::System.Collections.Generic.List<global::UnityEngine.EventSystems.BaseRaycaster> s_Raycasters;
-        internal static void AddRaycaster(global::UnityEngine.EventSystems.BaseRaycaster baseRaycaster)
+        private static readonly List<BaseRaycaster> s_Raycasters = new List<BaseRaycaster>();
+
+        internal static void AddRaycaster(BaseRaycaster baseRaycaster)
         {
+            if (s_Raycasters.Contains(baseRaycaster))
+                return;
+
+            s_Raycasters.Add(baseRaycaster);
         }
 
-        public static global::System.Collections.Generic.List<global::UnityEngine.EventSystems.BaseRaycaster> GetRaycasters()
+        /// <summary>
+        /// List of BaseRaycasters that has been registered.
+        /// </summary>
+        public static List<BaseRaycaster> GetRaycasters()
         {
-            return null;
+            return s_Raycasters;
         }
 
-        internal static void RemoveRaycasters(global::UnityEngine.EventSystems.BaseRaycaster baseRaycaster)
+        internal static void RemoveRaycasters(BaseRaycaster baseRaycaster)
         {
+            if (!s_Raycasters.Contains(baseRaycaster))
+                return;
+            s_Raycasters.Remove(baseRaycaster);
         }
     }
 }

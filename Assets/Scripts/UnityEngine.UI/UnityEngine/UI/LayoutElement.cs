@@ -1,153 +1,221 @@
+// Restored from Unity 2020.3.49f1 bundled uGUI. See RecoveryProvenance.md.
+using UnityEngine.EventSystems;
+
 namespace UnityEngine.UI
 {
-    public class LayoutElement : global::UnityEngine.EventSystems.UIBehaviour, global::UnityEngine.UI.ILayoutElement, global::UnityEngine.UI.ILayoutIgnorer
+    [AddComponentMenu("Layout/Layout Element", 140)]
+    [RequireComponent(typeof(RectTransform))]
+    [ExecuteAlways]
+    /// <summary>
+    /// Add this component to a GameObject to make it into a layout element or override values on an existing layout element.
+    /// </summary>
+    public class LayoutElement : UIBehaviour, ILayoutElement, ILayoutIgnorer
     {
-        [global::UnityEngine.SerializeField]
-        private bool m_IgnoreLayout;
-        [global::UnityEngine.SerializeField]
-        private float m_MinWidth;
-        [global::UnityEngine.SerializeField]
-        private float m_MinHeight;
-        [global::UnityEngine.SerializeField]
-        private float m_PreferredWidth;
-        [global::UnityEngine.SerializeField]
-        private float m_PreferredHeight;
-        [global::UnityEngine.SerializeField]
-        private float m_FlexibleWidth;
-        [global::UnityEngine.SerializeField]
-        private float m_FlexibleHeight;
-        [global::UnityEngine.SerializeField]
-        private int m_LayoutPriority;
-        public virtual bool ignoreLayout
-        {
-            get
-            {
-                return false;
-            }
+        [SerializeField] private bool m_IgnoreLayout = false;
+        [SerializeField] private float m_MinWidth = -1;
+        [SerializeField] private float m_MinHeight = -1;
+        [SerializeField] private float m_PreferredWidth = -1;
+        [SerializeField] private float m_PreferredHeight = -1;
+        [SerializeField] private float m_FlexibleWidth = -1;
+        [SerializeField] private float m_FlexibleHeight = -1;
+        [SerializeField] private int m_LayoutPriority = 1;
 
-            set
-            {
-            }
-        }
+        /// <summary>
+        /// Should this RectTransform be ignored by the layout system?
+        /// </summary>
+        /// <remarks>
+        /// Setting this property to true will make a parent layout group component not consider this RectTransform part of the group. The RectTransform can then be manually positioned despite being a child GameObject of a layout group.
+        /// </remarks>
+        public virtual bool ignoreLayout { get { return m_IgnoreLayout; } set { if (SetPropertyUtility.SetStruct(ref m_IgnoreLayout, value)) SetDirty(); } }
 
-        public virtual float minWidth
-        {
-            get
-            {
-                return 0f;
-            }
+        public virtual void CalculateLayoutInputHorizontal() {}
+        public virtual void CalculateLayoutInputVertical() {}
 
-            set
-            {
-            }
-        }
+        /// <summary>
+        /// The minimum width this layout element may be allocated.
+        /// </summary>
+        /// <example>
+        /// <code>
+        /// using UnityEngine;
+        /// using System.Collections;
+        /// using UnityEngine.UI; // Required when using UI elements.
+        ///
+        /// public class ExampleClass : MonoBehaviour
+        /// {
+        ///     public Transform MyContentPanel;
+        ///
+        ///     //Sets the flexible height on on all children in the content panel.
+        ///     public void Start()
+        ///     {
+        ///         //Assign all the children of the content panel to an array.
+        ///         LayoutElement[] myLayoutElements = MyContentPanel.GetComponentsInChildren<LayoutElement>();
+        ///
+        ///         //For each child in the array change its LayoutElement's minimum width size to 200.
+        ///         foreach (LayoutElement element in myLayoutElements)
+        ///         {
+        ///             element.minWidth = 200f;
+        ///         }
+        ///     }
+        /// }
+        /// </code>
+        /// </example>
+        public virtual float minWidth { get { return m_MinWidth; } set { if (SetPropertyUtility.SetStruct(ref m_MinWidth, value)) SetDirty(); } }
 
-        public virtual float minHeight
-        {
-            get
-            {
-                return 0f;
-            }
+        /// <summary>
+        /// The minimum height this layout element may be allocated.
+        /// </summary>
+        /// <example>
+        /// <code>
+        /// using UnityEngine;
+        /// using System.Collections;
+        /// using UnityEngine.UI; // Required when using UI elements.
+        ///
+        /// public class ExampleClass : MonoBehaviour
+        /// {
+        ///     public Transform MyContentPanel;
+        ///
+        ///     //Sets the flexible height on on all children in the content panel.
+        ///     public void Start()
+        ///     {
+        ///         //Assign all the children of the content panel to an array.
+        ///         LayoutElement[] myLayoutElements = MyContentPanel.GetComponentsInChildren<LayoutElement>();
+        ///
+        ///         //For each child in the array change its LayoutElement's minimum height size to 64.
+        ///         foreach (LayoutElement element in myLayoutElements)
+        ///         {
+        ///             element.minHeight = 64f;
+        ///         }
+        ///     }
+        /// }
+        /// </code>
+        /// </example>
+        public virtual float minHeight { get { return m_MinHeight; } set { if (SetPropertyUtility.SetStruct(ref m_MinHeight, value)) SetDirty(); } }
 
-            set
-            {
-            }
-        }
+        /// <summary>
+        /// The preferred width this layout element should be allocated if there is sufficient space. The preferredWidth can be set to -1 to remove the size.
+        /// </summary>
+        /// <example>
+        /// <code>
+        /// using UnityEngine;
+        /// using System.Collections;
+        /// using UnityEngine.UI; // Required when using UI elements.
+        ///
+        /// public class ExampleClass : MonoBehaviour
+        /// {
+        ///     public Transform MyContentPanel;
+        ///
+        ///     //Sets the flexible height on on all children in the content panel.
+        ///     public void Start()
+        ///     {
+        ///         //Assign all the children of the content panel to an array.
+        ///         LayoutElement[] myLayoutElements = MyContentPanel.GetComponentsInChildren<LayoutElement>();
+        ///
+        ///         //For each child in the array change its LayoutElement's preferred width size to 250.
+        ///         foreach (LayoutElement element in myLayoutElements)
+        ///         {
+        ///             element.preferredWidth = 250f;
+        ///         }
+        ///     }
+        /// }
+        /// </code>
+        /// </example>
+        public virtual float preferredWidth { get { return m_PreferredWidth; } set { if (SetPropertyUtility.SetStruct(ref m_PreferredWidth, value)) SetDirty(); } }
 
-        public virtual float preferredWidth
-        {
-            get
-            {
-                return 0f;
-            }
+        /// <summary>
+        /// The preferred height this layout element should be allocated if there is sufficient space.
+        /// </summary>
+        /// <example>
+        /// <code>
+        /// using UnityEngine;
+        /// using System.Collections;
+        /// using UnityEngine.UI; // Required when using UI elements.
+        ///
+        /// public class ExampleClass : MonoBehaviour
+        /// {
+        ///     public Transform MyContentPanel;
+        ///
+        ///     //Sets the flexible height on on all children in the content panel.
+        ///     public void Start()
+        ///     {
+        ///         //Assign all the children of the content panel to an array.
+        ///         LayoutElement[] myLayoutElements = MyContentPanel.GetComponentsInChildren<LayoutElement>();
+        ///
+        ///         //For each child in the array change its LayoutElement's preferred height size to 100.
+        ///         foreach (LayoutElement element in myLayoutElements)
+        ///         {
+        ///             element.preferredHeight = 100f;
+        ///         }
+        ///     }
+        /// }
+        /// </code>
+        /// </example>
+        public virtual float preferredHeight { get { return m_PreferredHeight; } set { if (SetPropertyUtility.SetStruct(ref m_PreferredHeight, value)) SetDirty(); } }
 
-            set
-            {
-            }
-        }
+        /// <summary>
+        /// The extra relative width this layout element should be allocated if there is additional available space.
+        /// </summary>
+        public virtual float flexibleWidth { get { return m_FlexibleWidth; } set { if (SetPropertyUtility.SetStruct(ref m_FlexibleWidth, value)) SetDirty(); } }
 
-        public virtual float preferredHeight
-        {
-            get
-            {
-                return 0f;
-            }
+        /// <summary>
+        /// The extra relative height this layout element should be allocated if there is additional available space.
+        /// </summary>
+        public virtual float flexibleHeight { get { return m_FlexibleHeight; } set { if (SetPropertyUtility.SetStruct(ref m_FlexibleHeight, value)) SetDirty(); } }
 
-            set
-            {
-            }
-        }
+        /// <summary>
+        /// The Priority of layout this element has.
+        /// </summary>
+        public virtual int layoutPriority { get { return m_LayoutPriority; } set { if (SetPropertyUtility.SetStruct(ref m_LayoutPriority, value)) SetDirty(); } }
 
-        public virtual float flexibleWidth
-        {
-            get
-            {
-                return 0f;
-            }
-
-            set
-            {
-            }
-        }
-
-        public virtual float flexibleHeight
-        {
-            get
-            {
-                return 0f;
-            }
-
-            set
-            {
-            }
-        }
-
-        public virtual int layoutPriority
-        {
-            get
-            {
-                return 0;
-            }
-
-            set
-            {
-            }
-        }
-
-        public virtual void CalculateLayoutInputHorizontal()
-        {
-        }
-
-        public virtual void CalculateLayoutInputVertical()
-        {
-        }
 
         protected LayoutElement()
-        {
-        }
+        {}
 
         protected override void OnEnable()
         {
+            base.OnEnable();
+            SetDirty();
         }
 
         protected override void OnTransformParentChanged()
         {
+            SetDirty();
         }
 
         protected override void OnDisable()
         {
+            SetDirty();
+            base.OnDisable();
         }
 
         protected override void OnDidApplyAnimationProperties()
         {
+            SetDirty();
         }
 
         protected override void OnBeforeTransformParentChanged()
         {
+            SetDirty();
         }
 
+        /// <summary>
+        /// Mark the LayoutElement as dirty.
+        /// </summary>
+        /// <remarks>
+        /// This will make the auto layout system process this element on the next layout pass. This method should be called by the LayoutElement whenever a change is made that potentially affects the layout.
+        /// </remarks>
         protected void SetDirty()
         {
+            if (!IsActive())
+                return;
+            LayoutRebuilder.MarkLayoutForRebuild(transform as RectTransform);
         }
+
+    #if UNITY_EDITOR
+        protected override void OnValidate()
+        {
+            SetDirty();
+        }
+
+    #endif
     }
 }

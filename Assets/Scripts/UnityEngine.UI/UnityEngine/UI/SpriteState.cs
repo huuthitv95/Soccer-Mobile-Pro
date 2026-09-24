@@ -1,67 +1,54 @@
+// Restored from Unity 2020.3.49f1 bundled uGUI. See RecoveryProvenance.md.
+using System;
+using UnityEngine.Serialization;
+
 namespace UnityEngine.UI
 {
-	[global::System.Serializable]
-	public struct SpriteState : global::System.IEquatable<global::UnityEngine.UI.SpriteState>
-	{
-		[global::UnityEngine.SerializeField]
-		private global::UnityEngine.Sprite m_HighlightedSprite;
+    [Serializable]
+    /// <summary>
+    /// Structure that stores the state of a sprite transition on a Selectable.
+    /// </summary>
+    public struct SpriteState : IEquatable<SpriteState>
+    {
+        [SerializeField]
+        private Sprite m_HighlightedSprite;
 
-		[global::UnityEngine.SerializeField]
-		private global::UnityEngine.Sprite m_PressedSprite;
+        [SerializeField]
+        private Sprite m_PressedSprite;
 
-		[global::UnityEngine.SerializeField]
-		private global::UnityEngine.Sprite m_SelectedSprite;
+        [FormerlySerializedAs("m_HighlightedSprite")]
+        [SerializeField]
+        private Sprite m_SelectedSprite;
 
-		[global::UnityEngine.SerializeField]
-		private global::UnityEngine.Sprite m_DisabledSprite;
+        [SerializeField]
+        private Sprite m_DisabledSprite;
 
-		public global::UnityEngine.Sprite highlightedSprite
-		{
-			get
-			{
-				return null;
-			}
-			set
-			{
-			}
-		}
+        /// <summary>
+        /// Highlighted sprite.
+        /// </summary>
+        public Sprite highlightedSprite    { get { return m_HighlightedSprite; } set { m_HighlightedSprite = value; } }
 
-		public global::UnityEngine.Sprite pressedSprite
-		{
-			get
-			{
-				return null;
-			}
-			set
-			{
-			}
-		}
+        /// <summary>
+        /// Pressed sprite.
+        /// </summary>
+        public Sprite pressedSprite     { get { return m_PressedSprite; } set { m_PressedSprite = value; } }
 
-		public global::UnityEngine.Sprite selectedSprite
-		{
-			get
-			{
-				return null;
-			}
-			set
-			{
-			}
-		}
+        /// <summary>
+        /// Selected sprite.
+        /// </summary>
+        public Sprite selectedSprite    { get { return m_SelectedSprite; } set { m_SelectedSprite = value; } }
 
-		public global::UnityEngine.Sprite disabledSprite
-		{
-			get
-			{
-				return null;
-			}
-			set
-			{
-			}
-		}
+        /// <summary>
+        /// Disabled sprite.
+        /// </summary>
+        public Sprite disabledSprite    { get { return m_DisabledSprite; } set { m_DisabledSprite = value; } }
 
-		public bool Equals(global::UnityEngine.UI.SpriteState other)
-		{
-			return false;
-		}
-	}
+        public bool Equals(SpriteState other)
+        {
+            return highlightedSprite == other.highlightedSprite &&
+                pressedSprite == other.pressedSprite &&
+                selectedSprite == other.selectedSprite &&
+                disabledSprite == other.disabledSprite;
+        }
+    }
 }

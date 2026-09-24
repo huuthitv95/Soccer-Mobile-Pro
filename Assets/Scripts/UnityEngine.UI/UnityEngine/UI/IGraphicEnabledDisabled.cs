@@ -1,8 +1,11 @@
+// Restored from Unity 2020.3.49f1 bundled uGUI. See RecoveryProvenance.md.
+using System;
+
 namespace UnityEngine.UI
 {
-	[global::System.Obsolete]
-	internal interface IGraphicEnabledDisabled
-	{
-		void OnSiblingGraphicEnabledDisabled();
-	}
+    [Obsolete("Not supported anymore")]
+    interface IGraphicEnabledDisabled
+    {
+        void OnSiblingGraphicEnabledDisabled();
+    }
 }

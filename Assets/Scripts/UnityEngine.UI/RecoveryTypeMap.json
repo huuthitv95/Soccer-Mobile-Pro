@@ -1,0 +1,1148 @@
+{
+  "editor": "2020.3.49f1",
+  "package": "com.unity.ugui@1.0.0",
+  "topLevelTypes": 114,
+  "unmappedRecoveredTypes": [],
+  "types": [
+    {
+      "type": "UnityEngine.EventSystems.EventHandle`0",
+      "upstream": "Runtime/EventSystem/EventHandle.cs",
+      "destination": "Assets/Scripts/UnityEngine.UI/UnityEngine/EventSystems/EventHandle.cs",
+      "upstreamSha256": "6d306cdf6640acf138f874e88b815771a2ff04644a3a7f7de60d482f20aed88a",
+      "stubSha256": "7564d40e6d879efc1da9c1d3eab1a0d17765d0bcbd6b425a952c4a1a9086ff46",
+      "restoredSha256": "49458bee18f598f46c404897292fc6a54899194cff6de60108b3d32c3fe61ec7",
+      "missingSerializedFields": [],
+      "existingMetaSha256": "36dbd95322bd9581e6d60b8a92f5dd950a078e62ef50430aa74393f41093dfc1"
+    },
+    {
+      "type": "UnityEngine.EventSystems.IEventSystemHandler`0",
+      "upstream": "Runtime/EventSystem/EventInterfaces.cs",
+      "destination": "Assets/Scripts/UnityEngine.UI/UnityEngine/EventSystems/IEventSystemHandler.cs",
+      "upstreamSha256": "5e7d7da6da1a9a50a7ab9fa0f6f9890c45e3328941342e4cc68f5052f0ff1613",
+      "stubSha256": "350abbc7fa289d67634a6610f5d59d36f663626d59be238bc62bc713c5c915f7",
+      "restoredSha256": "df21dbd065318f83330300e9e5ed74b14d653fb08bc5d6382936e5a0d3aee4f2",
+      "missingSerializedFields": [],
+      "existingMetaSha256": "a29d4b0cc2194427710dc3d858f256445fc5ffb61ba99e70ac4cf46a62393921"
+    },
+    {
+      "type": "UnityEngine.EventSystems.IPointerEnterHandler`0",
+      "upstream": "Runtime/EventSystem/EventInterfaces.cs",
+      "destination": "Assets/Scripts/UnityEngine.UI/UnityEngine/EventSystems/IPointerEnterHandler.cs",
+      "upstreamSha256": "5e7d7da6da1a9a50a7ab9fa0f6f9890c45e3328941342e4cc68f5052f0ff1613",
+      "stubSha256": "4da1a21df80f9d7b2ccf999f17cc2511b4196120465a9a3f333c03ca055cf4d7",
+      "restoredSha256": "ee94b27db40c178f3b3a32b91cb3e18410e79bce0f37ed3437ffbd4d8d590f46",
+      "missingSerializedFields": [],
+      "existingMetaSha256": "a2e632abd242990365a43cdb67e703e968a4c8ff1810856ef95b926a8b5ad995"
+    },
+    {
+      "type": "UnityEngine.EventSystems.IPointerExitHandler`0",
+      "upstream": "Runtime/EventSystem/EventInterfaces.cs",
+      "destination": "Assets/Scripts/UnityEngine.UI/UnityEngine/EventSystems/IPointerExitHandler.cs",
+      "upstreamSha256": "5e7d7da6da1a9a50a7ab9fa0f6f9890c45e3328941342e4cc68f5052f0ff1613",
+      "stubSha256": "3241f21b0879720baf4b25d0f5627dd452c0c7bcd92cd3fd525b1a7da04657c7",
+      "restoredSha256": "6935382938343b411fd83ce382e774a431f90dd6590129d388859e28f33c5214",
+      "missingSerializedFields": [],
+      "existingMetaSha256": "f3180e06bdfc507f8ba96dc8719783f95d1d98fec60d1e2968b1aa1fff4ae4ea"
+    },
+    {
+      "type": "UnityEngine.EventSystems.IPointerDownHandler`0",
+      "upstream": "Runtime/EventSystem/EventInterfaces.cs",
+      "destination": "Assets/Scripts/UnityEngine.UI/UnityEngine/EventSystems/IPointerDownHandler.cs",
+      "upstreamSha256": "5e7d7da6da1a9a50a7ab9fa0f6f9890c45e3328941342e4cc68f5052f0ff1613",
+      "stubSha256": "9619c36b71600cac7d2db990288bb2defd4762f48567cb3ae36238d3067be035",
+      "restoredSha256": "bc9c9f31424186971194ceb1725f051db360ccd44a830195cd581bbb5c0bd4cf",
+      "missingSerializedFields": [],
+      "existingMetaSha256": "1fc3cd767fca98b14cddbefd3ad8d856f8c322d19c9d61bf617c169f2c421af1"
+    },
+    {
+      "type": "UnityEngine.EventSystems.IPointerUpHandler`0",
+      "upstream": "Runtime/EventSystem/EventInterfaces.cs",
+      "destination": "Assets/Scripts/UnityEngine.UI/UnityEngine/EventSystems/IPointerUpHandler.cs",
+      "upstreamSha256": "5e7d7da6da1a9a50a7ab9fa0f6f9890c45e3328941342e4cc68f5052f0ff1613",
+      "stubSha256": "5932491d832dc699f409cb88019fd9886d227b5400fd6ae408ef9888b9e8edf2",
+      "restoredSha256": "018812e027cbde9fcf4336c5a2a4d768c6552fb599710c3d3a59b826471a3008",
+      "missingSerializedFields": [],
+      "existingMetaSha256": "749c6e663514052c17b3460edaab9d08fd92af3ef5ca442b8ea5e5a274901a89"
+    },
+    {
+      "type": "UnityEngine.EventSystems.IPointerClickHandler`0",
+      "upstream": "Runtime/EventSystem/EventInterfaces.cs",
+      "destination": "Assets/Scripts/UnityEngine.UI/UnityEngine/EventSystems/IPointerClickHandler.cs",
+      "upstreamSha256": "5e7d7da6da1a9a50a7ab9fa0f6f9890c45e3328941342e4cc68f5052f0ff1613",
+      "stubSha256": "af4ccbbdd24e895a1f44397a42d7507f4540788a0f8ee92b250305000d1bcce4",
+      "restoredSha256": "e30cfad774c207c12dd8ed470a5f42ac2fe0cd29c3bc3ef94fc65d1c02a7888e",
+      "missingSerializedFields": [],
+      "existingMetaSha256": "79c872eeed43180139c7e2d60b65ea8373f56e1dab2ee0a6cd26f3d47571d77f"
+    },
+    {
+      "type": "UnityEngine.EventSystems.IBeginDragHandler`0",
+      "upstream": "Runtime/EventSystem/EventInterfaces.cs",
+      "destination": "Assets/Scripts/UnityEngine.UI/UnityEngine/EventSystems/IBeginDragHandler.cs",
+      "upstreamSha256": "5e7d7da6da1a9a50a7ab9fa0f6f9890c45e3328941342e4cc68f5052f0ff1613",
+      "stubSha256": "163791493fe1f29c42cf71031ea308846e99145544c555a4c27957b9e57f0224",
+      "restoredSha256": "8b2c53824fabd66e0ca970c98de5a4ba9cfca25afe06c140b1939840d62926f3",
+      "missingSerializedFields": [],
+      "existingMetaSha256": "1f498d3901b03eab6b600d8d9159efe1bcb5fe0a09cf63aa95e8dedd41371c2d"
+    },
+    {
+      "type": "UnityEngine.EventSystems.IInitializePotentialDragHandler`0",
+      "upstream": "Runtime/EventSystem/EventInterfaces.cs",
+      "destination": "Assets/Scripts/UnityEngine.UI/UnityEngine/EventSystems/IInitializePotentialDragHandler.cs",
+      "upstreamSha256": "5e7d7da6da1a9a50a7ab9fa0f6f9890c45e3328941342e4cc68f5052f0ff1613",
+      "stubSha256": "40956ce6d39d98198cb7ba63c2b58353b501164bb1effd39f71302aad38409f1",
+      "restoredSha256": "e1fa1ad1a499adb58b180ce0b1ba81bf51e3d01e716281e9a44fa747482bf689",
+      "missingSerializedFields": [],
+      "existingMetaSha256": "40748a2ee0dd8049c59ca32928a5c8c171276883d032d5a672fd3e66b4963e77"
+    },
+    {
+      "type": "UnityEngine.EventSystems.IDragHandler`0",
+      "upstream": "Runtime/EventSystem/EventInterfaces.cs",
+      "destination": "Assets/Scripts/UnityEngine.UI/UnityEngine/EventSystems/IDragHandler.cs",
+      "upstreamSha256": "5e7d7da6da1a9a50a7ab9fa0f6f9890c45e3328941342e4cc68f5052f0ff1613",
+      "stubSha256": "6e0af2ed44665e23e4711c25d56c0dcf3e5b64a3aa12a184dfbf8fa39f921d00",
+      "restoredSha256": "ff726f25fcd69a3bbd691d23613fb7057e06a444acdadbbe6ee842484a82be2f",
+      "missingSerializedFields": [],
+      "existingMetaSha256": "aeb23970cb3ca8991d3271a6b4e3c07bef4f9b5070da70879161b26eba95bec3"
+    },
+    {
+      "type": "UnityEngine.EventSystems.IEndDragHandler`0",
+      "upstream": "Runtime/EventSystem/EventInterfaces.cs",
+      "destination": "Assets/Scripts/UnityEngine.UI/UnityEngine/EventSystems/IEndDragHandler.cs",
+      "upstreamSha256": "5e7d7da6da1a9a50a7ab9fa0f6f9890c45e3328941342e4cc68f5052f0ff1613",
+      "stubSha256": "c33b1ac293a021351f30924270bf11e4010aef9eb3587eee1aaf64ff709951e9",
+      "restoredSha256": "f4ea475fac397052a33fe7efc3c6b13d9f7036eec2b992a5f4c7c2127e29b8cb",
+      "missingSerializedFields": [],
+      "existingMetaSha256": "132b4448211a5f4d317db68648136487c2eaabbd8fe981ab1b0d60dd0db022fe"
+    },
+    {
+      "type": "UnityEngine.EventSystems.IDropHandler`0",
+      "upstream": "Runtime/EventSystem/EventInterfaces.cs",
+      "destination": "Assets/Scripts/UnityEngine.UI/UnityEngine/EventSystems/IDropHandler.cs",
+      "upstreamSha256": "5e7d7da6da1a9a50a7ab9fa0f6f9890c45e3328941342e4cc68f5052f0ff1613",
+      "stubSha256": "a09302b0a278e61b5129465b1e1a1148d73e1ddbad27a8a8cbfb4acca7d6e919",
+      "restoredSha256": "e647f9bb7885a92e725760e9d15c362f134f8330745c16299cdc9c7ea42fd9a7",
+      "missingSerializedFields": [],
+      "existingMetaSha256": "588205b25c85e64fa7849802d0f308b48a5f0c12ab17fafe7f3433bedf3de2dd"
+    },
+    {
+      "type": "UnityEngine.EventSystems.IScrollHandler`0",
+      "upstream": "Runtime/EventSystem/EventInterfaces.cs",
+      "destination": "Assets/Scripts/UnityEngine.UI/UnityEngine/EventSystems/IScrollHandler.cs",
+      "upstreamSha256": "5e7d7da6da1a9a50a7ab9fa0f6f9890c45e3328941342e4cc68f5052f0ff1613",
+      "stubSha256": "666885ffb8eaebaf06f818ccffc5632652ab5a521bd7faeaff3b0efd345f7d84",
+      "restoredSha256": "9edcbeb956896e101cad89f067789865a826381b51c1eab064070a5517cf2e37",
+      "missingSerializedFields": [],
+      "existingMetaSha256": "b705823dbf4c6e9f6dc565352b028a8aca32c7d3a1151cf1ab2e8bc94d9c4185"
+    },
+    {
+      "type": "UnityEngine.EventSystems.IUpdateSelectedHandler`0",
+      "upstream": "Runtime/EventSystem/EventInterfaces.cs",
+      "destination": "Assets/Scripts/UnityEngine.UI/UnityEngine/EventSystems/IUpdateSelectedHandler.cs",
+      "upstreamSha256": "5e7d7da6da1a9a50a7ab9fa0f6f9890c45e3328941342e4cc68f5052f0ff1613",
+      "stubSha256": "d26beecd5fd3c46e7bf7e7ad8b820a991947c4d88f16f57e3230f6b205e7d2df",
+      "restoredSha256": "e5abb1a8f1be82559fdaacda3f7dd116bb1113d010e6e658dea6ef05ceda1a58",
+      "missingSerializedFields": [],
+      "existingMetaSha256": "ca4975663f2d7206c68b3a0ecf6e34f4db0af1ce41455a806e0715be129ccb7a"
+    },
+    {
+      "type": "UnityEngine.EventSystems.ISelectHandler`0",
+      "upstream": "Runtime/EventSystem/EventInterfaces.cs",
+      "destination": "Assets/Scripts/UnityEngine.UI/UnityEngine/EventSystems/ISelectHandler.cs",
+      "upstreamSha256": "5e7d7da6da1a9a50a7ab9fa0f6f9890c45e3328941342e4cc68f5052f0ff1613",
+      "stubSha256": "74b6ea437d13f52d24d3a3fae3e546f3584f9ef6078ebdf9f299341d0451dd4e",
+      "restoredSha256": "3eacc861353fb7d32a3ed5ac62c014f870d8e249e21f44c34ffa7835f1323bcc",
+      "missingSerializedFields": [],
+      "existingMetaSha256": "18e06492195354b0c8179f1360d5d9d3418b82e06f355ee70b335c420522616d"
+    },
+    {
+      "type": "UnityEngine.EventSystems.IDeselectHandler`0",
+      "upstream": "Runtime/EventSystem/EventInterfaces.cs",
+      "destination": "Assets/Scripts/UnityEngine.UI/UnityEngine/EventSystems/IDeselectHandler.cs",
+      "upstreamSha256": "5e7d7da6da1a9a50a7ab9fa0f6f9890c45e3328941342e4cc68f5052f0ff1613",
+      "stubSha256": "94fdcdc1a84b761caac7ac4e7ffea1b6f5474a3e1b51510454abae552ad6abe3",
+      "restoredSha256": "8cc56b179368624bdb9f61cdaf1effac589953f2956241c126f68117dd3bf9d4",
+      "missingSerializedFields": [],
+      "existingMetaSha256": "de0aeb15a23ce3b3e3ab6c92c6d5a5dd0a9bcb42b7ef207820bfa4610d46925b"
+    },
+    {
+      "type": "UnityEngine.EventSystems.IMoveHandler`0",
+      "upstream": "Runtime/EventSystem/EventInterfaces.cs",
+      "destination": "Assets/Scripts/UnityEngine.UI/UnityEngine/EventSystems/IMoveHandler.cs",
+      "upstreamSha256": "5e7d7da6da1a9a50a7ab9fa0f6f9890c45e3328941342e4cc68f5052f0ff1613",
+      "stubSha256": "cbd6cffe59c72d6b67a1ef7e19391d67bd3c025b6d64fba404cd035b060f66a0",
+      "restoredSha256": "a8e8f4e50d11b7feb12fd2bf7ba03951d84e7a590ea1e987a6cff2a0e237d053",
+      "missingSerializedFields": [],
+      "existingMetaSha256": "d7e91659b943da6704183c1cb7f5adc9493e6d2503264a7604ebab6fd6d3adf8"
+    },
+    {
+      "type": "UnityEngine.EventSystems.ISubmitHandler`0",
+      "upstream": "Runtime/EventSystem/EventInterfaces.cs",
+      "destination": "Assets/Scripts/UnityEngine.UI/UnityEngine/EventSystems/ISubmitHandler.cs",
+      "upstreamSha256": "5e7d7da6da1a9a50a7ab9fa0f6f9890c45e3328941342e4cc68f5052f0ff1613",
+      "stubSha256": "d4058793ad339bc8fe0836029dfd91e684adca335a305b2943102a4264a3b5d8",
+      "restoredSha256": "81ade7fdd849baf8dcbbada7b74daa0150ad09cf7e6cb97d79f6f5faaa35242e",
+      "missingSerializedFields": [],
+      "existingMetaSha256": "351db2bbd68c5499e6a97eb210dcf1fbdf559d7438ca58408269344669015e8d"
+    },
+    {
+      "type": "UnityEngine.EventSystems.ICancelHandler`0",
+      "upstream": "Runtime/EventSystem/EventInterfaces.cs",
+      "destination": "Assets/Scripts/UnityEngine.UI/UnityEngine/EventSystems/ICancelHandler.cs",
+      "upstreamSha256": "5e7d7da6da1a9a50a7ab9fa0f6f9890c45e3328941342e4cc68f5052f0ff1613",
+      "stubSha256": "6aa9e02b9f8769f8eaf4e0cf0cf72de34a5cfd426b5767e666f92b1ce2a8f00f",
+      "restoredSha256": "e85480e936db834a6c437896d31217a113f0ed1f3a993692c6a986ba821ebdf0",
+      "missingSerializedFields": [],
+      "existingMetaSha256": "5d3770fb9cf11ef8003a1b91d29da67f8a24e225380ed5509682afa78d66afdd"
+    },
+    {
+      "type": "UnityEngine.EventSystems.EventSystem`0",
+      "upstream": "Runtime/EventSystem/EventSystem.cs",
+      "destination": "Assets/Scripts/UnityEngine.UI/UnityEngine/EventSystems/EventSystem.cs",
+      "upstreamSha256": "bd412c527d316f64e323ab8581d42f89ca415836beb879c9c26a13dae8aa99db",
+      "stubSha256": "c23a12f0077430ffa0dd54a1ae932bca8b43d3da48560a524cf7f7946e7a93ac",
+      "restoredSha256": "d0ee8e82c20d394b3b3c7f391207198964aebf0e356aa0ba3e9c417982c7a3c8",
+      "missingSerializedFields": [],
+      "existingMetaSha256": "b514c7980c300faa71d268e4f5b86da68b4c5bbb3f01a9f3ae05d4138c071781"
+    },
+    {
+      "type": "UnityEngine.EventSystems.EventTrigger`0",
+      "upstream": "Runtime/EventSystem/EventTrigger.cs",
+      "destination": "Assets/Scripts/UnityEngine.UI/UnityEngine/EventSystems/EventTrigger.cs",
+      "upstreamSha256": "8c45c3cfc391f66f5f0053b40e894a356a042553e96afd5a5b88ebd49a708c02",
+      "stubSha256": "c205f1e9f2d8f99ac431b96e731a5664185829283e8b82b1a3e0dd37ef808a12",
+      "restoredSha256": "18bbebae6b3ad2a2f9dc1441586fe207fc0b180c7c3d9c680cf21e95eb1b3b78",
+      "missingSerializedFields": [],
+      "existingMetaSha256": "0cecf067842c7839d544b4b22a3546bf9c900c43117351ef1f3dbcd6446fa0dd"
+    },
+    {
+      "type": "UnityEngine.EventSystems.EventTriggerType`0",
+      "upstream": "Runtime/EventSystem/EventTriggerType.cs",
+      "destination": "Assets/Scripts/UnityEngine.UI/UnityEngine/EventSystems/EventTriggerType.cs",
+      "upstreamSha256": "3bf89d47d0cfcd77b03f84b851ef5d15ee87a90360ccd5791ee3722bd97621ac",
+      "stubSha256": "4c6bab6029ed2cbac6b38658bf03be6c2be8a138c1062d491aeea6e1d75cb87d",
+      "restoredSha256": "e0ef266438e52e5bc3bf18f8378227352b416af227fe51f5c7d3007bf2ecde8b",
+      "missingSerializedFields": [],
+      "existingMetaSha256": "d0fe84b6808591d365523c50d5a94cb3c850a0cc1f5c9970b05c7009f0b2d368"
+    },
+    {
+      "type": "UnityEngine.EventSystems.ExecuteEvents`0",
+      "upstream": "Runtime/EventSystem/ExecuteEvents.cs",
+      "destination": "Assets/Scripts/UnityEngine.UI/UnityEngine/EventSystems/ExecuteEvents.cs",
+      "upstreamSha256": "29866d4fcb4dd73335f9d1066e8e241334d7b62eca1fb44e8527180eb77f9ac4",
+      "stubSha256": "e656988f91c0478792d09b222e150b9149b391188114fd1b6b447cb120f23572",
+      "restoredSha256": "7b0851782a1138441c76a410c55a9393a4c007feb112e5b8a6c83b27ac8a0891",
+      "missingSerializedFields": [],
+      "existingMetaSha256": "4f40f5a6a423f9c4d85edc0ad2347466c5c09556f20f39a1ee8291f78f7fe844"
+    },
+    {
+      "type": "UnityEngine.EventSystems.MoveDirection`0",
+      "upstream": "Runtime/EventSystem/MoveDirection.cs",
+      "destination": "Assets/Scripts/UnityEngine.UI/UnityEngine/EventSystems/MoveDirection.cs",
+      "upstreamSha256": "a7a8b0a8b6f395d141bf24ad9c44054f1bf445edcebefb8a3bc069843703a50a",
+      "stubSha256": "4576bb7114daa9d020d993b6280eda9423ba0589070ab22152c42a5acb9d375a",
+      "restoredSha256": "e716baab26994c6a538fc058c3495d15b9ddb6b7ecca28cf01a0c8b5da9dac12",
+      "missingSerializedFields": [],
+      "existingMetaSha256": "8f8cf18214847106dbd5524f674a3962d514709068d20e1ef6572bc5e1239982"
+    },
+    {
+      "type": "UnityEngine.EventSystems.RaycasterManager`0",
+      "upstream": "Runtime/EventSystem/RaycasterManager.cs",
+      "destination": "Assets/Scripts/UnityEngine.UI/UnityEngine/EventSystems/RaycasterManager.cs",
+      "upstreamSha256": "8d48beb4ddf47a646d51557de74e71833260035af5afcbeba5853c90cbd9414f",
+      "stubSha256": "4bd0fc7e7a8d7ca0a8bf46eb106460a99c1c8aa222e49e05710ad0d9a3e0b70a",
+      "restoredSha256": "d7a0c8f292a9aa803f44f002fca206b0e52f5faa4430070a044daed85d228b91",
+      "missingSerializedFields": [],
+      "existingMetaSha256": "61f466022c6b76cbc29b50ba7b55073043abf94298e95bafdc7ca3afb7c38fa3"
+    },
+    {
+      "type": "UnityEngine.EventSystems.RaycastResult`0",
+      "upstream": "Runtime/EventSystem/RaycastResult.cs",
+      "destination": "Assets/Scripts/UnityEngine.UI/UnityEngine/EventSystems/RaycastResult.cs",
+      "upstreamSha256": "50ebd91caad8212bcf7562f018c9fb529704f9bc8f152a515b25025b57f95ac8",
+      "stubSha256": "8c2c3e03c91cd85778d344741f7592c0a46d5c57de4c4e630b64e223e7d09c12",
+      "restoredSha256": "421b212440b64e7e7c1ba36dffffc12b794ea7fdd2e31a8e55037f9277bd32b1",
+      "missingSerializedFields": [],
+      "existingMetaSha256": "5619a5578e704f9415c88620925a0a31970a0703f5e494943da644f6c2215552"
+    },
+    {
+      "type": "UnityEngine.EventSystems.UIBehaviour`0",
+      "upstream": "Runtime/EventSystem/UIBehaviour.cs",
+      "destination": "Assets/Scripts/UnityEngine.UI/UnityEngine/EventSystems/UIBehaviour.cs",
+      "upstreamSha256": "2a145c6aa56cfd949bad90853cce3bb5c20272c3cf1583e72d48fde786a6c1fb",
+      "stubSha256": "b4114595febd98d65e294a9a891c1b419fc96aa07656029168985f63135c653e",
+      "restoredSha256": "263b1b2d96b292e654e80a9cec9df5e8267a1f84daa74046e9f80c115131160c",
+      "missingSerializedFields": [],
+      "existingMetaSha256": "e5028a5e8a51d77c53914d5f099e0b9dd5c10a06b5ae670578a40f02954b316c"
+    },
+    {
+      "type": "UnityEngine.EventSystems.AxisEventData`0",
+      "upstream": "Runtime/EventSystem/EventData/AxisEventData.cs",
+      "destination": "Assets/Scripts/UnityEngine.UI/UnityEngine/EventSystems/AxisEventData.cs",
+      "upstreamSha256": "210edfd7957cf093006be47d506c1578912601263a7c111972110d9a380b44db",
+      "stubSha256": "bd0cf773f9cf6399d422e5787cbf21caa3d0e0b61ddc5f681638abc81e5c6f7c",
+      "restoredSha256": "273cc979a0402321bdcb03b9286da4156eab426c815964542429b4cd614b1781",
+      "missingSerializedFields": [],
+      "existingMetaSha256": "4c35e89d8b6ce3bd9668e721821fda63c0dc2aad6f0c796184ea0653f14bf4c0"
+    },
+    {
+      "type": "UnityEngine.EventSystems.AbstractEventData`0",
+      "upstream": "Runtime/EventSystem/EventData/BaseEventData.cs",
+      "destination": "Assets/Scripts/UnityEngine.UI/UnityEngine/EventSystems/AbstractEventData.cs",
+      "upstreamSha256": "4a36a711e3036c2a158dafde0a9b08b855d924ea4f06b8ac0a5f36060b219a96",
+      "stubSha256": "8764f9be718bb33f8c311dacb3c12bcbff7c1961edbf81ec993fca645223f807",
+      "restoredSha256": "e23616f2a8998774e9a7d15b4c02e334444cc0ea427528ff113cee8f18a5264a",
+      "missingSerializedFields": [],
+      "existingMetaSha256": "a8ce5055763df5d7ccb4ed665a5efb6f652c5779a1bdb041dba987cef57c56b8"
+    },
+    {
+      "type": "UnityEngine.EventSystems.BaseEventData`0",
+      "upstream": "Runtime/EventSystem/EventData/BaseEventData.cs",
+      "destination": "Assets/Scripts/UnityEngine.UI/UnityEngine/EventSystems/BaseEventData.cs",
+      "upstreamSha256": "4a36a711e3036c2a158dafde0a9b08b855d924ea4f06b8ac0a5f36060b219a96",
+      "stubSha256": "feff1fee60ce5cb098e691bfa36693ec89357f2457fef656c096ec03be2a7019",
+      "restoredSha256": "c49f20f9ba3d59f976a4412db47a7fcdf12decf0d30a234b383ca5b8b628f782",
+      "missingSerializedFields": [],
+      "existingMetaSha256": "a6a5a95cb0c3a5c6c2a585d24f1fd9f391a1c22133a19a956911e014812931d9"
+    },
+    {
+      "type": "UnityEngine.EventSystems.PointerEventData`0",
+      "upstream": "Runtime/EventSystem/EventData/PointerEventData.cs",
+      "destination": "Assets/Scripts/UnityEngine.UI/UnityEngine/EventSystems/PointerEventData.cs",
+      "upstreamSha256": "b5433f4952d8e3c48aa61c6acc566a6d9dcb9bdc229a4a632b889db49d74c990",
+      "stubSha256": "d9b02465d7c89f64fd8ca420edfe0b5f0d28f471769a1b370dfcff41b9286e6a",
+      "restoredSha256": "258921964497db85ce83706e9665ddda51799140843b974802a21425a20fddc9",
+      "missingSerializedFields": [],
+      "existingMetaSha256": "41fc32d2aa6f522f0193902e67605d3022b49fe19994c7edccb884d64e41715d"
+    },
+    {
+      "type": "UnityEngine.EventSystems.BaseInput`0",
+      "upstream": "Runtime/EventSystem/InputModules/BaseInput.cs",
+      "destination": "Assets/Scripts/UnityEngine.UI/UnityEngine/EventSystems/BaseInput.cs",
+      "upstreamSha256": "162f3a282acd95df93411f81a8bec064e72f7982d0242951ec715f3acf095757",
+      "stubSha256": "8787dd9543a1874f000a922b8ef614945a13ea58c6babf722b3704ad41684bc6",
+      "restoredSha256": "f6cc727a2bc6ad4c12fd3353f2388bffbc824c61659b54a52a18f2a43b107225",
+      "missingSerializedFields": [],
+      "existingMetaSha256": "531a1e3258dd2f852462a463853ad7b22744d93362288bfce1727adc801c5fec"
+    },
+    {
+      "type": "UnityEngine.EventSystems.BaseInputModule`0",
+      "upstream": "Runtime/EventSystem/InputModules/BaseInputModule.cs",
+      "destination": "Assets/Scripts/UnityEngine.UI/UnityEngine/EventSystems/BaseInputModule.cs",
+      "upstreamSha256": "38311c27093be63433422c85cad28688f6ca11100d6bfee5fc5129cab9a867c0",
+      "stubSha256": "177b4a75fd9f2d938a9cb948d23c45ddb6717cdca2c1d9b80019e50ab36506fd",
+      "restoredSha256": "b1e5198dcf8a38959b328f5ecf40735268df70a9db1a8fa373338437a5743e1d",
+      "missingSerializedFields": [],
+      "existingMetaSha256": "c632a44568810fa4b60b8cd0b4238dde10f411d7e0581ff09878eb96e1365efd"
+    },
+    {
+      "type": "UnityEngine.EventSystems.PointerInputModule`0",
+      "upstream": "Runtime/EventSystem/InputModules/PointerInputModule.cs",
+      "destination": "Assets/Scripts/UnityEngine.UI/UnityEngine/EventSystems/PointerInputModule.cs",
+      "upstreamSha256": "eb99cfc651d2094679e04cb7dc39bc8da6d311d6d980edbb109be588b08de0e7",
+      "stubSha256": "6bd1928de9b28c1fbc3469f4f8bf7e7e90550687a257623e08924b42037790d9",
+      "restoredSha256": "016ed29acd0bb43a8e2ac3765de71d8164a8c6149145bfa719ae2f06372d3744",
+      "missingSerializedFields": [],
+      "existingMetaSha256": "ea7e281264fc90de747e1c4c805372a0b4cd993f2dc4f68f140c171ce2a0c7b1"
+    },
+    {
+      "type": "UnityEngine.EventSystems.StandaloneInputModule`0",
+      "upstream": "Runtime/EventSystem/InputModules/StandaloneInputModule.cs",
+      "destination": "Assets/Scripts/UnityEngine.UI/UnityEngine/EventSystems/StandaloneInputModule.cs",
+      "upstreamSha256": "fc51214d25b02e246128ba776d61fdf045e4072cf6ec6d20d39bfc26adfa6f88",
+      "stubSha256": "ca5f379dd7842edde808bf91191f0321cc60318c550e4cfbf3d793651bc50df7",
+      "restoredSha256": "aaa18bd11409e05ee05c282ddc4f5617947163f64948db950eb74a264811c8a1",
+      "missingSerializedFields": [],
+      "existingMetaSha256": "2b2dcdb30c70a28b017b5b4ef366c42f3fc705a5faf9d042afd081826fa95e50"
+    },
+    {
+      "type": "UnityEngine.EventSystems.TouchInputModule`0",
+      "upstream": "Runtime/EventSystem/InputModules/TouchInputModule.cs",
+      "destination": "Assets/Scripts/UnityEngine.UI/UnityEngine/EventSystems/TouchInputModule.cs",
+      "upstreamSha256": "632afea5b4a07f201f3068514c3b6e1abc1c9d2bed425e98c4ced94bd6022a44",
+      "stubSha256": "673ebba3c5f75ec44d85afc163de03daba11a14a1db336f6cd30a41cde46c505",
+      "restoredSha256": "45edec9700f6471e0344df4b5039921fdcf523c1363844ba6fc60af74070a735",
+      "missingSerializedFields": [],
+      "existingMetaSha256": "2a8703ed0078be4f11da764f3b02c834a2d8f8558d8c2a8ee98c6c1e646af83f"
+    },
+    {
+      "type": "UnityEngine.EventSystems.BaseRaycaster`0",
+      "upstream": "Runtime/EventSystem/Raycasters/BaseRaycaster.cs",
+      "destination": "Assets/Scripts/UnityEngine.UI/UnityEngine/EventSystems/BaseRaycaster.cs",
+      "upstreamSha256": "a9adc1d293a70f99ff5be03d9d881677a4ee9e3bd7cc94075873e67d6a82e420",
+      "stubSha256": "9cc4def6a42c19bf98a50aa312a55f672e9e6ccab4319a6aaa80f782d892f999",
+      "restoredSha256": "b8f636aa8b22d13de982f602a7d9e9acfdb1eb85ac221b5f85a373ac34a6014b",
+      "missingSerializedFields": [],
+      "existingMetaSha256": "95abc7a47ca3047eb594a24bf5884fecd34a0c546d5d777645207fa224159ef4"
+    },
+    {
+      "type": "UnityEngine.EventSystems.Physics2DRaycaster`0",
+      "upstream": "Runtime/EventSystem/Raycasters/Physics2DRaycaster.cs",
+      "destination": "Assets/Scripts/UnityEngine.UI/UnityEngine/EventSystems/Physics2DRaycaster.cs",
+      "upstreamSha256": "6d04b58a911e052a54fdd8538ada8b0d1c9d4db79beba35c47b492711d829962",
+      "stubSha256": "083eb8e4d9897d4c41169d626e4aa3373e46fea94ca7a4e209b5325fa1f2e051",
+      "restoredSha256": "67ba4a411112b21e47bc84e73849ef2bcd6852312f1218645e5ae63b1fd4fbe5",
+      "missingSerializedFields": [],
+      "existingMetaSha256": "c71bdb04d53c14afe0367d2d32a3d568e62f3dcfc569b79600af28effb6073de"
+    },
+    {
+      "type": "UnityEngine.EventSystems.PhysicsRaycaster`0",
+      "upstream": "Runtime/EventSystem/Raycasters/PhysicsRaycaster.cs",
+      "destination": "Assets/Scripts/UnityEngine.UI/UnityEngine/EventSystems/PhysicsRaycaster.cs",
+      "upstreamSha256": "1aa817b88c01690135e13280c3914ba47f067829030cc3ad9f017e3cf2049d47",
+      "stubSha256": "22c109177a50dd11278e8f2099089b52290edbfd5891e4285258055a0f7dd12f",
+      "restoredSha256": "a98b23c1c831425f61b30d3ee00fce6beca2a16feab17062e52ca06b7c2408a4",
+      "missingSerializedFields": [],
+      "existingMetaSha256": "f838f81ca012344c4ed84bfa3dde48b0b19edddb57125e1d6fcc30e7b3f3f327"
+    },
+    {
+      "type": "UnityEngine.UI.CoroutineTween.ITweenValue`0",
+      "upstream": "Runtime/UI/Animation/CoroutineTween.cs",
+      "destination": "Assets/Scripts/UnityEngine.UI/UnityEngine/UI/CoroutineTween/ITweenValue.cs",
+      "upstreamSha256": "efce6000f556688a1bbc76ed448bf3a884c6cd25070f2b8abf5948fb36ffb504",
+      "stubSha256": "953b368a620f1a3185177b8dc322575c13f3d87f2c3ed06ad87832fe83674c45",
+      "restoredSha256": "8c54097f3b4872a9c98373da5d203dea42eb13e59247f6e9f3dfba718c37e792",
+      "missingSerializedFields": [],
+      "existingMetaSha256": "beca89a81940c57076505a4091d21602cad6cc84ea5976730b91c3e4e89903b5"
+    },
+    {
+      "type": "UnityEngine.UI.CoroutineTween.ColorTween`0",
+      "upstream": "Runtime/UI/Animation/CoroutineTween.cs",
+      "destination": "Assets/Scripts/UnityEngine.UI/UnityEngine/UI/CoroutineTween/ColorTween.cs",
+      "upstreamSha256": "efce6000f556688a1bbc76ed448bf3a884c6cd25070f2b8abf5948fb36ffb504",
+      "stubSha256": "9340ef7a060c81863ad575694f8887c0603f36aacb810052f06614fcf3bc2a34",
+      "restoredSha256": "dd512cad7fd39865a49f2a6add639a3cf430b6f8ff3718701fe8d342430d0bcf",
+      "missingSerializedFields": [],
+      "existingMetaSha256": "a720192c1ceacc5ee8b1f1d669b85f42f4a9037a59e47a2ec83572dc0c51fd88"
+    },
+    {
+      "type": "UnityEngine.UI.CoroutineTween.FloatTween`0",
+      "upstream": "Runtime/UI/Animation/CoroutineTween.cs",
+      "destination": "Assets/Scripts/UnityEngine.UI/UnityEngine/UI/CoroutineTween/FloatTween.cs",
+      "upstreamSha256": "efce6000f556688a1bbc76ed448bf3a884c6cd25070f2b8abf5948fb36ffb504",
+      "stubSha256": "c4ec635c4b8256a83d068a372f9990cdd3d13cf346ff20b68369fb94747e87c9",
+      "restoredSha256": "505f5e8c8065a4d0b0b847479d8ca38f24e0e5fe4ff46658eb0c2661ecc2ef18",
+      "missingSerializedFields": [],
+      "existingMetaSha256": "5fc4561627aa48769b4244df4efab9c81f553160d61bb48cd981b1d493b0c003"
+    },
+    {
+      "type": "UnityEngine.UI.CoroutineTween.TweenRunner`1",
+      "upstream": "Runtime/UI/Animation/CoroutineTween.cs",
+      "destination": "Assets/Scripts/UnityEngine.UI/UnityEngine/UI/CoroutineTween/TweenRunner.cs",
+      "upstreamSha256": "efce6000f556688a1bbc76ed448bf3a884c6cd25070f2b8abf5948fb36ffb504",
+      "stubSha256": "3fa3d41f0a50b1b929f063f610c722686fa67f4f4fa3366ee8e4d8b978f3c6ca",
+      "restoredSha256": "b04d41466b2b3f3d70fffa62421889297ef44062f4fbae505cd35517ada1bd92",
+      "missingSerializedFields": [],
+      "existingMetaSha256": "3572758669ef2818a8dba6974baf7915273e6c9adba92323482410227d177d2e"
+    },
+    {
+      "type": "UnityEngine.UI.AnimationTriggers`0",
+      "upstream": "Runtime/UI/Core/AnimationTriggers.cs",
+      "destination": "Assets/Scripts/UnityEngine.UI/UnityEngine/UI/AnimationTriggers.cs",
+      "upstreamSha256": "83fcfe28d3511221dbfc353a8fbe6b210412fa1fb3ee8650e4ac2e3d2c5e8448",
+      "stubSha256": "ac4a25600a20cc718fd6301cce9724cd8a80dd3f5493436dcbe9c8e29d32888d",
+      "restoredSha256": "5202845f86c6996cacba7c287c5650c77631bd44512d10c7301de0afefa79c49",
+      "missingSerializedFields": [],
+      "existingMetaSha256": "64eb0ece8401005d7ede069bbac02ed5f6557c8de3b3910ba84038fb2ff4a237"
+    },
+    {
+      "type": "UnityEngine.UI.Button`0",
+      "upstream": "Runtime/UI/Core/Button.cs",
+      "destination": "Assets/Scripts/UnityEngine.UI/UnityEngine/UI/Button.cs",
+      "upstreamSha256": "168d28906e9ab6a0375946a81719b7959d5856563f134b8a15c448d67bf9b599",
+      "stubSha256": "533c05e9ec7821c49768dd95b14472ea7eae33385017c968256ce101e3c60de3",
+      "restoredSha256": "ba8743e9144a5ac564423486e19003fc9415d6a74acfcc6872616c83af049449",
+      "missingSerializedFields": [],
+      "existingMetaSha256": "8c1bb47d7d65ecec0ef7201835e477712a3425396f582f648687fee3bd6ef8ec"
+    },
+    {
+      "type": "UnityEngine.UI.CanvasUpdate`0",
+      "upstream": "Runtime/UI/Core/CanvasUpdateRegistry.cs",
+      "destination": "Assets/Scripts/UnityEngine.UI/UnityEngine/UI/CanvasUpdate.cs",
+      "upstreamSha256": "6d74c8cfa3500ffc2f35e1dd6ebc991178e2227194e8994dffe9db74575171cb",
+      "stubSha256": "a3545a87f8b07e08a6d49f0936b5b0b5dae9f3f375a68d50469ab7192a5ac3ae",
+      "restoredSha256": "be72fa9bbf50452e075246dabe7afe5d6805ecf062d7d4284c7193c60ef71392",
+      "missingSerializedFields": [],
+      "existingMetaSha256": "e0de85148c623587282fe9f50f3113bf1bd9c53433f58beea31a723260144d99"
+    },
+    {
+      "type": "UnityEngine.UI.ICanvasElement`0",
+      "upstream": "Runtime/UI/Core/CanvasUpdateRegistry.cs",
+      "destination": "Assets/Scripts/UnityEngine.UI/UnityEngine/UI/ICanvasElement.cs",
+      "upstreamSha256": "6d74c8cfa3500ffc2f35e1dd6ebc991178e2227194e8994dffe9db74575171cb",
+      "stubSha256": "bffceb00efc2da55851f6cc952b78f3ad3d45e1b1f0e7f2818d79b3283a755dd",
+      "restoredSha256": "c2528ce1507d2f21f668a24d97ecf4b55b85a3a06223e773ee5c44cc87a90bf3",
+      "missingSerializedFields": [],
+      "existingMetaSha256": "5ff92214c699f6cad56ac081e75c76c626dda29bbb78770482d8589759cf7174"
+    },
+    {
+      "type": "UnityEngine.UI.CanvasUpdateRegistry`0",
+      "upstream": "Runtime/UI/Core/CanvasUpdateRegistry.cs",
+      "destination": "Assets/Scripts/UnityEngine.UI/UnityEngine/UI/CanvasUpdateRegistry.cs",
+      "upstreamSha256": "6d74c8cfa3500ffc2f35e1dd6ebc991178e2227194e8994dffe9db74575171cb",
+      "stubSha256": "4652a230631b276893835ce5c2bc3004dbd0f1a1cec85b6d61b40e16739d0349",
+      "restoredSha256": "73884ecf63d943238e2eefd7f0c64597f3109b4228fa7931d96ab42110193579",
+      "missingSerializedFields": [],
+      "existingMetaSha256": "b063ace3cb633184e6c1ccf0719fd91ee8a3342b2a9874687644b412ed93072d"
+    },
+    {
+      "type": "UnityEngine.UI.ColorBlock`0",
+      "upstream": "Runtime/UI/Core/ColorBlock.cs",
+      "destination": "Assets/Scripts/UnityEngine.UI/UnityEngine/UI/ColorBlock.cs",
+      "upstreamSha256": "07d40d5cd98dd69eac11449cee06f77ef2b08722f7015e35d6b3b9d69e721993",
+      "stubSha256": "c95110d4773f5a720a542051a08d7a4b40d2ab4007e2b5f93ea05af32e924f0c",
+      "restoredSha256": "359aa1fbf8e5b5e66b3eec1ef80343d23e005a78a49f8a4e9e49a60f290b08d2",
+      "missingSerializedFields": [],
+      "existingMetaSha256": "8d97f63466124f9c4c0ab59557439d3ad64d9fd900c772b61523e36812c41ec3"
+    },
+    {
+      "type": "UnityEngine.UI.DefaultControls`0",
+      "upstream": "Runtime/UI/Core/DefaultControls.cs",
+      "destination": "Assets/Scripts/UnityEngine.UI/UnityEngine/UI/DefaultControls.cs",
+      "upstreamSha256": "64f719f32322fadef24724322a94d5a3efb37cf734e1e564b19848d2c4bfccf6",
+      "stubSha256": "cace30f6df39605a28a0511c9239bff14f7e4d01bdbaeb367d2383a58c72e2a2",
+      "restoredSha256": "33f0073535c9fb579539cdbef7916ef4f794bd3470bcda99a57789bc385bd8d6",
+      "missingSerializedFields": [],
+      "existingMetaSha256": "7572f594c0d79c2c36c387899f5b7b2fd4c9ae7d26a22414ec81fa639ab40b49"
+    },
+    {
+      "type": "UnityEngine.UI.Dropdown`0",
+      "upstream": "Runtime/UI/Core/Dropdown.cs",
+      "destination": "Assets/Scripts/UnityEngine.UI/UnityEngine/UI/Dropdown.cs",
+      "upstreamSha256": "f1cfd65da36580c961c00d7218aea33f63618ef293c1c3a797385429d738d6bd",
+      "stubSha256": "ddca51bd34e622ef05caa535185e483d63c9837caea6ef26765147ba2e10016f",
+      "restoredSha256": "c5640ff8684b40619ca20fc314e940df2725a8846d036a903a8014e311c88dd4",
+      "missingSerializedFields": [],
+      "existingMetaSha256": "9eee5eb3ccaddd2ee211d271d253b8a988811802a595df9b99a67beeea2dd026"
+    },
+    {
+      "type": "UnityEngine.UI.FontData`0",
+      "upstream": "Runtime/UI/Core/FontData.cs",
+      "destination": "Assets/Scripts/UnityEngine.UI/UnityEngine/UI/FontData.cs",
+      "upstreamSha256": "9ddef401e5742f1002f8b10480cc2a5615483f9745c7b9485b154ae06494c41a",
+      "stubSha256": "901db0d78e6e66cf463a6743af3d2c96017beb4ef4022c21cf0d352299faf13b",
+      "restoredSha256": "cc73ff61bc3f86f20aa63ae62736ed8e1b8c42fe4d6a58bb61d765e2b5e9e91e",
+      "missingSerializedFields": [],
+      "existingMetaSha256": "c840191f6d40c0705b1581c84d501da607bdab5c1afb297b323d87531ac03096"
+    },
+    {
+      "type": "UnityEngine.UI.FontUpdateTracker`0",
+      "upstream": "Runtime/UI/Core/FontUpdateTracker.cs",
+      "destination": "Assets/Scripts/UnityEngine.UI/UnityEngine/UI/FontUpdateTracker.cs",
+      "upstreamSha256": "51fcf5d262ae9c8d6ece9da288fbdd009f1c373a932ec2e8587e8d18c6985e5e",
+      "stubSha256": "344186fe7499ac6854e4aa0c69e6a47d49ce83477761b4c46567b73ac005c8dc",
+      "restoredSha256": "0b99cd0275cc114dad7d9382f30fd155c9a95107a84e0788110f293c93a64673",
+      "missingSerializedFields": [],
+      "existingMetaSha256": "f0518014bf6cc15310abacd063047663fb92bae50b6f8119179e410918167e7d"
+    },
+    {
+      "type": "UnityEngine.UI.Graphic`0",
+      "upstream": "Runtime/UI/Core/Graphic.cs",
+      "destination": "Assets/Scripts/UnityEngine.UI/UnityEngine/UI/Graphic.cs",
+      "upstreamSha256": "5a1d3d3423a786ef60817c387d15da850f31b9c94aedb667f335018f46f0eb4e",
+      "stubSha256": "711c12cf8e187cc2fa4b73b8fe8b17c6811bb075cc010f8323f22fd66725077b",
+      "restoredSha256": "ea6962206f5a4134010cea615fc0a831c9ad8d84ccb34f124d28047d3b7c427b",
+      "missingSerializedFields": [],
+      "existingMetaSha256": "feb04d66d979cd13d86a3e1698b610a321d9322e29ef11bed62be0751e01194a"
+    },
+    {
+      "type": "UnityEngine.UI.GraphicRaycaster`0",
+      "upstream": "Runtime/UI/Core/GraphicRaycaster.cs",
+      "destination": "Assets/Scripts/UnityEngine.UI/UnityEngine/UI/GraphicRaycaster.cs",
+      "upstreamSha256": "63bff6b693ecc7114c3b1b1f16ddd4916891ea91775410eea46c743b7bc00112",
+      "stubSha256": "bb9358dad05ba81d1fd59e81f9894f718f7875f33e11c1a5d302936349379482",
+      "restoredSha256": "54a6cadf0bda968289f57923278e4b3afce6c1ab3b9ae76bbf2cd1d62a044067",
+      "missingSerializedFields": [],
+      "existingMetaSha256": "0520fd11d3a36219d9c6dcc0308487259e82215f0d77942290c53d7b959f9fad"
+    },
+    {
+      "type": "UnityEngine.UI.GraphicRebuildTracker`0",
+      "upstream": "Runtime/UI/Core/GraphicRebuildTracker.cs",
+      "destination": "Assets/Scripts/UnityEngine.UI/RecoverySupport/UnityEngine.UI.GraphicRebuildTracker_0.cs",
+      "upstreamSha256": "acd4b05911ce9763c5ef27eda7e41e9850d877fb875c653e15c816b2871cc159",
+      "stubSha256": null,
+      "restoredSha256": "11c3e9fc7498ed58b34281b1e83e833f555c04ce4ec6fe2f3634f20ddf5ebce4",
+      "missingSerializedFields": [],
+      "existingMetaSha256": "829143a1c39982d8d3633198f2b56457aaf36dae699e1ed7b130e8baa4227c72"
+    },
+    {
+      "type": "UnityEngine.UI.GraphicRegistry`0",
+      "upstream": "Runtime/UI/Core/GraphicRegistry.cs",
+      "destination": "Assets/Scripts/UnityEngine.UI/UnityEngine/UI/GraphicRegistry.cs",
+      "upstreamSha256": "d708b194821a8dd95ee2a0eb77b246229b15da0e82bafe76ce06f4bbebb20b85",
+      "stubSha256": "3eec9497448f396b40d5277ace490084ceae64ea246d88b4fa2e80f9622a7a85",
+      "restoredSha256": "62d7227eb203513b87d805c2c25172b5c3d8021f622895bb9ff2ede2583c1e5e",
+      "missingSerializedFields": [],
+      "existingMetaSha256": "4afd268d519c6be6e5fb9020a4322de722e5ee07916c264d4f362f1fa2b3abee"
+    },
+    {
+      "type": "UnityEngine.UI.IGraphicEnabledDisabled`0",
+      "upstream": "Runtime/UI/Core/IGraphicEnabledDisabled.cs",
+      "destination": "Assets/Scripts/UnityEngine.UI/UnityEngine/UI/IGraphicEnabledDisabled.cs",
+      "upstreamSha256": "fcdfee255723111bc2ce6712bde8bc28f4ffbe69edef8434907c7c5ea23ea7c1",
+      "stubSha256": "d1dc8d301d0a8b430e1b2cea9277a1379a4faeecd86862bd36a28f772e966f52",
+      "restoredSha256": "ee9f6331eede595cd518c111607b3f46ec141d25c6dee0353076f6fc91bbd067",
+      "missingSerializedFields": [],
+      "existingMetaSha256": "09e5530120fadd6adc311537bfe2705ef62d8bdf73e3e2ae0a3912a506969471"
+    },
+    {
+      "type": "UnityEngine.UI.Image`0",
+      "upstream": "Runtime/UI/Core/Image.cs",
+      "destination": "Assets/Scripts/UnityEngine.UI/UnityEngine/UI/Image.cs",
+      "upstreamSha256": "d19e967d0056b19a7312fe2d15f376ed920f31ddd9206e5a815542c2a254d815",
+      "stubSha256": "c5bf7efacadf28de1ea4a376ef15e8661b7f47efef788c96bcefdc52c3edcc22",
+      "restoredSha256": "3b94565d8076246d05e709b3046fd187467e0843970c2330b241e5f6f7009237",
+      "missingSerializedFields": [],
+      "existingMetaSha256": "91dae33f339d116098847a78c3f5477e9859e200dee506b9142d4f9572d5b3ec"
+    },
+    {
+      "type": "UnityEngine.UI.IMask`0",
+      "upstream": "Runtime/UI/Core/IMask.cs",
+      "destination": "Assets/Scripts/UnityEngine.UI/UnityEngine/UI/IMask.cs",
+      "upstreamSha256": "bbc2611496c6f54fcaddc46c3c47587b812856ab01944aaba3313d982699072e",
+      "stubSha256": "cf036b6e7b28bbfcf910370f1d62da88387d7d8934a2a6103b988a1f80d9cbaa",
+      "restoredSha256": "d2a3a37993eeac5d7890794970e8d0e7d98b311996a10bbf93c8566754332347",
+      "missingSerializedFields": [],
+      "existingMetaSha256": "ee9a2b17a9f7b45816eed875489b194dece855b1ee90f3ad73820325306316b9"
+    },
+    {
+      "type": "UnityEngine.UI.IMaskable`0",
+      "upstream": "Runtime/UI/Core/IMaskable.cs",
+      "destination": "Assets/Scripts/UnityEngine.UI/UnityEngine/UI/IMaskable.cs",
+      "upstreamSha256": "5f91a62ae26bf21c1c0688d7babd5f784c1e04205cd42be110489c927feca843",
+      "stubSha256": "35a5de791e2767844de49612b387658e402d6c5d6c8667fc5bcc77a4187691d0",
+      "restoredSha256": "ca66ebabf8d5228022d9c31bee85897f8114149c2ade96eb1f9e43487b3b18c7",
+      "missingSerializedFields": [],
+      "existingMetaSha256": "71c34f3b805f03ca2e37dd0bd6cff02e87bf8d1f4bc8bfd6f97a5d0d02930865"
+    },
+    {
+      "type": "UnityEngine.UI.InputField`0",
+      "upstream": "Runtime/UI/Core/InputField.cs",
+      "destination": "Assets/Scripts/UnityEngine.UI/UnityEngine/UI/InputField.cs",
+      "upstreamSha256": "ad5ea1ea86c177edd4ae6438392815ffb0828ed003f78440b81721e0294d00de",
+      "stubSha256": "b117285e937d4476c7094e49216b46ace691494dbb23c2e17a03f9d9622d71af",
+      "restoredSha256": "cd31bbaa84cf9d03bd72dae879f790fe023d1fc66ebec844e234e2b9423c63a5",
+      "missingSerializedFields": [],
+      "existingMetaSha256": "b881ca91ac70651d30f2e064f57527ed334b88f8c4fb8783cc4a1909b99949fa"
+    },
+    {
+      "type": "UnityEngine.UI.Mask`0",
+      "upstream": "Runtime/UI/Core/Mask.cs",
+      "destination": "Assets/Scripts/UnityEngine.UI/UnityEngine/UI/Mask.cs",
+      "upstreamSha256": "03b8fc34fdbb5995767ec9bac537ae3d978f5104923699e075e599ebdfe215d3",
+      "stubSha256": "b05c5386cc33e51d742c0be88c71d97a281cb268e1161b991a4bfa79082293ea",
+      "restoredSha256": "f671128a448f8b9b7b20ef98c565fb4c3df270018399985b88468b48ea387f97",
+      "missingSerializedFields": [],
+      "existingMetaSha256": "1b982cc0be77781015260cb4b4af9656b12e0c58485983ab14112790f9ab18ba"
+    },
+    {
+      "type": "UnityEngine.UI.MaskableGraphic`0",
+      "upstream": "Runtime/UI/Core/MaskableGraphic.cs",
+      "destination": "Assets/Scripts/UnityEngine.UI/UnityEngine/UI/MaskableGraphic.cs",
+      "upstreamSha256": "96ad95f99e13503587432204eaaaf3110f6b73795715798162c60379ee46408b",
+      "stubSha256": "74563ad9244795f0cedaea7cc4684939984bf4328455f9da9e7f99cba798e721",
+      "restoredSha256": "7e072b66c2861a752fc540b0574cb0374012ba26d00dadf2522fe049c9b3f06f",
+      "missingSerializedFields": [],
+      "existingMetaSha256": "cf23158d7f5ab5a389a18787a4e6741f36c4882e6917618ad52a8da2eafda8e8"
+    },
+    {
+      "type": "UnityEngine.UI.MaskUtilities`0",
+      "upstream": "Runtime/UI/Core/MaskUtilities.cs",
+      "destination": "Assets/Scripts/UnityEngine.UI/UnityEngine/UI/MaskUtilities.cs",
+      "upstreamSha256": "1ef90a25becc70d8fef52ffda935a656ee055796b115e5b7d8cb5cb534351314",
+      "stubSha256": "40b1d48170d3c8a797bba9df05c3bfc6661ef2d87f318e58ca0eab700541a944",
+      "restoredSha256": "e48b625c87b44c1c86db64d6d18f2fa6696a21a90b91a6e521b91645bbe16365",
+      "missingSerializedFields": [],
+      "existingMetaSha256": "b2d43f9f871f3ce5a25f994c0f24ca549531dab6e15d06c350187dbee15a35e4"
+    },
+    {
+      "type": "UnityEngine.UI.Misc`0",
+      "upstream": "Runtime/UI/Core/Misc.cs",
+      "destination": "Assets/Scripts/UnityEngine.UI/UnityEngine/UI/Misc.cs",
+      "upstreamSha256": "30b3a00b164611ff14e10e9d33a9ca76267787d84a53587716886e4fa714f905",
+      "stubSha256": "34f05462a0c463d5301dbdf2213131ffc8f4bde703d0ef9ed972695860749ede",
+      "restoredSha256": "96fc38b4472c40997d6991f2da88ec10e41ff7daf6446f473a8d63dcb5a099bc",
+      "missingSerializedFields": [],
+      "existingMetaSha256": "35ad7fce185a11e4fba3710767972da41d99b778f3d84dc5d3ec05b6257ef565"
+    },
+    {
+      "type": "UnityEngine.UI.MultipleDisplayUtilities`0",
+      "upstream": "Runtime/UI/Core/MultipleDisplayUtilities.cs",
+      "destination": "Assets/Scripts/UnityEngine.UI/UnityEngine/UI/MultipleDisplayUtilities.cs",
+      "upstreamSha256": "7d133cdfa700f15c6f6b7f3f65cf2d5f6f5f104a39c8500b6a437b6e180787db",
+      "stubSha256": "a1d2a1050bd9880e95f7a15051d9015f5718d07377af2bef2eebf871eb3cab7b",
+      "restoredSha256": "1f56e411606daab2dc38bb77bb16db9afc8cf279925dc51623853a0c68190e47",
+      "missingSerializedFields": [],
+      "existingMetaSha256": "d8ea7059cd2b4bcb700c32de7f72a5d203051cd2f88a832233eac2051d16a4f5"
+    },
+    {
+      "type": "UnityEngine.UI.Navigation`0",
+      "upstream": "Runtime/UI/Core/Navigation.cs",
+      "destination": "Assets/Scripts/UnityEngine.UI/UnityEngine/UI/Navigation.cs",
+      "upstreamSha256": "8a6a1faf2ae49658fa3d5131ab0dc96f6dfe53efbfcc26954d04b61269ea19c3",
+      "stubSha256": "fa971da31b3a5ede9ed1cde799005ecbbdab719f60b24ed9c26f4da5a94069f2",
+      "restoredSha256": "627f078b259aff1969622255f374c8f28fe32dfeefcb3fdecee665bd10969467",
+      "missingSerializedFields": [],
+      "existingMetaSha256": "248661587005488ff6e2100c8720bb79482ac4d5ab59e056c7f52d01a2ae6661"
+    },
+    {
+      "type": "UnityEngine.UI.RawImage`0",
+      "upstream": "Runtime/UI/Core/RawImage.cs",
+      "destination": "Assets/Scripts/UnityEngine.UI/UnityEngine/UI/RawImage.cs",
+      "upstreamSha256": "8c7e62aa66915097b868c91c6c4a01d3e00ec32ae1c4bceb6897d09dd6c5114c",
+      "stubSha256": "cb79b74cc037bdffddfe2190906b3da8480741988c68a8782140dc295237ebe8",
+      "restoredSha256": "aa9582bcbc5bb0fb3cdd4ae2ee8d16616631dfe0fc0ac3adfd515538178df0df",
+      "missingSerializedFields": [],
+      "existingMetaSha256": "cfbf8fa34455e4a00c31eac399e7cf6396155917e8ef83bfd7e463a2f523daba"
+    },
+    {
+      "type": "UnityEngine.UI.RectMask2D`0",
+      "upstream": "Runtime/UI/Core/RectMask2D.cs",
+      "destination": "Assets/Scripts/UnityEngine.UI/UnityEngine/UI/RectMask2D.cs",
+      "upstreamSha256": "0264e0fe459151898fcbd9ff2fb44a96514194a89b6a59d66569d2d6d32a0662",
+      "stubSha256": "14e48694be55299d5d503413ce6c7c7ba054fa400a480b16357111d9233eee73",
+      "restoredSha256": "bf64a413d7243a43ff43a2c2323b9de43198c81307f122936af284a40dc09968",
+      "missingSerializedFields": [],
+      "existingMetaSha256": "af1adcaa30edc159a76417ab231b2dfd288d08d921b23be3aa5a11f306b126c4"
+    },
+    {
+      "type": "UnityEngine.UI.Scrollbar`0",
+      "upstream": "Runtime/UI/Core/Scrollbar.cs",
+      "destination": "Assets/Scripts/UnityEngine.UI/UnityEngine/UI/Scrollbar.cs",
+      "upstreamSha256": "4f5a3eb28e659084a4a05481623064fbd2781c50d57902564e54e356dd5dadbc",
+      "stubSha256": "c6ab4a170490c1b82572391831b619b1b6392638fb50208ff4aebc3acac831fc",
+      "restoredSha256": "707be57b4ec4f3c880654afb5571606f3883835a5ed436a763a4eeab99da772f",
+      "missingSerializedFields": [],
+      "existingMetaSha256": "6978808cddb198d41df2ebe3c76da312a61aadc544b2eb415ae13ca0e464b55d"
+    },
+    {
+      "type": "UnityEngine.UI.ScrollRect`0",
+      "upstream": "Runtime/UI/Core/ScrollRect.cs",
+      "destination": "Assets/Scripts/UnityEngine.UI/UnityEngine/UI/ScrollRect.cs",
+      "upstreamSha256": "a86b5e78d6f0729b7630305488a04fd3a60c20f081c7aaf55a805944531f69e8",
+      "stubSha256": "effda950b768319ceb9324647df7e4e3634001e1eca1c7a068e0a8b11cc880db",
+      "restoredSha256": "d092ebfc7633c932222ccff181a0ff1bd3a9b799e0e387bc3c6d405e4df885bd",
+      "missingSerializedFields": [],
+      "existingMetaSha256": "5604f0954c8619ae37881f325fe1a04d8a461df5d3c301303a7a007056eb2991"
+    },
+    {
+      "type": "UnityEngine.UI.Selectable`0",
+      "upstream": "Runtime/UI/Core/Selectable.cs",
+      "destination": "Assets/Scripts/UnityEngine.UI/UnityEngine/UI/Selectable.cs",
+      "upstreamSha256": "d071de579287d7678e2daf963fc62b56935fbc1fc25ae259c9ba6aa83128c55e",
+      "stubSha256": "42c5a4a5c1ae1bc3e9a88d6826b70a0f30401a33f711f8841683a8d94c3c4268",
+      "restoredSha256": "1b8e8a59e84abe0f9ae1cd07fbba169ed09b32c85116365196fff6543bf67515",
+      "missingSerializedFields": [],
+      "existingMetaSha256": "e4f6fec9e53dac2456182629e823ef2aa0fb8b5e5e957c63c7b814852a286f99"
+    },
+    {
+      "type": "UnityEngine.UI.SetPropertyUtility`0",
+      "upstream": "Runtime/UI/Core/SetPropertyUtility.cs",
+      "destination": "Assets/Scripts/UnityEngine.UI/UnityEngine/UI/SetPropertyUtility.cs",
+      "upstreamSha256": "763d54578999cf89f9d7102f181caeb973cfcb82f81cd812d3f0b7f0780b68e4",
+      "stubSha256": "a898be58b34e95ea04dc9428b3a275715ce77382e0c9ec5f6b123fce8b401007",
+      "restoredSha256": "ec53058d754faae98fcfc3cd250b957c0518fc7f7e75edd6f0826c29cfa9d465",
+      "missingSerializedFields": [],
+      "existingMetaSha256": "e5b694666372581cb1ea78ad9c3f326b18ddf7c610e93f7a8296cefbe824ae05"
+    },
+    {
+      "type": "UnityEngine.UI.Slider`0",
+      "upstream": "Runtime/UI/Core/Slider.cs",
+      "destination": "Assets/Scripts/UnityEngine.UI/UnityEngine/UI/Slider.cs",
+      "upstreamSha256": "1a6f29eac715c9bafa25cd832dcf51a3c5fef50823669bb188423e3a1781c1b0",
+      "stubSha256": "089eed952a28fcfb8385b6baae8a471332732c36d039d3df4353e09f1e71c561",
+      "restoredSha256": "8887a642a6e276651451180d577181657f90e557005966a845eeaa362ef83529",
+      "missingSerializedFields": [],
+      "existingMetaSha256": "0ac584430ec5e16a2c45347bbe1ecabe0091e1cced53a12717794485d67110db"
+    },
+    {
+      "type": "UnityEngine.UI.SpriteState`0",
+      "upstream": "Runtime/UI/Core/SpriteState.cs",
+      "destination": "Assets/Scripts/UnityEngine.UI/UnityEngine/UI/SpriteState.cs",
+      "upstreamSha256": "d219c3fec59577f7e1a1b88dbfd82d9b23484ddca4db321eb93cc9fb64af0e2e",
+      "stubSha256": "645b45b863d223100324f6cd5e7fa03d6a60b3658837ee67d85acd5bb15ad8b9",
+      "restoredSha256": "e2e0dd7539620f8a8a8ebcdf6f545beb749adcfb4cc98ccce1a2031e713979e9",
+      "missingSerializedFields": [],
+      "existingMetaSha256": "fbc4511952baff205ab69afd233cfab67bb6240e2c6b7d3ba0deefdded9cfc8e"
+    },
+    {
+      "type": "UnityEngine.UI.StencilMaterial`0",
+      "upstream": "Runtime/UI/Core/StencilMaterial.cs",
+      "destination": "Assets/Scripts/UnityEngine.UI/UnityEngine/UI/StencilMaterial.cs",
+      "upstreamSha256": "0c8609983d6cb6417fbf73f23363bd79ea684adad63e218fb028cb54ba19cd3b",
+      "stubSha256": "3ceb95a18b684ba22798aec3d440720769006b1d92e5fcd9445450f5f5ec1a0e",
+      "restoredSha256": "51ccf4d14c11b48ae6cd16ff1a4285d00aad73c13b4e61a4b99c8f41359279fb",
+      "missingSerializedFields": [],
+      "existingMetaSha256": "4c5f6d044cd4d74c0f6ee0ca1b224762f2be338809dca3e8eadd65acc3778306"
+    },
+    {
+      "type": "UnityEngine.UI.Text`0",
+      "upstream": "Runtime/UI/Core/Text.cs",
+      "destination": "Assets/Scripts/UnityEngine.UI/UnityEngine/UI/Text.cs",
+      "upstreamSha256": "cddc8703e86ac226fb7e202375e7460b01e917e7cf6d4dd9f7ed55e0500eec7e",
+      "stubSha256": "dfcbdf7bae80df940ab4c12270a2a4d0c6cbad44d638ac001a0bb1c8ebb016fa",
+      "restoredSha256": "edfd4762105ecb6d24e9bb12e5ab859c3333f56036b4359432e322777570861a",
+      "missingSerializedFields": [],
+      "existingMetaSha256": "e3c8495151cca5d6a726444eb2fae3278bfd68660ec4ee36e431104c144db70f"
+    },
+    {
+      "type": "UnityEngine.UI.Toggle`0",
+      "upstream": "Runtime/UI/Core/Toggle.cs",
+      "destination": "Assets/Scripts/UnityEngine.UI/UnityEngine/UI/Toggle.cs",
+      "upstreamSha256": "f2b5a8c7fca969957b44af0bf9eebc87043644be292806a918ee1eeab0720c28",
+      "stubSha256": "f089c0fe577ac4c521bfd924d9f6e1be7ae64b3a322ac527c99e4e4c4072d5c6",
+      "restoredSha256": "487c4da539c4edfc7d66c46b2a00fc32b380f470722c03afa1511d736f7ced23",
+      "missingSerializedFields": [],
+      "existingMetaSha256": "14a0c64c9cffa322304a4863a925bc1c368f54eef3a516a7c36486acd7b39a37"
+    },
+    {
+      "type": "UnityEngine.UI.ToggleGroup`0",
+      "upstream": "Runtime/UI/Core/ToggleGroup.cs",
+      "destination": "Assets/Scripts/UnityEngine.UI/UnityEngine/UI/ToggleGroup.cs",
+      "upstreamSha256": "78855fa0c797e1432bd141a2027b6f1e6ca3046f798c4400e9c19b55f1630d5b",
+      "stubSha256": "b57d89327614008a9442ea5bb55f6e68ef6eba0d67847f5d6f63d0ade906579e",
+      "restoredSha256": "263323277c6c38b723689d2d8b86f2cf795c5b4414fc4b0b65a0f16bbd293c9f",
+      "missingSerializedFields": [],
+      "existingMetaSha256": "1b5234603a424f59e8b0c5a9c0b300760c78b544f00266fc6e840732f5a16f95"
+    },
+    {
+      "type": "UnityEngine.UI.ClipperRegistry`0",
+      "upstream": "Runtime/UI/Core/Culling/ClipperRegistry.cs",
+      "destination": "Assets/Scripts/UnityEngine.UI/UnityEngine/UI/ClipperRegistry.cs",
+      "upstreamSha256": "f30bc4a9bfd9c28af06fe442d29b1b638cab4563905b312afa8303d56256bc36",
+      "stubSha256": "1024008ccc9cb25f40f395a626e0c00b3315e42eb83e846d83991c7036487118",
+      "restoredSha256": "c463b9123a316241785aba798a35be8eaeb9d22e72acc36be4c3dad4efe52c79",
+      "missingSerializedFields": [],
+      "existingMetaSha256": "72d882e5b500c66cf3f4f8d3372516b6795349d2b2e6e2ab76b3d7eda36c0e5f"
+    },
+    {
+      "type": "UnityEngine.UI.Clipping`0",
+      "upstream": "Runtime/UI/Core/Culling/Clipping.cs",
+      "destination": "Assets/Scripts/UnityEngine.UI/UnityEngine/UI/Clipping.cs",
+      "upstreamSha256": "4379fa27d9ed12031daaa971befbc40943edb56d2078c88a2c1443bbfc4e5e2b",
+      "stubSha256": "fbdc3779061b4d69856c4c6ae431938c309f034b61c8d4b277b0312ca0ed8850",
+      "restoredSha256": "312be41d3bdc0e22277de8345a8d7a81c4f007b4fce21de2c2fc546ec6cb25a4",
+      "missingSerializedFields": [],
+      "existingMetaSha256": "279ab2f1881f6e1dc33497cd13af065f62064e8cec0f212fdcc333b71443feff"
+    },
+    {
+      "type": "UnityEngine.UI.IClipper`0",
+      "upstream": "Runtime/UI/Core/Culling/IClipRegion.cs",
+      "destination": "Assets/Scripts/UnityEngine.UI/UnityEngine/UI/IClipper.cs",
+      "upstreamSha256": "385842a30c626909cb9503642414042e24667aeec140d9fe3f5d6d3927ce0368",
+      "stubSha256": "a29350d74adfabbd1b8a3b0c7fe05c1a42694ea9182d70ccc848df5390bcaa4b",
+      "restoredSha256": "d47fff862e5163f19a3ca54661eabf5d6a6fe03460847f65f5ca9844a5cbe4f1",
+      "missingSerializedFields": [],
+      "existingMetaSha256": "acd839ce855a4b56a858f0f4e13ee911822edaa79fca0083cd22024cbfec4458"
+    },
+    {
+      "type": "UnityEngine.UI.IClippable`0",
+      "upstream": "Runtime/UI/Core/Culling/IClipRegion.cs",
+      "destination": "Assets/Scripts/UnityEngine.UI/UnityEngine/UI/IClippable.cs",
+      "upstreamSha256": "385842a30c626909cb9503642414042e24667aeec140d9fe3f5d6d3927ce0368",
+      "stubSha256": "42b3fc091230c8fc88f772b7f648192158b5578f0ffc3fc6a30cb5185155c4c9",
+      "restoredSha256": "b589bc6c9a7ce1431d92c8be60b31c924861101febcf0f9c3ab2f0b4d92ccceb",
+      "missingSerializedFields": [],
+      "existingMetaSha256": "b486b0fe1b174c648177a1328f506a069e2da032d524d8e4399368f616e4aa4c"
+    },
+    {
+      "type": "UnityEngine.UI.RectangularVertexClipper`0",
+      "upstream": "Runtime/UI/Core/Culling/RectangularVertexClipper.cs",
+      "destination": "Assets/Scripts/UnityEngine.UI/UnityEngine/UI/RectangularVertexClipper.cs",
+      "upstreamSha256": "3074adcfc9760d98966684ed0c9f24ab3a3bd5ad3f506a0ef54b58908607976e",
+      "stubSha256": "1aa0fc01db7645227cd0e361f8a07de90bfd203c6e4dbbcee2642158aefcf856",
+      "restoredSha256": "50cb71a7f2beacbbbeac99778841a17570437a4edcfb85cbe4febe812f84ae2a",
+      "missingSerializedFields": [],
+      "existingMetaSha256": "c00abbc01736da92ba0174ceaba821c3051083b015481dc577e9fc2f0f051623"
+    },
+    {
+      "type": "UnityEngine.UI.AspectRatioFitter`0",
+      "upstream": "Runtime/UI/Core/Layout/AspectRatioFitter.cs",
+      "destination": "Assets/Scripts/UnityEngine.UI/UnityEngine/UI/AspectRatioFitter.cs",
+      "upstreamSha256": "c433f85be46913c31817c56abbbfbd4869337bc86929c6ad6f45b4861f16c555",
+      "stubSha256": "54e4f0998825cf0ec31d009a2d8724f4e61b67fd0c844ce3ad834cfeb50ef800",
+      "restoredSha256": "e20fc21006cb54a616e8854cbab2eb4d78ba283c4fa2e84e946cfa9bbc63ef0b",
+      "missingSerializedFields": [],
+      "existingMetaSha256": "5234d3198e4d6b11c11c369c857dd588df3ca4dc549c995431d5974f6a6cab11"
+    },
+    {
+      "type": "UnityEngine.UI.CanvasScaler`0",
+      "upstream": "Runtime/UI/Core/Layout/CanvasScaler.cs",
+      "destination": "Assets/Scripts/UnityEngine.UI/UnityEngine/UI/CanvasScaler.cs",
+      "upstreamSha256": "c98311dbbec32228456e5f18cdf5682bdb84d21592244476b8be205cb40ab612",
+      "stubSha256": "cde407717350dc5b1269bb53afc6a707dff3bd4ff9381ad5475451702a359466",
+      "restoredSha256": "6065f38b995a5d8e4eb8a53f6bc325565cd91d6aa3d3348164669d4846a8101a",
+      "missingSerializedFields": [],
+      "existingMetaSha256": "12d5a2be0ff09958e32b16382887b626eea276771fa4027cc0a4070dc8779bac"
+    },
+    {
+      "type": "UnityEngine.UI.ContentSizeFitter`0",
+      "upstream": "Runtime/UI/Core/Layout/ContentSizeFitter.cs",
+      "destination": "Assets/Scripts/UnityEngine.UI/UnityEngine/UI/ContentSizeFitter.cs",
+      "upstreamSha256": "a6b30a3b6e697524ce16f07e1807e870faf8d0c3e8c43004474eb5b8bb3c887b",
+      "stubSha256": "e5437fe707c62e21cca2fb203c31c7438febe649365e9c41bfd59f15c60a5b7e",
+      "restoredSha256": "657e979795755f634ebf44f2064dee0f74adf512a91301ab26e29d24c1f51cf1",
+      "missingSerializedFields": [],
+      "existingMetaSha256": "6206d395ee22cb864484d4ed769ce2d46430a44e4e89d1b6740d5e9c881c3bbc"
+    },
+    {
+      "type": "UnityEngine.UI.GridLayoutGroup`0",
+      "upstream": "Runtime/UI/Core/Layout/GridLayoutGroup.cs",
+      "destination": "Assets/Scripts/UnityEngine.UI/UnityEngine/UI/GridLayoutGroup.cs",
+      "upstreamSha256": "e5b7319de05b18fd584a7a64066d761ed61a867de6e04cc6b5dc28a82362da32",
+      "stubSha256": "a716c9dc7afb0d23920e70550aaf542a5eb49509a94020bba511ec141cf3433a",
+      "restoredSha256": "49b3e83f96ef06bd39c3b32dbcc4a8ffd346661ed39f6fb0f0e57104e8fe0b1f",
+      "missingSerializedFields": [],
+      "existingMetaSha256": "495abd187dbba85dba5c893285e1040defd07f049449b1425b9ec87085e6c008"
+    },
+    {
+      "type": "UnityEngine.UI.HorizontalLayoutGroup`0",
+      "upstream": "Runtime/UI/Core/Layout/HorizontalLayoutGroup.cs",
+      "destination": "Assets/Scripts/UnityEngine.UI/UnityEngine/UI/HorizontalLayoutGroup.cs",
+      "upstreamSha256": "60c993b71761a9b431b8321f58ef397a100cd0f7febcf4d82c3e82e30b58459b",
+      "stubSha256": "15f6adcf5b9c941c571d237cd688f9bf5cc8df434f5405cb8e09bf2da595a035",
+      "restoredSha256": "7d5dd3fab3c95153c8e3bb99dafac7c461ffeb74d92e5f5759de9e2dac5517df",
+      "missingSerializedFields": [],
+      "existingMetaSha256": "6ee39c20758185df510ae4785336247e380c7e3044c585c02c419da6ec0f6935"
+    },
+    {
+      "type": "UnityEngine.UI.HorizontalOrVerticalLayoutGroup`0",
+      "upstream": "Runtime/UI/Core/Layout/HorizontalOrVerticalLayoutGroup.cs",
+      "destination": "Assets/Scripts/UnityEngine.UI/UnityEngine/UI/HorizontalOrVerticalLayoutGroup.cs",
+      "upstreamSha256": "5bc725ba0cd30d649fa50c8646392e2eaa04cc47a4f7d09e9807081938ec6d94",
+      "stubSha256": "79d3c50156bee6be946aab8496a22833417e63f311f7d211d6795d4af98da3e1",
+      "restoredSha256": "e704e48ee1e496787173e45c3b593d09ec8010dbd5dfe0639cb9711ebe8dbe19",
+      "missingSerializedFields": [],
+      "existingMetaSha256": "999aabd34d3e2ead0f51a4ff58f04a9767fcb7e4d8dfb76c6e4dc2141ac63979"
+    },
+    {
+      "type": "UnityEngine.UI.ILayoutElement`0",
+      "upstream": "Runtime/UI/Core/Layout/ILayoutElement.cs",
+      "destination": "Assets/Scripts/UnityEngine.UI/UnityEngine/UI/ILayoutElement.cs",
+      "upstreamSha256": "6937ac395b680be5d80fa09860830c9ac5f5528e7a2ac01664bee689611116d2",
+      "stubSha256": "45f80f3f85635eb61d900c3eb00494b41469f14574d80ff7deb6b8b16ba36ca1",
+      "restoredSha256": "9be599e02d87ac84b438998e262124303a8709cb7026b19fcf485bf45d25133b",
+      "missingSerializedFields": [],
+      "existingMetaSha256": "2feb472aa5b8709a5adaf88e7fffebb19c1788466984e6038e8e59683b3d6007"
+    },
+    {
+      "type": "UnityEngine.UI.ILayoutController`0",
+      "upstream": "Runtime/UI/Core/Layout/ILayoutElement.cs",
+      "destination": "Assets/Scripts/UnityEngine.UI/UnityEngine/UI/ILayoutController.cs",
+      "upstreamSha256": "6937ac395b680be5d80fa09860830c9ac5f5528e7a2ac01664bee689611116d2",
+      "stubSha256": "1f17989b6a88a189d10a462122071f8c141d3a7fd5f5af273293687345df95b1",
+      "restoredSha256": "1d1bfafde9bf21ba650bfaaf92a548273d84707e11f60226e05bbe3488eb6f6e",
+      "missingSerializedFields": [],
+      "existingMetaSha256": "f8e55a38cc59fc1554dcdeab57f33f77ed1bec34d5805e97ce616184a44089cd"
+    },
+    {
+      "type": "UnityEngine.UI.ILayoutGroup`0",
+      "upstream": "Runtime/UI/Core/Layout/ILayoutElement.cs",
+      "destination": "Assets/Scripts/UnityEngine.UI/UnityEngine/UI/ILayoutGroup.cs",
+      "upstreamSha256": "6937ac395b680be5d80fa09860830c9ac5f5528e7a2ac01664bee689611116d2",
+      "stubSha256": "c5d93e441ae586207766027c566d7af924d28043374cefbda83b7222454c816e",
+      "restoredSha256": "35f5ffcf02056e0270518465ee78a357bb4569465cb605dc0ff09d3b65bde895",
+      "missingSerializedFields": [],
+      "existingMetaSha256": "e26216c43bc7ad4adac9be7bb5743b83c546af2aa2860d12c02aa06f73ddfb13"
+    },
+    {
+      "type": "UnityEngine.UI.ILayoutSelfController`0",
+      "upstream": "Runtime/UI/Core/Layout/ILayoutElement.cs",
+      "destination": "Assets/Scripts/UnityEngine.UI/UnityEngine/UI/ILayoutSelfController.cs",
+      "upstreamSha256": "6937ac395b680be5d80fa09860830c9ac5f5528e7a2ac01664bee689611116d2",
+      "stubSha256": "434b9462194b888a96e74f0049e237477f2e29fdf65cc670b337263be7d56b62",
+      "restoredSha256": "fc2534c8399b4b2a01b803aa8e4aae61ce3394cc47d3e61659ee60739fa1ff60",
+      "missingSerializedFields": [],
+      "existingMetaSha256": "48afa87e8188e6a8bf6000c66a52bdea4f9cca2c35f7178a1e7f792326471d15"
+    },
+    {
+      "type": "UnityEngine.UI.ILayoutIgnorer`0",
+      "upstream": "Runtime/UI/Core/Layout/ILayoutElement.cs",
+      "destination": "Assets/Scripts/UnityEngine.UI/UnityEngine/UI/ILayoutIgnorer.cs",
+      "upstreamSha256": "6937ac395b680be5d80fa09860830c9ac5f5528e7a2ac01664bee689611116d2",
+      "stubSha256": "b1d84a4aca5b1ecb985820463cde277ecd2ddc35f8799ed9588bc26bf1016205",
+      "restoredSha256": "4710ff5c4b6458a3f78b4b699ef04d4bcfd3dfab2afcdc75f532d41771f29327",
+      "missingSerializedFields": [],
+      "existingMetaSha256": "a6ca9718b0a929f7f293cec5d46cfe7672304489bde81629203277655a100a4a"
+    },
+    {
+      "type": "UnityEngine.UI.LayoutElement`0",
+      "upstream": "Runtime/UI/Core/Layout/LayoutElement.cs",
+      "destination": "Assets/Scripts/UnityEngine.UI/UnityEngine/UI/LayoutElement.cs",
+      "upstreamSha256": "f1c1ed2c33950ca050ef12a648f2138064790859e06918cfcbab0e0a010b78f5",
+      "stubSha256": "beff0f81e90a7013952e1830513dbb4eb1aed6c42610e10ebc900d895d34b930",
+      "restoredSha256": "25f406db0b48658637cc2ac0d9c2979d6230652de7078c95cc7d8d2bb2b3ea1e",
+      "missingSerializedFields": [],
+      "existingMetaSha256": "17503c931de84e919adc2003e15fa8313ecf33e376b3c56b99b6da7124be1bdd"
+    },
+    {
+      "type": "UnityEngine.UI.LayoutGroup`0",
+      "upstream": "Runtime/UI/Core/Layout/LayoutGroup.cs",
+      "destination": "Assets/Scripts/UnityEngine.UI/UnityEngine/UI/LayoutGroup.cs",
+      "upstreamSha256": "a3df3d7f8d048916f4ee7bac0f3756ec4b19f716164cc99ade1a8affb4351025",
+      "stubSha256": "e29bb502294706342ca128ec116b9ba634e095d0bc6a8849f4e43b97df6c626f",
+      "restoredSha256": "2e2283140eb873768ecb076e325b9edb61c2329a4f5e906cc53b2276d6c9f58f",
+      "missingSerializedFields": [],
+      "existingMetaSha256": "bec7a0eb821a2b325021d6b00de02e9b6bbb408aa80cc233b4aa4b89a6894d79"
+    },
+    {
+      "type": "UnityEngine.UI.LayoutRebuilder`0",
+      "upstream": "Runtime/UI/Core/Layout/LayoutRebuilder.cs",
+      "destination": "Assets/Scripts/UnityEngine.UI/UnityEngine/UI/LayoutRebuilder.cs",
+      "upstreamSha256": "444cfe02db120cc43e1118e20f4f436ae7935b6e443aec43cac858ef75027d67",
+      "stubSha256": "fc90da0a21cf8b89f24be0160a7a3e8b80ba8d890b5d0e52d9c5e9328b5948f3",
+      "restoredSha256": "71209e820acc0d0c3d90c7822013418c97c4c6f2f223649ca1a569fe2d052880",
+      "missingSerializedFields": [],
+      "existingMetaSha256": "54db4c9485b7f297d8395bcc9cf6d1fde39f3a2ffb39a555e6a91d41bdf5775e"
+    },
+    {
+      "type": "UnityEngine.UI.LayoutUtility`0",
+      "upstream": "Runtime/UI/Core/Layout/LayoutUtility.cs",
+      "destination": "Assets/Scripts/UnityEngine.UI/UnityEngine/UI/LayoutUtility.cs",
+      "upstreamSha256": "7991c4056bd15e32e7575d8172948da3ec6067de7be03f8b65a1cff09e4840aa",
+      "stubSha256": "b9930cc023dd009d8d3c3efd899629202f7ca4f132912e87fd4a1e9e46a25ab1",
+      "restoredSha256": "d2d976b1d2e997b42944ce46e900992d37bc8ef276ab21d66379444b24e97f3a",
+      "missingSerializedFields": [],
+      "existingMetaSha256": "194fe2262b1a22c97bd32315ff817b0043b46a4e043154b1f1b1adc56f5768ec"
+    },
+    {
+      "type": "UnityEngine.UI.VerticalLayoutGroup`0",
+      "upstream": "Runtime/UI/Core/Layout/VerticalLayoutGroup.cs",
+      "destination": "Assets/Scripts/UnityEngine.UI/UnityEngine/UI/VerticalLayoutGroup.cs",
+      "upstreamSha256": "55ec0610da9479b4752008b23990fe486df9df4ff78958f92027edf86906d035",
+      "stubSha256": "8dfcc74e3855a475dd434f6c0354796db55f5705d45444b9603956dd550ac9ee",
+      "restoredSha256": "4422cef422955f82077af472d8b410a916088a283c0fbb245efd1ff2fb34c49b",
+      "missingSerializedFields": [],
+      "existingMetaSha256": "475e32387ce1872cbd5cc6de74de43d430f3ac7171cebaa4c05b588439355197"
+    },
+    {
+      "type": "UnityEngine.UI.IMaterialModifier`0",
+      "upstream": "Runtime/UI/Core/MaterialModifiers/IMaterialModifier.cs",
+      "destination": "Assets/Scripts/UnityEngine.UI/UnityEngine/UI/IMaterialModifier.cs",
+      "upstreamSha256": "f64d3e7efd673957fad1325e59db23e1a9cede2ac11646de8db8cf43b4ce6d53",
+      "stubSha256": "bdb018599c0932cb60d3c563791c1b165ab805bbec9d7b086ffa893a64c843a4",
+      "restoredSha256": "bd3d6de34bb41aff208fbd1cfeba84dd34f9ec13c12826fdd10c01649c6bfa16",
+      "missingSerializedFields": [],
+      "existingMetaSha256": "2324244afb3060611eecdd92da57f719504a327c14c5b67a8ef86f1230757345"
+    },
+    {
+      "type": "UnityEngine.UI.Collections.IndexedSet`1",
+      "upstream": "Runtime/UI/Core/SpecializedCollections/IndexedSet.cs",
+      "destination": "Assets/Scripts/UnityEngine.UI/UnityEngine/UI/Collections/IndexedSet.cs",
+      "upstreamSha256": "710006515e6d94f7911deca58c310a26a05a8cc9d53474f76ea78a811b673142",
+      "stubSha256": "79232878d46f9b823c49de4068e19d2fc6e1efcea2a111b0726d1975b70d7fec",
+      "restoredSha256": "66b9a87d540f096701d06b54c6c6c1145af7ba1d0406c9a25222182601504e73",
+      "missingSerializedFields": [],
+      "existingMetaSha256": "dbcf79be05415eaf3f253515383d79d33075645c310618a46b23edef86a1b9eb"
+    },
+    {
+      "type": "UnityEngine.UI.ListPool`1",
+      "upstream": "Runtime/UI/Core/Utility/ListPool.cs",
+      "destination": "Assets/Scripts/UnityEngine.UI/UnityEngine/UI/ListPool.cs",
+      "upstreamSha256": "0323832809ab52f68d066519aa4940715ba7adae57a2095e25c2bfa6b1437b3b",
+      "stubSha256": "a01a6502b8dad26f340b04193a18dc0d61ff759db792a60f58702db7ef7b0e11",
+      "restoredSha256": "24ef8cf7a5687266f3f46539c655f7686ccb3756cb9ec46d342c2331b93b0e65",
+      "missingSerializedFields": [],
+      "existingMetaSha256": "3adec61838f382a9f5c15a4be088fb6782977c69f4e61db239b9e5481867fd3f"
+    },
+    {
+      "type": "UnityEngine.UI.ObjectPool`1",
+      "upstream": "Runtime/UI/Core/Utility/ObjectPool.cs",
+      "destination": "Assets/Scripts/UnityEngine.UI/UnityEngine/UI/ObjectPool.cs",
+      "upstreamSha256": "390dcdee51b3e93d8d7319252b7aae2a35a462bfbc25cdc920b4ed6f92f9bbc2",
+      "stubSha256": "5769a683fad5c75d896e7aca157b5d45072ef1b6f547be6feb79d2d8d16e2e10",
+      "restoredSha256": "66b969b87df9b59c3e6049dd4682101ce5f08f7dff0aa3b97e34a7b2c7f06cc7",
+      "missingSerializedFields": [],
+      "existingMetaSha256": "c8eb4bd295a5ef995ce16a67345e663070b8cc4962b64f2d31b896f0062191b0"
+    },
+    {
+      "type": "UnityEngine.UI.ReflectionMethodsCache`0",
+      "upstream": "Runtime/UI/Core/Utility/ReflectionMethodsCache.cs",
+      "destination": "Assets/Scripts/UnityEngine.UI/UnityEngine/UI/ReflectionMethodsCache.cs",
+      "upstreamSha256": "4a8e65fc5d178d3381ec5fbe4bbc27d68156d6106539b636552fe039f526b612",
+      "stubSha256": "87d4eaf31957ffc8bb2aece6bd779da7bfd3f9654bb6d32a1e97c84da4f398ef",
+      "restoredSha256": "0f690ce13e0be10fc67a48474bb42766ed75ce1fc3aa650ccbb951fa85dff5c5",
+      "missingSerializedFields": [],
+      "existingMetaSha256": "62ac174e6fd5d89a14753b0d7f1df8d6ea0d038ebc496a823dbf3e0da72bc92a"
+    },
+    {
+      "type": "UnityEngine.UI.VertexHelper`0",
+      "upstream": "Runtime/UI/Core/Utility/VertexHelper.cs",
+      "destination": "Assets/Scripts/UnityEngine.UI/UnityEngine/UI/VertexHelper.cs",
+      "upstreamSha256": "37cadf72571761421e1e0f9999c95df7ec22ee62515d62bc82d48dca92696ecd",
+      "stubSha256": "47d3fc4853d3fedf41d313901de4052fa0efde4208fb7e417ee18d2b2b28519d",
+      "restoredSha256": "df1ba2274d2c35dde8ddd293fac950f04bd8a88091ad6f89f7d015176a21e413",
+      "missingSerializedFields": [],
+      "existingMetaSha256": "9ff35dbd84b72946bfaa327d4fa7175a4c0298aa2a517a7094715cdf02bbc9a3"
+    },
+    {
+      "type": "UnityEngine.UI.BaseVertexEffect`0",
+      "upstream": "Runtime/UI/Core/VertexModifiers/BaseMeshEffect.cs",
+      "destination": "Assets/Scripts/UnityEngine.UI/UnityEngine/UI/BaseVertexEffect.cs",
+      "upstreamSha256": "a1e0aaf0f7a23f2c3999977c285e0fc967e1d7ad7445672aa85ec8f97ebb73f7",
+      "stubSha256": "82488a82a89c8315c1869cab247ede81e96a3216bce7829f5eb5096abf6b25de",
+      "restoredSha256": "7946db3a4fda412f29d7530fbe227fcb42ee8aa617ce2c37241d4cef3d808976",
+      "missingSerializedFields": [],
+      "existingMetaSha256": "62ee8cc83b12cdfec30189639036a02ad9cb29bfa2028d7bad7592e3da29ebe3"
+    },
+    {
+      "type": "UnityEngine.UI.BaseMeshEffect`0",
+      "upstream": "Runtime/UI/Core/VertexModifiers/BaseMeshEffect.cs",
+      "destination": "Assets/Scripts/UnityEngine.UI/UnityEngine/UI/BaseMeshEffect.cs",
+      "upstreamSha256": "a1e0aaf0f7a23f2c3999977c285e0fc967e1d7ad7445672aa85ec8f97ebb73f7",
+      "stubSha256": "9ae0628d7186ff0d1de3b3c383046ef358912bd8146f492f5f151983fd7b8e76",
+      "restoredSha256": "0885960fb9df79dcb28c46ca2281a6ee6660274ab3b1f8c030ba6c31af295a5a",
+      "missingSerializedFields": [],
+      "existingMetaSha256": "be53ac4bb8f49988340a1e000938ab2c6a6159fdf883e1ba4c2647754ba3e63a"
+    },
+    {
+      "type": "UnityEngine.UI.IVertexModifier`0",
+      "upstream": "Runtime/UI/Core/VertexModifiers/IMeshModifier.cs",
+      "destination": "Assets/Scripts/UnityEngine.UI/UnityEngine/UI/IVertexModifier.cs",
+      "upstreamSha256": "697364676c734914a9c2d220635697fb01fa9d9128cb052aed97b657a7f208be",
+      "stubSha256": "3e32f16f4ce2c979ccee801d7f36642df0d6fb0defc4524c682fafa78b36479c",
+      "restoredSha256": "876bbf0fc54c76d43005bd62cbccd3eef9cc5249176646403796bfface1d08a0",
+      "missingSerializedFields": [],
+      "existingMetaSha256": "ad505230398210bd6f076c8b744d8a3e402ae697c41491dfb92369cbb8a198ee"
+    },
+    {
+      "type": "UnityEngine.UI.IMeshModifier`0",
+      "upstream": "Runtime/UI/Core/VertexModifiers/IMeshModifier.cs",
+      "destination": "Assets/Scripts/UnityEngine.UI/UnityEngine/UI/IMeshModifier.cs",
+      "upstreamSha256": "697364676c734914a9c2d220635697fb01fa9d9128cb052aed97b657a7f208be",
+      "stubSha256": "40ec22fa4d2ce9b96ef714d9d493f9a8799656a7c21978818f71aa3a39111088",
+      "restoredSha256": "50c6562a0eff73dec87c31cf7ee932f1ae78143c67641fd66f4c16be23741ae0",
+      "missingSerializedFields": [],
+      "existingMetaSha256": "19dd4f60c243c68d88b3793a63caf6cac7d2fd89cee734975bbca6dc27fdf925"
+    },
+    {
+      "type": "UnityEngine.UI.Outline`0",
+      "upstream": "Runtime/UI/Core/VertexModifiers/Outline.cs",
+      "destination": "Assets/Scripts/UnityEngine.UI/UnityEngine/UI/Outline.cs",
+      "upstreamSha256": "01d38e90aa987e61fe0b0c01e3b4572514951cd287ec1473c52c10865368ced7",
+      "stubSha256": "dc3f0dfd25082dde6ce3c06f24c354ff98ba67f28d2cf68b808f09b35a28dd30",
+      "restoredSha256": "16a2d06046a5712fded49d57897bd959f7238ee6b0033dbb72e704a4b922f4b3",
+      "missingSerializedFields": [],
+      "existingMetaSha256": "f091130ad4dbc7fdf68d3de0fc3f01fcdfadb04de9e73c6b919a51de7f9f65f1"
+    },
+    {
+      "type": "UnityEngine.UI.PositionAsUV1`0",
+      "upstream": "Runtime/UI/Core/VertexModifiers/PositionAsUV1.cs",
+      "destination": "Assets/Scripts/UnityEngine.UI/UnityEngine/UI/PositionAsUV1.cs",
+      "upstreamSha256": "70a62eafbc0e8fc24fab0c17c464674d81f02bec1248e68876bc126720e9d58d",
+      "stubSha256": "3da160f224961cfc280f674b0b4543c62b83b54bf107b31f34c7a70b3cae2e94",
+      "restoredSha256": "3841b95e54d126ddfd1d077c0799a9bb6a77651025296adc83006469f719ef0e",
+      "missingSerializedFields": [],
+      "existingMetaSha256": "d373e3c49a72343ff9a0ceaf54eb6b068a463354f8a073375b54c6c88312722c"
+    },
+    {
+      "type": "UnityEngine.UI.Shadow`0",
+      "upstream": "Runtime/UI/Core/VertexModifiers/Shadow.cs",
+      "destination": "Assets/Scripts/UnityEngine.UI/UnityEngine/UI/Shadow.cs",
+      "upstreamSha256": "50b887338283764a29da3dd694f4c40fa7aede16afc80183aef21b4c099dbc2f",
+      "stubSha256": "e7b0911e0711aa6872c28348b75c1ee170e54368c5e3ea79b674dac92ef5297b",
+      "restoredSha256": "353f6531293f2c86896f22f09d7d5a35d0a14dc791f44d39d8c322922528dcda",
+      "missingSerializedFields": [],
+      "existingMetaSha256": "29dbd8c9f5e2520a1c8a3387f139220a886ee0b0f3b85aba37d23f87c6ac48d3"
+    }
+  ]
+}

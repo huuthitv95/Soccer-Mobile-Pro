@@ -1,7 +1,15 @@
+// Restored from Unity 2020.3.49f1 bundled uGUI. See RecoveryProvenance.md.
 namespace UnityEngine.EventSystems
 {
-	public interface ICancelHandler : global::UnityEngine.EventSystems.IEventSystemHandler
-	{
-		void OnCancel(global::UnityEngine.EventSystems.BaseEventData eventData);
-	}
+
+    /// <summary>
+    /// Interface to implement if you wish to receive OnCancel callbacks.
+    /// </summary>
+    /// <remarks>
+    /// Criteria for this event is implementation dependent. For example see StandAloneInputModule.
+    /// </remarks>
+    public interface ICancelHandler : IEventSystemHandler
+    {
+        void OnCancel(BaseEventData eventData);
+    }
 }

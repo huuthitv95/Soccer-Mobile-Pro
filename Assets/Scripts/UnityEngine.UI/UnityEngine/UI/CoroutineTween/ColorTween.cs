@@ -1,105 +1,103 @@
+// Restored from Unity 2020.3.49f1 bundled uGUI. See RecoveryProvenance.md.
+using System.Collections;
+using UnityEngine.Events;
+
 namespace UnityEngine.UI.CoroutineTween
 {
-    internal struct ColorTween : global::UnityEngine.UI.CoroutineTween.ITweenValue
+
+    // Color tween class, receives the
+    // TweenValue callback and then sets
+    // the value on the target.
+    internal struct ColorTween : ITweenValue
     {
         public enum ColorTweenMode
         {
-            All = 0,
-            RGB = 1,
-            Alpha = 2
+            All,
+            RGB,
+            Alpha
         }
 
-        public class ColorTweenCallback : global::UnityEngine.Events.UnityEvent<global::UnityEngine.Color>
-        {
-        }
+        public class ColorTweenCallback : UnityEvent<Color> {}
 
-        private global::UnityEngine.UI.CoroutineTween.ColorTween.ColorTweenCallback m_Target;
-        private global::UnityEngine.Color m_StartColor;
-        private global::UnityEngine.Color m_TargetColor;
-        private global::UnityEngine.UI.CoroutineTween.ColorTween.ColorTweenMode m_TweenMode;
+        private ColorTweenCallback m_Target;
+        private Color m_StartColor;
+        private Color m_TargetColor;
+        private ColorTweenMode m_TweenMode;
+
         private float m_Duration;
         private bool m_IgnoreTimeScale;
-        public global::UnityEngine.Color startColor
-        {
-            get
-            {
-                return default;
-            }
 
-            set
-            {
-            }
+        public Color startColor
+        {
+            get { return m_StartColor; }
+            set { m_StartColor = value; }
         }
 
-        public global::UnityEngine.Color targetColor
+        public Color targetColor
         {
-            get
-            {
-                return default;
-            }
-
-            set
-            {
-            }
+            get { return m_TargetColor; }
+            set { m_TargetColor = value; }
         }
 
-        public global::UnityEngine.UI.CoroutineTween.ColorTween.ColorTweenMode tweenMode
+        public ColorTweenMode tweenMode
         {
-            get
-            {
-                return global::UnityEngine.UI.CoroutineTween.ColorTween.ColorTweenMode.All;
-            }
-
-            set
-            {
-            }
+            get { return m_TweenMode; }
+            set { m_TweenMode = value; }
         }
 
         public float duration
         {
-            get
-            {
-                return 0f;
-            }
-
-            set
-            {
-            }
+            get { return m_Duration; }
+            set { m_Duration = value; }
         }
 
         public bool ignoreTimeScale
         {
-            get
-            {
-                return false;
-            }
-
-            set
-            {
-            }
+            get { return m_IgnoreTimeScale; }
+            set { m_IgnoreTimeScale = value; }
         }
 
         public void TweenValue(float floatPercentage)
         {
+            if (!ValidTarget())
+                return;
+
+            var newColor = Color.Lerp(m_StartColor, m_TargetColor, floatPercentage);
+
+            if (m_TweenMode == ColorTweenMode.Alpha)
+            {
+                newColor.r = m_StartColor.r;
+                newColor.g = m_StartColor.g;
+                newColor.b = m_StartColor.b;
+            }
+            else if (m_TweenMode == ColorTweenMode.RGB)
+            {
+                newColor.a = m_StartColor.a;
+            }
+            m_Target.Invoke(newColor);
         }
 
-        public void AddOnChangedCallback(global::UnityEngine.Events.UnityAction<global::UnityEngine.Color> callback)
+        public void AddOnChangedCallback(UnityAction<Color> callback)
         {
+            if (m_Target == null)
+                m_Target = new ColorTweenCallback();
+
+            m_Target.AddListener(callback);
         }
 
         public bool GetIgnoreTimescale()
         {
-            return false;
+            return m_IgnoreTimeScale;
         }
 
         public float GetDuration()
         {
-            return 0f;
+            return m_Duration;
         }
 
         public bool ValidTarget()
         {
-            return false;
+            return m_Target != null;
         }
     }
 }

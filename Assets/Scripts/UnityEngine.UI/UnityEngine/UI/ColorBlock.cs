@@ -1,135 +1,234 @@
+// Restored from Unity 2020.3.49f1 bundled uGUI. See RecoveryProvenance.md.
+using System;
+using UnityEngine.Serialization;
+
 namespace UnityEngine.UI
 {
-	[global::System.Serializable]
-	public struct ColorBlock : global::System.IEquatable<global::UnityEngine.UI.ColorBlock>
-	{
-		[global::UnityEngine.SerializeField]
-		private global::UnityEngine.Color m_NormalColor;
+    [Serializable]
+    /// <summary>
+    /// Structure that stores the state of a color transition on a Selectable.
+    /// </summary>
+    public struct ColorBlock : IEquatable<ColorBlock>
+    {
+        [FormerlySerializedAs("normalColor")]
+        [SerializeField]
+        private Color m_NormalColor;
 
-		[global::UnityEngine.SerializeField]
-		private global::UnityEngine.Color m_HighlightedColor;
+        [FormerlySerializedAs("highlightedColor")]
+        [SerializeField]
+        private Color m_HighlightedColor;
 
-		[global::UnityEngine.SerializeField]
-		private global::UnityEngine.Color m_PressedColor;
+        [FormerlySerializedAs("pressedColor")]
+        [SerializeField]
+        private Color m_PressedColor;
 
-		[global::UnityEngine.SerializeField]
-		private global::UnityEngine.Color m_SelectedColor;
+        [FormerlySerializedAs("m_HighlightedColor")]
+        [SerializeField]
+        private Color m_SelectedColor;
 
-		[global::UnityEngine.SerializeField]
-		private global::UnityEngine.Color m_DisabledColor;
+        [FormerlySerializedAs("disabledColor")]
+        [SerializeField]
+        private Color m_DisabledColor;
 
-		[global::UnityEngine.SerializeField]
-		private float m_ColorMultiplier;
+        [Range(1, 5)]
+        [SerializeField]
+        private float m_ColorMultiplier;
 
-		[global::UnityEngine.SerializeField]
-		private float m_FadeDuration;
+        [FormerlySerializedAs("fadeDuration")]
+        [SerializeField]
+        private float m_FadeDuration;
 
-		public static global::UnityEngine.UI.ColorBlock defaultColorBlock;
+        /// <summary>
+        /// The normal color for this color block.
+        /// </summary>
+        /// <example>
+        /// <code>
+        /// using UnityEngine;
+        /// using System.Collections;
+        /// using UnityEngine.UI; // Required when Using UI elements.
+        ///
+        /// public class ExampleClass : MonoBehaviour
+        /// {
+        ///     public Button button;
+        ///     public Color newColor;
+        ///
+        ///     void Start()
+        ///     {
+        ///         //Changes the button's Normal color to the new color.
+        ///         ColorBlock cb = button.colors;
+        ///         cb.normalColor = newColor;
+        ///         button.colors = cb;
+        ///     }
+        /// }
+        /// </code>
+        /// </example>
+        public Color normalColor       { get { return m_NormalColor; } set { m_NormalColor = value; } }
 
-		public global::UnityEngine.Color normalColor
-		{
-			get
-			{
-				return default;
-			}
-			set
-			{
-			}
-		}
+        /// <summary>
+        /// The highlight color for this color block.
+        /// </summary>
+        /// <example>
+        /// <code>
+        /// using UnityEngine;
+        /// using System.Collections;
+        /// using UnityEngine.UI; // Required when Using UI elements.
+        ///
+        /// public class ExampleClass : MonoBehaviour
+        /// {
+        ///     public Button button;
+        ///     public Color newColor;
+        ///
+        ///     void Start()
+        ///     {
+        ///         //Changes the button's Highlighted color to the new color.
+        ///         ColorBlock cb = button.colors;
+        ///         cb.highlightedColor = newColor;
+        ///         button.colors = cb;
+        ///     }
+        /// }
+        /// </code>
+        /// </example>
+        public Color highlightedColor  { get { return m_HighlightedColor; } set { m_HighlightedColor = value; } }
 
-		public global::UnityEngine.Color highlightedColor
-		{
-			get
-			{
-				return default;
-			}
-			set
-			{
-			}
-		}
+        /// <summary>
+        /// The pressed color for this color block.
+        /// </summary>
+        /// <example>
+        /// <code>
+        /// using UnityEngine;
+        /// using System.Collections;
+        /// using UnityEngine.UI; // Required when Using UI elements.
+        ///
+        /// public class ExampleClass : MonoBehaviour
+        /// {
+        ///     public Button button;
+        ///     public Color newColor;
+        ///
+        ///     void Start()
+        ///     {
+        ///         //Changes the button's Pressed color to the new color.
+        ///         ColorBlock cb = button.colors;
+        ///         cb.pressedColor = newColor;
+        ///         button.colors = cb;
+        ///     }
+        /// }
+        /// </code>
+        /// </example>
+        public Color pressedColor      { get { return m_PressedColor; } set { m_PressedColor = value; } }
 
-		public global::UnityEngine.Color pressedColor
-		{
-			get
-			{
-				return default;
-			}
-			set
-			{
-			}
-		}
+        /// <summary>
+        /// The selected color for this color block.
+        /// </summary>
+        /// <example>
+        /// <code>
+        /// using UnityEngine;
+        /// using System.Collections;
+        /// using UnityEngine.UI; // Required when Using UI elements.
+        ///
+        /// public class ExampleClass : MonoBehaviour
+        /// {
+        ///     public Button button;
+        ///     public Color newColor;
+        ///
+        ///     void Start()
+        ///     {
+        ///         //Changes the button's Selected color to the new color.
+        ///         ColorBlock cb = button.colors;
+        ///         cb.selectedColor = newColor;
+        ///         button.colors = cb;
+        ///     }
+        /// }
+        /// </code>
+        /// </example>
+        public Color selectedColor     { get { return m_SelectedColor; } set { m_SelectedColor = value; } }
 
-		public global::UnityEngine.Color selectedColor
-		{
-			get
-			{
-				return default;
-			}
-			set
-			{
-			}
-		}
+        /// <summary>
+        /// The disabled color for this color block.
+        /// </summary>
+        /// <example>
+        /// <code>
+        /// using UnityEngine;
+        /// using System.Collections;
+        /// using UnityEngine.UI; // Required when Using UI elements.
+        ///
+        /// public class ExampleClass : MonoBehaviour
+        /// {
+        ///     public Button button;
+        ///     public Color newColor;
+        ///
+        ///     void Start()
+        ///     {
+        ///         //Changes the button's Disabled color to the new color.
+        ///         ColorBlock cb = button.colors;
+        ///         cb.disabledColor = newColor;
+        ///         button.colors = cb;
+        ///     }
+        /// }
+        /// </code>
+        /// </example>
+        public Color disabledColor     { get { return m_DisabledColor; } set { m_DisabledColor = value; } }
 
-		public global::UnityEngine.Color disabledColor
-		{
-			get
-			{
-				return default;
-			}
-			set
-			{
-			}
-		}
+        /// <summary>
+        /// Multiplier applied to colors (allows brightening greater then base color).
+        /// </summary>
+        public float colorMultiplier   { get { return m_ColorMultiplier; } set { m_ColorMultiplier = value; } }
 
-		public float colorMultiplier
-		{
-			get
-			{
-				return 0f;
-			}
-			set
-			{
-			}
-		}
+        /// <summary>
+        /// How long a color transition between states should take.
+        /// </summary>
+        public float fadeDuration      { get { return m_FadeDuration; } set { m_FadeDuration = value; } }
 
-		public float fadeDuration
-		{
-			get
-			{
-				return 0f;
-			}
-			set
-			{
-			}
-		}
+        /// <summary>
+        /// Simple getter for a code generated default ColorBlock.
+        /// </summary>
+        public static ColorBlock defaultColorBlock;
 
-		static ColorBlock()
-		{
-		}
+        static ColorBlock()
+        {
+            defaultColorBlock = new ColorBlock
+            {
+                m_NormalColor      = new Color32(255, 255, 255, 255),
+                m_HighlightedColor = new Color32(245, 245, 245, 255),
+                m_PressedColor     = new Color32(200, 200, 200, 255),
+                m_SelectedColor    = new Color32(245, 245, 245, 255),
+                m_DisabledColor    = new Color32(200, 200, 200, 128),
+                colorMultiplier    = 1.0f,
+                fadeDuration       = 0.1f
+            };
+        }
 
-		public override bool Equals(object obj)
-		{
-			return false;
-		}
+        public override bool Equals(object obj)
+        {
+            if (!(obj is ColorBlock))
+                return false;
 
-		public bool Equals(global::UnityEngine.UI.ColorBlock other)
-		{
-			return false;
-		}
+            return Equals((ColorBlock)obj);
+        }
 
-		public static bool operator ==(global::UnityEngine.UI.ColorBlock point1, global::UnityEngine.UI.ColorBlock point2)
-		{
-			return false;
-		}
+        public bool Equals(ColorBlock other)
+        {
+            return normalColor == other.normalColor &&
+                highlightedColor == other.highlightedColor &&
+                pressedColor == other.pressedColor &&
+                selectedColor == other.selectedColor &&
+                disabledColor == other.disabledColor &&
+                colorMultiplier == other.colorMultiplier &&
+                fadeDuration == other.fadeDuration;
+        }
 
-		public static bool operator !=(global::UnityEngine.UI.ColorBlock point1, global::UnityEngine.UI.ColorBlock point2)
-		{
-			return false;
-		}
+        public static bool operator==(ColorBlock point1, ColorBlock point2)
+        {
+            return point1.Equals(point2);
+        }
 
-		public override int GetHashCode()
-		{
-			return 0;
-		}
-	}
+        public static bool operator!=(ColorBlock point1, ColorBlock point2)
+        {
+            return !point1.Equals(point2);
+        }
+
+        public override int GetHashCode()
+        {
+            return base.GetHashCode();
+        }
+    }
 }
