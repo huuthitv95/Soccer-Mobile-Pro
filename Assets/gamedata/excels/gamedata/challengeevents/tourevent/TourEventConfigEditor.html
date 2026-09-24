@@ -1,0 +1,2659 @@
+﻿<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>TourEventConfig Editor</title>
+<style>
+  :root {
+    --bg: #f5f6f3;
+    --surface: #ffffff;
+    --surface-2: #f7f8fa;
+    --line: #dfe3e6;
+    --line-strong: #b8c0c7;
+    --text: #1f2933;
+    --muted: #66737f;
+    --accent: #1f7a5a;
+    --accent-weak: #e5f3ed;
+    --danger: #b23b3b;
+    --danger-weak: #fdeaea;
+    --warn: #9a6a12;
+    --warn-weak: #fff2cf;
+    --info: #2f5e9e;
+    --info-weak: #e8f0fb;
+    --shadow: 0 10px 24px rgba(20, 28, 34, 0.08);
+  }
+
+  * { box-sizing: border-box; }
+  html, body { height: 100%; }
+  body {
+    margin: 0;
+    color: var(--text);
+    background: var(--bg);
+    font-family: "Segoe UI", "Microsoft YaHei", Arial, sans-serif;
+    font-size: 14px;
+  }
+
+  button, input, select, textarea {
+    font: inherit;
+  }
+
+  button {
+    border: 1px solid var(--line-strong);
+    background: var(--surface);
+    color: var(--text);
+    border-radius: 6px;
+    min-height: 34px;
+    padding: 7px 12px;
+    cursor: pointer;
+  }
+
+  button:hover { border-color: var(--accent); color: var(--accent); }
+  button.primary { background: var(--accent); border-color: var(--accent); color: #fff; }
+  button.primary:hover { background: #176747; color: #fff; }
+  button.danger { border-color: #d9a0a0; color: var(--danger); }
+  button.danger:hover { background: var(--danger-weak); }
+  button.icon { width: 34px; padding: 0; font-weight: 700; }
+  button.tab {
+    border: none;
+    border-radius: 0;
+    background: transparent;
+    color: var(--muted);
+    min-height: 42px;
+    padding: 0 14px;
+    border-bottom: 3px solid transparent;
+  }
+  button.tab.active { color: var(--accent); border-bottom-color: var(--accent); }
+
+  input, select, textarea {
+    width: 100%;
+    border: 1px solid var(--line-strong);
+    border-radius: 6px;
+    background: #fff;
+    color: var(--text);
+    padding: 8px 10px;
+    min-height: 34px;
+  }
+  textarea {
+    min-height: 82px;
+    resize: vertical;
+    line-height: 1.45;
+    font-family: Consolas, "Courier New", monospace;
+  }
+  input:focus, select:focus, textarea:focus {
+    outline: 2px solid rgba(31, 122, 90, 0.18);
+    border-color: var(--accent);
+  }
+  label { display: block; margin-bottom: 6px; color: var(--muted); font-size: 12px; }
+
+  .app {
+    min-height: 100%;
+    display: grid;
+    grid-template-columns: 280px minmax(0, 1fr);
+  }
+  .sidebar {
+    background: #26333a;
+    color: #ecf2f0;
+    padding: 18px;
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+  }
+  .brand { display: flex; flex-direction: column; gap: 4px; }
+  .brand-title { font-size: 18px; font-weight: 700; letter-spacing: 0; }
+  .brand-subtitle { color: #b7c4c1; font-size: 12px; }
+  .sidebar button { width: 100%; background: #314049; color: #f8fbfa; border-color: #4c5f68; }
+  .sidebar button:hover { background: #384b54; color: #fff; border-color: #85b8a4; }
+  .sidebar button.primary { background: var(--accent); border-color: var(--accent); }
+  .side-section { display: flex; flex-direction: column; gap: 8px; }
+  .side-title { color: #b7c4c1; font-size: 12px; text-transform: uppercase; letter-spacing: 0; }
+  .event-list { display: flex; flex-direction: column; gap: 6px; }
+  .event-button.active { border-color: #b9e2d1; background: #3b584f; }
+  .status-pill {
+    border-radius: 6px;
+    padding: 8px 10px;
+    font-size: 12px;
+    line-height: 1.4;
+    background: #314049;
+    color: #d9e4e1;
+  }
+  .status-pill.good { background: #244f3f; color: #e3f7ee; }
+  .status-pill.bad { background: #5a3131; color: #ffecec; }
+  .status-pill.warn { background: #5a4a25; color: #fff1cf; }
+  .file-input { display: none; }
+
+  .main { min-width: 0; display: flex; flex-direction: column; }
+  .topbar {
+    height: 58px;
+    background: var(--surface);
+    border-bottom: 1px solid var(--line);
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 16px;
+    padding: 0 22px;
+  }
+  .tabs { display: flex; gap: 2px; align-items: stretch; height: 100%; }
+  .top-actions { display: flex; gap: 8px; align-items: center; }
+  .content { padding: 20px 22px 28px; overflow: auto; }
+
+  .summary-grid {
+    display: grid;
+    grid-template-columns: repeat(6, minmax(110px, 1fr));
+    gap: 10px;
+    margin-bottom: 16px;
+  }
+  .metric {
+    background: var(--surface);
+    border: 1px solid var(--line);
+    border-radius: 8px;
+    padding: 12px;
+    min-height: 64px;
+  }
+  .metric-value { font-size: 20px; font-weight: 700; line-height: 1.1; }
+  .metric-label { color: var(--muted); font-size: 12px; margin-top: 6px; }
+
+  .panel {
+    background: var(--surface);
+    border: 1px solid var(--line);
+    border-radius: 8px;
+    box-shadow: var(--shadow);
+    margin-bottom: 16px;
+  }
+  .panel-header {
+    min-height: 48px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 12px;
+    padding: 0 16px;
+    border-bottom: 1px solid var(--line);
+  }
+  .panel-title { font-size: 15px; font-weight: 700; }
+  .panel-body { padding: 16px; }
+  .toolbar { display: flex; gap: 8px; flex-wrap: wrap; align-items: center; }
+  .grid-2 { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 14px; }
+  .grid-3 { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 14px; }
+  .grid-4 { display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 14px; }
+  .field { min-width: 0; }
+  .field.compact input, .field.compact select { min-height: 32px; padding: 6px 8px; }
+
+  table { width: 100%; border-collapse: collapse; }
+  th, td { border-bottom: 1px solid var(--line); padding: 9px 8px; text-align: left; vertical-align: middle; }
+  th { color: var(--muted); font-size: 12px; font-weight: 600; background: var(--surface-2); }
+  td .inline-input { min-height: 30px; padding: 5px 7px; }
+  .table-actions { width: 44px; text-align: right; }
+
+  .chapter-layout {
+    display: grid;
+    grid-template-columns: 260px minmax(0, 1fr);
+    gap: 16px;
+  }
+  .chapter-list { display: flex; flex-direction: column; gap: 8px; }
+  .chapter-card {
+    border: 1px solid var(--line);
+    background: var(--surface);
+    border-radius: 8px;
+    padding: 10px;
+    cursor: pointer;
+  }
+  .chapter-card.active { border-color: var(--accent); background: var(--accent-weak); }
+  .chapter-card-title { font-weight: 700; }
+  .chapter-card-meta { color: var(--muted); font-size: 12px; margin-top: 4px; }
+
+  .map-layout {
+    display: grid;
+    grid-template-columns: minmax(0, 1fr) 320px;
+    gap: 16px;
+  }
+  .graph-box {
+    border: 1px solid var(--line);
+    border-radius: 8px;
+    overflow: hidden;
+    background: #fbfcfc;
+  }
+  .graph-svg { display: block; width: 100%; min-height: 420px; }
+  .edge { stroke: #9aa8b2; stroke-width: 2; fill: none; marker-end: url(#arrow); }
+  .node-shape { stroke: #34434b; stroke-width: 2; cursor: pointer; }
+  .node-label { fill: #172026; font-size: 13px; font-weight: 700; text-anchor: middle; pointer-events: none; }
+  .node-sub { fill: #51616b; font-size: 11px; text-anchor: middle; pointer-events: none; }
+  .node.selected .node-shape { stroke: #d08b22; stroke-width: 4; }
+  .node.entry .node-shape { stroke-dasharray: 5 4; }
+  .node.final .node-shape { stroke: #8b2f5b; }
+  .legend { display: flex; flex-wrap: wrap; gap: 8px 14px; margin-top: 10px; }
+  .legend-item { display: inline-flex; align-items: center; gap: 6px; color: var(--muted); font-size: 12px; }
+  .swatch { width: 12px; height: 12px; border-radius: 3px; border: 1px solid rgba(0,0,0,0.15); }
+
+  .node-list {
+    max-height: 420px;
+    overflow: auto;
+    border: 1px solid var(--line);
+    border-radius: 8px;
+  }
+  .node-row {
+    display: grid;
+    grid-template-columns: 58px minmax(0, 1fr) 54px;
+    gap: 8px;
+    align-items: center;
+    padding: 8px 10px;
+    border-bottom: 1px solid var(--line);
+    cursor: pointer;
+  }
+  .node-row:last-child { border-bottom: none; }
+  .node-row.active { background: var(--accent-weak); }
+  .node-kind { color: var(--muted); font-size: 12px; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
+  .node-id { font-weight: 700; }
+  .node-fatigue { text-align: right; color: var(--muted); font-size: 12px; }
+
+  .validation-list { display: flex; flex-direction: column; gap: 8px; }
+  .message {
+    border-radius: 7px;
+    padding: 9px 11px;
+    line-height: 1.45;
+    border: 1px solid var(--line);
+  }
+  .message.error { color: var(--danger); background: var(--danger-weak); border-color: #f1c6c6; }
+  .message.warning { color: var(--warn); background: var(--warn-weak); border-color: #efd693; }
+  .message.ok { color: var(--accent); background: var(--accent-weak); border-color: #b9decf; }
+
+  .raw-json {
+    min-height: 620px;
+    font-size: 12px;
+    line-height: 1.5;
+  }
+  .hidden { display: none !important; }
+
+  @media (max-width: 1120px) {
+    .app { grid-template-columns: 1fr; }
+    .sidebar { position: static; }
+    .summary-grid { grid-template-columns: repeat(3, minmax(110px, 1fr)); }
+    .chapter-layout, .map-layout { grid-template-columns: 1fr; }
+  }
+  @media (max-width: 720px) {
+    .topbar { height: auto; flex-direction: column; align-items: stretch; padding: 10px; }
+    .tabs { overflow-x: auto; height: 42px; }
+    .top-actions { flex-wrap: wrap; }
+    .top-actions button { flex: 1 1 120px; }
+    .content { padding: 12px; }
+    .summary-grid, .grid-2, .grid-3, .grid-4 { grid-template-columns: 1fr; }
+  }
+</style>
+</head>
+<body>
+<div class="app">
+  <aside class="sidebar">
+    <div class="brand">
+      <div class="brand-title">TourEventConfig Editor</div>
+      <div class="brand-subtitle">ChallengeEvents/TourEvent/TourEventConfig.json</div>
+    </div>
+
+    <div class="side-section">
+      <div class="side-title">文件</div>
+      <button id="openBtn" class="primary">打开 JSON</button>
+      <button id="saveBtn">保存 / 下载</button>
+      <button id="copyBtn">复制 JSON</button>
+      <input id="fileInput" class="file-input" type="file" accept=".json,application/json">
+      <input id="playerCsvInput" class="file-input" type="file" accept=".csv,text/csv">
+      <input id="coreAttributesCsvInput" class="file-input" type="file" accept=".csv,text/csv">
+    </div>
+
+    <div class="side-section">
+      <div class="side-title">活动配置</div>
+      <div id="eventList" class="event-list"></div>
+      <button id="addEventBtn">+ 新增活动</button>
+    </div>
+
+    <div id="statusPill" class="status-pill">未校验</div>
+  </aside>
+
+  <main class="main">
+    <div class="topbar">
+      <div class="tabs" id="tabs">
+        <button class="tab active" data-tab="activity">活动</button>
+        <button class="tab" data-tab="random">随机事件</button>
+        <button class="tab" data-tab="chapters">章节地图</button>
+        <button class="tab" data-tab="json">JSON</button>
+        <button class="tab" data-tab="validate">校验</button>
+      </div>
+      <div class="top-actions">
+        <button id="validateBtn">校验</button>
+        <button id="formatBtn">刷新 JSON</button>
+      </div>
+    </div>
+
+    <div class="content">
+      <section id="summary" class="summary-grid"></section>
+
+      <section id="activityTab" class="tab-page"></section>
+      <section id="randomTab" class="tab-page hidden"></section>
+      <section id="chaptersTab" class="tab-page hidden"></section>
+      <section id="jsonTab" class="tab-page hidden"></section>
+      <section id="validateTab" class="tab-page hidden"></section>
+    </div>
+  </main>
+</div>
+
+<script id="default-config" type="application/json">
+{
+    "tourEvent": {
+        "1": {
+            "activityNameId": "TourEvent_WorldCup_Name",
+            "activityLongDescId": "TourEvent_WorldCup_LD",
+            "activityShortDescId": "TourEvent_WorldCup_SD",
+            "templateTeamId": 205,
+            "momentChallengeLevelIndex": "MomentChallengeLevelConfig",
+            "pointsShopConfigIndex": "PointsShopConfig",
+            "expiredPointCoinExchangeRate": 20,
+            "entryChapterId": 1,
+            "matchDifficultyValueMap": {
+              "Easy": 1.0,
+              "Medium": 1.2,
+              "Hard": 1.5,
+              "Extreme": 2.0
+            },
+            "selectableTeamTemplates": [
+              { "templateTeamId": 10039, "teamNameId": "Str_National_Spain", "formationRoles": ["GK", "LB", "LCB", "RCB", "RB", "LDM", "RDM", "LAM", "CAM", "RAM", "ST"], "replacementPlayerAbilityRange": { "minAbility": 88, "maxAbility": 104 }, "playerPoolIds": [173163, 173744, 173755, 160388, 2004, 160363, 160389, 160384, 173208, 100890, 173235, 160732, 1069, 160382, 100895, 160741, 160742, 174627] },
+              { "templateTeamId": 10003, "teamNameId": "Str_National_Argentina", "formationRoles": ["GK", "LB", "LCB", "RCB", "RB", "LDM", "RDM", "LAM", "CAM", "RAM", "ST"], "replacementPlayerAbilityRange": { "minAbility": 88, "maxAbility": 104 }, "playerPoolIds": [144343, 140010, 173378, 144335, 2008, 160392, 173212, 2016, 173798, 173178, 173754, 173385, 173753, 173383, 144331, 160497, 144328, 100064, 160514] },
+              { "templateTeamId": 10016, "teamNameId": "Str_National_France", "formationRoles": ["GK", "LB", "LCB", "RCB", "RB", "LDM", "RDM", "LAM", "CAM", "RAM", "ST"], "replacementPlayerAbilityRange": { "minAbility": 88, "maxAbility": 104 }, "playerPoolIds": [2038, 140190, 173171, 173243, 2037, 2013, 173361, 160452, 2045, 173168, 2007, 2042, 2043, 173353, 160448, 100367, 173351, 173240, 173358] },
+              { "templateTeamId": 10015, "teamNameId": "Str_National_England", "formationRoles": ["GK", "LB", "LCB", "RCB", "RB", "LDM", "RDM", "LAM", "CAM", "RAM", "ST"], "replacementPlayerAbilityRange": { "minAbility": 88, "maxAbility": 104 }, "playerPoolIds": [140092, 2034, 2014, 1096, 173757, 173748, 173746, 173215, 2036, 160289, 2015, 2005, 2006, 160506, 173166, 160501, 173164, 173191, 100344] },
+              { "templateTeamId": 10001, "teamNameId": "Str_National_Brazil", "formationRoles": ["GK", "LB", "LCB", "RCB", "RB", "LDM", "RDM", "LAM", "CAM", "RAM", "ST"], "replacementPlayerAbilityRange": { "minAbility": 88, "maxAbility": 104 }, "playerPoolIds": [140034, 173750, 173749, 2002, 173743, 173226, 140033, 1055, 160367, 160426, 2024, 1053, 160425, 140031, 100008, 160496, 1054, 140032, 140045] },
+              { "templateTeamId": 10033, "teamNameId": "Str_National_Portugal", "formationRoles": ["GK", "LB", "LCB", "RCB", "RB", "LDM", "RDM", "LAM", "CAM", "RAM", "ST"], "replacementPlayerAbilityRange": { "minAbility": 88, "maxAbility": 104 }, "playerPoolIds": [102085, 173801, 173234, 160370, 2012, 173233, 173231, 173218, 160490, 173244, 160502, 100755, 100747, 160324, 100745, 102095, 106811, 160330, 100744] },
+              { "templateTeamId": 10028, "teamNameId": "Str_National_Netherlands", "formationRoles": ["GK", "LB", "LCB", "RCB", "RB", "LDM", "RDM", "LAM", "CAM", "RAM", "ST"], "replacementPlayerAbilityRange": { "minAbility": 88, "maxAbility": 104 }, "playerPoolIds": [160252, 173162, 2018, 2035, 173179, 1095, 140123, 173751, 160451, 160296, 173752, 140117, 140124, 160410, 160507, 100629, 160484, 170654] },
+              { "templateTeamId": 10017, "teamNameId": "Str_National_Germany", "formationRoles": ["GK", "LB", "LCB", "RCB", "RB", "LDM", "RDM", "LAM", "CAM", "RAM", "ST"], "replacementPlayerAbilityRange": { "minAbility": 88, "maxAbility": 104 }, "playerPoolIds": [2032, 2033, 1057, 1998, 173160, 140146, 160401, 173745, 140154, 1058, 173756, 160369, 160406, 140141, 1056, 140143, 144399, 106765] }
+            ],
+            "randomEventRules": {
+                "TypeOne": {
+                    "fatigueRange": [-2, 2],
+                    "weights": [
+                        { "fatigueValue": -2, "weight": 20 },
+                        { "fatigueValue": -1, "weight": 25 },
+                        { "fatigueValue": 0, "weight": 10 },
+                        { "fatigueValue": 1, "weight": 25 },
+                        { "fatigueValue": 2, "weight": 20 }
+                    ]
+                },
+                "TypeTwo": {
+                    "fatigueRange": [-4, 4],
+                    "weights": [
+                        { "fatigueValue": -4, "weight": 10 },
+                        { "fatigueValue": -3, "weight": 16 },
+                        { "fatigueValue": -2, "weight": 12 },
+                        { "fatigueValue": -1, "weight": 10 },
+                        { "fatigueValue": 0, "weight": 4 },
+                        { "fatigueValue": 1, "weight": 10 },
+                        { "fatigueValue": 2, "weight": 12 },
+                        { "fatigueValue": 3, "weight": 16 },
+                        { "fatigueValue": 4, "weight": 10 }
+                    ]
+                }
+            },
+            "randomEventTextGroups": {
+                "-4": ["TourEvent_RandomEvent_RestDay", "TourEvent_RandomEvent_Physiotherapy"],
+                "-3": ["TourEvent_RandomEvent_HotSpring", "TourEvent_RandomEvent_Entertainment", "TourEvent_RandomEvent_Sightseeing"],
+                "-2": ["TourEvent_RandomEvent_LightTraining", "TourEvent_RandomEvent_FamilyVisit", "TourEvent_RandomEvent_FanSupport"],
+                "-1": ["TourEvent_RandomEvent_SleepWell", "TourEvent_RandomEvent_FieldWalkthrough"],
+                "0": ["TourEvent_RandomEvent_NothingHappened"],
+                "+1": ["TourEvent_RandomEvent_VisaIssue", "TourEvent_RandomEvent_PressConference"],
+                "+2": ["TourEvent_RandomEvent_ExtraTraining", "TourEvent_RandomEvent_LongFlightLight", "TourEvent_RandomEvent_LateTacticsMeeting"],
+                "+3": ["TourEvent_RandomEvent_JetLag", "TourEvent_RandomEvent_PlayerConflict", "TourEvent_RandomEvent_LongFlightHeavy"],
+                "+4": ["TourEvent_RandomEvent_NegativeMedia", "TourEvent_RandomEvent_CommercialShoot"]
+            },
+            "chapters": [
+                {
+                    "id": 1,
+                    "chapterNameId": "TourEvent_Chapter1_Name",
+                    "chapterShortDescId": "TourEvent_Chapter1_SD",
+                    "fatigueLimit": 8,
+                    "randomOpponentTeamIds": [10210, 10213, 10212, 10211, 10153, 10147, 10152, 10936, 10935, 10934],
+                    "chapterRewards": [
+                        { "type": "Player", "rewardId": -1, "amount": 1, "firstClearOnly": true },
+                        { "type": "Point", "rewardId": 0, "amount": 40, "firstClearOnly": false }
+                    ],
+                    "map": {
+                        "entryNodeIds": [101],
+                        "finalNodeId": 109,
+                        "nodes": [
+                            { "id": 101, "nodeType": "MomentChallenge", "opponentId": -1, "difficultyLevel": "Easy", "fatigueValue": 2, "rewards": [{ "type": "Points", "rewardId": 0, "amount": 3 }] },
+                            { "id": 102, "nodeType": "RandomEvent", "fatigueValue": 0, "randomEventType": "TypeOne", "rewards": [{ "type": "Points", "rewardId": 0, "amount": 3 }] },
+                            { "id": 103, "nodeType": "FullMatch", "opponentId": -1, "difficultyLevel": "Easy", "fatigueValue": 2, "rewards": [{ "type": "Points", "rewardId": 0, "amount": 3 }] },
+                            { "id": 104, "nodeType": "RandomEvent", "fatigueValue": 0, "randomEventType": "TypeOne", "rewards": [{ "type": "Points", "rewardId": 0, "amount": 3 }] },
+                            { "id": 105, "nodeType": "MomentChallenge", "opponentId": -1, "difficultyLevel": "Easy", "fatigueValue": 2, "rewards": [{ "type": "Points", "rewardId": 0, "amount": 3 }] },
+                            { "id": 106, "nodeType": "PenaltyKick", "opponentId": -1, "difficultyLevel": "Medium", "fatigueValue": 1, "rewards": [{ "type": "Points", "rewardId": 0, "amount": 3 }] },
+                            { "id": 107, "nodeType": "FullMatch", "opponentId": -1, "difficultyLevel": "Medium", "fatigueValue": 1, "rewards": [{ "type": "Points", "rewardId": 0, "amount": 3 }] },
+                            { "id": 108, "nodeType": "FreeKick", "opponentId": -1, "difficultyLevel": "Medium", "fatigueValue": 1, "rewards": [{ "type": "Points", "rewardId": 0, "amount": 3 }] },
+                            { "id": 109, "nodeType": "MomentChallenge", "opponentId": 10936, "difficultyLevel": "Hard", "fatigueValue": 2, "rewards": [{ "type": "Points", "rewardId": 0, "amount": 3 }] }
+                        ],
+                        "adjacencyList": {
+                            "101": [102, 105], "102": [103], "103": [104], "104": [109], "105": [106, 107], "106": [104], "107": [108], "108": [109], "109": []
+                        }
+                    }
+                },
+                {
+                    "id": 2,
+                    "chapterNameId": "TourEvent_Chapter2_Name",
+                    "chapterShortDescId": "TourEvent_Chapter2_SD",
+                    "fatigueLimit": 10,
+                    "randomOpponentTeamIds": [10160, 10001, 10148, 10149, 10151, 10150, 10023, 10016],
+                    "chapterRewards": [
+                        { "type": "Player", "rewardId": -1, "amount": 1, "firstClearOnly": true },
+                        { "type": "Point", "rewardId": 0, "amount": 60, "firstClearOnly": false }
+                    ],
+                    "map": {
+                        "entryNodeIds": [201, 206],
+                        "finalNodeId": 213,
+                        "nodes": [
+                            { "id": 201, "nodeType": "MomentChallenge", "opponentId": -1, "difficultyLevel": "Easy", "fatigueValue": 2, "rewards": [{ "type": "Points", "rewardId": 0, "amount": 4 }] },
+                            { "id": 202, "nodeType": "FullMatch", "opponentId": -1, "difficultyLevel": "Medium", "fatigueValue": 2, "rewards": [{ "type": "Points", "rewardId": 0, "amount": 4 }] },
+                            { "id": 203, "nodeType": "RandomEvent", "fatigueValue": 0, "randomEventType": "TypeOne", "rewards": [{ "type": "Points", "rewardId": 0, "amount": 4 }] },
+                            { "id": 204, "nodeType": "MomentChallenge", "opponentId": -1, "difficultyLevel": "Medium", "fatigueValue": 2, "rewards": [{ "type": "Points", "rewardId": 0, "amount": 4 }] },
+                            { "id": 205, "nodeType": "PenaltyKick", "opponentId": -1, "difficultyLevel": "Medium", "fatigueValue": 1, "rewards": [{ "type": "Points", "rewardId": 0, "amount": 4 }] },
+                            { "id": 206, "nodeType": "MomentChallenge", "opponentId": -1, "difficultyLevel": "Easy", "fatigueValue": 2, "rewards": [{ "type": "Points", "rewardId": 0, "amount": 4 }] },
+                            { "id": 207, "nodeType": "FullMatch", "opponentId": -1, "difficultyLevel": "Medium", "fatigueValue": 2, "rewards": [{ "type": "Points", "rewardId": 0, "amount": 4 }] },
+                            { "id": 208, "nodeType": "RandomEvent", "fatigueValue": 0, "randomEventType": "TypeOne", "rewards": [{ "type": "Points", "rewardId": 0, "amount": 4 }] },
+                            { "id": 209, "nodeType": "MomentChallenge", "opponentId": -1, "difficultyLevel": "Medium", "fatigueValue": 2, "rewards": [{ "type": "Points", "rewardId": 0, "amount": 4 }] },
+                            { "id": 210, "nodeType": "FreeKick", "opponentId": -1, "difficultyLevel": "Medium", "fatigueValue": 1, "rewards": [{ "type": "Points", "rewardId": 0, "amount": 4 }] },
+                            { "id": 211, "nodeType": "RandomEvent", "fatigueValue": 0, "randomEventType": "TypeOne", "rewards": [{ "type": "Points", "rewardId": 0, "amount": 4 }] },
+                            { "id": 212, "nodeType": "FullMatch", "opponentId": -1, "difficultyLevel": "Hard", "fatigueValue": 2, "rewards": [{ "type": "Points", "rewardId": 0, "amount": 4 }] },
+                            { "id": 213, "nodeType": "MomentChallenge", "opponentId": 10023, "difficultyLevel": "Hard", "fatigueValue": 2, "rewards": [{ "type": "Points", "rewardId": 0, "amount": 4 }] }
+                        ],
+                        "adjacencyList": {
+                            "201": [202, 211], "202": [203], "203": [204], "204": [205], "205": [213], "206": [207], "207": [208], "208": [209], "209": [210, 213], "210": [213], "211": [212], "212": [208], "213": []
+                        }
+                    }
+                },
+                {
+                    "id": 3,
+                    "chapterNameId": "TourEvent_Chapter3_Name",
+                    "chapterShortDescId": "TourEvent_Chapter3_SD",
+                    "fatigueLimit": 12,
+                    "randomOpponentTeamIds": [10958, 10028, 10951, 10946, 10947, 10948, 10942, 10938, 10939, 10940, 10003, 10016],
+                    "chapterRewards": [
+                        { "type": "Player", "rewardId": -1, "amount": 1, "firstClearOnly": true },
+                        { "type": "Point", "rewardId": 0, "amount": 80, "firstClearOnly": false }
+                    ],
+                    "map": {
+                        "entryNodeIds": [301, 306, 312],
+                        "finalNodeId": 315,
+                        "nodes": [
+                            { "id": 301, "nodeType": "MomentChallenge", "opponentId": -1, "difficultyLevel": "Medium", "fatigueValue": 2, "rewards": [{ "type": "Points", "rewardId": 0, "amount": 5 }] },
+                            { "id": 302, "nodeType": "FullMatch", "opponentId": -1, "difficultyLevel": "Medium", "fatigueValue": 2, "rewards": [{ "type": "Points", "rewardId": 0, "amount": 5 }] },
+                            { "id": 303, "nodeType": "RandomEvent", "fatigueValue": 0, "randomEventType": "TypeTwo", "rewards": [{ "type": "Points", "rewardId": 0, "amount": 5 }] },
+                            { "id": 304, "nodeType": "MomentChallenge", "opponentId": -1, "difficultyLevel": "Hard", "fatigueValue": 2, "rewards": [{ "type": "Points", "rewardId": 0, "amount": 5 }] },
+                            { "id": 305, "nodeType": "PenaltyKick", "opponentId": -1, "difficultyLevel": "Hard", "fatigueValue": 2, "rewards": [{ "type": "Points", "rewardId": 0, "amount": 5 }] },
+                            { "id": 306, "nodeType": "FullMatch", "opponentId": -1, "difficultyLevel": "Medium", "fatigueValue": 2, "rewards": [{ "type": "Points", "rewardId": 0, "amount": 5 }] },
+                            { "id": 307, "nodeType": "MomentChallenge", "opponentId": -1, "difficultyLevel": "Medium", "fatigueValue": 2, "rewards": [{ "type": "Points", "rewardId": 0, "amount": 5 }] },
+                            { "id": 308, "nodeType": "RandomEvent", "fatigueValue": 0, "randomEventType": "TypeOne", "rewards": [{ "type": "Points", "rewardId": 0, "amount": 5 }] },
+                            { "id": 309, "nodeType": "FullMatch", "opponentId": -1, "difficultyLevel": "Hard", "fatigueValue": 2, "rewards": [{ "type": "Points", "rewardId": 0, "amount": 5 }] },
+                            { "id": 310, "nodeType": "FreeKick", "opponentId": -1, "difficultyLevel": "Hard", "fatigueValue": 2, "rewards": [{ "type": "Points", "rewardId": 0, "amount": 5 }] },
+                            { "id": 311, "nodeType": "PenaltyKick", "opponentId": -1, "difficultyLevel": "Hard", "fatigueValue": 1, "rewards": [{ "type": "Points", "rewardId": 0, "amount": 5 }] },
+                            { "id": 312, "nodeType": "MomentChallenge", "opponentId": -1, "difficultyLevel": "Medium", "fatigueValue": 2, "rewards": [{ "type": "Points", "rewardId": 0, "amount": 5 }] },
+                            { "id": 313, "nodeType": "FreeKick", "opponentId": -1, "difficultyLevel": "Hard", "fatigueValue": 2, "rewards": [{ "type": "Points", "rewardId": 0, "amount": 5 }] },
+                            { "id": 314, "nodeType": "RandomEvent", "fatigueValue": 0, "randomEventType": "TypeOne", "rewards": [{ "type": "Points", "rewardId": 0, "amount": 5 }] },
+                            { "id": 315, "nodeType": "MomentChallenge", "opponentId": 10003, "difficultyLevel": "Extreme", "fatigueValue": 2, "rewards": [{ "type": "Points", "rewardId": 0, "amount": 5 }] }
+                        ],
+                        "adjacencyList": {
+                            "301": [302], "302": [303], "303": [304], "304": [305], "305": [315], "306": [307], "307": [308], "308": [309], "309": [310], "310": [311], "311": [315], "312": [313], "313": [314], "314": [309], "315": []
+                        }
+                    }
+                }
+            ]
+        }
+    }
+}
+</script>
+
+<script src="../../../../rawExcels/tool/PlayerRatingCalculator.js"></script>
+<script>
+(function () {
+  'use strict';
+
+  const NODE_TYPES = ['MomentChallenge', 'FullMatch', 'PenaltyKick', 'FreeKick', 'RandomEvent'];
+  const MATCH_NODE_TYPES = ['MomentChallenge', 'FullMatch', 'PenaltyKick', 'FreeKick'];
+  const NODE_TYPES_WITH_REWARDS = [...MATCH_NODE_TYPES, 'RandomEvent'];
+  const DIFFICULTIES = ['Easy', 'Medium', 'Hard', 'Extreme'];
+  const REWARD_TYPES = ['Player', 'Point'];
+  const NODE_REWARD_TYPES = ['Points'];
+  const DEFAULT_MATCH_REWARD_AMOUNTS = { 1: 3, 2: 4, 3: 5 };
+  const TEXT_GROUP_KEYS = ['-4', '-3', '-2', '-1', '0', '+1', '+2', '+3', '+4'];
+  const DEFAULT_MOMENT_CHALLENGE_LEVEL_INDEX = 'MomentChallengeLevelConfig';
+  const DEFAULT_POINTS_SHOP_CONFIG_INDEX = 'PointsShopConfig';
+  const DEFAULT_EXPIRED_POINT_COIN_EXCHANGE_RATE = 20;
+  const DEFAULT_MATCH_DIFFICULTY_VALUE_MAP = { Easy: 1.0, Medium: 1.2, Hard: 1.5, Extreme: 2.0 };
+  const DEFAULT_REPLACEMENT_PLAYER_ABILITY_RANGE = { minAbility: 88, maxAbility: 104 };
+  const DEFAULT_LOOP_COMPLETION_REWARD_AMOUNT = 100;
+  const RAW_EXCELS_DIR_LABEL = 'Assets/GameData/rawExcels';
+  const RAW_EXCELS_PICKER_ID = 'tour-event-raw-excels';
+  const PLAYER_CSV_FILE_NAME = 'Players.csv';
+  const CORE_PLAYER_ATTRIBUTES_CSV_FILE_NAME = 'CorePlayerAttributes.csv';
+  const PLAYER_RATING_CSV_PATH = '../../../../rawExcels/Players.csv';
+  const CORE_PLAYER_ATTRIBUTES_CSV_PATH = '../../../../rawExcels/CorePlayerAttributes.csv';
+  const UI_ROLES = ['GK', 'LB', 'LCB', 'CB', 'RCB', 'RB', 'LWB', 'LDM', 'CDM', 'RDM', 'RWB', 'LM', 'LCM', 'CM', 'RCM', 'RM', 'LAM', 'CAM', 'RAM', 'LW', 'LF', 'CF', 'RF', 'RW', 'LS', 'ST', 'RS', 'SUB'];
+  const INVALID_FORMATION_ROLES = ['LF', 'CF', 'RF', 'SUB'];
+  const DEFAULT_FORMATION_ROLES = ['GK', 'LB', 'LCB', 'RCB', 'RB', 'LDM', 'RDM', 'LAM', 'CAM', 'RAM', 'ST'];
+  const DEFAULT_SELECTABLE_TEAM_IDS = [10039, 10003, 10016, 10015, 10001, 10033, 10028, 10017];
+  const DEFAULT_SELECTABLE_TEAM_NAME_IDS = {
+    10039: 'Str_National_Spain',
+    10003: 'Str_National_Argentina',
+    10016: 'Str_National_France',
+    10015: 'Str_National_England',
+    10001: 'Str_National_Brazil',
+    10033: 'Str_National_Portugal',
+    10028: 'Str_National_Netherlands',
+    10017: 'Str_National_Germany'
+  };
+  const DEFAULT_TEAM_PLAYER_POOLS = {
+    10039: [173163, 173744, 173755, 160388, 2004, 160363, 160389, 160384, 173208, 100890, 173235, 160732, 1069, 160382, 100895, 160741, 160742, 174627],
+    10003: [144343, 140010, 173378, 144335, 2008, 160392, 173212, 2016, 173798, 173178, 173754, 173385, 173753, 173383, 144331, 160497, 144328, 100064, 160514],
+    10016: [2038, 140190, 173171, 173243, 2037, 2013, 173361, 160452, 2045, 173168, 2007, 2042, 2043, 173353, 160448, 100367, 173351, 173240, 173358],
+    10015: [140092, 2034, 2014, 1096, 173757, 173748, 173746, 173215, 2036, 160289, 2015, 2005, 2006, 160506, 173166, 160501, 173164, 173191, 100344],
+    10001: [140034, 173750, 173749, 2002, 173743, 173226, 140033, 1055, 160367, 160426, 2024, 1053, 160425, 140031, 100008, 160496, 1054, 140032, 140045],
+    10033: [102085, 173801, 173234, 160370, 2012, 173233, 173231, 173218, 160490, 173244, 160502, 100755, 100747, 160324, 100745, 102095, 106811, 160330, 100744],
+    10028: [160252, 173162, 2018, 2035, 173179, 1095, 140123, 173751, 160451, 160296, 173752, 140117, 140124, 160410, 160507, 100629, 160484, 170654],
+    10017: [2032, 2033, 1057, 1998, 173160, 140146, 160401, 173745, 140154, 1058, 173756, 160369, 160406, 140141, 1056, 140143, 144399, 106765]
+  };
+  const NODE_COLORS = {
+    MomentChallenge: '#d9e9ff',
+    FullMatch: '#dff2e7',
+    PenaltyKick: '#fff0cc',
+    FreeKick: '#efe6ff',
+    RandomEvent: '#ffe4dc'
+  };
+  const GRAPH_NODE_WIDTH = 96;
+  const GRAPH_NODE_HEIGHT = 56;
+  const GRAPH_HORIZONTAL_PADDING = 70;
+  const GRAPH_VERTICAL_PADDING = 70;
+  const GRAPH_LAYER_GAP = 150;
+  const GRAPH_ROW_GAP = 92;
+  const GRAPH_MIN_WIDTH = 860;
+  const GRAPH_MIN_HEIGHT = 420;
+  const GRAPH_MAX_ROUTE_COUNT = 24;
+  const GRAPH_LAYER_SORT_ITERATIONS = 8;
+  const GRAPH_CROSSING_SCORE_WEIGHT = 1000;
+  const GRAPH_NODE_HIT_SCORE_WEIGHT = 100;
+
+  const state = {
+    config: null,
+    eventId: '1',
+    chapterIndex: 0,
+    selectedNodeId: null,
+    ruleName: '',
+    activeTab: 'activity',
+    fileHandle: null,
+    messages: [],
+    playerRatingContext: null,
+    playerRatingLoadError: '',
+    playerRatingSourceName: '',
+    playerRatingCsvText: '',
+    coreAttributesCsvText: '',
+    coreAttributesSourceName: '',
+    rawExcelsDirectoryHandle: null,
+    rawExcelsDirectoryName: ''
+  };
+
+  const $ = (id) => document.getElementById(id);
+  const escapeHtml = (value) => String(value ?? '').replace(/[&<>"]/g, (ch) => ({ '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;' }[ch]));
+  const clone = (value) => JSON.parse(JSON.stringify(value));
+  const toInt = (value, fallback = 0) => Number.isFinite(Number(value)) ? parseInt(value, 10) : fallback;
+  const fatigueKey = (value) => value > 0 ? `+${value}` : String(value);
+  const staminaDelta = (value) => -toInt(value, 0);
+  const signedNumber = (value) => value > 0 ? `+${value}` : String(value);
+
+  function parseIntList(text) {
+    return String(text || '')
+      .split(/[\s,，]+/)
+      .map((part) => part.trim())
+      .filter(Boolean)
+      .map((part) => parseInt(part, 10))
+      .filter((value) => Number.isFinite(value));
+  }
+
+  function parseStringList(text) {
+    return String(text || '')
+      .split(/[\n,，]+/)
+      .map((part) => part.trim())
+      .filter(Boolean);
+  }
+
+  function parseRoleList(text) {
+    return String(text || '')
+      .split(/[\s,，]+/)
+      .map((part) => part.trim().toUpperCase())
+      .filter(Boolean);
+  }
+
+  function currentEvent() {
+    return state.config?.tourEvent?.[state.eventId] || null;
+  }
+
+  function currentChapter() {
+    const event = currentEvent();
+    if (!event || !Array.isArray(event.chapters) || event.chapters.length === 0) return null;
+    if (state.chapterIndex < 0 || state.chapterIndex >= event.chapters.length) state.chapterIndex = 0;
+    return event.chapters[state.chapterIndex];
+  }
+
+  function currentNode() {
+    const chapter = currentChapter();
+    if (!chapter?.map?.nodes?.length) return null;
+    let node = chapter.map.nodes.find((item) => item.id === state.selectedNodeId);
+    if (!node) {
+      node = chapter.map.nodes[0];
+      state.selectedNodeId = node.id;
+    }
+    return node;
+  }
+
+  function ensureConfigShape() {
+    if (!state.config || typeof state.config !== 'object') state.config = { tourEvent: {} };
+    if (!state.config.tourEvent || typeof state.config.tourEvent !== 'object') state.config.tourEvent = {};
+    const ids = Object.keys(state.config.tourEvent);
+    if (!state.config.tourEvent[state.eventId]) state.eventId = ids[0] || '1';
+    if (!state.config.tourEvent[state.eventId]) state.config.tourEvent[state.eventId] = createEventTemplate();
+    const event = currentEvent();
+    event.momentChallengeLevelIndex = String(event.momentChallengeLevelIndex || findLegacyMomentChallengeLevelIndex(event) || DEFAULT_MOMENT_CHALLENGE_LEVEL_INDEX);
+    event.pointsShopConfigIndex = String(event.pointsShopConfigIndex || DEFAULT_POINTS_SHOP_CONFIG_INDEX);
+    event.expiredPointCoinExchangeRate = Math.max(1, toInt(event.expiredPointCoinExchangeRate, DEFAULT_EXPIRED_POINT_COIN_EXCHANGE_RATE));
+    event.matchDifficultyValueMap = normalizeDifficultyValueMap(event.matchDifficultyValueMap);
+    event.randomEventRules = event.randomEventRules || {};
+    event.randomEventTextGroups = event.randomEventTextGroups || {};
+    event.selectableTeamTemplates = Array.isArray(event.selectableTeamTemplates) ? event.selectableTeamTemplates : defaultSelectableTeamTemplates();
+    event.selectableTeamTemplates = event.selectableTeamTemplates.map(normalizeTeamTemplate);
+    event.allChapterCompletionRewards = Array.isArray(event.allChapterCompletionRewards) ? event.allChapterCompletionRewards.map(normalizeLoopCompletionRewardGroup) : [createLoopCompletionRewardGroupTemplate()];
+    if (!Object.prototype.hasOwnProperty.call(event.randomEventRules, state.ruleName)) state.ruleName = Object.keys(event.randomEventRules)[0] || '';
+    event.chapters = Array.isArray(event.chapters) ? event.chapters : [];
+    if (event.chapters.length === 0) event.chapters.push(createChapterTemplate(1));
+    event.entryChapterId = toInt(event.entryChapterId, event.chapters[0]?.id || 0);
+    if (!event.chapters.some((chapter) => chapter.id === event.entryChapterId)) event.entryChapterId = event.chapters[0]?.id || 0;
+    event.chapters.forEach(ensureChapterShape);
+  }
+
+  function ensureChapterShape(chapter) {
+    chapter.nextChapterId = Math.max(0, toInt(chapter.nextChapterId, 0));
+    chapter.randomOpponentTeamIds = Array.isArray(chapter.randomOpponentTeamIds) ? chapter.randomOpponentTeamIds : [];
+    chapter.chapterRewards = Array.isArray(chapter.chapterRewards) ? chapter.chapterRewards : [];
+    chapter.map = chapter.map || {};
+    chapter.map.entryNodeIds = Array.isArray(chapter.map.entryNodeIds) ? chapter.map.entryNodeIds : [];
+    chapter.map.nodes = Array.isArray(chapter.map.nodes) ? chapter.map.nodes : [];
+    chapter.map.adjacencyList = chapter.map.adjacencyList || {};
+    if (chapter.map.nodes.length === 0) {
+      const base = toInt(chapter.id, 1) * 100 + 1;
+      chapter.map.nodes.push(createNodeTemplate(base, defaultMatchRewardAmount(chapter)));
+      chapter.map.entryNodeIds = [base];
+      chapter.map.finalNodeId = base;
+      chapter.map.adjacencyList[String(base)] = [];
+    }
+    chapter.map.nodes.forEach((node) => {
+      delete node.momentChallengeLevelIndex;
+      if (MATCH_NODE_TYPES.includes(node.nodeType)) {
+        node.rewards = normalizeNodeRewards(node.rewards, defaultMatchRewardAmount(chapter));
+      } else if (node.nodeType === 'RandomEvent') {
+        if (Array.isArray(node.rewards)) node.rewards = normalizeOptionalNodeRewards(node.rewards, defaultMatchRewardAmount(chapter));
+      } else {
+        delete node.rewards;
+      }
+      if (!Array.isArray(chapter.map.adjacencyList[String(node.id)])) chapter.map.adjacencyList[String(node.id)] = [];
+    });
+    if (!chapter.map.entryNodeIds.length) chapter.map.entryNodeIds = [chapter.map.nodes[0].id];
+    if (!chapter.map.finalNodeId) chapter.map.finalNodeId = chapter.map.nodes[chapter.map.nodes.length - 1].id;
+  }
+
+  function createEventTemplate() {
+    return {
+      activityNameId: 'TourEvent_New_Name',
+      activityLongDescId: 'TourEvent_New_LD',
+      activityShortDescId: 'TourEvent_New_SD',
+      templateTeamId: 205,
+      momentChallengeLevelIndex: DEFAULT_MOMENT_CHALLENGE_LEVEL_INDEX,
+      pointsShopConfigIndex: DEFAULT_POINTS_SHOP_CONFIG_INDEX,
+      expiredPointCoinExchangeRate: DEFAULT_EXPIRED_POINT_COIN_EXCHANGE_RATE,
+      entryChapterId: 1,
+      matchDifficultyValueMap: clone(DEFAULT_MATCH_DIFFICULTY_VALUE_MAP),
+      selectableTeamTemplates: defaultSelectableTeamTemplates(),
+      allChapterCompletionRewards: [createLoopCompletionRewardGroupTemplate()],
+      randomEventRules: {
+        TypeOne: { fatigueRange: [-2, 2], weights: [{ fatigueValue: -2, weight: 20 }, { fatigueValue: -1, weight: 25 }, { fatigueValue: 0, weight: 10 }, { fatigueValue: 1, weight: 25 }, { fatigueValue: 2, weight: 20 }] }
+      },
+      randomEventTextGroups: { '0': ['TourEvent_RandomEvent_NothingHappened'] },
+      chapters: [createChapterTemplate(1)]
+    };
+  }
+
+  function createChapterTemplate(id) {
+    const nodeId = id * 100 + 1;
+    return {
+      id,
+      nextChapterId: 0,
+      chapterNameId: `TourEvent_Chapter${id}_Name`,
+      chapterShortDescId: `TourEvent_Chapter${id}_SD`,
+      fatigueLimit: 8,
+      randomOpponentTeamIds: [],
+      chapterRewards: [createEventRewardTemplate('Point', 40, false)],
+      map: {
+        entryNodeIds: [nodeId],
+        finalNodeId: nodeId,
+        nodes: [createNodeTemplate(nodeId, defaultMatchRewardAmount(id))],
+        adjacencyList: { [String(nodeId)]: [] }
+      }
+    };
+  }
+
+  function createNodeTemplate(id, rewardAmount = defaultMatchRewardAmount(1)) {
+    return { id, nodeType: 'MomentChallenge', opponentId: -1, difficultyLevel: 'Easy', fatigueValue: 2, rewards: [createNodeRewardTemplate(rewardAmount)] };
+  }
+
+  function createNodeRewardTemplate(amount = defaultMatchRewardAmount(1)) {
+    return { type: 'Points', rewardId: 0, amount };
+  }
+
+  function createEventRewardTemplate(type = 'Point', amount = 1, firstClearOnly = false) {
+    return { type, rewardId: 0, amount, firstClearOnly };
+  }
+
+  function createLoopCompletionRewardGroupTemplate(minCompletionCount = 1, maxCompletionCount = 1) {
+    return {
+      minCompletionCount,
+      maxCompletionCount,
+      rewards: [createEventRewardTemplate('Point', DEFAULT_LOOP_COMPLETION_REWARD_AMOUNT, false)]
+    };
+  }
+
+  function normalizeEventRewards(rewards, defaultAmount = 1) {
+    const source = Array.isArray(rewards) && rewards.length > 0 ? rewards : [createEventRewardTemplate('Point', defaultAmount, false)];
+    return source.map((reward) => ({
+      type: String(reward?.type || 'Point'),
+      rewardId: toInt(reward?.rewardId, 0),
+      amount: toInt(reward?.amount, defaultAmount),
+      firstClearOnly: Boolean(reward?.firstClearOnly)
+    }));
+  }
+
+  function normalizeLoopCompletionRewardGroup(item) {
+    const minCompletionCount = Math.max(1, toInt(item?.minCompletionCount, 1));
+    const maxCompletionCount = Math.max(minCompletionCount, toInt(item?.maxCompletionCount, minCompletionCount));
+    return {
+      minCompletionCount,
+      maxCompletionCount,
+      rewards: normalizeEventRewards(item?.rewards, DEFAULT_LOOP_COMPLETION_REWARD_AMOUNT)
+    };
+  }
+
+  function defaultMatchRewardAmount(chapterOrId) {
+    const id = typeof chapterOrId === 'object' ? toInt(chapterOrId?.id, 1) : toInt(chapterOrId, 1);
+    return DEFAULT_MATCH_REWARD_AMOUNTS[id] || DEFAULT_MATCH_REWARD_AMOUNTS[1];
+  }
+
+  function normalizeNodeRewards(rewards, rewardAmount = defaultMatchRewardAmount(1)) {
+    const source = Array.isArray(rewards) && rewards.length > 0 ? rewards : [createNodeRewardTemplate(rewardAmount)];
+    return source.map((reward) => normalizeNodeReward(reward, rewardAmount));
+  }
+
+  function normalizeOptionalNodeRewards(rewards, rewardAmount = defaultMatchRewardAmount(1)) {
+    if (!Array.isArray(rewards)) return [];
+    return rewards.map((reward) => normalizeNodeReward(reward, rewardAmount));
+  }
+
+  function normalizeNodeReward(reward, rewardAmount = defaultMatchRewardAmount(1)) {
+    return {
+      type: String(reward?.type || 'Points'),
+      rewardId: toInt(reward?.rewardId, 0),
+      amount: toInt(reward?.amount, rewardAmount)
+    };
+  }
+
+  function defaultSelectableTeamTemplates() {
+    return DEFAULT_SELECTABLE_TEAM_IDS.map((teamId) => ({
+      templateTeamId: teamId,
+      teamNameId: DEFAULT_SELECTABLE_TEAM_NAME_IDS[teamId] || '',
+      formationRoles: clone(DEFAULT_FORMATION_ROLES),
+      replacementPlayerAbilityRange: clone(DEFAULT_REPLACEMENT_PLAYER_ABILITY_RANGE),
+      playerPoolIds: clone(DEFAULT_TEAM_PLAYER_POOLS[teamId] || [])
+    }));
+  }
+
+  function createTeamTemplate() {
+    return { templateTeamId: -1, teamNameId: '', formationRoles: clone(DEFAULT_FORMATION_ROLES), replacementPlayerAbilityRange: clone(DEFAULT_REPLACEMENT_PLAYER_ABILITY_RANGE), playerPoolIds: [] };
+  }
+
+  function normalizeTeamTemplate(item) {
+    const templateTeamId = toInt(item?.templateTeamId, -1);
+    const fallbackPool = DEFAULT_TEAM_PLAYER_POOLS[templateTeamId] || [];
+    return {
+      templateTeamId,
+      teamNameId: String(item?.teamNameId || DEFAULT_SELECTABLE_TEAM_NAME_IDS[templateTeamId] || ''),
+      formationRoles: normalizeFormationRoles(item?.formationRoles),
+      replacementPlayerAbilityRange: normalizeAbilityRange(item?.replacementPlayerAbilityRange),
+      playerPoolIds: Array.isArray(item?.playerPoolIds) ? item.playerPoolIds.map((id) => toInt(id, -1)).filter((id) => id > 0) : clone(fallbackPool)
+    };
+  }
+
+  function normalizeAbilityRange(value) {
+    const minAbility = toInt(value?.minAbility, DEFAULT_REPLACEMENT_PLAYER_ABILITY_RANGE.minAbility);
+    const maxAbility = toInt(value?.maxAbility, DEFAULT_REPLACEMENT_PLAYER_ABILITY_RANGE.maxAbility);
+    return { minAbility, maxAbility };
+  }
+
+  function normalizeFormationRoles(value) {
+    let roles = [];
+    if (Array.isArray(value)) roles = value;
+    else if (typeof value === 'string') roles = parseRoleList(value);
+    roles = roles.map((role) => String(role || '').trim().toUpperCase()).filter(Boolean);
+    return roles.length > 0 ? roles : clone(DEFAULT_FORMATION_ROLES);
+  }
+
+  function normalizeDifficultyValueMap(map) {
+    const result = {};
+    DIFFICULTIES.forEach((level) => {
+      const value = Number(map?.[level]);
+      result[level] = Number.isFinite(value) ? value : DEFAULT_MATCH_DIFFICULTY_VALUE_MAP[level];
+    });
+    return result;
+  }
+
+  function findLegacyMomentChallengeLevelIndex(event) {
+    for (const chapter of event.chapters || []) {
+      for (const node of chapter.map?.nodes || []) {
+        if (node.nodeType === 'MomentChallenge' && node.momentChallengeLevelIndex) return node.momentChallengeLevelIndex;
+      }
+    }
+    return '';
+  }
+
+  async function loadInitialConfig() {
+    let configText = $('default-config').textContent;
+    if (location.protocol !== 'file:') {
+      try {
+        const response = await fetch('TourEventConfig.json', { cache: 'no-store' });
+        if (response.ok) configText = await response.text();
+      } catch (error) {
+        console.warn(error);
+      }
+    }
+    loadConfigText(configText, '内置配置');
+    await loadPlayerRatingData();
+    renderAll();
+    if (state.playerRatingContext) setStatus('内置配置已加载，球员能力表已加载', 'good');
+    else setStatus(`内置配置已加载，球员能力表未加载：${state.playerRatingLoadError}`, 'warn');
+  }
+
+  async function loadPlayerRatingData() {
+    state.playerRatingContext = null;
+    state.playerRatingLoadError = '';
+    if (!window.PlayerRatingCalculator) {
+      state.playerRatingLoadError = 'PlayerRatingCalculator.js 未加载';
+      return;
+    }
+    try {
+      state.playerRatingContext = await window.PlayerRatingCalculator.loadPlayerRatingContext({
+        playersCsvUrl: PLAYER_RATING_CSV_PATH,
+        coreAttributesCsvUrl: CORE_PLAYER_ATTRIBUTES_CSV_PATH
+      });
+      state.playerRatingSourceName = PLAYER_RATING_CSV_PATH;
+    } catch (error) {
+      state.playerRatingLoadError = friendlyPlayerRatingLoadError(error);
+    }
+  }
+
+  function friendlyPlayerRatingLoadError(error) {
+    const message = error?.message || String(error || '');
+    if (location.protocol === 'file:' || /Failed to fetch/i.test(message)) {
+      return `浏览器禁止从本地 HTML 直接读取 ${PLAYER_RATING_CSV_PATH}，请在校验页选择 rawExcels 目录或手动加载 ${RAW_EXCELS_DIR_LABEL}/${PLAYER_CSV_FILE_NAME}。`;
+    }
+    return message;
+  }
+
+  function loadPlayerRatingCsvText(playersCsvText, sourceName) {
+    if (!window.PlayerRatingCalculator) {
+      state.playerRatingLoadError = 'PlayerRatingCalculator.js 未加载';
+      return false;
+    }
+    try {
+      state.playerRatingContext = window.PlayerRatingCalculator.createContext(playersCsvText, state.coreAttributesCsvText);
+      state.playerRatingLoadError = '';
+      state.playerRatingSourceName = sourceName || 'Players.csv';
+      state.playerRatingCsvText = playersCsvText;
+      return true;
+    } catch (error) {
+      state.playerRatingContext = null;
+      state.playerRatingLoadError = error.message || String(error);
+      return false;
+    }
+  }
+
+  function loadConfigText(text, sourceName) {
+    try {
+      state.config = JSON.parse(text);
+      ensureConfigShape();
+      state.chapterIndex = 0;
+      state.selectedNodeId = currentChapter()?.map?.nodes?.[0]?.id || null;
+      renderAll();
+      setStatus(`${sourceName || 'JSON'} 已加载`, 'good');
+    } catch (error) {
+      setStatus(`JSON 解析失败：${error.message}`, 'bad');
+    }
+  }
+
+  function serializeConfig() {
+    return JSON.stringify(state.config, null, 4) + '\n';
+  }
+
+  function setStatus(text, level) {
+    const pill = $('statusPill');
+    pill.textContent = text;
+    pill.className = `status-pill ${level || ''}`.trim();
+  }
+
+  function renderAll() {
+    ensureConfigShape();
+    renderTabs();
+    renderEventList();
+    renderSummary();
+    renderActivityTab();
+    renderRandomTab();
+    renderChaptersTab();
+    renderJsonTab();
+    renderValidation();
+  }
+
+  function renderTabs() {
+    document.querySelectorAll('.tab').forEach((button) => {
+      button.classList.toggle('active', button.dataset.tab === state.activeTab);
+    });
+    document.querySelectorAll('.tab-page').forEach((section) => section.classList.add('hidden'));
+    $(`${state.activeTab}Tab`)?.classList.remove('hidden');
+  }
+
+  function renderEventList() {
+    const ids = Object.keys(state.config.tourEvent || {});
+    $('eventList').innerHTML = ids.map((id) => `<button class="event-button ${id === state.eventId ? 'active' : ''}" data-event-id="${escapeHtml(id)}">活动 ${escapeHtml(id)}</button>`).join('');
+  }
+
+  function renderSummary() {
+    const event = currentEvent();
+    const chapters = event?.chapters || [];
+    const nodes = chapters.flatMap((chapter) => chapter.map?.nodes || []);
+    const matchNodes = nodes.filter((node) => MATCH_NODE_TYPES.includes(node.nodeType));
+    const randomNodes = nodes.filter((node) => node.nodeType === 'RandomEvent');
+    const rules = Object.keys(event?.randomEventRules || {}).length;
+    const selectableTeams = event?.selectableTeamTemplates?.length || 0;
+    const messages = validateConfig(false);
+    $('summary').innerHTML = [
+      metric('活动 ID', state.eventId),
+      metric('可选队伍', selectableTeams),
+      metric('章节', chapters.length),
+      metric('节点', nodes.length),
+      metric('比赛节点', matchNodes.length),
+      metric('随机事件', randomNodes.length),
+      metric('问题', messages.errors.length + messages.warnings.length)
+    ].join('') + `<div class="metric"><div class="metric-value">${rules}</div><div class="metric-label">随机规则</div></div>`;
+  }
+
+  function metric(label, value) {
+    return `<div class="metric"><div class="metric-value">${escapeHtml(value)}</div><div class="metric-label">${escapeHtml(label)}</div></div>`;
+  }
+
+  function renderActivityTab() {
+    const event = currentEvent();
+    $('activityTab').innerHTML = `
+      <div class="panel">
+        <div class="panel-header"><div class="panel-title">活动基础配置</div></div>
+        <div class="panel-body">
+          <div class="grid-4">
+            ${field('活动名称 ID', 'activityNameId', event.activityNameId)}
+            ${field('长描述 ID', 'activityLongDescId', event.activityLongDescId)}
+            ${field('短描述 ID', 'activityShortDescId', event.activityShortDescId)}
+            ${field('模板队伍 ID', 'templateTeamId', event.templateTeamId, 'number')}
+            ${field('时刻挑战关卡索引', 'momentChallengeLevelIndex', event.momentChallengeLevelIndex)}
+            ${field('商店配置索引', 'pointsShopConfigIndex', event.pointsShopConfigIndex)}
+            ${field('过期代币兑换 Coins', 'expiredPointCoinExchangeRate', event.expiredPointCoinExchangeRate, 'number')}
+            ${field('入口章节 ID', 'entryChapterId', event.entryChapterId, 'number')}
+          </div>
+        </div>
+      </div>
+      ${renderDifficultyValueMap(event)}
+      ${renderSelectableTeams(event)}
+      ${renderLoopCompletionRewards(event)}`;
+  }
+
+  function field(labelText, key, value, type = 'text') {
+    return `<div class="field"><label>${escapeHtml(labelText)}</label><input data-activity-field="${key}" type="${type}" value="${escapeHtml(value)}"></div>`;
+  }
+
+  function renderDifficultyValueMap(event) {
+    const rows = DIFFICULTIES.map((level) => `
+      <tr>
+        <td>${escapeHtml(level)}</td>
+        <td><input class="inline-input" data-difficulty-value="${escapeHtml(level)}" type="number" step="0.01" value="${escapeHtml(event.matchDifficultyValueMap?.[level] ?? DEFAULT_MATCH_DIFFICULTY_VALUE_MAP[level])}"></td>
+      </tr>`).join('');
+    return `<div class="panel">
+      <div class="panel-header"><div class="panel-title">比赛难度数值映射</div></div>
+      <div class="panel-body">
+        <table>
+          <thead><tr><th>难度枚举</th><th>float 数值</th></tr></thead>
+          <tbody>${rows}</tbody>
+        </table>
+      </div>
+    </div>`;
+  }
+
+  function renderSelectableTeams(event) {
+    const rows = (event.selectableTeamTemplates || []).map((team, index) => `
+      <tr>
+        <td>${index + 1}</td>
+        <td><input class="inline-input" data-team-row="${index}" data-team-field="templateTeamId" type="number" value="${escapeHtml(team.templateTeamId)}"></td>
+        <td><input class="inline-input" data-team-row="${index}" data-team-field="teamNameId" value="${escapeHtml(team.teamNameId || '')}"></td>
+        <td><input class="inline-input" data-team-row="${index}" data-team-field="minAbility" type="number" value="${escapeHtml(team.replacementPlayerAbilityRange?.minAbility ?? DEFAULT_REPLACEMENT_PLAYER_ABILITY_RANGE.minAbility)}"></td>
+        <td><input class="inline-input" data-team-row="${index}" data-team-field="maxAbility" type="number" value="${escapeHtml(team.replacementPlayerAbilityRange?.maxAbility ?? DEFAULT_REPLACEMENT_PLAYER_ABILITY_RANGE.maxAbility)}"></td>
+        <td><textarea data-team-row="${index}" data-team-field="formationRoles">${escapeHtml((team.formationRoles || []).join(', '))}</textarea></td>
+        <td><textarea data-team-row="${index}" data-team-field="playerPoolIds">${escapeHtml((team.playerPoolIds || []).join(', '))}</textarea></td>
+        <td class="table-actions"><button class="icon danger" data-delete-team-template="${index}">-</button></td>
+      </tr>`).join('');
+    return `<div class="panel">
+      <div class="panel-header">
+        <div class="panel-title">可选模板队伍</div>
+        <button id="addTeamTemplateBtn">+ 队伍</button>
+      </div>
+      <div class="panel-body">
+        <div class="message ok">能力下限/上限只用于选择队伍后初始 5 个真实首发球员。能力值按目标阵型位置计算 UI 能力值，口径为 min(raw Rating + 5, 104)；赛后奖励抽卡不受这个范围限制。</div>
+        <table>
+          <thead><tr><th>顺序</th><th>模板队伍 ID</th><th>队伍名称 String ID</th><th>初始 5 人 UI 能力下限</th><th>初始 5 人 UI 能力上限</th><th>阵型 UIRole 数组</th><th>球员池 ID 数组</th><th></th></tr></thead>
+          <tbody>${rows}</tbody>
+        </table>
+      </div>
+    </div>`;
+  }
+
+  function renderLoopCompletionRewards(event) {
+    const groups = event.allChapterCompletionRewards || [];
+    const groupPanels = groups.map((group, groupIndex) => {
+      const rows = (group.rewards || []).map((reward, rewardIndex) => `
+        <tr>
+          <td><select data-loop-reward-group="${groupIndex}" data-loop-reward-row="${rewardIndex}" data-loop-reward-field="type">${REWARD_TYPES.map((type) => `<option value="${type}" ${reward.type === type ? 'selected' : ''}>${type}</option>`).join('')}</select></td>
+          <td><input class="inline-input" data-loop-reward-group="${groupIndex}" data-loop-reward-row="${rewardIndex}" data-loop-reward-field="rewardId" type="number" value="${escapeHtml(reward.rewardId)}"></td>
+          <td><input class="inline-input" data-loop-reward-group="${groupIndex}" data-loop-reward-row="${rewardIndex}" data-loop-reward-field="amount" type="number" value="${escapeHtml(reward.amount)}"></td>
+          <td><select data-loop-reward-group="${groupIndex}" data-loop-reward-row="${rewardIndex}" data-loop-reward-field="firstClearOnly"><option value="true" ${reward.firstClearOnly ? 'selected' : ''}>true</option><option value="false" ${!reward.firstClearOnly ? 'selected' : ''}>false</option></select></td>
+          <td class="table-actions"><button class="icon danger" data-delete-loop-reward-group="${groupIndex}" data-delete-loop-reward="${rewardIndex}">-</button></td>
+        </tr>`).join('');
+      return `<div class="panel" style="box-shadow:none;margin-top:12px">
+        <div class="panel-header">
+          <div class="panel-title">完成次数区间 ${escapeHtml(group.minCompletionCount)} - ${escapeHtml(group.maxCompletionCount)}</div>
+          <div class="toolbar">
+            <button data-add-loop-reward="${groupIndex}">+ 奖励</button>
+            <button class="danger" data-delete-loop-group="${groupIndex}">删除区间</button>
+          </div>
+        </div>
+        <div class="panel-body">
+          <div class="grid-2" style="margin-bottom:14px">
+            <div class="field"><label>完成次数下限</label><input data-loop-group-row="${groupIndex}" data-loop-group-field="minCompletionCount" type="number" value="${escapeHtml(group.minCompletionCount)}"></div>
+            <div class="field"><label>完成次数上限</label><input data-loop-group-row="${groupIndex}" data-loop-group-field="maxCompletionCount" type="number" value="${escapeHtml(group.maxCompletionCount)}"></div>
+          </div>
+          <table><thead><tr><th>类型</th><th>奖励 ID</th><th>数量</th><th>仅首通</th><th></th></tr></thead><tbody>${rows}</tbody></table>
+        </div>
+      </div>`;
+    }).join('');
+    return `<div class="panel">
+      <div class="panel-header"><div class="panel-title">总通关奖励</div><button id="addLoopCompletionRewardGroupBtn">+ 区间</button></div>
+      <div class="panel-body">
+        <div class="message ok">按总通关次数区间配置奖励。当前周目完成所有章节、领取完章节奖励后，可领取命中的区间奖励，并刷新到下一周目。</div>
+        ${groupPanels || '<div class="message warning">暂无总通关奖励区间。</div>'}
+      </div>
+    </div>`;
+  }
+
+  function renderPlayerRatingTools() {
+    const loadedText = state.playerRatingContext ? `已加载：${state.playerRatingSourceName || 'Players.csv'}` : '未加载 Players.csv';
+    const coreText = state.coreAttributesSourceName ? `CorePlayerAttributes：${state.coreAttributesSourceName}` : 'CorePlayerAttributes 可选，当前未手动加载';
+    const directoryText = state.rawExcelsDirectoryName
+      ? `rawExcels 目录：${state.rawExcelsDirectoryName}。CSV 文件选择窗口会优先从该目录打开。`
+      : `默认相对目录：${RAW_EXCELS_DIR_LABEL}。Chrome/Edge 可先选择该目录；之后 CSV 文件选择窗口会优先从该目录打开。`;
+    const errorText = state.playerRatingLoadError ? `<div class="message warning">${escapeHtml(state.playerRatingLoadError)}</div>` : '';
+    return `<div class="panel">
+      <div class="panel-header">
+        <div class="panel-title">球员能力表</div>
+        <div class="toolbar">
+          <button id="selectRawExcelsDirBtn">选择 rawExcels 目录</button>
+          <button id="loadPlayersCsvBtn">加载 Players.csv</button>
+          <button id="loadCoreAttributesCsvBtn">加载 CorePlayerAttributes.csv</button>
+        </div>
+      </div>
+      <div class="panel-body">
+        <div class="message ok">${escapeHtml(directoryText)}</div>
+        <div class="message ${state.playerRatingContext ? 'ok' : 'warning'}">${escapeHtml(loadedText)}。用于校验初始 5 人 UI 能力范围和赛后抽卡位置覆盖。</div>
+        <div class="message ok">${escapeHtml(coreText)}。</div>
+        ${errorText}
+      </div>
+    </div>`;
+  }
+
+  function renderRandomTab() {
+    const event = currentEvent();
+    const ruleNames = Object.keys(event.randomEventRules || {});
+    if (!ruleNames.includes(state.ruleName)) state.ruleName = ruleNames[0] || '';
+    const selectedRule = state.ruleName;
+    const rule = event.randomEventRules[selectedRule];
+    const ruleRows = rule ? rule.weights.map((item, index) => `
+      <tr>
+        <td><input class="inline-input" data-rule-row="${index}" data-rule-field="fatigueValue" type="number" value="${escapeHtml(item.fatigueValue)}"></td>
+        <td><input class="inline-input" data-rule-row="${index}" data-rule-field="weight" type="number" min="0" value="${escapeHtml(item.weight)}"></td>
+        <td class="table-actions"><button class="icon danger" data-delete-rule-row="${index}">-</button></td>
+      </tr>`).join('') : '';
+    const textGroups = TEXT_GROUP_KEYS.map((key) => `
+      <div class="field">
+        <label>${escapeHtml(key)}</label>
+        <textarea data-text-group="${escapeHtml(key)}">${escapeHtml((event.randomEventTextGroups?.[key] || []).join('\n'))}</textarea>
+      </div>`).join('');
+
+    $('randomTab').innerHTML = `
+      <div class="panel">
+        <div class="panel-header">
+          <div class="panel-title">随机事件规则</div>
+          <div class="toolbar">
+            <select id="ruleSelect" style="width:180px">${ruleNames.map((name) => `<option value="${escapeHtml(name)}" ${name === selectedRule ? 'selected' : ''}>${escapeHtml(name)}</option>`).join('')}</select>
+            <button id="addRuleBtn">+ 规则</button>
+            <button id="deleteRuleBtn" class="danger">删除规则</button>
+          </div>
+        </div>
+        <div class="panel-body">
+          ${rule ? `
+          <div class="grid-3" style="margin-bottom:14px">
+            <div class="field"><label>规则名</label><input id="ruleNameInput" value="${escapeHtml(selectedRule)}"></div>
+            <div class="field"><label>体力配置范围最小值</label><input id="ruleMinInput" type="number" value="${escapeHtml(rule.fatigueRange?.[0] ?? 0)}"></div>
+            <div class="field"><label>体力配置范围最大值</label><input id="ruleMaxInput" type="number" value="${escapeHtml(rule.fatigueRange?.[1] ?? 0)}"></div>
+          </div>
+          <table>
+            <thead><tr><th>体力变化配置值</th><th>权重</th><th></th></tr></thead>
+            <tbody>${ruleRows}</tbody>
+          </table>
+          <div class="toolbar" style="margin-top:12px"><button id="addRuleRowBtn">+ 权重行</button></div>` : '<div class="message warning">暂无随机事件规则。</div>'}
+        </div>
+      </div>
+      <div class="panel">
+        <div class="panel-header"><div class="panel-title">体力变化文本组</div></div>
+        <div class="panel-body"><div class="grid-3">${textGroups}</div></div>
+      </div>`;
+  }
+
+  function renderChaptersTab() {
+    const event = currentEvent();
+    const chapters = event.chapters || [];
+    const chapter = currentChapter();
+    const chapterCards = chapters.map((item, index) => {
+      const nodeCount = item.map?.nodes?.length || 0;
+      return `<div class="chapter-card ${index === state.chapterIndex ? 'active' : ''}" data-chapter-index="${index}">
+        <div class="chapter-card-title">章节 ${escapeHtml(item.id)}</div>
+        <div class="chapter-card-meta">节点 ${nodeCount} / 默认体力 ${escapeHtml(item.fatigueLimit)}</div>
+      </div>`;
+    }).join('');
+
+    $('chaptersTab').innerHTML = `
+      <div class="chapter-layout">
+        <div>
+          <div class="panel">
+            <div class="panel-header"><div class="panel-title">章节</div></div>
+            <div class="panel-body">
+              <div class="chapter-list">${chapterCards}</div>
+              <div class="toolbar" style="margin-top:12px">
+                <button id="addChapterBtn">+ 新增</button>
+                <button id="duplicateChapterBtn">复制</button>
+                <button id="deleteChapterBtn" class="danger">删除</button>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div>${chapter ? renderChapterEditor(chapter) : ''}</div>
+      </div>`;
+  }
+
+  function renderChapterEditor(chapter) {
+    return `
+      <div class="panel">
+        <div class="panel-header"><div class="panel-title">章节 ${escapeHtml(chapter.id)}</div></div>
+        <div class="panel-body">
+          <div class="grid-4">
+            <div class="field"><label>章节 ID</label><input data-chapter-field="id" type="number" value="${escapeHtml(chapter.id)}"></div>
+            <div class="field"><label>章节名称 ID</label><input data-chapter-field="chapterNameId" value="${escapeHtml(chapter.chapterNameId)}"></div>
+            <div class="field"><label>章节短描 ID</label><input data-chapter-field="chapterShortDescId" value="${escapeHtml(chapter.chapterShortDescId)}"></div>
+            <div class="field"><label>默认体力</label><input data-chapter-field="fatigueLimit" type="number" value="${escapeHtml(chapter.fatigueLimit)}"></div>
+            <div class="field"><label>后继章节 ID</label><input data-chapter-field="nextChapterId" type="number" value="${escapeHtml(chapter.nextChapterId)}"></div>
+          </div>
+          <div class="grid-2" style="margin-top:14px">
+            <div class="field"><label>随机对手池</label><textarea data-chapter-list="randomOpponentTeamIds">${escapeHtml(chapter.randomOpponentTeamIds.join(', '))}</textarea></div>
+            <div class="field"><label>起点节点</label><textarea data-map-list="entryNodeIds">${escapeHtml((chapter.map.entryNodeIds || []).join(', '))}</textarea></div>
+          </div>
+          <div class="grid-3" style="margin-top:14px">
+            <div class="field"><label>终点节点</label><input data-map-field="finalNodeId" type="number" value="${escapeHtml(chapter.map.finalNodeId)}"></div>
+          </div>
+        </div>
+      </div>
+      ${renderRewards(chapter)}
+      ${renderMapEditor(chapter)}`;
+  }
+
+  function renderRewards(chapter) {
+    const rows = (chapter.chapterRewards || []).map((reward, index) => `
+      <tr>
+        <td><select data-reward-row="${index}" data-reward-field="type">${REWARD_TYPES.map((type) => `<option value="${type}" ${reward.type === type ? 'selected' : ''}>${type}</option>`).join('')}</select></td>
+        <td><input class="inline-input" data-reward-row="${index}" data-reward-field="rewardId" type="number" value="${escapeHtml(reward.rewardId)}"></td>
+        <td><input class="inline-input" data-reward-row="${index}" data-reward-field="amount" type="number" value="${escapeHtml(reward.amount)}"></td>
+        <td><select data-reward-row="${index}" data-reward-field="firstClearOnly"><option value="true" ${reward.firstClearOnly ? 'selected' : ''}>true</option><option value="false" ${!reward.firstClearOnly ? 'selected' : ''}>false</option></select></td>
+        <td class="table-actions"><button class="icon danger" data-delete-reward="${index}">-</button></td>
+      </tr>`).join('');
+    return `<div class="panel">
+      <div class="panel-header"><div class="panel-title">章节奖励</div><button id="addRewardBtn">+ 奖励</button></div>
+      <div class="panel-body"><table><thead><tr><th>类型</th><th>奖励 ID</th><th>数量</th><th>仅首通</th><th></th></tr></thead><tbody>${rows}</tbody></table></div>
+    </div>`;
+  }
+
+  function renderMapEditor(chapter) {
+    const node = currentNode();
+    const nodeRows = chapter.map.nodes.map((item) => `<div class="node-row ${item.id === state.selectedNodeId ? 'active' : ''}" data-node-row="${item.id}"><div class="node-id">${escapeHtml(item.id)}</div><div class="node-kind">${escapeHtml(item.nodeType)}</div><div class="node-fatigue">体 ${escapeHtml(signedNumber(staminaDelta(item.fatigueValue ?? 0)))}</div></div>`).join('');
+    return `<div class="panel">
+      <div class="panel-header">
+        <div class="panel-title">地图节点</div>
+        <div class="toolbar"><button id="addNodeBtn">+ 节点</button><button id="deleteNodeBtn" class="danger">删除节点</button></div>
+      </div>
+      <div class="panel-body">
+        <div class="map-layout">
+          <div>
+            <div class="graph-box">${renderGraph(chapter)}</div>
+            <div class="legend">
+              ${NODE_TYPES.map((type) => `<span class="legend-item"><span class="swatch" style="background:${NODE_COLORS[type]}"></span>${escapeHtml(type)}</span>`).join('')}
+            </div>
+          </div>
+          <div>
+            <div class="node-list">${nodeRows}</div>
+          </div>
+        </div>
+        ${node ? renderNodeEditor(chapter, node) : ''}
+      </div>
+    </div>`;
+  }
+
+  function renderNodeEditor(chapter, node) {
+    const isMatch = MATCH_NODE_TYPES.includes(node.nodeType);
+    const canConfigureRewards = NODE_TYPES_WITH_REWARDS.includes(node.nodeType);
+    const ruleNames = Object.keys(currentEvent().randomEventRules || {});
+    return `<div class="panel" style="box-shadow:none;margin-top:16px">
+      <div class="panel-header"><div class="panel-title">节点 ${escapeHtml(node.id)}</div></div>
+      <div class="panel-body">
+        <div class="grid-4">
+          <div class="field"><label>节点 ID</label><input data-node-field="id" type="number" value="${escapeHtml(node.id)}"></div>
+          <div class="field"><label>节点类型</label><select data-node-field="nodeType">${NODE_TYPES.map((type) => `<option value="${type}" ${node.nodeType === type ? 'selected' : ''}>${type}</option>`).join('')}</select></div>
+          <div class="field"><label>体力变化配置值</label><input data-node-field="fatigueValue" type="number" value="${escapeHtml(node.fatigueValue ?? 0)}"></div>
+          <div class="field"><label>后继节点</label><input data-successors value="${escapeHtml((chapter.map.adjacencyList[String(node.id)] || []).join(', '))}"></div>
+        </div>
+        <div class="grid-3" style="margin-top:14px">
+          ${isMatch ? `
+            <div class="field"><label>对手 ID</label><input data-node-field="opponentId" type="number" value="${escapeHtml(node.opponentId ?? -1)}"></div>
+            <div class="field"><label>难度</label><select data-node-field="difficultyLevel">${DIFFICULTIES.map((level) => `<option value="${level}" ${node.difficultyLevel === level ? 'selected' : ''}>${level}</option>`).join('')}</select></div>
+          ` : `
+            <div class="field"><label>随机事件类型</label><select data-node-field="randomEventType">${ruleNames.map((name) => `<option value="${escapeHtml(name)}" ${node.randomEventType === name ? 'selected' : ''}>${escapeHtml(name)}</option>`).join('')}</select></div>
+          `}
+        </div>
+        ${canConfigureRewards ? renderNodeRewards(node, isMatch ? '比赛节点奖励' : '随机事件节点奖励') : ''}
+      </div>
+    </div>`;
+  }
+
+  function renderNodeRewards(node, title) {
+    const rows = (node.rewards || []).map((reward, index) => `
+      <tr>
+        <td><select data-node-reward-row="${index}" data-node-reward-field="type">${NODE_REWARD_TYPES.map((type) => `<option value="${type}" ${reward.type === type ? 'selected' : ''}>${type}</option>`).join('')}</select></td>
+        <td><input class="inline-input" data-node-reward-row="${index}" data-node-reward-field="rewardId" type="number" value="${escapeHtml(reward.rewardId)}"></td>
+        <td><input class="inline-input" data-node-reward-row="${index}" data-node-reward-field="amount" type="number" min="0" value="${escapeHtml(reward.amount)}"></td>
+        <td class="table-actions"><button class="icon danger" data-delete-node-reward="${index}">-</button></td>
+      </tr>`).join('');
+    return `<div style="margin-top:14px">
+      <div class="panel-header" style="padding:0 0 8px 0;border:0"><div class="panel-title">${escapeHtml(title || '节点奖励')}</div><button data-add-node-reward="true">+ 奖励</button></div>
+      <table><thead><tr><th>类型</th><th>奖励 ID</th><th>数量</th><th></th></tr></thead><tbody>${rows}</tbody></table>
+    </div>`;
+  }
+
+  function renderGraph(chapter) {
+    const nodes = chapter.map.nodes || [];
+    const adjacency = chapter.map.adjacencyList || {};
+    const positions = layoutNodes(chapter);
+    const width = positions.width;
+    const height = positions.height;
+    const edges = [];
+    Object.keys(adjacency).forEach((fromKey) => {
+      const from = positions.byId.get(Number(fromKey));
+      (adjacency[fromKey] || []).forEach((toId) => {
+        const to = positions.byId.get(Number(toId));
+        if (from && to) edges.push(renderGraphEdge(from.x + GRAPH_NODE_WIDTH / 2, from.y, to.x - GRAPH_NODE_WIDTH / 2, to.y));
+      });
+    });
+    const finalNode = positions.byId.get(Number(chapter.map.finalNodeId));
+    if (finalNode) edges.push(renderGraphEdge(finalNode.x + GRAPH_NODE_WIDTH / 2, finalNode.y, width - 12, finalNode.y));
+    const nodeSvg = nodes.map((node) => {
+      const pos = positions.byId.get(node.id) || { x: 80, y: 80 };
+      const classes = ['node'];
+      if (node.id === state.selectedNodeId) classes.push('selected');
+      if ((chapter.map.entryNodeIds || []).includes(node.id)) classes.push('entry');
+      if (chapter.map.finalNodeId === node.id) classes.push('final');
+      return `<g class="${classes.join(' ')}" data-graph-node="${node.id}">
+        <rect class="node-shape" x="${pos.x - GRAPH_NODE_WIDTH / 2}" y="${pos.y - GRAPH_NODE_HEIGHT / 2}" width="${GRAPH_NODE_WIDTH}" height="${GRAPH_NODE_HEIGHT}" rx="8" fill="${NODE_COLORS[node.nodeType] || '#eef1f2'}"></rect>
+        <text class="node-label" x="${pos.x}" y="${pos.y - 4}">${escapeHtml(node.id)}</text>
+        <text class="node-sub" x="${pos.x}" y="${pos.y + 15}">${escapeHtml(shortNodeType(node.nodeType))}</text>
+      </g>`;
+    }).join('');
+    return `<svg class="graph-svg" viewBox="0 0 ${width} ${height}" role="img">
+      <defs><marker id="arrow" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M 0 0 L 10 5 L 0 10 z" fill="#9aa8b2"></path></marker></defs>
+      ${edges.join('')}
+      ${nodeSvg}
+    </svg>`;
+  }
+
+  function renderGraphEdge(x1, y1, x2, y2) {
+    return `<line class="edge" x1="${roundGraphValue(x1)}" y1="${roundGraphValue(y1)}" x2="${roundGraphValue(x2)}" y2="${roundGraphValue(y2)}"></line>`;
+  }
+
+  function roundGraphValue(value) {
+    return Math.round(value * 10) / 10;
+  }
+
+  function shortNodeType(type) {
+    return ({ MomentChallenge: 'Moment', FullMatch: 'Full', PenaltyKick: 'Penalty', FreeKick: 'FreeKick', RandomEvent: 'Random' })[type] || type;
+  }
+
+  function layoutNodes(chapter) {
+    const nodes = chapter.map.nodes || [];
+    const adjacency = chapter.map.adjacencyList || {};
+    const nodeIds = buildGraphNodeIds(nodes, adjacency, chapter.map.entryNodeIds || [], chapter.map.finalNodeId);
+    const graphAdjacency = buildGraphAdjacency(nodeIds, adjacency);
+    const entries = buildGraphEntries(nodeIds, graphAdjacency, chapter.map.entryNodeIds || []);
+    const edges = buildGraphEdges(nodeIds, graphAdjacency);
+    const columns = buildGraphColumns(nodeIds, graphAdjacency, entries);
+    forceGraphFinalColumn(columns, edges, chapter.map.finalNodeId);
+    const routes = buildGraphRoutes(nodeIds, graphAdjacency, entries, chapter.map.finalNodeId);
+    const layout = buildGraphLayoutNodes(nodeIds, columns, routes, edges);
+    const maxColumn = Math.max(0, ...Array.from(layout.values()).map((node) => node.column));
+    const maxRow = Math.max(0, ...Array.from(layout.values()).map((node) => node.row));
+    const width = Math.max(GRAPH_MIN_WIDTH, (maxColumn + 1) * GRAPH_LAYER_GAP + GRAPH_HORIZONTAL_PADDING * 2);
+    const height = Math.max(GRAPH_MIN_HEIGHT, (maxRow + 1) * GRAPH_ROW_GAP + GRAPH_VERTICAL_PADDING * 2);
+    const left = GRAPH_HORIZONTAL_PADDING;
+    const right = width - GRAPH_HORIZONTAL_PADDING;
+    const top = GRAPH_VERTICAL_PADDING;
+    const bottom = height - GRAPH_VERTICAL_PADDING;
+    const byId = new Map();
+    layout.forEach((layoutNode) => {
+      const x = maxColumn === 0 ? (left + right) * 0.5 : left + (right - left) * layoutNode.column / maxColumn;
+      const y = maxRow === 0 ? (top + bottom) * 0.5 : top + (bottom - top) * layoutNode.row / maxRow;
+      byId.set(layoutNode.id, { x, y });
+    });
+    return { byId, width, height };
+  }
+
+  function buildGraphNodeIds(nodes, adjacency, entryNodeIds, finalNodeId) {
+    const result = [];
+    const add = (id) => {
+      const value = Number(id);
+      if (Number.isInteger(value) && value > 0 && !result.includes(value)) result.push(value);
+    };
+    nodes.forEach((node) => add(node.id));
+    (entryNodeIds || []).forEach(add);
+    Object.entries(adjacency || {}).forEach(([from, targets]) => {
+      add(from);
+      (targets || []).forEach(add);
+    });
+    add(finalNodeId);
+    return result;
+  }
+
+  function buildGraphAdjacency(nodeIds, adjacency) {
+    const nodeSet = new Set(nodeIds);
+    const result = new Map(nodeIds.map((id) => [id, []]));
+    Object.entries(adjacency || {}).forEach(([fromKey, targets]) => {
+      const fromId = Number(fromKey);
+      if (!nodeSet.has(fromId)) return;
+      const nextNodes = result.get(fromId);
+      (targets || []).forEach((target) => {
+        const toId = Number(target);
+        if (nodeSet.has(toId) && !nextNodes.includes(toId)) nextNodes.push(toId);
+      });
+    });
+    return result;
+  }
+
+  function buildGraphEntries(nodeIds, adjacency, entryNodeIds) {
+    const nodeSet = new Set(nodeIds);
+    const entries = [];
+    (entryNodeIds || []).forEach((id) => {
+      const value = Number(id);
+      if (nodeSet.has(value) && !entries.includes(value)) entries.push(value);
+    });
+    if (entries.length) return entries;
+    const hasIncoming = new Set();
+    adjacency.forEach((targets) => targets.forEach((target) => hasIncoming.add(target)));
+    nodeIds.forEach((id) => { if (!hasIncoming.has(id)) entries.push(id); });
+    if (!entries.length && nodeIds.length) entries.push(nodeIds[0]);
+    return entries;
+  }
+
+  function buildGraphEdges(nodeIds, adjacency) {
+    const nodeSet = new Set(nodeIds);
+    const edges = [];
+    nodeIds.forEach((fromId) => {
+      (adjacency.get(fromId) || []).forEach((toId) => {
+        if (nodeSet.has(toId)) edges.push({ fromId, toId });
+      });
+    });
+    return edges;
+  }
+
+  function buildGraphColumns(nodeIds, adjacency, entries) {
+    const columns = new Map(nodeIds.map((id) => [id, 0]));
+    const incomingCounts = new Map(nodeIds.map((id) => [id, 0]));
+    adjacency.forEach((targets) => targets.forEach((toId) => incomingCounts.set(toId, (incomingCounts.get(toId) || 0) + 1)));
+    const queue = [];
+    const queued = new Set();
+    const nodeSet = new Set(nodeIds);
+    entries.forEach((entryId) => {
+      if (!nodeSet.has(entryId)) return;
+      incomingCounts.set(entryId, 0);
+      queue.push(entryId);
+      queued.add(entryId);
+    });
+    nodeIds.forEach((id) => {
+      if ((incomingCounts.get(id) || 0) === 0 && !queued.has(id)) {
+        queue.push(id);
+        queued.add(id);
+      }
+    });
+    const processed = new Set();
+    while (queue.length) {
+      const id = queue.shift();
+      processed.add(id);
+      (adjacency.get(id) || []).forEach((toId) => {
+        columns.set(toId, Math.max(columns.get(toId) || 0, (columns.get(id) || 0) + 1));
+        incomingCounts.set(toId, (incomingCounts.get(toId) || 0) - 1);
+        if ((incomingCounts.get(toId) || 0) <= 0 && !queued.has(toId)) {
+          queue.push(toId);
+          queued.add(toId);
+        }
+      });
+    }
+    nodeIds.forEach((id) => {
+      if (processed.has(id)) return;
+      (adjacency.get(id) || []).forEach((toId) => columns.set(toId, Math.max(columns.get(toId) || 0, (columns.get(id) || 0) + 1)));
+    });
+    return columns;
+  }
+
+  function forceGraphFinalColumn(columns, edges, finalNodeId) {
+    const finalId = Number(finalNodeId);
+    if (!finalId || !columns.has(finalId)) return;
+    let finalColumn = 0;
+    columns.forEach((column) => { finalColumn = Math.max(finalColumn, column); });
+    edges.forEach((edge) => {
+      if (edge.toId === finalId && columns.has(edge.fromId)) finalColumn = Math.max(finalColumn, (columns.get(edge.fromId) || 0) + 1);
+    });
+    columns.set(finalId, finalColumn);
+  }
+
+  function buildGraphRoutes(nodeIds, adjacency, entries, finalNodeId) {
+    const routes = [];
+    const nodeSet = new Set(nodeIds);
+    const path = [];
+    const visiting = new Set();
+    entries.forEach((entryId) => collectGraphRoutes(entryId, Number(finalNodeId), adjacency, nodeSet, path, visiting, routes));
+    if (!routes.length) nodeIds.forEach((id) => routes.push([id]));
+    return routes;
+  }
+
+  function collectGraphRoutes(nodeId, finalNodeId, adjacency, nodeSet, path, visiting, routes) {
+    if (routes.length >= GRAPH_MAX_ROUTE_COUNT || !nodeSet.has(nodeId) || visiting.has(nodeId)) return;
+    visiting.add(nodeId);
+    path.push(nodeId);
+    const nextNodes = adjacency.get(nodeId) || [];
+    if ((finalNodeId > 0 && nodeId === finalNodeId) || nextNodes.length === 0) {
+      routes.push([...path]);
+    } else {
+      nextNodes.forEach((nextId) => collectGraphRoutes(nextId, finalNodeId, adjacency, nodeSet, path, visiting, routes));
+    }
+    path.pop();
+    visiting.delete(nodeId);
+  }
+
+  function buildGraphLayoutNodes(nodeIds, columns, routes, edges) {
+    const routeIndexesByNode = buildGraphRouteIndexesByNode(routes);
+    const routeCount = Math.max(1, routes.length);
+    const nodeCountByColumn = new Map();
+    nodeIds.forEach((id) => nodeCountByColumn.set(columns.get(id) || 0, (nodeCountByColumn.get(columns.get(id) || 0) || 0) + 1));
+    let rowCount = 1;
+    nodeCountByColumn.forEach((count) => { rowCount = Math.max(rowCount, count); });
+    rowCount = Math.max(rowCount, Math.min(routeCount, rowCount + 2));
+    const routeMaxRow = Math.max(1, routeCount - 1);
+    const layoutMaxRow = Math.max(0, rowCount - 1);
+    const layout = new Map();
+    nodeIds.forEach((id) => {
+      const routeIndexes = routeIndexesByNode.get(id) || [];
+      let preferredRow = (rowCount - 1) * 0.5;
+      if (routeIndexes.length) {
+        const sum = routeIndexes.reduce((total, value) => total + value, 0);
+        const preferredRouteRow = routeCount === 1 ? 0.5 : sum / routeIndexes.length;
+        preferredRow = routeCount === 1 ? layoutMaxRow * 0.5 : preferredRouteRow * layoutMaxRow / routeMaxRow;
+      }
+      layout.set(id, { id, column: columns.get(id) || 0, row: 0, preferredRow });
+    });
+    const layers = buildGraphLayers(layout);
+    assignGraphInitialRows(layers, rowCount);
+    minimizeGraphLayerCrossings(layers, layout, edges, rowCount);
+    resolveGraphLineNodeConflicts(layout, edges, rowCount);
+    return layout;
+  }
+
+  function buildGraphRouteIndexesByNode(routes) {
+    const result = new Map();
+    routes.forEach((route, routeIndex) => {
+      const added = new Set();
+      route.forEach((id) => {
+        if (added.has(id)) return;
+        added.add(id);
+        if (!result.has(id)) result.set(id, []);
+        result.get(id).push(routeIndex);
+      });
+    });
+    return result;
+  }
+
+  function buildGraphLayers(layout) {
+    const layers = new Map();
+    layout.forEach((node) => {
+      if (!layers.has(node.column)) layers.set(node.column, []);
+      layers.get(node.column).push(node);
+    });
+    return layers;
+  }
+
+  function assignGraphInitialRows(layers, rowCount) {
+    layers.forEach((layer) => {
+      layer.sort((left, right) => left.preferredRow - right.preferredRow || left.id - right.id);
+      assignGraphSpreadRows(layer, rowCount);
+    });
+  }
+
+  function minimizeGraphLayerCrossings(layers, layout, edges, rowCount) {
+    const layerIndexes = Array.from(layers.keys()).sort((a, b) => a - b);
+    let bestRows = captureGraphRows(layout);
+    let bestScore = scoreGraphLayout(edges, layout);
+    for (let iteration = 0; iteration < GRAPH_LAYER_SORT_ITERATIONS; iteration++) {
+      for (let layerIndex = 1; layerIndex < layerIndexes.length; layerIndex++) {
+        sortGraphLayerByNeighbors(layers.get(layerIndexes[layerIndex]), layout, edges, rowCount, true);
+      }
+      ({ bestRows, bestScore } = saveBestGraphRowsIfNeeded(edges, layout, bestRows, bestScore));
+      for (let layerIndex = layerIndexes.length - 2; layerIndex >= 0; layerIndex--) {
+        sortGraphLayerByNeighbors(layers.get(layerIndexes[layerIndex]), layout, edges, rowCount, false);
+      }
+      ({ bestRows, bestScore } = saveBestGraphRowsIfNeeded(edges, layout, bestRows, bestScore));
+    }
+    restoreGraphRows(layout, bestRows);
+  }
+
+  function sortGraphLayerByNeighbors(layer, layout, edges, rowCount, useIncoming) {
+    const originalOrder = new Map(layer.map((node, index) => [node.id, index]));
+    layer.sort((left, right) => {
+      const medianCompare = graphNeighborMedianRow(left, layout, edges, useIncoming) - graphNeighborMedianRow(right, layout, edges, useIncoming);
+      if (medianCompare !== 0) return medianCompare;
+      return originalOrder.get(left.id) - originalOrder.get(right.id) || left.id - right.id;
+    });
+    assignGraphSpreadRows(layer, rowCount);
+  }
+
+  function graphNeighborMedianRow(node, layout, edges, useIncoming) {
+    const rows = [];
+    edges.forEach((edge) => {
+      let neighborId = 0;
+      if (useIncoming && edge.toId === node.id) neighborId = edge.fromId;
+      else if (!useIncoming && edge.fromId === node.id) neighborId = edge.toId;
+      if (!neighborId || !layout.has(neighborId)) return;
+      rows.push(layout.get(neighborId).row);
+    });
+    if (!rows.length) return node.row;
+    rows.sort((a, b) => a - b);
+    const middle = Math.floor(rows.length / 2);
+    return rows.length % 2 ? rows[middle] : (rows[middle - 1] + rows[middle]) * 0.5;
+  }
+
+  function assignGraphSpreadRows(layer, rowCount) {
+    if (!layer.length) return;
+    if (layer.length === 1) {
+      layer[0].row = Math.max(0, Math.floor((rowCount - 1) / 2));
+      return;
+    }
+    layer.forEach((node, index) => {
+      node.row = Math.round(index * (rowCount - 1) / (layer.length - 1));
+    });
+  }
+
+  function captureGraphRows(layout) {
+    const rows = new Map();
+    layout.forEach((node) => rows.set(node.id, node.row));
+    return rows;
+  }
+
+  function restoreGraphRows(layout, rows) {
+    rows.forEach((row, id) => { if (layout.has(id)) layout.get(id).row = row; });
+  }
+
+  function saveBestGraphRowsIfNeeded(edges, layout, bestRows, bestScore) {
+    const score = scoreGraphLayout(edges, layout);
+    if (score >= bestScore) return { bestRows, bestScore };
+    return { bestRows: captureGraphRows(layout), bestScore: score };
+  }
+
+  function scoreGraphLayout(edges, layout) {
+    return countGraphCrossings(edges, layout) * GRAPH_CROSSING_SCORE_WEIGHT + countGraphLineNodeHits(edges, layout) * GRAPH_NODE_HIT_SCORE_WEIGHT;
+  }
+
+  function countGraphCrossings(edges, layout) {
+    let count = 0;
+    for (let leftIndex = 0; leftIndex < edges.length; leftIndex++) {
+      for (let rightIndex = leftIndex + 1; rightIndex < edges.length; rightIndex++) {
+        if (doGraphEdgesCross(edges[leftIndex], edges[rightIndex], layout)) count++;
+      }
+    }
+    return count;
+  }
+
+  function doGraphEdgesCross(left, right, layout) {
+    if (left.fromId === right.fromId || left.fromId === right.toId || left.toId === right.fromId || left.toId === right.toId) return false;
+    const leftFrom = layout.get(left.fromId);
+    const leftTo = layout.get(left.toId);
+    const rightFrom = layout.get(right.fromId);
+    const rightTo = layout.get(right.toId);
+    if (!leftFrom || !leftTo || !rightFrom || !rightTo) return false;
+    return graphSegmentsCrossStrict(
+      { x: leftFrom.column, y: leftFrom.row },
+      { x: leftTo.column, y: leftTo.row },
+      { x: rightFrom.column, y: rightFrom.row },
+      { x: rightTo.column, y: rightTo.row }
+    );
+  }
+
+  function countGraphLineNodeHits(edges, layout) {
+    let count = 0;
+    edges.forEach((edge) => {
+      const fromNode = layout.get(edge.fromId);
+      const toNode = layout.get(edge.toId);
+      if (!fromNode || !toNode) return;
+      layout.forEach((node) => { if (doesGraphEdgeHitNode(fromNode, toNode, node)) count++; });
+    });
+    return count;
+  }
+
+  function resolveGraphLineNodeConflicts(layout, edges, rowCount) {
+    const maxIterations = Math.max(1, layout.size * rowCount);
+    for (let iteration = 0; iteration < maxIterations; iteration++) {
+      let changed = false;
+      for (const edge of edges) {
+        const fromNode = layout.get(edge.fromId);
+        const toNode = layout.get(edge.toId);
+        if (!fromNode || !toNode) continue;
+        const blockerInfo = findGraphLineNodeBlocker(layout, fromNode, toNode);
+        if (blockerInfo && moveGraphNodeToFreeRow(blockerInfo.blocker, layout, rowCount, blockerInfo.blockedRow)) {
+          changed = true;
+          break;
+        }
+      }
+      if (!changed) return;
+    }
+  }
+
+  function findGraphLineNodeBlocker(layout, fromNode, toNode) {
+    for (const node of layout.values()) {
+      if (!doesGraphEdgeHitNode(fromNode, toNode, node)) continue;
+      return { blocker: node, blockedRow: graphEdgeRowAtColumn(fromNode, toNode, node.column) };
+    }
+    return null;
+  }
+
+  function doesGraphEdgeHitNode(fromNode, toNode, node) {
+    if (node.id === fromNode.id || node.id === toNode.id) return false;
+    const minColumn = Math.min(fromNode.column, toNode.column);
+    const maxColumn = Math.max(fromNode.column, toNode.column);
+    if (node.column <= minColumn || node.column >= maxColumn) return false;
+    return Math.abs(node.row - graphEdgeRowAtColumn(fromNode, toNode, node.column)) <= 0;
+  }
+
+  function graphEdgeRowAtColumn(fromNode, toNode, column) {
+    if (fromNode.column === toNode.column) return fromNode.row;
+    const t = (column - fromNode.column) / (toNode.column - fromNode.column);
+    return Math.round(fromNode.row + (toNode.row - fromNode.row) * t);
+  }
+
+  function moveGraphNodeToFreeRow(node, layout, rowCount, blockedRow) {
+    const usedRows = new Set();
+    layout.forEach((otherNode) => {
+      if (otherNode.id !== node.id && otherNode.column === node.column) usedRows.add(otherNode.row);
+    });
+    const center = clampInt(Math.round(node.preferredRow), 0, rowCount - 1);
+    for (let offset = 0; offset < rowCount; offset++) {
+      if (tryUseGraphRow(node, usedRows, center + offset, rowCount, blockedRow)) return true;
+      if (tryUseGraphRow(node, usedRows, center - offset, rowCount, blockedRow)) return true;
+    }
+    return false;
+  }
+
+  function tryUseGraphRow(node, usedRows, row, rowCount, blockedRow) {
+    if (row < 0 || row >= rowCount || row === blockedRow || usedRows.has(row)) return false;
+    node.row = row;
+    return true;
+  }
+
+  function graphSegmentsCrossStrict(firstStart, firstEnd, secondStart, secondEnd) {
+    const firstSideA = graphCross(firstStart, firstEnd, secondStart);
+    const firstSideB = graphCross(firstStart, firstEnd, secondEnd);
+    const secondSideA = graphCross(secondStart, secondEnd, firstStart);
+    const secondSideB = graphCross(secondStart, secondEnd, firstEnd);
+    if (Math.abs(firstSideA) <= 0.0001 || Math.abs(firstSideB) <= 0.0001 || Math.abs(secondSideA) <= 0.0001 || Math.abs(secondSideB) <= 0.0001) return false;
+    return (firstSideA > 0) !== (firstSideB > 0) && (secondSideA > 0) !== (secondSideB > 0);
+  }
+
+  function graphCross(origin, axisPoint, point) {
+    return (axisPoint.x - origin.x) * (point.y - origin.y) - (axisPoint.y - origin.y) * (point.x - origin.x);
+  }
+
+  function clampInt(value, minValue, maxValue) {
+    return Math.max(minValue, Math.min(maxValue, value));
+  }
+
+  function renderJsonTab() {
+    $('jsonTab').innerHTML = `<div class="panel">
+      <div class="panel-header"><div class="panel-title">JSON</div><div class="toolbar"><button id="applyJsonBtn">应用 JSON</button></div></div>
+      <div class="panel-body"><textarea id="rawJson" class="raw-json">${escapeHtml(serializeConfig())}</textarea></div>
+    </div>`;
+  }
+
+  function renderValidation() {
+    const result = validateConfig(false);
+    state.messages = result.errors.map((text) => ({ type: 'error', text })).concat(result.warnings.map((text) => ({ type: 'warning', text })));
+    const messages = state.messages.length ? state.messages.map((item) => `<div class="message ${item.type}">${escapeHtml(item.type === 'error' ? `错误：${item.text}` : `警告：${item.text}`)}</div>`).join('') : '<div class="message ok">配置校验通过。</div>';
+    $('validateTab').innerHTML = `${renderPlayerRatingTools()}<div class="panel"><div class="panel-header"><div class="panel-title">校验结果</div></div><div class="panel-body"><div class="validation-list">${messages}</div></div></div>`;
+    if (result.errors.length) setStatus(`${result.errors.length} 个错误，${result.warnings.length} 个警告`, 'bad');
+    else if (result.warnings.length) setStatus(`${result.warnings.length} 个警告`, 'warn');
+    else setStatus('配置校验通过', 'good');
+  }
+
+  function validateConfig() {
+    const errors = [];
+    const warnings = [];
+    const config = state.config;
+    if (!config?.tourEvent || typeof config.tourEvent !== 'object') {
+      errors.push('缺少 tourEvent 顶层对象。');
+      return { errors, warnings };
+    }
+    if (!state.playerRatingContext) warnings.push(`未加载 Players.csv，跳过球员池位置和能力校验。${state.playerRatingLoadError || ''}`.trim());
+    Object.entries(config.tourEvent).forEach(([eventId, event]) => {
+      if (!event.activityNameId) warnings.push(`活动 ${eventId} 缺少 activityNameId。`);
+      if (!event.activityLongDescId) warnings.push(`活动 ${eventId} 缺少 activityLongDescId。`);
+      if (!event.activityShortDescId) warnings.push(`活动 ${eventId} 缺少 activityShortDescId。`);
+      if (!Number.isInteger(event.templateTeamId)) errors.push(`活动 ${eventId} 的 templateTeamId 必须是整数。`);
+      if (typeof event.momentChallengeLevelIndex !== 'string' || event.momentChallengeLevelIndex.trim() === '') errors.push(`活动 ${eventId} 缺少 momentChallengeLevelIndex。`);
+      if (typeof event.pointsShopConfigIndex !== 'string' || event.pointsShopConfigIndex.trim() === '') errors.push(`活动 ${eventId} 缺少 pointsShopConfigIndex。`);
+      if (!Number.isInteger(event.expiredPointCoinExchangeRate) || event.expiredPointCoinExchangeRate <= 0) errors.push(`活动 ${eventId} 的 expiredPointCoinExchangeRate 必须是正整数。`);
+      validateDifficultyValueMap(eventId, event, errors);
+      validateSelectableTeamTemplates(eventId, event, errors, warnings);
+      validateLoopCompletionRewards(eventId, event, errors);
+      validateRandomRules(eventId, event, errors, warnings);
+      validateChapters(eventId, event, errors, warnings);
+    });
+    return { errors, warnings };
+  }
+
+  function validateLoopCompletionRewards(eventId, event, errors) {
+    const groups = event.allChapterCompletionRewards || [];
+    groups.forEach((group, groupIndex) => {
+      const prefix = `活动 ${eventId} 总通关奖励区间 ${groupIndex + 1}`;
+      if (!Number.isInteger(group.minCompletionCount) || group.minCompletionCount < 1) errors.push(`${prefix} 的 minCompletionCount 必须是大于等于 1 的整数。`);
+      if (!Number.isInteger(group.maxCompletionCount) || group.maxCompletionCount < group.minCompletionCount) errors.push(`${prefix} 的 maxCompletionCount 必须是大于等于 minCompletionCount 的整数。`);
+      if (!Array.isArray(group.rewards) || group.rewards.length === 0) errors.push(`${prefix} 缺少 rewards。`);
+      (group.rewards || []).forEach((reward, rewardIndex) => {
+        if (!REWARD_TYPES.includes(reward.type)) errors.push(`${prefix} 奖励 ${rewardIndex} 的 type 只能是 Player 或 Point。`);
+        if (!Number.isInteger(reward.amount)) errors.push(`${prefix} 奖励 ${rewardIndex} 的 amount 必须是整数。`);
+      });
+    });
+  }
+
+  function validateSelectableTeamTemplates(eventId, event, errors, warnings) {
+    const teams = event.selectableTeamTemplates;
+    if (!Array.isArray(teams) || teams.length === 0) {
+      errors.push(`活动 ${eventId} 缺少 selectableTeamTemplates。`);
+      return;
+    }
+    const uiRoleSet = new Set(UI_ROLES);
+    const invalidFormationRoleSet = new Set(INVALID_FORMATION_ROLES);
+    const seenTeamIds = new Set();
+    teams.forEach((team, index) => {
+      const prefix = `活动 ${eventId} 可选模板队伍 ${index + 1}`;
+      if (!Number.isInteger(team.templateTeamId)) errors.push(`${prefix} 的 templateTeamId 必须是整数。`);
+      if (!team.teamNameId) errors.push(`${prefix} 缺少 teamNameId。`);
+      if (seenTeamIds.has(team.templateTeamId)) errors.push(`${prefix} 的 templateTeamId=${team.templateTeamId} 重复。`);
+      seenTeamIds.add(team.templateTeamId);
+      validateAbilityRange(prefix, team, errors);
+      if (!Array.isArray(team.formationRoles)) {
+        errors.push(`${prefix} 缺少 formationRoles。`);
+      } else {
+        if (team.formationRoles.length !== 11) errors.push(`${prefix} 的 formationRoles 必须配置 11 个 UIRole。`);
+        if (!team.formationRoles.includes('GK')) errors.push(`${prefix} 的 formationRoles 必须包含 GK。`);
+        const seenRoles = new Set();
+        team.formationRoles.forEach((role) => {
+          if (!uiRoleSet.has(role)) errors.push(`${prefix} 的 formationRoles 包含非法 UIRole：${role}。`);
+          if (invalidFormationRoleSet.has(role)) errors.push(`${prefix} 的 formationRoles 不能配置 ${role}。`);
+          if (seenRoles.has(role)) warnings.push(`${prefix} 的 formationRoles 重复配置 ${role}。`);
+          seenRoles.add(role);
+        });
+      }
+      if (!Array.isArray(team.playerPoolIds) || team.playerPoolIds.length === 0) errors.push(`${prefix} 缺少 playerPoolIds。`);
+      const seenPlayerIds = new Set();
+      (team.playerPoolIds || []).forEach((playerId) => {
+        if (!Number.isInteger(playerId)) errors.push(`${prefix} 的 playerPoolIds 只能配置整数。`);
+        if (seenPlayerIds.has(playerId)) warnings.push(`${prefix} 的 playerPoolIds 重复配置球员 ${playerId}。`);
+        seenPlayerIds.add(playerId);
+      });
+      validateTeamPlayerPoolCoverage(prefix, team, errors, warnings);
+    });
+    if (teams.length !== 8) warnings.push(`活动 ${eventId} 当前可选模板队伍数量为 ${teams.length}，设计稿种子国家为 8 个。`);
+  }
+
+  function validateAbilityRange(prefix, team, errors) {
+    const range = normalizeAbilityRange(team.replacementPlayerAbilityRange);
+    if (!Number.isInteger(range.minAbility)) errors.push(`${prefix} 的 replacementPlayerAbilityRange.minAbility 必须是整数。`);
+    if (!Number.isInteger(range.maxAbility)) errors.push(`${prefix} 的 replacementPlayerAbilityRange.maxAbility 必须是整数。`);
+    if (range.minAbility < 0 || range.maxAbility < 0) errors.push(`${prefix} 的能力上下限不能小于 0。`);
+    if (range.minAbility > range.maxAbility) errors.push(`${prefix} 的能力下限不能大于上限。`);
+  }
+
+  function validateTeamPlayerPoolCoverage(prefix, team, errors, warnings) {
+    if (!state.playerRatingContext || !window.PlayerRatingCalculator) return;
+    const range = normalizeAbilityRange(team.replacementPlayerAbilityRange);
+    const poolIds = Array.isArray(team.playerPoolIds) ? team.playerPoolIds : [];
+    const missingIds = poolIds.filter((playerId) => !state.playerRatingContext.playersById.has(playerId));
+    if (missingIds.length) warnings.push(`${prefix} 的 playerPoolIds 在 Players.csv 中不存在：${missingIds.slice(0, 8).join(', ')}${missingIds.length > 8 ? '...' : ''}。`);
+    (team.formationRoles || []).forEach((role) => {
+      if (!UI_ROLES.includes(role) || INVALID_FORMATION_ROLES.includes(role)) return;
+      const rewardResult = window.PlayerRatingCalculator.findQualifiedPlayers(state.playerRatingContext, poolIds, role, range, false);
+      if (rewardResult.exact.length === 0 && rewardResult.categoryFallback.length === 0) {
+        errors.push(`${prefix} 阵型位置 ${role} 在球员池中没有位置或类别匹配的球员。`);
+      } else if (rewardResult.exact.length === 0) {
+        warnings.push(`${prefix} 阵型位置 ${role} 没有同位置球员，赛后抽卡会回退到同类别球员池。`);
+      }
+      if (window.PlayerRatingCalculator.categoryForRole(role) === 'Goalkeeper') return;
+      const initialResult = window.PlayerRatingCalculator.findQualifiedPlayers(state.playerRatingContext, poolIds, role, range, true);
+      if (initialResult.exact.length === 0 && initialResult.categoryFallback.length === 0) {
+        errors.push(`${prefix} 初始首发位置 ${role} 在球员池中没有能力 ${range.minAbility}-${range.maxAbility} 且位置或类别匹配的球员。`);
+      } else if (initialResult.exact.length === 0) {
+        warnings.push(`${prefix} 初始首发位置 ${role} 没有能力 ${range.minAbility}-${range.maxAbility} 的同位置球员，初始抽取会回退到同类别球员池。`);
+      }
+    });
+  }
+
+  function validateDifficultyValueMap(eventId, event, errors) {
+    const map = event.matchDifficultyValueMap;
+    if (!map || typeof map !== 'object') {
+      errors.push(`活动 ${eventId} 缺少 matchDifficultyValueMap。`);
+      return;
+    }
+    DIFFICULTIES.forEach((level) => {
+      const value = Number(map[level]);
+      if (!Number.isFinite(value)) errors.push(`活动 ${eventId} 的 matchDifficultyValueMap.${level} 必须是 float 数值。`);
+    });
+  }
+
+  function validateRandomRules(eventId, event, errors, warnings) {
+    const rules = event.randomEventRules || {};
+    const textGroups = event.randomEventTextGroups || {};
+    Object.entries(rules).forEach(([ruleName, rule]) => {
+      if (!Array.isArray(rule.fatigueRange) || rule.fatigueRange.length !== 2) errors.push(`活动 ${eventId} 规则 ${ruleName} 的 fatigueRange 必须是两个整数。`);
+      if (!Array.isArray(rule.weights) || rule.weights.length === 0) errors.push(`活动 ${eventId} 规则 ${ruleName} 缺少 weights。`);
+      const sum = (rule.weights || []).reduce((total, item) => total + Number(item.weight || 0), 0);
+      if (sum !== 100) warnings.push(`活动 ${eventId} 规则 ${ruleName} 权重合计为 ${sum}，建议为 100。`);
+      const seen = new Set();
+      (rule.weights || []).forEach((item) => {
+        if (seen.has(item.fatigueValue)) errors.push(`活动 ${eventId} 规则 ${ruleName} 重复配置 fatigueValue=${item.fatigueValue}。`);
+        seen.add(item.fatigueValue);
+        const range = rule.fatigueRange || [0, 0];
+        if (item.fatigueValue < range[0] || item.fatigueValue > range[1]) errors.push(`活动 ${eventId} 规则 ${ruleName} 的 fatigueValue=${item.fatigueValue} 超出 fatigueRange。`);
+        const key = fatigueKey(item.fatigueValue);
+        if (!Array.isArray(textGroups[key]) || textGroups[key].length === 0) warnings.push(`活动 ${eventId} fatigueValue=${key} 没有可用文本组。`);
+      });
+    });
+  }
+
+  function validateChapters(eventId, event, errors, warnings) {
+    const chapters = event.chapters || [];
+    if (!Array.isArray(chapters) || chapters.length === 0) errors.push(`活动 ${eventId} 缺少 chapters。`);
+    const chapterIds = new Set();
+    chapters.forEach((chapter, chapterIndex) => {
+      const prefix = `活动 ${eventId} 章节 ${chapter.id ?? chapterIndex}`;
+      if (chapterIds.has(chapter.id)) errors.push(`${prefix} 的章节 ID 重复。`);
+      chapterIds.add(chapter.id);
+      if (!Number.isInteger(chapter.fatigueLimit)) errors.push(`${prefix} 的 fatigueLimit 必须是整数。`);
+      (chapter.chapterRewards || []).forEach((reward, rewardIndex) => {
+        if (!REWARD_TYPES.includes(reward.type)) errors.push(`${prefix} 奖励 ${rewardIndex} 的 type 只能是 Player 或 Point。`);
+        if (!Number.isInteger(reward.amount)) errors.push(`${prefix} 奖励 ${rewardIndex} 的 amount 必须是整数。`);
+      });
+      validateMap(prefix, chapter, event, errors, warnings);
+    });
+    if (!Number.isInteger(event.entryChapterId) || !chapterIds.has(event.entryChapterId)) errors.push(`活动 ${eventId} 的 entryChapterId 必须指向已存在的章节。`);
+    chapters.forEach((chapter, chapterIndex) => {
+      const prefix = `活动 ${eventId} 章节 ${chapter.id ?? chapterIndex}`;
+      if (!Number.isInteger(chapter.nextChapterId) || chapter.nextChapterId < 0) errors.push(`${prefix} 的 nextChapterId 必须是大于等于 0 的整数。`);
+      else if (chapter.nextChapterId > 0) {
+        if (!chapterIds.has(chapter.nextChapterId)) errors.push(`${prefix} 的 nextChapterId=${chapter.nextChapterId} 指向不存在的章节。`);
+        if (chapter.nextChapterId === chapter.id) errors.push(`${prefix} 的 nextChapterId 不能指向自身。`);
+      }
+    });
+    validateChapterChains(eventId, chapters, errors);
+  }
+
+  function validateChapterChains(eventId, chapters, errors) {
+    const chapterById = new Map(chapters.map((chapter) => [chapter.id, chapter]));
+    const reportedCycles = new Set();
+    chapters.forEach((startChapter) => {
+      const visitedIds = new Set();
+      let chapter = startChapter;
+      while (chapter && chapter.nextChapterId > 0) {
+        if (visitedIds.has(chapter.id)) {
+          const key = [...visitedIds].sort((left, right) => left - right).join('>');
+          if (!reportedCycles.has(key)) errors.push(`活动 ${eventId} 章节链存在循环：${key}。`);
+          reportedCycles.add(key);
+          return;
+        }
+        visitedIds.add(chapter.id);
+        chapter = chapterById.get(chapter.nextChapterId);
+      }
+    });
+  }
+
+  function validateMap(prefix, chapter, event, errors, warnings) {
+    const map = chapter.map || {};
+    const nodes = map.nodes || [];
+    const nodeIds = new Set();
+    nodes.forEach((node) => {
+      if (nodeIds.has(node.id)) errors.push(`${prefix} 节点 ID ${node.id} 重复。`);
+      nodeIds.add(node.id);
+      if (!NODE_TYPES.includes(node.nodeType)) errors.push(`${prefix} 节点 ${node.id} 的 nodeType 无效。`);
+      if (!Number.isInteger(node.fatigueValue)) errors.push(`${prefix} 节点 ${node.id} 的 fatigueValue 必须是整数。`);
+      if (MATCH_NODE_TYPES.includes(node.nodeType)) {
+        if (!Number.isInteger(node.opponentId)) errors.push(`${prefix} 比赛节点 ${node.id} 缺少 opponentId。`);
+        if (node.opponentId === -1 && (!Array.isArray(chapter.randomOpponentTeamIds) || chapter.randomOpponentTeamIds.length === 0)) errors.push(`${prefix} 比赛节点 ${node.id} 使用随机对手，但章节随机对手池为空。`);
+        if (!DIFFICULTIES.includes(node.difficultyLevel)) errors.push(`${prefix} 比赛节点 ${node.id} 的 difficultyLevel 无效。`);
+        validateNodeRewards(prefix, node, '比赛节点', true, errors);
+      }
+      if (node.nodeType === 'RandomEvent') {
+        if (!event.randomEventRules?.[node.randomEventType]) errors.push(`${prefix} 随机事件节点 ${node.id} 引用了不存在的 randomEventType。`);
+        validateNodeRewards(prefix, node, '随机事件节点', false, errors);
+      }
+    });
+    (map.entryNodeIds || []).forEach((id) => { if (!nodeIds.has(id)) errors.push(`${prefix} 起点节点 ${id} 不存在。`); });
+    if (!nodeIds.has(map.finalNodeId)) errors.push(`${prefix} 终点节点 ${map.finalNodeId} 不存在。`);
+    const adjacency = map.adjacencyList || {};
+    nodes.forEach((node) => {
+      if (!Array.isArray(adjacency[String(node.id)])) warnings.push(`${prefix} 节点 ${node.id} 缺少邻接表项。`);
+    });
+    Object.entries(adjacency).forEach(([from, targets]) => {
+      if (!nodeIds.has(Number(from))) errors.push(`${prefix} 邻接表源节点 ${from} 不存在。`);
+      (targets || []).forEach((target) => { if (!nodeIds.has(Number(target))) errors.push(`${prefix} 邻接表目标节点 ${target} 不存在。`); });
+    });
+    const finalTargets = adjacency[String(map.finalNodeId)] || [];
+    if (finalTargets.length > 0) warnings.push(`${prefix} 终点节点不为空。`);
+    const reachable = collectReachable(map.entryNodeIds || [], adjacency);
+    nodes.forEach((node) => { if (!reachable.has(node.id)) warnings.push(`${prefix} 节点 ${node.id} 无法从起点到达。`); });
+    if (!reachable.has(map.finalNodeId)) errors.push(`${prefix} 终点节点无法从起点到达。`);
+    if (hasCycle(nodes, adjacency)) warnings.push(`${prefix} 存在回环边。`);
+  }
+
+  function validateNodeRewards(prefix, node, label, required, errors) {
+    if (!Array.isArray(node.rewards) || node.rewards.length === 0) {
+      if (required) errors.push(`${prefix} ${label} ${node.id} 缺少 rewards。`);
+      return;
+    }
+    node.rewards.forEach((reward, rewardIndex) => {
+      if (!NODE_REWARD_TYPES.includes(reward.type)) errors.push(`${prefix} ${label} ${node.id} 奖励 ${rewardIndex} 的 type 只能是 Points。`);
+      if (!Number.isInteger(reward.rewardId)) errors.push(`${prefix} ${label} ${node.id} 奖励 ${rewardIndex} 的 rewardId 必须是整数。`);
+      if (!Number.isInteger(reward.amount) || reward.amount <= 0) errors.push(`${prefix} ${label} ${node.id} 奖励 ${rewardIndex} 的 amount 必须是正整数。`);
+    });
+  }
+
+  function collectReachable(entryIds, adjacency) {
+    const reached = new Set();
+    const queue = [...entryIds];
+    while (queue.length) {
+      const id = Number(queue.shift());
+      if (reached.has(id)) continue;
+      reached.add(id);
+      (adjacency[String(id)] || []).forEach((next) => queue.push(next));
+    }
+    return reached;
+  }
+
+  function hasCycle(nodes, adjacency) {
+    const visiting = new Set();
+    const visited = new Set();
+    function visit(id) {
+      if (visiting.has(id)) return true;
+      if (visited.has(id)) return false;
+      visiting.add(id);
+      for (const next of adjacency[String(id)] || []) {
+        if (visit(Number(next))) return true;
+      }
+      visiting.delete(id);
+      visited.add(id);
+      return false;
+    }
+    return nodes.some((node) => visit(node.id));
+  }
+
+  function updateActivityField(input) {
+    const event = currentEvent();
+    const key = input.dataset.activityField;
+    event[key] = input.type === 'number' ? toInt(input.value) : input.value.trim();
+    renderSummary();
+    renderJsonTab();
+    renderValidation();
+  }
+
+  function updateDifficultyValue(input) {
+    const event = currentEvent();
+    const level = input.dataset.difficultyValue;
+    const rawValue = input.value.trim();
+    event.matchDifficultyValueMap[level] = rawValue === '' ? '' : Number(rawValue);
+    renderSummary();
+    renderJsonTab();
+    renderValidation();
+  }
+
+  function updateChapterField(input) {
+    const chapter = currentChapter();
+    const key = input.dataset.chapterField;
+    const oldId = chapter.id;
+    chapter[key] = input.type === 'number' ? toInt(input.value) : input.value.trim();
+    if (key === 'id' && chapter.id !== oldId) renderChaptersTab();
+    renderSummary();
+    renderJsonTab();
+    renderValidation();
+  }
+
+  function updateMapField(input) {
+    const chapter = currentChapter();
+    chapter.map[input.dataset.mapField] = toInt(input.value);
+    renderChaptersTab();
+    renderSummary();
+    renderJsonTab();
+    renderValidation();
+  }
+
+  function updateNodeField(input) {
+    const chapter = currentChapter();
+    const node = currentNode();
+    const key = input.dataset.nodeField;
+    if (key === 'id') {
+      renameNode(chapter, node.id, toInt(input.value));
+      renderAll();
+      return;
+    }
+    if (key === 'nodeType') {
+      node.nodeType = input.value;
+      if (MATCH_NODE_TYPES.includes(node.nodeType)) {
+        node.opponentId = Number.isInteger(node.opponentId) ? node.opponentId : -1;
+        node.difficultyLevel = DIFFICULTIES.includes(node.difficultyLevel) ? node.difficultyLevel : 'Easy';
+        node.rewards = normalizeNodeRewards(node.rewards, defaultMatchRewardAmount(chapter));
+        delete node.randomEventType;
+      } else {
+        node.randomEventType = node.randomEventType || Object.keys(currentEvent().randomEventRules || {})[0] || 'TypeOne';
+        node.rewards = normalizeOptionalNodeRewards(node.rewards, defaultMatchRewardAmount(chapter));
+        delete node.opponentId;
+        delete node.difficultyLevel;
+      }
+    } else if (input.type === 'number') {
+      node[key] = toInt(input.value);
+    } else {
+      node[key] = input.value;
+    }
+    renderChaptersTab();
+    renderSummary();
+    renderJsonTab();
+    renderValidation();
+  }
+
+  function renameNode(chapter, oldId, newId) {
+    if (!Number.isInteger(newId) || oldId === newId) return;
+    if (chapter.map.nodes.some((node) => node.id === newId)) {
+      setStatus(`节点 ${newId} 已存在`, 'bad');
+      return;
+    }
+    const node = chapter.map.nodes.find((item) => item.id === oldId);
+    if (!node) return;
+    node.id = newId;
+    const oldKey = String(oldId);
+    const newKey = String(newId);
+    chapter.map.adjacencyList[newKey] = chapter.map.adjacencyList[oldKey] || [];
+    delete chapter.map.adjacencyList[oldKey];
+    Object.keys(chapter.map.adjacencyList).forEach((key) => {
+      chapter.map.adjacencyList[key] = (chapter.map.adjacencyList[key] || []).map((id) => id === oldId ? newId : id);
+    });
+    chapter.map.entryNodeIds = (chapter.map.entryNodeIds || []).map((id) => id === oldId ? newId : id);
+    if (chapter.map.finalNodeId === oldId) chapter.map.finalNodeId = newId;
+    state.selectedNodeId = newId;
+  }
+
+  function updateSuccessors(input) {
+    const chapter = currentChapter();
+    const node = currentNode();
+    chapter.map.adjacencyList[String(node.id)] = parseIntList(input.value);
+    renderChaptersTab();
+    renderSummary();
+    renderJsonTab();
+    renderValidation();
+  }
+
+  function wireEvents() {
+    $('tabs').addEventListener('click', (event) => {
+      const tab = event.target.closest('[data-tab]');
+      if (!tab) return;
+      state.activeTab = tab.dataset.tab;
+      renderAll();
+    });
+    $('openBtn').addEventListener('click', openJsonFile);
+    $('saveBtn').addEventListener('click', saveJsonFile);
+    $('copyBtn').addEventListener('click', copyJson);
+    $('validateBtn').addEventListener('click', () => { state.activeTab = 'validate'; renderAll(); });
+    $('formatBtn').addEventListener('click', () => { state.activeTab = 'json'; renderAll(); });
+    $('addEventBtn').addEventListener('click', addEvent);
+    $('fileInput').addEventListener('change', readSelectedFile);
+    $('playerCsvInput').addEventListener('change', readSelectedPlayerCsvFile);
+    $('coreAttributesCsvInput').addEventListener('change', readSelectedCoreAttributesCsvFile);
+
+    document.addEventListener('click', (event) => {
+      const eventButton = event.target.closest('[data-event-id]');
+      if (eventButton) { state.eventId = eventButton.dataset.eventId; state.chapterIndex = 0; state.selectedNodeId = null; renderAll(); return; }
+      const chapterCard = event.target.closest('[data-chapter-index]');
+      if (chapterCard) { state.chapterIndex = Number(chapterCard.dataset.chapterIndex); state.selectedNodeId = null; renderAll(); return; }
+      const nodeRow = event.target.closest('[data-node-row]');
+      if (nodeRow) { state.selectedNodeId = Number(nodeRow.dataset.nodeRow); renderChaptersTab(); return; }
+      const graphNode = event.target.closest('[data-graph-node]');
+      if (graphNode) { state.selectedNodeId = Number(graphNode.dataset.graphNode); renderChaptersTab(); return; }
+      if (event.target.id === 'addChapterBtn') addChapter();
+      if (event.target.id === 'duplicateChapterBtn') duplicateChapter();
+      if (event.target.id === 'deleteChapterBtn') deleteChapter();
+      if (event.target.id === 'addNodeBtn') addNode();
+      if (event.target.id === 'deleteNodeBtn') deleteNode();
+      if (event.target.dataset.addNodeReward) addNodeReward();
+      if (event.target.dataset.deleteNodeReward) deleteNodeReward(Number(event.target.dataset.deleteNodeReward));
+      if (event.target.id === 'addTeamTemplateBtn') addTeamTemplate();
+      if (event.target.dataset.deleteTeamTemplate) deleteTeamTemplate(Number(event.target.dataset.deleteTeamTemplate));
+      if (event.target.id === 'addLoopCompletionRewardGroupBtn') addLoopCompletionRewardGroup();
+      if (event.target.dataset.deleteLoopGroup) deleteLoopCompletionRewardGroup(Number(event.target.dataset.deleteLoopGroup));
+      if (event.target.dataset.addLoopReward !== undefined) addLoopCompletionReward(Number(event.target.dataset.addLoopReward));
+      if (event.target.dataset.deleteLoopReward !== undefined) deleteLoopCompletionReward(Number(event.target.dataset.deleteLoopRewardGroup), Number(event.target.dataset.deleteLoopReward));
+      if (event.target.id === 'addRewardBtn') addReward();
+      if (event.target.dataset.deleteReward) deleteReward(Number(event.target.dataset.deleteReward));
+      if (event.target.id === 'addRuleBtn') addRule();
+      if (event.target.id === 'deleteRuleBtn') deleteRule();
+      if (event.target.id === 'addRuleRowBtn') addRuleRow();
+      if (event.target.dataset.deleteRuleRow) deleteRuleRow(Number(event.target.dataset.deleteRuleRow));
+      if (event.target.id === 'applyJsonBtn') applyRawJson();
+      if (event.target.id === 'selectRawExcelsDirBtn') selectRawExcelsDirectory();
+      if (event.target.id === 'loadPlayersCsvBtn') openPlayerCsvFile();
+      if (event.target.id === 'loadCoreAttributesCsvBtn') openCoreAttributesCsvFile();
+    });
+
+    document.addEventListener('change', (event) => {
+      const target = event.target;
+      if (target.dataset.activityField) updateActivityField(target);
+      if (target.dataset.difficultyValue) updateDifficultyValue(target);
+      if (target.dataset.chapterField) updateChapterField(target);
+      if (target.dataset.chapterList) { currentChapter()[target.dataset.chapterList] = parseIntList(target.value); renderAll(); }
+      if (target.dataset.mapList) { currentChapter().map[target.dataset.mapList] = parseIntList(target.value); renderAll(); }
+      if (target.dataset.mapField) updateMapField(target);
+      if (target.dataset.nodeField) updateNodeField(target);
+      if (target.dataset.nodeRewardRow) updateNodeReward(target);
+      if (target.dataset.successors !== undefined) updateSuccessors(target);
+      if (target.dataset.teamRow) updateTeamTemplate(target);
+      if (target.dataset.loopGroupRow) updateLoopCompletionRewardGroup(target);
+      if (target.dataset.loopRewardRow) updateLoopCompletionReward(target);
+      if (target.dataset.rewardRow) updateReward(target);
+      if (target.dataset.ruleRow) updateRuleRow(target);
+      if (target.dataset.textGroup) updateTextGroup(target);
+      if (target.id === 'ruleSelect') { state.ruleName = target.value; renderAll(); }
+      if (target.id === 'ruleNameInput') renameRule(target.value.trim());
+      if (target.id === 'ruleMinInput' || target.id === 'ruleMaxInput') updateRuleRange();
+    });
+  }
+
+  async function openJsonFile() {
+    if (window.showOpenFilePicker) {
+      try {
+        const [handle] = await window.showOpenFilePicker({ types: [{ description: 'JSON', accept: { 'application/json': ['.json'] } }], multiple: false });
+        state.fileHandle = handle;
+        const file = await handle.getFile();
+        loadConfigText(await file.text(), file.name);
+        return;
+      } catch (error) {
+        if (error.name !== 'AbortError') setStatus(`打开失败：${error.message}`, 'bad');
+      }
+    }
+    $('fileInput').click();
+  }
+
+  async function readSelectedFile(event) {
+    const file = event.target.files?.[0];
+    if (!file) return;
+    loadConfigText(await file.text(), file.name);
+    event.target.value = '';
+  }
+
+  async function readSelectedPlayerCsvFile(event) {
+    const file = event.target.files?.[0];
+    if (!file) return;
+    const loaded = await loadPlayerRatingFile(file);
+    renderAll();
+    setStatus(loaded ? `球员能力表已加载：${file.name}` : `球员能力表加载失败：${state.playerRatingLoadError}`, loaded ? 'good' : 'bad');
+    event.target.value = '';
+  }
+
+  async function readSelectedCoreAttributesCsvFile(event) {
+    const file = event.target.files?.[0];
+    if (!file) return;
+    await loadCoreAttributesFile(file);
+    renderAll();
+    setStatus(`CorePlayerAttributes 已加载：${file.name}`, 'good');
+    event.target.value = '';
+  }
+
+  async function openPlayerCsvFile() {
+    await openCsvFile(PLAYER_CSV_FILE_NAME, 'Players.csv', 'playerCsvInput', loadPlayerRatingFile, '球员能力表');
+  }
+
+  async function openCoreAttributesCsvFile() {
+    await openCsvFile(CORE_PLAYER_ATTRIBUTES_CSV_FILE_NAME, 'CorePlayerAttributes.csv', 'coreAttributesCsvInput', loadCoreAttributesFile, 'CorePlayerAttributes');
+  }
+
+  async function openCsvFile(defaultFileName, pickerDescription, fallbackInputId, loadFile, successLabel) {
+    if (window.showOpenFilePicker) {
+      try {
+        const [handle] = await window.showOpenFilePicker(csvPickerOptions(pickerDescription));
+        const file = await handle.getFile();
+        const loaded = await loadFile(file);
+        renderAll();
+        setStatus(loaded ? `${successLabel}已加载：${file.name}` : `${successLabel}加载失败：${state.playerRatingLoadError}`, loaded ? 'good' : 'bad');
+        return;
+      } catch (error) {
+        if (error.name !== 'AbortError') setStatus(`${defaultFileName} 打开失败：${error.message}`, 'bad');
+        return;
+      }
+    }
+    $(fallbackInputId).click();
+  }
+
+  function csvPickerOptions(description) {
+    const options = {
+      id: RAW_EXCELS_PICKER_ID,
+      multiple: false,
+      excludeAcceptAllOption: false,
+      types: [{ description, accept: { 'text/csv': ['.csv'] } }]
+    };
+    if (state.rawExcelsDirectoryHandle) options.startIn = state.rawExcelsDirectoryHandle;
+    return options;
+  }
+
+  async function selectRawExcelsDirectory() {
+    if (!window.showDirectoryPicker) {
+      setStatus('当前浏览器不支持选择目录，请使用加载按钮手动选择 CSV。', 'warn');
+      return;
+    }
+    try {
+      const directoryHandle = await window.showDirectoryPicker({ id: RAW_EXCELS_PICKER_ID, mode: 'read' });
+      state.rawExcelsDirectoryHandle = directoryHandle;
+      state.rawExcelsDirectoryName = directoryHandle.name || RAW_EXCELS_DIR_LABEL;
+      const coreFile = await tryGetDirectoryFile(directoryHandle, CORE_PLAYER_ATTRIBUTES_CSV_FILE_NAME);
+      const playersFile = await tryGetDirectoryFile(directoryHandle, PLAYER_CSV_FILE_NAME);
+      let loadedCore = false;
+      let loadedPlayers = false;
+      if (coreFile) loadedCore = await loadCoreAttributesFile(coreFile);
+      if (playersFile) loadedPlayers = await loadPlayerRatingFile(playersFile);
+      renderAll();
+      if (loadedPlayers) {
+        setStatus(`rawExcels 目录已选择，已加载 ${PLAYER_CSV_FILE_NAME}${loadedCore ? ` 和 ${CORE_PLAYER_ATTRIBUTES_CSV_FILE_NAME}` : ''}`, 'good');
+      } else {
+        state.playerRatingLoadError = `${state.rawExcelsDirectoryName} 中未找到 ${PLAYER_CSV_FILE_NAME}`;
+        renderAll();
+        setStatus(`rawExcels 目录已选择，但未找到 ${PLAYER_CSV_FILE_NAME}`, 'warn');
+      }
+    } catch (error) {
+      if (error.name !== 'AbortError') setStatus(`rawExcels 目录选择失败：${error.message}`, 'bad');
+    }
+  }
+
+  async function tryGetDirectoryFile(directoryHandle, fileName) {
+    try {
+      const fileHandle = await directoryHandle.getFileHandle(fileName);
+      return await fileHandle.getFile();
+    } catch (error) {
+      return null;
+    }
+  }
+
+  async function loadPlayerRatingFile(file) {
+    return loadPlayerRatingCsvText(await file.text(), file.name);
+  }
+
+  async function loadCoreAttributesFile(file) {
+    state.coreAttributesCsvText = await file.text();
+    state.coreAttributesSourceName = file.name;
+    if (state.playerRatingCsvText) loadPlayerRatingCsvText(state.playerRatingCsvText, state.playerRatingSourceName);
+    return true;
+  }
+
+  async function saveJsonFile() {
+    const text = serializeConfig();
+    if (state.fileHandle?.createWritable) {
+      try {
+        const writable = await state.fileHandle.createWritable();
+        await writable.write(text);
+        await writable.close();
+        setStatus('已保存到已打开文件', 'good');
+        return;
+      } catch (error) {
+        setStatus(`保存失败：${error.message}`, 'bad');
+      }
+    }
+    const blob = new Blob([text], { type: 'application/json;charset=utf-8' });
+    const url = URL.createObjectURL(blob);
+    const link = document.createElement('a');
+    link.href = url;
+    link.download = 'TourEventConfig.json';
+    link.click();
+    URL.revokeObjectURL(url);
+    setStatus('已生成下载文件', 'good');
+  }
+
+  async function copyJson() {
+    try {
+      await navigator.clipboard.writeText(serializeConfig());
+      setStatus('JSON 已复制', 'good');
+    } catch (error) {
+      setStatus(`复制失败：${error.message}`, 'bad');
+    }
+  }
+
+  function addEvent() {
+    const ids = Object.keys(state.config.tourEvent).map((id) => Number(id)).filter(Number.isFinite);
+    const nextId = String((Math.max(0, ...ids) || 0) + 1);
+    state.config.tourEvent[nextId] = createEventTemplate();
+    state.eventId = nextId;
+    state.chapterIndex = 0;
+    state.selectedNodeId = null;
+    renderAll();
+  }
+
+  function addChapter() {
+    const event = currentEvent();
+    const nextId = Math.max(0, ...event.chapters.map((chapter) => Number(chapter.id) || 0)) + 1;
+    event.chapters.push(createChapterTemplate(nextId));
+    state.chapterIndex = event.chapters.length - 1;
+    state.selectedNodeId = null;
+    renderAll();
+  }
+
+  function duplicateChapter() {
+    const event = currentEvent();
+    const source = currentChapter();
+    const nextId = Math.max(0, ...event.chapters.map((chapter) => Number(chapter.id) || 0)) + 1;
+    const copy = clone(source);
+    const oldIds = copy.map.nodes.map((node) => node.id);
+    const base = nextId * 100;
+    const mapping = new Map(oldIds.map((id, index) => [id, base + index + 1]));
+    copy.id = nextId;
+    copy.chapterNameId = `TourEvent_Chapter${nextId}_Name`;
+    copy.chapterShortDescId = `TourEvent_Chapter${nextId}_SD`;
+    copy.map.nodes.forEach((node) => { node.id = mapping.get(node.id); });
+    copy.map.entryNodeIds = copy.map.entryNodeIds.map((id) => mapping.get(id)).filter(Boolean);
+    copy.map.finalNodeId = mapping.get(copy.map.finalNodeId) || copy.map.nodes[copy.map.nodes.length - 1].id;
+    const adjacency = {};
+    Object.entries(copy.map.adjacencyList).forEach(([from, targets]) => {
+      const newFrom = mapping.get(Number(from));
+      if (newFrom) adjacency[String(newFrom)] = (targets || []).map((id) => mapping.get(Number(id))).filter(Boolean);
+    });
+    copy.map.adjacencyList = adjacency;
+    event.chapters.push(copy);
+    state.chapterIndex = event.chapters.length - 1;
+    state.selectedNodeId = copy.map.nodes[0]?.id || null;
+    renderAll();
+  }
+
+  function deleteChapter() {
+    const event = currentEvent();
+    if (event.chapters.length <= 1) { setStatus('至少保留一个章节', 'bad'); return; }
+    event.chapters.splice(state.chapterIndex, 1);
+    state.chapterIndex = Math.max(0, state.chapterIndex - 1);
+    state.selectedNodeId = null;
+    renderAll();
+  }
+
+  function addNode() {
+    const chapter = currentChapter();
+    const nextId = Math.max(0, ...chapter.map.nodes.map((node) => Number(node.id) || 0)) + 1;
+    chapter.map.nodes.push(createNodeTemplate(nextId, defaultMatchRewardAmount(chapter)));
+    chapter.map.adjacencyList[String(nextId)] = [];
+    const selected = currentNode();
+    if (selected && selected.id !== nextId) {
+      const list = chapter.map.adjacencyList[String(selected.id)] || [];
+      if (!list.includes(nextId)) list.push(nextId);
+      chapter.map.adjacencyList[String(selected.id)] = list;
+    }
+    state.selectedNodeId = nextId;
+    renderAll();
+  }
+
+  function deleteNode() {
+    const chapter = currentChapter();
+    const node = currentNode();
+    if (!node || chapter.map.nodes.length <= 1) { setStatus('至少保留一个节点', 'bad'); return; }
+    chapter.map.nodes = chapter.map.nodes.filter((item) => item.id !== node.id);
+    delete chapter.map.adjacencyList[String(node.id)];
+    Object.keys(chapter.map.adjacencyList).forEach((key) => {
+      chapter.map.adjacencyList[key] = (chapter.map.adjacencyList[key] || []).filter((id) => id !== node.id);
+    });
+    chapter.map.entryNodeIds = chapter.map.entryNodeIds.filter((id) => id !== node.id);
+    if (!chapter.map.entryNodeIds.length) chapter.map.entryNodeIds = [chapter.map.nodes[0].id];
+    if (chapter.map.finalNodeId === node.id) chapter.map.finalNodeId = chapter.map.nodes[chapter.map.nodes.length - 1].id;
+    state.selectedNodeId = chapter.map.nodes[0].id;
+    renderAll();
+  }
+
+  function addNodeReward() {
+    const node = currentNode();
+    if (!node) return;
+    node.rewards = normalizeOptionalNodeRewards(node.rewards, defaultMatchRewardAmount(currentChapter()));
+    node.rewards.push(createNodeRewardTemplate(defaultMatchRewardAmount(currentChapter())));
+    renderAll();
+  }
+
+  function deleteNodeReward(index) {
+    const node = currentNode();
+    if (!node?.rewards) return;
+    node.rewards.splice(index, 1);
+    renderAll();
+  }
+
+  function updateNodeReward(input) {
+    const node = currentNode();
+    const reward = node?.rewards?.[Number(input.dataset.nodeRewardRow)];
+    if (!reward) return;
+    const key = input.dataset.nodeRewardField;
+    reward[key] = key === 'type' ? input.value : toInt(input.value);
+    renderSummary();
+    renderJsonTab();
+    renderValidation();
+  }
+
+  function addTeamTemplate() {
+    currentEvent().selectableTeamTemplates.push(createTeamTemplate());
+    renderAll();
+  }
+
+  function deleteTeamTemplate(index) {
+    currentEvent().selectableTeamTemplates.splice(index, 1);
+    renderAll();
+  }
+
+  function updateTeamTemplate(input) {
+    const team = currentEvent().selectableTeamTemplates[Number(input.dataset.teamRow)];
+    if (!team) return;
+    const key = input.dataset.teamField;
+    if (key === 'templateTeamId') team[key] = toInt(input.value, -1);
+    else if (key === 'teamNameId') team[key] = String(input.value || '').trim();
+    else if (key === 'minAbility' || key === 'maxAbility') {
+      team.replacementPlayerAbilityRange = normalizeAbilityRange(team.replacementPlayerAbilityRange);
+      team.replacementPlayerAbilityRange[key] = toInt(input.value, key === 'minAbility' ? DEFAULT_REPLACEMENT_PLAYER_ABILITY_RANGE.minAbility : DEFAULT_REPLACEMENT_PLAYER_ABILITY_RANGE.maxAbility);
+    }
+    else if (key === 'formationRoles') team[key] = parseRoleList(input.value);
+    else if (key === 'playerPoolIds') team[key] = parseIntList(input.value);
+    renderSummary();
+    renderJsonTab();
+    renderValidation();
+  }
+
+  function addReward() {
+    currentChapter().chapterRewards.push(createEventRewardTemplate('Point', 1, false));
+    renderAll();
+  }
+
+  function deleteReward(index) {
+    currentChapter().chapterRewards.splice(index, 1);
+    renderAll();
+  }
+
+  function updateReward(input) {
+    const reward = currentChapter().chapterRewards[Number(input.dataset.rewardRow)];
+    const key = input.dataset.rewardField;
+    if (key === 'firstClearOnly') reward[key] = input.value === 'true';
+    else if (key === 'type') reward[key] = input.value;
+    else reward[key] = toInt(input.value);
+    renderAll();
+  }
+
+  function addLoopCompletionRewardGroup() {
+    currentEvent().allChapterCompletionRewards.push(createLoopCompletionRewardGroupTemplate());
+    renderAll();
+  }
+
+  function deleteLoopCompletionRewardGroup(index) {
+    currentEvent().allChapterCompletionRewards.splice(index, 1);
+    renderAll();
+  }
+
+  function addLoopCompletionReward(groupIndex) {
+    const group = currentEvent().allChapterCompletionRewards[groupIndex];
+    if (!group) return;
+    group.rewards.push(createEventRewardTemplate('Point', 1, false));
+    renderAll();
+  }
+
+  function deleteLoopCompletionReward(groupIndex, rewardIndex) {
+    const group = currentEvent().allChapterCompletionRewards[groupIndex];
+    if (!group) return;
+    group.rewards.splice(rewardIndex, 1);
+    renderAll();
+  }
+
+  function updateLoopCompletionRewardGroup(input) {
+    const group = currentEvent().allChapterCompletionRewards[Number(input.dataset.loopGroupRow)];
+    if (!group) return;
+    const key = input.dataset.loopGroupField;
+    group[key] = Math.max(1, toInt(input.value, 1));
+    renderAll();
+  }
+
+  function updateLoopCompletionReward(input) {
+    const group = currentEvent().allChapterCompletionRewards[Number(input.dataset.loopRewardGroup)];
+    const reward = group?.rewards?.[Number(input.dataset.loopRewardRow)];
+    if (!reward) return;
+    const key = input.dataset.loopRewardField;
+    if (key === 'firstClearOnly') reward[key] = input.value === 'true';
+    else if (key === 'type') reward[key] = input.value;
+    else reward[key] = toInt(input.value);
+    renderAll();
+  }
+
+  function selectedRuleName() {
+    return $('ruleSelect')?.value || Object.keys(currentEvent().randomEventRules || {})[0] || '';
+  }
+
+  function addRule() {
+    const event = currentEvent();
+    let index = Object.keys(event.randomEventRules).length + 1;
+    let name = `Type${index}`;
+    while (event.randomEventRules[name]) name = `Type${++index}`;
+    event.randomEventRules[name] = { fatigueRange: [-2, 2], weights: [{ fatigueValue: -1, weight: 50 }, { fatigueValue: 1, weight: 50 }] };
+    state.ruleName = name;
+    renderAll();
+  }
+
+  function deleteRule() {
+    const event = currentEvent();
+    const name = selectedRuleName();
+    if (!name) return;
+    delete event.randomEventRules[name];
+    state.ruleName = Object.keys(event.randomEventRules)[0] || '';
+    renderAll();
+  }
+
+  function renameRule(newName) {
+    const event = currentEvent();
+    const oldName = selectedRuleName();
+    if (!newName || !oldName || newName === oldName) return;
+    if (event.randomEventRules[newName]) { setStatus(`规则 ${newName} 已存在`, 'bad'); return; }
+    event.randomEventRules[newName] = event.randomEventRules[oldName];
+    delete event.randomEventRules[oldName];
+    event.chapters.forEach((chapter) => chapter.map.nodes.forEach((node) => { if (node.randomEventType === oldName) node.randomEventType = newName; }));
+    state.ruleName = newName;
+    renderAll();
+  }
+
+  function updateRuleRange() {
+    const rule = currentEvent().randomEventRules[selectedRuleName()];
+    if (!rule) return;
+    rule.fatigueRange = [toInt($('ruleMinInput').value), toInt($('ruleMaxInput').value)];
+    renderAll();
+  }
+
+  function addRuleRow() {
+    const rule = currentEvent().randomEventRules[selectedRuleName()];
+    if (!rule) return;
+    rule.weights.push({ fatigueValue: 0, weight: 1 });
+    renderAll();
+  }
+
+  function deleteRuleRow(index) {
+    const rule = currentEvent().randomEventRules[selectedRuleName()];
+    if (!rule) return;
+    rule.weights.splice(index, 1);
+    renderAll();
+  }
+
+  function updateRuleRow(input) {
+    const rule = currentEvent().randomEventRules[selectedRuleName()];
+    const row = rule?.weights?.[Number(input.dataset.ruleRow)];
+    if (!row) return;
+    row[input.dataset.ruleField] = toInt(input.value);
+    renderAll();
+  }
+
+  function updateTextGroup(input) {
+    currentEvent().randomEventTextGroups[input.dataset.textGroup] = parseStringList(input.value);
+    renderAll();
+  }
+
+  function applyRawJson() {
+    const raw = $('rawJson')?.value || '';
+    loadConfigText(raw, '编辑区 JSON');
+  }
+
+  wireEvents();
+  loadInitialConfig();
+})();
+</script>
+</body>
+</html>

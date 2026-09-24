@@ -1,0 +1,9 @@
+public enum CupHonor
+{
+	CHAMPION = 0,
+	SECOND_PLACE = 1,
+	THIRD_PLACE = 2,
+	QUARTERFINAL = 3,
+	EIGHTHFINALS = 4,
+	OTHER = 5
+}

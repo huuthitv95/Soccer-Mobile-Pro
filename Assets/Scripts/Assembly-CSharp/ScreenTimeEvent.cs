@@ -1,0 +1,28 @@
+public enum ScreenTimeEvent : short
+{
+	match_preparation = 1,
+	stadium_selection = 2,
+	appearance_shop = 3,
+	event_main_page = 4,
+	event_reward = 5,
+	tutorial = 6,
+	career_season_start = 7,
+	career_match_income = 8,
+	player_training = 9,
+	set_piece = 10,
+	performace_boost = 11,
+	match_start_info = 101,
+	lineup_intro = 102,
+	stats_screen = 103,
+	loading_screen = 104,
+	honor_room = 105,
+	stadium_present = 106,
+	player_walkout = 107,
+	waiting_for_kickoff = 108,
+	match_halftime = 109,
+	match_end = 110,
+	splash_screen_general = 111,
+	splash_screen_goal = 112,
+	goal_celebration = 113,
+	penalty = 114
+}

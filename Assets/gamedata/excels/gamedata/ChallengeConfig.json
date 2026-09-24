@@ -1,0 +1,2658 @@
+
+{
+    "challengeEvent": {
+        "1": {
+            "variant": 1,
+            "sequential":true,
+            "clearReward": [
+                {
+                    "Key": 1,
+                    "Value": 110
+                },
+				{
+                    "Key": 2,
+                    "Value": 111
+                },
+				{
+                    "Key": 3,
+                    "Value": 112
+                },
+				
+                {
+                    "Key": 999,
+                    "Value": 113
+                }
+                
+            ],
+            "challengeName": "Easter_Event_Title",
+            "challengeDesc": "Easter_Event_LD",
+            "challengeDesc2": "Easter_Event_SD",
+            "extraDesc": [],
+            "CupIcon": "trophy_EuropeanChampionshipCup",
+            "challenges": [{
+                    "id": 1,
+                    "match": {
+                        "homeTeamId": 40038,
+                        "awayTeamId": 40041,
+                        "userIsHome": true,
+                        "HasExtraTime": true,
+                        "HasPenalty": true,
+                        "matchRoundName": "cup_round1",
+                        "difficulty": [0, 1.5, 3.5],
+                        "duration": 360,
+                        "matchName": "EuropeanChampionshipCup_2007",
+                        "matchRoundNameParam": null
+                    },
+                    "mission": [{
+                            "Key": 3,
+                            "Value": 114
+                        },
+                        {
+                            "Key": 999,
+                            "Value": 114
+                        }
+                    ],
+                    "missionCompletionCondition": [1,1],
+                    "desc": "",
+                    "time": "2007/4/11",
+                    "host_city": "ItalianA_AssociazioneCalcioMilan",
+                    "host_country": "Str_National_Italy"
+                },
+                {
+                    "id": 2,
+                    "match": {
+                        "homeTeamId": 40038,
+                        "awayTeamId": 40040,
+                        "userIsHome": true,
+                        "HasExtraTime": true,
+                        "HasPenalty": true,
+                        "matchRoundName": "cup_round2",
+                        "difficulty": [1, 3, 4],
+                        "duration": 360,
+                        "matchName": "EuropeanChampionshipCup_2007",
+                        "matchRoundNameParam": null
+                    },
+                    "mission": [{
+                            "Key": 3,
+                            "Value": 114
+                        },
+                        {
+                            "Key": 999,
+                            "Value": 114
+                        }
+                    ],
+                    "missionCompletionCondition": [1,1],
+                    "desc": "",
+                    "time": "2007/5/2",
+                    "host_city": "ItalianA_AssociazioneCalcioMilan",
+                    "host_country": "Str_National_Italy"
+                },
+                {
+                    "id": 3,
+                    "match": {
+                        "homeTeamId": 40038,
+                        "awayTeamId": 40039,
+                        "userIsHome": true,
+                        "HasExtraTime": true,
+                        "HasPenalty": true,
+                        "matchRoundName": "cup_round3",
+                        "difficulty": [2, 4, 5],
+                        "duration": 360,
+                        "matchName": "EuropeanChampionshipCup_2007",
+                        "matchRoundNameParam": null
+                    },
+                    "mission": [{
+                            "Key": 3,
+                            "Value": 114
+                        },
+                        {
+                            "Key": 999,
+                            "Value": 114
+                        }
+                    ],
+                    "missionCompletionCondition": [1,1],
+                    "desc": "",
+                    "time": "2007/5/23",
+                    "host_city": "ItalianA_AssociazioneCalcioMilan",
+                    "host_country": "Str_National_Italy"
+                }
+            ]
+        },
+        "2": {
+            "variant": 0,
+            "sequential":false,
+            "clearReward": [],
+            "challengeName": "RTC_Challenge_Name",
+            "challengeDesc": "RTC_Challenge_LD",
+            "challengeDesc2": "RTC_Challenge_SD",
+            "extraDesc": [],
+            "CupIcon": "trophy_worldCup",
+            "challenges": [{
+                    "id": 4,
+                    "match": {
+                        "homeTeamId": 10153,
+                        "awayTeamId": 10154,
+                        "userIsHome": true,
+                        "HasExtraTime": false,
+                        "HasPenalty": false,
+                        "matchRoundName": "round",
+                        "difficulty": [0, 1, 2],
+                        "duration": 300,
+                        "matchName": "worldCup_1990",
+                        "matchRoundNameParam": "1"
+                    },
+                    "mission": [{
+                            "Key": 3,
+                            "Value": 102
+                        },
+                        {
+                            "Key": 999,
+                            "Value": 102
+                        }
+                    ],
+                    "missionCompletionCondition": [0,1],
+                    "desc": "RTC_Mission2_0",
+                    "time": "1990/6/10",
+                    "host_city": "City_Milan",
+                    "host_country": "Str_National_Italy"
+                },
+                {
+                    "id": 5,
+                    "match": {
+                        "homeTeamId": 10153,
+                        "awayTeamId": 10152,
+                        "userIsHome": true,
+                        "HasExtraTime": true,
+                        "HasPenalty": true,
+                        "matchRoundName": "cup_round0",
+                        "difficulty": [1, 2, 4],
+                        "duration": 300,
+                        "matchName": "worldCup_1990",
+                        "matchRoundNameParam": null
+                    },
+                    "mission": [{
+                            "Key": 3,
+                            "Value": 103
+                        },
+                        {
+                            "Key": 999,
+                            "Value": 103
+                        }
+                    ],
+                    "missionCompletionCondition": [1,1],
+                    "desc": "RTC_Mission2_1",
+                    "time": "1990/6/24",
+                    "host_city": "City_Milan",
+                    "host_country": "Str_National_Italy"
+                },
+                {
+                    "id": 6,
+                    "match": {
+                        "homeTeamId": 10153,
+                        "awayTeamId": 10147,
+                        "userIsHome": true,
+                        "HasExtraTime": true,
+                        "HasPenalty": true,
+                        "matchRoundName": "cup_round3",
+                        "difficulty": [2, 3, 6],
+                        "duration": 300,
+                        "matchName": "worldCup_1990",
+                        "matchRoundNameParam": null
+                    },
+                    "mission": [{
+                            "Key": 3,
+                            "Value": 105
+                        },
+                        {
+                            "Key": 999,
+                            "Value": 104
+                        }
+                    ],
+                    "missionCompletionCondition": [1,1],
+                    "desc": "RTC_Mission2_2",
+                    "time": "1990/7/8",
+                    "host_city": "City_Rome",
+                    "host_country": "Str_National_Italy"
+                }
+            ]
+        },
+        "3": {
+            "variant": 1,
+            "sequential":false,
+            "clearReward": [
+				{
+                    "Key": 1,
+                    "Value": 110
+                },
+				{
+                    "Key": 2,
+                    "Value": 111
+                },
+				{
+                    "Key": 3,
+                    "Value": 112
+                },
+				
+                {
+                    "Key": 999,
+                    "Value": 113
+                }
+            ],
+            "challengeName": "Christmas_Challenge_Name",
+            "challengeDesc": "Christmas_Challenge_LD",
+            "challengeDesc2": "Christmas_Challenge_SD",
+            "extraDesc": [],
+            "challenges": [{
+                    "id": 7,
+                    "match": {
+                        "homeTeamId": 30419,
+                        "awayTeamId": 30421,
+                        "userIsHome": true,
+                        "HasExtraTime": false,
+                        "HasPenalty": false,
+                        "difficulty": [0, 0.5, 1.5,2],
+                        "duration": 480,
+                        "matchName": "Christmas_2012",
+                        "matchRoundNameParam": "Christmas_2012_LD"
+                    },
+                    "mission": [],
+                    "missionCompletionCondition": [2,0],
+                    "desc": "Challenge_2012",
+                    "time": "2012/12/26"
+                },
+                {
+                    "id": 8,
+                    "match": {
+                        "homeTeamId": 30418,
+                        "awayTeamId": 30417,
+                        "userIsHome": false,
+                        "HasExtraTime": false,
+                        "HasPenalty": false,
+                        "difficulty": [0, 0.5, 1.5,2],
+                        "duration": 480,
+                        "matchName": "Christmas_2018",
+                        "matchRoundNameParam": "Christmas_2018_LD"
+                    },
+                    "mission": [],
+                    "missionCompletionCondition": [3,160256],
+                    "desc": "Challenge_2018",
+                    "time": "2018/12/29"
+                },
+                {
+                    "id": 9,
+                    "match": {
+                        "homeTeamId": 30422,
+                        "awayTeamId": 30420,
+                        "userIsHome": true,
+                        "HasExtraTime": false,
+                        "HasPenalty": false,
+                        "difficulty": [0, 0.5, 1.5,2],
+                        "duration": 480,
+                        "matchName": "Christmas_2021",
+                        "matchRoundNameParam": "Christmas_2021_LD"
+                    },
+                    "mission": [],
+                    "missionCompletionCondition": [4,2],
+                    "desc": "Challenge_2021",
+                    "time": "2021/12/26"
+                }]
+        },
+        "4": {
+            "variant": 0,
+            "sequential":true,
+            "clearReward": [
+                {
+                    "Key": 1,
+                    "Value": 146
+                },
+				{
+                    "Key": 2,
+                    "Value": 147
+                },
+				{
+                    "Key": 3,
+                    "Value": 148
+                },
+				{
+                    "Key": 4,
+                    "Value": 149
+                },
+				
+                {
+                    "Key": 999,
+                    "Value": 117
+                }
+            ],
+            "challengeName": "England1966RTC_Title",
+            "challengeDesc": "England1966RTC_LD",
+            "challengeDesc2": "Brazil1994RTC_SD",
+            "extraDesc": [],
+            "CupIcon": "trophy_worldCup",
+            "challenges": [{
+                    "id": 1,
+                    "match": {
+                        "homeTeamId": 10911,
+                        "awayTeamId": 10910,
+                        "userIsHome": true,
+                        "HasExtraTime": true,
+                        "HasPenalty": true,
+                        "matchRoundName": "cup_round1",
+                        "difficulty": [3, 4, 4, 4.5, 5.5],
+                        "duration": 360,
+                        "matchName": "worldCup_1966",
+                        "matchRoundNameParam": null
+                    },
+                    "mission": [{
+                            "Key": 1,
+                            "Value": 114
+                        },
+                        {
+                            "Key": 999,
+                            "Value": 114
+                        }
+                    ],
+                    "missionCompletionCondition": [1,1],
+                    "desc": "",
+                    "time": "1966/7/23",
+                    "host_city": "EnglishA_Chelsea",
+                    "host_country": "Str_National_England"
+                },
+                {
+                    "id": 2,
+                    "match": {
+                        "homeTeamId": 10911,
+                        "awayTeamId": 10909,
+                        "userIsHome": true,
+                        "HasExtraTime": true,
+                        "HasPenalty": true,
+                        "matchRoundName": "cup_round2",
+                        "difficulty": [4, 4.5, 5, 5.5, 5.5],
+                        "duration": 360,
+                        "matchName": "worldCup_1966",
+                        "matchRoundNameParam": null
+                    },
+                    "mission": [{
+                            "Key": 1,
+                            "Value": 108
+                        },
+                        {
+                            "Key": 999,
+                            "Value": 108
+                        }
+                    ],
+                    "missionCompletionCondition": [1,1],
+                    "desc": "",
+                    "time": "1966/7/26",
+                    "host_city": "EnglishA_Chelsea",
+                    "host_country": "Str_National_England"
+                },
+                {
+                    "id": 3,
+                    "match": {
+                        "homeTeamId": 10911,
+                        "awayTeamId": 10908,
+                        "userIsHome": true,
+                        "HasExtraTime": true,
+                        "HasPenalty": true,
+                        "matchRoundName": "cup_round3",
+                        "difficulty": [5, 5, 5.5, 6, 6],
+                        "duration": 360,
+                        "matchName": "worldCup_1966",
+                        "matchRoundNameParam": null
+                    },
+                    "mission": [{
+                            "Key": 1,
+                            "Value": 116
+                        },
+                        {
+                            "Key": 999,
+                            "Value": 116
+                        }
+                    ],
+                    "missionCompletionCondition":[1,1],
+                    "desc": "",
+                    "time": "1966/7/30",
+                    "host_city": "EnglishA_Chelsea",
+                    "host_country": "Str_National_England"
+                }
+            ]
+        },
+        "5": {
+            "variant": 1,
+            "sequential":false,
+            "clearReward": [
+				{
+                    "Key": 1,
+                    "Value": 118
+                },
+				{
+                    "Key": 2,
+                    "Value": 119
+                },
+				{
+                    "Key": 3,
+                    "Value": 120
+                },
+				
+                {
+                    "Key": 4,
+                    "Value": 121
+                },
+
+                {
+                    "Key": 999,
+                    "Value": 117
+                }
+            ],
+            "challengeName": "ThreeMatches_event_title",
+            "challengeDesc": "ThreeMatches_event_LD",
+            "challengeDesc2": "ThreeMatches_event_SD",
+            "extraDesc": [],
+            "CupIcon": "trophy_worldCup",
+            "challenges": [{
+                    "id": 1,
+                    "match": {
+                        "homeTeamId": 10957,
+                        "awayTeamId": 10954,
+                        "userIsHome": true,
+                        "HasExtraTime": true,
+                        "HasPenalty": true,
+                        "matchRoundName": "cup_round3",
+                        "difficulty": [1, 4, 5,6],
+                        "duration": 360,
+                        "matchName": "worldCup_1958",
+                        "matchRoundNameParam": null
+                    },
+                    "mission": [{
+                            "Key": 3,
+                            "Value": 114
+                        },
+                        {
+                            "Key": 999,
+                            "Value": 114
+                        }
+                    ],
+                    "missionCompletionCondition": [1,1],
+                    "desc": "ThreeMatches1_0",
+                    "time": "1958/6/29",
+                    "host_city": "SwedishA_Malmo",
+                    "host_country": "Str_National_Sweden"
+                },
+                {
+                    "id": 2,
+                    "match": {
+                        "homeTeamId": 10956,
+                        "awayTeamId": 10953,
+                        "userIsHome": true,
+                        "HasExtraTime": true,
+                        "HasPenalty": true,
+                        "matchRoundName": "cup_round3",
+                        "difficulty": [2,4,5,6],
+                        "duration": 360,
+                        "matchName": "worldCup_1962",
+                        "matchRoundNameParam": null
+                    },
+                    "mission": [{
+                            "Key": 3,
+                            "Value": 115
+                        },
+                        {
+                            "Key": 999,
+                            "Value": 115
+                        }
+                    ],
+                    "missionCompletionCondition": [1,1],
+                    "desc": "ThreeMatches1_1",
+                    "time": "1962/6/17",
+                    "host_city": "ChileA_ClubDeportivoUniversidadCatólica",
+                    "host_country": "Str_National_Chile"
+                },
+                {
+                    "id": 3,
+                    "match": {
+                        "homeTeamId": 10955,
+                        "awayTeamId": 10952,
+                        "userIsHome": true,
+                        "HasExtraTime": true,
+                        "HasPenalty": true,
+                        "matchRoundName": "cup_round3",
+                        "difficulty": [3,4,5,6],
+                        "duration": 360,
+                        "matchName": "worldCup_1970",
+                        "matchRoundNameParam": null
+                    },
+                    "mission": [{
+                            "Key": 3,
+                            "Value": 116
+                        },
+                        {
+                            "Key": 999,
+                            "Value": 116
+                        }
+                    ],
+                    "missionCompletionCondition": [1,1],
+                    "desc": "ThreeMatches1_2",
+                    "time": "1970/6/21",
+                    "host_city": "MexicanLeagueA_CruzAzul",
+                    "host_country": "Str_National_Mexico"
+                }
+            ]
+        },
+        "6": {
+            "variant": 1,
+            "sequential":true,
+            "clearReward": [
+				{
+                    "Key": 1,
+                    "Value": 128
+                },
+				{
+                    "Key": 2,
+                    "Value": 129
+                },
+				{
+                    "Key": 3,
+                    "Value": 130
+                },
+                {
+                    "Key": 4,
+                    "Value": 131
+                },
+
+                {
+                    "Key": 999,
+                    "Value": 117
+                }
+            ],
+            "challengeName": "Halloween_event_title",
+            "challengeDesc": "Halloween_event_LD",
+            "challengeDesc2": "Halloween_event_SD",
+            "extraDesc": [],
+            "CupIcon": "trophy_worldCup",
+            "challenges": [{
+                    "id": 1,
+                    "match": {
+                        "homeTeamId": 203,
+                        "awayTeamId": 30433,
+                        "userIsHome": true,
+                        "HasExtraTime": true,
+                        "HasPenalty": true,
+                        "matchRoundName": "cup_round3",
+                        "difficulty": [3],
+                        "duration": 360,
+                        "matchName": "Halloween_matchName",
+                        "matchRoundNameParam": null
+                    },
+                    "RotatingMatchsId":[1,4,7],
+                    "mission": [{
+                            "Key": 3,
+                            "Value": 114
+                        },
+                        {
+                            "Key": 999,
+                            "Value": 114
+                        }
+                    ],
+                    "missionCompletionCondition": [1,1],
+                    "desc": "",
+                    "time": "2025/10/31",
+                    "host_city": "EnglishA_ChelseaEnglishA_TottenhamHotspur",
+                    "host_country": "Str_National_England"
+                },
+                {
+                    "id": 2,
+                    "match": {
+                        "homeTeamId": 203,
+                        "awayTeamId": 30432,
+                        "userIsHome": true,
+                        "HasExtraTime": true,
+                        "HasPenalty": true,
+                        "matchRoundName": "cup_round3",
+                        "difficulty": [4],
+                        "duration": 360,
+                        "matchName": "Halloween_matchName",
+                        "matchRoundNameParam": null
+                    },
+                    "RotatingMatchsId":[2,5,8],
+                    "mission": [{
+                            "Key": 3,
+                            "Value": 115
+                        },
+                        {
+                            "Key": 999,
+                            "Value": 115
+                        }
+                    ],
+                    "missionCompletionCondition": [1,1],
+                    "desc": "",
+                    "time": "2025/10/31",
+                    "host_city": "EnglishA_TottenhamHotspur",
+                    "host_country": "Str_National_England"
+                },
+                {
+                    "id": 3,
+                    "match": {
+                        "homeTeamId": 203,
+                        "awayTeamId": 30434,
+                        "userIsHome": true,
+                        "HasExtraTime": true,
+                        "HasPenalty": true,
+                        "matchRoundName": "cup_round3",
+                        "difficulty": [5],
+                        "duration": 360,
+                        "matchName": "Halloween_matchName",
+                        "matchRoundNameParam": null
+                    },
+                    "RotatingMatchsId":[3,6,9],
+                    "mission": [{
+                            "Key": 3,
+                            "Value": 116
+                        },
+                        {
+                            "Key": 999,
+                            "Value": 116
+                        }
+                    ],
+                    "missionCompletionCondition": [1,1],
+                    "desc": "",
+                    "time": "2025/10/31",
+                    "host_city": "FrenchA_Paris",
+                    "host_country": "Str_National_France"
+                }
+            ]
+        },
+        "2603": {
+            "variant": 0,
+            "sequential":true,
+            "clearReward": [
+				{
+                    "Key": 1,
+                    "Value": 139
+                },
+				{
+                    "Key": 2,
+                    "Value": 140
+                },
+				{
+                    "Key": 3,
+                    "Value": 142
+                },
+				{
+                    "Key": 4,
+                    "Value": 141
+                },
+				
+                {
+                    "Key": 999,
+                    "Value": 117
+                }
+            ],
+            "challengeName": "Brazil1994RTC_Title",
+            "challengeDesc": "Brazil1994RTC_LD",
+            "challengeDesc2": "Brazil1994RTC_SD",
+            "extraDesc": [],
+            "CupIcon": "trophy_worldCup",
+            "challenges": [{
+                    "id": 1,
+                    "match": {
+                        "homeTeamId": 10936,
+                        "awayTeamId": 10934,
+                        "userIsHome": true,
+                        "HasExtraTime": true,
+                        "HasPenalty": true,
+                        "matchRoundName": "cup_round1",
+                        "difficulty": [3, 4, 4, 4.5, 5.5],
+                        "duration": 360,
+                        "matchName": "worldCup_1994",
+                        "matchRoundNameParam": "2"
+                    },
+                    "mission": [{
+                            "Key": 1,
+                            "Value": 114
+                        },
+                        {
+                            "Key": 999,
+                            "Value": 114
+                        }
+                    ],
+                    "missionCompletionCondition": [1,1],
+                    "desc": "",
+                    "time": "1994/7/9",
+                    "host_city": "MajorLeagueA_FCDallas",
+                    "host_country": "Str_National_United_States"
+                },
+                {
+                    "id": 2,
+                    "match": {
+                        "homeTeamId": 10936,
+                        "awayTeamId": 10933,
+                        "userIsHome": true,
+                        "HasExtraTime": true,
+                        "HasPenalty": true,
+                        "matchRoundName": "cup_round2",
+                        "difficulty": [4, 4.5, 5, 5.5, 5.5],
+                        "duration": 360,
+                        "matchName": "worldCup_1994",
+                        "matchRoundNameParam":"2"
+                    },
+                    "mission": [{
+                            "Key": 1,
+                            "Value": 115
+                        },
+                        {
+                            "Key": 999,
+                            "Value": 115
+                        }
+                    ],
+                    "missionCompletionCondition": [1,1],
+                    "desc": "",
+                    "time": "1994/7/13",
+                    "host_city": "MajorLeagueA_NewYorkRedBulls",
+                    "host_country": "Str_National_United_States"
+                },
+                {
+                    "id": 3,
+                    "match": {
+                        "homeTeamId": 10936,
+                        "awayTeamId": 10935,
+                        "userIsHome": true,
+                        "HasExtraTime": true,
+                        "HasPenalty": true,
+                        "matchRoundName": "cup_round3",
+                        "difficulty": [5, 5, 5.5, 6, 6],
+                        "duration": 360,
+                        "matchName": "worldCup_1994",
+                        "matchRoundNameParam":"2"
+                    },
+                    "mission": [{
+                            "Key": 1,
+                            "Value": 116
+                        },
+                        {
+                            "Key": 999,
+                            "Value": 116
+                        }
+                    ],
+                    "missionCompletionCondition":[1,1],
+                    "desc": "",
+                    "time": "1994/7/17",
+                    "host_city": "MajorLeagueA_LosAngelesFC",
+                    "host_country": "Str_National_United_States"
+                }
+            ]
+        },
+        "26032": {
+            "variant": 1,
+            "sequential":true,
+            "clearReward": [
+				{
+                    "Key": 1,
+                    "Value": 143
+                },
+				{
+                    "Key": 2,
+                    "Value": 143
+                },
+				{
+                    "Key": 3,
+                    "Value": 143
+                },
+				
+                {
+                    "Key": 4,
+                    "Value": 143
+                },
+
+                {
+                    "Key": 999,
+                    "Value": 104
+                }
+            ],
+            "challengeName": "Spanish_Draft_Title",
+            "challengeDesc": "Spanish_Draft_LD",
+            "challengeDesc2": "France2018_Draft_SD",
+            "extraDesc": [],
+            "CupIcon": "",
+            "challenges": [{
+                    "id": 1,
+                    "match": {
+                        "homeTeamId": 201,
+                        "awayTeamId": 20108,
+                        "userIsHome": true,
+                        "HasExtraTime": true,
+                        "HasPenalty": true,
+                        "matchRoundName": "round",
+                        "difficulty": [3.5,4,4,4.5,5.5],
+                        "duration": 360,
+                        "matchName": "Spanish_Draft_Title",
+                        "matchRoundNameParam": null
+                    },
+                    "RotatingMatchsId":[10,13,16],
+                    "mission": [{
+                            "Key": 1,
+                            "Value": 122
+                        },
+                        {
+                            "Key": 999,
+                            "Value": 122
+                        }
+                    ],
+                    "missionCompletionCondition": [1,1],
+                    "desc": "",
+                    "time": "2026/3/28",
+                    "host_city": "SpanishA_AthleticClubdeBilbao",
+                    "host_country": "Str_National_Spain"
+                },
+                {
+                    "id": 2,
+                    "match": {
+                        "homeTeamId": 201,
+                        "awayTeamId": 20103,
+                        "userIsHome": true,
+                        "HasExtraTime": true,
+                        "HasPenalty": true,
+                        "matchRoundName": "round",
+                        "difficulty": [4,4.5,5,5.5,5.5],
+                        "duration": 360,
+                        "matchName": "Spanish_Draft_Title",
+                        "matchRoundNameParam": null
+                    },
+                    "RotatingMatchsId":[11,14,17],
+                    "mission": [{
+                            "Key": 2,
+                            "Value": 108
+                        },
+                        {
+                            "Key": 999,
+                            "Value": 108
+                        }
+                    ],
+                    "missionCompletionCondition": [1,1],
+                    "desc": "",
+                    "time": "2026/3/29",
+                    "host_city": "SpanishA_AtléticodeMadrid",
+                    "host_country": "Str_National_Spain"
+                },
+                {
+                    "id": 3,
+                    "match": {
+                        "homeTeamId": 201,
+                        "awayTeamId": 20101,
+                        "userIsHome": true,
+                        "HasExtraTime": true,
+                        "HasPenalty": true,
+                        "matchRoundName": "round",
+                        "difficulty": [4.5,5,5.5,6,6],
+                        "duration": 360,
+                        "matchName": "Spanish_Draft_Title",
+                        "matchRoundNameParam": null
+                    },
+                    "RotatingMatchsId":[12,15,18],
+                    "mission": [{
+                            "Key": 3,
+                            "Value": 124
+                        },
+                        {
+                            "Key": 999,
+                            "Value": 124 
+                        }
+                    ],
+                    "missionCompletionCondition": [1,1],
+                    "desc": "",
+                    "time": "2026/3/30",
+                    "host_city": "SpanishA_Barcelona",
+                    "host_country": "Str_National_Spain"
+                },
+                {
+                    "id": 4,
+                    "match": {
+                        "homeTeamId": 201,
+                        "awayTeamId": 20102,
+                        "userIsHome": true,
+                        "HasExtraTime": true,
+                        "HasPenalty": true,
+                        "matchRoundName": "round",
+                        "difficulty": [5,5.5,6,6,6.5],
+                        "duration": 360,
+                        "matchName": "Spanish_Draft_Title",
+                        "matchRoundNameParam": null
+                    },
+                    "RotatingMatchsId":[19,20,21],
+                    "mission": [{
+                            "Key": 4,
+                            "Value": 134
+                        },
+                        {
+                            "Key": 999,
+                            "Value": 134 
+                        }
+                    ],
+                    "missionCompletionCondition": [1,1],
+                    "desc": "",
+                    "time": "2026/3/31",
+                    "host_city": "SpanishA_RealMadrid",
+                    "host_country": "Str_National_Spain"
+                }
+            ]
+        },
+        "26041": {
+            "variant": 1,
+            "sequential":true,
+            "clearReward": [
+				{
+                    "Key": 1,
+                    "Value": 112
+                },
+				{
+                    "Key": 2,
+                    "Value": 144
+                },
+				{
+                    "Key": 3,
+                    "Value": 144
+                },
+                {
+                    "Key": 4,
+                    "Value": 144
+                },
+
+                {
+                    "Key": 999,
+                    "Value": 145
+                }
+            ],
+            "challengeName": "Easter_Event_Title",
+            "challengeDesc": "Easter_Event_LD",
+            "challengeDesc2": "Easter_Event_SD",
+            "extraDesc": [],
+            "CupIcon": "trophy_worldCup",
+            "challenges": [{
+                    "id": 1,
+                    "match": {
+                        "homeTeamId": 203,
+                        "awayTeamId": 20126,
+                        "userIsHome": true,
+                        "HasExtraTime": true,
+                        "HasPenalty": true,
+                        "matchRoundName": "",
+                        "difficulty": [2.5],
+                        "duration": 360,
+                        "matchName": "Easter_Event_Title",
+                        "matchRoundNameParam": null
+                    },
+                    "RotatingMatchsId":[1,4,7],
+                    "mission": [{
+                            "Key": 3,
+                            "Value": 107
+                        },
+                        {
+                            "Key": 999,
+                            "Value": 107
+                        }
+                    ],
+                    "missionCompletionCondition": [1,1],
+                    "desc": "",
+                    "time": "2026/4/5",
+                    "host_city": "",
+                    "host_country": ""
+                },
+                {
+                    "id": 2,
+                    "match": {
+                        "homeTeamId": 203,
+                        "awayTeamId": 20051,
+                        "userIsHome": true,
+                        "HasExtraTime": true,
+                        "HasPenalty": true,
+                        "matchRoundName": "",
+                        "difficulty": [3],
+                        "duration": 360,
+                        "matchName": "Easter_Event_Title",
+                        "matchRoundNameParam": null
+                    },
+                    "RotatingMatchsId":[2,5,8],
+                    "mission": [{
+                            "Key": 3,
+                            "Value": 108
+                        },
+                        {
+                            "Key": 999,
+                            "Value": 108
+                        }
+                    ],
+                    "missionCompletionCondition": [1,1],
+                    "desc": "",
+                    "time": "2026/4/5",
+                    "host_city": "",
+                    "host_country": ""
+                },
+                {
+                    "id": 3,
+                    "match": {
+                        "homeTeamId": 203,
+                        "awayTeamId": 20102,
+                        "userIsHome": true,
+                        "HasExtraTime": true,
+                        "HasPenalty": true,
+                        "matchRoundName": "",
+                        "difficulty": [3.5],
+                        "duration": 360,
+                        "matchName": "Easter_Event_Title",
+                        "matchRoundNameParam": null
+                    },
+                    "RotatingMatchsId":[3,6,9],
+                    "mission": [{
+                            "Key": 3,
+                            "Value": 124
+                        },
+                        {
+                            "Key": 999,
+                            "Value": 124
+                        }
+                    ],
+                    "missionCompletionCondition": [1,1],
+                    "desc": "",
+                    "time": "2026/4/5",
+                    "host_city": "",
+                    "host_country": ""
+                }
+            ]
+        },
+        "26091": {
+            "variant": 1,
+            "sequential":true,
+            "clearReward": [
+				{
+                    "Key": 1,
+                    "Value": 150
+                },
+				{
+                    "Key": 2,
+                    "Value": 150
+                },
+				{
+                    "Key": 3,
+                    "Value": 150
+                },
+                {
+                    "Key": 4,
+                    "Value": 150
+                },
+
+                {
+                    "Key": 999,
+                    "Value": 145
+                }
+            ],
+            "challengeName": "YoungTalent_Event_Title",
+            "challengeDesc": "YoungTalent_Event_LD",
+            "challengeDesc2": "YoungTalent_Event_SD",
+            "extraDesc": [],
+            "CupIcon": "trophy_worldCup",
+            "challenges": [{
+                    "id": 1,
+                    "match": {
+                        "homeTeamId": 206,
+                        "awayTeamId": 20127,
+                        "userIsHome": true,
+                        "HasExtraTime": true,
+                        "HasPenalty": true,
+                        "matchRoundName": "",
+                        "difficulty": [2.5],
+                        "duration": 360,
+                        "matchName": "YoungTalent_Event_Title",
+                        "matchRoundNameParam": null
+                    },
+                    "RotatingMatchsId":[22,23,24,25],
+                    "mission": [{
+                            "Key": 3,
+                            "Value": 107
+                        },
+                        {
+                            "Key": 999,
+                            "Value": 107
+                        }
+                    ],
+                    "missionCompletionCondition": [1,1],
+                    "desc": "",
+                    "time": "2026/9/10",
+                    "host_city": "",
+                    "host_country": ""
+                },
+                {
+                    "id": 2,
+                    "match": {
+                        "homeTeamId": 206,
+                        "awayTeamId": 20051,
+                        "userIsHome": true,
+                        "HasExtraTime": true,
+                        "HasPenalty": true,
+                        "matchRoundName": "",
+                        "difficulty": [3],
+                        "duration": 360,
+                        "matchName": "YoungTalent_Event_Title",
+                        "matchRoundNameParam": null
+                    },
+                    "RotatingMatchsId":[26,27,28,29],
+                    "mission": [{
+                            "Key": 3,
+                            "Value": 108
+                        },
+                        {
+                            "Key": 999,
+                            "Value": 108
+                        }
+                    ],
+                    "missionCompletionCondition": [1,1],
+                    "desc": "",
+                    "time": "2026/9/10",
+                    "host_city": "",
+                    "host_country": ""
+                },
+                {
+                    "id": 3,
+                    "match": {
+                        "homeTeamId": 206,
+                        "awayTeamId": 20102,
+                        "userIsHome": true,
+                        "HasExtraTime": true,
+                        "HasPenalty": true,
+                        "matchRoundName": "",
+                        "difficulty": [3.5],
+                        "duration": 360,
+                        "matchName": "YoungTalent_Event_Title",
+                        "matchRoundNameParam": null
+                    },
+                    "RotatingMatchsId":[29,30,31,32],
+                    "mission": [{
+                            "Key": 3,
+                            "Value": 124
+                        },
+                        {
+                            "Key": 999,
+                            "Value": 124
+                        }
+                    ],
+                    "missionCompletionCondition": [1,1],
+                    "desc": "",
+                    "time": "2026/9/10",
+                    "host_city": "",
+                    "host_country": ""
+                }
+            ]
+        },
+        "25625": {
+            "variant": 1,
+            "sequential":false,
+            "clearReward": [
+				{
+                    "Key": 1,
+                    "Value": 126
+                },
+				{
+                    "Key": 2,
+                    "Value": 126
+                },
+				{
+                    "Key": 3,
+                    "Value": 126
+                },
+				
+                {
+                    "Key": 4,
+                    "Value": 125
+                },
+
+                {
+                    "Key": 999,
+                    "Value": 127
+                }
+            ],
+            "challengeName": "Draft_Title",
+            "challengeDesc": "Draft_LD",
+            "challengeDesc2": "Draft_SD",
+            "extraDesc": [],
+            "CupIcon": "trophy_ItalianLeagueA",
+            "challenges": [{
+                    "id": 1,
+                    "match": {
+                        "homeTeamId": 201,
+                        "awayTeamId": 40067,
+                        "userIsHome": true,
+                        "HasExtraTime": true,
+                        "HasPenalty": true,
+                        "matchRoundName": "",
+                        "difficulty": [1,1,2,4],
+                        "duration": 360,
+                        "matchName": "Draft_Title",
+                        "matchRoundNameParam": null
+                    },
+                    "mission": [{
+                            "Key": 3,
+                            "Value": 122
+                        },
+                        {
+                            "Key": 999,
+                            "Value": 122
+                        }
+                    ],
+                    "missionCompletionCondition": [1,1],
+                    "desc": "",
+                    "time": "Roma Red 01",
+                    "host_city": "ItalianA_Roma",
+                    "host_country": "Str_National_Italy"
+                },
+                {
+                    "id": 2,
+                    "match": {
+                        "homeTeamId": 201,
+                        "awayTeamId": 40069,
+                        "userIsHome": true,
+                        "HasExtraTime": true,
+                        "HasPenalty": true,
+                        "matchRoundName": "",
+                        "difficulty": [2,2,3,5],
+                        "duration": 360,
+                        "matchName": "Draft_Title",
+                        "matchRoundNameParam": null
+                    },
+                    "mission": [{
+                            "Key": 3,
+                            "Value": 122
+                        },
+                        {
+                            "Key": 999,
+                            "Value": 122
+                        }
+                    ],
+                    "missionCompletionCondition": [1,1],
+                    "desc": "",
+                    "time": "Napoli 87",
+                    "host_city": "ItalianA_Napoli",
+                    "host_country": "Str_National_Italy"
+                },
+                {
+                    "id": 3,
+                    "match": {
+                        "homeTeamId": 201,
+                        "awayTeamId": 40068,
+                        "userIsHome": true,
+                        "HasExtraTime": true,
+                        "HasPenalty": true,
+                        "matchRoundName": "",
+                        "difficulty": [3,3,4,6],
+                        "duration": 360,
+                        "matchName": "Draft_Title",
+                        "matchRoundNameParam": null
+                    },
+                    "mission": [{
+                            "Key": 3,
+                            "Value": 123
+                        },
+                        {
+                            "Key": 999,
+                            "Value": 123
+                        }
+                    ],
+                    "missionCompletionCondition": [1,1],
+                    "desc": "",
+                    "time": "Torino BW 96",
+                    "host_city": "ItalianA_Juventus",
+                    "host_country": "Str_National_Italy"
+                },
+                {
+                    "id": 4,
+                    "match": {
+                        "homeTeamId": 201,
+                        "awayTeamId": 30429,
+                        "userIsHome": true,
+                        "HasExtraTime": true,
+                        "HasPenalty": true,
+                        "matchRoundName": "",
+                        "difficulty": [4,4,5,7],
+                        "duration": 360,
+                        "matchName": "Draft_Title",
+                        "matchRoundNameParam": null
+                    },
+                    "mission": [{
+                            "Key": 3,
+                            "Value": 124
+                        },
+                        {
+                            "Key": 999,
+                            "Value": 124
+                        }
+                    ],
+                    "missionCompletionCondition": [1,1],
+                    "desc": "",
+                    "time": "Milano Blue 10",
+                    "host_city": "ItalianA_InternazionaleMilano",
+                    "host_country": "Str_National_Italy"
+                },
+                {
+                    "id": 5,
+                    "match": {
+                        "homeTeamId": 201,
+                        "awayTeamId": 30426,
+                        "userIsHome": true,
+                        "HasExtraTime": true,
+                        "HasPenalty": true,
+                        "matchRoundName": "",
+                        "difficulty": [4,4,6,8],
+                        "duration": 360,
+                        "matchName": "Draft_Title",
+                        "matchRoundNameParam": null
+                    },
+                    "mission": [{
+                            "Key": 3,
+                            "Value": 124
+                        },
+                        {
+                            "Key": 999,
+                            "Value": 124
+                        }
+                    ],
+                    "missionCompletionCondition": [1,1],
+                    "desc": "",
+                    "time": "Milano Red 03",
+                    "host_city": "ItalianA_AssociazioneCalcioMilan",
+                    "host_country": "Str_National_Italy"
+                }
+            ]
+        },
+        "2511": {
+            "variant": 1,
+            "sequential":true,
+            "clearReward": [
+				{
+                    "Key": 1,
+                    "Value": 132
+                },
+				{
+                    "Key": 2,
+                    "Value": 133
+                },
+				{
+                    "Key": 3,
+                    "Value": 133
+                },
+				
+                {
+                    "Key": 4,
+                    "Value": 133
+                },
+
+                {
+                    "Key": 999,
+                    "Value": 104
+                }
+            ],
+            "challengeName": "France2018_Draft_Title",
+            "challengeDesc": "France2018_Draft_LD",
+            "challengeDesc2": "France2018_Draft_SD",
+            "extraDesc": [],
+            "CupIcon": "trophy_worldCup",
+            "challenges": [{
+                    "id": 1,
+                    "match": {
+                        "homeTeamId": 201,
+                        "awayTeamId": 10941,
+                        "userIsHome": true,
+                        "HasExtraTime": true,
+                        "HasPenalty": true,
+                        "matchRoundName": "cup_round0",
+                        "difficulty": [3.5,4,4.5,5,5],
+                        "duration": 360,
+                        "matchName": "France2018_Draft_Title",
+                        "matchRoundNameParam": null
+                    },
+                    "mission": [{
+                            "Key": 3,
+                            "Value": 108
+                        },
+                        {
+                            "Key": 999,
+                            "Value": 108
+                        }
+                    ],
+                    "missionCompletionCondition": [1,1],
+                    "desc": "",
+                    "time": "2018/6/30",
+                    "host_city": "RussianA_RubinKazan",
+                    "host_country": "Str_National_Russia"
+                },
+                {
+                    "id": 2,
+                    "match": {
+                        "homeTeamId": 201,
+                        "awayTeamId": 10940,
+                        "userIsHome": true,
+                        "HasExtraTime": true,
+                        "HasPenalty": true,
+                        "matchRoundName": "cup_round1",
+                        "difficulty": [4,4.5,5,5.5],
+                        "duration": 360,
+                        "matchName": "France2018_Draft_Title",
+                        "matchRoundNameParam": null
+                    },
+                    "mission": [{
+                            "Key": 3,
+                            "Value": 108
+                        },
+                        {
+                            "Key": 999,
+                            "Value": 108
+                        }
+                    ],
+                    "missionCompletionCondition": [1,1],
+                    "desc": "",
+                    "time": "2018/7/6",
+                    "host_city": "RussianA_FCPariNizhniyNovgorod",
+                    "host_country": "Str_National_Russia"
+                },
+                {
+                    "id": 3,
+                    "match": {
+                        "homeTeamId": 201,
+                        "awayTeamId": 10939,
+                        "userIsHome": true,
+                        "HasExtraTime": true,
+                        "HasPenalty": true,
+                        "matchRoundName": "cup_round2",
+                        "difficulty": [4.5,5,5.5,6],
+                        "duration": 360,
+                        "matchName": "France2018_Draft_Title",
+                        "matchRoundNameParam": null
+                    },
+                    "mission": [{
+                            "Key": 3,
+                            "Value": 124
+                        },
+                        {
+                            "Key": 999,
+                            "Value": 124
+                        }
+                    ],
+                    "missionCompletionCondition": [1,1],
+                    "desc": "",
+                    "time": "2018/7/10",
+                    "host_city": "RussianA_ZenitSaintPetersburg",
+                    "host_country": "Str_National_Russia"
+                },
+                {
+                    "id": 4,
+                    "match": {
+                        "homeTeamId": 201,
+                        "awayTeamId": 10938,
+                        "userIsHome": true,
+                        "HasExtraTime": true,
+                        "HasPenalty": true,
+                        "matchRoundName": "cup_round3",
+                        "difficulty": [5,5.5,6,6,6.5],
+                        "duration": 360,
+                        "matchName": "France2018_Draft_Title",
+                        "matchRoundNameParam": null
+                    },
+                    "mission": [{
+                            "Key": 3,
+                            "Value": 134
+                        },
+                        {
+                            "Key": 999,
+                            "Value": 134
+                        }
+                    ],
+                    "missionCompletionCondition": [1,1],
+                    "desc": "",
+                    "time": "2018/7/15",
+                    "host_city": "RussianA_SpartakMoscow",
+                    "host_country": "Str_National_Russia"
+                }
+            ]
+        }
+    },
+    "missions": {
+        "101": {
+            "missionId": 101,
+            "coin": 500,
+            "playerPool": {
+                "Pool": [
+                    1053,
+                    1054,
+                    1055
+                ]
+            },
+            "missionName": "",
+            "missionDesc": "",
+            "teams": -1,
+            "shopItemId":null
+        },
+        "102": {
+            "missionId": 102,
+            "coin": 150,
+            "playerPool": {
+                "Pool": null
+            },
+            "missionName": "",
+            "missionDesc": "",
+            "teams": -1,
+            "shopItemId":null
+        },
+        "103": {
+            "missionId": 103,
+            "coin": 350,
+            "playerPool": {
+                "Pool": null
+            },
+            "missionName": "",
+            "missionDesc": "",
+            "teams": -1,
+            "shopItemId":null
+        },
+        "104": {
+            "missionId": 104,
+            "coin": 1000,
+            "playerPool": {
+                "Pool": null
+            },
+            "missionName": "",
+            "missionDesc": "",
+            "teams": -1,
+            "shopItemId":null
+        },
+        "105": {
+            "missionId": 105,
+            "coin": 500,
+            "playerPool": {
+                "Pool": [
+                    1056,
+                    1057,
+                    1058
+                ]
+            },
+            "missionName": "",
+            "missionDesc": "",
+            "teams": -1,
+            "shopItemId":null
+        },
+        "106": {
+            "missionId": 106,
+            "coin": 0,
+            "playerPool": {
+                "Pool": [
+                    1059,
+                    1060,
+                    1061,
+                    1062,
+                    1999,
+                    1998,
+                    1997
+                ]
+            },
+            "missionName": "",
+            "missionDesc": "",
+            "teams": -1,
+            "shopItemId":null
+        },
+        "107": {
+            "missionId": 107,
+            "coin": 300,
+            "playerPool": {
+                "Pool": null
+            },
+            "missionName": "",
+            "missionDesc": "",
+            "teams": -1,
+            "shopItemId":null
+        },
+        "108": {
+            "missionId": 108,
+            "coin": 400,
+            "playerPool": {
+                "Pool": null
+            },
+            "missionName": "",
+            "missionDesc": "",
+            "teams": -1,
+            "shopItemId":null
+        },
+        "109": {
+            "missionId": 109,
+            "coin": 500,
+            "playerPool": {
+                "Pool": [
+                    1063,
+                    1064,
+                    1065
+                ]
+            },
+            "missionName": "",
+            "missionDesc": "",
+            "teams": -1,
+            "shopItemId":null
+        },
+		"110": {
+            "missionId": 110,
+            "coin": 0,
+            "playerPool": {
+                "Pool": [
+                    1094
+                ]
+            },
+            "missionName": "",
+            "missionDesc": "",
+            "teams": -1,
+            "shopItemId":null
+        },
+		"111": {
+            "missionId": 111,
+            "coin": 0,
+            "playerPool": {
+                "Pool": null
+            },
+            "missionName": "",
+            "missionDesc": "",
+            "teams": 40038,
+            "shopItemId":null
+        },
+		"112": {
+            "missionId": 112,
+            "coin": 0,
+            "playerPool": {
+                "Pool": null
+            },
+            "missionName": "",
+            "missionDesc": "",
+            "teams": -1,
+            "shopItemId":[10017,20022]
+        },
+		 "113": {
+            "missionId": 113,
+            "coin": 2000,
+            "playerPool": {
+                "Pool": null
+            },
+            "missionName": "",
+            "missionDesc": "",
+            "teams": -1,
+            "shopItemId":null
+        },
+        "114": {
+            "missionId": 114,
+            "coin": 200,
+            "playerPool": {
+                "Pool": null
+            },
+            "missionName": "",
+            "missionDesc": "",
+            "teams": -1,
+            "shopItemId":null
+        },
+        "115": {
+            "missionId": 115,
+            "coin": 400,
+            "playerPool": {
+                "Pool": null
+            },
+            "missionName": "",
+            "missionDesc": "",
+            "teams": -1,
+            "shopItemId":null
+        },
+        "116": {
+            "missionId": 116,
+            "coin": 600,
+            "playerPool": {
+                "Pool": null
+            },
+            "missionName": "",
+            "missionDesc": "",
+            "teams": -1,
+            "shopItemId":null
+        },
+        "117": {
+            "missionId": 117,
+            "coin": 800,
+            "playerPool": {
+                "Pool": null
+            },
+            "missionName": "",
+            "missionDesc": "",
+            "teams": -1,
+            "shopItemId":null
+        },
+        "118": {
+            "missionId": 118,
+            "coin": 0,
+            "playerPool": {
+                "Pool": null
+            },
+            "missionName": "",
+            "missionDesc": "",
+            "teams": 10955,
+            "shopItemId":null
+        },
+        "119": {
+            "missionId": 119,
+            "coin": 0,
+            "playerPool": {
+                "Pool": [
+                    1082
+                ]
+            },
+            "missionName": "",
+            "missionDesc": "",
+            "teams": -1,
+            "shopItemId":null
+        },
+        "120": {
+            "missionId": 120,
+            "coin": 0,
+            "playerPool": {
+                "Pool": [
+                    1083
+                ]
+            },
+            "missionName": "",
+            "missionDesc": "",
+            "teams": -1,
+            "shopItemId":null
+        },
+        "121": {
+            "missionId": 121,
+            "coin": 0,
+            "playerPool": {
+                "Pool": [
+                    1081
+                ]
+            },
+            "missionName": "",
+            "missionDesc": "",
+            "teams": -1,
+            "shopItemId":null
+        },
+        "122": {
+            "missionId": 122,
+            "coin": 300,
+            "playerPool": {
+                "Pool": null
+            },
+            "missionName": "",
+            "missionDesc": "",
+            "teams": -1,
+            "shopItemId":null
+        },
+        "123": {
+            "missionId": 123,
+            "coin": 400,
+            "playerPool": {
+                "Pool": null
+            },
+            "missionName": "",
+            "missionDesc": "",
+            "teams": -1,
+            "shopItemId":null
+        },
+        "124": {
+            "missionId": 124,
+            "coin": 500,
+            "playerPool": {
+                "Pool": null
+            },
+            "missionName": "",
+            "missionDesc": "",
+            "teams": -1,
+            "shopItemId":null
+        },
+        "125": {
+            "missionId": 125,
+            "coin": 0,
+            "playerPool": {
+                "Pool": [
+                    2020
+                ]
+            },
+            "missionName": "",
+            "missionDesc": "",
+            "teams": -1,
+            "shopItemId":null
+        },
+        "126": {
+            "missionId": 126,
+            "coin": 0,
+            "playerPool": {
+                "Pool": [
+                    2021,
+                    2022,
+                    2023,
+                    2024,
+                    2025,
+                    2026,
+                    2027,
+                    2028,
+                    2029
+                ]
+            },
+            "missionName": "",
+            "missionDesc": "",
+            "teams": -1,
+            "shopItemId":null
+        },
+        "127": {
+            "missionId": 127,
+            "coin": 2000,
+            "playerPool": {
+                "Pool": null
+            },
+            "missionName": "",
+            "missionDesc": "",
+            "teams": -1,
+            "shopItemId":null
+        },
+        "128": {
+            "missionId": 128,
+            "coin":0,
+            "playerPool": {
+                "Pool": null
+            },
+            "missionName": "",
+            "missionDesc": "",
+            "teams": -1,
+            "shopItemId":[10024,20027]
+        },
+        "129": {
+            "missionId": 129,
+            "coin":0,
+            "playerPool": {
+                "Pool": [
+                    2036
+                ]
+            },
+            "missionName": "",
+            "missionDesc": "",
+            "teams": -1,
+            "shopItemId":null
+        },
+        "130": {
+            "missionId": 130,
+            "coin":0,
+            "playerPool": {
+                "Pool": [
+                    2035
+                ]
+            },
+            "missionName": "",
+            "missionDesc": "",
+            "teams": -1,
+            "shopItemId":null
+        },
+        "131": {
+            "missionId": 131,
+            "coin":0,
+            "playerPool": {
+                "Pool": [
+                    2037
+                ]
+            },
+            "missionName": "",
+            "missionDesc": "",
+            "teams": -1,
+            "shopItemId":null
+        },
+        "132": {
+            "missionId": 132,
+            "coin": 0,
+            "playerPool": {
+                "Pool": null
+            },
+            "missionName": "",
+            "missionDesc": "",
+            "teams": 10942,
+            "shopItemId":null
+        },
+        "133": {
+            "missionId": 133,
+            "coin": 0,
+            "playerPool": {
+                "Pool": [
+                    2038,
+                    2040,
+                    2041,
+                    2042,
+                    2043,
+                    2044,
+                    2045,
+                    2046
+                ]
+            },
+            "missionName": "",
+            "missionDesc": "",
+            "teams": -1,
+            "shopItemId":null
+        },
+        "134": {
+            "missionId": 134,
+            "coin": 700,
+            "playerPool": {
+                "Pool": null
+            },
+            "missionName": "",
+            "missionDesc": "",
+            "teams": -1,
+            "shopItemId":null
+        },
+        "135": {
+            "missionId": 135,
+            "coin": 0,
+            "playerPool": {
+                "Pool": null
+            },
+            "missionName": "",
+            "missionDesc": "",
+            "teams": -1,
+            "shopItemId":[10010, 20015]
+        },
+        "136": {
+            "missionId": 136,
+            "coin":0,
+            "playerPool": {
+                "Pool": [
+                    1095
+                ]
+            },
+            "missionName": "",
+            "missionDesc": "",
+            "teams": -1,
+            "shopItemId":null
+        },
+        "137": {
+            "missionId": 137,
+            "coin":0,
+            "playerPool": {
+                "Pool": [
+                    1096
+                ]
+            },
+            "missionName": "",
+            "missionDesc": "",
+            "teams": -1,
+            "shopItemId":null
+        },
+        "138": {
+            "missionId": 138,
+            "coin":0,
+            "playerPool": {
+                "Pool": [
+                    1097
+                ]
+            },
+            "missionName": "",
+            "missionDesc": "",
+            "teams": -1,
+            "shopItemId":null
+        },
+        "139": {
+            "missionId": 139,
+            "coin": 0,
+            "playerPool": {
+                "Pool": null
+            },
+            "missionName": "",
+            "missionDesc": "",
+            "teams": 10936,
+            "shopItemId":null
+        },
+        "140": {
+            "missionId": 140,
+            "coin":0,
+            "playerPool": {
+                "Pool": [
+                    2054
+                ]
+            },
+            "missionName": "",
+            "missionDesc": "",
+            "teams": -1,
+            "shopItemId":null
+        },
+        "141": {
+            "missionId": 141,
+            "coin":0,
+            "playerPool": {
+                "Pool": [
+                    2055
+                ]
+            },
+            "missionName": "",
+            "missionDesc": "",
+            "teams": -1,
+            "shopItemId":null
+        },
+        "142": {
+            "missionId": 142,
+            "coin":0,
+            "playerPool": {
+                "Pool": [
+                    2056
+                ]
+            },
+            "missionName": "",
+            "missionDesc": "",
+            "teams": -1,
+            "shopItemId":null
+        },
+        "143": {
+            "missionId": 143,
+            "coin": 0,
+            "playerPool": {
+                "Pool": [
+                    2057,
+                    2058,
+                    2059,
+                    2060,
+                    2061,
+                    2062,
+                    2063,
+                    2064,
+                    2065,
+                    2066,
+                    2067
+                ]
+            },
+            "missionName": "",
+            "missionDesc": "",
+            "teams": -1,
+            "shopItemId":null
+        },
+        "144": {
+            "missionId": 144,
+            "coin": 0,
+            "playerPool": {
+                "Pool": [
+                    2068,
+                    2069,
+                    2070,
+                    2071,
+                    2072,
+                    2073,
+                    2074,
+                    2075,
+                    2076,
+                    2077,
+                    2078
+                ]
+            },
+            "missionName": "",
+            "missionDesc": "",
+            "teams": -1,
+            "shopItemId":null
+        },
+        "145": {
+            "missionId": 145,
+            "coin": 800,
+            "playerPool": {
+                "Pool": null
+            },
+            "missionName": "",
+            "missionDesc": "",
+            "teams": -1,
+            "shopItemId":null
+        },
+        "146": {
+            "missionId": 146,
+            "coin": 0,
+            "playerPool": {
+                "Pool": null
+            },
+            "missionName": "",
+            "missionDesc": "",
+            "teams": 10911,
+            "shopItemId":null
+        },
+        "147": {
+            "missionId": 147,
+            "coin": 0,
+            "playerPool": {
+                "Pool": [
+                    1098
+                ]
+            },
+            "missionName": "",
+            "missionDesc": "",
+            "teams": -1,
+            "shopItemId":null
+        },
+        "148": {
+            "missionId": 148,
+            "coin": 0,
+            "playerPool": {
+                "Pool": [
+                    1099
+                ]
+            },
+            "missionName": "",
+            "missionDesc": "",
+            "teams": -1,
+            "shopItemId":null
+        },
+        "149": {
+            "missionId": 149,
+            "coin": 0,
+            "playerPool": {
+                "Pool": [
+                    1100
+                ]
+            },
+            "missionName": "",
+            "missionDesc": "",
+            "teams": -1,
+            "shopItemId":null
+        },
+        "150": {
+            "missionId": 150,
+            "coin": 0,
+            "playerPool": {
+                "Pool": [
+                    2122,
+                    2123,
+                    2135,
+                    2125,
+                    2126,
+                    2127,
+                    2128,
+                    2129,
+                    2130,
+                    2131
+                ]
+            },
+            "missionName": "",
+            "missionDesc": "",
+            "teams": -1,
+            "shopItemId":null
+        }
+    },
+    "loginRewards"   : {
+        "5" : {
+            "teams" : [
+                10957,
+                10956
+            ],
+            "players" : [
+            ],
+            "coin"    : 0,
+            "challengeRewardDisplay" : {
+                "teams" : [
+                    10955
+                ],
+                "players" : [
+                    1081,
+                    1082,
+                    1083
+                ],
+                "coin"    : 0,
+                "challengeRewardDisplay" : null,
+                "shopItemId":null
+            },
+            "shopItemId":null
+        },
+        "25625" : {
+            "teams" : [
+            ],
+            "players" : [
+                2019
+            ],
+            "coin"    : 0,
+            "challengeRewardDisplay" : {
+                "teams" : null,
+                "players" : [
+                    2019,
+                    2020
+                ],
+                "coin"    : 0,
+                "challengeRewardDisplay" : null,
+                "shopItemId":null
+            },
+            "shopItemId":null
+        },
+        "1" : {
+            "teams" : [
+                40039,
+                40040,
+                40041 
+            ],
+            "players" : [
+            ],
+            "coin"    : 0,
+            "challengeRewardDisplay" : {
+                "teams" : [
+                    40038
+                ],
+                "players" : [
+                    1094
+                ],
+                "coin"    : 0,
+                "challengeRewardDisplay" : null,
+                "shopItemId":[10017,20022]
+                            
+                
+        
+            },
+            "shopItemId":null
+        },
+        "2511" : {
+            "teams" : [],
+            "players" : [2039],
+            "coin"    : 0,
+            "challengeRewardDisplay" :  {
+                "teams" : [
+                    10942
+                ],
+                "players" : [
+                    2039
+                ],
+                "coin"    : 0,
+                "challengeRewardDisplay" : null,
+                "shopItemId":null
+            },
+            "shopItemId" : null
+        }
+    },
+    "matchPool":{
+        "1": {
+                "homeTeamId": 203,
+                "awayTeamId": 20560,
+                "userIsHome": true,
+                "HasExtraTime": true,
+                "HasPenalty": true,
+                "matchRoundName": "cup_round3",
+                "difficulty": [3,3,3,3,4.5],
+                "duration": 360,
+                "matchName": "Easter_Event_Title",
+                "matchRoundNameParam": null
+            },
+        "2": {
+                "homeTeamId": 203,
+                "awayTeamId": 20027,
+                "userIsHome": true,
+                "HasExtraTime": true,
+                "HasPenalty": true,
+                "matchRoundName": "cup_round3",
+                "difficulty": [3.5,3.5,3.5,3.5,4.5],
+                "duration": 360,
+                "matchName": "Easter_Event_Title",
+                "matchRoundNameParam": null
+            },
+        "3": {
+                "homeTeamId": 203,
+                "awayTeamId": 20126,
+                "userIsHome": true,
+                "HasExtraTime": true,
+                "HasPenalty": true,
+                "matchRoundName": "cup_round3",
+                "difficulty": [4,4,4,4,5],
+                "duration": 360,
+                "matchName": "Easter_Event_Title",
+                "matchRoundNameParam": null
+            },
+        "4": {
+                "homeTeamId": 203,
+                "awayTeamId": 20003,
+                "userIsHome": true,
+                "HasExtraTime": true,
+                "HasPenalty": true,
+                "matchRoundName": "cup_round3",
+                "difficulty": [3.5,3.5,3.5,3.5,4.5],
+                "duration": 360,
+                "matchName": "Easter_Event_Title",
+                "matchRoundNameParam": null
+            },
+        "5": {
+                "homeTeamId": 203,
+                "awayTeamId": 20101,
+                "userIsHome": true,
+                "HasExtraTime": true,
+                "HasPenalty": true,
+                "matchRoundName": "cup_round3",
+                "difficulty": [4,4,4,4,4.5],
+                "duration": 360,
+                "matchName": "Easter_Event_Title",
+                "matchRoundNameParam": null
+            },
+        "6": {
+                "homeTeamId": 203,
+                "awayTeamId": 20051,
+                "userIsHome": true,
+                "HasExtraTime": true,
+                "HasPenalty": true,
+                "matchRoundName": "cup_round3",
+                "difficulty": [4,4,4,4,5],
+                "duration": 360,
+                "matchName": "Easter_Event_Title",
+                "matchRoundNameParam": null
+            },
+        "7": {
+                "homeTeamId": 203,
+                "awayTeamId": 20151,
+                "userIsHome": true,
+                "HasExtraTime": true,
+                "HasPenalty": true,
+                "matchRoundName": "cup_round3",
+                "difficulty": [4,4,4,4,4.5],
+                "duration": 360,
+                "matchName": "Easter_Event_Title",
+                "matchRoundNameParam": null
+            },
+        "8": {
+                "homeTeamId": 203,
+                "awayTeamId": 20026,
+                "userIsHome": true,
+                "HasExtraTime": true,
+                "HasPenalty": true,
+                "matchRoundName": "cup_round3",
+                "difficulty": [4.5],
+                "duration": 360,
+                "matchName": "Easter_Event_Title",
+                "matchRoundNameParam": null
+            },
+        "9": {
+                "homeTeamId": 203,
+                "awayTeamId": 20102,
+                "userIsHome": true,
+                "HasExtraTime": true,
+                "HasPenalty": true,
+                "matchRoundName": "cup_round3",
+                "difficulty": [4.5,4.5,4.5,4.5,5],
+                "duration": 360,
+                "matchName": "Easter_Event_Title",
+                "matchRoundNameParam": null
+            },
+        "10": {
+                "homeTeamId": 201,
+                "awayTeamId": 20105,
+                "userIsHome": true,
+                "HasExtraTime": true,
+                "HasPenalty": true,
+                "matchRoundName": "round",
+                "difficulty": [3.5,4,4,4.5,5.5],
+                "duration": 360,
+                "matchName": "Spanish_Draft_Title",
+                "matchRoundNameParam": null
+            },
+        "11": {
+                "homeTeamId": 201,
+                "awayTeamId": 20104,
+                "userIsHome": true,
+                "HasExtraTime": true,
+                "HasPenalty": true,
+                "matchRoundName": "round",
+                "difficulty": [4,4.5,5,5.5,5.5],
+                "duration": 360,
+                "matchName": "Spanish_Draft_Title",
+                "matchRoundNameParam": null
+            },
+        "12": {
+                "homeTeamId": 201,
+                "awayTeamId": 20106,
+                "userIsHome": true,
+                "HasExtraTime": true,
+                "HasPenalty": true,
+                "matchRoundName": "round",
+                "difficulty": [4.5,5,5.5,6,6],
+                "duration": 360,
+                "matchName": "Spanish_Draft_Title",
+                "matchRoundNameParam": null
+            },
+        "13": {
+                "homeTeamId": 201,
+                "awayTeamId": 20119,
+                "userIsHome": true,
+                "HasExtraTime": true,
+                "HasPenalty": true,
+                "matchRoundName": "round",
+                "difficulty": [3.5,4,4,4.5,5.5],
+                "duration": 360,
+                "matchName": "Spanish_Draft_Title",
+                "matchRoundNameParam": null
+            },
+        "14": {
+                "homeTeamId": 201,
+                "awayTeamId": 20107,
+                "userIsHome": true,
+                "HasExtraTime": true,
+                "HasPenalty": true,
+                "matchRoundName": "round",
+                "difficulty": [4,4.5,5,5.5,5.5],
+                "duration": 360,
+                "matchName": "Spanish_Draft_Title",
+                "matchRoundNameParam": null
+            },
+        "15": {
+                "homeTeamId": 201,
+                "awayTeamId": 20108,
+                "userIsHome": true,
+                "HasExtraTime": true,
+                "HasPenalty": true,
+                "matchRoundName": "round",
+                "difficulty": [4.5,5,5.5,6,6],
+                "duration": 360,
+                "matchName": "Spanish_Draft_Title",
+                "matchRoundNameParam": null
+            },
+        "16": {
+                "homeTeamId": 201,
+                "awayTeamId": 20371,
+                "userIsHome": true,
+                "HasExtraTime": true,
+                "HasPenalty": true,
+                "matchRoundName": "round",
+                "difficulty": [3.5,4,4,4.5,5.5],
+                "duration": 360,
+                "matchName": "Spanish_Draft_Title",
+                "matchRoundNameParam": null
+            },
+        "17": {
+                "homeTeamId": 201,
+                "awayTeamId": 20120,
+                "userIsHome": true,
+                "HasExtraTime": true,
+                "HasPenalty": true,
+                "matchRoundName": "round",
+                "difficulty": [4,4.5,5,5.5,5.5],
+                "duration": 360,
+                "matchName": "Spanish_Draft_Title",
+                "matchRoundNameParam": null
+            },
+        "18": {
+                "homeTeamId": 201,
+                "awayTeamId": 20113,
+                "userIsHome": true,
+                "HasExtraTime": true,
+                "HasPenalty": true,
+                "matchRoundName": "round",
+                "difficulty": [4.5,5,5.5,6,6],
+                "duration": 360,
+                "matchName": "Spanish_Draft_Title",
+                "matchRoundNameParam": null
+            },
+        "19": {
+                "homeTeamId": 201,
+                "awayTeamId": 20103,
+                "userIsHome": true,
+                "HasExtraTime": true,
+                "HasPenalty": true,
+                "matchRoundName": "round",
+                "difficulty": [5,5.5,6,6,6.5],
+                "duration": 360,
+                "matchName": "Spanish_Draft_Title",
+                "matchRoundNameParam": null
+            },
+        "20": {
+                "homeTeamId": 201,
+                "awayTeamId": 20101,
+                "userIsHome": true,
+                "HasExtraTime": true,
+                "HasPenalty": true,
+                "matchRoundName": "round",
+                "difficulty": [5,5.5,6,6,6.5],
+                "duration": 360,
+                "matchName": "Spanish_Draft_Title",
+                "matchRoundNameParam": null
+            },
+        "21": {
+                "homeTeamId": 201,
+                "awayTeamId": 20102,
+                "userIsHome": true,
+                "HasExtraTime": true,
+                "HasPenalty": true,
+                "matchRoundName": "round",
+                "difficulty": [5,5.5,6,6,6.5],
+                "duration": 360,
+                "matchName": "Spanish_Draft_Title",
+                "matchRoundNameParam": null
+            },
+        "22": {
+                "homeTeamId": 206,
+                "awayTeamId": 20127,
+                "userIsHome": true,
+                "HasExtraTime": true,
+                "HasPenalty": true,
+                "matchRoundName": "cup_round3",
+                "difficulty": [4.5,4.5,4.5,4.5,4.5],
+                "duration": 360,
+                "matchName": "YoungTalent_Event_Title",
+                "matchRoundNameParam": null
+            },
+        "23": {
+                "homeTeamId": 206,
+                "awayTeamId": 20031,
+                "userIsHome": true,
+                "HasExtraTime": true,
+                "HasPenalty": true,
+                "matchRoundName": "cup_round3",
+                "difficulty": [4.5,4.5,4.5,4.5,4.5],
+                "duration": 360,
+                "matchName": "YoungTalent_Event_Title",
+                "matchRoundNameParam": null
+            },	
+        "24": {
+                "homeTeamId": 206,
+                "awayTeamId": 20103,
+                "userIsHome": true,
+                "HasExtraTime": true,
+                "HasPenalty": true,
+                "matchRoundName": "cup_round3",
+                "difficulty": [4.5,4.5,4.5,4.5,4.5],
+                "duration": 360,
+                "matchName": "YoungTalent_Event_Title",
+                "matchRoundNameParam": null
+            },
+        "25": {
+                "homeTeamId": 206,
+                "awayTeamId": 20077,
+                "userIsHome": true,
+                "HasExtraTime": true,
+                "HasPenalty": true,
+                "matchRoundName": "cup_round3",
+                "difficulty": [3,3,3,3,4.5],
+                "duration": 360,
+                "matchName": "YoungTalent_Event_Title",
+                "matchRoundNameParam": null
+            },
+        "26": {
+                "homeTeamId": 206,
+                "awayTeamId": 20027,
+                "userIsHome": true,
+                "HasExtraTime": true,
+                "HasPenalty": true,
+                "matchRoundName": "cup_round3",
+                "difficulty": [3.5,3.5,3.5,3.5,4.5],
+                "duration": 360,
+                "matchName": "YoungTalent_Event_Title",
+                "matchRoundNameParam": null
+            },
+        "27": {
+                "homeTeamId": 206,
+                "awayTeamId": 20102,
+                "userIsHome": true,
+                "HasExtraTime": true,
+                "HasPenalty": true,
+                "matchRoundName": "cup_round3",
+                "difficulty": [4,4,4,4,4.5],
+                "duration": 360,
+                "matchName": "YoungTalent_Event_Title",
+                "matchRoundNameParam": null
+            },
+        "28": {
+                "homeTeamId": 206,
+                "awayTeamId": 20078,
+                "userIsHome": true,
+                "HasExtraTime": true,
+                "HasPenalty": true,
+                "matchRoundName": "cup_round3",
+                "difficulty": [3.5,3.5,3.5,3.5,4.5],
+                "duration": 360,
+                "matchName": "YoungTalent_Event_Title",
+                "matchRoundNameParam": null
+            },
+        "29": {
+                "homeTeamId": 206,
+                "awayTeamId": 20026,
+                "userIsHome": true,
+                "HasExtraTime": true,
+                "HasPenalty": true,
+                "matchRoundName": "cup_round3",
+                "difficulty": [4,4,4,4,4.5],
+                "duration": 360,
+                "matchName": "YoungTalent_Event_Title",
+                "matchRoundNameParam": null
+            },
+        "30": {
+                "homeTeamId": 206,
+                "awayTeamId": 20101,
+                "userIsHome": true,
+                "HasExtraTime": true,
+                "HasPenalty": true,
+                "matchRoundName": "cup_round3",
+                "difficulty": [4,4,4,4,5],
+                "duration": 360,
+                "matchName": "YoungTalent_Event_Title",
+                "matchRoundNameParam": null
+            },
+        "31": {
+                "homeTeamId": 206,
+                "awayTeamId": 20126,
+                "userIsHome": true,
+                "HasExtraTime": true,
+                "HasPenalty": true,
+                "matchRoundName": "cup_round3",
+                "difficulty": [4,4,4,4.5,5],
+                "duration": 360,
+                "matchName": "YoungTalent_Event_Title",
+                "matchRoundNameParam": null
+            },
+        "32": {
+                "homeTeamId": 206,
+                "awayTeamId": 20030,
+                "userIsHome": true,
+                "HasExtraTime": true,
+                "HasPenalty": true,
+                "matchRoundName": "cup_round3",
+                "difficulty": [4.5,4.5,4.5,4.5,5],
+                "duration": 360,
+                "matchName": "YoungTalent_Event_Title",
+                "matchRoundNameParam": null
+            },
+        "33": {
+                "homeTeamId": 206,
+                "awayTeamId": 20051,
+                "userIsHome": true,
+                "HasExtraTime": true,
+                "HasPenalty": true,
+                "matchRoundName": "cup_round3",
+                "difficulty": [5,5,5,5,5],
+                "duration": 360,
+                "matchName": "YoungTalent_Event_Title",
+                "matchRoundNameParam": null
+            }		
+    }
+}

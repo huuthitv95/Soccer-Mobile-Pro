@@ -1,0 +1,1 @@
+[assembly: global::System.Reflection.AssemblyVersion("4.0.0.0")]

@@ -1,0 +1,767 @@
+﻿<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Redeem With Match Config Tool</title>
+  <style>
+    :root {
+      color-scheme: light;
+      --bg: #f5f7fb;
+      --panel: #ffffff;
+      --text: #1d2633;
+      --muted: #667085;
+      --line: #d7deea;
+      --accent: #1f7a8c;
+      --accent-2: #d0473e;
+      --ok: #277a45;
+      --warn: #a15c00;
+    }
+
+    * {
+      box-sizing: border-box;
+    }
+
+    body {
+      margin: 0;
+      min-height: 100vh;
+      background: var(--bg);
+      color: var(--text);
+      font-family: Arial, "Microsoft YaHei", sans-serif;
+      font-size: 14px;
+      letter-spacing: 0;
+    }
+
+    header {
+      padding: 18px 24px 12px;
+      border-bottom: 1px solid var(--line);
+      background: var(--panel);
+    }
+
+    h1 {
+      margin: 0 0 6px;
+      font-size: 22px;
+      font-weight: 700;
+    }
+
+    .subtle {
+      color: var(--muted);
+      line-height: 1.5;
+    }
+
+    main {
+      width: min(1320px, 100%);
+      margin: 0 auto;
+      padding: 18px 24px 28px;
+    }
+
+    .toolbar,
+    .output-bar {
+      display: flex;
+      flex-wrap: wrap;
+      align-items: center;
+      gap: 10px;
+      margin-bottom: 14px;
+    }
+
+    .workspace {
+      display: grid;
+      grid-template-columns: minmax(260px, 1fr) minmax(260px, 1fr) minmax(320px, 0.95fr);
+      gap: 14px;
+      align-items: start;
+    }
+
+    section {
+      background: var(--panel);
+      border: 1px solid var(--line);
+      border-radius: 8px;
+      padding: 14px;
+      min-width: 0;
+    }
+
+    h2 {
+      margin: 0 0 12px;
+      font-size: 16px;
+      font-weight: 700;
+    }
+
+    label {
+      display: block;
+      margin: 10px 0 6px;
+      color: var(--muted);
+      font-size: 12px;
+      font-weight: 700;
+      text-transform: uppercase;
+    }
+
+    input,
+    textarea,
+    button {
+      font: inherit;
+    }
+
+    input[type="text"],
+    input[type="number"],
+    input[type="datetime-local"],
+    textarea {
+      width: 100%;
+      border: 1px solid var(--line);
+      border-radius: 6px;
+      padding: 9px 10px;
+      background: #fff;
+      color: var(--text);
+      outline: none;
+    }
+
+    input:focus,
+    textarea:focus {
+      border-color: var(--accent);
+      box-shadow: 0 0 0 3px rgba(31, 122, 140, 0.14);
+    }
+
+    input[type="file"] {
+      max-width: 330px;
+    }
+
+    button {
+      border: 1px solid var(--accent);
+      border-radius: 6px;
+      padding: 8px 12px;
+      background: var(--accent);
+      color: #fff;
+      cursor: pointer;
+      min-height: 36px;
+    }
+
+    button.secondary {
+      background: #fff;
+      color: var(--accent);
+    }
+
+    button.warn {
+      border-color: var(--accent-2);
+      background: var(--accent-2);
+    }
+
+    button:disabled {
+      cursor: not-allowed;
+      opacity: 0.55;
+    }
+
+    .selected {
+      display: grid;
+      grid-template-columns: 78px 1fr;
+      gap: 8px;
+      margin: 10px 0 8px;
+      padding: 10px;
+      border: 1px solid var(--line);
+      border-radius: 6px;
+      background: #f8fafc;
+    }
+
+    .selected strong {
+      font-size: 20px;
+      color: var(--accent);
+    }
+
+    .results {
+      margin-top: 10px;
+      max-height: 420px;
+      overflow: auto;
+      border: 1px solid var(--line);
+      border-radius: 6px;
+    }
+
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      table-layout: fixed;
+    }
+
+    th,
+    td {
+      padding: 8px;
+      border-bottom: 1px solid var(--line);
+      text-align: left;
+      vertical-align: top;
+      word-break: break-word;
+    }
+
+    th {
+      position: sticky;
+      top: 0;
+      z-index: 1;
+      background: #eef3f8;
+      font-size: 12px;
+      color: var(--muted);
+    }
+
+    tr:hover td {
+      background: #f2f8fa;
+    }
+
+    .team-row {
+      cursor: pointer;
+    }
+
+    .id-cell {
+      width: 72px;
+      color: var(--accent);
+      font-weight: 700;
+    }
+
+    .abbr-cell {
+      width: 64px;
+      font-weight: 700;
+    }
+
+    .grid-2 {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 10px;
+    }
+
+    .inline-input {
+      display: grid;
+      grid-template-columns: minmax(0, 1fr) auto;
+      gap: 8px;
+      align-items: center;
+    }
+
+    .status {
+      min-height: 20px;
+      color: var(--muted);
+    }
+
+    .status.ok {
+      color: var(--ok);
+    }
+
+    .status.warn {
+      color: var(--warn);
+    }
+
+    .output {
+      margin-top: 14px;
+    }
+
+    textarea {
+      min-height: 76px;
+      resize: vertical;
+      font-family: Consolas, Monaco, monospace;
+    }
+
+    .preview {
+      margin-top: 10px;
+      padding: 10px;
+      border-radius: 6px;
+      background: #f8fafc;
+      border: 1px solid var(--line);
+      line-height: 1.55;
+    }
+
+    .preview b {
+      color: var(--accent);
+    }
+
+    @media (max-width: 980px) {
+      .workspace {
+        grid-template-columns: 1fr;
+      }
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <h1>Redeem With Match Config Tool</h1>
+    <div class="subtle">输出格式：homeid,awayid,matchTimestamp,reward,code,startTimestamp,endTimestamp</div>
+  </header>
+
+  <main>
+    <div class="toolbar">
+      <input id="csvFile" type="file" accept=".csv,text/csv">
+      <button id="loadDefault" type="button" class="secondary">加载默认 Teams.csv</button>
+      <button id="swapTeams" type="button" class="secondary">交换主客队</button>
+      <span id="csvStatus" class="status">尚未加载 Teams.csv</span>
+    </div>
+
+    <div class="workspace">
+      <section>
+        <h2>主队</h2>
+        <label for="homeSearch">搜索队伍</label>
+        <input id="homeSearch" type="text" placeholder="输入 id、名称、缩写、国家或城市">
+        <div class="selected">
+          <strong id="homeId">-</strong>
+          <div>
+            <div id="homeName">未选择</div>
+            <div id="homeMeta" class="subtle">请选择主队</div>
+          </div>
+        </div>
+        <div class="results">
+          <table>
+            <thead>
+              <tr><th class="id-cell">ID</th><th>Team</th><th class="abbr-cell">Abbr</th></tr>
+            </thead>
+            <tbody id="homeResults"></tbody>
+          </table>
+        </div>
+      </section>
+
+      <section>
+        <h2>客队</h2>
+        <label for="awaySearch">搜索队伍</label>
+        <input id="awaySearch" type="text" placeholder="输入 id、名称、缩写、国家或城市">
+        <div class="selected">
+          <strong id="awayId">-</strong>
+          <div>
+            <div id="awayName">未选择</div>
+            <div id="awayMeta" class="subtle">请选择客队</div>
+          </div>
+        </div>
+        <div class="results">
+          <table>
+            <thead>
+              <tr><th class="id-cell">ID</th><th>Team</th><th class="abbr-cell">Abbr</th></tr>
+            </thead>
+            <tbody id="awayResults"></tbody>
+          </table>
+        </div>
+      </section>
+
+      <section>
+        <h2>兑换配置</h2>
+        <label for="matchTime">比赛时间</label>
+        <input id="matchTime" type="datetime-local">
+
+        <div class="grid-2">
+          <div>
+            <label for="startTime">兑换开始</label>
+            <input id="startTime" type="datetime-local">
+          </div>
+          <div>
+            <label for="endTime">兑换结束</label>
+            <input id="endTime" type="datetime-local">
+          </div>
+        </div>
+
+        <div class="grid-2">
+          <div>
+            <label for="reward">奖励 Points</label>
+            <input id="reward" type="number" min="1" step="1" value="20">
+          </div>
+          <div>
+            <label for="code">兑换码</label>
+            <div class="inline-input">
+              <input id="code" type="text" maxlength="8" placeholder="8位 A-Z/0-9">
+              <button id="generateCode" type="button" class="secondary">生成</button>
+            </div>
+          </div>
+        </div>
+
+        <div class="output">
+          <div class="output-bar">
+            <button id="copyOutput" type="button">复制配置</button>
+            <button id="clearOutput" type="button" class="warn">清空</button>
+            <span id="outputStatus" class="status"></span>
+          </div>
+          <textarea id="output" readonly></textarea>
+          <div id="preview" class="preview"></div>
+        </div>
+      </section>
+    </div>
+  </main>
+
+  <script>
+    const state = {
+      teams: [],
+      home: null,
+      away: null,
+    };
+    const CODE_LENGTH = 8;
+    const CODE_CHARS = 'ABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789';
+
+    const csvFile = document.getElementById('csvFile');
+    const codeInput = document.getElementById('code');
+    const csvStatus = document.getElementById('csvStatus');
+    const outputStatus = document.getElementById('outputStatus');
+    const output = document.getElementById('output');
+    const preview = document.getElementById('preview');
+
+    document.getElementById('loadDefault').addEventListener('click', loadDefaultTeams);
+    document.getElementById('swapTeams').addEventListener('click', swapTeams);
+    document.getElementById('generateCode').addEventListener('click', () => generateCode(true));
+    document.getElementById('copyOutput').addEventListener('click', copyOutput);
+    document.getElementById('clearOutput').addEventListener('click', clearForm);
+    csvFile.addEventListener('change', onCsvFileChanged);
+
+    bindSearch('home');
+    bindSearch('away');
+    ['matchTime', 'startTime', 'endTime', 'reward'].forEach(id => {
+      document.getElementById(id).addEventListener('input', updateOutput);
+    });
+    codeInput.addEventListener('input', () => {
+      const normalizedCode = normalizeCode(codeInput.value);
+      if (codeInput.value !== normalizedCode) {
+        codeInput.value = normalizedCode;
+      }
+      updateOutput();
+    });
+
+    setDefaultTimes();
+    generateCode(false);
+    updateOutput();
+    loadDefaultTeams();
+
+    function bindSearch(side) {
+      document.getElementById(side + 'Search').addEventListener('input', () => renderResults(side));
+    }
+
+    async function loadDefaultTeams() {
+      try {
+        const response = await fetch('../../Teams.csv', { cache: 'no-store' });
+        if (!response.ok) {
+          throw new Error(response.status + ' ' + response.statusText);
+        }
+        loadTeamsCsv(await response.text(), '默认 Teams.csv');
+      } catch (error) {
+        setCsvStatus('无法自动加载 Teams.csv，请手动选择文件', 'warn');
+      }
+    }
+
+    function onCsvFileChanged(event) {
+      const file = event.target.files && event.target.files[0];
+      if (!file) {
+        return;
+      }
+      const reader = new FileReader();
+      reader.onload = () => loadTeamsCsv(reader.result, file.name);
+      reader.onerror = () => setCsvStatus('读取 Teams.csv 失败', 'warn');
+      reader.readAsText(file, 'utf-8');
+    }
+
+    function loadTeamsCsv(text, sourceName) {
+      const rows = parseCsv(text).filter(row => row.some(cell => cell.trim() !== ''));
+      if (rows.length < 2) {
+        setCsvStatus('Teams.csv 没有有效数据', 'warn');
+        return;
+      }
+
+      const headers = rows[0].map(header => header.trim());
+      const headerMap = new Map(headers.map((header, index) => [header.toLowerCase(), index]));
+      const get = (row, name) => {
+        const index = headerMap.get(name.toLowerCase());
+        return index == null ? '' : (row[index] || '').trim();
+      };
+
+      state.teams = rows.slice(1).map(row => ({
+        id: Number(get(row, 'id')),
+        name: get(row, 'name'),
+        flag: get(row, 'flag'),
+        nameAbbr: get(row, 'nameAbbr'),
+        nation: get(row, 'Nation'),
+        city: get(row, 'City_Name'),
+        classification: get(row, 'classification'),
+        realname: get(row, 'realname'),
+        realnameAbbr: get(row, 'realnameAbbr'),
+      })).filter(team => Number.isFinite(team.id));
+
+      setCsvStatus(`${sourceName} 已加载 ${state.teams.length} 支队伍`, 'ok');
+      renderResults('home');
+      renderResults('away');
+    }
+
+    function parseCsv(text) {
+      const rows = [];
+      let row = [];
+      let field = '';
+      let inQuotes = false;
+
+      for (let i = 0; i < text.length; i++) {
+        const char = text[i];
+        const next = text[i + 1];
+
+        if (char === '"') {
+          if (inQuotes && next === '"') {
+            field += '"';
+            i++;
+          } else {
+            inQuotes = !inQuotes;
+          }
+        } else if (char === ',' && !inQuotes) {
+          row.push(field);
+          field = '';
+        } else if ((char === '\n' || char === '\r') && !inQuotes) {
+          if (char === '\r' && next === '\n') {
+            i++;
+          }
+          row.push(field);
+          rows.push(row);
+          row = [];
+          field = '';
+        } else {
+          field += char;
+        }
+      }
+
+      row.push(field);
+      rows.push(row);
+      return rows;
+    }
+
+    function renderResults(side) {
+      const tbody = document.getElementById(side + 'Results');
+      tbody.innerHTML = '';
+      const query = document.getElementById(side + 'Search').value;
+      const matches = searchTeams(query).slice(0, 80);
+
+      for (const team of matches) {
+        const tr = document.createElement('tr');
+        tr.className = 'team-row';
+        tr.innerHTML = `
+          <td class="id-cell">${team.id}</td>
+          <td>${escapeHtml(displayName(team))}<div class="subtle">${escapeHtml(team.nation || team.classification || '')}</div></td>
+          <td class="abbr-cell">${escapeHtml(team.nameAbbr || team.realnameAbbr || '')}</td>`;
+        tr.addEventListener('click', () => selectTeam(side, team));
+        tbody.appendChild(tr);
+      }
+    }
+
+    function searchTeams(query) {
+      if (!state.teams.length) {
+        return [];
+      }
+      const normalizedQuery = normalize(query);
+      if (!normalizedQuery) {
+        return state.teams.slice(0, 80);
+      }
+
+      return state.teams.map(team => ({ team, score: scoreTeam(team, normalizedQuery) }))
+        .filter(item => item.score > 0)
+        .sort((a, b) => b.score - a.score || a.team.id - b.team.id)
+        .map(item => item.team);
+    }
+
+    function scoreTeam(team, query) {
+      const fields = [team.id, team.name, team.flag, team.nameAbbr, team.nation, team.city, team.classification, team.realname, team.realnameAbbr]
+        .map(value => normalize(String(value || '')))
+        .filter(Boolean);
+
+      let best = 0;
+      for (const field of fields) {
+        if (field === query) {
+          best = Math.max(best, 1000);
+        } else if (field.startsWith(query)) {
+          best = Math.max(best, 850 - Math.min(field.length - query.length, 160));
+        } else {
+          const index = field.indexOf(query);
+          if (index >= 0) {
+            best = Math.max(best, 700 - index * 6 - Math.min(field.length - query.length, 160));
+          } else {
+            const fuzzy = fuzzySubsequenceScore(field, query);
+            best = Math.max(best, fuzzy);
+          }
+        }
+      }
+      return best;
+    }
+
+    function fuzzySubsequenceScore(field, query) {
+      let fieldIndex = 0;
+      let gaps = 0;
+      for (let queryIndex = 0; queryIndex < query.length; queryIndex++) {
+        const foundAt = field.indexOf(query[queryIndex], fieldIndex);
+        if (foundAt < 0) {
+          return 0;
+        }
+        gaps += foundAt - fieldIndex;
+        fieldIndex = foundAt + 1;
+      }
+      return Math.max(0, 420 - gaps * 16 - Math.abs(field.length - query.length));
+    }
+
+    function selectTeam(side, team) {
+      state[side] = team;
+      document.getElementById(side + 'Id').textContent = team.id;
+      document.getElementById(side + 'Name').textContent = displayName(team);
+      document.getElementById(side + 'Meta').textContent = [team.nameAbbr, team.nation, team.classification].filter(Boolean).join(' / ');
+      updateOutput();
+    }
+
+    function swapTeams() {
+      const home = state.home;
+      state.home = state.away;
+      state.away = home;
+      refreshSelected('home');
+      refreshSelected('away');
+      updateOutput();
+    }
+
+    function refreshSelected(side) {
+      const team = state[side];
+      document.getElementById(side + 'Id').textContent = team ? team.id : '-';
+      document.getElementById(side + 'Name').textContent = team ? displayName(team) : '未选择';
+      document.getElementById(side + 'Meta').textContent = team ? [team.nameAbbr, team.nation, team.classification].filter(Boolean).join(' / ') : `请选择${side === 'home' ? '主队' : '客队'}`;
+    }
+
+    function updateOutput() {
+      const errors = [];
+      const homeId = state.home && state.home.id;
+      const awayId = state.away && state.away.id;
+      const matchTimestamp = toUnixSeconds('matchTime');
+      const startTimestamp = toUnixSeconds('startTime');
+      const endTimestamp = toUnixSeconds('endTime');
+      const reward = Number(document.getElementById('reward').value);
+      const code = normalizeCode(codeInput.value);
+      if (codeInput.value !== code) {
+        codeInput.value = code;
+      }
+
+      if (!homeId) errors.push('主队');
+      if (!awayId) errors.push('客队');
+      if (!matchTimestamp) errors.push('比赛时间');
+      if (!startTimestamp) errors.push('兑换开始');
+      if (!endTimestamp) errors.push('兑换结束');
+      if (!Number.isInteger(reward) || reward <= 0) errors.push('奖励');
+      if (!/^[A-Z0-9]{8}$/.test(code)) errors.push('兑换码需为8位A-Z/0-9');
+      if (startTimestamp && endTimestamp && startTimestamp > endTimestamp) errors.push('兑换时间顺序');
+
+      if (errors.length) {
+        output.value = '';
+        setOutputStatus('待补全：' + errors.join('、'), 'warn');
+      } else {
+        output.value = [homeId, awayId, matchTimestamp, reward, code, startTimestamp, endTimestamp].join(',');
+        setOutputStatus('配置已生成', 'ok');
+      }
+
+      updatePreview(matchTimestamp, startTimestamp, endTimestamp, reward, code);
+    }
+
+    function updatePreview(matchTimestamp, startTimestamp, endTimestamp, reward, code) {
+      const home = state.home ? `${displayName(state.home)} (${state.home.id})` : '-';
+      const away = state.away ? `${displayName(state.away)} (${state.away.id})` : '-';
+      preview.innerHTML = `
+        <div><b>Match</b> ${escapeHtml(home)} vs ${escapeHtml(away)}</div>
+        <div><b>Match Time</b> ${escapeHtml(formatUnix(matchTimestamp))}</div>
+        <div><b>Redeem</b> ${escapeHtml(formatUnix(startTimestamp))} - ${escapeHtml(formatUnix(endTimestamp))}</div>
+        <div><b>Reward</b> ${Number.isFinite(reward) ? reward : '-'} Points</div>
+        <div><b>Code</b> ${escapeHtml(code || '-')}</div>`;
+    }
+
+    function toUnixSeconds(id) {
+      const value = document.getElementById(id).value;
+      if (!value) {
+        return 0;
+      }
+      const time = new Date(value).getTime();
+      if (!Number.isFinite(time)) {
+        return 0;
+      }
+      return Math.floor(time / 1000);
+    }
+
+    function formatUnix(timestamp) {
+      if (!timestamp) {
+        return '-';
+      }
+      return new Date(timestamp * 1000).toLocaleString();
+    }
+
+    function setDefaultTimes() {
+      const now = new Date();
+      now.setMinutes(0, 0, 0);
+      const match = new Date(now.getTime() + 24 * 60 * 60 * 1000);
+      const start = new Date(match.getTime() + 3 * 60 * 60 * 1000);
+      const end = new Date(start.getTime() + 48 * 60 * 60 * 1000);
+      document.getElementById('matchTime').value = toDateTimeLocal(match);
+      document.getElementById('startTime').value = toDateTimeLocal(start);
+      document.getElementById('endTime').value = toDateTimeLocal(end);
+    }
+
+    function toDateTimeLocal(date) {
+      const pad = value => String(value).padStart(2, '0');
+      return `${date.getFullYear()}-${pad(date.getMonth() + 1)}-${pad(date.getDate())}T${pad(date.getHours())}:${pad(date.getMinutes())}`;
+    }
+
+    function generateCode(shouldUpdate) {
+      let code = '';
+      const cryptoObject = window.crypto || window.msCrypto;
+      if (cryptoObject && cryptoObject.getRandomValues) {
+        const values = new Uint32Array(CODE_LENGTH);
+        cryptoObject.getRandomValues(values);
+        for (const value of values) {
+          code += CODE_CHARS[value % CODE_CHARS.length];
+        }
+      } else {
+        for (let i = 0; i < CODE_LENGTH; i++) {
+          code += CODE_CHARS[Math.floor(Math.random() * CODE_CHARS.length)];
+        }
+      }
+      codeInput.value = code;
+      if (shouldUpdate) {
+        updateOutput();
+      }
+    }
+
+    async function copyOutput() {
+      if (!output.value) {
+        setOutputStatus('没有可复制的配置', 'warn');
+        return;
+      }
+
+      try {
+        await navigator.clipboard.writeText(output.value);
+        setOutputStatus('已复制', 'ok');
+      } catch (error) {
+        output.select();
+        document.execCommand('copy');
+        setOutputStatus('已复制', 'ok');
+      }
+    }
+
+    function clearForm() {
+      state.home = null;
+      state.away = null;
+      refreshSelected('home');
+      refreshSelected('away');
+      document.getElementById('homeSearch').value = '';
+      document.getElementById('awaySearch').value = '';
+      document.getElementById('reward').value = 20;
+      codeInput.value = '';
+      setDefaultTimes();
+      renderResults('home');
+      renderResults('away');
+      updateOutput();
+    }
+
+    function displayName(team) {
+      const raw = team.realname || team.name || team.flag || String(team.id);
+      return raw.replace(/^Str_National_/, '').replace(/_/g, ' ');
+    }
+
+    function normalizeCode(value) {
+      return value.toUpperCase().replace(/[^A-Z0-9]/g, '').slice(0, CODE_LENGTH);
+    }
+
+    function normalize(value) {
+      return value.toLowerCase()
+        .normalize('NFD')
+        .replace(/[\u0300-\u036f]/g, '')
+        .replace(/[^a-z0-9]+/g, '');
+    }
+
+    function escapeHtml(value) {
+      return String(value).replace(/[&<>"]/g, char => ({ '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;' }[char]));
+    }
+
+    function setCsvStatus(message, type) {
+      csvStatus.textContent = message;
+      csvStatus.className = 'status ' + (type || '');
+    }
+
+    function setOutputStatus(message, type) {
+      outputStatus.textContent = message;
+      outputStatus.className = 'status ' + (type || '');
+    }
+  </script>
+</body>
+</html>

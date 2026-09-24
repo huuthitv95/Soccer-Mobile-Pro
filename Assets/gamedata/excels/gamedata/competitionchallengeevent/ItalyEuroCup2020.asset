@@ -1,0 +1,304 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6807cc7b117680406abaa7e74e397248, type: 3}
+  m_Name: ItalyEuroCup2020
+  m_EditorClassIdentifier:
+  Id: 2602
+  MissionCount: 9
+  FixedMissionByRound:
+  - missions: 0000000009000000110000001b00000022000000270000002b0000003200000036000000
+  - missions: 010000000a000000120000001c00000023000000280000002c0000003300000037000000
+  - missions: 020000000b000000130000001d00000024000000290000002d0000003400000038000000
+  - missions: 030000000c000000140000001e000000250000002a0000002e0000003500000039000000
+  RandomMissionList:
+  - missions: 030000000400000005000000060000000700000008000000
+  - missions: 0d0000000e0000000f00000010000000
+  - missions: 15000000160000001700000018000000190000001a000000
+  - missions: 1d0000001e0000001f0000002000000021000000
+  - missions: 2200000023000000240000002500000026000000
+  - missions: 2700000028000000290000002a000000
+  - missions: 2e0000002f0000003000000031000000
+  - missions: 32000000330000003400000035000000
+  - missions: 360000003700000038000000390000003a0000003b000000
+  AllMissions:
+  - type: 7
+    targetPointSet: 19000000
+    order: 1
+    id: 0
+  - type: 2
+    targetPointSet: 08000000
+    order: 1
+    id: 1
+  - type: 14
+    targetPointSet: 01000000
+    order: 1
+    id: 2
+  - type: 13
+    targetPointSet: 01000000
+    order: 1
+    id: 3
+  - type: 38
+    targetPointSet: 28000000
+    order: 1
+    id: 4
+  - type: 39
+    targetPointSet: 19000000
+    order: 1
+    id: 5
+  - type: 7
+    targetPointSet: 1e000000
+    order: 1
+    id: 6
+  - type: 2
+    targetPointSet: 0a000000
+    order: 1
+    id: 7
+  - type: 14
+    targetPointSet: 02000000
+    order: 1
+    id: 8
+  - type: 8
+    targetPointSet: 96000000
+    order: 2
+    id: 9
+  - type: 43
+    targetPointSet: 32000000
+    order: 2
+    id: 10
+  - type: 15
+    targetPointSet: 46000000
+    order: 2
+    id: 11
+  - type: 16
+    targetPointSet: 37000000
+    order: 2
+    id: 12
+  - type: 8
+    targetPointSet: c8000000
+    order: 2
+    id: 13
+  - type: 43
+    targetPointSet: 46000000
+    order: 2
+    id: 14
+  - type: 15
+    targetPointSet: 55000000
+    order: 2
+    id: 15
+  - type: 16
+    targetPointSet: 3c000000
+    order: 2
+    id: 16
+  - type: 17
+    targetPointSet: 02000000
+    order: 3
+    id: 17
+  - type: 36
+    targetPointSet: 06000000
+    order: 3
+    id: 18
+  - type: 18
+    targetPointSet: 08000000
+    order: 3
+    id: 19
+  - type: 37
+    targetPointSet: 14000000
+    order: 3
+    id: 20
+  - type: 40
+    targetPointSet: 05000000
+    order: 3
+    id: 21
+  - type: 17
+    targetPointSet: 03000000
+    order: 3
+    id: 22
+  - type: 36
+    targetPointSet: 08000000
+    order: 3
+    id: 23
+  - type: 41
+    targetPointSet: 0f000000
+    order: 3
+    id: 24
+  - type: 18
+    targetPointSet: 0a000000
+    order: 3
+    id: 25
+  - type: 37
+    targetPointSet: 19000000
+    order: 3
+    id: 26
+  - type: 19
+    targetPointSet: 02000000
+    order: 4
+    id: 27
+  - type: 20
+    targetPointSet: 06000000
+    order: 4
+    id: 28
+  - type: 21
+    targetPointSet: 02000000
+    order: 4
+    id: 29
+  - type: 22
+    targetPointSet: 02000000
+    order: 4
+    id: 30
+  - type: 19
+    targetPointSet: 03000000
+    order: 4
+    id: 31
+  - type: 20
+    targetPointSet: 08000000
+    order: 4
+    id: 32
+  - type: 42
+    targetPointSet: 01000000
+    order: 4
+    id: 33
+  - type: 4
+    targetPointSet: 05000000
+    order: 5
+    id: 34
+  - type: 3
+    targetPointSet: 03000000
+    order: 5
+    id: 35
+  - type: 5
+    targetPointSet: 02000000
+    order: 5
+    id: 36
+  - type: 23
+    targetPointSet: 01000000
+    order: 5
+    id: 37
+  - type: 44
+    targetPointSet: 01000000
+    order: 5
+    id: 38
+  - type: 9
+    targetPointSet: 01000000
+    order: 6
+    id: 39
+  - type: 10
+    targetPointSet: 01000000
+    order: 6
+    id: 40
+  - type: 24
+    targetPointSet: 01000000
+    order: 6
+    id: 41
+  - type: 11
+    targetPointSet: 01000000
+    order: 6
+    id: 42
+  - type: 25
+    targetPointSet: 0a000000
+    order: 7
+    id: 43
+  - type: 26
+    targetPointSet: 08000000
+    order: 7
+    id: 44
+  - type: 27
+    targetPointSet: 05000000
+    order: 7
+    id: 45
+  - type: 28
+    targetPointSet: 02000000
+    order: 7
+    id: 46
+  - type: 25
+    targetPointSet: 0f000000
+    order: 7
+    id: 47
+  - type: 26
+    targetPointSet: 0a000000
+    order: 7
+    id: 48
+  - type: 27
+    targetPointSet: 03000000
+    order: 7
+    id: 49
+  - type: 6
+    targetPointSet: 03000000
+    order: 8
+    id: 50
+  - type: 29
+    targetPointSet: 03000000
+    order: 8
+    id: 51
+  - type: 30
+    targetPointSet: 01000000
+    order: 8
+    id: 52
+  - type: 31
+    targetPointSet: 01000000
+    order: 8
+    id: 53
+  - type: 32
+    targetPointSet: 01000000
+    order: 9
+    id: 54
+  - type: 33
+    targetPointSet: 01000000
+    order: 9
+    id: 55
+  - type: 34
+    targetPointSet: 01000000
+    order: 9
+    id: 56
+  - type: 35
+    targetPointSet: 01000000
+    order: 9
+    id: 57
+  - type: 46
+    targetPointSet: 01000000
+    order: 9
+    id: 58
+  - type: 45
+    targetPointSet: 01000000
+    order: 9
+    id: 59
+  competitionType: 0
+  competitionSpecificType: EuropeanCup
+  competitionId: 2020
+  stageReward:
+  - unlockPoint: 3
+    reward:
+    - times: 9999
+      reward:
+        type: 0
+        value: 400
+  - unlockPoint: 6
+    reward:
+    - times: 9999
+      reward:
+        type: 0
+        value: 600
+  - unlockPoint: 9
+    reward:
+    - times: 1
+      reward:
+        type: 1
+        value: 10937
+    - times: 4
+      reward:
+        type: 3
+        value: 1
+    - times: 9999
+      reward:
+        type: 0
+        value: 1000
+  PlayerRewardPool: ff070000000800000108000002080000030800000408000005080000
+  UserTeamId: 10937

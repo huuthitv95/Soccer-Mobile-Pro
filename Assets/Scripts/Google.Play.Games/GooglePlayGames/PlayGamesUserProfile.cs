@@ -1,0 +1,55 @@
+namespace GooglePlayGames
+{
+    public class PlayGamesUserProfile : global::UnityEngine.SocialPlatforms.IUserProfile
+    {
+        private string mDisplayName;
+        private string mPlayerId;
+        private string mAvatarUrl;
+        private bool mIsFriend;
+        private bool mImageLoading;
+        private global::UnityEngine.Texture2D mImage;
+        public string userName => null;
+        public string id => null;
+        public string gameId => null;
+        public bool isFriend => false;
+        public global::UnityEngine.SocialPlatforms.UserState state => global::UnityEngine.SocialPlatforms.UserState.Online;
+        public global::UnityEngine.Texture2D image => null;
+        public string AvatarURL => null;
+
+        internal PlayGamesUserProfile(string displayName, string playerId, string avatarUrl)
+        {
+        }
+
+        internal PlayGamesUserProfile(string displayName, string playerId, string avatarUrl, bool isFriend)
+        {
+        }
+
+        protected void ResetIdentity(string displayName, string playerId, string avatarUrl)
+        {
+        }
+
+        internal global::System.Collections.IEnumerator LoadImage()
+        {
+            return null;
+        }
+
+        public override bool Equals(object obj)
+        {
+            return false;
+        }
+
+        public override int GetHashCode()
+        {
+            return 0;
+        }
+
+        public override string ToString()
+        {
+            return null;
+        }
+
+        private void setAvatarUrl(string avatarUrl)
+        {
+        }
+    }
+}

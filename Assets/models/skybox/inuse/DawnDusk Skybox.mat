@@ -1,0 +1,57 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!21 &2100000
+Material:
+  serializedVersion: 8
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_Name: DawnDusk Skybox
+  m_Shader: {fileID: 104, guid: 0000000000000000f000000000000000, type: 0}
+  m_Parent: {fileID: 0}
+  m_ModifiedSerializedProperties: 0
+  m_ValidKeywords: []
+  m_InvalidKeywords: []
+  m_LightmapFlags: 4
+  m_EnableInstancingVariants: 0
+  m_DoubleSidedGI: 0
+  m_CustomRenderQueue: -1
+  stringTagMap: {}
+  disabledShaderPasses: []
+  m_LockedProperties:
+  m_SavedProperties:
+    serializedVersion: 3
+    m_TexEnvs:
+      _BackTex:
+        m_Texture: {fileID: 2800000, guid: 90917a1ed2762b644adecbed5d105c31, type: 3}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+      _DownTex:
+        m_Texture: {fileID: 2800000, guid: 56491fc1f9639494781a6dbcfd664a7e, type: 3}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+      _FrontTex:
+        m_Texture: {fileID: 2800000, guid: 184815f73a506f64bb34c5d80682c2a2, type: 3}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+      _LeftTex:
+        m_Texture: {fileID: 2800000, guid: 5a0ea8ebb45ff7944b6c66ce2b5c1514, type: 3}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+      _RightTex:
+        m_Texture: {fileID: 2800000, guid: 52ad16023a347e443be0266846ee336e, type: 3}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+      _UpTex:
+        m_Texture: {fileID: 2800000, guid: 224758e97e90319499e27c0f80557c17, type: 3}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    m_Ints: {}
+    m_Floats:
+      _Exposure: 1.23
+      _Rotation: 54
+    m_Colors:
+      _Color: {r: 1, g: 1, b: 1, a: 1}
+      _Tint: {r: 1, g: 0.80399644, b: 0.740566, a: 0.5}
+  m_BuildTextureStacks: []

@@ -1,0 +1,70 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!1120 &112000000
+LightingDataAsset:
+  serializedVersion: 4
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_Name: LightingData
+  m_Scene: {fileID: 102900000, guid: bd701e6f662e4394a9782dd67ce67e1d, type: 3}
+  m_Lightmaps: []
+  m_AOTextures: []
+  m_LightmapsCacheFiles: []
+  m_LightProbes: {fileID: 0}
+  m_LightmapsMode: 1
+  m_BakedAmbientProbeInLinear:
+    sh[ 0]: 0.18154563
+    sh[ 1]: -0.00560501
+    sh[ 2]: 0.012756266
+    sh[ 3]: -0.0073643923
+    sh[ 4]: -0.00577931
+    sh[ 5]: 0.010010335
+    sh[ 6]: 0.0110395085
+    sh[ 7]: -0.012598325
+    sh[ 8]: 0.025929293
+    sh[ 9]: 0.22718851
+    sh[10]: 0.041207273
+    sh[11]: 0.020053528
+    sh[12]: -0.011575822
+    sh[13]: -0.009229992
+    sh[14]: 0.015988246
+    sh[15]: 0.015395213
+    sh[16]: -0.01835082
+    sh[17]: 0.03569456
+    sh[18]: 0.307405
+    sh[19]: 0.1263588
+    sh[20]: 0.03450667
+    sh[21]: -0.019919105
+    sh[22]: -0.016535154
+    sh[23]: 0.028643068
+    sh[24]: 0.01914252
+    sh[25]: -0.026520707
+    sh[26]: 0.04219854
+  m_LightmappedRendererData: []
+  m_LightmappedRendererDataIDs: []
+  m_EnlightenSceneMapping:
+    m_Renderers: []
+    m_Systems: []
+    m_Probesets: []
+    m_SystemAtlases: []
+    m_TerrainChunks: []
+  m_EnlightenSceneMappingRendererIDs: []
+  m_Lights:
+  - targetObject: 310
+    targetPrefab: 0
+  m_LightBakingOutputs:
+  - serializedVersion: 2
+    probeOcclusionLightIndex: -1
+    occlusionMaskChannel: -1
+    lightmapBakeMode:
+      lightmapBakeType: 4
+      mixedLightingMode: 2
+    isBaked: 0
+  m_BakedReflectionProbeCubemapCacheFiles: []
+  m_BakedReflectionProbeCubemaps:
+  - {fileID: 8900000, guid: 17d08b13e65916b4b98b80f451baf91f, type: 3}
+  m_BakedReflectionProbes: []
+  m_EnlightenData: 556e69747946530000000008352e782e7800323032322e332e3632663300000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000
+  m_EnlightenDataVersion: 112

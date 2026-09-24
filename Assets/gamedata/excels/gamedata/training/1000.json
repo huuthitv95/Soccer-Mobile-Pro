@@ -1,0 +1,131 @@
+{
+    "desc": "dribble",
+    "type": 1,
+    "ball_pos": [
+        -20.0,
+        0.0
+    ],
+    "poses1": [
+        -20.25,
+        0.0
+    ],
+    "poses2": [
+        54.0,
+        0.0
+    ],
+    "formation1": [],
+    "formation2": [],
+    "steps": [
+        {
+            "limitTime": -1,
+            "limitArea": [
+                0,
+                -25.0,
+                15.0,
+                -5.0,
+                5.0
+            ],
+            "playerActions1": [
+                0
+            ],
+            "playerActions2": [
+                0
+            ],
+            "objective": [
+                0,
+                0.0,
+                0.0,
+                3.0
+            ]
+        },
+        {
+            "limitTime": 3700,
+            "limitArea": [
+                0,
+                -5.0,
+                25.0,
+                -5.0,
+                5.0
+            ],
+            "playerActions1": [
+                0
+            ],
+            "playerActions2": [
+                0
+            ],
+            "objective": [
+                0,
+                20.0,
+                0.0,
+                3.0
+            ]
+        },
+        {
+            "limitTime": 4800,
+            "limitArea": [
+                2,
+                17,
+                -20,
+                15,
+                25,
+                0,
+                90
+            ],
+            "playerActions1": [
+                0
+            ],
+            "playerActions2": [
+                0
+            ],
+            "objective": [
+                0,
+                37.0,
+                -17.0,
+                3.0
+            ],
+            "intendedBallPosition": [
+                20.0,
+                0
+            ],
+            "limitAreaInitialPos":[
+                2,
+                17,
+                -20,
+                15,
+                25,
+                0,
+                90
+            ],
+            "objectiveInitialPos":[
+                0,
+                37.0,
+                -17.0,
+                3.0
+            ]
+        }
+    ],
+    "promptArea": [],
+    "arrowGuide": [
+        -8.0,
+        0.0,
+        3.0,
+        -90.0,
+        0.0,
+        0.0,
+        3.0,
+        -90.0
+    ],
+    "homeHasGK": false,
+    "awayHasGK": true,
+    "ForceOffside": false,
+    "ForceDefensive": false,
+    "OneTimeOperation":false,
+    "hideLimitareas": [],
+    "hideDestinations": [],
+    "HomePlayerFilter": [
+        "RW"
+    ],
+    "AwayPlayerFilter": [
+        "GK"
+    ]
+}

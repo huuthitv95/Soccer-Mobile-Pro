@@ -1,0 +1,11 @@
+namespace EngineMessages
+{
+	public enum ToolType
+	{
+		ToolNormal = 0,
+		ToolGoal = 1,
+		ToolCollect = 2,
+		ToolKnockDown = 3,
+		ToolBilliardsBall = 4
+	}
+}

@@ -1,0 +1,43 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!21 &2100000
+Material:
+  serializedVersion: 6
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_Name: pitch outside_0
+  m_Shader: {fileID: 4800000, guid: 92c0ec41e1f77f8419c0375bc3f768e0, type: 3}
+  m_ShaderKeywords: 
+  m_LightmapFlags: 4
+  m_EnableInstancingVariants: 0
+  m_DoubleSidedGI: 0
+  m_CustomRenderQueue: 2001
+  stringTagMap: {}
+  disabledShaderPasses: []
+  m_SavedProperties:
+    serializedVersion: 3
+    m_TexEnvs:
+    - _Detail:
+        m_Texture: {fileID: 2800000, guid: 05e43d4331b110546b4b5bba1cf2890c, type: 3}
+        m_Scale: {x: 50, y: 50}
+        m_Offset: {x: 0, y: 0}
+    - _Line:
+        m_Texture: {fileID: 2800000, guid: 1213abf0fd395ea46ac3f426a056193f, type: 3}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - _MainTex:
+        m_Texture: {fileID: 0}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: -1, y: -1}
+    m_Floats:
+    - _Camera_MaxY: 22
+    - _Camera_MinY: 10
+    - _Fresnel_Effect: 6
+    - _LineColor: 0.18
+    m_Colors:
+    - _Color: {r: 0.60102624, g: 0.6509804, b: 0.5806745, a: 1}
+    - _Fresnel_Color: {r: 0.4525171, g: 0.6886792, b: 0.18516374, a: 1}
+    - _LightColor: {r: 0.24288608, g: 0.36900002, b: 0.19617723, a: 1}
+  m_BuildTextureStacks: []

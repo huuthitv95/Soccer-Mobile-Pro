@@ -1,0 +1,47 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!21 &2100000
+Material:
+  serializedVersion: 8
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_Name: pitch11
+  m_Shader: {fileID: 4800000, guid: 8c6c0e668a7a1ce41b26bb2102ea4170, type: 3}
+  m_Parent: {fileID: 0}
+  m_ModifiedSerializedProperties: 0
+  m_ValidKeywords: []
+  m_InvalidKeywords: []
+  m_LightmapFlags: 4
+  m_EnableInstancingVariants: 0
+  m_DoubleSidedGI: 0
+  m_CustomRenderQueue: 2001
+  stringTagMap: {}
+  disabledShaderPasses: []
+  m_LockedProperties:
+  m_SavedProperties:
+    serializedVersion: 3
+    m_TexEnvs:
+      _Detail:
+        m_Texture: {fileID: 2800000, guid: 9920770b7026ad940b2e4c745a82ca81, type: 3}
+        m_Scale: {x: 65, y: 65}
+        m_Offset: {x: 0, y: 0}
+      _Line:
+        m_Texture: {fileID: 2800000, guid: c243b543f41355842a9c14b4576bce16, type: 3}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+      _MainTex:
+        m_Texture: {fileID: 2800000, guid: fb3a1f674a6fc264cb20be6c1a9d2bf2, type: 3}
+        m_Scale: {x: 6, y: 3.75}
+        m_Offset: {x: 0, y: 0}
+    m_Ints: {}
+    m_Floats:
+      _Camera_MaxY: 22
+      _Camera_MinY: 10
+      _Fresnel_Effect: 7
+    m_Colors:
+      _Color: {r: 0.7490196, g: 0.78039217, b: 0.3882353, a: 1}
+      _Fresnel_Color: {r: 0.49803922, g: 0.6, b: 0.29803923, a: 1}
+      _LightColor: {r: 0.8867924, g: 0.8867924, b: 0.8867924, a: 1}
+  m_BuildTextureStacks: []

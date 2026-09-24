@@ -1,0 +1,1189 @@
+
+{
+    "challengeEvent" : {
+        "2025" : {            
+            "challengeName" : "2025UEFA_Challenge_Event_Title",
+            "challengeDesc" : "2025UEFA_Challenge_Event_SD",
+            "extraDesc"     : [
+                "2025UEFA_Challenge_Event_LD"
+            ],
+            "maxReactivations":5,
+            "setPieceReactivationCost":10,
+            "fullMatchReactivationCost":20,
+            "finalMatchReactivationCost":40,
+            "ball":[20013,20020,20023,20024],
+            "CupIcon"       : "UEFA_ChampionsCup",
+            "matchPools"    : [
+                {
+                    "Desc" : "2025UEFA_Match_Day1-4",
+                    "SetPieceADReward":10,
+                    "FullMatchsADReward":40,
+                    "SetPieces" : [
+                        {
+                            "id" : 1,
+                            "match" : {
+                                "homeTeamId" : 20183,
+                                "awayTeamId" : 20207,
+                                "userIsHome" : true,
+                                "HasExtraTime" : false,
+                                "HasPenalty"   : false,
+                                "matchRoundName" : "league_phase",
+                                "difficulty"     : [
+                                    1.5,
+                                    3.5,
+                                    7
+                                ],
+                                "duration"       : 360,
+                                "matchName"      : "EuropeanChampionshipCup_2025",
+                                "matchRoundNameParam" : null,
+                                "gameMode"            : 100
+                            },
+                            "mission" : [
+                                {
+                                    "Key" : 0,
+                                    "Value" : 100
+                                },
+                                {
+                                    "Key" : 0,
+                                    "Value" : 101
+                                },
+                                {
+                                    "Key" : 0,
+                                    "Value" : 103
+                                }
+                            ],
+                            "missionCompletionCondition" : [
+                                1,1
+                            ],
+                            "desc"                       : "2025UEFA_SetPiece_Challenge_1",
+                            "time"                       : "",
+                            "host_city"                  : "",
+                            "host_country"               : ""
+                        },
+                        {
+                            "id" : 2,
+                            "match" : {
+                                "homeTeamId" : 20030,
+                                "awayTeamId" : 20051,
+                                "userIsHome" : true,
+                                "HasExtraTime" : false,
+                                "HasPenalty"   : false,
+                                "matchRoundName" : "league_phase",
+                                "difficulty"     : [
+                                    1.5,
+                                    3.5,
+                                    7
+                                ],
+                                "duration"       : 360,
+                                "matchName"      : "EuropeanChampionshipCup_2025",
+                                "matchRoundNameParam" : null,
+                                "gameMode"            : 100
+                            },
+                            "mission" : [
+                                {
+                                    "Key" : 0,
+                                    "Value" : 100
+                                },
+                                {
+                                    "Key" : 0,
+                                    "Value" : 101
+                                },
+                                {
+                                    "Key" : 0,
+                                    "Value" : 103
+                                }
+                            ],
+                            "missionCompletionCondition" : [
+                                1,1
+                            ],
+                            "desc"                       : "2025UEFA_SetPiece_Challenge_2",
+                            "time"                       : "",
+                            "host_city"                  : "",
+                            "host_country"               : ""
+                        },
+                        {
+                            "id" : 3,
+                            "match" : {
+                                "homeTeamId" : 20078,
+                                "awayTeamId" : 20207,
+                                "userIsHome" : true,
+                                "HasExtraTime" : false,
+                                "HasPenalty"   : false,
+                                "matchRoundName" : "league_phase",
+                                "difficulty"     : [
+                                    1.5,
+                                    3.5,
+                                    7
+                                ],
+                                "duration"       : 360,
+                                "matchName"      : "EuropeanChampionshipCup_2025",
+                                "matchRoundNameParam" : null,
+                                "gameMode"            : 100
+                            },
+                            "mission" : [
+                                {
+                                    "Key" : 0,
+                                    "Value" : 100
+                                },
+                                {
+                                    "Key" : 0,
+                                    "Value" : 101
+                                },
+                                {
+                                    "Key" : 0,
+                                    "Value" : 103
+                                }
+                            ],
+                            "missionCompletionCondition" : [
+                                1,1
+                            ],
+                            "desc"                       : "2025UEFA_SetPiece_Challenge_3",
+                            "time"                       : "",
+                            "host_city"                  : "",
+                            "host_country"               : ""
+                        },
+                        {
+                            "id" : 4,
+                            "match" : {
+                                "homeTeamId" : 20140,
+                                "awayTeamId" : 30255,
+                                "userIsHome" : false,
+                                "HasExtraTime" : false,
+                                "HasPenalty"   : false,
+                                "matchRoundName" : "league_phase",
+                                "difficulty"     : [
+                                    1.5,
+                                    3.5,
+                                    7
+                                ],
+                                "duration"       : 360,
+                                "matchName"      : "EuropeanChampionshipCup_2025",
+                                "matchRoundNameParam" : null,
+                                "gameMode"            : 100
+                            },
+                            "mission" : [
+                                {
+                                    "Key" : 0,
+                                    "Value" : 100
+                                },
+                                {
+                                    "Key" : 0,
+                                    "Value" : 101
+                                },
+                                {
+                                    "Key" : 0,
+                                    "Value" : 103
+                                }
+                            ],
+                            "missionCompletionCondition" : [
+                                1,1
+                            ],
+                            "desc"                       : "2025UEFA_SetPiece_Challenge_4",
+                            "time"                       : "",
+                            "host_city"                  : "",
+                            "host_country"               : ""
+                        }
+                    ],
+                    "FullMatchs" : [
+                        {
+                            "id" : 10,
+                            "match" : {
+                                "homeTeamId" : 20026,
+                                "awayTeamId" : 20078,
+                                "userIsHome" : true,
+                                "HasExtraTime" : false,
+                                "HasPenalty"   : false,
+                                "matchRoundName" : "league_phase",
+                                "difficulty"     : [
+                                    1.5,
+                                    3.5,
+                                    7
+                                ],
+                                "duration"       : 360,
+                                "matchName"      : "EuropeanChampionshipCup_2025",
+                                "matchRoundNameParam" : null,
+                                "gameMode"            : 0
+                            },
+                            "mission" : [
+                                {
+                                    "Key" : 0,
+                                    "Value" : 103
+                                },
+                                {
+                                    "Key" : 0,
+                                    "Value" : 104
+                                },
+                                {
+                                    "Key" : 0,
+                                    "Value" : 105
+                                }
+                            ],
+                            "missionCompletionCondition" : [
+                                1,1
+                            ],
+                            "desc"                       : "2025UEFA_Match_Challenge_10",
+                            "time"                       : "",
+                            "host_city"                  : "",
+                            "host_country"               : ""
+                        },
+                        {
+                            "id" : 11,
+                            "match" : {
+                                "homeTeamId" : 20127,
+                                "awayTeamId" : 20211,
+                                "userIsHome" : true,
+                                "HasExtraTime" : false,
+                                "HasPenalty"   : false,
+                                "matchRoundName" : "league_phase",
+                                "difficulty"     : [
+                                    1.5,
+                                    3.5,
+                                    7
+                                ],
+                                "duration"       : 360,
+                                "matchName"      : "EuropeanChampionshipCup_2025",
+                                "matchRoundNameParam" : null,
+                                "gameMode"            : 0
+                            },
+                            "mission" : [
+                                {
+                                    "Key" : 0,
+                                    "Value" : 103
+                                },
+                                {
+                                    "Key" : 0,
+                                    "Value" : 104
+                                },
+                                {
+                                    "Key" : 0,
+                                    "Value" : 105
+                                }
+                            ],
+                            "missionCompletionCondition" : [
+                                1,1
+                            ],
+                            "desc"                       : "2025UEFA_Match_Challenge_11",
+                            "time"                       : "",
+                            "host_city"                  : "",
+                            "host_country"               : ""
+                        },
+                        {
+                            "id" : 12,
+                            "match" : {
+                                "homeTeamId" : 20101,
+                                "awayTeamId" : 20126,
+                                "userIsHome" : true,
+                                "HasExtraTime" : false,
+                                "HasPenalty"   : false,
+                                "matchRoundName" : "league_phase",
+                                "difficulty"     : [
+                                    1.5,
+                                    3.5,
+                                    7
+                                ],
+                                "duration"       : 360,
+                                "matchName"      : "EuropeanChampionshipCup_2025",
+                                "matchRoundNameParam" : null,
+                                "gameMode"            : 0
+                            },
+                            "mission" : [
+                                {
+                                    "Key" : 0,
+                                    "Value" : 103
+                                },
+                                {
+                                    "Key" : 0,
+                                    "Value" : 104
+                                },
+                                {
+                                    "Key" : 0,
+                                    "Value" : 105
+                                }
+                            ],
+                            "missionCompletionCondition" : [
+                                1,1
+                            ],
+                            "desc"                       : "2025UEFA_Match_Challenge_12",
+                            "time"                       : "",
+                            "host_city"                  : "",
+                            "host_country"               : ""
+                        },
+                        {
+                            "id" : 13,
+                            "match" : {
+                                "homeTeamId" : 20080,
+                                "awayTeamId" : 20102,
+                                "userIsHome" : true,
+                                "HasExtraTime" : false,
+                                "HasPenalty"   : false,
+                                "matchRoundName" : "league_phase",
+                                "difficulty"     : [
+                                    1.5,
+                                    3.5,
+                                    7
+                                ],
+                                "duration"       : 360,
+                                "matchName"      : "EuropeanChampionshipCup_2025",
+                                "matchRoundNameParam" : null,
+                                "gameMode"            : 0
+                            },
+                            "mission" : [
+                                {
+                                    "Key" : 0,
+                                    "Value" : 103
+                                },
+                                {
+                                    "Key" : 0,
+                                    "Value" : 104
+                                },
+                                {
+                                    "Key" : 0,
+                                    "Value" : 105
+                                }
+                            ],
+                            "missionCompletionCondition" : [
+                                1,1
+                            ],
+                            "desc"                       : "2025UEFA_Match_Challenge_13",
+                            "time"                       : "",
+                            "host_city"                  : "",
+                            "host_country"               : ""
+                        }
+                    ]
+                },
+                {
+                    "Desc" : "2025UEFA_Match_Day5-8",
+                    "SetPieceADReward":10,
+                    "FullMatchsADReward":40,
+                    "SetPieces" : [
+                        {
+                            "id" : 5,
+                            "match" : {
+                                "homeTeamId" : 20103,
+                                "awayTeamId" : 30255,
+                                "userIsHome" : true,
+                                "HasExtraTime" : false,
+                                "HasPenalty"   : false,
+                                "matchRoundName" : "league_phase",
+                                "difficulty"     : [
+                                    1.5,
+                                    3.5,
+                                    7
+                                ],
+                                "duration"       : 360,
+                                "matchName"      : "EuropeanChampionshipCup_2025",
+                                "matchRoundNameParam" : null,
+                                "gameMode"            : 100
+                            },
+                            "mission" : [
+                                {
+                                    "Key" : 0,
+                                    "Value" : 100
+                                },
+                                {
+                                    "Key" : 0,
+                                    "Value" : 101
+                                },
+                                {
+                                    "Key" : 0,
+                                    "Value" : 103
+                                }
+                            ],
+                            "missionCompletionCondition" : [
+                                1,1
+                            ],
+                            "desc"                       : "2025UEFA_SetPiece_Challenge_5",
+                            "time"                       : "",
+                            "host_city"                  : "",
+                            "host_country"               : ""
+                        },
+                        {
+                            "id" : 6,
+                            "match" : {
+                                "homeTeamId" : 20129,
+                                "awayTeamId" : 20195,
+                                "userIsHome" : true,
+                                "HasExtraTime" : false,
+                                "HasPenalty"   : false,
+                                "matchRoundName" : "league_phase",
+                                "difficulty"     : [
+                                    1.5,
+                                    3.5,
+                                    7
+                                ],
+                                "duration"       : 360,
+                                "matchName"      : "EuropeanChampionshipCup_2025",
+                                "matchRoundNameParam" : null,
+                                "gameMode"            : 100
+                            },
+                            "mission" : [
+                                {
+                                    "Key" : 0,
+                                    "Value" : 100
+                                },
+                                {
+                                    "Key" : 0,
+                                    "Value" : 101
+                                },
+                                {
+                                    "Key" : 0,
+                                    "Value" : 103
+                                }
+                            ],
+                            "missionCompletionCondition" : [
+                                1,1
+                            ],
+                            "desc"                       : "2025UEFA_SetPiece_Challenge_6",
+                            "time"                       : "",
+                            "host_city"                  : "",
+                            "host_country"               : ""
+                        }
+                    ],
+                    "FullMatchs" : [
+                        {
+                            "id" : 14,
+                            "match" : {
+                                "homeTeamId" : 20027,
+                                "awayTeamId" : 20102,
+                                "userIsHome" : true,
+                                "HasExtraTime" : false,
+                                "HasPenalty"   : false,
+                                "matchRoundName" : "league_phase",
+                                "difficulty"     : [
+                                    1.5,
+                                    3.5,
+                                    7
+                                ],
+                                "duration"       : 360,
+                                "matchName"      : "EuropeanChampionshipCup_2025",
+                                "matchRoundNameParam" : null,
+                                "gameMode"            : 0
+                            },
+                            "mission" : [
+                                {
+                                    "Key" : 0,
+                                    "Value" : 103
+                                },
+                                {
+                                    "Key" : 0,
+                                    "Value" : 104
+                                },
+                                {
+                                    "Key" : 0,
+                                    "Value" : 105
+                                }
+                            ],
+                            "missionCompletionCondition" : [
+                                1,1
+                            ],
+                            "desc"                       : "2025UEFA_Match_Challenge_14",
+                            "time"                       : "",
+                            "host_city"                  : "",
+                            "host_country"               : ""
+                        },
+                        {
+                            "id" : 15,
+                            "match" : {
+                                "homeTeamId" : 20076,
+                                "awayTeamId" : 20026,
+                                "userIsHome" : true,
+                                "HasExtraTime" : false,
+                                "HasPenalty"   : false,
+                                "matchRoundName" : "league_phase",
+                                "difficulty"     : [
+                                    1.5,
+                                    3.5,
+                                    7
+                                ],
+                                "duration"       : 360,
+                                "matchName"      : "EuropeanChampionshipCup_2025",
+                                "matchRoundNameParam" : null,
+                                "gameMode"            : 0
+                            },
+                            "mission" : [
+                                {
+                                    "Key" : 0,
+                                    "Value" : 103
+                                },
+                                {
+                                    "Key" : 0,
+                                    "Value" : 104
+                                },
+                                {
+                                    "Key" : 0,
+                                    "Value" : 105
+                                }
+                            ],
+                            "missionCompletionCondition" : [
+                                1,1
+                            ],
+                            "desc"                       : "2025UEFA_Match_Challenge_15",
+                            "time"                       : "",
+                            "host_city"                  : "",
+                            "host_country"               : ""
+                        },
+                        {
+                            "id" : 16,
+                            "match" : {
+                                "homeTeamId" : 20101,
+                                "awayTeamId" : 20183,
+                                "userIsHome" : true,
+                                "HasExtraTime" : false,
+                                "HasPenalty"   : false,
+                                "matchRoundName" : "league_phase",
+                                "difficulty"     : [
+                                    1.5,
+                                    3.5,
+                                    7
+                                ],
+                                "duration"       : 360,
+                                "matchName"      : "EuropeanChampionshipCup_2025",
+                                "matchRoundNameParam" : null,
+                                "gameMode"            : 0
+                            },
+                            "mission" : [
+                                {
+                                    "Key" : 0,
+                                    "Value" : 103
+                                },
+                                {
+                                    "Key" : 0,
+                                    "Value" : 104
+                                },
+                                {
+                                    "Key" : 0,
+                                    "Value" : 105
+                                }
+                            ],
+                            "missionCompletionCondition" : [
+                                1,1
+                            ],
+                            "desc"                       : "2025UEFA_Match_Challenge_16",
+                            "time"                       : "",
+                            "host_city"                  : "",
+                            "host_country"               : ""
+                        },
+                        {
+                            "id" : 17,
+                            "match" : {
+                                "homeTeamId" : 20079,
+                                "awayTeamId" : 20101,
+                                "userIsHome" : true,
+                                "HasExtraTime" : false,
+                                "HasPenalty"   : false,
+                                "matchRoundName" : "league_phase",
+                                "difficulty"     : [
+                                    1.5,
+                                    3.5,
+                                    7
+                                ],
+                                "duration"       : 360,
+                                "matchName"      : "EuropeanChampionshipCup_2025",
+                                "matchRoundNameParam" : null,
+                                "gameMode"            : 0
+                            },
+                            "mission" : [
+                                {
+                                    "Key" : 0,
+                                    "Value" : 103
+                                },
+                                {
+                                    "Key" : 0,
+                                    "Value" : 104
+                                },
+                                {
+                                    "Key" : 0,
+                                    "Value" : 105
+                                }
+                            ],
+                            "missionCompletionCondition" : [
+                                1,1
+                            ],
+                            "desc"                       : "2025UEFA_Match_Challenge_17",
+                            "time"                       : "",
+                            "host_city"                  : "",
+                            "host_country"               : ""
+                        }
+                    ]
+                },
+                {
+                    "Desc" : "2025UEFA_Knockout_Phase",
+                    "SetPieceADReward":20,
+                    "FullMatchsADReward":40,
+                    "SetPieces" : [
+                        {
+                            "id" : 7,
+                            "match" : {
+                                "homeTeamId" : 20102,
+                                "awayTeamId" : 20103,
+                                "userIsHome" : true,
+                                "HasExtraTime" : false,
+                                "HasPenalty"   : false,
+                                "matchRoundName" : "cup_round0",
+                                "difficulty"     : [
+                                    1.5,
+                                    3.5,
+                                    7
+                                ],
+                                "duration"       : 360,
+                                "matchName"      : "EuropeanChampionshipCup_2025",
+                                "matchRoundNameParam" : null,
+                                "gameMode"            : 200
+                            },
+                            "mission" : [
+                                {
+                                    "Key" : 0,
+                                    "Value" : 101
+                                },
+                                {
+                                    "Key" : 0,
+                                    "Value" : 102
+                                },
+                                {
+                                    "Key" : 0,
+                                    "Value" : 104
+                                }
+                            ],
+                            "missionCompletionCondition" : [
+                                1,1
+                            ],
+                            "desc"                       : "2025UEFA_SetPiece_Challenge_7",
+                            "time"                       : "",
+                            "host_city"                  : "",
+                            "host_country"               : ""
+                        },
+                        {
+                            "id" : 8,
+                            "match" : {
+                                "homeTeamId" : 20027,
+                                "awayTeamId" : 20051,
+                                "userIsHome" : false,
+                                "HasExtraTime" : false,
+                                "HasPenalty"   : false,
+                                "matchRoundName" : "cup_round0",
+                                "difficulty"     : [
+                                    1.5,
+                                    3.5,
+                                    7
+                                ],
+                                "duration"       : 360,
+                                "matchName"      : "EuropeanChampionshipCup_2025",
+                                "matchRoundNameParam" : null,
+                                "gameMode"            : 200
+                            },
+                            "mission" : [
+                                {
+                                    "Key" : 0,
+                                    "Value" : 101
+                                },
+                                {
+                                    "Key" : 0,
+                                    "Value" : 102
+                                },
+                                {
+                                    "Key" : 0,
+                                    "Value" : 104
+                                }
+                            ],
+                            "missionCompletionCondition" : [
+                                1,1
+                            ],
+                            "desc"                       : "2025UEFA_SetPiece_Challenge_8",
+                            "time"                       : "",
+                            "host_city"                  : "",
+                            "host_country"               : ""
+                        },
+                        {
+                            "id" : 9,
+                            "match" : {
+                                "homeTeamId" : 20030,
+                                "awayTeamId" : 20102,
+                                "userIsHome" : true,
+                                "HasExtraTime" : false,
+                                "HasPenalty"   : false,
+                                "matchRoundName" : "cup_round1",
+                                "difficulty"     : [
+                                    1.5,
+                                    3.5,
+                                    7
+                                ],
+                                "duration"       : 360,
+                                "matchName"      : "EuropeanChampionshipCup_2025",
+                                "matchRoundNameParam" : null,
+                                "gameMode"            : 100
+                            },
+                            "mission" : [
+                                {
+                                    "Key" : 0,
+                                    "Value" : 101
+                                },
+                                {
+                                    "Key" : 0,
+                                    "Value" : 102
+                                },
+                                {
+                                    "Key" : 0,
+                                    "Value" : 104
+                                }
+                            ],
+                            "missionCompletionCondition" : [
+                                1,1
+                            ],
+                            "desc"                       : "2025UEFA_SetPiece_Challenge_9",
+                            "time"                       : "",
+                            "host_city"                  : "",
+                            "host_country"               : ""
+                        }
+                    ],
+                    "FullMatchs" : [
+                        {
+                            "id" : 18,
+                            "match" : {
+                                "homeTeamId" : 20102,
+                                "awayTeamId" : 20026,
+                                "userIsHome" : true,
+                                "HasExtraTime" : true,
+                                "HasPenalty"   : true,
+                                "matchRoundName" : "cup_round-1",
+                                "difficulty"     : [
+                                    1.5,
+                                    3.5,
+                                    7
+                                ],
+                                "duration"       : 360,
+                                "matchName"      : "EuropeanChampionshipCup_2025",
+                                "matchRoundNameParam" : null,
+                                "gameMode"            : 0
+                            },
+                            "mission" : [
+                                {
+                                    "Key" : 0,
+                                    "Value" : 103
+                                },
+                                {
+                                    "Key" : 0,
+                                    "Value" : 104
+                                },
+                                {
+                                    "Key" : 0,
+                                    "Value" : 105
+                                }
+                            ],
+                            "missionCompletionCondition" : [
+                                1,1
+                            ],
+                            "desc"                       : "2025UEFA_Match_Challenge_18",
+                            "time"                       : "",
+                            "host_city"                  : "",
+                            "host_country"               : ""
+                        },
+                        {
+                            "id" : 19,
+                            "match" : {
+                                "homeTeamId" : 20051,
+                                "awayTeamId" : 20027,
+                                "userIsHome" : true,
+                                "HasExtraTime" : true,
+                                "HasPenalty"   : true,
+                                "matchRoundName" : "cup_round0",
+                                "difficulty"     : [
+                                    1.5,
+                                    3.5,
+                                    7
+                                ],
+                                "duration"       : 360,
+                                "matchName"      : "EuropeanChampionshipCup_2025",
+                                "matchRoundNameParam" : null,
+                                "gameMode"            : 0
+                            },
+                            "mission" : [
+                                {
+                                    "Key" : 0,
+                                    "Value" : 103
+                                },
+                                {
+                                    "Key" : 0,
+                                    "Value" : 104
+                                },
+                                {
+                                    "Key" : 0,
+                                    "Value" : 105
+                                }
+                            ],
+                            "missionCompletionCondition" : [
+                                1,1
+                            ],
+                            "desc"                       : "2025UEFA_Match_Challenge_19",
+                            "time"                       : "",
+                            "host_city"                  : "",
+                            "host_country"               : ""
+                        },
+                        {
+                            "id" : 20,
+                            "match" : {
+                                "homeTeamId" : 20078,
+                                "awayTeamId" : 20126,
+                                "userIsHome" : true,
+                                "HasExtraTime" : true,
+                                "HasPenalty"   : true,
+                                "matchRoundName" : "cup_round1",
+                                "difficulty"     : [
+                                    1.5,
+                                    3.5,
+                                    7
+                                ],
+                                "duration"       : 360,
+                                "matchName"      : "EuropeanChampionshipCup_2025",
+                                "matchRoundNameParam" : null,
+                                "gameMode"            : 0
+                            },
+                            "mission" : [
+                                {
+                                    "Key" : 0,
+                                    "Value" : 103
+                                },
+                                {
+                                    "Key" : 0,
+                                    "Value" : 104
+                                },
+                                {
+                                    "Key" : 0,
+                                    "Value" : 105
+                                }
+                            ],
+                            "missionCompletionCondition" : [
+                                1,1
+                            ],
+                            "desc"                       : "2025UEFA_Match_Challenge_20",
+                            "time"                       : "",
+                            "host_city"                  : "",
+                            "host_country"               : ""
+                        },
+                        {
+                            "id" : 21,
+                            "match" : {
+                                "homeTeamId" : 20078,
+                                "awayTeamId" : 20101,
+                                "userIsHome" : true,
+                                "HasExtraTime" : true,
+                                "HasPenalty"   : true,
+                                "matchRoundName" : "cup_round2",
+                                "difficulty"     : [
+                                    1.5,
+                                    3.5,
+                                    7
+                                ],
+                                "duration"       : 360,
+                                "matchName"      : "EuropeanChampionshipCup_2025",
+                                "matchRoundNameParam" : null,
+                                "gameMode"            : 0
+                            },
+                            "mission" : [
+                                {
+                                    "Key" : 0,
+                                    "Value" : 103
+                                },
+                                {
+                                    "Key" : 0,
+                                    "Value" : 104
+                                },
+                                {
+                                    "Key" : 0,
+                                    "Value" : 105
+                                }
+                            ],
+                            "missionCompletionCondition" : [
+                                1,1
+                            ],
+                            "desc"                       : "2025UEFA_Match_Challenge_21",
+                            "time"                       : "",
+                            "host_city"                  : "",
+                            "host_country"               : ""
+                        }
+                    ]
+                }
+            ],
+            "FinalMatchConfig" : {
+                "id" : 0,
+                "match" : {
+                    "homeTeamId" : 20078,
+                    "awayTeamId" : 20051,
+                    "userIsHome" : false,
+                    "HasExtraTime" : true,
+                    "HasPenalty"   : true,
+                    "matchRoundName" : "cup_round3",
+                    "difficulty"     : [
+                        2.5,
+                        4.5,
+                        8
+                    ],
+                    "duration"       : 360,
+                    "matchName"      : "EuropeanChampionshipCup_2025",
+                    "matchRoundNameParam" : "",
+                    "gameMode"            : 0
+                },
+                "mission" : [
+                    {
+                                    "Key" : 0,
+                                    "Value" : 106
+                                },
+                                {
+                                    "Key" : 0,
+                                    "Value" : 107
+                                },
+                                {
+                                    "Key" : 0,
+                                    "Value" : 108
+                                }
+                ],
+                "missionCompletionCondition" : [
+                    1,1
+                ],
+                "desc"                       : "2025UEFA_Final",
+                "time"                       : "May 31, 2025",
+                "host_city"                  : "",
+                "host_country"               : ""
+            },
+            "finalExtraReward" : [20,30,40],
+            "finalADReward" : 50
+
+        }
+    },
+    "missions"       : {
+        "100" : {
+            "missionId" : 0,
+            "coin"      : 0,
+            "playerPool" : {
+                "HasPlayerReward" : false,
+                "Pool"            : [
+                ]
+            },
+            "missionName" : "",
+            "missionDesc" : "",
+            "teams"       : 0,
+            "shopItemId"  : [
+                30010
+            ]
+        },
+        "101" : {
+            "missionId" : 0,
+            "coin"      : 0,
+            "playerPool" : {
+                "HasPlayerReward" : false,
+                "Pool"            : [
+                ]
+            },
+            "missionName" : "",
+            "missionDesc" : "",
+            "teams"       : 0,
+            "shopItemId"  : [
+                30020
+            ]
+        },
+        "102" : {
+            "missionId" : 0,
+            "coin"      : 0,
+            "playerPool" : {
+                "HasPlayerReward" : false,
+                "Pool"            : [
+                ]
+            },
+            "missionName" : "",
+            "missionDesc" : "",
+            "teams"       : 0,
+            "shopItemId"  : [
+                30030
+            ]
+        },
+        "103" : {
+            "missionId" : 0,
+            "coin"      : 0,
+            "playerPool" : {
+                "HasPlayerReward" : false,
+                "Pool"            : [
+                ]
+            },
+            "missionName" : "",
+            "missionDesc" : "",
+            "teams"       : 0,
+            "shopItemId"  : [
+                30040
+            ]
+        },
+        "104" : {
+            "missionId" : 0,
+            "coin"      : 0,
+            "playerPool" : {
+                "HasPlayerReward" : false,
+                "Pool"            : [
+                ]
+            },
+            "missionName" : "",
+            "missionDesc" : "",
+            "teams"       : 0,
+            "shopItemId"  : [
+                30050
+            ]
+        },
+        "105" : {
+            "missionId" : 0,
+            "coin"      : 0,
+            "playerPool" : {
+                "HasPlayerReward" : false,
+                "Pool"            : [
+                ]
+            },
+            "missionName" : "",
+            "missionDesc" : "",
+            "teams"       : 0,
+            "shopItemId"  : [
+                30080
+            ]
+        },
+        "106" : {
+            "missionId" : 0,
+            "coin"      : 0,
+            "playerPool" : {
+                "HasPlayerReward" : false,
+                "Pool"            : [
+                ]
+            },
+            "missionName" : "",
+            "missionDesc" : "",
+            "teams"       : 0,
+            "shopItemId"  : [
+                30100
+            ]
+        },
+        "107" : {
+            "missionId" : 0,
+            "coin"      : 0,
+            "playerPool" : {
+                "HasPlayerReward" : false,
+                "Pool"            : [
+                ]
+            },
+            "missionName" : "",
+            "missionDesc" : "",
+            "teams"       : 0,
+            "shopItemId"  : [
+                30120
+            ]
+        },
+        "108" : {
+            "missionId" : 0,
+            "coin"      : 0,
+            "playerPool" : {
+                "HasPlayerReward" : false,
+                "Pool"            : [
+                ]
+            },
+            "missionName" : "",
+            "missionDesc" : "",
+            "teams"       : 0,
+            "shopItemId"  : [
+                30200
+            ]
+        }
+    },
+    "loginRewards"   : {
+        "2025" : {
+            "teams" : [
+            ],
+            "players" : [
+                2001
+            ],
+            "coin"    : 0,
+            "challengeRewardDisplay" : {
+                "teams" : [
+                ],
+                "players" : [
+                ],
+                "coin"    : 0,
+                "challengeRewardDisplay" : null,
+                "shopItemId"             : [
+                    10018,
+                    20023
+                ]
+            },
+            "shopItemId"             : [
+            ]
+        }
+    },
+    "freeKickChallengeConfigs" : {
+        "1" : {
+            "maxRetryAttempts" : 2,
+            "levels"           : [
+                {
+                    "Key" : 30,
+                    "Value" : 0.0
+                }
+            ],
+            "playerId"         : 101362
+        },
+        "2" : {
+            "maxRetryAttempts" : 2,
+            "levels"           : [
+                {
+                    "Key" : 40,
+                    "Value" : -33
+                }
+            ],
+            "playerId"         : 100343
+        },
+        "3" : {
+            "maxRetryAttempts" : 2,
+            "levels"           : [
+                {
+                    "Key" : 30,
+                    "Value" : -11
+                }
+            ],
+            "playerId"         : 101364
+        },
+        "4" : {
+            "maxRetryAttempts" : 2,
+            "levels"           : [
+                {
+                    "Key" : 28,
+                    "Value" : -17
+                }
+            ],
+            "playerId"         : 144532
+        },
+        "5" : {
+            "maxRetryAttempts" : 2,
+            "levels"           : [
+                {
+                    "Key" : 33,
+                    "Value" : 0
+                }
+            ],
+            "playerId"         : 105222
+        },
+        "6" : {
+            "maxRetryAttempts" : 2,
+            "levels"           : [
+                {
+                    "Key" : 36,
+                    "Value" : 6
+                }
+            ],
+            "playerId"         : 102115
+        },
+        "9" : {
+            "maxRetryAttempts" : 4,
+            "levels"           : [
+                {
+                    "Key" : 30,
+                    "Value" : -8
+                },
+                {
+                    "Key" : 32,
+                    "Value" : 3
+                }
+            ],
+            "playerId"         : 100341
+        }
+    }
+}

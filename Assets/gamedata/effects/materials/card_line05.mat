@@ -1,0 +1,93 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!21 &2100000
+Material:
+  serializedVersion: 8
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_Name: card_line05
+  m_Shader: {fileID: 4800000, guid: 8a79e3d6e95d41747b2a011124ec5395, type: 3}
+  m_Parent: {fileID: 0}
+  m_ModifiedSerializedProperties: 0
+  m_ValidKeywords: []
+  m_InvalidKeywords: []
+  m_LightmapFlags: 4
+  m_EnableInstancingVariants: 0
+  m_DoubleSidedGI: 0
+  m_CustomRenderQueue: 3000
+  stringTagMap: {}
+  disabledShaderPasses: []
+  m_LockedProperties:
+  m_SavedProperties:
+    serializedVersion: 3
+    m_TexEnvs:
+      _Main_Tex:
+        m_Texture: {fileID: 2800000, guid: 5f79fea13a3b2c54498462c5d177e01c, type: 3}
+        m_Scale: {x: 1.5, y: 1.5}
+        m_Offset: {x: 0, y: 0}
+      _Mask:
+        m_Texture: {fileID: 2800000, guid: 5f3eb2c3cff03ce45abc75a08a8db899, type: 3}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+      _Tex_2:
+        m_Texture: {fileID: 2800000, guid: 88261c3ebca082847911c4347856803d, type: 3}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+      _Turb_Noise:
+        m_Texture: {fileID: 2800000, guid: 4a0a8f22174efce4bafb28ec643fcf4f, type: 3}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+      _texcoord:
+        m_Texture: {fileID: 0}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    m_Ints: {}
+    m_Floats:
+      _Alpha: 10
+      _Brightness: 1
+      _BumpScale: 1
+      _ColorMask: 15
+      _Cutoff: 0.5
+      _DetailNormalMapScale: 1
+      _Diss_Reverse: 0
+      _Diss_value: 1
+      _DstBlend: 0
+      _GlossMapScale: 1
+      _Glossiness: 0.5
+      _GlossyReflections: 1
+      _Mask_R: 0
+      _Metallic: 0
+      _Mode: 0
+      _OcclusionStrength: 1
+      _Parallax: 0.02
+      _Polar_UV_offset: 0
+      _SmoothnessTextureChannel: 0
+      _Soft_value: 0
+      _SpecularHighlights: 1
+      _SrcBlend: 1
+      _Stencil: 0
+      _StencilComp: 8
+      _StencilOp: 0
+      _StencilReadMask: 255
+      _StencilWriteMask: 255
+      _Tex_2_Alpha: 0
+      _Turb_Value: 0.3
+      _UVSec: 0
+      _UVSwitch: 0
+      _Ver_Reverse: 0
+      _ZWrite: 1
+      __dirty: 1
+      _displacment_Intensity: 0
+    m_Colors:
+      _Color: {r: 1, g: 1, b: 1, a: 1}
+      _Displacment: {r: 0, g: 0, b: 0, a: 0}
+      _Diss_UV: {r: 0, g: 0, b: 0, a: 0}
+      _EmissionColor: {r: 0, g: 0, b: 0, a: 1}
+      _Main_Color: {r: 1, g: 0.9100791, b: 0.9025157, a: 1}
+      _Main_UV: {r: -0.1, g: -0.2, b: 0, a: 0}
+      _Polar_UV: {r: 0, g: 0, b: 0, a: 0}
+      _Tex_2_UV: {r: -0.03, g: -0.06, b: 0, a: 0}
+      _Turb_UV: {r: 0, g: -0.2, b: 0, a: 0}
+  m_BuildTextureStacks: []

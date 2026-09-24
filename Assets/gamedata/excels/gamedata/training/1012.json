@@ -1,0 +1,96 @@
+{
+    "desc": "through2",
+    "type": 3,
+    "ball_pos": [
+        20.5,
+        -12.6
+    ],
+    "poses1": [
+        20.25,
+        -12.749999618530274,
+        33.0,
+        4.5
+    ],
+    "poses2": [
+        54.0,
+        0.0,
+        26.0,
+        0.0,
+        35.0,
+        -10
+    ],
+    "formation1": [],
+    "formation2": [],
+    "steps": [
+        {
+            "limitArea": [
+                0,
+                17.0,
+                23.0,
+                -13.0,
+                -7.0
+            ],
+            "playerActions1": [
+                0,
+                0
+            ],
+            "playerActions2": [
+                0,
+                0,
+                0
+            ],
+            "objective": [
+                3,
+                0,
+                1
+            ]
+        },
+       {
+            "limitArea": [
+                0,
+                36,
+                52.0,
+                -20.0,
+                20.0
+            ],
+            "playerActions1": [
+                0,
+                0
+            ],
+            "playerActions2": [
+                0,
+                0,
+                0
+            ],
+            "objective": [
+                4,
+                1
+            ]
+        }
+    ],
+    "promptArea": [
+                36,
+                52.0,
+                -20.0,
+                20.0
+             ],
+    "arrowGuide": [],
+    "homeHasGK": false,
+    "awayHasGK": true,
+    "ForceOffside": false,
+    "ForceDefensive": false,
+    "OneTimeOperation":true,
+    "hideLimitareas": [
+        false
+    ],
+    "hideDestinations": [],
+    "HomePlayerFilter": [
+        "CAM",
+        "ST"
+    ],
+    "AwayPlayerFilter": [
+        "GK",
+        "CDM",
+        "CB"
+    ]
+}

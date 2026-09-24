@@ -1,0 +1,51 @@
+{
+    "desc": "shot2",
+    "type": 4,
+    "ball_pos": [
+        45.0,
+        -8.0
+    ],
+    "poses1": [
+        44.75,
+        -8.25
+    ],
+    "poses2": [
+        55.0,
+        0
+    ],
+    "formation1": [],
+    "formation2": [],
+    "steps": [
+        {
+            "limitTime": -1,
+            "limitArea": [
+                1,
+                45.0,
+                -8.0,
+                5.0
+            ],
+            "playerActions1": [
+                0
+            ],
+            "playerActions2": [
+                0
+            ],
+            "objective": [
+                4,
+                0
+            ]
+        }
+    ],
+    "promptArea": [],
+    "arrowGuide": [],
+    "homeHasGK": false,
+    "awayHasGK": true,
+    "hideLimitareas": [],
+    "hideDestinations": [],
+    "HomePlayerFilter": [
+        "ST"
+    ],
+    "AwayPlayerFilter": [
+        "GK"
+    ]
+}

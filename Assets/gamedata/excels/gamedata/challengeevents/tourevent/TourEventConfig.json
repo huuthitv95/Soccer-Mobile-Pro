@@ -1,0 +1,2328 @@
+{
+    "tourEvent": {
+        "1": {
+            "activityNameId": "TourEvent_WorldCup_Name",
+            "activityLongDescId": "TourEvent_WorldCup_LD",
+            "activityShortDescId": "TourEvent_WorldCup_SD",
+            "templateTeamId": 205,
+            "momentChallengeLevelIndex": "MomentChallengeLevelConfig",
+            "pointsShopConfigIndex": "PointsShopConfig",
+            "expiredPointCoinExchangeRate": 20,
+            "allChapterCompletionRewards": [
+                {
+                    "minCompletionCount": 1,
+                    "maxCompletionCount": 1,
+                    "rewards": [
+                        {
+                            "type": "Player",
+                            "rewardId": 2082,
+                            "amount": 1,
+                            "firstClearOnly": true
+                        }
+                    ]
+                },
+                {
+                    "minCompletionCount": 2,
+                    "maxCompletionCount": 9999,
+                    "rewards": [
+                        {
+                            "type": "Point",
+                            "rewardId": 0,
+                            "amount": 40,
+                            "firstClearOnly": false
+                        }
+                    ]
+                }
+            ],
+            "matchDifficultyValueMap": {
+                "Easy": 1,
+                "Medium": 1.5,
+                "Hard": 2,
+                "Extreme": 3
+            },
+            "selectableTeamTemplates": [
+                {
+                    "templateTeamId": 10001,
+                    "teamNameId": "Brazil_AllStars",
+                    "formationRoles": [
+                        "GK",
+                        "LB",
+                        "LCB",
+                        "RCB",
+                        "RB",
+                        "LCM",
+                        "RCM",
+                        "CAM",
+                        "LW",
+                        "RW",
+                        "ST"
+                    ],
+                    "replacementPlayerAbilityRange": {
+                        "minAbility": 86,
+                        "maxAbility": 88
+                    },
+                    "playerPoolIds": [
+                        170116,
+                        170120,
+                        170166,
+                        170167,
+                        170627,
+                        173750,
+                        170168,
+                        140031,
+                        170164,
+                        170118,
+                        170169,
+                        170581,
+                        170674,
+                        100008,
+                        170111,
+                        173226,
+                        174296,
+                        100000,
+                        103431,
+                        140034,
+                        170406,
+                        170415,
+                        140028,
+                        160367,
+                        170112,
+                        170117,
+                        170402,
+                        174297,
+                        103281,
+                        140044,
+                        170574,
+                        171522,
+                        173844,
+                        174279,
+                        174291,
+                        140027,
+                        160322,
+                        160426,
+                        170114,
+                        170590,
+                        174285,
+                        174293,
+                        106802,
+                        107538,
+                        110973,
+                        160366,
+                        160423,
+                        170575,
+                        170582,
+                        173220,
+                        174284,
+                        100012,
+                        102203,
+                        104355,
+                        106799,
+                        106891,
+                        107577,
+                        111114,
+                        117386,
+                        118872,
+                        160256,
+                        160257,
+                        160402,
+                        170163,
+                        170174,
+                        170175,
+                        170591,
+                        173197,
+                        173788,
+                        174282,
+                        174288,
+                        100001,
+                        102198,
+                        103268,
+                        106688,
+                        110974,
+                        118877,
+                        140030,
+                        160327,
+                        170113,
+                        170126,
+                        170160,
+                        170165,
+                        170578,
+                        171524,
+                        174280,
+                        174290,
+                        175308,
+                        175311,
+                        175312
+                    ]
+                },
+                {
+                    "templateTeamId": 10003,
+                    "teamNameId": "Argentina_AllStars",
+                    "formationRoles": [
+                        "GK",
+                        "LB",
+                        "LCB",
+                        "RCB",
+                        "RB",
+                        "CDM",
+                        "LCM",
+                        "RCM",
+                        "LW",
+                        "RW",
+                        "ST"
+                    ],
+                    "replacementPlayerAbilityRange": {
+                        "minAbility": 85,
+                        "maxAbility": 88
+                    },
+                    "playerPoolIds": [
+                        171594,
+                        173851,
+                        144335,
+                        144331,
+                        144328,
+                        173212,
+                        100064,
+                        170614,
+                        171544,
+                        173798,
+                        103337,
+                        105222,
+                        144339,
+                        170601,
+                        171532,
+                        173178,
+                        173754,
+                        173846,
+                        144330,
+                        144343,
+                        160431,
+                        100056,
+                        100058,
+                        140019,
+                        144338,
+                        144342,
+                        144347,
+                        160497,
+                        170603,
+                        100065,
+                        140002,
+                        144326,
+                        144340,
+                        144345,
+                        144346,
+                        170684,
+                        104406,
+                        113941,
+                        160428,
+                        170595,
+                        170596,
+                        170656,
+                        173366,
+                        100062,
+                        104535,
+                        108042,
+                        140007,
+                        140011,
+                        144337,
+                        150034,
+                        170598,
+                        170599,
+                        170613,
+                        100068,
+                        103642,
+                        103906,
+                        104034,
+                        105242,
+                        107521,
+                        109333,
+                        123445,
+                        144329,
+                        144341,
+                        160424,
+                        170600,
+                        170602,
+                        170612,
+                        170616,
+                        173375,
+                        173380,
+                        175384,
+                        175389,
+                        175393,
+                        175394
+                    ]
+                },
+                {
+                    "templateTeamId": 10016,
+                    "teamNameId": "France_AllStars",
+                    "formationRoles": [
+                        "GK",
+                        "LB",
+                        "LCB",
+                        "RCB",
+                        "RB",
+                        "CDM",
+                        "LCM",
+                        "RCM",
+                        "LW",
+                        "RW",
+                        "ST"
+                    ],
+                    "replacementPlayerAbilityRange": {
+                        "minAbility": 86,
+                        "maxAbility": 88
+                    },
+                    "playerPoolIds": [
+                        140190,
+                        100367,
+                        111324,
+                        140200,
+                        160452,
+                        173361,
+                        140195,
+                        173353,
+                        103643,
+                        160371,
+                        173240,
+                        173343,
+                        173351,
+                        106696,
+                        160409,
+                        160448,
+                        173340,
+                        173344,
+                        100359,
+                        104410,
+                        140183,
+                        140185,
+                        140187,
+                        170556,
+                        173241,
+                        173348,
+                        173362,
+                        104623,
+                        104801,
+                        106801,
+                        111132,
+                        118908,
+                        140189,
+                        173219,
+                        100357,
+                        100366,
+                        103639,
+                        104833,
+                        117318,
+                        160283,
+                        170555,
+                        170569,
+                        173207,
+                        173236,
+                        173354,
+                        100361,
+                        103381,
+                        103691,
+                        107569,
+                        160447,
+                        160503,
+                        170553,
+                        170554,
+                        170655,
+                        170676,
+                        173205,
+                        173345,
+                        103717,
+                        106858,
+                        106861,
+                        111177,
+                        111269,
+                        140196,
+                        170561,
+                        170564,
+                        170568,
+                        173196,
+                        173359,
+                        173796,
+                        173859,
+                        175340,
+                        175351,
+                        175415,
+                        175418,
+                        175432
+                    ]
+                },
+                {
+                    "templateTeamId": 10017,
+                    "teamNameId": "Germany_AllStars",
+                    "formationRoles": [
+                        "GK",
+                        "LB",
+                        "LCB",
+                        "RCB",
+                        "RB",
+                        "LDM",
+                        "RDM",
+                        "LAM",
+                        "RAM",
+                        "LS",
+                        "RS"
+                    ],
+                    "replacementPlayerAbilityRange": {
+                        "minAbility": 86,
+                        "maxAbility": 88
+                    },
+                    "playerPoolIds": [
+                        140146,
+                        140154,
+                        140143,
+                        160401,
+                        140139,
+                        170491,
+                        173745,
+                        106765,
+                        140046,
+                        170492,
+                        140056,
+                        140057,
+                        140058,
+                        140066,
+                        140141,
+                        144402,
+                        170471,
+                        170690,
+                        100384,
+                        100390,
+                        140064,
+                        170469,
+                        170488,
+                        170493,
+                        104825,
+                        104955,
+                        140067,
+                        140140,
+                        144392,
+                        144400,
+                        170489,
+                        170496,
+                        173776,
+                        173843,
+                        117211,
+                        140137,
+                        144411,
+                        100376,
+                        100386,
+                        104808,
+                        104996,
+                        105048,
+                        140065,
+                        140142,
+                        140144,
+                        144396,
+                        144401,
+                        144403,
+                        144409,
+                        160420,
+                        170495,
+                        170499,
+                        170672,
+                        170687,
+                        100377,
+                        104900,
+                        106769,
+                        144405,
+                        144410,
+                        170475,
+                        170497,
+                        170685,
+                        103331,
+                        104830,
+                        106869,
+                        110892,
+                        110981,
+                        118794,
+                        118882,
+                        140052,
+                        140062,
+                        140158,
+                        144408,
+                        170490,
+                        170501,
+                        170504
+                    ]
+                },
+                {
+                    "templateTeamId": 10039,
+                    "teamNameId": "Spain_AllStars",
+                    "formationRoles": [
+                        "GK",
+                        "LB",
+                        "LCB",
+                        "RCB",
+                        "RB",
+                        "CDM",
+                        "LCM",
+                        "RCM",
+                        "CAM",
+                        "LS",
+                        "RS"
+                    ],
+                    "replacementPlayerAbilityRange": {
+                        "minAbility": 86,
+                        "maxAbility": 88
+                    },
+                    "playerPoolIds": [
+                        160388,
+                        173850,
+                        100895,
+                        160363,
+                        160732,
+                        160384,
+                        100890,
+                        118884,
+                        160741,
+                        160742,
+                        160744,
+                        170641,
+                        173208,
+                        103346,
+                        111049,
+                        160740,
+                        170636,
+                        173845,
+                        173848,
+                        107575,
+                        109327,
+                        173235,
+                        173847,
+                        100891,
+                        100893,
+                        104616,
+                        106795,
+                        106848,
+                        160287,
+                        173185,
+                        100889,
+                        100894,
+                        104362,
+                        106837,
+                        106842,
+                        118935,
+                        160382,
+                        173858,
+                        100885,
+                        103325,
+                        104437,
+                        104458,
+                        104460,
+                        104526,
+                        104627,
+                        106840,
+                        107902,
+                        111003,
+                        111062,
+                        118885,
+                        150004,
+                        160365,
+                        160736,
+                        173199,
+                        100879,
+                        100888,
+                        104418,
+                        104443,
+                        104462,
+                        104591,
+                        104642,
+                        104653,
+                        111034,
+                        111058,
+                        114207,
+                        117310,
+                        119707,
+                        133127,
+                        150133,
+                        160323,
+                        170649
+                    ]
+                },
+                {
+                    "templateTeamId": 10015,
+                    "teamNameId": "England_AllStars",
+                    "formationRoles": [
+                        "GK",
+                        "LB",
+                        "LCB",
+                        "RCB",
+                        "RB",
+                        "LCM",
+                        "RCM",
+                        "CAM",
+                        "LW",
+                        "RW",
+                        "ST"
+                    ],
+                    "replacementPlayerAbilityRange": {
+                        "minAbility": 86,
+                        "maxAbility": 88
+                    },
+                    "playerPoolIds": [
+                        160289,
+                        170644,
+                        173215,
+                        173748,
+                        170661,
+                        173757,
+                        100344,
+                        170678,
+                        140092,
+                        140110,
+                        144376,
+                        160501,
+                        170639,
+                        173191,
+                        100325,
+                        100343,
+                        140101,
+                        144388,
+                        160357,
+                        170663,
+                        100341,
+                        100342,
+                        144379,
+                        170659,
+                        103380,
+                        103398,
+                        123144,
+                        140107,
+                        160470,
+                        173198,
+                        173209,
+                        100329,
+                        117426,
+                        140094,
+                        144389,
+                        170645,
+                        170657,
+                        170668,
+                        173201,
+                        173221,
+                        100328,
+                        100335,
+                        103314,
+                        106694,
+                        106698,
+                        119069,
+                        144377,
+                        144380,
+                        144381,
+                        160331,
+                        160339,
+                        160481,
+                        170666,
+                        173204,
+                        100336,
+                        100337,
+                        100339,
+                        103295,
+                        103345,
+                        103392,
+                        104052,
+                        106708,
+                        110971,
+                        117265,
+                        140106,
+                        144373,
+                        160445,
+                        160461,
+                        170667,
+                        170669,
+                        173206
+                    ]
+                },
+                {
+                    "templateTeamId": 10028,
+                    "teamNameId": "Netherlands_AllStars",
+                    "formationRoles": [
+                        "GK",
+                        "LB",
+                        "LCB",
+                        "CB",
+                        "RCB",
+                        "RB",
+                        "LDM",
+                        "RDM",
+                        "LW",
+                        "RW",
+                        "ST"
+                    ],
+                    "replacementPlayerAbilityRange": {
+                        "minAbility": 84,
+                        "maxAbility": 87
+                    },
+                    "playerPoolIds": [
+                        160252,
+                        140123,
+                        140117,
+                        140124,
+                        170681,
+                        173179,
+                        160296,
+                        170626,
+                        170654,
+                        100636,
+                        140115,
+                        160451,
+                        160410,
+                        106445,
+                        160463,
+                        174323,
+                        174329,
+                        100628,
+                        100642,
+                        102197,
+                        117382,
+                        170646,
+                        174339,
+                        100631,
+                        102230,
+                        111328,
+                        173783,
+                        174326,
+                        100624,
+                        100633,
+                        100637,
+                        100638,
+                        102037,
+                        103595,
+                        104828,
+                        140116,
+                        100641,
+                        103272,
+                        103673,
+                        117618,
+                        119641,
+                        140122,
+                        174330,
+                        174332,
+                        174335,
+                        174341,
+                        100621,
+                        106727,
+                        107542,
+                        111020,
+                        117213,
+                        125046,
+                        140119,
+                        170643,
+                        174336,
+                        175361,
+                        175364,
+                        175365,
+                        175368,
+                        175371,
+                        175372,
+                        175375,
+                        175376,
+                        175377,
+                        175378,
+                        175383
+                    ]
+                },
+                {
+                    "templateTeamId": 10033,
+                    "teamNameId": "Portugal_AllStars",
+                    "formationRoles": [
+                        "GK",
+                        "LB",
+                        "LCB",
+                        "RCB",
+                        "RB",
+                        "CDM",
+                        "LCM",
+                        "RCM",
+                        "LW",
+                        "RW",
+                        "ST"
+                    ],
+                    "replacementPlayerAbilityRange": {
+                        "minAbility": 84,
+                        "maxAbility": 87
+                    },
+                    "playerPoolIds": [
+                        170664,
+                        102095,
+                        170507,
+                        100745,
+                        160324,
+                        171565,
+                        106791,
+                        106811,
+                        142031,
+                        160490,
+                        173218,
+                        160330,
+                        160502,
+                        170512,
+                        173244,
+                        100748,
+                        100756,
+                        102085,
+                        119312,
+                        160326,
+                        100746,
+                        117392,
+                        117433,
+                        170508,
+                        170523,
+                        100743,
+                        170506,
+                        170516,
+                        100741,
+                        100753,
+                        100757,
+                        106893,
+                        111024,
+                        111513,
+                        160504,
+                        160510,
+                        103311,
+                        104622,
+                        106761,
+                        111511,
+                        114951,
+                        119653,
+                        170509,
+                        170525,
+                        170518
+                    ]
+                }
+            ],
+            "randomEventRules": {
+                "TypeOne": {
+                    "fatigueRange": [
+                        -5,
+                        -1
+                    ],
+                    "weights": [
+                        {
+                            "fatigueValue": -1,
+                            "weight": 30
+                        },
+                        {
+                            "fatigueValue": -2,
+                            "weight": 25
+                        },
+                        {
+                            "fatigueValue": -3,
+                            "weight": 20
+                        },
+                        {
+                            "fatigueValue": -4,
+                            "weight": 15
+                        },
+                        {
+                            "fatigueValue": -5,
+                            "weight": 10
+                        }
+                    ]
+                }
+            },
+            "randomEventTextGroups": {
+                "0": [
+                    "TourEvent_RandomEvent_NothingHappened"
+                ],
+                "-4": [
+                    "TourEvent_RandomEvent_FamilyVisit",
+                    "TourEvent_RandomEvent_FanSupport"
+                ],
+                "-3": [
+                    "TourEvent_RandomEvent_RestDay",
+                    "TourEvent_RandomEvent_Physiotherapy",
+                    "TourEvent_RandomEvent_Sauna"
+                ],
+                "-2": [
+                    "TourEvent_RandomEvent_Entertainment",
+                    "TourEvent_RandomEvent_GoodSleep",
+                    "TourEvent_RandomEvent_Sightseeing"
+                ],
+                "-1": [
+                    "TourEvent_RandomEvent_LightTraining",
+                    "TourEvent_RandomEvent_PreMatchPitchWalk"
+                ],
+                "+1": [
+                    "TourEvent_RandomEvent_Insomnia",
+                    "TourEvent_RandomEvent_VisaIssue"
+                ],
+                "+2": [
+                    "TourEvent_RandomEvent_PressConference",
+                    "TourEvent_RandomEvent_CommercialShoot",
+                    "TourEvent_RandomEvent_NegativeMedia"
+                ],
+                "+3": [
+                    "TourEvent_RandomEvent_PlayerConflict",
+                    "TourEvent_RandomEvent_ExtraTraining",
+                    "TourEvent_RandomEvent_LateTacticsMeeting"
+                ],
+                "+4": [
+                    "TourEvent_RandomEvent_LongFlight",
+                    "TourEvent_RandomEvent_JetLag"
+                ]
+            },
+            "chapters": [
+                {
+                    "id": 1,
+                    "chapterNameId": "TourEvent_Chapter1_Name",
+                    "chapterShortDescId": "1986-1994",
+                    "fatigueLimit": 8,
+                    "randomOpponentTeamIds": [
+                        10211,
+                        10212,
+                        10213,
+                        10153,
+                        10147,
+                        10152,
+                        10153,
+                        10934,
+                        10935,
+                        10936
+                    ],
+                    "chapterRewards": [
+                        {
+                            "type": "Player",
+                            "rewardId": 2079,
+                            "amount": 1,
+                            "firstClearOnly": true
+                        },
+                        {
+                            "type": "Point",
+                            "rewardId": 0,
+                            "amount": 40,
+                            "firstClearOnly": false
+                        }
+                    ],
+                    "map": {
+                        "entryNodeIds": [
+                            101
+                        ],
+                        "finalNodeId": 109,
+                        "nodes": [
+                            {
+                                "id": 101,
+                                "nodeType": "FullMatch",
+                                "opponentId": 10210,
+                                "difficultyLevel": "Easy",
+                                "fatigueValue": 5,
+                                "rewards": [
+                                    {
+                                        "type": "Points",
+                                        "rewardId": 0,
+                                        "amount": 3
+                                    }
+                                ]
+                            },
+                            {
+                                "id": 102,
+                                "nodeType": "FreeKick",
+                                "fatigueValue": 2,
+                                "rewards": [
+                                    {
+                                        "type": "Points",
+                                        "rewardId": 0,
+                                        "amount": 2
+                                    }
+                                ],
+                                "opponentId": -1,
+                                "difficultyLevel": "Easy"
+                            },
+                            {
+                                "id": 103,
+                                "nodeType": "MomentChallenge",
+                                "opponentId": -1,
+                                "difficultyLevel": "Medium",
+                                "fatigueValue": 3,
+                                "rewards": [
+                                    {
+                                        "type": "Points",
+                                        "rewardId": 0,
+                                        "amount": 3
+                                    }
+                                ]
+                            },
+                            {
+                                "id": 104,
+                                "nodeType": "RandomEvent",
+                                "fatigueValue": 0,
+                                "rewards": [
+                                    {
+                                        "type": "Points",
+                                        "rewardId": 0,
+                                        "amount": 3
+                                    }
+                                ],
+                                "randomEventType": "TypeOne"
+                            },
+                            {
+                                "id": 105,
+                                "nodeType": "FullMatch",
+                                "opponentId": -1,
+                                "difficultyLevel": "Medium",
+                                "fatigueValue": 5,
+                                "rewards": [
+                                    {
+                                        "type": "Points",
+                                        "rewardId": 0,
+                                        "amount": 3
+                                    }
+                                ]
+                            },
+                            {
+                                "id": 106,
+                                "nodeType": "RandomEvent",
+                                "fatigueValue": 0,
+                                "rewards": [
+                                    {
+                                        "type": "Points",
+                                        "rewardId": 0,
+                                        "amount": 3
+                                    }
+                                ],
+                                "randomEventType": "TypeOne"
+                            },
+                            {
+                                "id": 107,
+                                "nodeType": "MomentChallenge",
+                                "fatigueValue": 2,
+                                "rewards": [
+                                    {
+                                        "type": "Points",
+                                        "rewardId": 0,
+                                        "amount": 3
+                                    }
+                                ],
+                                "opponentId": -1,
+                                "difficultyLevel": "Medium"
+                            },
+                            {
+                                "id": 108,
+                                "nodeType": "PenaltyKick",
+                                "fatigueValue": 2,
+                                "rewards": [
+                                    {
+                                        "type": "Points",
+                                        "rewardId": 0,
+                                        "amount": 2
+                                    }
+                                ],
+                                "opponentId": -1,
+                                "difficultyLevel": "Easy"
+                            },
+                            {
+                                "id": 109,
+                                "nodeType": "FullMatch",
+                                "opponentId": 10936,
+                                "difficultyLevel": "Hard",
+                                "fatigueValue": 0,
+                                "rewards": [
+                                    {
+                                        "type": "Points",
+                                        "rewardId": 0,
+                                        "amount": 3
+                                    }
+                                ]
+                            }
+                        ],
+                        "adjacencyList": {
+                            "101": [
+                                102,
+                                103
+                            ],
+                            "102": [
+                                104,
+                                105
+                            ],
+                            "103": [
+                                106
+                            ],
+                            "104": [
+                                107
+                            ],
+                            "105": [
+                                108
+                            ],
+                            "106": [
+                                108
+                            ],
+                            "107": [
+                                109
+                            ],
+                            "108": [
+                                109
+                            ],
+                            "109": []
+                        }
+                    },
+                    "nextChapterId": 5
+                },
+                {
+                    "id": 2,
+                    "chapterNameId": "TourEvent_Chapter2_Name",
+                    "chapterShortDescId": "1998-2006",
+                    "fatigueLimit": 10,
+                    "randomOpponentTeamIds": [
+                        10160,
+                        10932,
+                        10148,
+                        10149,
+                        10150,
+                        10151,
+                        10930,
+                        10931
+                    ],
+                    "chapterRewards": [
+                        {
+                            "type": "Player",
+                            "rewardId": 2080,
+                            "amount": 1,
+                            "firstClearOnly": true
+                        },
+                        {
+                            "type": "Point",
+                            "rewardId": 0,
+                            "amount": 60,
+                            "firstClearOnly": false
+                        }
+                    ],
+                    "map": {
+                        "entryNodeIds": [
+                            201
+                        ],
+                        "finalNodeId": 212,
+                        "nodes": [
+                            {
+                                "id": 201,
+                                "nodeType": "FullMatch",
+                                "opponentId": -1,
+                                "difficultyLevel": "Easy",
+                                "fatigueValue": 5,
+                                "rewards": [
+                                    {
+                                        "type": "Points",
+                                        "rewardId": 0,
+                                        "amount": 4
+                                    }
+                                ]
+                            },
+                            {
+                                "id": 202,
+                                "nodeType": "FullMatch",
+                                "opponentId": -1,
+                                "difficultyLevel": "Medium",
+                                "fatigueValue": 5,
+                                "rewards": [
+                                    {
+                                        "type": "Points",
+                                        "rewardId": 0,
+                                        "amount": 4
+                                    }
+                                ]
+                            },
+                            {
+                                "id": 203,
+                                "nodeType": "PenaltyKick",
+                                "fatigueValue": 2,
+                                "opponentId": -1,
+                                "difficultyLevel": "Medium",
+                                "rewards": [
+                                    {
+                                        "type": "Points",
+                                        "rewardId": 0,
+                                        "amount": 4
+                                    }
+                                ]
+                            },
+                            {
+                                "id": 204,
+                                "nodeType": "RandomEvent",
+                                "fatigueValue": 0,
+                                "rewards": [
+                                    {
+                                        "type": "Points",
+                                        "rewardId": 0,
+                                        "amount": 2
+                                    }
+                                ],
+                                "randomEventType": "TypeOne"
+                            },
+                            {
+                                "id": 205,
+                                "nodeType": "MomentChallenge",
+                                "opponentId": -1,
+                                "difficultyLevel": "Medium",
+                                "fatigueValue": 2,
+                                "rewards": [
+                                    {
+                                        "type": "Points",
+                                        "rewardId": 0,
+                                        "amount": 4
+                                    }
+                                ]
+                            },
+                            {
+                                "id": 206,
+                                "nodeType": "MomentChallenge",
+                                "fatigueValue": 3,
+                                "rewards": [
+                                    {
+                                        "type": "Points",
+                                        "rewardId": 0,
+                                        "amount": 4
+                                    }
+                                ],
+                                "opponentId": -1,
+                                "difficultyLevel": "Medium"
+                            },
+                            {
+                                "id": 207,
+                                "nodeType": "MomentChallenge",
+                                "fatigueValue": 4,
+                                "rewards": [
+                                    {
+                                        "type": "Points",
+                                        "rewardId": 0,
+                                        "amount": 4
+                                    }
+                                ],
+                                "opponentId": -1,
+                                "difficultyLevel": "Hard"
+                            },
+                            {
+                                "id": 208,
+                                "nodeType": "MomentChallenge",
+                                "fatigueValue": 3,
+                                "opponentId": -1,
+                                "difficultyLevel": "Hard",
+                                "rewards": [
+                                    {
+                                        "type": "Points",
+                                        "rewardId": 0,
+                                        "amount": 4
+                                    }
+                                ]
+                            },
+                            {
+                                "id": 209,
+                                "nodeType": "RandomEvent",
+                                "fatigueValue": 0,
+                                "rewards": [
+                                    {
+                                        "type": "Points",
+                                        "rewardId": 0,
+                                        "amount": 2
+                                    }
+                                ],
+                                "randomEventType": "TypeOne"
+                            },
+                            {
+                                "id": 210,
+                                "nodeType": "RandomEvent",
+                                "fatigueValue": 0,
+                                "rewards": [
+                                    {
+                                        "type": "Points",
+                                        "rewardId": 0,
+                                        "amount": 2
+                                    }
+                                ],
+                                "randomEventType": "TypeOne"
+                            },
+                            {
+                                "id": 211,
+                                "nodeType": "FreeKick",
+                                "fatigueValue": 2,
+                                "rewards": [
+                                    {
+                                        "type": "Points",
+                                        "rewardId": 0,
+                                        "amount": 4
+                                    }
+                                ],
+                                "opponentId": -1,
+                                "difficultyLevel": "Hard"
+                            },
+                            {
+                                "id": 212,
+                                "nodeType": "FullMatch",
+                                "opponentId": 10148,
+                                "difficultyLevel": "Extreme",
+                                "fatigueValue": 0,
+                                "rewards": [
+                                    {
+                                        "type": "Points",
+                                        "rewardId": 0,
+                                        "amount": 4
+                                    }
+                                ]
+                            }
+                        ],
+                        "adjacencyList": {
+                            "201": [
+                                202,
+                                203
+                            ],
+                            "202": [
+                                204
+                            ],
+                            "203": [
+                                205,
+                                206
+                            ],
+                            "204": [
+                                207
+                            ],
+                            "205": [
+                                208
+                            ],
+                            "206": [
+                                209
+                            ],
+                            "207": [
+                                210
+                            ],
+                            "208": [
+                                210
+                            ],
+                            "209": [
+                                211
+                            ],
+                            "210": [
+                                212
+                            ],
+                            "211": [
+                                212
+                            ],
+                            "212": []
+                        }
+                    },
+                    "nextChapterId": 6
+                },
+                {
+                    "id": 3,
+                    "chapterNameId": "TourEvent_Chapter3_Name",
+                    "chapterShortDescId": "2010-2022",
+                    "fatigueLimit": 12,
+                    "randomOpponentTeamIds": [
+                        10958,
+                        10929,
+                        10028,
+                        10946,
+                        10947,
+                        10948,
+                        10950,
+                        10951,
+                        10938,
+                        10939,
+                        10940,
+                        10941,
+                        10942,
+                        10927
+                    ],
+                    "chapterRewards": [
+                        {
+                            "type": "Player",
+                            "rewardId": 2081,
+                            "amount": 1,
+                            "firstClearOnly": true
+                        },
+                        {
+                            "type": "Point",
+                            "rewardId": 0,
+                            "amount": 80,
+                            "firstClearOnly": false
+                        }
+                    ],
+                    "map": {
+                        "entryNodeIds": [
+                            301
+                        ],
+                        "finalNodeId": 314,
+                        "nodes": [
+                            {
+                                "id": 301,
+                                "nodeType": "FullMatch",
+                                "opponentId": -1,
+                                "difficultyLevel": "Medium",
+                                "fatigueValue": 4,
+                                "rewards": [
+                                    {
+                                        "type": "Points",
+                                        "rewardId": 0,
+                                        "amount": 5
+                                    }
+                                ]
+                            },
+                            {
+                                "id": 302,
+                                "nodeType": "PenaltyKick",
+                                "opponentId": -1,
+                                "difficultyLevel": "Medium",
+                                "fatigueValue": 2,
+                                "rewards": [
+                                    {
+                                        "type": "Points",
+                                        "rewardId": 0,
+                                        "amount": 5
+                                    }
+                                ]
+                            },
+                            {
+                                "id": 303,
+                                "nodeType": "MomentChallenge",
+                                "fatigueValue": 3,
+                                "opponentId": -1,
+                                "difficultyLevel": "Medium",
+                                "rewards": [
+                                    {
+                                        "type": "Points",
+                                        "rewardId": 0,
+                                        "amount": 5
+                                    }
+                                ]
+                            },
+                            {
+                                "id": 304,
+                                "nodeType": "RandomEvent",
+                                "fatigueValue": 0,
+                                "rewards": [
+                                    {
+                                        "type": "Points",
+                                        "rewardId": 0,
+                                        "amount": 2
+                                    }
+                                ],
+                                "randomEventType": "TypeOne"
+                            },
+                            {
+                                "id": 305,
+                                "nodeType": "MomentChallenge",
+                                "opponentId": -1,
+                                "difficultyLevel": "Medium",
+                                "fatigueValue": 3,
+                                "rewards": [
+                                    {
+                                        "type": "Points",
+                                        "rewardId": 0,
+                                        "amount": 5
+                                    }
+                                ]
+                            },
+                            {
+                                "id": 306,
+                                "nodeType": "FreeKick",
+                                "opponentId": -1,
+                                "difficultyLevel": "Medium",
+                                "fatigueValue": 2,
+                                "rewards": [
+                                    {
+                                        "type": "Points",
+                                        "rewardId": 0,
+                                        "amount": 5
+                                    }
+                                ]
+                            },
+                            {
+                                "id": 307,
+                                "nodeType": "MomentChallenge",
+                                "opponentId": -1,
+                                "difficultyLevel": "Hard",
+                                "fatigueValue": 3,
+                                "rewards": [
+                                    {
+                                        "type": "Points",
+                                        "rewardId": 0,
+                                        "amount": 5
+                                    }
+                                ]
+                            },
+                            {
+                                "id": 308,
+                                "nodeType": "RandomEvent",
+                                "fatigueValue": 0,
+                                "randomEventType": "TypeOne",
+                                "rewards": [
+                                    {
+                                        "type": "Points",
+                                        "rewardId": 0,
+                                        "amount": 2
+                                    }
+                                ]
+                            },
+                            {
+                                "id": 309,
+                                "nodeType": "RandomEvent",
+                                "fatigueValue": 0,
+                                "randomEventType": "TypeOne",
+                                "rewards": [
+                                    {
+                                        "type": "Points",
+                                        "rewardId": 0,
+                                        "amount": 2
+                                    }
+                                ]
+                            },
+                            {
+                                "id": 310,
+                                "nodeType": "FullMatch",
+                                "opponentId": -1,
+                                "difficultyLevel": "Hard",
+                                "fatigueValue": 5,
+                                "rewards": [
+                                    {
+                                        "type": "Points",
+                                        "rewardId": 0,
+                                        "amount": 5
+                                    }
+                                ]
+                            },
+                            {
+                                "id": 311,
+                                "nodeType": "FreeKick",
+                                "opponentId": -1,
+                                "difficultyLevel": "Hard",
+                                "fatigueValue": 2,
+                                "rewards": [
+                                    {
+                                        "type": "Points",
+                                        "rewardId": 0,
+                                        "amount": 5
+                                    }
+                                ]
+                            },
+                            {
+                                "id": 312,
+                                "nodeType": "MomentChallenge",
+                                "opponentId": -1,
+                                "difficultyLevel": "Hard",
+                                "fatigueValue": 3,
+                                "rewards": [
+                                    {
+                                        "type": "Points",
+                                        "rewardId": 0,
+                                        "amount": 5
+                                    }
+                                ]
+                            },
+                            {
+                                "id": 313,
+                                "nodeType": "PenaltyKick",
+                                "opponentId": -1,
+                                "difficultyLevel": "Extreme",
+                                "fatigueValue": 2,
+                                "rewards": [
+                                    {
+                                        "type": "Points",
+                                        "rewardId": 0,
+                                        "amount": 5
+                                    }
+                                ]
+                            },
+                            {
+                                "id": 314,
+                                "nodeType": "FullMatch",
+                                "fatigueValue": 0,
+                                "opponentId": 10928,
+                                "difficultyLevel": "Extreme",
+                                "rewards": [
+                                    {
+                                        "type": "Points",
+                                        "rewardId": 0,
+                                        "amount": 5
+                                    }
+                                ]
+                            }
+                        ],
+                        "adjacencyList": {
+                            "301": [
+                                302,
+                                303,
+                                305
+                            ],
+                            "302": [
+                                304
+                            ],
+                            "303": [
+                                306
+                            ],
+                            "304": [
+                                307
+                            ],
+                            "305": [
+                                308
+                            ],
+                            "306": [
+                                309
+                            ],
+                            "307": [
+                                310
+                            ],
+                            "308": [
+                                311
+                            ],
+                            "309": [
+                                312
+                            ],
+                            "310": [
+                                314
+                            ],
+                            "311": [
+                                310
+                            ],
+                            "312": [
+                                313
+                            ],
+                            "313": [
+                                314
+                            ],
+                            "314": []
+                        }
+                    },
+                    "nextChapterId": 0
+                },
+                {
+                    "id": 4,
+                    "chapterNameId": "TourEvent_Chapter1_Name",
+                    "chapterShortDescId": "1986-1994",
+                    "fatigueLimit": 8,
+                    "randomOpponentTeamIds": [
+                        10211,
+                        10212,
+                        10213,
+                        10153,
+                        10147,
+                        10152,
+                        10153,
+                        10934,
+                        10935,
+                        10936
+                    ],
+                    "chapterRewards": [
+                        {
+                            "type": "Player",
+                            "rewardId": 2079,
+                            "amount": 1,
+                            "firstClearOnly": true
+                        },
+                        {
+                            "type": "Point",
+                            "rewardId": 0,
+                            "amount": 40,
+                            "firstClearOnly": false
+                        }
+                    ],
+                    "map": {
+                        "entryNodeIds": [
+                            401
+                        ],
+                        "finalNodeId": 409,
+                        "nodes": [
+                            {
+                                "id": 401,
+                                "nodeType": "FullMatch",
+                                "opponentId": 10210,
+                                "difficultyLevel": "Easy",
+                                "fatigueValue": 5,
+                                "rewards": [
+                                    {
+                                        "type": "Points",
+                                        "rewardId": 0,
+                                        "amount": 3
+                                    }
+                                ]
+                            },
+                            {
+                                "id": 402,
+                                "nodeType": "RandomEvent",
+                                "fatigueValue": 0,
+                                "rewards": [
+                                    {
+                                        "type": "Points",
+                                        "rewardId": 0,
+                                        "amount": 2
+                                    }
+                                ],
+                                "randomEventType": "TypeOne"
+                            },
+                            {
+                                "id": 403,
+                                "nodeType": "PenaltyKick",
+                                "opponentId": -1,
+                                "difficultyLevel": "Easy",
+                                "fatigueValue": 1,
+                                "rewards": [
+                                    {
+                                        "type": "Points",
+                                        "rewardId": 0,
+                                        "amount": 3
+                                    }
+                                ]
+                            },
+                            {
+                                "id": 404,
+                                "nodeType": "FullMatch",
+                                "fatigueValue": 5,
+                                "rewards": [
+                                    {
+                                        "type": "Points",
+                                        "rewardId": 0,
+                                        "amount": 3
+                                    }
+                                ],
+                                "opponentId": -1,
+                                "difficultyLevel": "Medium"
+                            },
+                            {
+                                "id": 405,
+                                "nodeType": "MomentChallenge",
+                                "opponentId": -1,
+                                "difficultyLevel": "Easy",
+                                "fatigueValue": 3,
+                                "rewards": [
+                                    {
+                                        "type": "Points",
+                                        "rewardId": 0,
+                                        "amount": 3
+                                    }
+                                ]
+                            },
+                            {
+                                "id": 406,
+                                "nodeType": "MomentChallenge",
+                                "fatigueValue": 2,
+                                "rewards": [
+                                    {
+                                        "type": "Points",
+                                        "rewardId": 0,
+                                        "amount": 3
+                                    }
+                                ],
+                                "opponentId": -1,
+                                "difficultyLevel": "Easy"
+                            },
+                            {
+                                "id": 407,
+                                "nodeType": "RandomEvent",
+                                "fatigueValue": 0,
+                                "rewards": [
+                                    {
+                                        "type": "Points",
+                                        "rewardId": 0,
+                                        "amount": 2
+                                    }
+                                ],
+                                "randomEventType": "TypeOne"
+                            },
+                            {
+                                "id": 408,
+                                "nodeType": "FreeKick",
+                                "fatigueValue": 1,
+                                "rewards": [
+                                    {
+                                        "type": "Points",
+                                        "rewardId": 0,
+                                        "amount": 3
+                                    }
+                                ],
+                                "opponentId": -1,
+                                "difficultyLevel": "Medium"
+                            },
+                            {
+                                "id": 409,
+                                "nodeType": "FullMatch",
+                                "opponentId": 10936,
+                                "difficultyLevel": "Medium",
+                                "fatigueValue": 2,
+                                "rewards": [
+                                    {
+                                        "type": "Points",
+                                        "rewardId": 0,
+                                        "amount": 3
+                                    }
+                                ]
+                            }
+                        ],
+                        "adjacencyList": {
+                            "401": [
+                                402,
+                                403
+                            ],
+                            "402": [
+                                404,
+                                405
+                            ],
+                            "403": [
+                                406
+                            ],
+                            "404": [
+                                407
+                            ],
+                            "405": [
+                                408
+                            ],
+                            "406": [
+                                408
+                            ],
+                            "407": [
+                                409
+                            ],
+                            "408": [
+                                409
+                            ],
+                            "409": []
+                        }
+                    },
+                    "nextChapterId": 5
+                },
+                {
+                    "id": 5,
+                    "chapterNameId": "TourEvent_Chapter2_Name",
+                    "chapterShortDescId": "1998-2006",
+                    "fatigueLimit": 10,
+                    "randomOpponentTeamIds": [
+                        10160,
+                        10932,
+                        10148,
+                        10149,
+                        10150,
+                        10151,
+                        10930,
+                        10931
+                    ],
+                    "chapterRewards": [
+                        {
+                            "type": "Player",
+                            "rewardId": 2080,
+                            "amount": 1,
+                            "firstClearOnly": true
+                        },
+                        {
+                            "type": "Point",
+                            "rewardId": 0,
+                            "amount": 60,
+                            "firstClearOnly": false
+                        }
+                    ],
+                    "map": {
+                        "entryNodeIds": [
+                            501
+                        ],
+                        "finalNodeId": 512,
+                        "nodes": [
+                            {
+                                "id": 501,
+                                "nodeType": "FullMatch",
+                                "opponentId": -1,
+                                "difficultyLevel": "Easy",
+                                "fatigueValue": 5,
+                                "rewards": [
+                                    {
+                                        "type": "Points",
+                                        "rewardId": 0,
+                                        "amount": 4
+                                    }
+                                ]
+                            },
+                            {
+                                "id": 502,
+                                "nodeType": "FullMatch",
+                                "opponentId": -1,
+                                "difficultyLevel": "Medium",
+                                "fatigueValue": 5,
+                                "rewards": [
+                                    {
+                                        "type": "Points",
+                                        "rewardId": 0,
+                                        "amount": 4
+                                    }
+                                ]
+                            },
+                            {
+                                "id": 503,
+                                "nodeType": "PenaltyKick",
+                                "fatigueValue": 1,
+                                "opponentId": -1,
+                                "difficultyLevel": "Medium",
+                                "rewards": [
+                                    {
+                                        "type": "Points",
+                                        "rewardId": 0,
+                                        "amount": 4
+                                    }
+                                ]
+                            },
+                            {
+                                "id": 504,
+                                "nodeType": "RandomEvent",
+                                "fatigueValue": 0,
+                                "rewards": [
+                                    {
+                                        "type": "Points",
+                                        "rewardId": 0,
+                                        "amount": 2
+                                    }
+                                ],
+                                "randomEventType": "TypeOne"
+                            },
+                            {
+                                "id": 505,
+                                "nodeType": "MomentChallenge",
+                                "opponentId": -1,
+                                "difficultyLevel": "Medium",
+                                "fatigueValue": 3,
+                                "rewards": [
+                                    {
+                                        "type": "Points",
+                                        "rewardId": 0,
+                                        "amount": 4
+                                    }
+                                ]
+                            },
+                            {
+                                "id": 506,
+                                "nodeType": "MomentChallenge",
+                                "fatigueValue": 2,
+                                "rewards": [
+                                    {
+                                        "type": "Points",
+                                        "rewardId": 0,
+                                        "amount": 4
+                                    }
+                                ],
+                                "opponentId": -1,
+                                "difficultyLevel": "Medium"
+                            },
+                            {
+                                "id": 507,
+                                "nodeType": "MomentChallenge",
+                                "fatigueValue": 3,
+                                "rewards": [
+                                    {
+                                        "type": "Points",
+                                        "rewardId": 0,
+                                        "amount": 4
+                                    }
+                                ],
+                                "opponentId": -1,
+                                "difficultyLevel": "Hard"
+                            },
+                            {
+                                "id": 508,
+                                "nodeType": "MomentChallenge",
+                                "fatigueValue": 3,
+                                "rewards": [
+                                    {
+                                        "type": "Points",
+                                        "rewardId": 0,
+                                        "amount": 4
+                                    }
+                                ],
+                                "opponentId": -1,
+                                "difficultyLevel": "Hard"
+                            },
+                            {
+                                "id": 509,
+                                "nodeType": "RandomEvent",
+                                "fatigueValue": 0,
+                                "rewards": [
+                                    {
+                                        "type": "Points",
+                                        "rewardId": 0,
+                                        "amount": 2
+                                    }
+                                ],
+                                "randomEventType": "TypeOne"
+                            },
+                            {
+                                "id": 510,
+                                "nodeType": "RandomEvent",
+                                "fatigueValue": 0,
+                                "rewards": [
+                                    {
+                                        "type": "Points",
+                                        "rewardId": 0,
+                                        "amount": 2
+                                    }
+                                ],
+                                "randomEventType": "TypeOne"
+                            },
+                            {
+                                "id": 511,
+                                "nodeType": "FreeKick",
+                                "fatigueValue": 1,
+                                "rewards": [
+                                    {
+                                        "type": "Points",
+                                        "rewardId": 0,
+                                        "amount": 4
+                                    }
+                                ],
+                                "opponentId": -1,
+                                "difficultyLevel": "Hard"
+                            },
+                            {
+                                "id": 512,
+                                "nodeType": "FullMatch",
+                                "opponentId": 10148,
+                                "difficultyLevel": "Hard",
+                                "fatigueValue": 3,
+                                "rewards": [
+                                    {
+                                        "type": "Points",
+                                        "rewardId": 0,
+                                        "amount": 4
+                                    }
+                                ]
+                            }
+                        ],
+                        "adjacencyList": {
+                            "501": [
+                                502,
+                                503
+                            ],
+                            "502": [
+                                504
+                            ],
+                            "503": [
+                                505,
+                                506
+                            ],
+                            "504": [
+                                507
+                            ],
+                            "505": [
+                                508
+                            ],
+                            "506": [
+                                509
+                            ],
+                            "507": [
+                                510
+                            ],
+                            "508": [
+                                510
+                            ],
+                            "509": [
+                                511
+                            ],
+                            "510": [
+                                512
+                            ],
+                            "511": [
+                                512
+                            ],
+                            "512": []
+                        }
+                    },
+                    "nextChapterId": 6
+                },
+                {
+                    "id": 6,
+                    "chapterNameId": "TourEvent_Chapter3_Name",
+                    "chapterShortDescId": "2010-2022",
+                    "fatigueLimit": 12,
+                    "randomOpponentTeamIds": [
+                        10958,
+                        10929,
+                        10028,
+                        10946,
+                        10947,
+                        10948,
+                        10950,
+                        10951,
+                        10938,
+                        10939,
+                        10940,
+                        10941,
+                        10942,
+                        10927
+                    ],
+                    "chapterRewards": [
+                        {
+                            "type": "Player",
+                            "rewardId": 2081,
+                            "amount": 1,
+                            "firstClearOnly": true
+                        },
+                        {
+                            "type": "Point",
+                            "rewardId": 0,
+                            "amount": 80,
+                            "firstClearOnly": false
+                        }
+                    ],
+                    "map": {
+                        "entryNodeIds": [
+                            601
+                        ],
+                        "finalNodeId": 615,
+                        "nodes": [
+                            {
+                                "id": 601,
+                                "nodeType": "FullMatch",
+                                "opponentId": -1,
+                                "difficultyLevel": "Medium",
+                                "fatigueValue": 5,
+                                "rewards": [
+                                    {
+                                        "type": "Points",
+                                        "rewardId": 0,
+                                        "amount": 5
+                                    }
+                                ]
+                            },
+                            {
+                                "id": 602,
+                                "nodeType": "PenaltyKick",
+                                "opponentId": -1,
+                                "difficultyLevel": "Medium",
+                                "fatigueValue": 2,
+                                "rewards": [
+                                    {
+                                        "type": "Points",
+                                        "rewardId": 0,
+                                        "amount": 5
+                                    }
+                                ]
+                            },
+                            {
+                                "id": 603,
+                                "nodeType": "MomentChallenge",
+                                "fatigueValue": 3,
+                                "opponentId": -1,
+                                "difficultyLevel": "Medium",
+                                "rewards": [
+                                    {
+                                        "type": "Points",
+                                        "rewardId": 0,
+                                        "amount": 5
+                                    }
+                                ]
+                            },
+                            {
+                                "id": 604,
+                                "nodeType": "MomentChallenge",
+                                "fatigueValue": 3,
+                                "rewards": [
+                                    {
+                                        "type": "Points",
+                                        "rewardId": 0,
+                                        "amount": 5
+                                    }
+                                ],
+                                "opponentId": -1,
+                                "difficultyLevel": "Medium"
+                            },
+                            {
+                                "id": 605,
+                                "nodeType": "MomentChallenge",
+                                "opponentId": -1,
+                                "difficultyLevel": "Medium",
+                                "fatigueValue": 3,
+                                "rewards": [
+                                    {
+                                        "type": "Points",
+                                        "rewardId": 0,
+                                        "amount": 5
+                                    }
+                                ]
+                            },
+                            {
+                                "id": 606,
+                                "nodeType": "PenaltyKick",
+                                "fatigueValue": 2,
+                                "rewards": [
+                                    {
+                                        "type": "Points",
+                                        "rewardId": 0,
+                                        "amount": 5
+                                    }
+                                ],
+                                "opponentId": -1,
+                                "difficultyLevel": "Hard"
+                            },
+                            {
+                                "id": 607,
+                                "nodeType": "MomentChallenge",
+                                "fatigueValue": 3,
+                                "rewards": [
+                                    {
+                                        "type": "Points",
+                                        "rewardId": 0,
+                                        "amount": 5
+                                    }
+                                ],
+                                "opponentId": -1,
+                                "difficultyLevel": "Hard"
+                            },
+                            {
+                                "id": 608,
+                                "nodeType": "FreeKick",
+                                "fatigueValue": 2,
+                                "rewards": [
+                                    {
+                                        "type": "Points",
+                                        "rewardId": 0,
+                                        "amount": 5
+                                    }
+                                ],
+                                "opponentId": -1,
+                                "difficultyLevel": "Hard"
+                            },
+                            {
+                                "id": 609,
+                                "nodeType": "RandomEvent",
+                                "fatigueValue": 0,
+                                "rewards": [
+                                    {
+                                        "type": "Points",
+                                        "rewardId": 0,
+                                        "amount": 2
+                                    }
+                                ],
+                                "randomEventType": "TypeOne"
+                            },
+                            {
+                                "id": 610,
+                                "nodeType": "RandomEvent",
+                                "fatigueValue": 0,
+                                "rewards": [
+                                    {
+                                        "type": "Points",
+                                        "rewardId": 0,
+                                        "amount": 2
+                                    }
+                                ],
+                                "randomEventType": "TypeOne"
+                            },
+                            {
+                                "id": 611,
+                                "nodeType": "MomentChallenge",
+                                "fatigueValue": 3,
+                                "rewards": [
+                                    {
+                                        "type": "Points",
+                                        "rewardId": 0,
+                                        "amount": 5
+                                    }
+                                ],
+                                "opponentId": -1,
+                                "difficultyLevel": "Extreme"
+                            },
+                            {
+                                "id": 612,
+                                "nodeType": "FullMatch",
+                                "fatigueValue": 5,
+                                "rewards": [
+                                    {
+                                        "type": "Points",
+                                        "rewardId": 0,
+                                        "amount": 5
+                                    }
+                                ],
+                                "opponentId": -1,
+                                "difficultyLevel": "Extreme"
+                            },
+                            {
+                                "id": 613,
+                                "nodeType": "FreeKick",
+                                "opponentId": -1,
+                                "difficultyLevel": "Extreme",
+                                "fatigueValue": 2,
+                                "rewards": [
+                                    {
+                                        "type": "Points",
+                                        "rewardId": 0,
+                                        "amount": 5
+                                    }
+                                ]
+                            },
+                            {
+                                "id": 614,
+                                "nodeType": "RandomEvent",
+                                "fatigueValue": 0,
+                                "rewards": [
+                                    {
+                                        "type": "Points",
+                                        "rewardId": 0,
+                                        "amount": 2
+                                    }
+                                ],
+                                "randomEventType": "TypeOne"
+                            },
+                            {
+                                "id": 615,
+                                "nodeType": "FullMatch",
+                                "opponentId": -1,
+                                "difficultyLevel": "Extreme",
+                                "fatigueValue": 3,
+                                "rewards": [
+                                    {
+                                        "type": "Points",
+                                        "rewardId": 0,
+                                        "amount": 5
+                                    }
+                                ]
+                            }
+                        ],
+                        "adjacencyList": {
+                            "601": [
+                                602,
+                                603
+                            ],
+                            "602": [
+                                604,
+                                605
+                            ],
+                            "603": [
+                                606
+                            ],
+                            "604": [
+                                607
+                            ],
+                            "605": [
+                                608
+                            ],
+                            "606": [
+                                608,
+                                609
+                            ],
+                            "607": [
+                                610
+                            ],
+                            "608": [
+                                610,
+                                611
+                            ],
+                            "609": [
+                                612
+                            ],
+                            "610": [
+                                613
+                            ],
+                            "611": [
+                                614
+                            ],
+                            "612": [
+                                614
+                            ],
+                            "613": [
+                                615
+                            ],
+                            "614": [
+                                615
+                            ],
+                            "615": []
+                        }
+                    },
+                    "nextChapterId": 0
+                }
+            ],
+            "entryChapterId": 4
+        }
+    }
+}

@@ -1,0 +1,54 @@
+{
+  "debeyChallengeEvent": {
+    "1": {
+      "activityNameId": "DebeyChallengeEvent_Name",
+      "activityLongDescId": "DebeyChallengeEvent_LongDesc",
+      "activityShortDescId": "DebeyChallengeEvent_ShortDesc",
+      "difficulty": 3.5,
+      "duration": 360,
+      "trophyType": "trophy_EuropeanChampionshipCup",
+      "teams": [
+        {
+          "teamId": 20030,
+          "firstLoopReward": [
+            {
+              "type": "BallOrJersey",
+              "rewardId": 10040,
+              "amount": 1
+            },
+            {
+              "type": "BallOrJersey",
+              "rewardId": 20032,
+              "amount": 1
+            }
+          ],
+          "repeatLoopReward": {
+            "type": "Coins",
+            "rewardId": 0,
+            "amount": 500
+          }
+        },
+        {
+          "teamId": 20051,
+          "firstLoopReward": [
+            {
+              "type": "BallOrJersey",
+              "rewardId": 10041,
+              "amount": 1
+            },
+            {
+              "type": "BallOrJersey",
+              "rewardId": 20033,
+              "amount": 1
+            }
+          ],
+          "repeatLoopReward": {
+            "type": "Coins",
+            "rewardId": 0,
+            "amount": 500
+          }
+        }
+      ]
+    }
+  }
+}

@@ -1,0 +1,42 @@
+namespace EngineMessages
+{
+	public enum InputFunction
+	{
+		Up = 0,
+		Right = 1,
+		Down = 2,
+		Left = 3,
+		Longpass = 4,
+		Highpass = 5,
+		Shortpass = 6,
+		Shot = 7,
+		Keeperrush = 8,
+		Sliding = 9,
+		Pressure = 10,
+		Teampressure = 11,
+		Switch = 12,
+		Special = 13,
+		Sprint = 14,
+		Dribble = 15,
+		Select = 16,
+		Start = 17,
+		Stop = 18,
+		Highthrough = 19,
+		Lobshot = 20,
+		Fakeshot = 21,
+		Special1 = 22,
+		Special2 = 23,
+		Special3 = 24,
+		Special4 = 25,
+		ShotUp = 26,
+		ShotRight = 27,
+		ShotDown = 28,
+		ShotLeft = 29,
+		HighpassUp = 30,
+		HighpassRight = 31,
+		HighpassDown = 32,
+		HighpassLeft = 33,
+		ShotPowerful = 34,
+		Size = 35
+	}
+}

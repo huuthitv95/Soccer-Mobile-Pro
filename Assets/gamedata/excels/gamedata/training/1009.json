@@ -1,0 +1,62 @@
+{
+    "desc": "sliding",
+    "type": 7,
+    "ball_pos": [
+        0.0,
+        0.0
+    ],
+    "poses1": [
+        -54.0,
+        0.0,
+        -20.0,
+        1.0
+    ],
+    "poses2": [
+        0.25,
+        0.0
+    ],
+    "formation1": [],
+    "formation2": [],
+    "steps": [
+        {
+            "selectPlayer": 1,
+            "limitTime": -1,
+            "limitArea": [
+                0,
+                -30.0,
+                5.0,
+                -8.0,
+                8.0
+            ],
+            "playerActions1": [
+                0,
+                0
+            ],
+            "playerActions2": [
+                2,
+                -40.0,
+                0.0,
+                5.0
+            ],
+            "objective": [
+                6,
+                1
+            ]
+        }
+    ],
+    "promptArea": [],
+    "arrowGuide": [],
+    "homeHasGK": true,
+    "awayHasGK": false,
+    "ForceOffside": false,
+    "ForceDefensive": true,
+    "hideLimitareas": [],
+    "hideDestinations": [],
+    "HomePlayerFilter": [
+        "GK",
+        "CB"
+    ],
+    "AwayPlayerFilter": [
+        "ST"
+    ]
+}

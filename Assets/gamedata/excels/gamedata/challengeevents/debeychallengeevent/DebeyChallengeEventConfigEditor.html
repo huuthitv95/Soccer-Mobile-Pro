@@ -1,0 +1,399 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>DebeyChallengeEvent Config Editor</title>
+<style>
+  :root {
+    --bg: #f3f5f7;
+    --surface: #fff;
+    --line: #d9dee5;
+    --line-strong: #aeb7c2;
+    --text: #1f2933;
+    --muted: #637083;
+    --accent: #2364aa;
+    --danger: #b33a3a;
+  }
+  * { box-sizing: border-box; }
+  body {
+    margin: 0;
+    color: var(--text);
+    background: var(--bg);
+    font: 14px/1.45 "Segoe UI", "Microsoft YaHei", Arial, sans-serif;
+  }
+  button, input, select, textarea { font: inherit; }
+  button {
+    border: 1px solid var(--line-strong);
+    border-radius: 6px;
+    min-height: 34px;
+    padding: 7px 12px;
+    color: var(--text);
+    background: var(--surface);
+    cursor: pointer;
+  }
+  button.primary { color: #fff; background: var(--accent); border-color: var(--accent); }
+  button.danger { color: var(--danger); border-color: #d5a1a1; }
+  input, select, textarea {
+    width: 100%;
+    border: 1px solid var(--line-strong);
+    border-radius: 6px;
+    min-height: 34px;
+    padding: 8px 10px;
+    background: #fff;
+    color: var(--text);
+  }
+  label { display: block; margin: 0 0 6px; color: var(--muted); font-size: 12px; }
+  textarea { min-height: 180px; font-family: Consolas, "Courier New", monospace; }
+  .app { max-width: 1180px; margin: 0 auto; padding: 22px; }
+  .topbar { display: flex; gap: 10px; align-items: center; justify-content: space-between; margin-bottom: 16px; }
+  .title { font-size: 20px; font-weight: 700; }
+  .actions { display: flex; gap: 8px; flex-wrap: wrap; }
+  .panel { background: var(--surface); border: 1px solid var(--line); border-radius: 8px; padding: 16px; margin-bottom: 14px; }
+  .panel-title { font-weight: 700; margin-bottom: 12px; }
+  .grid { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 12px; }
+  .team-grid { display: grid; grid-template-columns: 160px repeat(3, minmax(0, 1fr)); gap: 12px; align-items: end; }
+  .reward-title { color: var(--muted); font-size: 12px; margin: 12px 0 8px; }
+  .reward-list { display: grid; gap: 8px; }
+  .reward-actions { display: flex; gap: 8px; }
+  .status { color: var(--muted); min-height: 20px; }
+  .status.bad { color: var(--danger); }
+  .hidden { display: none; }
+  @media (max-width: 820px) {
+    .grid, .team-grid { grid-template-columns: 1fr; }
+    .topbar { align-items: flex-start; flex-direction: column; }
+  }
+</style>
+</head>
+<body>
+<div class="app">
+  <div class="topbar">
+    <div>
+      <div class="title">DebeyChallengeEvent Config Editor</div>
+      <div class="status" id="status">Ready</div>
+    </div>
+    <div class="actions">
+      <button id="loadBtn">Load JSON</button>
+      <button id="applyRawBtn">Apply Raw JSON</button>
+      <button class="primary" id="downloadBtn">Download JSON</button>
+      <input class="hidden" id="fileInput" type="file" accept=".json,application/json">
+    </div>
+  </div>
+
+  <div class="panel">
+    <div class="panel-title">Activity</div>
+    <div class="grid">
+      <div>
+        <label>Config id</label>
+        <input id="eventId" type="number" min="1" step="1">
+      </div>
+      <div>
+        <label>Name string id</label>
+        <input id="nameId" type="text">
+      </div>
+      <div>
+        <label>Short desc string id</label>
+        <input id="shortDescId" type="text">
+      </div>
+      <div>
+        <label>Long desc string id</label>
+        <input id="longDescId" type="text">
+      </div>
+      <div>
+        <label>Difficulty</label>
+        <input id="difficulty" type="number" min="1" step="1">
+      </div>
+      <div>
+        <label>Duration seconds</label>
+        <input id="duration" type="number" min="1" step="1">
+      </div>
+      <div>
+        <label>Trophy type</label>
+        <input id="trophyType" type="text" placeholder="trophy_EuropeanCup">
+      </div>
+    </div>
+  </div>
+
+  <div id="teams"></div>
+
+  <div class="panel">
+    <div class="panel-title">Raw JSON</div>
+    <textarea id="rawJson" spellcheck="false"></textarea>
+  </div>
+</div>
+
+<script>
+const rewardTypes = ["Coins", "Player", "ClissicTeam", "BallOrJersey"];
+let model = createDefaultModel();
+
+function createDefaultModel() {
+  return {
+    debeyChallengeEvent: {
+      "1": {
+        activityNameId: "DebeyChallengeEvent_Name",
+        activityLongDescId: "DebeyChallengeEvent_LongDesc",
+        activityShortDescId: "DebeyChallengeEvent_ShortDesc",
+        difficulty: 1,
+        duration: 360,
+        trophyType: "trophy_EuropeanCup",
+        teams: [
+          createTeam(20026, "BallOrJersey", 10029, 1, "Coins", 0, 5000),
+          createTeam(20058, "BallOrJersey", 10034, 1, "Coins", 0, 5000)
+        ]
+      }
+    }
+  };
+}
+
+function createTeam(teamId, firstType, firstId, firstAmount, repeatType, repeatId, repeatAmount) {
+  return {
+    teamId,
+    firstLoopReward: [createReward(firstType, firstId, firstAmount)],
+    repeatLoopReward: createReward(repeatType, repeatId, repeatAmount)
+  };
+}
+
+function createReward(type, rewardId, amount) {
+  return { type, rewardId, amount };
+}
+
+function getEventKey() {
+  const table = model.debeyChallengeEvent || {};
+  const keys = Object.keys(table).sort();
+  if (keys.length === 0) {
+    model.debeyChallengeEvent = { "1": createDefaultModel().debeyChallengeEvent["1"] };
+    return "1";
+  }
+  return keys[0];
+}
+
+function getConfig() {
+  const key = getEventKey();
+  return model.debeyChallengeEvent[key];
+}
+
+function setStatus(text, bad) {
+  const node = document.getElementById("status");
+  node.textContent = text;
+  node.classList.toggle("bad", !!bad);
+}
+
+function render() {
+  const key = getEventKey();
+  const config = getConfig();
+  document.getElementById("eventId").value = key;
+  document.getElementById("nameId").value = config.activityNameId || "";
+  document.getElementById("shortDescId").value = config.activityShortDescId || "";
+  document.getElementById("longDescId").value = config.activityLongDescId || "";
+  document.getElementById("difficulty").value = Math.max(1, Number(config.difficulty || 1));
+  document.getElementById("duration").value = Math.max(1, Number(config.duration || 360));
+  document.getElementById("trophyType").value = config.trophyType || "";
+  renderTeams(config);
+  syncRaw();
+}
+
+function renderTeams(config) {
+  const host = document.getElementById("teams");
+  host.innerHTML = "";
+  while (!Array.isArray(config.teams)) config.teams = [];
+  while (config.teams.length < 2) config.teams.push(createTeam(0, "Coins", 0, 0, "Coins", 0, 0));
+  config.teams = config.teams.slice(0, 2);
+
+  config.teams.forEach((team, index) => {
+    normalizeTeamRewards(team);
+    const panel = document.createElement("div");
+    panel.className = "panel";
+    panel.innerHTML = `
+      <div class="panel-title">Team ${index + 1}</div>
+      <div class="grid">
+        <div><label>Team id</label><input data-path="teams.${index}.teamId" type="number" min="0" step="1" value="${team.teamId || 0}"></div>
+      </div>
+      <div class="reward-title">First loop reward</div>
+      ${rewardListFields(index, "firstLoopReward", team.firstLoopReward)}
+      <div class="reward-title">Repeat loop reward</div>
+      ${rewardFields(index, "repeatLoopReward", team.repeatLoopReward || {})}
+    `;
+    host.appendChild(panel);
+  });
+}
+
+function rewardListFields(index, rewardName, rewards) {
+  const rows = rewards.map((reward, rewardIndex) => rewardFields(index, rewardName, reward, rewardIndex, rewards.length > 1)).join("");
+  return `
+    <div class="reward-list">
+      ${rows}
+      <div class="reward-actions"><button type="button" data-action="addFirstLoopReward" data-team="${index}">Add reward</button></div>
+    </div>
+  `;
+}
+
+function rewardFields(index, rewardName, reward, rewardIndex, canRemove) {
+  const options = rewardTypes.map(type => `<option value="${type}" ${type === reward.type ? "selected" : ""}>${type}</option>`).join("");
+  const basePath = rewardIndex === undefined ? `teams.${index}.${rewardName}` : `teams.${index}.${rewardName}.${rewardIndex}`;
+  const removeButton = canRemove ? `<button type="button" class="danger" data-action="removeFirstLoopReward" data-team="${index}" data-index="${rewardIndex}">Remove</button>` : "";
+  return `
+    <div class="team-grid">
+      <div><label>Type</label><select data-path="${basePath}.type">${options}</select></div>
+      <div><label>Reward id</label><input data-path="${basePath}.rewardId" type="number" step="1" value="${reward.rewardId || 0}"></div>
+      <div><label>Amount</label><input data-path="${basePath}.amount" type="number" min="0" step="1" value="${reward.amount || 0}"></div>
+      <div>${removeButton}</div>
+    </div>
+  `;
+}
+
+function writePath(path, value) {
+  const config = getConfig();
+  const parts = path.split(".");
+  let target = config;
+  for (let i = 0; i < parts.length - 1; i++) {
+    const part = parts[i];
+    if (/^\d+$/.test(part)) target = target[Number(part)];
+    else target = target[part];
+  }
+  const last = parts[parts.length - 1];
+  target[last] = value;
+}
+
+function bindInputs() {
+  document.body.addEventListener("input", event => {
+    const path = event.target.getAttribute("data-path");
+    if (!path) return;
+    const isNumber = event.target.type === "number";
+    writePath(path, isNumber ? Number(event.target.value || 0) : event.target.value);
+    syncRaw();
+  });
+  document.body.addEventListener("change", event => {
+    const path = event.target.getAttribute("data-path");
+    if (!path) return;
+    writePath(path, event.target.value);
+    syncRaw();
+  });
+  document.body.addEventListener("click", event => {
+    const action = event.target.getAttribute("data-action");
+    if (!action) return;
+    const teamIndex = Number(event.target.getAttribute("data-team"));
+    const team = getConfig().teams[teamIndex];
+    normalizeTeamRewards(team);
+    if (action === "addFirstLoopReward") {
+      team.firstLoopReward.push(createReward("Coins", 0, 0));
+      render();
+      setStatus("First loop reward added", false);
+    } else if (action === "removeFirstLoopReward") {
+      const rewardIndex = Number(event.target.getAttribute("data-index"));
+      if (team.firstLoopReward.length > 1) {
+        team.firstLoopReward.splice(rewardIndex, 1);
+        render();
+        setStatus("First loop reward removed", false);
+      }
+    }
+  });
+  ["nameId", "shortDescId", "longDescId"].forEach(id => {
+    document.getElementById(id).addEventListener("input", () => {
+      const config = getConfig();
+      config.activityNameId = document.getElementById("nameId").value.trim();
+      config.activityShortDescId = document.getElementById("shortDescId").value.trim();
+      config.activityLongDescId = document.getElementById("longDescId").value.trim();
+      syncRaw();
+    });
+  });
+  document.getElementById("difficulty").addEventListener("input", () => {
+    getConfig().difficulty = Math.max(1, Number(document.getElementById("difficulty").value || 1));
+    syncRaw();
+  });
+  document.getElementById("duration").addEventListener("input", () => {
+    getConfig().duration = Math.max(1, Number(document.getElementById("duration").value || 360));
+    syncRaw();
+  });
+  document.getElementById("trophyType").addEventListener("input", () => {
+    getConfig().trophyType = document.getElementById("trophyType").value.trim();
+    syncRaw();
+  });
+  document.getElementById("eventId").addEventListener("input", () => {
+    const oldKey = getEventKey();
+    const newKey = String(Math.max(1, Number(document.getElementById("eventId").value || 1)));
+    if (oldKey === newKey) return;
+    const config = model.debeyChallengeEvent[oldKey];
+    delete model.debeyChallengeEvent[oldKey];
+    model.debeyChallengeEvent[newKey] = config;
+    syncRaw();
+  });
+}
+
+function syncRaw() {
+  normalizeModel();
+  document.getElementById("rawJson").value = JSON.stringify(model, null, 2);
+}
+
+function normalizeModel() {
+  const config = getConfig();
+  config.difficulty = Math.max(1, Number(config.difficulty || 1));
+  config.duration = Math.max(1, Number(config.duration || 360));
+  config.trophyType = (config.trophyType || "").trim();
+  config.teams = (config.teams || []).slice(0, 2);
+  while (config.teams.length < 2) config.teams.push(createTeam(0, "Coins", 0, 0, "Coins", 0, 0));
+  config.teams.forEach(team => {
+    team.teamId = Number(team.teamId || 0);
+    normalizeTeamRewards(team);
+  });
+}
+
+function normalizeTeamRewards(team) {
+  if (Array.isArray(team.firstLoopReward)) {
+    team.firstLoopReward = team.firstLoopReward.length > 0 ? team.firstLoopReward : [createReward("Coins", 0, 0)];
+  } else if (team.firstLoopReward) {
+    team.firstLoopReward = [team.firstLoopReward];
+  } else {
+    team.firstLoopReward = [createReward("Coins", 0, 0)];
+  }
+  team.firstLoopReward.forEach(normalizeReward);
+  if (!team.repeatLoopReward) team.repeatLoopReward = createReward("Coins", 0, 0);
+  normalizeReward(team.repeatLoopReward);
+}
+
+function normalizeReward(reward) {
+  if (!rewardTypes.includes(reward.type)) reward.type = "Coins";
+  reward.rewardId = Number(reward.rewardId || 0);
+  reward.amount = Number(reward.amount || 0);
+}
+
+function applyRaw() {
+  try {
+    const parsed = JSON.parse(document.getElementById("rawJson").value);
+    if (!parsed.debeyChallengeEvent) throw new Error("Missing debeyChallengeEvent root");
+    model = parsed;
+    render();
+    setStatus("Raw JSON applied", false);
+  } catch (error) {
+    setStatus(error.message, true);
+  }
+}
+
+function downloadJson() {
+  syncRaw();
+  const blob = new Blob([document.getElementById("rawJson").value], { type: "application/json" });
+  const link = document.createElement("a");
+  link.href = URL.createObjectURL(blob);
+  link.download = "DebeyChallengeEventConfig.json";
+  link.click();
+  URL.revokeObjectURL(link.href);
+}
+
+document.getElementById("loadBtn").addEventListener("click", () => document.getElementById("fileInput").click());
+document.getElementById("fileInput").addEventListener("change", event => {
+  const file = event.target.files[0];
+  if (!file) return;
+  const reader = new FileReader();
+  reader.onload = () => {
+    document.getElementById("rawJson").value = reader.result;
+    applyRaw();
+  };
+  reader.readAsText(file);
+});
+document.getElementById("applyRawBtn").addEventListener("click", applyRaw);
+document.getElementById("downloadBtn").addEventListener("click", downloadJson);
+
+bindInputs();
+render();
+</script>
+</body>
+</html>

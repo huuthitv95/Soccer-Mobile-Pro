@@ -1,0 +1,20 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f07483bdfdf340ef2c32f75feeb8f733, type: 3}
+  m_Name: CompetitionChallengeDict
+  m_EditorClassIdentifier:
+  AllConfigs:
+  - Key: 2
+    Value: SpainWorldCup
+  - Key: 2602
+    Value: ItalyEuroCup2020
+  FrozenTeams: ce2a0000b92a0000

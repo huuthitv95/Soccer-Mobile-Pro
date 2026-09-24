@@ -1,0 +1,44 @@
+{
+  "debeyChallengeEvent": {
+    "1": {
+      "activityNameId": "EuropeanSuperCupEvent_Name",
+      "activityLongDescId": "EuropeanSuperCupEvent_LongDesc",
+      "activityShortDescId": "EuropeanSuperCupEvent_ShortDesc",
+      "difficulty": 3.5,
+      "duration": 360,
+      "trophyType": "trophy_EuropeanSuperCup",
+      "teams": [
+        {
+          "teamId": 20051,
+          "firstLoopReward": [
+            {
+              "type": "Player",
+              "rewardId": 2098,
+              "amount": 1
+            }
+          ],
+          "repeatLoopReward": {
+            "type": "Coins",
+            "rewardId": 0,
+            "amount": 500
+          }
+        },
+        {
+          "teamId": 20039,
+          "firstLoopReward": [
+            {
+              "type": "Player",
+              "rewardId": 2099,
+              "amount": 1
+            }
+          ],
+          "repeatLoopReward": {
+            "type": "Coins",
+            "rewardId": 0,
+            "amount": 500
+          }
+        }
+      ]
+    }
+  }
+}
