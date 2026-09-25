@@ -1,5 +1,7 @@
 # Soccer-Mobile-Pro
 
+Boot recovery: **Recovery → Open Boot Recovery**, then Play. See [verified native flow, offline adapters and remaining dependencies](Documentation/Boot/BOOT-RECOVERY.md). The Editor harness exercises Launch → Start gates with synthetic services; Lobby and gameplay remain unrecovered. Validate with the APK repository's `Recover-SoccerUnity.ps1 -ValidateBootFlow`.
+
 Offline UI milestone: see [opening instructions, controls and validation](Documentation/OFFLINE-UI.md). The isolated scene uses functional uGUI restored from the installed Unity 2020.3.49f1 source; original gameplay remains stubbed.
 
 Recovered Unity asset/type project for **Unity 2020.3.49f1**. Gameplay method bodies remain stubs; compilation does not mean functional gameplay recovery. Original export provenance is Unity 2022.3, so asset compatibility requires separate validation.

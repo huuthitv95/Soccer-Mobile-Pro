@@ -1,0 +1,67 @@
+{
+  "status": "Validated",
+  "unityVersion": "2020.3.49f1",
+  "preservedExistingMetaCount": 18073,
+  "originalScenesAndBuildSettingsUnchanged": true,
+  "compilationSucceeded": true,
+  "offlineUiPassed": 4,
+  "bootTestsPassed": 12,
+  "knownMissingScripts": 1,
+  "lobbyRecovered": false,
+  "gameplayRecovered": false,
+  "realServicesRecovered": false,
+  "scope": "Verified StartGame control flow with explicit offline adapters and isolated Editor scenes",
+  "validationReport": "C:\\Users\\ZGAMESVN\\Downloads\\Soccer-Unity-Recovery\\Runs\\BootValidation-20260925-000824-7f805e13\\boot-validation.json",
+  "run": "C:\\Users\\ZGAMESVN\\Downloads\\Soccer-Unity-Recovery\\Runs\\BootFlow-20260924-234846",
+  "trackedChanges": [
+    {
+      "repository": "Soccer-Mobile-Pro",
+      "path": "Assets/Recovery/Editor/Soccer.Recovery.OfflineUI.Editor.asmdef",
+      "baseCommit": "ef4ea701d",
+      "beforeGitBlobSha256": "450b6dbd922b6f9ecdcfd663dca481bef45556095bf61c1cb47ec84588d2fa3b",
+      "afterWorkingFileSha256": "4c8a1e5b51817e8d7c353543d04eb59c69e00aedcd5fe188f1c66fcd20f0aef6",
+      "backup": "C:\\Users\\ZGAMESVN\\Downloads\\Soccer-Unity-Recovery\\Runs\\BootFlow-20260924-234846\\BackupGitBase\\Soccer-Mobile-Pro\\Assets\\Recovery\\Editor\\Soccer.Recovery.OfflineUI.Editor.asmdef"
+    },
+    {
+      "repository": "Soccer-Mobile-Pro",
+      "path": "Assets/Scripts/Assembly-CSharp/StartGame.cs",
+      "baseCommit": "ef4ea701d",
+      "beforeGitBlobSha256": "cb296f118cba382ece94fdaf055ebfc2b40056bd78542fd8c116b92a75a78054",
+      "afterWorkingFileSha256": "e52096a30856c8b5b37bd6b02525cf74c0df911c561266f609407f120cba54cd",
+      "backup": "C:\\Users\\ZGAMESVN\\Downloads\\Soccer-Unity-Recovery\\Runs\\BootFlow-20260924-234846\\BackupGitBase\\Soccer-Mobile-Pro\\Assets\\Scripts\\Assembly-CSharp\\StartGame.cs"
+    },
+    {
+      "repository": "Soccer-Mobile-Pro",
+      "path": "README.md",
+      "baseCommit": "ef4ea701d",
+      "beforeGitBlobSha256": "907b96dd03822302bdd2b75800ac2929375a2e4a6924e4b6a4a25281b2a9004f",
+      "afterWorkingFileSha256": "6faeeb5eaff5d59730dee102d4b476a95e51ebb30f33ebc4dd8152874f6f1d18",
+      "backup": "C:\\Users\\ZGAMESVN\\Downloads\\Soccer-Unity-Recovery\\Runs\\BootFlow-20260924-234846\\BackupGitBase\\Soccer-Mobile-Pro\\README.md"
+    },
+    {
+      "repository": "Soccer-Mobile-Pro-APK",
+      "path": "README.md",
+      "baseCommit": "4fdec05",
+      "beforeGitBlobSha256": "ba556663a24235f1915743a5cf834bbf16b562281a8604e4215499934ecbfc38",
+      "afterWorkingFileSha256": "b851caff478422321ef94d05918a4ffa4d763e91339a7ac81e6915f2c57f7208",
+      "backup": "C:\\Users\\ZGAMESVN\\Downloads\\Soccer-Unity-Recovery\\Runs\\BootFlow-20260924-234846\\BackupGitBase\\Soccer-Mobile-Pro-APK\\README.md"
+    },
+    {
+      "repository": "Soccer-Mobile-Pro-APK",
+      "path": "Recover-SoccerUnity.ps1",
+      "baseCommit": "4fdec05",
+      "beforeGitBlobSha256": "46fdfbc30c3104946c7ec7e5a14bc09ba3735193a8a0887080548085a338c083",
+      "afterWorkingFileSha256": "992e311c960c907aad21bac629cdcf7208b1b5193a601a8bf56fda8eb33e20c5",
+      "backup": "C:\\Users\\ZGAMESVN\\Downloads\\Soccer-Unity-Recovery\\Runs\\BootFlow-20260924-234846\\BackupGitBase\\Soccer-Mobile-Pro-APK\\Recover-SoccerUnity.ps1"
+    },
+    {
+      "repository": "Soccer-Mobile-Pro-APK",
+      "path": "UNITY-RECOVERY.md",
+      "baseCommit": "4fdec05",
+      "beforeGitBlobSha256": "b794a39bdd8ea4da560b49a1fcb3f3d35dfc83d43dff10c799268b4dea7a6bef",
+      "afterWorkingFileSha256": "696109c70bb28e875161ae9b198c5b4436bcf3edd20a98af0f5359fed7e9f861",
+      "backup": "C:\\Users\\ZGAMESVN\\Downloads\\Soccer-Unity-Recovery\\Runs\\BootFlow-20260924-234846\\BackupGitBase\\Soccer-Mobile-Pro-APK\\UNITY-RECOVERY.md"
+    }
+  ],
+  "pipelineContract": "Passed: parsing, mode exclusivity, existing destination refusal"
+}
