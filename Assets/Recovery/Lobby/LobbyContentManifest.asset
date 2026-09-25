@@ -1,0 +1,18 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 57ee2592e4f175441a1d70dbf4e30a4e, type: 3}
+  m_Name: LobbyContentManifest
+  m_EditorClassIdentifier: 
+  entries:
+  - NativeAssetPath: Assets/GameData/UI/Windows/MainView/MainViewWithShop.prefab
+    LocalPrefab: {fileID: 1709254077376921, guid: 6c8cb1742fb09eb47b4987e9d4f4763b, type: 3}
+    Guid: 6c8cb1742fb09eb47b4987e9d4f4763b
