@@ -1,0 +1,101 @@
+
+C:\Users\ZGAMESVN\Downloads\Soccer-Unity-Recovery\Extracted\lib\arm64-v8a\libil2cpp.so:	file format elf64-littleaarch64
+
+Disassembly of section il2cpp:
+
+0000000000b5d838 <__start_il2cpp>:
+ 153d2d0: f81d0ff5     	str	x21, [sp, #-0x30]!
+ 153d2d4: a9014ff4     	stp	x20, x19, [sp, #0x10]
+ 153d2d8: a9027bfd     	stp	x29, x30, [sp, #0x20]
+ 153d2dc: 910083fd     	add	x29, sp, #0x20
+ 153d2e0: b0010733     	adrp	x19, 0x3622000
+ 153d2e4: 396a4268     	ldrb	w8, [x19, #0xa90]
+ 153d2e8: 370001e8     	tbnz	w8, #0x0, 0x153d324 <__start_il2cpp+0x9dfaec>
+ 153d2ec: d000f6c0     	adrp	x0, 0x3417000
+ 153d2f0: f940a400     	ldr	x0, [x0, #0x148]  // GOT 0x3417148 -> 0x34f4980: Method$Common.Singleton<ResourcesManager>.get_Instance()
+ 153d2f4: 97d6fc96     	bl	0xafc54c <WriteZStream+0xa258>
+ 153d2f8: f000f4c0     	adrp	x0, 0x33d8000
+ 153d2fc: f942c800     	ldr	x0, [x0, #0x590]  // GOT 0x33d8590 -> 0x34caa30: Common.Singleton<ResourcesManager>_TypeInfo
+ 153d300: 97d6fc93     	bl	0xafc54c <WriteZStream+0xa258>
+ 153d304: b000f480     	adrp	x0, 0x33ce000
+ 153d308: f9458c00     	ldr	x0, [x0, #0xb18]  // GOT 0x33ceb18 -> 0x34d0fa8: StringLoader_TypeInfo
+ 153d30c: 97d6fc90     	bl	0xafc54c <WriteZStream+0xa258>
+ 153d310: f000f500     	adrp	x0, 0x33e0000
+ 153d314: f9409c00     	ldr	x0, [x0, #0x138]  // GOT 0x33e0138 -> 0x34d19b0: UI_Load_TypeInfo
+ 153d318: 97d6fc8d     	bl	0xafc54c <WriteZStream+0xa258>
+ 153d31c: 320003e8     	orr	w8, wzr, #0x1
+ 153d320: 392a4268     	strb	w8, [x19, #0xa90]
+ 153d324: f000f4c8     	adrp	x8, 0x33d8000
+ 153d328: f942c908     	ldr	x8, [x8, #0x590]  // GOT 0x33d8590 -> 0x34caa30: Common.Singleton<ResourcesManager>_TypeInfo
+ 153d32c: f9400100     	ldr	x0, [x8]
+ 153d330: 3944cc08     	ldrb	w8, [x0, #0x133]
+ 153d334: 36100088     	tbz	w8, #0x2, 0x153d344 <__start_il2cpp+0x9dfb0c>
+ 153d338: b940e008     	ldr	w8, [x0, #0xe0]
+ 153d33c: 35000048     	cbnz	w8, 0x153d344 <__start_il2cpp+0x9dfb0c>
+ 153d340: 97d6fcb0     	bl	0xafc600 <WriteZStream+0xa30c>
+ 153d344: d000f6c8     	adrp	x8, 0x3417000
+ 153d348: f940a508     	ldr	x8, [x8, #0x148]  // GOT 0x3417148 -> 0x34f4980: Method$Common.Singleton<ResourcesManager>.get_Instance()
+ 153d34c: f9400100     	ldr	x0, [x8]
+ 153d350: 9417cc82     	bl	0x1b30558 <__start_il2cpp+0xfd2d20>  // Common.Singleton<ADMobSDK>$$get_Instance | Common.Singleton<AdmobImmersiveAD>$$get_Instance | Common.Singleton<AdsManager>$$get_Instance [shared generics]
+ 153d354: b40007a0     	cbz	x0, 0x153d448 <__start_il2cpp+0x9dfc10>
+ 153d358: aa1f03e1     	mov	x1, xzr
+ 153d35c: 97ee340a     	bl	0x10ca384 <__start_il2cpp+0x56cb4c>  // Common.ResourcesManager$$Initialize
+ 153d360: 320003e0     	orr	w0, wzr, #0x1
+ 153d364: aa1f03e1     	mov	x1, xzr
+ 153d368: 94160669     	bl	0x1abed0c <__start_il2cpp+0xf614d4>  // UnityEngine.Application$$set_runInBackground
+ 153d36c: b000f488     	adrp	x8, 0x33ce000
+ 153d370: f9458d08     	ldr	x8, [x8, #0xb18]  // GOT 0x33ceb18 -> 0x34d0fa8: StringLoader_TypeInfo
+ 153d374: f9400100     	ldr	x0, [x8]
+ 153d378: 3944cc08     	ldrb	w8, [x0, #0x133]
+ 153d37c: 36100088     	tbz	w8, #0x2, 0x153d38c <__start_il2cpp+0x9dfb54>
+ 153d380: b940e008     	ldr	w8, [x0, #0xe0]
+ 153d384: 35000048     	cbnz	w8, 0x153d38c <__start_il2cpp+0x9dfb54>
+ 153d388: 97d6fc9e     	bl	0xafc600 <WriteZStream+0xa30c>
+ 153d38c: aa1f03e0     	mov	x0, xzr
+ 153d390: 97e046f7     	bl	0xd4ef6c <__start_il2cpp+0x1f1734>  // StringLoader$$GetLocalizedLanguage
+ 153d394: aa1f03e0     	mov	x0, xzr
+ 153d398: 9407618b     	bl	0x17159c4 <__start_il2cpp+0xbb818c>  // UnityEngine.Screen$$get_width
+ 153d39c: 2a0003f3     	mov	w19, w0
+ 153d3a0: cb000000     	sub	x0, x0, x0
+ 153d3a4: 94076195     	bl	0x17159f8 <__start_il2cpp+0xbb81c0>  // UnityEngine.Screen$$get_height
+ 153d3a8: 1e220260     	scvtf	s0, w19
+ 153d3ac: 1e220001     	scvtf	s1, w0
+ 153d3b0: 1e211800     	fdiv	s0, s0, s1
+ 153d3b4: 1e2c1001     	fmov	s1, #0.50000000
+ 153d3b8: 1e212000     	fcmp	s0, s1
+ 153d3bc: 540003e8     	b.hi	0x153d438 <__start_il2cpp+0x9dfc00>
+ 153d3c0: aa1f03e0     	mov	x0, xzr
+ 153d3c4: 94076180     	bl	0x17159c4 <__start_il2cpp+0xbb818c>  // UnityEngine.Screen$$get_width
+ 153d3c8: 2a0003f4     	mov	w20, w0
+ 153d3cc: aa1f03e0     	mov	x0, xzr
+ 153d3d0: 9407618a     	bl	0x17159f8 <__start_il2cpp+0xbb81c0>  // UnityEngine.Screen$$get_height
+ 153d3d4: f000f515     	adrp	x21, 0x33e0000
+ 153d3d8: f9409eb5     	ldr	x21, [x21, #0x138]  // GOT 0x33e0138 -> 0x34d19b0: UI_Load_TypeInfo
+ 153d3dc: 2a0003f3     	mov	w19, w0
+ 153d3e0: f94002a8     	ldr	x8, [x21]
+ 153d3e4: 3944cd09     	ldrb	w9, [x8, #0x133]
+ 153d3e8: 361000c9     	tbz	w9, #0x2, 0x153d400 <__start_il2cpp+0x9dfbc8>
+ 153d3ec: b940e109     	ldr	w9, [x8, #0xe0]
+ 153d3f0: 35000089     	cbnz	w9, 0x153d400 <__start_il2cpp+0x9dfbc8>
+ 153d3f4: aa0803e0     	mov	x0, x8
+ 153d3f8: 97d6fc82     	bl	0xafc600 <WriteZStream+0xa30c>
+ 153d3fc: f94002a8     	ldr	x8, [x21]
+ 153d400: b0009449     	adrp	x9, 0x27c6000
+ 153d404: bd427521     	ldr	s1, [x9, #0x274]
+ 153d408: f00094ca     	adrp	x10, 0x27d8000
+ 153d40c: b0009449     	adrp	x9, 0x27c6000
+ 153d410: bd4e2142     	ldr	s2, [x10, #0xe20]
+ 153d414: 1e220280     	scvtf	s0, w20
+ 153d418: bd423d23     	ldr	s3, [x9, #0x23c]
+ 153d41c: f9405d08     	ldr	x8, [x8, #0xb8]
+ 153d420: 1e201820     	fdiv	s0, s1, s0
+ 153d424: 1e220261     	scvtf	s1, w19
+ 153d428: 1e210800     	fmul	s0, s0, s1
+ 153d42c: 1e222800     	fadd	s0, s0, s2
+ 153d430: 1e230800     	fmul	s0, s0, s3
+ 153d434: bd000100     	str	s0, [x8]
+ 153d438: a9427bfd     	ldp	x29, x30, [sp, #0x20]
+ 153d43c: a9414ff4     	ldp	x20, x19, [sp, #0x10]
+ 153d440: f84307f5     	ldr	x21, [sp], #0x30
+ 153d444: d65f03c0     	ret
+ 153d448: 97d6fc77     	bl	0xafc624 <WriteZStream+0xa330>

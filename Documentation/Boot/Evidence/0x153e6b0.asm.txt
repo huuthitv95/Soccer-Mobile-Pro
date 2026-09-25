@@ -1,0 +1,95 @@
+
+C:\Users\ZGAMESVN\Downloads\Soccer-Unity-Recovery\Extracted\lib\arm64-v8a\libil2cpp.so:	file format elf64-littleaarch64
+
+Disassembly of section il2cpp:
+
+0000000000b5d838 <__start_il2cpp>:
+ 153e6b0: d10203ff     	sub	sp, sp, #0x80
+ 153e6b4: 6d0523e9     	stp	d9, d8, [sp, #0x50]
+ 153e6b8: a9064ff4     	stp	x20, x19, [sp, #0x60]
+ 153e6bc: a9077bfd     	stp	x29, x30, [sp, #0x70]
+ 153e6c0: 9101c3fd     	add	x29, sp, #0x70
+ 153e6c4: 320003f4     	orr	w20, wzr, #0x1
+ 153e6c8: aa0003f3     	mov	x19, x0
+ 153e6cc: 3900a414     	strb	w20, [x0, #0x29]
+ 153e6d0: aa1f03e0     	mov	x0, xzr
+ 153e6d4: 94075cbc     	bl	0x17159c4 <__start_il2cpp+0xbb818c>  // UnityEngine.Screen$$get_width
+ 153e6d8: 51028008     	sub	w8, w0, #0xa0
+ 153e6dc: 1e220100     	scvtf	s0, w8
+ 153e6e0: f0009428     	adrp	x8, 0x27c5000
+ 153e6e4: bd492908     	ldr	s8, [x8, #0x928]
+ 153e6e8: 1e27d009     	fmov	s9, #30.00000000
+ 153e6ec: 1e249001     	fmov	s1, #10.00000000
+ 153e6f0: d100c3a0     	sub	x0, x29, #0x30
+ 153e6f4: 4ea81d02     	mov	v2.16b, v8.16b
+ 153e6f8: 4ea91d23     	mov	v3.16b, v9.16b
+ 153e6fc: aa1f03e1     	mov	x1, xzr
+ 153e700: a93d7fbf     	stp	xzr, xzr, [x29, #-0x30]
+ 153e704: 94073857     	bl	0x170c860 <__start_il2cpp+0xbaf028>  // UnityEngine.Rect$$.ctor
+ 153e708: 3cdd03a0     	ldur	q0, [x29, #-0x30]
+ 153e70c: aa1f03e0     	mov	x0, xzr
+ 153e710: 3c838260     	stur	q0, [x19, #0x38]
+ 153e714: 94075cac     	bl	0x17159c4 <__start_il2cpp+0xbb818c>  // UnityEngine.Screen$$get_width
+ 153e718: 51028008     	sub	w8, w0, #0xa0
+ 153e71c: 1e220100     	scvtf	s0, w8
+ 153e720: f0009228     	adrp	x8, 0x2785000
+ 153e724: bd4a0101     	ldr	s1, [x8, #0xa00]
+ 153e728: 9100c3e0     	add	x0, sp, #0x30
+ 153e72c: 4ea81d02     	mov	v2.16b, v8.16b
+ 153e730: 4ea91d23     	mov	v3.16b, v9.16b
+ 153e734: aa1f03e1     	mov	x1, xzr
+ 153e738: a9037fff     	stp	xzr, xzr, [sp, #0x30]
+ 153e73c: 94073849     	bl	0x170c860 <__start_il2cpp+0xbaf028>  // UnityEngine.Rect$$.ctor
+ 153e740: 3dc00fe0     	ldr	q0, [sp, #0x30]
+ 153e744: aa1f03e0     	mov	x0, xzr
+ 153e748: 3c848260     	stur	q0, [x19, #0x48]
+ 153e74c: 94075c9e     	bl	0x17159c4 <__start_il2cpp+0xbb818c>  // UnityEngine.Screen$$get_width
+ 153e750: 51028008     	sub	w8, w0, #0xa0
+ 153e754: 1e220100     	scvtf	s0, w8
+ 153e758: 90009448     	adrp	x8, 0x27c6000
+ 153e75c: bd435101     	ldr	s1, [x8, #0x350]
+ 153e760: 910083e0     	add	x0, sp, #0x20
+ 153e764: 4ea81d02     	mov	v2.16b, v8.16b
+ 153e768: 4ea91d23     	mov	v3.16b, v9.16b
+ 153e76c: aa1f03e1     	mov	x1, xzr
+ 153e770: a9027fff     	stp	xzr, xzr, [sp, #0x20]
+ 153e774: 9407383b     	bl	0x170c860 <__start_il2cpp+0xbaf028>  // UnityEngine.Rect$$.ctor
+ 153e778: 3dc00be0     	ldr	q0, [sp, #0x20]
+ 153e77c: aa1f03e0     	mov	x0, xzr
+ 153e780: 3c858260     	stur	q0, [x19, #0x58]
+ 153e784: 94075c90     	bl	0x17159c4 <__start_il2cpp+0xbb818c>  // UnityEngine.Screen$$get_width
+ 153e788: 51028008     	sub	w8, w0, #0xa0
+ 153e78c: 1e220100     	scvtf	s0, w8
+ 153e790: d0009448     	adrp	x8, 0x27c8000
+ 153e794: bd4ec901     	ldr	s1, [x8, #0xec8]
+ 153e798: 910043e0     	add	x0, sp, #0x10
+ 153e79c: 4ea81d02     	mov	v2.16b, v8.16b
+ 153e7a0: 4ea91d23     	mov	v3.16b, v9.16b
+ 153e7a4: aa1f03e1     	mov	x1, xzr
+ 153e7a8: a9017fff     	stp	xzr, xzr, [sp, #0x10]
+ 153e7ac: 9407382d     	bl	0x170c860 <__start_il2cpp+0xbaf028>  // UnityEngine.Rect$$.ctor
+ 153e7b0: 3dc007e0     	ldr	q0, [sp, #0x10]
+ 153e7b4: aa1f03e0     	mov	x0, xzr
+ 153e7b8: 3c868260     	stur	q0, [x19, #0x68]
+ 153e7bc: 94075c82     	bl	0x17159c4 <__start_il2cpp+0xbb818c>  // UnityEngine.Screen$$get_width
+ 153e7c0: 51028008     	sub	w8, w0, #0xa0
+ 153e7c4: 1e220100     	scvtf	s0, w8
+ 153e7c8: b0009448     	adrp	x8, 0x27c7000
+ 153e7cc: bd488d01     	ldr	s1, [x8, #0x88c]
+ 153e7d0: 910003e0     	mov	x0, sp
+ 153e7d4: 4ea81d02     	mov	v2.16b, v8.16b
+ 153e7d8: 4ea91d23     	mov	v3.16b, v9.16b
+ 153e7dc: aa1f03e1     	mov	x1, xzr
+ 153e7e0: a9007fff     	stp	xzr, xzr, [sp]
+ 153e7e4: 9407381f     	bl	0x170c860 <__start_il2cpp+0xbaf028>  // UnityEngine.Rect$$.ctor
+ 153e7e8: 3dc003e0     	ldr	q0, [sp]
+ 153e7ec: aa1303e0     	mov	x0, x19
+ 153e7f0: aa1f03e1     	mov	x1, xzr
+ 153e7f4: 39022274     	strb	w20, [x19, #0x88]
+ 153e7f8: 3c878260     	stur	q0, [x19, #0x78]
+ 153e7fc: 94071035     	bl	0x17028d0 <__start_il2cpp+0xba5098>  // UnityEngine.MonoBehaviour$$.ctor
+ 153e800: a9477bfd     	ldp	x29, x30, [sp, #0x70]
+ 153e804: a9464ff4     	ldp	x20, x19, [sp, #0x60]
+ 153e808: 6d4523e9     	ldp	d9, d8, [sp, #0x50]
+ 153e80c: 910203ff     	add	sp, sp, #0x80
+ 153e810: d65f03c0     	ret

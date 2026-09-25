@@ -1,0 +1,67 @@
+
+C:\Users\ZGAMESVN\Downloads\Soccer-Unity-Recovery\Extracted\lib\arm64-v8a\libil2cpp.so:	file format elf64-littleaarch64
+
+Disassembly of section il2cpp:
+
+0000000000b5d838 <__start_il2cpp>:
+  c56bf4: f81d0ff5     	str	x21, [sp, #-0x30]!
+  c56bf8: a9014ff4     	stp	x20, x19, [sp, #0x10]
+  c56bfc: a9027bfd     	stp	x29, x30, [sp, #0x20]
+  c56c00: 910083fd     	add	x29, sp, #0x20
+  c56c04: 90014e54     	adrp	x20, 0x361e000 <__data_start+0x1d9418>
+  c56c08: 397f6288     	ldrb	w8, [x20, #0xfd8]
+  c56c0c: aa0003f3     	mov	x19, x0
+  c56c10: 37000188     	tbnz	w8, #0x0, 0xc56c40 <__start_il2cpp+0xf9408>
+  c56c14: b0013c60     	adrp	x0, 0x33e3000
+  c56c18: f943a800     	ldr	x0, [x0, #0x750]  // GOT 0x33e3750 -> 0x3514b20: Method$StartGame.GameDataExport.<Init>b__3_0()
+  c56c1c: 97fa964c     	bl	0xafc54c <WriteZStream+0xa258>
+  c56c20: d0013e60     	adrp	x0, 0x3424000
+  c56c24: f9464400     	ldr	x0, [x0, #0xc88]  // GOT 0x3424c88 -> 0x34cfa40: UnityEngine.Object_TypeInfo
+  c56c28: 97fa9649     	bl	0xafc54c <WriteZStream+0xa258>
+  c56c2c: 90013ec0     	adrp	x0, 0x342e000
+  c56c30: f9420400     	ldr	x0, [x0, #0x408]  // GOT 0x342e408 -> 0x34d1ad0: UnityEngine.Events.UnityAction_TypeInfo
+  c56c34: 97fa9646     	bl	0xafc54c <WriteZStream+0xa258>
+  c56c38: 320003e8     	orr	w8, wzr, #0x1
+  c56c3c: 393f6288     	strb	w8, [x20, #0xfd8]
+  c56c40: b900227f     	str	wzr, [x19, #0x20]
+  c56c44: d0013e68     	adrp	x8, 0x3424000
+  c56c48: f9464508     	ldr	x8, [x8, #0xc88]  // GOT 0x3424c88 -> 0x34cfa40: UnityEngine.Object_TypeInfo
+  c56c4c: f9400e74     	ldr	x20, [x19, #0x18]
+  c56c50: f9400100     	ldr	x0, [x8]
+  c56c54: 3944cc08     	ldrb	w8, [x0, #0x133]
+  c56c58: 36100088     	tbz	w8, #0x2, 0xc56c68 <__start_il2cpp+0xf9430>
+  c56c5c: b940e008     	ldr	w8, [x0, #0xe0]
+  c56c60: 35000048     	cbnz	w8, 0xc56c68 <__start_il2cpp+0xf9430>
+  c56c64: 97fa9667     	bl	0xafc600 <WriteZStream+0xa30c>
+  c56c68: aa1403e0     	mov	x0, x20
+  c56c6c: aa1f03e1     	mov	x1, xzr
+  c56c70: aa1f03e2     	mov	x2, xzr
+  c56c74: 942ab333     	bl	0x1703940 <__start_il2cpp+0xba6108>  // UnityEngine.Object$$op_Inequality
+  c56c78: 360002e0     	tbz	w0, #0x0, 0xc56cd4 <__start_il2cpp+0xf949c>
+  c56c7c: f9400e68     	ldr	x8, [x19, #0x18]
+  c56c80: b4000328     	cbz	x8, 0xc56ce4 <__start_il2cpp+0xf94ac>
+  c56c84: f9407d14     	ldr	x20, [x8, #0xf8]
+  c56c88: 90013ec8     	adrp	x8, 0x342e000
+  c56c8c: f9420508     	ldr	x8, [x8, #0x408]  // GOT 0x342e408 -> 0x34d1ad0: UnityEngine.Events.UnityAction_TypeInfo
+  c56c90: f9400100     	ldr	x0, [x8]
+  c56c94: 97fa9662     	bl	0xafc61c <WriteZStream+0xa328>
+  c56c98: b0013c68     	adrp	x8, 0x33e3000
+  c56c9c: f943a908     	ldr	x8, [x8, #0x750]  // GOT 0x33e3750 -> 0x3514b20: Method$StartGame.GameDataExport.<Init>b__3_0()
+  c56ca0: aa1303e1     	mov	x1, x19
+  c56ca4: aa1f03e3     	mov	x3, xzr
+  c56ca8: aa0003f5     	mov	x21, x0
+  c56cac: f9400102     	ldr	x2, [x8]
+  c56cb0: 9457cfe5     	bl	0x224ac44 <__start_il2cpp+0x16ed40c>  // UnityEngine.Events.UnityAction$$.ctor
+  c56cb4: b4000194     	cbz	x20, 0xc56ce4 <__start_il2cpp+0xf94ac>
+  c56cb8: aa1403e0     	mov	x0, x20
+  c56cbc: a9427bfd     	ldp	x29, x30, [sp, #0x20]
+  c56cc0: a9414ff4     	ldp	x20, x19, [sp, #0x10]
+  c56cc4: aa1503e1     	mov	x1, x21
+  c56cc8: aa1f03e2     	mov	x2, xzr
+  c56ccc: f84307f5     	ldr	x21, [sp], #0x30
+  c56cd0: 1457d0c0     	b	0x224afd0 <__start_il2cpp+0x16ed798>  // UnityEngine.Events.UnityEvent$$AddListener
+  c56cd4: a9427bfd     	ldp	x29, x30, [sp, #0x20]
+  c56cd8: a9414ff4     	ldp	x20, x19, [sp, #0x10]
+  c56cdc: f84307f5     	ldr	x21, [sp], #0x30
+  c56ce0: d65f03c0     	ret
+  c56ce4: 97fa9650     	bl	0xafc624 <WriteZStream+0xa330>

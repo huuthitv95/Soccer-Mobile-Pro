@@ -1,0 +1,168 @@
+
+C:\Users\ZGAMESVN\Downloads\Soccer-Unity-Recovery\Extracted\lib\arm64-v8a\libil2cpp.so:	file format elf64-littleaarch64
+
+Disassembly of section il2cpp:
+
+0000000000b5d838 <__start_il2cpp>:
+ 153cf40: d10103ff     	sub	sp, sp, #0x40
+ 153cf44: a90157f6     	stp	x22, x21, [sp, #0x10]
+ 153cf48: a9024ff4     	stp	x20, x19, [sp, #0x20]
+ 153cf4c: a9037bfd     	stp	x29, x30, [sp, #0x30]
+ 153cf50: 9100c3fd     	add	x29, sp, #0x30
+ 153cf54: d0010733     	adrp	x19, 0x3622000
+ 153cf58: 396a3a68     	ldrb	w8, [x19, #0xa8e]
+ 153cf5c: 37000428     	tbnz	w8, #0x0, 0x153cfe0 <__start_il2cpp+0x9df7a8>
+ 153cf60: 9000f700     	adrp	x0, 0x341c000
+ 153cf64: f9466800     	ldr	x0, [x0, #0xcd0]  // GOT 0x341ccd0 -> 0x34cb958: SL.ABTest_TypeInfo
+ 153cf68: 97d6fd79     	bl	0xafc54c <WriteZStream+0xa258>
+ 153cf6c: f000f720     	adrp	x0, 0x3423000
+ 153cf70: f9450400     	ldr	x0, [x0, #0xa08]  // GOT 0x3423a08 -> 0x34ccbc8: System.Globalization.CultureInfo_TypeInfo
+ 153cf74: 97d6fd76     	bl	0xafc54c <WriteZStream+0xa258>
+ 153cf78: d000f600     	adrp	x0, 0x33fe000
+ 153cf7c: f9442400     	ldr	x0, [x0, #0x848]  // GOT 0x33fe848 -> 0x34cec20: int_TypeInfo
+ 153cf80: 97d6fd73     	bl	0xafc54c <WriteZStream+0xa258>
+ 153cf84: f000f780     	adrp	x0, 0x342f000
+ 153cf88: f9445800     	ldr	x0, [x0, #0x8b0]  // GOT 0x342f8b0 -> 0x3509a18: Method$MatchABTest.GetParsedValue<int>()
+ 153cf8c: 97d6fd70     	bl	0xafc54c <WriteZStream+0xa258>
+ 153cf90: f000f5a0     	adrp	x0, 0x33f3000
+ 153cf94: f947bc00     	ldr	x0, [x0, #0xf78]  // GOT 0x33f3f78 -> 0x34cf298: MatchABTest_TypeInfo
+ 153cf98: 97d6fd6d     	bl	0xafc54c <WriteZStream+0xa258>
+ 153cf9c: b000f5c0     	adrp	x0, 0x33f5000
+ 153cfa0: f941b800     	ldr	x0, [x0, #0x370]  // GOT 0x33f5370 -> 0x34d0f70: System.Text.StringBuilder_TypeInfo
+ 153cfa4: 97d6fd6a     	bl	0xafc54c <WriteZStream+0xa258>
+ 153cfa8: 9000f520     	adrp	x0, 0x33e0000
+ 153cfac: f9425800     	ldr	x0, [x0, #0x4b0]  // GOT 0x33e04b0 -> 0x35180c8:  defense_version {0}
+ 153cfb0: 97d6fd67     	bl	0xafc54c <WriteZStream+0xa258>
+ 153cfb4: d000f600     	adrp	x0, 0x33fe000
+ 153cfb8: f9443c00     	ldr	x0, [x0, #0x878]  // GOT 0x33fe878 -> 0x3518398:  v0_v1 1.5 v1 2.5 v1_v2 3.5 v2 4.5
+ 153cfbc: 97d6fd64     	bl	0xafc54c <WriteZStream+0xa258>
+ 153cfc0: d000f4c0     	adrp	x0, 0x33d6000
+ 153cfc4: f942c400     	ldr	x0, [x0, #0x588]  // GOT 0x33d6588 -> 0x3518068:  ballcontrol_version {0}
+ 153cfc8: 97d6fd61     	bl	0xafc54c <WriteZStream+0xa258>
+ 153cfcc: b000f820     	adrp	x0, 0x3441000
+ 153cfd0: f9438000     	ldr	x0, [x0, #0x700]  // GOT 0x3441700 -> 0x3518338:  shielding_version {0}
+ 153cfd4: 97d6fd5e     	bl	0xafc54c <WriteZStream+0xa258>
+ 153cfd8: 320003e8     	orr	w8, wzr, #0x1
+ 153cfdc: 392a3a68     	strb	w8, [x19, #0xa8e]
+ 153cfe0: f000f5b4     	adrp	x20, 0x33f3000
+ 153cfe4: f947be94     	ldr	x20, [x20, #0xf78]  // GOT 0x33f3f78 -> 0x34cf298: MatchABTest_TypeInfo
+ 153cfe8: f9400280     	ldr	x0, [x20]
+ 153cfec: 3944cc08     	ldrb	w8, [x0, #0x133]
+ 153cff0: 36100088     	tbz	w8, #0x2, 0x153d000 <__start_il2cpp+0x9df7c8>
+ 153cff4: b940e008     	ldr	w8, [x0, #0xe0]
+ 153cff8: 35000048     	cbnz	w8, 0x153d000 <__start_il2cpp+0x9df7c8>
+ 153cffc: 97d6fd81     	bl	0xafc600 <WriteZStream+0xa30c>
+ 153d000: aa1f03e0     	mov	x0, xzr
+ 153d004: 97f5bb65     	bl	0x12abd98 <__start_il2cpp+0x74e560>  // MatchABTest$$CopyValues
+ 153d008: 9000f5c8     	adrp	x8, 0x33f5000
+ 153d00c: f941b908     	ldr	x8, [x8, #0x370]  // GOT 0x33f5370 -> 0x34d0f70: System.Text.StringBuilder_TypeInfo
+ 153d010: f9400100     	ldr	x0, [x8]
+ 153d014: 97d6fd82     	bl	0xafc61c <WriteZStream+0xa328>
+ 153d018: aa1f03e1     	mov	x1, xzr
+ 153d01c: aa0003f3     	mov	x19, x0
+ 153d020: 9422d9fe     	bl	0x1df3818 <__start_il2cpp+0x1295fe0>  // System.Text.StringBuilder$$.ctor
+ 153d024: f000f6e8     	adrp	x8, 0x341c000
+ 153d028: f9466908     	ldr	x8, [x8, #0xcd0]  // GOT 0x341ccd0 -> 0x34cb958: SL.ABTest_TypeInfo
+ 153d02c: f9400100     	ldr	x0, [x8]
+ 153d030: 3944cc08     	ldrb	w8, [x0, #0x133]
+ 153d034: 36100088     	tbz	w8, #0x2, 0x153d044 <__start_il2cpp+0x9df80c>
+ 153d038: b940e008     	ldr	w8, [x0, #0xe0]
+ 153d03c: 35000048     	cbnz	w8, 0x153d044 <__start_il2cpp+0x9df80c>
+ 153d040: 97d6fd70     	bl	0xafc600 <WriteZStream+0xa30c>
+ 153d044: aa1f03e0     	mov	x0, xzr
+ 153d048: 97efb894     	bl	0x112b298 <__start_il2cpp+0x5cda60>  // SL.ABTest$$get_AILowSpeed
+ 153d04c: 36000100     	tbz	w0, #0x0, 0x153d06c <__start_il2cpp+0x9df834>
+ 153d050: b4000bb3     	cbz	x19, 0x153d1c4 <__start_il2cpp+0x9df98c>
+ 153d054: b000f608     	adrp	x8, 0x33fe000
+ 153d058: f9443d08     	ldr	x8, [x8, #0x878]  // GOT 0x33fe878 -> 0x3518398:  v0_v1 1.5 v1 2.5 v1_v2 3.5 v2 4.5
+ 153d05c: aa1303e0     	mov	x0, x19
+ 153d060: aa1f03e2     	mov	x2, xzr
+ 153d064: f9400101     	ldr	x1, [x8]
+ 153d068: 9422df3f     	bl	0x1df4d64 <__start_il2cpp+0x129752c>  // System.Text.StringBuilder$$Append
+ 153d06c: d000f728     	adrp	x8, 0x3423000
+ 153d070: f9450508     	ldr	x8, [x8, #0xa08]  // GOT 0x3423a08 -> 0x34ccbc8: System.Globalization.CultureInfo_TypeInfo
+ 153d074: f9400100     	ldr	x0, [x8]
+ 153d078: 3944cc08     	ldrb	w8, [x0, #0x133]
+ 153d07c: 36100088     	tbz	w8, #0x2, 0x153d08c <__start_il2cpp+0x9df854>
+ 153d080: b940e008     	ldr	w8, [x0, #0xe0]
+ 153d084: 35000048     	cbnz	w8, 0x153d08c <__start_il2cpp+0x9df854>
+ 153d088: 97d6fd5e     	bl	0xafc600 <WriteZStream+0xa30c>
+ 153d08c: aa1f03e0     	mov	x0, xzr
+ 153d090: 942ebcd7     	bl	0x20ec3ec <__start_il2cpp+0x158ebb4>  // System.Globalization.CultureInfo$$get_InvariantCulture
+ 153d094: f9400288     	ldr	x8, [x20]
+ 153d098: aa0003f4     	mov	x20, x0
+ 153d09c: 3944cd09     	ldrb	w9, [x8, #0x133]
+ 153d0a0: 361000a9     	tbz	w9, #0x2, 0x153d0b4 <__start_il2cpp+0x9df87c>
+ 153d0a4: b940e109     	ldr	w9, [x8, #0xe0]
+ 153d0a8: 35000069     	cbnz	w9, 0x153d0b4 <__start_il2cpp+0x9df87c>
+ 153d0ac: aa0803e0     	mov	x0, x8
+ 153d0b0: 97d6fd54     	bl	0xafc600 <WriteZStream+0xa30c>
+ 153d0b4: d000f795     	adrp	x21, 0x342f000
+ 153d0b8: f9445ab5     	ldr	x21, [x21, #0x8b0]  // GOT 0x342f8b0 -> 0x3509a18: Method$MatchABTest.GetParsedValue<int>()
+ 153d0bc: 528011a0     	mov	w0, #0x8d               // =141
+ 153d0c0: f94002a1     	ldr	x1, [x21]
+ 153d0c4: 97fdb591     	bl	0x14aa708 <__start_il2cpp+0x94ced0>  // MatchABTest$$GetParsedValue<int>
+ 153d0c8: b000f616     	adrp	x22, 0x33fe000
+ 153d0cc: f94426d6     	ldr	x22, [x22, #0x848]  // GOT 0x33fe848 -> 0x34cec20: int_TypeInfo
+ 153d0d0: b9000fe0     	str	w0, [sp, #0xc]
+ 153d0d4: 910033e1     	add	x1, sp, #0xc
+ 153d0d8: f94002c8     	ldr	x8, [x22]
+ 153d0dc: aa0803e0     	mov	x0, x8
+ 153d0e0: 97d6fd4c     	bl	0xafc610 <WriteZStream+0xa31c>
+ 153d0e4: b4000713     	cbz	x19, 0x153d1c4 <__start_il2cpp+0x9df98c>
+ 153d0e8: b000f4c8     	adrp	x8, 0x33d6000
+ 153d0ec: f942c508     	ldr	x8, [x8, #0x588]  // GOT 0x33d6588 -> 0x3518068:  ballcontrol_version {0}
+ 153d0f0: aa0003e3     	mov	x3, x0
+ 153d0f4: aa1303e0     	mov	x0, x19
+ 153d0f8: aa1403e1     	mov	x1, x20
+ 153d0fc: f9400102     	ldr	x2, [x8]
+ 153d100: aa1f03e4     	mov	x4, xzr
+ 153d104: 9422e5dd     	bl	0x1df6878 <__start_il2cpp+0x1299040>  // System.Text.StringBuilder$$AppendFormat
+ 153d108: aa1f03e0     	mov	x0, xzr
+ 153d10c: 942ebcb8     	bl	0x20ec3ec <__start_il2cpp+0x158ebb4>  // System.Globalization.CultureInfo$$get_InvariantCulture
+ 153d110: f94002a1     	ldr	x1, [x21]
+ 153d114: aa0003f4     	mov	x20, x0
+ 153d118: 321f17e0     	orr	w0, wzr, #0x7e
+ 153d11c: 97fdb57b     	bl	0x14aa708 <__start_il2cpp+0x94ced0>  // MatchABTest$$GetParsedValue<int>
+ 153d120: f94002c8     	ldr	x8, [x22]
+ 153d124: b9000be0     	str	w0, [sp, #0x8]
+ 153d128: 910023e1     	add	x1, sp, #0x8
+ 153d12c: aa0803e0     	mov	x0, x8
+ 153d130: 97d6fd38     	bl	0xafc610 <WriteZStream+0xa31c>
+ 153d134: f000f508     	adrp	x8, 0x33e0000
+ 153d138: f9425908     	ldr	x8, [x8, #0x4b0]  // GOT 0x33e04b0 -> 0x35180c8:  defense_version {0}
+ 153d13c: aa0003e3     	mov	x3, x0
+ 153d140: aa1303e0     	mov	x0, x19
+ 153d144: aa1403e1     	mov	x1, x20
+ 153d148: f9400102     	ldr	x2, [x8]
+ 153d14c: aa1f03e4     	mov	x4, xzr
+ 153d150: 9422e5ca     	bl	0x1df6878 <__start_il2cpp+0x1299040>  // System.Text.StringBuilder$$AppendFormat
+ 153d154: aa1f03e0     	mov	x0, xzr
+ 153d158: 942ebca5     	bl	0x20ec3ec <__start_il2cpp+0x158ebb4>  // System.Globalization.CultureInfo$$get_InvariantCulture
+ 153d15c: f94002a1     	ldr	x1, [x21]
+ 153d160: aa0003f4     	mov	x20, x0
+ 153d164: 528010a0     	mov	w0, #0x85               // =133
+ 153d168: 97fdb568     	bl	0x14aa708 <__start_il2cpp+0x94ced0>  // MatchABTest$$GetParsedValue<int>
+ 153d16c: f94002c8     	ldr	x8, [x22]
+ 153d170: b90007e0     	str	w0, [sp, #0x4]
+ 153d174: 910013e1     	add	x1, sp, #0x4
+ 153d178: aa0803e0     	mov	x0, x8
+ 153d17c: 97d6fd25     	bl	0xafc610 <WriteZStream+0xa31c>
+ 153d180: 9000f828     	adrp	x8, 0x3441000
+ 153d184: f9438108     	ldr	x8, [x8, #0x700]  // GOT 0x3441700 -> 0x3518338:  shielding_version {0}
+ 153d188: aa0003e3     	mov	x3, x0
+ 153d18c: aa1303e0     	mov	x0, x19
+ 153d190: aa1403e1     	mov	x1, x20
+ 153d194: f9400102     	ldr	x2, [x8]
+ 153d198: aa1f03e4     	mov	x4, xzr
+ 153d19c: 9422e5b7     	bl	0x1df6878 <__start_il2cpp+0x1299040>  // System.Text.StringBuilder$$AppendFormat
+ 153d1a0: f9400268     	ldr	x8, [x19]
+ 153d1a4: aa1303e0     	mov	x0, x19
+ 153d1a8: a9568509     	ldp	x9, x1, [x8, #0x168]
+ 153d1ac: d63f0120     	blr	x9
+ 153d1b0: a9437bfd     	ldp	x29, x30, [sp, #0x30]
+ 153d1b4: a9424ff4     	ldp	x20, x19, [sp, #0x20]
+ 153d1b8: a94157f6     	ldp	x22, x21, [sp, #0x10]
+ 153d1bc: 910103ff     	add	sp, sp, #0x40
+ 153d1c0: d65f03c0     	ret
+ 153d1c4: 97d6fd18     	bl	0xafc624 <WriteZStream+0xa330>

@@ -1,0 +1,71 @@
+
+C:\Users\ZGAMESVN\Downloads\Soccer-Unity-Recovery\Extracted\lib\arm64-v8a\libil2cpp.so:	file format elf64-littleaarch64
+
+Disassembly of section il2cpp:
+
+0000000000b5d838 <__start_il2cpp>:
+ 153e9fc: f81d0ff5     	str	x21, [sp, #-0x30]!
+ 153ea00: a9014ff4     	stp	x20, x19, [sp, #0x10]
+ 153ea04: a9027bfd     	stp	x29, x30, [sp, #0x20]
+ 153ea08: 910083fd     	add	x29, sp, #0x20
+ 153ea0c: 90010735     	adrp	x21, 0x3622000
+ 153ea10: 396a56a8     	ldrb	w8, [x21, #0xa95]
+ 153ea14: 2a0103f4     	mov	w20, w1
+ 153ea18: aa0003f3     	mov	x19, x0
+ 153ea1c: 370001e8     	tbnz	w8, #0x0, 0x153ea58 <__start_il2cpp+0x9e1220>
+ 153ea20: 9000f5e0     	adrp	x0, 0x33fa000
+ 153ea24: f943bc00     	ldr	x0, [x0, #0x778]  // GOT 0x33fa778 -> 0x34ccfb8: UnityEngine.Debug_TypeInfo
+ 153ea28: 97d6f6c9     	bl	0xafc54c <WriteZStream+0xa258>
+ 153ea2c: b000f700     	adrp	x0, 0x341f000
+ 153ea30: f9458800     	ldr	x0, [x0, #0xb10]  // GOT 0x341fb10 -> 0x34cdb00: System.GC_TypeInfo
+ 153ea34: 97d6f6c6     	bl	0xafc54c <WriteZStream+0xa258>
+ 153ea38: 9000f500     	adrp	x0, 0x33de000
+ 153ea3c: f9475000     	ldr	x0, [x0, #0xea0]  // GOT 0x33deea0 -> 0x3534fe8: resource manger init sucess
+ 153ea40: 97d6f6c3     	bl	0xafc54c <WriteZStream+0xa258>
+ 153ea44: f000f7e0     	adrp	x0, 0x343d000
+ 153ea48: f944b800     	ldr	x0, [x0, #0x970]  // GOT 0x343d970 -> 0x3534fe0: resource manager init error
+ 153ea4c: 97d6f6c0     	bl	0xafc54c <WriteZStream+0xa258>
+ 153ea50: 320003e8     	orr	w8, wzr, #0x1
+ 153ea54: 392a56a8     	strb	w8, [x21, #0xa95]
+ 153ea58: 9000f5e8     	adrp	x8, 0x33fa000
+ 153ea5c: f943bd08     	ldr	x8, [x8, #0x778]  // GOT 0x33fa778 -> 0x34ccfb8: UnityEngine.Debug_TypeInfo
+ 153ea60: f9400100     	ldr	x0, [x8]
+ 153ea64: 79426408     	ldrh	w8, [x0, #0x132]
+ 153ea68: 36000354     	tbz	w20, #0x0, 0x153ead0 <__start_il2cpp+0x9e1298>
+ 153ea6c: 36500088     	tbz	w8, #0xa, 0x153ea7c <__start_il2cpp+0x9e1244>
+ 153ea70: b940e008     	ldr	w8, [x0, #0xe0]
+ 153ea74: 35000048     	cbnz	w8, 0x153ea7c <__start_il2cpp+0x9e1244>
+ 153ea78: 97d6f6e2     	bl	0xafc600 <WriteZStream+0xa30c>
+ 153ea7c: 9000f508     	adrp	x8, 0x33de000
+ 153ea80: f9475108     	ldr	x8, [x8, #0xea0]  // GOT 0x33deea0 -> 0x3534fe8: resource manger init sucess
+ 153ea84: aa1f03e1     	mov	x1, xzr
+ 153ea88: f9400100     	ldr	x0, [x8]
+ 153ea8c: 94162ce5     	bl	0x1ac9e20 <__start_il2cpp+0xf6c5e8>  // UnityEngine.Debug$$Log
+ 153ea90: 97fffa9b     	bl	0x153d4fc <__start_il2cpp+0x9dfcc4>  // UI_Load$$StartInit
+ 153ea94: 320003e8     	orr	w8, wzr, #0x1
+ 153ea98: 3900a268     	strb	w8, [x19, #0x28]
+ 153ea9c: b000f708     	adrp	x8, 0x341f000
+ 153eaa0: f9458908     	ldr	x8, [x8, #0xb10]  // GOT 0x341fb10 -> 0x34cdb00: System.GC_TypeInfo
+ 153eaa4: f9400100     	ldr	x0, [x8]
+ 153eaa8: 3944cc08     	ldrb	w8, [x0, #0x133]
+ 153eaac: 36100088     	tbz	w8, #0x2, 0x153eabc <__start_il2cpp+0x9e1284>
+ 153eab0: b940e008     	ldr	w8, [x0, #0xe0]
+ 153eab4: 35000048     	cbnz	w8, 0x153eabc <__start_il2cpp+0x9e1284>
+ 153eab8: 97d6f6d2     	bl	0xafc600 <WriteZStream+0xa30c>
+ 153eabc: a9427bfd     	ldp	x29, x30, [sp, #0x20]
+ 153eac0: a9414ff4     	ldp	x20, x19, [sp, #0x10]
+ 153eac4: aa1f03e0     	mov	x0, xzr
+ 153eac8: f84307f5     	ldr	x21, [sp], #0x30
+ 153eacc: 142f7165     	b	0x211b060 <__start_il2cpp+0x15bd828>  // System.GC$$Collect
+ 153ead0: 36500088     	tbz	w8, #0xa, 0x153eae0 <__start_il2cpp+0x9e12a8>
+ 153ead4: b940e008     	ldr	w8, [x0, #0xe0]
+ 153ead8: 35000048     	cbnz	w8, 0x153eae0 <__start_il2cpp+0x9e12a8>
+ 153eadc: 97d6f6c9     	bl	0xafc600 <WriteZStream+0xa30c>
+ 153eae0: f000f7e8     	adrp	x8, 0x343d000
+ 153eae4: f944b908     	ldr	x8, [x8, #0x970]  // GOT 0x343d970 -> 0x3534fe0: resource manager init error
+ 153eae8: a9427bfd     	ldp	x29, x30, [sp, #0x20]
+ 153eaec: a9414ff4     	ldp	x20, x19, [sp, #0x10]
+ 153eaf0: aa1f03e1     	mov	x1, xzr
+ 153eaf4: f9400100     	ldr	x0, [x8]
+ 153eaf8: f84307f5     	ldr	x21, [sp], #0x30
+ 153eafc: 14162dfe     	b	0x1aca2f4 <__start_il2cpp+0xf6cabc>  // UnityEngine.Debug$$LogError

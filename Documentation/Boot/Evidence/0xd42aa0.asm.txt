@@ -1,0 +1,82 @@
+
+C:\Users\ZGAMESVN\Downloads\Soccer-Unity-Recovery\Extracted\lib\arm64-v8a\libil2cpp.so:	file format elf64-littleaarch64
+
+Disassembly of section il2cpp:
+
+0000000000b5d838 <__start_il2cpp>:
+  d42aa0: f81d0ff5     	str	x21, [sp, #-0x30]!
+  d42aa4: a9014ff4     	stp	x20, x19, [sp, #0x10]
+  d42aa8: a9027bfd     	stp	x29, x30, [sp, #0x20]
+  d42aac: 910083fd     	add	x29, sp, #0x20
+  d42ab0: b00146f5     	adrp	x21, 0x361f000
+  d42ab4: 395acaa8     	ldrb	w8, [x21, #0x6b2]
+  d42ab8: 2a0103f4     	mov	w20, w1
+  d42abc: aa0003f3     	mov	x19, x0
+  d42ac0: 370001e8     	tbnz	w8, #0x0, 0xd42afc <__start_il2cpp+0x1e52c4>
+  d42ac4: 900135c0     	adrp	x0, 0x33fa000
+  d42ac8: f943bc00     	ldr	x0, [x0, #0x778]  // GOT 0x33fa778 -> 0x34ccfb8: UnityEngine.Debug_TypeInfo
+  d42acc: 97f6e6a0     	bl	0xafc54c <WriteZStream+0xa258>
+  d42ad0: b0013800     	adrp	x0, 0x3443000
+  d42ad4: f943b800     	ldr	x0, [x0, #0x770]  // GOT 0x3443770 -> 0x34d0ea0: StartGame_TypeInfo
+  d42ad8: 97f6e69d     	bl	0xafc54c <WriteZStream+0xa258>
+  d42adc: f0013640     	adrp	x0, 0x340d000
+  d42ae0: f9407400     	ldr	x0, [x0, #0xe8]  // GOT 0x340d0e8 -> 0x3522c30: Load cloud save failed
+  d42ae4: 97f6e69a     	bl	0xafc54c <WriteZStream+0xa258>
+  d42ae8: b0013580     	adrp	x0, 0x33f3000
+  d42aec: f9471400     	ldr	x0, [x0, #0xe28]  // GOT 0x33f3e28 -> 0x3522c38: Load cloud save success
+  d42af0: 97f6e697     	bl	0xafc54c <WriteZStream+0xa258>
+  d42af4: 320003e8     	orr	w8, wzr, #0x1
+  d42af8: 391acaa8     	strb	w8, [x21, #0x6b2]
+  d42afc: 36000194     	tbz	w20, #0x0, 0xd42b2c <__start_il2cpp+0x1e52f4>
+  d42b00: 900135c8     	adrp	x8, 0x33fa000
+  d42b04: f943bd08     	ldr	x8, [x8, #0x778]  // GOT 0x33fa778 -> 0x34ccfb8: UnityEngine.Debug_TypeInfo
+  d42b08: f9400100     	ldr	x0, [x8]
+  d42b0c: 3944cc08     	ldrb	w8, [x0, #0x133]
+  d42b10: 36100088     	tbz	w8, #0x2, 0xd42b20 <__start_il2cpp+0x1e52e8>
+  d42b14: b940e008     	ldr	w8, [x0, #0xe0]
+  d42b18: 35000048     	cbnz	w8, 0xd42b20 <__start_il2cpp+0x1e52e8>
+  d42b1c: 97f6e6b9     	bl	0xafc600 <WriteZStream+0xa30c>
+  d42b20: b0013588     	adrp	x8, 0x33f3000
+  d42b24: f9471508     	ldr	x8, [x8, #0xe28]  // GOT 0x33f3e28 -> 0x3522c38: Load cloud save success
+  d42b28: 14000020     	b	0xd42ba8 <__start_il2cpp+0x1e5370>
+  d42b2c: b0013814     	adrp	x20, 0x3443000
+  d42b30: f943ba94     	ldr	x20, [x20, #0x770]  // GOT 0x3443770 -> 0x34d0ea0: StartGame_TypeInfo
+  d42b34: f9400280     	ldr	x0, [x20]
+  d42b38: 3944cc08     	ldrb	w8, [x0, #0x133]
+  d42b3c: 361000a8     	tbz	w8, #0x2, 0xd42b50 <__start_il2cpp+0x1e5318>
+  d42b40: b940e008     	ldr	w8, [x0, #0xe0]
+  d42b44: 35000068     	cbnz	w8, 0xd42b50 <__start_il2cpp+0x1e5318>
+  d42b48: 97f6e6ae     	bl	0xafc600 <WriteZStream+0xa30c>
+  d42b4c: f9400280     	ldr	x0, [x20]
+  d42b50: f9405c08     	ldr	x8, [x0, #0xb8]
+  d42b54: b9400109     	ldr	w9, [x8]
+  d42b58: 35000149     	cbnz	w9, 0xd42b80 <__start_il2cpp+0x1e5348>
+  d42b5c: 3944cc09     	ldrb	w9, [x0, #0x133]
+  d42b60: 361000c9     	tbz	w9, #0x2, 0xd42b78 <__start_il2cpp+0x1e5340>
+  d42b64: b940e009     	ldr	w9, [x0, #0xe0]
+  d42b68: 35000089     	cbnz	w9, 0xd42b78 <__start_il2cpp+0x1e5340>
+  d42b6c: 97f6e6a5     	bl	0xafc600 <WriteZStream+0xa30c>
+  d42b70: f9400288     	ldr	x8, [x20]
+  d42b74: f9405d08     	ldr	x8, [x8, #0xb8]
+  d42b78: 320003e9     	orr	w9, wzr, #0x1
+  d42b7c: b9000109     	str	w9, [x8]
+  d42b80: 900135c8     	adrp	x8, 0x33fa000
+  d42b84: f943bd08     	ldr	x8, [x8, #0x778]  // GOT 0x33fa778 -> 0x34ccfb8: UnityEngine.Debug_TypeInfo
+  d42b88: f9400100     	ldr	x0, [x8]
+  d42b8c: 3944cc08     	ldrb	w8, [x0, #0x133]
+  d42b90: 36100088     	tbz	w8, #0x2, 0xd42ba0 <__start_il2cpp+0x1e5368>
+  d42b94: b940e008     	ldr	w8, [x0, #0xe0]
+  d42b98: 35000048     	cbnz	w8, 0xd42ba0 <__start_il2cpp+0x1e5368>
+  d42b9c: 97f6e699     	bl	0xafc600 <WriteZStream+0xa30c>
+  d42ba0: f0013648     	adrp	x8, 0x340d000
+  d42ba4: f9407508     	ldr	x8, [x8, #0xe8]  // GOT 0x340d0e8 -> 0x3522c30: Load cloud save failed
+  d42ba8: f9400100     	ldr	x0, [x8]
+  d42bac: aa1f03e1     	mov	x1, xzr
+  d42bb0: 94361c9c     	bl	0x1ac9e20 <__start_il2cpp+0xf6c5e8>  // UnityEngine.Debug$$Log
+  d42bb4: 320003e8     	orr	w8, wzr, #0x1
+  d42bb8: 39007268     	strb	w8, [x19, #0x1c]
+  d42bbc: aa1303e0     	mov	x0, x19
+  d42bc0: a9427bfd     	ldp	x29, x30, [sp, #0x20]
+  d42bc4: a9414ff4     	ldp	x20, x19, [sp, #0x10]
+  d42bc8: f84307f5     	ldr	x21, [sp], #0x30
+  d42bcc: 17fffe37     	b	0xd424a8 <__start_il2cpp+0x1e4c70>  // StartGame$$DoNext

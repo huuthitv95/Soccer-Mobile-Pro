@@ -1,0 +1,127 @@
+
+C:\Users\ZGAMESVN\Downloads\Soccer-Unity-Recovery\Extracted\lib\arm64-v8a\libil2cpp.so:	file format elf64-littleaarch64
+
+Disassembly of section il2cpp:
+
+0000000000b5d838 <__start_il2cpp>:
+ 153e818: f81d0ff5     	str	x21, [sp, #-0x30]!
+ 153e81c: a9014ff4     	stp	x20, x19, [sp, #0x10]
+ 153e820: a9027bfd     	stp	x29, x30, [sp, #0x20]
+ 153e824: 910083fd     	add	x29, sp, #0x20
+ 153e828: 90010734     	adrp	x20, 0x3622000
+ 153e82c: 396a5288     	ldrb	w8, [x20, #0xa94]
+ 153e830: aa0003f3     	mov	x19, x0
+ 153e834: 37000368     	tbnz	w8, #0x0, 0x153e8a0 <__start_il2cpp+0x9e1068>
+ 153e838: 9000f5e0     	adrp	x0, 0x33fa000
+ 153e83c: f943bc00     	ldr	x0, [x0, #0x778]  // GOT 0x33fa778 -> 0x34ccfb8: UnityEngine.Debug_TypeInfo
+ 153e840: 97d6f743     	bl	0xafc54c <WriteZStream+0xa258>
+ 153e844: b000f520     	adrp	x0, 0x33e3000
+ 153e848: f9474800     	ldr	x0, [x0, #0xe90]  // GOT 0x33e3e90 -> 0x34cf6a8: Common.MonoHelper_TypeInfo
+ 153e84c: 97d6f740     	bl	0xafc54c <WriteZStream+0xa258>
+ 153e850: d000f480     	adrp	x0, 0x33d0000
+ 153e854: f9442400     	ldr	x0, [x0, #0x848]  // GOT 0x33d0848 -> 0x34f4940: Method$Common.Singleton<PlayAssetDeliverLoader>.get_Instance()
+ 153e858: 97d6f73d     	bl	0xafc54c <WriteZStream+0xa258>
+ 153e85c: b000f760     	adrp	x0, 0x342b000
+ 153e860: f9467800     	ldr	x0, [x0, #0xcf0]  // GOT 0x342bcf0 -> 0x34f49a0: Method$Common.Singleton<SoundEffect>.get_Instance()
+ 153e864: 97d6f73a     	bl	0xafc54c <WriteZStream+0xa258>
+ 153e868: d000f7c0     	adrp	x0, 0x3438000
+ 153e86c: f943f400     	ldr	x0, [x0, #0x7e8]  // GOT 0x34387e8 -> 0x34caa10: Common.Singleton<PlayAssetDeliverLoader>_TypeInfo
+ 153e870: 97d6f737     	bl	0xafc54c <WriteZStream+0xa258>
+ 153e874: f000f660     	adrp	x0, 0x340d000
+ 153e878: f9456c00     	ldr	x0, [x0, #0xad8]  // GOT 0x340dad8 -> 0x34caa40: Common.Singleton<SoundEffect>_TypeInfo
+ 153e87c: 97d6f734     	bl	0xafc54c <WriteZStream+0xa258>
+ 153e880: f000f800     	adrp	x0, 0x3441000
+ 153e884: f947dc00     	ldr	x0, [x0, #0xfb8]  // GOT 0x3441fb8 -> 0x3536308: stadium_metlife
+ 153e888: 97d6f731     	bl	0xafc54c <WriteZStream+0xa258>
+ 153e88c: f000f6a0     	adrp	x0, 0x3415000
+ 153e890: f9429400     	ldr	x0, [x0, #0x528]  // GOT 0x3415528 -> 0x35356d8: set remote asset bundle loader
+ 153e894: 97d6f72e     	bl	0xafc54c <WriteZStream+0xa258>
+ 153e898: 320003e8     	orr	w8, wzr, #0x1
+ 153e89c: 392a5288     	strb	w8, [x20, #0xa94]
+ 153e8a0: 9000f5e8     	adrp	x8, 0x33fa000
+ 153e8a4: f943bd08     	ldr	x8, [x8, #0x778]  // GOT 0x33fa778 -> 0x34ccfb8: UnityEngine.Debug_TypeInfo
+ 153e8a8: f9400100     	ldr	x0, [x8]
+ 153e8ac: 3944cc08     	ldrb	w8, [x0, #0x133]
+ 153e8b0: 36100088     	tbz	w8, #0x2, 0x153e8c0 <__start_il2cpp+0x9e1088>
+ 153e8b4: b940e008     	ldr	w8, [x0, #0xe0]
+ 153e8b8: 35000048     	cbnz	w8, 0x153e8c0 <__start_il2cpp+0x9e1088>
+ 153e8bc: 97d6f751     	bl	0xafc600 <WriteZStream+0xa30c>
+ 153e8c0: f000f6a8     	adrp	x8, 0x3415000
+ 153e8c4: f9429508     	ldr	x8, [x8, #0x528]  // GOT 0x3415528 -> 0x35356d8: set remote asset bundle loader
+ 153e8c8: aa1f03e1     	mov	x1, xzr
+ 153e8cc: f9400100     	ldr	x0, [x8]
+ 153e8d0: 94162d54     	bl	0x1ac9e20 <__start_il2cpp+0xf6c5e8>  // UnityEngine.Debug$$Log
+ 153e8d4: f000f668     	adrp	x8, 0x340d000
+ 153e8d8: f9456d08     	ldr	x8, [x8, #0xad8]  // GOT 0x340dad8 -> 0x34caa40: Common.Singleton<SoundEffect>_TypeInfo
+ 153e8dc: f9400100     	ldr	x0, [x8]
+ 153e8e0: 3944cc08     	ldrb	w8, [x0, #0x133]
+ 153e8e4: 36100088     	tbz	w8, #0x2, 0x153e8f4 <__start_il2cpp+0x9e10bc>
+ 153e8e8: b940e008     	ldr	w8, [x0, #0xe0]
+ 153e8ec: 35000048     	cbnz	w8, 0x153e8f4 <__start_il2cpp+0x9e10bc>
+ 153e8f0: 97d6f744     	bl	0xafc600 <WriteZStream+0xa30c>
+ 153e8f4: b000f768     	adrp	x8, 0x342b000
+ 153e8f8: f9467908     	ldr	x8, [x8, #0xcf0]  // GOT 0x342bcf0 -> 0x34f49a0: Method$Common.Singleton<SoundEffect>.get_Instance()
+ 153e8fc: f9400100     	ldr	x0, [x8]
+ 153e900: 9417c716     	bl	0x1b30558 <__start_il2cpp+0xfd2d20>  // Common.Singleton<ADMobSDK>$$get_Instance | Common.Singleton<AdmobImmersiveAD>$$get_Instance | Common.Singleton<AdsManager>$$get_Instance [shared generics]
+ 153e904: b40007a0     	cbz	x0, 0x153e9f8 <__start_il2cpp+0x9e11c0>
+ 153e908: 3901201f     	strb	wzr, [x0, #0x48]
+ 153e90c: aa1303f4     	mov	x20, x19
+ 153e910: f8430e95     	ldr	x21, [x20, #0x30]!
+ 153e914: b4000215     	cbz	x21, 0x153e954 <__start_il2cpp+0x9e111c>
+ 153e918: b000f528     	adrp	x8, 0x33e3000
+ 153e91c: f9474908     	ldr	x8, [x8, #0xe90]  // GOT 0x33e3e90 -> 0x34cf6a8: Common.MonoHelper_TypeInfo
+ 153e920: f9400100     	ldr	x0, [x8]
+ 153e924: 3944cc08     	ldrb	w8, [x0, #0x133]
+ 153e928: 36100088     	tbz	w8, #0x2, 0x153e938 <__start_il2cpp+0x9e1100>
+ 153e92c: b940e008     	ldr	w8, [x0, #0xe0]
+ 153e930: 35000048     	cbnz	w8, 0x153e938 <__start_il2cpp+0x9e1100>
+ 153e934: 97d6f733     	bl	0xafc600 <WriteZStream+0xa30c>
+ 153e938: aa1503e0     	mov	x0, x21
+ 153e93c: aa1f03e1     	mov	x1, xzr
+ 153e940: 97f79168     	bl	0x1322ee0 <__start_il2cpp+0x7c56a8>  // Common.MonoHelper$$StopCoroutine
+ 153e944: aa1403e0     	mov	x0, x20
+ 153e948: aa1f03e1     	mov	x1, xzr
+ 153e94c: f900029f     	str	xzr, [x20]
+ 153e950: 97d6f6e6     	bl	0xafc4e8 <WriteZStream+0xa1f4>
+ 153e954: aa1303e0     	mov	x0, x19
+ 153e958: 97fff95c     	bl	0x153cec8 <__start_il2cpp+0x9df690>  // UI_Load$$WaitSoundBundleReadyAndPlayBgm
+ 153e95c: b000f528     	adrp	x8, 0x33e3000
+ 153e960: f9474908     	ldr	x8, [x8, #0xe90]  // GOT 0x33e3e90 -> 0x34cf6a8: Common.MonoHelper_TypeInfo
+ 153e964: aa0003f3     	mov	x19, x0
+ 153e968: f9400108     	ldr	x8, [x8]
+ 153e96c: 3944cd09     	ldrb	w9, [x8, #0x133]
+ 153e970: 361000a9     	tbz	w9, #0x2, 0x153e984 <__start_il2cpp+0x9e114c>
+ 153e974: b940e109     	ldr	w9, [x8, #0xe0]
+ 153e978: 35000069     	cbnz	w9, 0x153e984 <__start_il2cpp+0x9e114c>
+ 153e97c: aa0803e0     	mov	x0, x8
+ 153e980: 97d6f720     	bl	0xafc600 <WriteZStream+0xa30c>
+ 153e984: aa1303e0     	mov	x0, x19
+ 153e988: aa1f03e1     	mov	x1, xzr
+ 153e98c: 97f7913e     	bl	0x1322e84 <__start_il2cpp+0x7c564c>  // Common.MonoHelper$$StartCoroutine
+ 153e990: aa0003e1     	mov	x1, x0
+ 153e994: f9000280     	str	x0, [x20]
+ 153e998: aa1403e0     	mov	x0, x20
+ 153e99c: 97d6f6d3     	bl	0xafc4e8 <WriteZStream+0xa1f4>
+ 153e9a0: d000f7c8     	adrp	x8, 0x3438000
+ 153e9a4: f943f508     	ldr	x8, [x8, #0x7e8]  // GOT 0x34387e8 -> 0x34caa10: Common.Singleton<PlayAssetDeliverLoader>_TypeInfo
+ 153e9a8: f9400100     	ldr	x0, [x8]
+ 153e9ac: 3944cc08     	ldrb	w8, [x0, #0x133]
+ 153e9b0: 36100088     	tbz	w8, #0x2, 0x153e9c0 <__start_il2cpp+0x9e1188>
+ 153e9b4: b940e008     	ldr	w8, [x0, #0xe0]
+ 153e9b8: 35000048     	cbnz	w8, 0x153e9c0 <__start_il2cpp+0x9e1188>
+ 153e9bc: 97d6f711     	bl	0xafc600 <WriteZStream+0xa30c>
+ 153e9c0: d000f488     	adrp	x8, 0x33d0000
+ 153e9c4: f9442508     	ldr	x8, [x8, #0x848]  // GOT 0x33d0848 -> 0x34f4940: Method$Common.Singleton<PlayAssetDeliverLoader>.get_Instance()
+ 153e9c8: f9400100     	ldr	x0, [x8]
+ 153e9cc: 9417c6e3     	bl	0x1b30558 <__start_il2cpp+0xfd2d20>  // Common.Singleton<ADMobSDK>$$get_Instance | Common.Singleton<AdmobImmersiveAD>$$get_Instance | Common.Singleton<AdsManager>$$get_Instance [shared generics]
+ 153e9d0: b4000140     	cbz	x0, 0x153e9f8 <__start_il2cpp+0x9e11c0>
+ 153e9d4: f000f808     	adrp	x8, 0x3441000
+ 153e9d8: f947dd08     	ldr	x8, [x8, #0xfb8]  // GOT 0x3441fb8 -> 0x3536308: stadium_metlife
+ 153e9dc: a9427bfd     	ldp	x29, x30, [sp, #0x20]
+ 153e9e0: a9414ff4     	ldp	x20, x19, [sp, #0x10]
+ 153e9e4: 2a1f03e2     	mov	w2, wzr
+ 153e9e8: f9400101     	ldr	x1, [x8]
+ 153e9ec: aa1f03e3     	mov	x3, xzr
+ 153e9f0: f84307f5     	ldr	x21, [sp], #0x30
+ 153e9f4: 17f0ddc0     	b	0x11760f4 <__start_il2cpp+0x6188bc>  // PlayAssetDeliverLoader$$Load
+ 153e9f8: 97d6f70b     	bl	0xafc624 <WriteZStream+0xa330>

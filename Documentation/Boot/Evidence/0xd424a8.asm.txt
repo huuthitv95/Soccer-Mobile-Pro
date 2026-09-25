@@ -1,0 +1,92 @@
+
+C:\Users\ZGAMESVN\Downloads\Soccer-Unity-Recovery\Extracted\lib\arm64-v8a\libil2cpp.so:	file format elf64-littleaarch64
+
+Disassembly of section il2cpp:
+
+0000000000b5d838 <__start_il2cpp>:
+  d424a8: a9bd57f6     	stp	x22, x21, [sp, #-0x30]!
+  d424ac: a9014ff4     	stp	x20, x19, [sp, #0x10]
+  d424b0: a9027bfd     	stp	x29, x30, [sp, #0x20]
+  d424b4: 910083fd     	add	x29, sp, #0x20
+  d424b8: b00146f4     	adrp	x20, 0x361f000
+  d424bc: 395abe88     	ldrb	w8, [x20, #0x6af]
+  d424c0: aa0003f3     	mov	x19, x0
+  d424c4: 370002a8     	tbnz	w8, #0x0, 0xd42518 <__start_il2cpp+0x1e4ce0>
+  d424c8: b0013540     	adrp	x0, 0x33eb000
+  d424cc: f9471800     	ldr	x0, [x0, #0xe30]  // GOT 0x33ebe30 -> 0x34ee638: Method$System.Collections.Generic.List<string>.Add()
+  d424d0: 97f6e81f     	bl	0xafc54c <WriteZStream+0xa258>
+  d424d4: f0013620     	adrp	x0, 0x3409000
+  d424d8: f9471000     	ldr	x0, [x0, #0xe20]  // GOT 0x3409e20 -> 0x34ee620: Method$System.Collections.Generic.List<string>..ctor()
+  d424dc: 97f6e81c     	bl	0xafc54c <WriteZStream+0xa258>
+  d424e0: b00136c0     	adrp	x0, 0x341b000
+  d424e4: f9474400     	ldr	x0, [x0, #0xe88]  // GOT 0x341be88 -> 0x34c93b0: System.Collections.Generic.List<string>_TypeInfo
+  d424e8: 97f6e819     	bl	0xafc54c <WriteZStream+0xa258>
+  d424ec: d0013500     	adrp	x0, 0x33e4000
+  d424f0: f941bc00     	ldr	x0, [x0, #0x378]  // GOT 0x33e4378 -> 0x34d08e0: SceneHelper_TypeInfo
+  d424f4: 97f6e816     	bl	0xafc54c <WriteZStream+0xa258>
+  d424f8: d0013580     	adrp	x0, 0x33f4000
+  d424fc: f942c800     	ldr	x0, [x0, #0x590]  // GOT 0x33f4590 -> 0x3526558: Scenes/UI/Start
+  d42500: 97f6e813     	bl	0xafc54c <WriteZStream+0xa258>
+  d42504: f0013720     	adrp	x0, 0x3429000
+  d42508: f945bc00     	ldr	x0, [x0, #0xb78]  // GOT 0x3429b78 -> 0x3526548: Scenes/UI/Launch
+  d4250c: 97f6e810     	bl	0xafc54c <WriteZStream+0xa258>
+  d42510: 320003e8     	orr	w8, wzr, #0x1
+  d42514: 391abe88     	strb	w8, [x20, #0x6af]
+  d42518: 3940c268     	ldrb	w8, [x19, #0x30]
+  d4251c: 340000a8     	cbz	w8, 0xd42530 <__start_il2cpp+0x1e4cf8>
+  d42520: a9427bfd     	ldp	x29, x30, [sp, #0x20]
+  d42524: a9414ff4     	ldp	x20, x19, [sp, #0x10]
+  d42528: a8c357f6     	ldp	x22, x21, [sp], #0x30
+  d4252c: d65f03c0     	ret
+  d42530: 39407268     	ldrb	w8, [x19, #0x1c]
+  d42534: 34ffff68     	cbz	w8, 0xd42520 <__start_il2cpp+0x1e4ce8>
+  d42538: 39407668     	ldrb	w8, [x19, #0x1d]
+  d4253c: 34ffff28     	cbz	w8, 0xd42520 <__start_il2cpp+0x1e4ce8>
+  d42540: 320003e8     	orr	w8, wzr, #0x1
+  d42544: 3900c268     	strb	w8, [x19, #0x30]
+  d42548: b00136d4     	adrp	x20, 0x341b000
+  d4254c: f9474694     	ldr	x20, [x20, #0xe88]  // GOT 0x341be88 -> 0x34c93b0: System.Collections.Generic.List<string>_TypeInfo
+  d42550: f9400280     	ldr	x0, [x20]
+  d42554: 97f6e832     	bl	0xafc61c <WriteZStream+0xa328>
+  d42558: f0013635     	adrp	x21, 0x3409000
+  d4255c: f94712b5     	ldr	x21, [x21, #0xe20]  // GOT 0x3409e20 -> 0x34ee620: Method$System.Collections.Generic.List<string>..ctor()
+  d42560: aa0003f3     	mov	x19, x0
+  d42564: f94002a1     	ldr	x1, [x21]
+  d42568: 946139af     	bl	0x2590c24 <__start_il2cpp+0x1a333ec>  // System.Collections.Generic.List<Action<bool>>$$.ctor | System.Collections.Generic.List<Action<GadsmePlacement>>$$.ctor | System.Collections.Generic.List<Action<GameMessage>>$$.ctor [shared generics]
+  d4256c: b4000493     	cbz	x19, 0xd425fc <__start_il2cpp+0x1e4dc4>
+  d42570: d0013588     	adrp	x8, 0x33f4000
+  d42574: b0013556     	adrp	x22, 0x33eb000
+  d42578: f942c908     	ldr	x8, [x8, #0x590]  // GOT 0x33f4590 -> 0x3526558: Scenes/UI/Start
+  d4257c: f9471ad6     	ldr	x22, [x22, #0xe30]  // GOT 0x33ebe30 -> 0x34ee638: Method$System.Collections.Generic.List<string>.Add()
+  d42580: aa1303e0     	mov	x0, x19
+  d42584: f9400101     	ldr	x1, [x8]
+  d42588: f94002c2     	ldr	x2, [x22]
+  d4258c: 94613cd7     	bl	0x25918e8 <__start_il2cpp+0x1a340b0>  // System.Collections.Generic.List<Action<bool>>$$Add | System.Collections.Generic.List<Action<GadsmePlacement>>$$Add | System.Collections.Generic.List<Action<GameMessage>>$$Add [shared generics]
+  d42590: f0013728     	adrp	x8, 0x3429000
+  d42594: f945bd08     	ldr	x8, [x8, #0xb78]  // GOT 0x3429b78 -> 0x3526548: Scenes/UI/Launch
+  d42598: f94002c2     	ldr	x2, [x22]
+  d4259c: aa1303e0     	mov	x0, x19
+  d425a0: f9400101     	ldr	x1, [x8]
+  d425a4: 94613cd1     	bl	0x25918e8 <__start_il2cpp+0x1a340b0>  // System.Collections.Generic.List<Action<bool>>$$Add | System.Collections.Generic.List<Action<GadsmePlacement>>$$Add | System.Collections.Generic.List<Action<GameMessage>>$$Add [shared generics]
+  d425a8: f9400280     	ldr	x0, [x20]
+  d425ac: 97f6e81c     	bl	0xafc61c <WriteZStream+0xa328>
+  d425b0: f94002a1     	ldr	x1, [x21]
+  d425b4: aa0003f4     	mov	x20, x0
+  d425b8: 9461399b     	bl	0x2590c24 <__start_il2cpp+0x1a333ec>  // System.Collections.Generic.List<Action<bool>>$$.ctor | System.Collections.Generic.List<Action<GadsmePlacement>>$$.ctor | System.Collections.Generic.List<Action<GameMessage>>$$.ctor [shared generics]
+  d425bc: d0013508     	adrp	x8, 0x33e4000
+  d425c0: f941bd08     	ldr	x8, [x8, #0x378]  // GOT 0x33e4378 -> 0x34d08e0: SceneHelper_TypeInfo
+  d425c4: f9400100     	ldr	x0, [x8]
+  d425c8: 3944cc08     	ldrb	w8, [x0, #0x133]
+  d425cc: 36100088     	tbz	w8, #0x2, 0xd425dc <__start_il2cpp+0x1e4da4>
+  d425d0: b940e008     	ldr	w8, [x0, #0xe0]
+  d425d4: 35000048     	cbnz	w8, 0xd425dc <__start_il2cpp+0x1e4da4>
+  d425d8: 97f6e80a     	bl	0xafc600 <WriteZStream+0xa30c>
+  d425dc: aa1303e0     	mov	x0, x19
+  d425e0: aa1403e1     	mov	x1, x20
+  d425e4: a9427bfd     	ldp	x29, x30, [sp, #0x20]
+  d425e8: a9414ff4     	ldp	x20, x19, [sp, #0x10]
+  d425ec: aa1f03e2     	mov	x2, xzr
+  d425f0: aa1f03e3     	mov	x3, xzr
+  d425f4: a8c357f6     	ldp	x22, x21, [sp], #0x30
+  d425f8: 140e52fd     	b	0x10d71ec <__start_il2cpp+0x5799b4>  // SceneHelper$$LoadScenes
+  d425fc: 97f6e80a     	bl	0xafc624 <WriteZStream+0xa330>

@@ -1,0 +1,81 @@
+
+C:\Users\ZGAMESVN\Downloads\Soccer-Unity-Recovery\Extracted\lib\arm64-v8a\libil2cpp.so:	file format elf64-littleaarch64
+
+Disassembly of section il2cpp:
+
+0000000000b5d838 <__start_il2cpp>:
+ 10d71ec: f81c0ff7     	str	x23, [sp, #-0x40]!
+ 10d71f0: a90157f6     	stp	x22, x21, [sp, #0x10]
+ 10d71f4: a9024ff4     	stp	x20, x19, [sp, #0x20]
+ 10d71f8: a9037bfd     	stp	x29, x30, [sp, #0x30]
+ 10d71fc: 9100c3fd     	add	x29, sp, #0x30
+ 10d7200: b0012a56     	adrp	x22, 0x3620000
+ 10d7204: 397c8ec8     	ldrb	w8, [x22, #0xf23]
+ 10d7208: aa0203f3     	mov	x19, x2
+ 10d720c: aa0103f4     	mov	x20, x1
+ 10d7210: aa0003f5     	mov	x21, x0
+ 10d7214: 370001e8     	tbnz	w8, #0x0, 0x10d7250 <__start_il2cpp+0x579a18>
+ 10d7218: 90011860     	adrp	x0, 0x33e3000
+ 10d721c: f942f400     	ldr	x0, [x0, #0x5e8]  // GOT 0x33e35e8 -> 0x34cba78: System.Action_TypeInfo
+ 10d7220: 97e894cb     	bl	0xafc54c <WriteZStream+0xa258>
+ 10d7224: b0011860     	adrp	x0, 0x33e4000
+ 10d7228: f941bc00     	ldr	x0, [x0, #0x378]  // GOT 0x33e4378 -> 0x34d08e0: SceneHelper_TypeInfo
+ 10d722c: 97e894c8     	bl	0xafc54c <WriteZStream+0xa258>
+ 10d7230: f0011ae0     	adrp	x0, 0x3436000
+ 10d7234: f9416c00     	ldr	x0, [x0, #0x2d8]  // GOT 0x34362d8 -> 0x35146a8: Method$SceneHelper.<>c__DisplayClass9_0.<LoadScenes>b__0()
+ 10d7238: 97e894c5     	bl	0xafc54c <WriteZStream+0xa258>
+ 10d723c: f0011b40     	adrp	x0, 0x3442000
+ 10d7240: f9442400     	ldr	x0, [x0, #0x848]  // GOT 0x3442848 -> 0x34d54c8: SceneHelper.<>c__DisplayClass9_0_TypeInfo
+ 10d7244: 97e894c2     	bl	0xafc54c <WriteZStream+0xa258>
+ 10d7248: 320003e8     	orr	w8, wzr, #0x1
+ 10d724c: 393c8ec8     	strb	w8, [x22, #0xf23]
+ 10d7250: f0011b48     	adrp	x8, 0x3442000
+ 10d7254: f9442508     	ldr	x8, [x8, #0x848]  // GOT 0x3442848 -> 0x34d54c8: SceneHelper.<>c__DisplayClass9_0_TypeInfo
+ 10d7258: f9400100     	ldr	x0, [x8]
+ 10d725c: 97e894f0     	bl	0xafc61c <WriteZStream+0xa328>
+ 10d7260: aa1f03e1     	mov	x1, xzr
+ 10d7264: aa0003f6     	mov	x22, x0
+ 10d7268: 97ede157     	bl	0xc4f7c4 <__start_il2cpp+0xf1f8c>  // SceneHelper.<>c__DisplayClass9_0$$.ctor
+ 10d726c: b4000556     	cbz	x22, 0x10d7314 <__start_il2cpp+0x579adc>
+ 10d7270: aa1603f7     	mov	x23, x22
+ 10d7274: f8010ef5     	str	x21, [x23, #0x10]!
+ 10d7278: aa1703e0     	mov	x0, x23
+ 10d727c: aa1503e1     	mov	x1, x21
+ 10d7280: 97e8949a     	bl	0xafc4e8 <WriteZStream+0xa1f4>
+ 10d7284: aa1603e0     	mov	x0, x22
+ 10d7288: f8018c14     	str	x20, [x0, #0x18]!
+ 10d728c: aa1403e1     	mov	x1, x20
+ 10d7290: 97e89496     	bl	0xafc4e8 <WriteZStream+0xa1f4>
+ 10d7294: aa1603e0     	mov	x0, x22
+ 10d7298: f8020c13     	str	x19, [x0, #0x20]!
+ 10d729c: aa1303e1     	mov	x1, x19
+ 10d72a0: 97e89492     	bl	0xafc4e8 <WriteZStream+0xa1f4>
+ 10d72a4: 90011868     	adrp	x8, 0x33e3000
+ 10d72a8: f94002f3     	ldr	x19, [x23]
+ 10d72ac: f942f508     	ldr	x8, [x8, #0x5e8]  // GOT 0x33e35e8 -> 0x34cba78: System.Action_TypeInfo
+ 10d72b0: f9400100     	ldr	x0, [x8]
+ 10d72b4: 97e894da     	bl	0xafc61c <WriteZStream+0xa328>
+ 10d72b8: f0011ae8     	adrp	x8, 0x3436000
+ 10d72bc: f9416d08     	ldr	x8, [x8, #0x2d8]  // GOT 0x34362d8 -> 0x35146a8: Method$SceneHelper.<>c__DisplayClass9_0.<LoadScenes>b__0()
+ 10d72c0: aa1603e1     	mov	x1, x22
+ 10d72c4: aa1f03e3     	mov	x3, xzr
+ 10d72c8: aa0003f4     	mov	x20, x0
+ 10d72cc: f9400102     	ldr	x2, [x8]
+ 10d72d0: 942f9318     	bl	0x1cbbf30 <__start_il2cpp+0x115e6f8>  // System.Action$$.ctor
+ 10d72d4: b0011868     	adrp	x8, 0x33e4000
+ 10d72d8: f941bd08     	ldr	x8, [x8, #0x378]  // GOT 0x33e4378 -> 0x34d08e0: SceneHelper_TypeInfo
+ 10d72dc: f9400100     	ldr	x0, [x8]
+ 10d72e0: 3944cc08     	ldrb	w8, [x0, #0x133]
+ 10d72e4: 36100088     	tbz	w8, #0x2, 0x10d72f4 <__start_il2cpp+0x579abc>
+ 10d72e8: b940e008     	ldr	w8, [x0, #0xe0]
+ 10d72ec: 35000048     	cbnz	w8, 0x10d72f4 <__start_il2cpp+0x579abc>
+ 10d72f0: 97e894c4     	bl	0xafc600 <WriteZStream+0xa30c>
+ 10d72f4: aa1303e0     	mov	x0, x19
+ 10d72f8: aa1403e1     	mov	x1, x20
+ 10d72fc: a9437bfd     	ldp	x29, x30, [sp, #0x30]
+ 10d7300: a9424ff4     	ldp	x20, x19, [sp, #0x20]
+ 10d7304: a94157f6     	ldp	x22, x21, [sp, #0x10]
+ 10d7308: 2a1f03e2     	mov	w2, wzr
+ 10d730c: f84407f7     	ldr	x23, [sp], #0x40
+ 10d7310: 17fffde7     	b	0x10d6aac <__start_il2cpp+0x579274>  // SceneHelper$$LoadScenesAsync
+ 10d7314: 97e894c4     	bl	0xafc624 <WriteZStream+0xa330>

@@ -1,0 +1,72 @@
+
+C:\Users\ZGAMESVN\Downloads\Soccer-Unity-Recovery\Extracted\lib\arm64-v8a\libil2cpp.so:	file format elf64-littleaarch64
+
+Disassembly of section il2cpp:
+
+0000000000b5d838 <__start_il2cpp>:
+ 153d1c8: f81d0ff5     	str	x21, [sp, #-0x30]!
+ 153d1cc: a9014ff4     	stp	x20, x19, [sp, #0x10]
+ 153d1d0: a9027bfd     	stp	x29, x30, [sp, #0x20]
+ 153d1d4: 910083fd     	add	x29, sp, #0x20
+ 153d1d8: b0010734     	adrp	x20, 0x3622000
+ 153d1dc: 396a3e88     	ldrb	w8, [x20, #0xa8f]
+ 153d1e0: aa0003f3     	mov	x19, x0
+ 153d1e4: 37000248     	tbnz	w8, #0x0, 0x153d22c <__start_il2cpp+0x9df9f4>
+ 153d1e8: 9000f540     	adrp	x0, 0x33e5000
+ 153d1ec: f9423400     	ldr	x0, [x0, #0x468]  // GOT 0x33e5468 -> 0x34d7b18: Method$System.Action<bool>..ctor()
+ 153d1f0: 97d6fcd7     	bl	0xafc54c <WriteZStream+0xa258>
+ 153d1f4: 9000f660     	adrp	x0, 0x3409000
+ 153d1f8: f946e800     	ldr	x0, [x0, #0xdd0]  // GOT 0x3409dd0 -> 0x34c5570: System.Action<bool>_TypeInfo
+ 153d1fc: 97d6fcd4     	bl	0xafc54c <WriteZStream+0xa258>
+ 153d200: d000f6c0     	adrp	x0, 0x3417000
+ 153d204: f940a400     	ldr	x0, [x0, #0x148]  // GOT 0x3417148 -> 0x34f4980: Method$Common.Singleton<ResourcesManager>.get_Instance()
+ 153d208: 97d6fcd1     	bl	0xafc54c <WriteZStream+0xa258>
+ 153d20c: f000f4c0     	adrp	x0, 0x33d8000
+ 153d210: f942c800     	ldr	x0, [x0, #0x590]  // GOT 0x33d8590 -> 0x34caa30: Common.Singleton<ResourcesManager>_TypeInfo
+ 153d214: 97d6fcce     	bl	0xafc54c <WriteZStream+0xa258>
+ 153d218: f000f540     	adrp	x0, 0x33e8000
+ 153d21c: f9426400     	ldr	x0, [x0, #0x4c8]  // GOT 0x33e84c8 -> 0x350df80: Method$UI_Load.<Start>b__20_0()
+ 153d220: 97d6fccb     	bl	0xafc54c <WriteZStream+0xa258>
+ 153d224: 320003e8     	orr	w8, wzr, #0x1
+ 153d228: 392a3e88     	strb	w8, [x20, #0xa8f]
+ 153d22c: f9401260     	ldr	x0, [x19, #0x20]
+ 153d230: b4000060     	cbz	x0, 0x153d23c <__start_il2cpp+0x9dfa04>
+ 153d234: aa1f03e1     	mov	x1, xzr
+ 153d238: 97dc666f     	bl	0xc56bf4 <__start_il2cpp+0xf93bc>  // StartGame.GameDataExport$$Init
+ 153d23c: f000f4c8     	adrp	x8, 0x33d8000
+ 153d240: f942c908     	ldr	x8, [x8, #0x590]  // GOT 0x33d8590 -> 0x34caa30: Common.Singleton<ResourcesManager>_TypeInfo
+ 153d244: f9400100     	ldr	x0, [x8]
+ 153d248: 3944cc08     	ldrb	w8, [x0, #0x133]
+ 153d24c: 36100088     	tbz	w8, #0x2, 0x153d25c <__start_il2cpp+0x9dfa24>
+ 153d250: b940e008     	ldr	w8, [x0, #0xe0]
+ 153d254: 35000048     	cbnz	w8, 0x153d25c <__start_il2cpp+0x9dfa24>
+ 153d258: 97d6fcea     	bl	0xafc600 <WriteZStream+0xa30c>
+ 153d25c: d000f6c8     	adrp	x8, 0x3417000
+ 153d260: f940a508     	ldr	x8, [x8, #0x148]  // GOT 0x3417148 -> 0x34f4980: Method$Common.Singleton<ResourcesManager>.get_Instance()
+ 153d264: f9400100     	ldr	x0, [x8]
+ 153d268: 9417ccbc     	bl	0x1b30558 <__start_il2cpp+0xfd2d20>  // Common.Singleton<ADMobSDK>$$get_Instance | Common.Singleton<AdmobImmersiveAD>$$get_Instance | Common.Singleton<AdsManager>$$get_Instance [shared generics]
+ 153d26c: 9000f668     	adrp	x8, 0x3409000
+ 153d270: f946e908     	ldr	x8, [x8, #0xdd0]  // GOT 0x3409dd0 -> 0x34c5570: System.Action<bool>_TypeInfo
+ 153d274: aa0003f4     	mov	x20, x0
+ 153d278: f9400108     	ldr	x8, [x8]
+ 153d27c: aa0803e0     	mov	x0, x8
+ 153d280: 97d6fce7     	bl	0xafc61c <WriteZStream+0xa328>
+ 153d284: f000f548     	adrp	x8, 0x33e8000
+ 153d288: 9000f549     	adrp	x9, 0x33e5000
+ 153d28c: f9426508     	ldr	x8, [x8, #0x4c8]  // GOT 0x33e84c8 -> 0x350df80: Method$UI_Load.<Start>b__20_0()
+ 153d290: f9423529     	ldr	x9, [x9, #0x468]  // GOT 0x33e5468 -> 0x34d7b18: Method$System.Action<bool>..ctor()
+ 153d294: aa1303e1     	mov	x1, x19
+ 153d298: aa0003f5     	mov	x21, x0
+ 153d29c: f9400102     	ldr	x2, [x8]
+ 153d2a0: f9400123     	ldr	x3, [x9]
+ 153d2a4: 9402cda3     	bl	0x15f0930 <__start_il2cpp+0xa930f8>  // System.Action<bool>$$.ctor
+ 153d2a8: b4000134     	cbz	x20, 0x153d2cc <__start_il2cpp+0x9dfa94>
+ 153d2ac: aa1403e0     	mov	x0, x20
+ 153d2b0: aa1503e1     	mov	x1, x21
+ 153d2b4: aa1f03e2     	mov	x2, xzr
+ 153d2b8: 97ee33e3     	bl	0x10ca244 <__start_il2cpp+0x56ca0c>  // Common.ResourcesManager$$add_OnInitialized
+ 153d2bc: a9427bfd     	ldp	x29, x30, [sp, #0x20]
+ 153d2c0: a9414ff4     	ldp	x20, x19, [sp, #0x10]
+ 153d2c4: f84307f5     	ldr	x21, [sp], #0x30
+ 153d2c8: 14000002     	b	0x153d2d0 <__start_il2cpp+0x9dfa98>  // UI_Load$$Init
+ 153d2cc: 97d6fcd6     	bl	0xafc624 <WriteZStream+0xa330>

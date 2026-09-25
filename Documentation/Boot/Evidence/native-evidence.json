@@ -1,0 +1,326 @@
+{
+  "inputHashes": {
+    "binarySha256": "e49404a390fa4e7ac1a3bc212c4b29bee0408d9d6af5ff8d9bc7ff9e6b7d5c07",
+    "metadataSha256": "77f9d35d5db3025cd9bfa72f75fa5b251eebdcf186035f0d4fbe3cbb7d88826e",
+    "scriptJsonSha256": "daef719441805de6eaa239eef95964898198d9d7aa52af0c840afb030a49261c",
+    "dumpCsSha256": "c643d5c7c60cf24788ea8bf984f263cd4c23d9e7526791a2920ef5b811941f91"
+  },
+  "pairMatchesApkAndOriginalDumperRun": true,
+  "metadataVersion": 27,
+  "architecture": "ELF64 AArch64 little-endian",
+  "methods": [
+    {
+      "Address": 13744832,
+      "Name": "MainViewLoader$$Awake",
+      "Signature": "void MainViewLoader__Awake (MainViewLoader_o* __this, const MethodInfo* method);",
+      "TypeSignature": "vii",
+      "endRva": "0xd1bdf0"
+    },
+    {
+      "Address": 13745648,
+      "Name": "MainViewLoader$$LoadForPlayerCareer",
+      "Signature": "void MainViewLoader__LoadForPlayerCareer (MainViewLoader_o* __this, MainView_o* mainViewScript, UnityEngine_Transform_o* mountNode, const MethodInfo* method);",
+      "TypeSignature": "viiii",
+      "endRva": "0xd1c0fc"
+    },
+    {
+      "Address": 13746428,
+      "Name": "MainViewLoader$$LoadForlegacy",
+      "Signature": "void MainViewLoader__LoadForlegacy (MainViewLoader_o* __this, MainView_o* mainViewScript, UnityEngine_Transform_o* mountNode, const MethodInfo* method);",
+      "TypeSignature": "viiii",
+      "endRva": "0xd1c408"
+    },
+    {
+      "Address": 13747208,
+      "Name": "MainViewLoader$$.ctor",
+      "Signature": "void MainViewLoader___ctor (MainViewLoader_o* __this, const MethodInfo* method);",
+      "TypeSignature": "vii",
+      "endRva": "0xd1c410"
+    },
+    {
+      "Address": 13747216,
+      "Name": "MainViewLoader$$.cctor",
+      "Signature": "void MainViewLoader___cctor (const MethodInfo* method);",
+      "TypeSignature": "vi",
+      "endRva": "0xd1c414"
+    },
+    {
+      "Address": 22267284,
+      "Name": "UI_Load$$fakeLoadingBar",
+      "Signature": "System_Collections_IEnumerator_o* UI_Load__fakeLoadingBar (UI_Load_o* __this, const MethodInfo* method);",
+      "TypeSignature": "iii",
+      "endRva": "0x153c60c"
+    },
+    {
+      "Address": 22267404,
+      "Name": "UI_Load$$OnGUI",
+      "Signature": "void UI_Load__OnGUI (UI_Load_o* __this, const MethodInfo* method);",
+      "TypeSignature": "vii",
+      "endRva": "0x153c610"
+    },
+    {
+      "Address": 22267408,
+      "Name": "UI_Load$$Awake",
+      "Signature": "void UI_Load__Awake (UI_Load_o* __this, const MethodInfo* method);",
+      "TypeSignature": "vii",
+      "endRva": "0x153cec8"
+    },
+    {
+      "Address": 22269640,
+      "Name": "UI_Load$$WaitSoundBundleReadyAndPlayBgm",
+      "Signature": "System_Collections_IEnumerator_o* UI_Load__WaitSoundBundleReadyAndPlayBgm (UI_Load_o* __this, const MethodInfo* method);",
+      "TypeSignature": "iii",
+      "endRva": "0x153cf40"
+    },
+    {
+      "Address": 22269760,
+      "Name": "UI_Load$$GetEngineParameters",
+      "Signature": "System_String_o* UI_Load__GetEngineParameters (const MethodInfo* method);",
+      "TypeSignature": "ii",
+      "endRva": "0x153d1c8"
+    },
+    {
+      "Address": 22270408,
+      "Name": "UI_Load$$Start",
+      "Signature": "void UI_Load__Start (UI_Load_o* __this, const MethodInfo* method);",
+      "TypeSignature": "vii",
+      "endRva": "0x153d2d0"
+    },
+    {
+      "Address": 22270672,
+      "Name": "UI_Load$$Init",
+      "Signature": "void UI_Load__Init (UI_Load_o* __this, const MethodInfo* method);",
+      "TypeSignature": "vii",
+      "endRva": "0x153d44c"
+    },
+    {
+      "Address": 22271052,
+      "Name": "UI_Load$$clearSave",
+      "Signature": "void UI_Load__clearSave (UI_Load_o* __this, const MethodInfo* method);",
+      "TypeSignature": "vii",
+      "endRva": "0x153d4f8"
+    },
+    {
+      "Address": 22271224,
+      "Name": "UI_Load$$OnDestroy",
+      "Signature": "void UI_Load__OnDestroy (UI_Load_o* __this, const MethodInfo* method);",
+      "TypeSignature": "vii",
+      "endRva": "0x153d4fc"
+    },
+    {
+      "Address": 22271228,
+      "Name": "UI_Load$$StartInit",
+      "Signature": "void UI_Load__StartInit (UI_Load_o* __this, const MethodInfo* method);",
+      "TypeSignature": "vii",
+      "endRva": "0x153dc60"
+    },
+    {
+      "Address": 22273120,
+      "Name": "UI_Load$$Update",
+      "Signature": "void UI_Load__Update (UI_Load_o* __this, const MethodInfo* method);",
+      "TypeSignature": "vii",
+      "endRva": "0x153e6b0"
+    },
+    {
+      "Address": 22275760,
+      "Name": "UI_Load$$.ctor",
+      "Signature": "void UI_Load___ctor (UI_Load_o* __this, const MethodInfo* method);",
+      "TypeSignature": "vii",
+      "endRva": "0x153e814"
+    },
+    {
+      "Address": 22276116,
+      "Name": "UI_Load$$.cctor",
+      "Signature": "void UI_Load___cctor (const MethodInfo* method);",
+      "TypeSignature": "vi",
+      "endRva": "0x153e818"
+    },
+    {
+      "Address": 22276120,
+      "Name": "UI_Load$$<Awake>b__15_2",
+      "Signature": "void UI_Load___Awake_b__15_2 (UI_Load_o* __this, bool result, const MethodInfo* method);",
+      "TypeSignature": "viii",
+      "endRva": "0x153e9fc"
+    },
+    {
+      "Address": 22276604,
+      "Name": "UI_Load$$<Start>b__20_0",
+      "Signature": "void UI_Load___Start_b__20_0 (UI_Load_o* __this, bool result, const MethodInfo* method);",
+      "TypeSignature": "viii",
+      "endRva": "0x153eb00"
+    },
+    {
+      "Address": 12938228,
+      "Name": "StartGame.GameDataExport$$Init",
+      "Signature": "void StartGame_GameDataExport__Init (StartGame_GameDataExport_o* __this, const MethodInfo* method);",
+      "TypeSignature": "vii",
+      "endRva": "0xc56ce8"
+    },
+    {
+      "Address": 12938472,
+      "Name": "StartGame.GameDataExport$$.ctor",
+      "Signature": "void StartGame_GameDataExport___ctor (StartGame_GameDataExport_o* __this, const MethodInfo* method);",
+      "TypeSignature": "vii",
+      "endRva": "0xc56cf0"
+    },
+    {
+      "Address": 12938480,
+      "Name": "StartGame.GameDataExport$$<Init>b__3_0",
+      "Signature": "void StartGame_GameDataExport___Init_b__3_0 (StartGame_GameDataExport_o* __this, const MethodInfo* method);",
+      "TypeSignature": "vii",
+      "endRva": "0xc56d94"
+    },
+    {
+      "Address": 12936928,
+      "Name": "StartGame.<>c$$.cctor",
+      "Signature": "void StartGame___c___cctor (const MethodInfo* method);",
+      "TypeSignature": "vi",
+      "endRva": "0xc56744"
+    },
+    {
+      "Address": 12937028,
+      "Name": "StartGame.<>c$$.ctor",
+      "Signature": "void StartGame___c___ctor (StartGame___c_o* __this, const MethodInfo* method);",
+      "TypeSignature": "vii",
+      "endRva": "0xc5674c"
+    },
+    {
+      "Address": 12937036,
+      "Name": "StartGame.<>c$$<Awake>b__11_0",
+      "Signature": "bool StartGame___c___Awake_b__11_0 (StartGame___c_o* __this, const MethodInfo* method);",
+      "TypeSignature": "iii",
+      "endRva": "0xc567fc"
+    },
+    {
+      "Address": 12937212,
+      "Name": "StartGame.<>c$$<CheckLoadCloudSave>b__12_0",
+      "Signature": "bool StartGame___c___CheckLoadCloudSave_b__12_0 (StartGame___c_o* __this, const MethodInfo* method);",
+      "TypeSignature": "iii",
+      "endRva": "0xc56870"
+    },
+    {
+      "Address": 12937328,
+      "Name": "StartGame.<CheckLoadCloudSave>d__12$$.ctor",
+      "Signature": "void StartGame__CheckLoadCloudSave_d__12___ctor (StartGame__CheckLoadCloudSave_d__12_o* __this, int32_t __1__state, const MethodInfo* method);",
+      "TypeSignature": "viii",
+      "endRva": "0xc5689c"
+    },
+    {
+      "Address": 12937372,
+      "Name": "StartGame.<CheckLoadCloudSave>d__12$$System.IDisposable.Dispose",
+      "Signature": "void StartGame__CheckLoadCloudSave_d__12__System_IDisposable_Dispose (StartGame__CheckLoadCloudSave_d__12_o* __this, const MethodInfo* method);",
+      "TypeSignature": "vii",
+      "endRva": "0xc568a0"
+    },
+    {
+      "Address": 12937376,
+      "Name": "StartGame.<CheckLoadCloudSave>d__12$$MoveNext",
+      "Signature": "bool StartGame__CheckLoadCloudSave_d__12__MoveNext (StartGame__CheckLoadCloudSave_d__12_o* __this, const MethodInfo* method);",
+      "TypeSignature": "iii",
+      "endRva": "0xc56ba4"
+    },
+    {
+      "Address": 12938148,
+      "Name": "StartGame.<CheckLoadCloudSave>d__12$$System.Collections.Generic.IEnumerator<System.Object>.get_Current",
+      "Signature": "Il2CppObject* StartGame__CheckLoadCloudSave_d__12__System_Collections_Generic_IEnumerator_System_Object__get_Current (StartGame__CheckLoadCloudSave_d__12_o* __this, const MethodInfo* method);",
+      "TypeSignature": "iii",
+      "endRva": "0xc56bac"
+    },
+    {
+      "Address": 12938156,
+      "Name": "StartGame.<CheckLoadCloudSave>d__12$$System.Collections.IEnumerator.Reset",
+      "Signature": "void StartGame__CheckLoadCloudSave_d__12__System_Collections_IEnumerator_Reset (StartGame__CheckLoadCloudSave_d__12_o* __this, const MethodInfo* method);",
+      "TypeSignature": "vii",
+      "endRva": "0xc56bec"
+    },
+    {
+      "Address": 12938220,
+      "Name": "StartGame.<CheckLoadCloudSave>d__12$$System.Collections.IEnumerator.get_Current",
+      "Signature": "Il2CppObject* StartGame__CheckLoadCloudSave_d__12__System_Collections_IEnumerator_get_Current (StartGame__CheckLoadCloudSave_d__12_o* __this, const MethodInfo* method);",
+      "TypeSignature": "iii",
+      "endRva": "0xc56bf4"
+    },
+    {
+      "Address": 13902996,
+      "Name": "StartGame$$Start",
+      "Signature": "void StartGame__Start (StartGame_o* __this, const MethodInfo* method);",
+      "TypeSignature": "vii",
+      "endRva": "0xd424a8"
+    },
+    {
+      "Address": 13903016,
+      "Name": "StartGame$$DoNext",
+      "Signature": "void StartGame__DoNext (StartGame_o* __this, const MethodInfo* method);",
+      "TypeSignature": "vii",
+      "endRva": "0xd42600"
+    },
+    {
+      "Address": 13903360,
+      "Name": "StartGame$$Awake",
+      "Signature": "void StartGame__Awake (StartGame_o* __this, const MethodInfo* method);",
+      "TypeSignature": "vii",
+      "endRva": "0xd429ac"
+    },
+    {
+      "Address": 13904300,
+      "Name": "StartGame$$CheckLoadCloudSave",
+      "Signature": "System_Collections_IEnumerator_o* StartGame__CheckLoadCloudSave (StartGame_o* __this, const MethodInfo* method);",
+      "TypeSignature": "iii",
+      "endRva": "0xd42a24"
+    },
+    {
+      "Address": 13904420,
+      "Name": "StartGame$$Update",
+      "Signature": "void StartGame__Update (StartGame_o* __this, const MethodInfo* method);",
+      "TypeSignature": "vii",
+      "endRva": "0xd42a94"
+    },
+    {
+      "Address": 13904532,
+      "Name": "StartGame$$.ctor",
+      "Signature": "void StartGame___ctor (StartGame_o* __this, const MethodInfo* method);",
+      "TypeSignature": "vii",
+      "endRva": "0xd42a9c"
+    },
+    {
+      "Address": 13904540,
+      "Name": "StartGame$$.cctor",
+      "Signature": "void StartGame___cctor (const MethodInfo* method);",
+      "TypeSignature": "vi",
+      "endRva": "0xd42aa0"
+    },
+    {
+      "Address": 13904544,
+      "Name": "StartGame$$<CheckLoadCloudSave>b__12_1",
+      "Signature": "void StartGame___CheckLoadCloudSave_b__12_1 (StartGame_o* __this, bool success, const MethodInfo* method);",
+      "TypeSignature": "viii",
+      "endRva": "0xd42bd0"
+    },
+    {
+      "Address": 13904848,
+      "Name": "StartGame$$<CheckLoadCloudSave>b__12_2",
+      "Signature": "void StartGame___CheckLoadCloudSave_b__12_2 (StartGame_o* __this, float v, const MethodInfo* method);",
+      "TypeSignature": "vifi",
+      "endRva": "0xd42c0c"
+    },
+    {
+      "Address": 17656492,
+      "Name": "SceneHelper$$LoadScenesAsync",
+      "Signature": "LoadingSceneProgress_o* SceneHelper__LoadScenesAsync (System_Collections_Generic_List_string__o* loads, System_Action_o* completed, bool loadBackground, const MethodInfo* method);",
+      "TypeSignature": "iiiii",
+      "endRva": "0x10d6e9c"
+    },
+    {
+      "Address": 17658348,
+      "Name": "SceneHelper$$LoadScenes",
+      "Signature": "LoadingSceneProgress_o* SceneHelper__LoadScenes (System_Collections_Generic_List_string__o* loads, System_Collections_Generic_List_string__o* hides, System_Action_o* completed, const MethodInfo* method);",
+      "TypeSignature": "iiiii",
+      "endRva": "0x10d7318"
+    }
+  ],
+  "progressConstants": {
+    "0x2785a10": 100.0,
+    "0x27c50e8": 0.15000000596046448
+  },
+  "scope": "Static binary and metadata evidence; external services are not executed."
+}

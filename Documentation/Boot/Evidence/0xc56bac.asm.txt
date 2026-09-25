@@ -1,0 +1,22 @@
+
+C:\Users\ZGAMESVN\Downloads\Soccer-Unity-Recovery\Extracted\lib\arm64-v8a\libil2cpp.so:	file format elf64-littleaarch64
+
+Disassembly of section il2cpp:
+
+0000000000b5d838 <__start_il2cpp>:
+  c56bac: f81e0ff3     	str	x19, [sp, #-0x20]!
+  c56bb0: a9017bfd     	stp	x29, x30, [sp, #0x10]
+  c56bb4: 910043fd     	add	x29, sp, #0x10
+  c56bb8: f0013c60     	adrp	x0, 0x33e5000
+  c56bbc: f947c800     	ldr	x0, [x0, #0xf90]  // GOT 0x33e5f90 -> 0x34cf9a8: System.NotSupportedException_TypeInfo
+  c56bc0: 97fa9664     	bl	0xafc550 <WriteZStream+0xa25c>
+  c56bc4: 97fa9696     	bl	0xafc61c <WriteZStream+0xa328>
+  c56bc8: aa1f03e1     	mov	x1, xzr
+  c56bcc: aa0003f3     	mov	x19, x0
+  c56bd0: 944b7f96     	bl	0x1f36a28 <__start_il2cpp+0x13d91f0>  // System.NotSupportedException$$.ctor
+  c56bd4: 90013f00     	adrp	x0, 0x3436000
+  c56bd8: f945a400     	ldr	x0, [x0, #0xb48]  // GOT 0x3436b48 -> 0x3514b18: Method$StartGame.<CheckLoadCloudSave>d__12.System.Collections.IEnumerator.Reset()
+  c56bdc: 97fa965d     	bl	0xafc550 <WriteZStream+0xa25c>
+  c56be0: aa0003e1     	mov	x1, x0
+  c56be4: aa1303e0     	mov	x0, x19
+  c56be8: 97fa9682     	bl	0xafc5f0 <WriteZStream+0xa2fc>

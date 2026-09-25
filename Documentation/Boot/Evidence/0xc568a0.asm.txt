@@ -1,0 +1,199 @@
+
+C:\Users\ZGAMESVN\Downloads\Soccer-Unity-Recovery\Extracted\lib\arm64-v8a\libil2cpp.so:	file format elf64-littleaarch64
+
+Disassembly of section il2cpp:
+
+0000000000b5d838 <__start_il2cpp>:
+  c568a0: f81c0ff7     	str	x23, [sp, #-0x40]!
+  c568a4: a90157f6     	stp	x22, x21, [sp, #0x10]
+  c568a8: a9024ff4     	stp	x20, x19, [sp, #0x20]
+  c568ac: a9037bfd     	stp	x29, x30, [sp, #0x30]
+  c568b0: 9100c3fd     	add	x29, sp, #0x30
+  c568b4: 90014e54     	adrp	x20, 0x361e000 <__data_start+0x1d9418>
+  c568b8: 397f5e88     	ldrb	w8, [x20, #0xfd7]
+  c568bc: aa0003f3     	mov	x19, x0
+  c568c0: 370005a8     	tbnz	w8, #0x0, 0xc56974 <__start_il2cpp+0xf913c>
+  c568c4: f0013c60     	adrp	x0, 0x33e5000
+  c568c8: f9423400     	ldr	x0, [x0, #0x468]  // GOT 0x33e5468 -> 0x34d7b18: Method$System.Action<bool>..ctor()
+  c568cc: 97fa9720     	bl	0xafc54c <WriteZStream+0xa258>
+  c568d0: 90013ce0     	adrp	x0, 0x33f2000
+  c568d4: f946ec00     	ldr	x0, [x0, #0xdd8]  // GOT 0x33f2dd8 -> 0x34d7f58: Method$System.Action<float>..ctor()
+  c568d8: 97fa971d     	bl	0xafc54c <WriteZStream+0xa258>
+  c568dc: 90013d40     	adrp	x0, 0x33fe000
+  c568e0: f942a400     	ldr	x0, [x0, #0x548]  // GOT 0x33fe548 -> 0x34c57d0: System.Action<float>_TypeInfo
+  c568e4: 97fa971a     	bl	0xafc54c <WriteZStream+0xa258>
+  c568e8: f0013d80     	adrp	x0, 0x3409000
+  c568ec: f946e800     	ldr	x0, [x0, #0xdd0]  // GOT 0x3409dd0 -> 0x34c5570: System.Action<bool>_TypeInfo
+  c568f0: 97fa9717     	bl	0xafc54c <WriteZStream+0xa258>
+  c568f4: 90013ea0     	adrp	x0, 0x342a000
+  c568f8: f945c400     	ldr	x0, [x0, #0xb88]  // GOT 0x342ab88 -> 0x34e5a58: Method$System.Func<bool>..ctor()
+  c568fc: 97fa9714     	bl	0xafc54c <WriteZStream+0xa258>
+  c56900: f0013be0     	adrp	x0, 0x33d5000
+  c56904: f945c000     	ldr	x0, [x0, #0xb80]  // GOT 0x33d5b80 -> 0x34c6eb0: System.Func<bool>_TypeInfo
+  c56908: 97fa9711     	bl	0xafc54c <WriteZStream+0xa258>
+  c5690c: b0013ee0     	adrp	x0, 0x3433000
+  c56910: f940ac00     	ldr	x0, [x0, #0x158]  // GOT 0x3433158 -> 0x34d00c0: PlayerSetting_TypeInfo
+  c56914: 97fa970e     	bl	0xafc54c <WriteZStream+0xa258>
+  c56918: b0013ca0     	adrp	x0, 0x33eb000
+  c5691c: f9454000     	ldr	x0, [x0, #0xa80]  // GOT 0x33eba80 -> 0x34f4810: Method$Common.Singleton<GameDataPacker>.get_Instance()
+  c56920: 97fa970b     	bl	0xafc54c <WriteZStream+0xa258>
+  c56924: b0013d60     	adrp	x0, 0x3403000
+  c56928: f9461800     	ldr	x0, [x0, #0xc30]  // GOT 0x3403c30 -> 0x34ca978: Common.Singleton<GameDataPacker>_TypeInfo
+  c5692c: 97fa9708     	bl	0xafc54c <WriteZStream+0xa258>
+  c56930: b0013c60     	adrp	x0, 0x33e3000
+  c56934: f9410400     	ldr	x0, [x0, #0x208]  // GOT 0x33e3208 -> 0x350c6d8: Method$StartGame.<CheckLoadCloudSave>b__12_1()
+  c56938: 97fa9705     	bl	0xafc54c <WriteZStream+0xa258>
+  c5693c: 90013be0     	adrp	x0, 0x33d2000
+  c56940: f9433000     	ldr	x0, [x0, #0x660]  // GOT 0x33d2660 -> 0x350c6e0: Method$StartGame.<CheckLoadCloudSave>b__12_2()
+  c56944: 97fa9702     	bl	0xafc54c <WriteZStream+0xa258>
+  c56948: b0013ca0     	adrp	x0, 0x33eb000
+  c5694c: f9432c00     	ldr	x0, [x0, #0x658]  // GOT 0x33eb658 -> 0x3514b10: Method$StartGame.<>c.<CheckLoadCloudSave>b__12_0()
+  c56950: 97fa96ff     	bl	0xafc54c <WriteZStream+0xa258>
+  c56954: d0013c20     	adrp	x0, 0x33dc000
+  c56958: f9449400     	ldr	x0, [x0, #0x928]  // GOT 0x33dc928 -> 0x34d5850: StartGame.<>c_TypeInfo
+  c5695c: 97fa96fc     	bl	0xafc54c <WriteZStream+0xa258>
+  c56960: f0013de0     	adrp	x0, 0x3415000
+  c56964: f9427800     	ldr	x0, [x0, #0x4f0]  // GOT 0x34154f0 -> 0x34d1e58: UnityEngine.WaitUntil_TypeInfo
+  c56968: 97fa96f9     	bl	0xafc54c <WriteZStream+0xa258>
+  c5696c: 320003e8     	orr	w8, wzr, #0x1
+  c56970: 393f5e88     	strb	w8, [x20, #0xfd7]
+  c56974: b9401268     	ldr	w8, [x19, #0x10]
+  c56978: 2a1f03e0     	mov	w0, wzr
+  c5697c: 7100091f     	cmp	w8, #0x2
+  c56980: 54001020     	b.eq	0xc56b84 <__start_il2cpp+0xf934c>
+  c56984: f9401274     	ldr	x20, [x19, #0x20]
+  c56988: 7100051f     	cmp	w8, #0x1
+  c5698c: 540008e0     	b.eq	0xc56aa8 <__start_il2cpp+0xf9270>
+  c56990: 35000fe8     	cbnz	w8, 0xc56b8c <__start_il2cpp+0xf9354>
+  c56994: 12800008     	mov	w8, #-0x1               // =-1
+  c56998: b9001268     	str	w8, [x19, #0x10]
+  c5699c: b0013ef5     	adrp	x21, 0x3433000
+  c569a0: f940aeb5     	ldr	x21, [x21, #0x158]  // GOT 0x3433158 -> 0x34d00c0: PlayerSetting_TypeInfo
+  c569a4: f94002a0     	ldr	x0, [x21]
+  c569a8: 3944cc08     	ldrb	w8, [x0, #0x133]
+  c569ac: 361000a8     	tbz	w8, #0x2, 0xc569c0 <__start_il2cpp+0xf9188>
+  c569b0: b940e008     	ldr	w8, [x0, #0xe0]
+  c569b4: 35000068     	cbnz	w8, 0xc569c0 <__start_il2cpp+0xf9188>
+  c569b8: 97fa9712     	bl	0xafc600 <WriteZStream+0xa30c>
+  c569bc: f94002a0     	ldr	x0, [x21]
+  c569c0: f9405c08     	ldr	x8, [x0, #0xb8]
+  c569c4: aa1f03e1     	mov	x1, xzr
+  c569c8: f9400d00     	ldr	x0, [x8, #0x18]
+  c569cc: 944b5fb1     	bl	0x1f2e890 <__start_il2cpp+0x13d1058>  // System.String$$IsNullOrEmpty
+  c569d0: 36000700     	tbz	w0, #0x0, 0xc56ab0 <__start_il2cpp+0xf9278>
+  c569d4: d0013c36     	adrp	x22, 0x33dc000
+  c569d8: f94496d6     	ldr	x22, [x22, #0x928]  // GOT 0x33dc928 -> 0x34d5850: StartGame.<>c_TypeInfo
+  c569dc: f94002c0     	ldr	x0, [x22]
+  c569e0: 3944cc08     	ldrb	w8, [x0, #0x133]
+  c569e4: 361000a8     	tbz	w8, #0x2, 0xc569f8 <__start_il2cpp+0xf91c0>
+  c569e8: b940e008     	ldr	w8, [x0, #0xe0]
+  c569ec: 35000068     	cbnz	w8, 0xc569f8 <__start_il2cpp+0xf91c0>
+  c569f0: 97fa9704     	bl	0xafc600 <WriteZStream+0xa30c>
+  c569f4: f94002c0     	ldr	x0, [x22]
+  c569f8: f9405c08     	ldr	x8, [x0, #0xb8]
+  c569fc: f9400914     	ldr	x20, [x8, #0x10]
+  c56a00: b5000374     	cbnz	x20, 0xc56a6c <__start_il2cpp+0xf9234>
+  c56a04: 3944cc09     	ldrb	w9, [x0, #0x133]
+  c56a08: 361000c9     	tbz	w9, #0x2, 0xc56a20 <__start_il2cpp+0xf91e8>
+  c56a0c: b940e009     	ldr	w9, [x0, #0xe0]
+  c56a10: 35000089     	cbnz	w9, 0xc56a20 <__start_il2cpp+0xf91e8>
+  c56a14: 97fa96fb     	bl	0xafc600 <WriteZStream+0xa30c>
+  c56a18: f94002c8     	ldr	x8, [x22]
+  c56a1c: f9405d08     	ldr	x8, [x8, #0xb8]
+  c56a20: f9400115     	ldr	x21, [x8]
+  c56a24: f0013be8     	adrp	x8, 0x33d5000
+  c56a28: f945c108     	ldr	x8, [x8, #0xb80]  // GOT 0x33d5b80 -> 0x34c6eb0: System.Func<bool>_TypeInfo
+  c56a2c: f9400100     	ldr	x0, [x8]
+  c56a30: 97fa96fb     	bl	0xafc61c <WriteZStream+0xa328>
+  c56a34: b0013ca8     	adrp	x8, 0x33eb000
+  c56a38: 90013ea9     	adrp	x9, 0x342a000
+  c56a3c: f9432d08     	ldr	x8, [x8, #0x658]  // GOT 0x33eb658 -> 0x3514b10: Method$StartGame.<>c.<CheckLoadCloudSave>b__12_0()
+  c56a40: f945c529     	ldr	x9, [x9, #0xb88]  // GOT 0x342ab88 -> 0x34e5a58: Method$System.Func<bool>..ctor()
+  c56a44: aa1503e1     	mov	x1, x21
+  c56a48: aa0003f4     	mov	x20, x0
+  c56a4c: f9400102     	ldr	x2, [x8]
+  c56a50: f9400123     	ldr	x3, [x9]
+  c56a54: 94389b45     	bl	0x1a7d768 <__start_il2cpp+0xf1ff30>  // System.Func<bool>$$.ctor
+  c56a58: f94002c8     	ldr	x8, [x22]
+  c56a5c: aa1403e1     	mov	x1, x20
+  c56a60: f9405d00     	ldr	x0, [x8, #0xb8]
+  c56a64: f8010c14     	str	x20, [x0, #0x10]!
+  c56a68: 97fa96a0     	bl	0xafc4e8 <WriteZStream+0xa1f4>
+  c56a6c: f0013de8     	adrp	x8, 0x3415000
+  c56a70: f9427908     	ldr	x8, [x8, #0x4f0]  // GOT 0x34154f0 -> 0x34d1e58: UnityEngine.WaitUntil_TypeInfo
+  c56a74: f9400100     	ldr	x0, [x8]
+  c56a78: 97fa96e9     	bl	0xafc61c <WriteZStream+0xa328>
+  c56a7c: aa1403e1     	mov	x1, x20
+  c56a80: aa1f03e2     	mov	x2, xzr
+  c56a84: aa0003f5     	mov	x21, x0
+  c56a88: 9457e802     	bl	0x2250a90 <__start_il2cpp+0x16f3258>  // UnityEngine.WaitUntil$$.ctor
+  c56a8c: aa1303e0     	mov	x0, x19
+  c56a90: f8018c15     	str	x21, [x0, #0x18]!
+  c56a94: aa1503e1     	mov	x1, x21
+  c56a98: 97fa9694     	bl	0xafc4e8 <WriteZStream+0xa1f4>
+  c56a9c: 320003e8     	orr	w8, wzr, #0x1
+  c56aa0: 320003e0     	orr	w0, wzr, #0x1
+  c56aa4: 14000039     	b	0xc56b88 <__start_il2cpp+0xf9350>
+  c56aa8: 12800008     	mov	w8, #-0x1               // =-1
+  c56aac: b9001268     	str	w8, [x19, #0x10]
+  c56ab0: b0013d68     	adrp	x8, 0x3403000
+  c56ab4: f9461908     	ldr	x8, [x8, #0xc30]  // GOT 0x3403c30 -> 0x34ca978: Common.Singleton<GameDataPacker>_TypeInfo
+  c56ab8: f9400100     	ldr	x0, [x8]
+  c56abc: 3944cc08     	ldrb	w8, [x0, #0x133]
+  c56ac0: 36100088     	tbz	w8, #0x2, 0xc56ad0 <__start_il2cpp+0xf9298>
+  c56ac4: b940e008     	ldr	w8, [x0, #0xe0]
+  c56ac8: 35000048     	cbnz	w8, 0xc56ad0 <__start_il2cpp+0xf9298>
+  c56acc: 97fa96cd     	bl	0xafc600 <WriteZStream+0xa30c>
+  c56ad0: b0013ca8     	adrp	x8, 0x33eb000
+  c56ad4: f9454108     	ldr	x8, [x8, #0xa80]  // GOT 0x33eba80 -> 0x34f4810: Method$Common.Singleton<GameDataPacker>.get_Instance()
+  c56ad8: f9400100     	ldr	x0, [x8]
+  c56adc: 943b669f     	bl	0x1b30558 <__start_il2cpp+0xfd2d20>  // Common.Singleton<ADMobSDK>$$get_Instance | Common.Singleton<AdmobImmersiveAD>$$get_Instance | Common.Singleton<AdsManager>$$get_Instance [shared generics]
+  c56ae0: f0013d88     	adrp	x8, 0x3409000
+  c56ae4: f946e908     	ldr	x8, [x8, #0xdd0]  // GOT 0x3409dd0 -> 0x34c5570: System.Action<bool>_TypeInfo
+  c56ae8: aa0003f5     	mov	x21, x0
+  c56aec: f9400108     	ldr	x8, [x8]
+  c56af0: aa0803e0     	mov	x0, x8
+  c56af4: 97fa96ca     	bl	0xafc61c <WriteZStream+0xa328>
+  c56af8: b0013c68     	adrp	x8, 0x33e3000
+  c56afc: f0013c69     	adrp	x9, 0x33e5000
+  c56b00: f9410508     	ldr	x8, [x8, #0x208]  // GOT 0x33e3208 -> 0x350c6d8: Method$StartGame.<CheckLoadCloudSave>b__12_1()
+  c56b04: f9423529     	ldr	x9, [x9, #0x468]  // GOT 0x33e5468 -> 0x34d7b18: Method$System.Action<bool>..ctor()
+  c56b08: aa1403e1     	mov	x1, x20
+  c56b0c: aa0003f6     	mov	x22, x0
+  c56b10: f9400102     	ldr	x2, [x8]
+  c56b14: f9400123     	ldr	x3, [x9]
+  c56b18: 94266786     	bl	0x15f0930 <__start_il2cpp+0xa930f8>  // System.Action<bool>$$.ctor
+  c56b1c: 90013d48     	adrp	x8, 0x33fe000
+  c56b20: f942a508     	ldr	x8, [x8, #0x548]  // GOT 0x33fe548 -> 0x34c57d0: System.Action<float>_TypeInfo
+  c56b24: f9400100     	ldr	x0, [x8]
+  c56b28: 97fa96bd     	bl	0xafc61c <WriteZStream+0xa328>
+  c56b2c: 90013be8     	adrp	x8, 0x33d2000
+  c56b30: 90013ce9     	adrp	x9, 0x33f2000
+  c56b34: f9433108     	ldr	x8, [x8, #0x660]  // GOT 0x33d2660 -> 0x350c6e0: Method$StartGame.<CheckLoadCloudSave>b__12_2()
+  c56b38: f946ed29     	ldr	x9, [x9, #0xdd8]  // GOT 0x33f2dd8 -> 0x34d7f58: Method$System.Action<float>..ctor()
+  c56b3c: aa1403e1     	mov	x1, x20
+  c56b40: aa0003f7     	mov	x23, x0
+  c56b44: f9400102     	ldr	x2, [x8]
+  c56b48: f9400123     	ldr	x3, [x9]
+  c56b4c: 9426a240     	bl	0x15ff44c <__start_il2cpp+0xaa1c14>  // System.Action<float>$$.ctor
+  c56b50: b4000295     	cbz	x21, 0xc56ba0 <__start_il2cpp+0xf9368>
+  c56b54: aa1503e0     	mov	x0, x21
+  c56b58: aa1603e1     	mov	x1, x22
+  c56b5c: aa1703e2     	mov	x2, x23
+  c56b60: d2800003     	mov	x3, #0x0                // =0
+  c56b64: 9400ae99     	bl	0xc825c8 <__start_il2cpp+0x124d90>  // GameDataPacker$$CheckLoadCloudSave
+  c56b68: aa0003e1     	mov	x1, x0
+  c56b6c: aa1303e0     	mov	x0, x19
+  c56b70: f8018c01     	str	x1, [x0, #0x18]!
+  c56b74: 97fa965d     	bl	0xafc4e8 <WriteZStream+0xa1f4>
+  c56b78: 320003e0     	orr	w0, wzr, #0x1
+  c56b7c: 321f03e8     	orr	w8, wzr, #0x2
+  c56b80: 14000002     	b	0xc56b88 <__start_il2cpp+0xf9350>
+  c56b84: 12800008     	mov	w8, #-0x1               // =-1
+  c56b88: b9001268     	str	w8, [x19, #0x10]
+  c56b8c: a9437bfd     	ldp	x29, x30, [sp, #0x30]
+  c56b90: a9424ff4     	ldp	x20, x19, [sp, #0x20]
+  c56b94: a94157f6     	ldp	x22, x21, [sp, #0x10]
+  c56b98: f84407f7     	ldr	x23, [sp], #0x40
+  c56b9c: d65f03c0     	ret
+  c56ba0: 97fa96a1     	bl	0xafc624 <WriteZStream+0xa330>
