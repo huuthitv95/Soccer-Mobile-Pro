@@ -4,7 +4,16 @@
   "currentSha256": "0d73cd094b52bc85c4bdb01680365c24b8cfeb49ee9ae2d662e2575625b10b2c",
   "originalExportSha256": "0d73cd094b52bc85c4bdb01680365c24b8cfeb49ee9ae2d662e2575625b10b2c",
   "originalExportIdentical": true,
-  "assetMapEvidence": "Win_GlobalConfig MonoScript, PathID 2212; mapping does not identify its managed assembly or class definition.",
-  "metadataEvidence": "dump.cs contains a Win_GlobalConfig string field, but no corresponding managed type declaration was found.",
-  "resolution": "Unresolved. No component removed or guessed replacement assigned."
+  "assetMapEvidence": "Direct APK MonoScript reads agree: globalgamemanagers.assets PathID 2212; ui.unity3d CAB-1c1efa063d09b96733e90f90a6c8464b PathID 4126250031869780553.",
+  "metadataEvidence": "Direct version-27 table scan: 10669 type definitions, zero Win_GlobalConfig definitions. Both recovered Assembly-CSharp DLLs contain 4161 types including nested types, zero matches.",
+  "resolution": "Type identity proven. Implementation and inheritance unresolved; component unchanged. Stripping or stale bundle are hypotheses, not proven causes.",
+  "typeIdentity": {
+    "assembly": "Assembly-CSharp.dll",
+    "namespace": "",
+    "class": "Win_GlobalConfig"
+  },
+  "identityResolved": true,
+  "componentRestored": false,
+  "serializedDataEvidence": "Original component PathID 5332196853466566746 contains 108 bytes. Header parser reads 32 bytes; remaining 76 bytes have no verified field layout. Exported prefab contains only component header fields.",
+  "evidence": "MetadataProvenance/apk-serialized-evidence.json"
 }
