@@ -1,0 +1,30 @@
+{
+  "targetVersion": "2020.3.49f1",
+  "inputEvidence": "Documentation/Lobby/Evidence/native-evidence.json",
+  "inputHashesMatchApkAndOriginalDumperRun": true,
+  "metadataVersion": 27,
+  "nativeMethods": [
+    {"method":"UI_Load.Awake","rva":"0x153c610","confidence":"high","finding":"Initializes serialized GameDataExport callback state, starts SpriteAtlas/resource callback flow and prepares a wait predicate; SDK/resource callback body remains service-dependent."},
+    {"method":"UI_Load.Start","rva":"0x153d1c8","confidence":"high","finding":"Calls GameDataExport.Init when serialized field is non-null and updates loading layout; method is not executed in the recovery harness."},
+    {"method":"UI_Load.Init","rva":"0x153d2d0","confidence":"high","finding":"Resolution/notch layout work with native singleton access; not executed in the recovery harness."},
+    {"method":"UI_Load.StartInit","rva":"0x153d4fc","confidence":"high","finding":"Calls multiple managers, local configuration and external account/IAP/content services; full sequence is not safe to invoke as a single recovered method."},
+    {"method":"UI_Load.WaitABTest.CanGotoMainView","rva":"0xc6a3d0","confidence":"high","finding":"Uses a five-second accumulated-time threshold and AB-test readiness/default handling."},
+    {"method":"UI_Load.Update","rva":"0x153dc60","confidence":"high","finding":"Checks resource manager readiness, serialized start press, notch state and AB-test predicate before building a SceneHelper load request; separate tutorial-match branch exists."},
+    {"method":"MainViewLoader.Awake","rva":"0xd1bac0","confidence":"high","finding":"Loads MainViewWithShop, locates its MainView/mount point, branches on PlayerCareer and instantiates selected menu button assets."},
+    {"method":"MainViewLoader.LoadForPlayerCareer","rva":"0xd1bdf0","confidence":"high","finding":"Constructs four button entries from PlayerCareer, masterLeague_PlayerCareer, friendly_PlayerCareer and shop_PlayerCareer assets."},
+    {"method":"MainViewLoader.LoadForlegacy","rva":"0xd1c0fc","confidence":"high","finding":"Constructs four button entries from masterLeague, friendly, shop and training assets."}
+  ],
+  "transition": {"scenePath":"Scenes/UI/Lobby","source":"Il2Cpp/stringliteral.json plus UI_Load.Update SceneHelper call at 0x153e394","confidence":"medium-high","tutorialMatchBranch":"Blocked in offline recovery harness."},
+  "gates": [
+    {"field":"resMangerInit","offset":"0x28"},
+    {"field":"pressStart","offset":"0x88"},
+    {"field":"notchInited","offset":"0x98"},
+    {"field":"WaitABTest state","offset":"0x9c","thresholdSeconds":5}
+  ],
+  "menuAssets": {
+    "MainViewWithShop":"Assets/GameData/UI/Windows/MainView/MainViewWithShop.prefab",
+    "legacy":["masterLeague.prefab","friendly.prefab","shop.prefab","training.prefab"],
+    "playerCareer":["PlayerCareer.prefab","masterLeague_PlayerCareer.prefab","friendly_PlayerCareer.prefab","shop_PlayerCareer.prefab"]
+  },
+  "executionPolicy":"Synthetic readiness profile drives an isolated scene controller. It does not invoke UI_Load, MainViewLoader, account/cloud/IAP/analytics/ad services, or teaching-match code."
+}

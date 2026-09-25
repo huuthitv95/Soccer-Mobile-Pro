@@ -1,0 +1,145 @@
+
+C:\Users\ZGAMESVN\Downloads\Soccer-Unity-Recovery\Extracted\lib\arm64-v8a\libil2cpp.so:	file format elf64-littleaarch64
+
+Disassembly of section il2cpp:
+
+0000000000b5d838 <__start_il2cpp>:
+  c69f4c: f81c0ff7     	str	x23, [sp, #-0x40]!
+  c69f50: a90157f6     	stp	x22, x21, [sp, #0x10]
+  c69f54: a9024ff4     	stp	x20, x19, [sp, #0x20]
+  c69f58: a9037bfd     	stp	x29, x30, [sp, #0x30]
+  c69f5c: 9100c3fd     	add	x29, sp, #0x30
+  c69f60: d0014db4     	adrp	x20, 0x361f000
+  c69f64: 39432e88     	ldrb	w8, [x20, #0xcb]
+  c69f68: aa0003f3     	mov	x19, x0
+  c69f6c: 370002a8     	tbnz	w8, #0x0, 0xc69fc0 <__start_il2cpp+0x10c788>
+  c69f70: f0013dc0     	adrp	x0, 0x3424000
+  c69f74: f9464400     	ldr	x0, [x0, #0xc88]  // GOT 0x3424c88 -> 0x34cfa40: UnityEngine.Object_TypeInfo
+  c69f78: 97fa4975     	bl	0xafc54c <WriteZStream+0xa258>
+  c69f7c: f0013b20     	adrp	x0, 0x33d0000
+  c69f80: f9442400     	ldr	x0, [x0, #0x848]  // GOT 0x33d0848 -> 0x34f4940: Method$Common.Singleton<PlayAssetDeliverLoader>.get_Instance()
+  c69f84: 97fa4972     	bl	0xafc54c <WriteZStream+0xa258>
+  c69f88: d0013e00     	adrp	x0, 0x342b000
+  c69f8c: f9467800     	ldr	x0, [x0, #0xcf0]  // GOT 0x342bcf0 -> 0x34f49a0: Method$Common.Singleton<SoundEffect>.get_Instance()
+  c69f90: 97fa496f     	bl	0xafc54c <WriteZStream+0xa258>
+  c69f94: f0013e60     	adrp	x0, 0x3438000
+  c69f98: f943f400     	ldr	x0, [x0, #0x7e8]  // GOT 0x34387e8 -> 0x34caa10: Common.Singleton<PlayAssetDeliverLoader>_TypeInfo
+  c69f9c: 97fa496c     	bl	0xafc54c <WriteZStream+0xa258>
+  c69fa0: 90013d20     	adrp	x0, 0x340d000
+  c69fa4: f9456c00     	ldr	x0, [x0, #0xad8]  // GOT 0x340dad8 -> 0x34caa40: Common.Singleton<SoundEffect>_TypeInfo
+  c69fa8: 97fa4969     	bl	0xafc54c <WriteZStream+0xa258>
+  c69fac: d0013e80     	adrp	x0, 0x343b000
+  c69fb0: f941d800     	ldr	x0, [x0, #0x3b0]  // GOT 0x343b3b0 -> 0x3535fe0: sound
+  c69fb4: 97fa4966     	bl	0xafc54c <WriteZStream+0xa258>
+  c69fb8: 320003e8     	orr	w8, wzr, #0x1
+  c69fbc: 39032e88     	strb	w8, [x20, #0xcb]
+  c69fc0: b9401268     	ldr	w8, [x19, #0x10]
+  c69fc4: f9401274     	ldr	x20, [x19, #0x20]
+  c69fc8: 7100051f     	cmp	w8, #0x1
+  c69fcc: 54000140     	b.eq	0xc69ff4 <__start_il2cpp+0x10c7bc>
+  c69fd0: 35000b88     	cbnz	w8, 0xc6a140 <__start_il2cpp+0x10c908>
+  c69fd4: aa1303f5     	mov	x21, x19
+  c69fd8: f8028ebf     	str	xzr, [x21, #0x28]!
+  c69fdc: 12800008     	mov	w8, #-0x1               // =-1
+  c69fe0: aa1503e0     	mov	x0, x21
+  c69fe4: aa1f03e1     	mov	x1, xzr
+  c69fe8: b81e82a8     	stur	w8, [x21, #-0x18]
+  c69fec: 97fa493f     	bl	0xafc4e8 <WriteZStream+0xa1f4>
+  c69ff0: 14000004     	b	0xc6a000 <__start_il2cpp+0x10c7c8>
+  c69ff4: 12800008     	mov	w8, #-0x1               // =-1
+  c69ff8: 9100a275     	add	x21, x19, #0x28
+  c69ffc: b9001268     	str	w8, [x19, #0x10]
+  c6a000: d0013dd7     	adrp	x23, 0x3424000
+  c6a004: f94646f7     	ldr	x23, [x23, #0xc88]  // GOT 0x3424c88 -> 0x34cfa40: UnityEngine.Object_TypeInfo
+  c6a008: f94002b6     	ldr	x22, [x21]
+  c6a00c: f94002e0     	ldr	x0, [x23]
+  c6a010: 3944cc08     	ldrb	w8, [x0, #0x133]
+  c6a014: 36100088     	tbz	w8, #0x2, 0xc6a024 <__start_il2cpp+0x10c7ec>
+  c6a018: b940e008     	ldr	w8, [x0, #0xe0]
+  c6a01c: 35000048     	cbnz	w8, 0xc6a024 <__start_il2cpp+0x10c7ec>
+  c6a020: 97fa4978     	bl	0xafc600 <WriteZStream+0xa30c>
+  c6a024: aa1603e0     	mov	x0, x22
+  c6a028: aa1f03e1     	mov	x1, xzr
+  c6a02c: aa1f03e2     	mov	x2, xzr
+  c6a030: 942a58fa     	bl	0x1700418 <__start_il2cpp+0xba2be0>  // UnityEngine.Object$$op_Equality
+  c6a034: 36000480     	tbz	w0, #0x0, 0xc6a0c4 <__start_il2cpp+0x10c88c>
+  c6a038: d0013e68     	adrp	x8, 0x3438000
+  c6a03c: f943f508     	ldr	x8, [x8, #0x7e8]  // GOT 0x34387e8 -> 0x34caa10: Common.Singleton<PlayAssetDeliverLoader>_TypeInfo
+  c6a040: f9400100     	ldr	x0, [x8]
+  c6a044: 3944cc08     	ldrb	w8, [x0, #0x133]
+  c6a048: 36100088     	tbz	w8, #0x2, 0xc6a058 <__start_il2cpp+0x10c820>
+  c6a04c: b940e008     	ldr	w8, [x0, #0xe0]
+  c6a050: 35000048     	cbnz	w8, 0xc6a058 <__start_il2cpp+0x10c820>
+  c6a054: 97fa496b     	bl	0xafc600 <WriteZStream+0xa30c>
+  c6a058: d0013b28     	adrp	x8, 0x33d0000
+  c6a05c: f9442508     	ldr	x8, [x8, #0x848]  // GOT 0x33d0848 -> 0x34f4940: Method$Common.Singleton<PlayAssetDeliverLoader>.get_Instance()
+  c6a060: f9400100     	ldr	x0, [x8]
+  c6a064: 943b193d     	bl	0x1b30558 <__start_il2cpp+0xfd2d20>  // Common.Singleton<ADMobSDK>$$get_Instance | Common.Singleton<AdmobImmersiveAD>$$get_Instance | Common.Singleton<AdsManager>$$get_Instance [shared generics]
+  c6a068: b4000860     	cbz	x0, 0xc6a174 <__start_il2cpp+0x10c93c>
+  c6a06c: b0013e88     	adrp	x8, 0x343b000
+  c6a070: f941d908     	ldr	x8, [x8, #0x3b0]  // GOT 0x343b3b0 -> 0x3535fe0: sound
+  c6a074: 2a1f03e2     	mov	w2, wzr
+  c6a078: aa1f03e3     	mov	x3, xzr
+  c6a07c: f9400101     	ldr	x1, [x8]
+  c6a080: 9414301d     	bl	0x11760f4 <__start_il2cpp+0x6188bc>  // PlayAssetDeliverLoader$$Load
+  c6a084: aa0003e1     	mov	x1, x0
+  c6a088: f90002a0     	str	x0, [x21]
+  c6a08c: aa1503e0     	mov	x0, x21
+  c6a090: 97fa4916     	bl	0xafc4e8 <WriteZStream+0xa1f4>
+  c6a094: f94002e0     	ldr	x0, [x23]
+  c6a098: f94002b5     	ldr	x21, [x21]
+  c6a09c: 3944cc08     	ldrb	w8, [x0, #0x133]
+  c6a0a0: 36100088     	tbz	w8, #0x2, 0xc6a0b0 <__start_il2cpp+0x10c878>
+  c6a0a4: b940e008     	ldr	w8, [x0, #0xe0]
+  c6a0a8: 35000048     	cbnz	w8, 0xc6a0b0 <__start_il2cpp+0x10c878>
+  c6a0ac: 97fa4955     	bl	0xafc600 <WriteZStream+0xa30c>
+  c6a0b0: aa1503e0     	mov	x0, x21
+  c6a0b4: aa1f03e1     	mov	x1, xzr
+  c6a0b8: aa1f03e2     	mov	x2, xzr
+  c6a0bc: 942a6621     	bl	0x1703940 <__start_il2cpp+0xba6108>  // UnityEngine.Object$$op_Inequality
+  c6a0c0: 360004c0     	tbz	w0, #0x0, 0xc6a158 <__start_il2cpp+0x10c920>
+  c6a0c4: b4000594     	cbz	x20, 0xc6a174 <__start_il2cpp+0x10c93c>
+  c6a0c8: f8030e9f     	str	xzr, [x20, #0x30]!
+  c6a0cc: aa1403e0     	mov	x0, x20
+  c6a0d0: aa1f03e1     	mov	x1, xzr
+  c6a0d4: 97fa4905     	bl	0xafc4e8 <WriteZStream+0xa1f4>
+  c6a0d8: f0013d08     	adrp	x8, 0x340d000
+  c6a0dc: f9456d08     	ldr	x8, [x8, #0xad8]  // GOT 0x340dad8 -> 0x34caa40: Common.Singleton<SoundEffect>_TypeInfo
+  c6a0e0: f9400100     	ldr	x0, [x8]
+  c6a0e4: 3944cc08     	ldrb	w8, [x0, #0x133]
+  c6a0e8: 36100088     	tbz	w8, #0x2, 0xc6a0f8 <__start_il2cpp+0x10c8c0>
+  c6a0ec: b940e008     	ldr	w8, [x0, #0xe0]
+  c6a0f0: 35000048     	cbnz	w8, 0xc6a0f8 <__start_il2cpp+0x10c8c0>
+  c6a0f4: 97fa4943     	bl	0xafc600 <WriteZStream+0xa30c>
+  c6a0f8: b0013e13     	adrp	x19, 0x342b000
+  c6a0fc: f9467a73     	ldr	x19, [x19, #0xcf0]  // GOT 0x342bcf0 -> 0x34f49a0: Method$Common.Singleton<SoundEffect>.get_Instance()
+  c6a100: f9400260     	ldr	x0, [x19]
+  c6a104: 943b1915     	bl	0x1b30558 <__start_il2cpp+0xfd2d20>  // Common.Singleton<ADMobSDK>$$get_Instance | Common.Singleton<AdmobImmersiveAD>$$get_Instance | Common.Singleton<AdsManager>$$get_Instance [shared generics]
+  c6a108: b4000360     	cbz	x0, 0xc6a174 <__start_il2cpp+0x10c93c>
+  c6a10c: 320003e8     	orr	w8, wzr, #0x1
+  c6a110: 39012008     	strb	w8, [x0, #0x48]
+  c6a114: f9400260     	ldr	x0, [x19]
+  c6a118: 943b1910     	bl	0x1b30558 <__start_il2cpp+0xfd2d20>  // Common.Singleton<ADMobSDK>$$get_Instance | Common.Singleton<AdmobImmersiveAD>$$get_Instance | Common.Singleton<AdsManager>$$get_Instance [shared generics]
+  c6a11c: b40002c0     	cbz	x0, 0xc6a174 <__start_il2cpp+0x10c93c>
+  c6a120: 1e2e1000     	fmov	s0, #1.00000000
+  c6a124: 52800261     	mov	w1, #0x13               // =19
+  c6a128: 320003e2     	orr	w2, wzr, #0x1
+  c6a12c: 320003e3     	orr	w3, wzr, #0x1
+  c6a130: 2a1f03e4     	mov	w4, wzr
+  c6a134: aa1f03e5     	mov	x5, xzr
+  c6a138: aa1f03e6     	mov	x6, xzr
+  c6a13c: 940cb3c2     	bl	0xf97044 <__start_il2cpp+0x43980c>  // SoundEffect$$Play
+  c6a140: 2a1f03e0     	mov	w0, wzr
+  c6a144: a9437bfd     	ldp	x29, x30, [sp, #0x30]
+  c6a148: a9424ff4     	ldp	x20, x19, [sp, #0x20]
+  c6a14c: a94157f6     	ldp	x22, x21, [sp, #0x10]
+  c6a150: f84407f7     	ldr	x23, [sp], #0x40
+  c6a154: d65f03c0     	ret
+  c6a158: f8018e7f     	str	xzr, [x19, #0x18]!
+  c6a15c: aa1303e0     	mov	x0, x19
+  c6a160: aa1f03e1     	mov	x1, xzr
+  c6a164: 97fa48e1     	bl	0xafc4e8 <WriteZStream+0xa1f4>
+  c6a168: 320003e0     	orr	w0, wzr, #0x1
+  c6a16c: b81f8260     	stur	w0, [x19, #-0x8]
+  c6a170: 17fffff5     	b	0xc6a144 <__start_il2cpp+0x10c90c>
+  c6a174: 97fa492c     	bl	0xafc624 <WriteZStream+0xa330>

@@ -1,0 +1,45 @@
+
+C:\Users\ZGAMESVN\Downloads\Soccer-Unity-Recovery\Extracted\lib\arm64-v8a\libil2cpp.so:	file format elf64-littleaarch64
+
+Disassembly of section il2cpp:
+
+0000000000b5d838 <__start_il2cpp>:
+  d18cfc: a9be4ff4     	stp	x20, x19, [sp, #-0x20]!
+  d18d00: a9017bfd     	stp	x29, x30, [sp, #0x10]
+  d18d04: 910043fd     	add	x29, sp, #0x10
+  d18d08: f0014833     	adrp	x19, 0x361f000
+  d18d0c: 39574668     	ldrb	w8, [x19, #0x5d1]
+  d18d10: 370000c8     	tbnz	w8, #0x0, 0xd18d28 <__start_il2cpp+0x1bb4f0>
+  d18d14: d0013900     	adrp	x0, 0x343a000
+  d18d18: f9468c00     	ldr	x0, [x0, #0xd18]  // GOT 0x343ad18 -> 0x34cf208: MainView_TypeInfo
+  d18d1c: 97f78e0c     	bl	0xafc54c <WriteZStream+0xa258>
+  d18d20: 320003e8     	orr	w8, wzr, #0x1
+  d18d24: 39174668     	strb	w8, [x19, #0x5d1]
+  d18d28: d0013913     	adrp	x19, 0x343a000
+  d18d2c: f9468e73     	ldr	x19, [x19, #0xd18]  // GOT 0x343ad18 -> 0x34cf208: MainView_TypeInfo
+  d18d30: f9400260     	ldr	x0, [x19]
+  d18d34: 3944cc08     	ldrb	w8, [x0, #0x133]
+  d18d38: 36100088     	tbz	w8, #0x2, 0xd18d48 <__start_il2cpp+0x1bb510>
+  d18d3c: b940e008     	ldr	w8, [x0, #0xe0]
+  d18d40: 35000048     	cbnz	w8, 0xd18d48 <__start_il2cpp+0x1bb510>
+  d18d44: 97f78e2f     	bl	0xafc600 <WriteZStream+0xa30c>
+  d18d48: f0014834     	adrp	x20, 0x361f000
+  d18d4c: 39587688     	ldrb	w8, [x20, #0x61d]
+  d18d50: 350000c8     	cbnz	w8, 0xd18d68 <__start_il2cpp+0x1bb530>
+  d18d54: d0013900     	adrp	x0, 0x343a000
+  d18d58: f9468c00     	ldr	x0, [x0, #0xd18]  // GOT 0x343ad18 -> 0x34cf208: MainView_TypeInfo
+  d18d5c: 97f78dfc     	bl	0xafc54c <WriteZStream+0xa258>
+  d18d60: 320003e8     	orr	w8, wzr, #0x1
+  d18d64: 39187688     	strb	w8, [x20, #0x61d]
+  d18d68: f9400260     	ldr	x0, [x19]
+  d18d6c: 3944cc08     	ldrb	w8, [x0, #0x133]
+  d18d70: 361000a8     	tbz	w8, #0x2, 0xd18d84 <__start_il2cpp+0x1bb54c>
+  d18d74: b940e008     	ldr	w8, [x0, #0xe0]
+  d18d78: 35000068     	cbnz	w8, 0xd18d84 <__start_il2cpp+0x1bb54c>
+  d18d7c: 97f78e21     	bl	0xafc600 <WriteZStream+0xa30c>
+  d18d80: f9400260     	ldr	x0, [x19]
+  d18d84: f9405c08     	ldr	x8, [x0, #0xb8]
+  d18d88: 3900811f     	strb	wzr, [x8, #0x20]
+  d18d8c: a9417bfd     	ldp	x29, x30, [sp, #0x10]
+  d18d90: a8c24ff4     	ldp	x20, x19, [sp], #0x20
+  d18d94: d65f03c0     	ret

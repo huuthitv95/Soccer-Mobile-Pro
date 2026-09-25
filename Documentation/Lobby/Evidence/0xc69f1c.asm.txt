@@ -1,0 +1,17 @@
+
+C:\Users\ZGAMESVN\Downloads\Soccer-Unity-Recovery\Extracted\lib\arm64-v8a\libil2cpp.so:	file format elf64-littleaarch64
+
+Disassembly of section il2cpp:
+
+0000000000b5d838 <__start_il2cpp>:
+  c69f1c: a9be4ff4     	stp	x20, x19, [sp, #-0x20]!
+  c69f20: a9017bfd     	stp	x29, x30, [sp, #0x10]
+  c69f24: 910043fd     	add	x29, sp, #0x10
+  c69f28: 2a0103f3     	mov	w19, w1
+  c69f2c: aa1f03e1     	mov	x1, xzr
+  c69f30: aa0003f4     	mov	x20, x0
+  c69f34: 944b3310     	bl	0x1f36b74 <__start_il2cpp+0x13d933c>  // System.Object$$.ctor
+  c69f38: b9001293     	str	w19, [x20, #0x10]
+  c69f3c: a9417bfd     	ldp	x29, x30, [sp, #0x10]
+  c69f40: a8c24ff4     	ldp	x20, x19, [sp], #0x20
+  c69f44: d65f03c0     	ret

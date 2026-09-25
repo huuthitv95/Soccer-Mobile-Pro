@@ -1,0 +1,134 @@
+
+C:\Users\ZGAMESVN\Downloads\Soccer-Unity-Recovery\Extracted\lib\arm64-v8a\libil2cpp.so:	file format elf64-littleaarch64
+
+Disassembly of section il2cpp:
+
+0000000000b5d838 <__start_il2cpp>:
+  c69b5c: a9bd57f6     	stp	x22, x21, [sp, #-0x30]!
+  c69b60: a9014ff4     	stp	x20, x19, [sp, #0x10]
+  c69b64: a9027bfd     	stp	x29, x30, [sp, #0x20]
+  c69b68: 910083fd     	add	x29, sp, #0x20
+  c69b6c: d0014db5     	adrp	x21, 0x361f000
+  c69b70: 39431ea8     	ldrb	w8, [x21, #0xc7]
+  c69b74: aa0203f3     	mov	x19, x2
+  c69b78: aa0103f4     	mov	x20, x1
+  c69b7c: 370003c8     	tbnz	w8, #0x0, 0xc69bf4 <__start_il2cpp+0x10c3bc>
+  c69b80: b0013ce0     	adrp	x0, 0x3406000
+  c69b84: f9437c00     	ldr	x0, [x0, #0x6f8]  // GOT 0x34066f8 -> 0x34d7b20: Method$System.Action<bool>.Invoke()
+  c69b88: 97fa4a71     	bl	0xafc54c <WriteZStream+0xa258>
+  c69b8c: 90013be0     	adrp	x0, 0x33e5000
+  c69b90: f9423400     	ldr	x0, [x0, #0x468]  // GOT 0x33e5468 -> 0x34d7b18: Method$System.Action<bool>..ctor()
+  c69b94: 97fa4a6e     	bl	0xafc54c <WriteZStream+0xa258>
+  c69b98: 90013d00     	adrp	x0, 0x3409000
+  c69b9c: f946e800     	ldr	x0, [x0, #0xdd0]  // GOT 0x3409dd0 -> 0x34c5570: System.Action<bool>_TypeInfo
+  c69ba0: 97fa4a6b     	bl	0xafc54c <WriteZStream+0xa258>
+  c69ba4: b0013c80     	adrp	x0, 0x33fa000
+  c69ba8: f943bc00     	ldr	x0, [x0, #0x778]  // GOT 0x33fa778 -> 0x34ccfb8: UnityEngine.Debug_TypeInfo
+  c69bac: 97fa4a68     	bl	0xafc54c <WriteZStream+0xa258>
+  c69bb0: d0013d60     	adrp	x0, 0x3417000
+  c69bb4: f940a400     	ldr	x0, [x0, #0x148]  // GOT 0x3417148 -> 0x34f4980: Method$Common.Singleton<ResourcesManager>.get_Instance()
+  c69bb8: 97fa4a65     	bl	0xafc54c <WriteZStream+0xa258>
+  c69bbc: f0013b60     	adrp	x0, 0x33d8000
+  c69bc0: f942c800     	ldr	x0, [x0, #0x590]  // GOT 0x33d8590 -> 0x34caa30: Common.Singleton<ResourcesManager>_TypeInfo
+  c69bc4: 97fa4a62     	bl	0xafc54c <WriteZStream+0xa258>
+  c69bc8: d0013de0     	adrp	x0, 0x3427000
+  c69bcc: f9415800     	ldr	x0, [x0, #0x2b0]  // GOT 0x34272b0 -> 0x3515608: Method$UI_Load.<>c__DisplayClass15_0.<Awake>b__4()
+  c69bd0: 97fa4a5f     	bl	0xafc54c <WriteZStream+0xa258>
+  c69bd4: f0013ba0     	adrp	x0, 0x33e0000
+  c69bd8: f9420c00     	ldr	x0, [x0, #0x418]  // GOT 0x33e0418 -> 0x34d6170: UI_Load.<>c__DisplayClass15_0_TypeInfo
+  c69bdc: 97fa4a5c     	bl	0xafc54c <WriteZStream+0xa258>
+  c69be0: 90013cc0     	adrp	x0, 0x3401000
+  c69be4: f942d000     	ldr	x0, [x0, #0x5a0]  // GOT 0x34015a0 -> 0x352ce30: atlasRequested
+  c69be8: 97fa4a59     	bl	0xafc54c <WriteZStream+0xa258>
+  c69bec: 320003e8     	orr	w8, wzr, #0x1
+  c69bf0: 39031ea8     	strb	w8, [x21, #0xc7]
+  c69bf4: f0013ba8     	adrp	x8, 0x33e0000
+  c69bf8: f9420d08     	ldr	x8, [x8, #0x418]  // GOT 0x33e0418 -> 0x34d6170: UI_Load.<>c__DisplayClass15_0_TypeInfo
+  c69bfc: f9400100     	ldr	x0, [x8]
+  c69c00: 97fa4a87     	bl	0xafc61c <WriteZStream+0xa328>
+  c69c04: aa1f03e1     	mov	x1, xzr
+  c69c08: aa0003f5     	mov	x21, x0
+  c69c0c: 944b33da     	bl	0x1f36b74 <__start_il2cpp+0x13d933c>  // System.Object$$.ctor
+  c69c10: b4000a55     	cbz	x21, 0xc69d58 <__start_il2cpp+0x10c520>
+  c69c14: aa1503f6     	mov	x22, x21
+  c69c18: f8010ed4     	str	x20, [x22, #0x10]!
+  c69c1c: aa1603e0     	mov	x0, x22
+  c69c20: aa1403e1     	mov	x1, x20
+  c69c24: 97fa4a31     	bl	0xafc4e8 <WriteZStream+0xa1f4>
+  c69c28: aa1503e0     	mov	x0, x21
+  c69c2c: f8018c13     	str	x19, [x0, #0x18]!
+  c69c30: aa1303e1     	mov	x1, x19
+  c69c34: 97fa4a2d     	bl	0xafc4e8 <WriteZStream+0xa1f4>
+  c69c38: 90013cc8     	adrp	x8, 0x3401000
+  c69c3c: f94002c1     	ldr	x1, [x22]
+  c69c40: f942d108     	ldr	x8, [x8, #0x5a0]  // GOT 0x34015a0 -> 0x352ce30: atlasRequested
+  c69c44: aa1f03e2     	mov	x2, xzr
+  c69c48: f9400100     	ldr	x0, [x8]
+  c69c4c: 944adb11     	bl	0x1f20890 <__start_il2cpp+0x13c3058>  // System.String$$Concat
+  c69c50: b0013c88     	adrp	x8, 0x33fa000
+  c69c54: f943bd08     	ldr	x8, [x8, #0x778]  // GOT 0x33fa778 -> 0x34ccfb8: UnityEngine.Debug_TypeInfo
+  c69c58: aa0003f3     	mov	x19, x0
+  c69c5c: f9400108     	ldr	x8, [x8]
+  c69c60: 3944cd09     	ldrb	w9, [x8, #0x133]
+  c69c64: 361000a9     	tbz	w9, #0x2, 0xc69c78 <__start_il2cpp+0x10c440>
+  c69c68: b940e109     	ldr	w9, [x8, #0xe0]
+  c69c6c: 35000069     	cbnz	w9, 0xc69c78 <__start_il2cpp+0x10c440>
+  c69c70: aa0803e0     	mov	x0, x8
+  c69c74: 97fa4a63     	bl	0xafc600 <WriteZStream+0xa30c>
+  c69c78: aa1303e0     	mov	x0, x19
+  c69c7c: aa1f03e1     	mov	x1, xzr
+  c69c80: 94398068     	bl	0x1ac9e20 <__start_il2cpp+0xf6c5e8>  // UnityEngine.Debug$$Log
+  c69c84: 90013d08     	adrp	x8, 0x3409000
+  c69c88: f946e908     	ldr	x8, [x8, #0xdd0]  // GOT 0x3409dd0 -> 0x34c5570: System.Action<bool>_TypeInfo
+  c69c8c: f9400100     	ldr	x0, [x8]
+  c69c90: 97fa4a63     	bl	0xafc61c <WriteZStream+0xa328>
+  c69c94: d0013de8     	adrp	x8, 0x3427000
+  c69c98: 90013be9     	adrp	x9, 0x33e5000
+  c69c9c: f9415908     	ldr	x8, [x8, #0x2b0]  // GOT 0x34272b0 -> 0x3515608: Method$UI_Load.<>c__DisplayClass15_0.<Awake>b__4()
+  c69ca0: f9423529     	ldr	x9, [x9, #0x468]  // GOT 0x33e5468 -> 0x34d7b18: Method$System.Action<bool>..ctor()
+  c69ca4: aa1503e1     	mov	x1, x21
+  c69ca8: aa0003f3     	mov	x19, x0
+  c69cac: f9400102     	ldr	x2, [x8]
+  c69cb0: f9400123     	ldr	x3, [x9]
+  c69cb4: 94261b1f     	bl	0x15f0930 <__start_il2cpp+0xa930f8>  // System.Action<bool>$$.ctor
+  c69cb8: f0013b74     	adrp	x20, 0x33d8000
+  c69cbc: f942ca94     	ldr	x20, [x20, #0x590]  // GOT 0x33d8590 -> 0x34caa30: Common.Singleton<ResourcesManager>_TypeInfo
+  c69cc0: f9400280     	ldr	x0, [x20]
+  c69cc4: 3944cc08     	ldrb	w8, [x0, #0x133]
+  c69cc8: 36100088     	tbz	w8, #0x2, 0xc69cd8 <__start_il2cpp+0x10c4a0>
+  c69ccc: b940e008     	ldr	w8, [x0, #0xe0]
+  c69cd0: 35000048     	cbnz	w8, 0xc69cd8 <__start_il2cpp+0x10c4a0>
+  c69cd4: 97fa4a4b     	bl	0xafc600 <WriteZStream+0xa30c>
+  c69cd8: d0013d75     	adrp	x21, 0x3417000
+  c69cdc: f940a6b5     	ldr	x21, [x21, #0x148]  // GOT 0x3417148 -> 0x34f4980: Method$Common.Singleton<ResourcesManager>.get_Instance()
+  c69ce0: f94002a0     	ldr	x0, [x21]
+  c69ce4: 943b1a1d     	bl	0x1b30558 <__start_il2cpp+0xfd2d20>  // Common.Singleton<ADMobSDK>$$get_Instance | Common.Singleton<AdmobImmersiveAD>$$get_Instance | Common.Singleton<AdsManager>$$get_Instance [shared generics]
+  c69ce8: b4000380     	cbz	x0, 0xc69d58 <__start_il2cpp+0x10c520>
+  c69cec: 39406408     	ldrb	w8, [x0, #0x19]
+  c69cf0: 34000168     	cbz	w8, 0xc69d1c <__start_il2cpp+0x10c4e4>
+  c69cf4: b4000333     	cbz	x19, 0xc69d58 <__start_il2cpp+0x10c520>
+  c69cf8: b0013ce8     	adrp	x8, 0x3406000
+  c69cfc: f9437d08     	ldr	x8, [x8, #0x6f8]  // GOT 0x34066f8 -> 0x34d7b20: Method$System.Action<bool>.Invoke()
+  c69d00: aa1303e0     	mov	x0, x19
+  c69d04: a9427bfd     	ldp	x29, x30, [sp, #0x20]
+  c69d08: a9414ff4     	ldp	x20, x19, [sp, #0x10]
+  c69d0c: f9400102     	ldr	x2, [x8]
+  c69d10: 320003e1     	orr	w1, wzr, #0x1
+  c69d14: a8c357f6     	ldp	x22, x21, [sp], #0x30
+  c69d18: 14261b21     	b	0x15f099c <__start_il2cpp+0xa93164>  // System.Action<bool>$$Invoke
+  c69d1c: f9400280     	ldr	x0, [x20]
+  c69d20: 3944cc08     	ldrb	w8, [x0, #0x133]
+  c69d24: 36100088     	tbz	w8, #0x2, 0xc69d34 <__start_il2cpp+0x10c4fc>
+  c69d28: b940e008     	ldr	w8, [x0, #0xe0]
+  c69d2c: 35000048     	cbnz	w8, 0xc69d34 <__start_il2cpp+0x10c4fc>
+  c69d30: 97fa4a34     	bl	0xafc600 <WriteZStream+0xa30c>
+  c69d34: f94002a0     	ldr	x0, [x21]
+  c69d38: 943b1a08     	bl	0x1b30558 <__start_il2cpp+0xfd2d20>  // Common.Singleton<ADMobSDK>$$get_Instance | Common.Singleton<AdmobImmersiveAD>$$get_Instance | Common.Singleton<AdsManager>$$get_Instance [shared generics]
+  c69d3c: b40000e0     	cbz	x0, 0xc69d58 <__start_il2cpp+0x10c520>
+  c69d40: aa1303e1     	mov	x1, x19
+  c69d44: a9427bfd     	ldp	x29, x30, [sp, #0x20]
+  c69d48: a9414ff4     	ldp	x20, x19, [sp, #0x10]
+  c69d4c: aa1f03e2     	mov	x2, xzr
+  c69d50: a8c357f6     	ldp	x22, x21, [sp], #0x30
+  c69d54: 1411813c     	b	0x10ca244 <__start_il2cpp+0x56ca0c>  // Common.ResourcesManager$$add_OnInitialized
+  c69d58: 97fa4a33     	bl	0xafc624 <WriteZStream+0xa330>

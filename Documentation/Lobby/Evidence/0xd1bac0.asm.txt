@@ -1,0 +1,210 @@
+
+C:\Users\ZGAMESVN\Downloads\Soccer-Unity-Recovery\Extracted\lib\arm64-v8a\libil2cpp.so:	file format elf64-littleaarch64
+
+Disassembly of section il2cpp:
+
+0000000000b5d838 <__start_il2cpp>:
+  d1bac0: f81c0ff7     	str	x23, [sp, #-0x40]!
+  d1bac4: a90157f6     	stp	x22, x21, [sp, #0x10]
+  d1bac8: a9024ff4     	stp	x20, x19, [sp, #0x20]
+  d1bacc: a9037bfd     	stp	x29, x30, [sp, #0x30]
+  d1bad0: 9100c3fd     	add	x29, sp, #0x30
+  d1bad4: 90014834     	adrp	x20, 0x361f000
+  d1bad8: 3957f288     	ldrb	w8, [x20, #0x5fc]
+  d1badc: aa0003f3     	mov	x19, x0
+  d1bae0: 37000428     	tbnz	w8, #0x0, 0xd1bb64 <__start_il2cpp+0x1be32c>
+  d1bae4: b0013800     	adrp	x0, 0x341c000
+  d1bae8: f9466800     	ldr	x0, [x0, #0xcd0]  // GOT 0x341ccd0 -> 0x34cb958: SL.ABTest_TypeInfo
+  d1baec: 97f78298     	bl	0xafc54c <WriteZStream+0xa258>
+  d1baf0: b0013660     	adrp	x0, 0x33e8000
+  d1baf4: f942d800     	ldr	x0, [x0, #0x5b0]  // GOT 0x33e85b0 -> 0x35074f8: Method$UnityEngine.GameObject.GetComponent<MainView>()
+  d1baf8: 97f78295     	bl	0xafc54c <WriteZStream+0xa258>
+  d1bafc: 90013780     	adrp	x0, 0x340b000
+  d1bb00: f9455400     	ldr	x0, [x0, #0xaa8]  // GOT 0x340baa8 -> 0x34cf210: MainViewLoader_TypeInfo
+  d1bb04: 97f78292     	bl	0xafc54c <WriteZStream+0xa258>
+  d1bb08: b0013620     	adrp	x0, 0x33e0000
+  d1bb0c: f945c800     	ldr	x0, [x0, #0xb90]  // GOT 0x33e0b90 -> 0x350a788: Method$UnityEngine.Object.Instantiate<GameObject>()
+  d1bb10: 97f7828f     	bl	0xafc54c <WriteZStream+0xa258>
+  d1bb14: b0013840     	adrp	x0, 0x3424000
+  d1bb18: f9464400     	ldr	x0, [x0, #0xc88]  // GOT 0x3424c88 -> 0x34cfa40: UnityEngine.Object_TypeInfo
+  d1bb1c: 97f7828c     	bl	0xafc54c <WriteZStream+0xa258>
+  d1bb20: 900137e0     	adrp	x0, 0x3417000
+  d1bb24: f940a400     	ldr	x0, [x0, #0x148]  // GOT 0x3417148 -> 0x34f4980: Method$Common.Singleton<ResourcesManager>.get_Instance()
+  d1bb28: 97f78289     	bl	0xafc54c <WriteZStream+0xa258>
+  d1bb2c: b00135e0     	adrp	x0, 0x33d8000
+  d1bb30: f942c800     	ldr	x0, [x0, #0x590]  // GOT 0x33d8590 -> 0x34caa30: Common.Singleton<ResourcesManager>_TypeInfo
+  d1bb34: 97f78286     	bl	0xafc54c <WriteZStream+0xa258>
+  d1bb38: f0013880     	adrp	x0, 0x342e000
+  d1bb3c: f9408000     	ldr	x0, [x0, #0x100]  // GOT 0x342e100 -> 0x34d0d38: SL.SoccerLegend_TypeInfo
+  d1bb40: 97f78283     	bl	0xafc54c <WriteZStream+0xa258>
+  d1bb44: 900138a0     	adrp	x0, 0x342f000
+  d1bb48: f940dc00     	ldr	x0, [x0, #0x1b8]  // GOT 0x342f1b8 -> 0x3522fe8: MainView
+  d1bb4c: 97f78280     	bl	0xafc54c <WriteZStream+0xa258>
+  d1bb50: d00136e0     	adrp	x0, 0x33f9000
+  d1bb54: f9450c00     	ldr	x0, [x0, #0xa18]  // GOT 0x33f9a18 -> 0x351b660: Assets/GameData/UI/Windows/MainView/MainViewWithShop.prefab
+  d1bb58: 97f7827d     	bl	0xafc54c <WriteZStream+0xa258>
+  d1bb5c: 320003e8     	orr	w8, wzr, #0x1
+  d1bb60: 3917f288     	strb	w8, [x20, #0x5fc]
+  d1bb64: 90013796     	adrp	x22, 0x340b000
+  d1bb68: f94556d6     	ldr	x22, [x22, #0xaa8]  // GOT 0x340baa8 -> 0x34cf210: MainViewLoader_TypeInfo
+  d1bb6c: d00136e8     	adrp	x8, 0x33f9000
+  d1bb70: f94002c0     	ldr	x0, [x22]
+  d1bb74: f9450d08     	ldr	x8, [x8, #0xa18]  // GOT 0x33f9a18 -> 0x351b660: Assets/GameData/UI/Windows/MainView/MainViewWithShop.prefab
+  d1bb78: 3944cc09     	ldrb	w9, [x0, #0x133]
+  d1bb7c: f9400114     	ldr	x20, [x8]
+  d1bb80: 361000a9     	tbz	w9, #0x2, 0xd1bb94 <__start_il2cpp+0x1be35c>
+  d1bb84: b940e008     	ldr	w8, [x0, #0xe0]
+  d1bb88: 35000068     	cbnz	w8, 0xd1bb94 <__start_il2cpp+0x1be35c>
+  d1bb8c: 97f7829d     	bl	0xafc600 <WriteZStream+0xa30c>
+  d1bb90: f94002c0     	ldr	x0, [x22]
+  d1bb94: b0013857     	adrp	x23, 0x3424000
+  d1bb98: f94646f7     	ldr	x23, [x23, #0xc88]  // GOT 0x3424c88 -> 0x34cfa40: UnityEngine.Object_TypeInfo
+  d1bb9c: f9405c09     	ldr	x9, [x0, #0xb8]
+  d1bba0: f94002e8     	ldr	x8, [x23]
+  d1bba4: f9400135     	ldr	x21, [x9]
+  d1bba8: 3944cd0a     	ldrb	w10, [x8, #0x133]
+  d1bbac: 361000aa     	tbz	w10, #0x2, 0xd1bbc0 <__start_il2cpp+0x1be388>
+  d1bbb0: b940e109     	ldr	w9, [x8, #0xe0]
+  d1bbb4: 35000069     	cbnz	w9, 0xd1bbc0 <__start_il2cpp+0x1be388>
+  d1bbb8: aa0803e0     	mov	x0, x8
+  d1bbbc: 97f78291     	bl	0xafc600 <WriteZStream+0xa30c>
+  d1bbc0: aa1503e0     	mov	x0, x21
+  d1bbc4: aa1f03e1     	mov	x1, xzr
+  d1bbc8: aa1f03e2     	mov	x2, xzr
+  d1bbcc: 94279213     	bl	0x1700418 <__start_il2cpp+0xba2be0>  // UnityEngine.Object$$op_Equality
+  d1bbd0: 360003c0     	tbz	w0, #0x0, 0xd1bc48 <__start_il2cpp+0x1be410>
+  d1bbd4: b00135e8     	adrp	x8, 0x33d8000
+  d1bbd8: f942c908     	ldr	x8, [x8, #0x590]  // GOT 0x33d8590 -> 0x34caa30: Common.Singleton<ResourcesManager>_TypeInfo
+  d1bbdc: f9400100     	ldr	x0, [x8]
+  d1bbe0: 3944cc08     	ldrb	w8, [x0, #0x133]
+  d1bbe4: 36100088     	tbz	w8, #0x2, 0xd1bbf4 <__start_il2cpp+0x1be3bc>
+  d1bbe8: b940e008     	ldr	w8, [x0, #0xe0]
+  d1bbec: 35000048     	cbnz	w8, 0xd1bbf4 <__start_il2cpp+0x1be3bc>
+  d1bbf0: 97f78284     	bl	0xafc600 <WriteZStream+0xa30c>
+  d1bbf4: 900137e8     	adrp	x8, 0x3417000
+  d1bbf8: f940a508     	ldr	x8, [x8, #0x148]  // GOT 0x3417148 -> 0x34f4980: Method$Common.Singleton<ResourcesManager>.get_Instance()
+  d1bbfc: f9400100     	ldr	x0, [x8]
+  d1bc00: 94385256     	bl	0x1b30558 <__start_il2cpp+0xfd2d20>  // Common.Singleton<ADMobSDK>$$get_Instance | Common.Singleton<AdmobImmersiveAD>$$get_Instance | Common.Singleton<AdsManager>$$get_Instance [shared generics]
+  d1bc04: b4000f40     	cbz	x0, 0xd1bdec <__start_il2cpp+0x1be5b4>
+  d1bc08: aa1403e1     	mov	x1, x20
+  d1bc0c: aa1f03e2     	mov	x2, xzr
+  d1bc10: 940ebb29     	bl	0x10ca8b4 <__start_il2cpp+0x56d07c>  // Common.ResourcesManager$$LoadPrefab
+  d1bc14: f94002c8     	ldr	x8, [x22]
+  d1bc18: aa0003f4     	mov	x20, x0
+  d1bc1c: 3944cd09     	ldrb	w9, [x8, #0x133]
+  d1bc20: 361000c9     	tbz	w9, #0x2, 0xd1bc38 <__start_il2cpp+0x1be400>
+  d1bc24: b940e109     	ldr	w9, [x8, #0xe0]
+  d1bc28: 35000089     	cbnz	w9, 0xd1bc38 <__start_il2cpp+0x1be400>
+  d1bc2c: aa0803e0     	mov	x0, x8
+  d1bc30: 97f78274     	bl	0xafc600 <WriteZStream+0xa30c>
+  d1bc34: f94002c8     	ldr	x8, [x22]
+  d1bc38: f9405d00     	ldr	x0, [x8, #0xb8]
+  d1bc3c: aa1403e1     	mov	x1, x20
+  d1bc40: f9000014     	str	x20, [x0]
+  d1bc44: 97f78229     	bl	0xafc4e8 <WriteZStream+0xa1f4>
+  d1bc48: f94002c0     	ldr	x0, [x22]
+  d1bc4c: 3944cc08     	ldrb	w8, [x0, #0x133]
+  d1bc50: 361000a8     	tbz	w8, #0x2, 0xd1bc64 <__start_il2cpp+0x1be42c>
+  d1bc54: b940e008     	ldr	w8, [x0, #0xe0]
+  d1bc58: 35000068     	cbnz	w8, 0xd1bc64 <__start_il2cpp+0x1be42c>
+  d1bc5c: 97f78269     	bl	0xafc600 <WriteZStream+0xa30c>
+  d1bc60: f94002c0     	ldr	x0, [x22]
+  d1bc64: f9405c08     	ldr	x8, [x0, #0xb8]
+  d1bc68: f9400100     	ldr	x0, [x8]
+  d1bc6c: b4000c00     	cbz	x0, 0xd1bdec <__start_il2cpp+0x1be5b4>
+  d1bc70: 2a1f03e1     	mov	w1, wzr
+  d1bc74: aa1f03e2     	mov	x2, xzr
+  d1bc78: 9436c39b     	bl	0x1accae4 <__start_il2cpp+0xf6f2ac>  // UnityEngine.GameObject$$SetActive
+  d1bc7c: f94002c8     	ldr	x8, [x22]
+  d1bc80: aa1303e0     	mov	x0, x19
+  d1bc84: aa1f03e1     	mov	x1, xzr
+  d1bc88: f9405d08     	ldr	x8, [x8, #0xb8]
+  d1bc8c: f9400114     	ldr	x20, [x8]
+  d1bc90: 9436ae5a     	bl	0x1ac75f8 <__start_il2cpp+0xf69dc0>  // UnityEngine.Component$$get_transform
+  d1bc94: f94002e8     	ldr	x8, [x23]
+  d1bc98: aa0003f3     	mov	x19, x0
+  d1bc9c: 3944cd09     	ldrb	w9, [x8, #0x133]
+  d1bca0: 361000a9     	tbz	w9, #0x2, 0xd1bcb4 <__start_il2cpp+0x1be47c>
+  d1bca4: b940e109     	ldr	w9, [x8, #0xe0]
+  d1bca8: 35000069     	cbnz	w9, 0xd1bcb4 <__start_il2cpp+0x1be47c>
+  d1bcac: aa0803e0     	mov	x0, x8
+  d1bcb0: 97f78254     	bl	0xafc600 <WriteZStream+0xa30c>
+  d1bcb4: b0013628     	adrp	x8, 0x33e0000
+  d1bcb8: f945c908     	ldr	x8, [x8, #0xb90]  // GOT 0x33e0b90 -> 0x350a788: Method$UnityEngine.Object.Instantiate<GameObject>()
+  d1bcbc: aa1403e0     	mov	x0, x20
+  d1bcc0: aa1303e1     	mov	x1, x19
+  d1bcc4: f9400102     	ldr	x2, [x8]
+  d1bcc8: 941e64e5     	bl	0x14b505c <__start_il2cpp+0x957824>  // UnityEngine.Object$$Instantiate<DebugPreset> | UnityEngine.Object$$Instantiate<GUIPointsShopItem> | UnityEngine.Object$$Instantiate<GameObject> [shared generics]
+  d1bccc: b4000900     	cbz	x0, 0xd1bdec <__start_il2cpp+0x1be5b4>
+  d1bcd0: b0013668     	adrp	x8, 0x33e8000
+  d1bcd4: f942d908     	ldr	x8, [x8, #0x5b0]  // GOT 0x33e85b0 -> 0x35074f8: Method$UnityEngine.GameObject.GetComponent<MainView>()
+  d1bcd8: aa0003f3     	mov	x19, x0
+  d1bcdc: f9400101     	ldr	x1, [x8]
+  d1bce0: 940bbf49     	bl	0x100ba04 <__start_il2cpp+0x4ae1cc>  // UnityEngine.GameObject$$GetComponent<Animator> | UnityEngine.GameObject$$GetComponent<AnimatorPlayTime> | UnityEngine.GameObject$$GetComponent<AppearanceData> [shared generics]
+  d1bce4: aa0003f4     	mov	x20, x0
+  d1bce8: aa1303e0     	mov	x0, x19
+  d1bcec: aa1f03e1     	mov	x1, xzr
+  d1bcf0: 9436c349     	bl	0x1acca14 <__start_il2cpp+0xf6f1dc>  // UnityEngine.GameObject$$get_transform
+  d1bcf4: b40007c0     	cbz	x0, 0xd1bdec <__start_il2cpp+0x1be5b4>
+  d1bcf8: 900138a8     	adrp	x8, 0x342f000
+  d1bcfc: f940dd08     	ldr	x8, [x8, #0x1b8]  // GOT 0x342f1b8 -> 0x3522fe8: MainView
+  d1bd00: aa1f03e2     	mov	x2, xzr
+  d1bd04: f9400101     	ldr	x1, [x8]
+  d1bd08: 9454ba7a     	bl	0x224a6f0 <__start_il2cpp+0x16eceb8>  // UnityEngine.Transform$$Find
+  d1bd0c: b0013808     	adrp	x8, 0x341c000
+  d1bd10: f9466908     	ldr	x8, [x8, #0xcd0]  // GOT 0x341ccd0 -> 0x34cb958: SL.ABTest_TypeInfo
+  d1bd14: aa0003f5     	mov	x21, x0
+  d1bd18: f9400108     	ldr	x8, [x8]
+  d1bd1c: 3944cd09     	ldrb	w9, [x8, #0x133]
+  d1bd20: 361000a9     	tbz	w9, #0x2, 0xd1bd34 <__start_il2cpp+0x1be4fc>
+  d1bd24: b940e109     	ldr	w9, [x8, #0xe0]
+  d1bd28: 35000069     	cbnz	w9, 0xd1bd34 <__start_il2cpp+0x1be4fc>
+  d1bd2c: aa0803e0     	mov	x0, x8
+  d1bd30: 97f78234     	bl	0xafc600 <WriteZStream+0xa30c>
+  d1bd34: aa1f03e0     	mov	x0, xzr
+  d1bd38: 9410389d     	bl	0x1129fac <__start_il2cpp+0x5cc774>  // SL.ABTest$$get_EnablePlayerCareer
+  d1bd3c: aa1403e1     	mov	x1, x20
+  d1bd40: aa1503e2     	mov	x2, x21
+  d1bd44: 36000060     	tbz	w0, #0x0, 0xd1bd50 <__start_il2cpp+0x1be518>
+  d1bd48: 9400002a     	bl	0xd1bdf0 <__start_il2cpp+0x1be5b8>  // MainViewLoader$$LoadForPlayerCareer
+  d1bd4c: 14000002     	b	0xd1bd54 <__start_il2cpp+0x1be51c>
+  d1bd50: 940000eb     	bl	0xd1c0fc <__start_il2cpp+0x1be8c4>  // MainViewLoader$$LoadForlegacy
+  d1bd54: aa1303e0     	mov	x0, x19
+  d1bd58: aa1f03e1     	mov	x1, xzr
+  d1bd5c: 9436c494     	bl	0x1accfac <__start_il2cpp+0xf6f774>  // UnityEngine.GameObject$$get_gameObject
+  d1bd60: b4000460     	cbz	x0, 0xd1bdec <__start_il2cpp+0x1be5b4>
+  d1bd64: 320003e1     	orr	w1, wzr, #0x1
+  d1bd68: aa1f03e2     	mov	x2, xzr
+  d1bd6c: 9436c35e     	bl	0x1accae4 <__start_il2cpp+0xf6f2ac>  // UnityEngine.GameObject$$SetActive
+  d1bd70: f0013888     	adrp	x8, 0x342e000
+  d1bd74: f9408108     	ldr	x8, [x8, #0x100]  // GOT 0x342e100 -> 0x34d0d38: SL.SoccerLegend_TypeInfo
+  d1bd78: f9400100     	ldr	x0, [x8]
+  d1bd7c: 3944cc08     	ldrb	w8, [x0, #0x133]
+  d1bd80: 36100088     	tbz	w8, #0x2, 0xd1bd90 <__start_il2cpp+0x1be558>
+  d1bd84: b940e008     	ldr	w8, [x0, #0xe0]
+  d1bd88: 35000048     	cbnz	w8, 0xd1bd90 <__start_il2cpp+0x1be558>
+  d1bd8c: 97f7821d     	bl	0xafc600 <WriteZStream+0xa30c>
+  d1bd90: aa1f03e0     	mov	x0, xzr
+  d1bd94: 9409ce6a     	bl	0xf8f73c <__start_il2cpp+0x431f04>  // SL.SoccerLegend$$IsLowMemoryDevice
+  d1bd98: 36000200     	tbz	w0, #0x0, 0xd1bdd8 <__start_il2cpp+0x1be5a0>
+  d1bd9c: f94002c0     	ldr	x0, [x22]
+  d1bda0: 3944cc08     	ldrb	w8, [x0, #0x133]
+  d1bda4: 361000a8     	tbz	w8, #0x2, 0xd1bdb8 <__start_il2cpp+0x1be580>
+  d1bda8: b940e008     	ldr	w8, [x0, #0xe0]
+  d1bdac: 35000068     	cbnz	w8, 0xd1bdb8 <__start_il2cpp+0x1be580>
+  d1bdb0: 97f78214     	bl	0xafc600 <WriteZStream+0xa30c>
+  d1bdb4: f94002c0     	ldr	x0, [x22]
+  d1bdb8: f9405c00     	ldr	x0, [x0, #0xb8]
+  d1bdbc: aa1f03e1     	mov	x1, xzr
+  d1bdc0: f900001f     	str	xzr, [x0]
+  d1bdc4: a9437bfd     	ldp	x29, x30, [sp, #0x30]
+  d1bdc8: a9424ff4     	ldp	x20, x19, [sp, #0x20]
+  d1bdcc: a94157f6     	ldp	x22, x21, [sp, #0x10]
+  d1bdd0: f84407f7     	ldr	x23, [sp], #0x40
+  d1bdd4: 17f781c5     	b	0xafc4e8 <WriteZStream+0xa1f4>
+  d1bdd8: a9437bfd     	ldp	x29, x30, [sp, #0x30]
+  d1bddc: a9424ff4     	ldp	x20, x19, [sp, #0x20]
+  d1bde0: a94157f6     	ldp	x22, x21, [sp, #0x10]
+  d1bde4: f84407f7     	ldr	x23, [sp], #0x40
+  d1bde8: d65f03c0     	ret
+  d1bdec: 97f7820e     	bl	0xafc624 <WriteZStream+0xa330>

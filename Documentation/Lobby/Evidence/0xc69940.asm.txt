@@ -1,0 +1,31 @@
+
+C:\Users\ZGAMESVN\Downloads\Soccer-Unity-Recovery\Extracted\lib\arm64-v8a\libil2cpp.so:	file format elf64-littleaarch64
+
+Disassembly of section il2cpp:
+
+0000000000b5d838 <__start_il2cpp>:
+  c69940: a9be4ff4     	stp	x20, x19, [sp, #-0x20]!
+  c69944: a9017bfd     	stp	x29, x30, [sp, #0x10]
+  c69948: 910043fd     	add	x29, sp, #0x10
+  c6994c: d0014db3     	adrp	x19, 0x361f000
+  c69950: 39431668     	ldrb	w8, [x19, #0xc5]
+  c69954: 370000c8     	tbnz	w8, #0x0, 0xc6996c <__start_il2cpp+0x10c134>
+  c69958: b0013c60     	adrp	x0, 0x33f6000
+  c6995c: f942c000     	ldr	x0, [x0, #0x580]  // GOT 0x33f6580 -> 0x34d6168: UI_Load.<>c_TypeInfo
+  c69960: 97fa4afb     	bl	0xafc54c <WriteZStream+0xa258>
+  c69964: 320003e8     	orr	w8, wzr, #0x1
+  c69968: 39031668     	strb	w8, [x19, #0xc5]
+  c6996c: b0013c74     	adrp	x20, 0x33f6000
+  c69970: f942c294     	ldr	x20, [x20, #0x580]  // GOT 0x33f6580 -> 0x34d6168: UI_Load.<>c_TypeInfo
+  c69974: f9400280     	ldr	x0, [x20]
+  c69978: 97fa4b29     	bl	0xafc61c <WriteZStream+0xa328>
+  c6997c: aa1f03e1     	mov	x1, xzr
+  c69980: aa0003f3     	mov	x19, x0
+  c69984: 944b347c     	bl	0x1f36b74 <__start_il2cpp+0x13d933c>  // System.Object$$.ctor
+  c69988: f9400288     	ldr	x8, [x20]
+  c6998c: aa1303e1     	mov	x1, x19
+  c69990: f9405d00     	ldr	x0, [x8, #0xb8]
+  c69994: f9000013     	str	x19, [x0]
+  c69998: a9417bfd     	ldp	x29, x30, [sp, #0x10]
+  c6999c: a8c24ff4     	ldp	x20, x19, [sp], #0x20
+  c699a0: 17fa4ad2     	b	0xafc4e8 <WriteZStream+0xa1f4>

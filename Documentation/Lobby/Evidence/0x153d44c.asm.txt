@@ -1,0 +1,49 @@
+
+C:\Users\ZGAMESVN\Downloads\Soccer-Unity-Recovery\Extracted\lib\arm64-v8a\libil2cpp.so:	file format elf64-littleaarch64
+
+Disassembly of section il2cpp:
+
+0000000000b5d838 <__start_il2cpp>:
+ 153d44c: f81e0ff3     	str	x19, [sp, #-0x20]!
+ 153d450: a9017bfd     	stp	x29, x30, [sp, #0x10]
+ 153d454: 910043fd     	add	x29, sp, #0x10
+ 153d458: b0010733     	adrp	x19, 0x3622000
+ 153d45c: 396a4668     	ldrb	w8, [x19, #0xa91]
+ 153d460: 37000188     	tbnz	w8, #0x0, 0x153d490 <__start_il2cpp+0x9dfc58>
+ 153d464: d000f7a0     	adrp	x0, 0x3433000
+ 153d468: f940ac00     	ldr	x0, [x0, #0x158]  // GOT 0x3433158 -> 0x34d00c0: PlayerSetting_TypeInfo
+ 153d46c: 97d6fc38     	bl	0xafc54c <WriteZStream+0xa258>
+ 153d470: f000f600     	adrp	x0, 0x3400000
+ 153d474: f944ac00     	ldr	x0, [x0, #0x958]  // GOT 0x3400958 -> 0x3535088: review_show
+ 153d478: 97d6fc35     	bl	0xafc54c <WriteZStream+0xa258>
+ 153d47c: f000f800     	adrp	x0, 0x3440000
+ 153d480: f943f800     	ldr	x0, [x0, #0x7f0]  // GOT 0x34407f0 -> 0x3535080: review_clicked
+ 153d484: 97d6fc32     	bl	0xafc54c <WriteZStream+0xa258>
+ 153d488: 320003e8     	orr	w8, wzr, #0x1
+ 153d48c: 392a4668     	strb	w8, [x19, #0xa91]
+ 153d490: d000f7a8     	adrp	x8, 0x3433000
+ 153d494: f940ad08     	ldr	x8, [x8, #0x158]  // GOT 0x3433158 -> 0x34d00c0: PlayerSetting_TypeInfo
+ 153d498: f9400100     	ldr	x0, [x8]
+ 153d49c: 3944cc08     	ldrb	w8, [x0, #0x133]
+ 153d4a0: 36100088     	tbz	w8, #0x2, 0x153d4b0 <__start_il2cpp+0x9dfc78>
+ 153d4a4: b940e008     	ldr	w8, [x0, #0xe0]
+ 153d4a8: 35000048     	cbnz	w8, 0x153d4b0 <__start_il2cpp+0x9dfc78>
+ 153d4ac: 97d6fc55     	bl	0xafc600 <WriteZStream+0xa30c>
+ 153d4b0: aa1f03e0     	mov	x0, xzr
+ 153d4b4: 97f5fc74     	bl	0x12bc684 <__start_il2cpp+0x75ee4c>  // PlayerSetting$$Clear
+ 153d4b8: f000f808     	adrp	x8, 0x3440000
+ 153d4bc: f943f908     	ldr	x8, [x8, #0x7f0]  // GOT 0x34407f0 -> 0x3535080: review_clicked
+ 153d4c0: 2a1f03e1     	mov	w1, wzr
+ 153d4c4: aa1f03e2     	mov	x2, xzr
+ 153d4c8: f9400100     	ldr	x0, [x8]
+ 153d4cc: 9407333c     	bl	0x170a1bc <__start_il2cpp+0xbac984>  // UnityEngine.PlayerPrefs$$SetInt
+ 153d4d0: f000f608     	adrp	x8, 0x3400000
+ 153d4d4: f944ad08     	ldr	x8, [x8, #0x958]  // GOT 0x3400958 -> 0x3535088: review_show
+ 153d4d8: 2a1f03e1     	mov	w1, wzr
+ 153d4dc: aa1f03e2     	mov	x2, xzr
+ 153d4e0: f9400100     	ldr	x0, [x8]
+ 153d4e4: 94073336     	bl	0x170a1bc <__start_il2cpp+0xbac984>  // UnityEngine.PlayerPrefs$$SetInt
+ 153d4e8: a9417bfd     	ldp	x29, x30, [sp, #0x10]
+ 153d4ec: aa1f03e0     	mov	x0, xzr
+ 153d4f0: f84207f3     	ldr	x19, [sp], #0x20
+ 153d4f4: 141605d0     	b	0x1abec34 <__start_il2cpp+0xf613fc>  // UnityEngine.Application$$Quit

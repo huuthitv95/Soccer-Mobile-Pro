@@ -1,0 +1,201 @@
+
+C:\Users\ZGAMESVN\Downloads\Soccer-Unity-Recovery\Extracted\lib\arm64-v8a\libil2cpp.so:	file format elf64-littleaarch64
+
+Disassembly of section il2cpp:
+
+0000000000b5d838 <__start_il2cpp>:
+  d1c0fc: d102c3ff     	sub	sp, sp, #0xb0
+  d1c100: a9056ffc     	stp	x28, x27, [sp, #0x50]
+  d1c104: a90667fa     	stp	x26, x25, [sp, #0x60]
+  d1c108: a9075ff8     	stp	x24, x23, [sp, #0x70]
+  d1c10c: a90857f6     	stp	x22, x21, [sp, #0x80]
+  d1c110: a9094ff4     	stp	x20, x19, [sp, #0x90]
+  d1c114: a90a7bfd     	stp	x29, x30, [sp, #0xa0]
+  d1c118: 910283fd     	add	x29, sp, #0xa0
+  d1c11c: f0014813     	adrp	x19, 0x361f000
+  d1c120: 3957fa68     	ldrb	w8, [x19, #0x5fe]
+  d1c124: aa0103f4     	mov	x20, x1
+  d1c128: f90007e2     	str	x2, [sp, #0x8]
+  d1c12c: 37000548     	tbnz	w8, #0x0, 0xd1c1d4 <__start_il2cpp+0x1be99c>
+  d1c130: f0013580     	adrp	x0, 0x33cf000
+  d1c134: f9473400     	ldr	x0, [x0, #0xe68]  // GOT 0x33cfe68 -> 0x3507408: Method$UnityEngine.GameObject.GetComponent<Button>()
+  d1c138: 97f78105     	bl	0xafc54c <WriteZStream+0xa258>
+  d1c13c: 90013720     	adrp	x0, 0x3400000
+  d1c140: f9422c00     	ldr	x0, [x0, #0x458]  // GOT 0x3400458 -> 0x34caec8: System.Collections.Generic.KeyValuePair<MainViewLoader.MainViewButtonType, string>[]_TypeInfo
+  d1c144: 97f78102     	bl	0xafc54c <WriteZStream+0xa258>
+  d1c148: f00136c0     	adrp	x0, 0x33f7000
+  d1c14c: f942e400     	ldr	x0, [x0, #0x5c8]  // GOT 0x33f75c8 -> 0x34eaae8: Method$System.Collections.Generic.KeyValuePair<MainViewLoader.MainViewButtonType, string>..ctor()
+  d1c150: 97f780ff     	bl	0xafc54c <WriteZStream+0xa258>
+  d1c154: f00137c0     	adrp	x0, 0x3417000
+  d1c158: f943fc00     	ldr	x0, [x0, #0x7f8]  // GOT 0x34177f8 -> 0x34eaaf0: Method$System.Collections.Generic.KeyValuePair<MainViewLoader.MainViewButtonType, string>.get_Key()
+  d1c15c: 97f780fc     	bl	0xafc54c <WriteZStream+0xa258>
+  d1c160: 90013580     	adrp	x0, 0x33cc000 <_ZTISt10bad_typeid+0x1240>
+  d1c164: f946e800     	ldr	x0, [x0, #0xdd0]  // GOT 0x33ccdd0 -> 0x34eaaf8: Method$System.Collections.Generic.KeyValuePair<MainViewLoader.MainViewButtonType, string>.get_Value()
+  d1c168: 97f780f9     	bl	0xafc54c <WriteZStream+0xa258>
+  d1c16c: 90013620     	adrp	x0, 0x33e0000
+  d1c170: f945c800     	ldr	x0, [x0, #0xb90]  // GOT 0x33e0b90 -> 0x350a788: Method$UnityEngine.Object.Instantiate<GameObject>()
+  d1c174: 97f780f6     	bl	0xafc54c <WriteZStream+0xa258>
+  d1c178: 90013840     	adrp	x0, 0x3424000
+  d1c17c: f9464400     	ldr	x0, [x0, #0xc88]  // GOT 0x3424c88 -> 0x34cfa40: UnityEngine.Object_TypeInfo
+  d1c180: 97f780f3     	bl	0xafc54c <WriteZStream+0xa258>
+  d1c184: f00137c0     	adrp	x0, 0x3417000
+  d1c188: f940a400     	ldr	x0, [x0, #0x148]  // GOT 0x3417148 -> 0x34f4980: Method$Common.Singleton<ResourcesManager>.get_Instance()
+  d1c18c: 97f780f0     	bl	0xafc54c <WriteZStream+0xa258>
+  d1c190: 900135e0     	adrp	x0, 0x33d8000
+  d1c194: f942c800     	ldr	x0, [x0, #0x590]  // GOT 0x33d8590 -> 0x34caa30: Common.Singleton<ResourcesManager>_TypeInfo
+  d1c198: 97f780ed     	bl	0xafc54c <WriteZStream+0xa258>
+  d1c19c: 900138e0     	adrp	x0, 0x3438000
+  d1c1a0: f9404000     	ldr	x0, [x0, #0x80]  // GOT 0x3438080 -> 0x351b658: Assets/GameData/UI/Windows/MainView/Buttons/training.prefab
+  d1c1a4: 97f780ea     	bl	0xafc54c <WriteZStream+0xa258>
+  d1c1a8: d0013700     	adrp	x0, 0x33fe000
+  d1c1ac: f940c800     	ldr	x0, [x0, #0x190]  // GOT 0x33fe190 -> 0x351b648: Assets/GameData/UI/Windows/MainView/Buttons/shop.prefab
+  d1c1b0: 97f780e7     	bl	0xafc54c <WriteZStream+0xa258>
+  d1c1b4: b00135c0     	adrp	x0, 0x33d5000
+  d1c1b8: f9440800     	ldr	x0, [x0, #0x810]  // GOT 0x33d5810 -> 0x351b628: Assets/GameData/UI/Windows/MainView/Buttons/friendly.prefab
+  d1c1bc: 97f780e4     	bl	0xafc54c <WriteZStream+0xa258>
+  d1c1c0: 900135e0     	adrp	x0, 0x33d8000
+  d1c1c4: f9452000     	ldr	x0, [x0, #0xa40]  // GOT 0x33d8a40 -> 0x351b638: Assets/GameData/UI/Windows/MainView/Buttons/masterLeague.prefab
+  d1c1c8: 97f780e1     	bl	0xafc54c <WriteZStream+0xa258>
+  d1c1cc: 320003e8     	orr	w8, wzr, #0x1
+  d1c1d0: 3917fa68     	strb	w8, [x19, #0x5fe]
+  d1c1d4: 90013728     	adrp	x8, 0x3400000
+  d1c1d8: f9422d08     	ldr	x8, [x8, #0x458]  // GOT 0x3400458 -> 0x34caec8: System.Collections.Generic.KeyValuePair<MainViewLoader.MainViewButtonType, string>[]_TypeInfo
+  d1c1dc: 321e03e1     	orr	w1, wzr, #0x4
+  d1c1e0: f9400100     	ldr	x0, [x8]
+  d1c1e4: 97f780e0     	bl	0xafc564 <WriteZStream+0xa270>
+  d1c1e8: 900135e8     	adrp	x8, 0x33d8000
+  d1c1ec: f00136d3     	adrp	x19, 0x33f7000
+  d1c1f0: f9452108     	ldr	x8, [x8, #0xa40]  // GOT 0x33d8a40 -> 0x351b638: Assets/GameData/UI/Windows/MainView/Buttons/masterLeague.prefab
+  d1c1f4: f942e673     	ldr	x19, [x19, #0x5c8]  // GOT 0x33f75c8 -> 0x34eaae8: Method$System.Collections.Generic.KeyValuePair<MainViewLoader.MainViewButtonType, string>..ctor()
+  d1c1f8: aa0003f5     	mov	x21, x0
+  d1c1fc: 910103e0     	add	x0, sp, #0x40
+  d1c200: f9400102     	ldr	x2, [x8]
+  d1c204: f9400263     	ldr	x3, [x19]
+  d1c208: 320003e1     	orr	w1, wzr, #0x1
+  d1c20c: a9047fff     	stp	xzr, xzr, [sp, #0x40]
+  d1c210: 941be7c3     	bl	0x141611c <__start_il2cpp+0x8b88e4>  // System.Collections.Generic.KeyValuePair<Int32Enum, object>$$.ctor | System.Collections.Generic.KeyValuePair<MainViewLoader.MainViewButtonType, string>$$.ctor
+  d1c214: b4000f35     	cbz	x21, 0xd1c3f8 <__start_il2cpp+0x1bebc0>
+  d1c218: b9401aa8     	ldr	w8, [x21, #0x18]
+  d1c21c: 34000f08     	cbz	w8, 0xd1c3fc <__start_il2cpp+0x1bebc4>
+  d1c220: 3dc013e0     	ldr	q0, [sp, #0x40]
+  d1c224: 9100a2a0     	add	x0, x21, #0x28
+  d1c228: aa1f03e1     	mov	x1, xzr
+  d1c22c: 3d800aa0     	str	q0, [x21, #0x20]
+  d1c230: 97f780ae     	bl	0xafc4e8 <WriteZStream+0xa1f4>
+  d1c234: b00135c8     	adrp	x8, 0x33d5000
+  d1c238: f9440908     	ldr	x8, [x8, #0x810]  // GOT 0x33d5810 -> 0x351b628: Assets/GameData/UI/Windows/MainView/Buttons/friendly.prefab
+  d1c23c: f9400263     	ldr	x3, [x19]
+  d1c240: 9100c3e0     	add	x0, sp, #0x30
+  d1c244: 321f03e1     	orr	w1, wzr, #0x2
+  d1c248: f9400102     	ldr	x2, [x8]
+  d1c24c: a9037fff     	stp	xzr, xzr, [sp, #0x30]
+  d1c250: 941be7b3     	bl	0x141611c <__start_il2cpp+0x8b88e4>  // System.Collections.Generic.KeyValuePair<Int32Enum, object>$$.ctor | System.Collections.Generic.KeyValuePair<MainViewLoader.MainViewButtonType, string>$$.ctor
+  d1c254: b9401aa8     	ldr	w8, [x21, #0x18]
+  d1c258: 7100051f     	cmp	w8, #0x1
+  d1c25c: 54000d09     	b.ls	0xd1c3fc <__start_il2cpp+0x1bebc4>
+  d1c260: 3dc00fe0     	ldr	q0, [sp, #0x30]
+  d1c264: 9100e2a0     	add	x0, x21, #0x38
+  d1c268: aa1f03e1     	mov	x1, xzr
+  d1c26c: 3d800ea0     	str	q0, [x21, #0x30]
+  d1c270: 97f7809e     	bl	0xafc4e8 <WriteZStream+0xa1f4>
+  d1c274: d0013708     	adrp	x8, 0x33fe000
+  d1c278: f940c908     	ldr	x8, [x8, #0x190]  // GOT 0x33fe190 -> 0x351b648: Assets/GameData/UI/Windows/MainView/Buttons/shop.prefab
+  d1c27c: f9400263     	ldr	x3, [x19]
+  d1c280: 910083e0     	add	x0, sp, #0x20
+  d1c284: 320007e1     	orr	w1, wzr, #0x3
+  d1c288: f9400102     	ldr	x2, [x8]
+  d1c28c: a9027fff     	stp	xzr, xzr, [sp, #0x20]
+  d1c290: 941be7a3     	bl	0x141611c <__start_il2cpp+0x8b88e4>  // System.Collections.Generic.KeyValuePair<Int32Enum, object>$$.ctor | System.Collections.Generic.KeyValuePair<MainViewLoader.MainViewButtonType, string>$$.ctor
+  d1c294: b9401aa8     	ldr	w8, [x21, #0x18]
+  d1c298: 7100091f     	cmp	w8, #0x2
+  d1c29c: 54000b09     	b.ls	0xd1c3fc <__start_il2cpp+0x1bebc4>
+  d1c2a0: 3dc00be0     	ldr	q0, [sp, #0x20]
+  d1c2a4: 910122a0     	add	x0, x21, #0x48
+  d1c2a8: aa1f03e1     	mov	x1, xzr
+  d1c2ac: 3d8012a0     	str	q0, [x21, #0x40]
+  d1c2b0: 97f7808e     	bl	0xafc4e8 <WriteZStream+0xa1f4>
+  d1c2b4: 900138e8     	adrp	x8, 0x3438000
+  d1c2b8: f9404108     	ldr	x8, [x8, #0x80]  // GOT 0x3438080 -> 0x351b658: Assets/GameData/UI/Windows/MainView/Buttons/training.prefab
+  d1c2bc: f9400263     	ldr	x3, [x19]
+  d1c2c0: 910043e0     	add	x0, sp, #0x10
+  d1c2c4: 321e03e1     	orr	w1, wzr, #0x4
+  d1c2c8: f9400102     	ldr	x2, [x8]
+  d1c2cc: a9017fff     	stp	xzr, xzr, [sp, #0x10]
+  d1c2d0: 941be793     	bl	0x141611c <__start_il2cpp+0x8b88e4>  // System.Collections.Generic.KeyValuePair<Int32Enum, object>$$.ctor | System.Collections.Generic.KeyValuePair<MainViewLoader.MainViewButtonType, string>$$.ctor
+  d1c2d4: b9401aa8     	ldr	w8, [x21, #0x18]
+  d1c2d8: 71000d1f     	cmp	w8, #0x3
+  d1c2dc: 54000909     	b.ls	0xd1c3fc <__start_il2cpp+0x1bebc4>
+  d1c2e0: 3dc007e0     	ldr	q0, [sp, #0x10]
+  d1c2e4: 910162a0     	add	x0, x21, #0x58
+  d1c2e8: aa1f03e1     	mov	x1, xzr
+  d1c2ec: 3d8016a0     	str	q0, [x21, #0x50]
+  d1c2f0: 97f7807e     	bl	0xafc4e8 <WriteZStream+0xa1f4>
+  d1c2f4: f9400ea8     	ldr	x8, [x21, #0x18]
+  d1c2f8: 7100051f     	cmp	w8, #0x1
+  d1c2fc: 540006eb     	b.lt	0xd1c3d8 <__start_il2cpp+0x1beba0>
+  d1c300: f00137db     	adrp	x27, 0x3417000
+  d1c304: 9001385c     	adrp	x28, 0x3424000
+  d1c308: 90013633     	adrp	x19, 0x33e0000
+  d1c30c: f001359a     	adrp	x26, 0x33cf000
+  d1c310: f940a77b     	ldr	x27, [x27, #0x148]  // GOT 0x3417148 -> 0x34f4980: Method$Common.Singleton<ResourcesManager>.get_Instance()
+  d1c314: f946479c     	ldr	x28, [x28, #0xc88]  // GOT 0x3424c88 -> 0x34cfa40: UnityEngine.Object_TypeInfo
+  d1c318: f945ca73     	ldr	x19, [x19, #0xb90]  // GOT 0x33e0b90 -> 0x350a788: Method$UnityEngine.Object.Instantiate<GameObject>()
+  d1c31c: f947375a     	ldr	x26, [x26, #0xe68]  // GOT 0x33cfe68 -> 0x3507408: Method$UnityEngine.GameObject.GetComponent<Button>()
+  d1c320: aa1f03f8     	mov	x24, xzr
+  d1c324: 92407d08     	and	x8, x8, #0xffffffff
+  d1c328: 9100a2b9     	add	x25, x21, #0x28
+  d1c32c: eb28431f     	cmp	x24, w8, uxtw
+  d1c330: 54000662     	b.hs	0xd1c3fc <__start_il2cpp+0x1bebc4>
+  d1c334: 900135e8     	adrp	x8, 0x33d8000
+  d1c338: f942c908     	ldr	x8, [x8, #0x590]  // GOT 0x33d8590 -> 0x34caa30: Common.Singleton<ResourcesManager>_TypeInfo
+  d1c33c: b85f8336     	ldur	w22, [x25, #-0x8]
+  d1c340: f9400337     	ldr	x23, [x25]
+  d1c344: f9400100     	ldr	x0, [x8]
+  d1c348: 3944cc08     	ldrb	w8, [x0, #0x133]
+  d1c34c: 36100088     	tbz	w8, #0x2, 0xd1c35c <__start_il2cpp+0x1beb24>
+  d1c350: b940e008     	ldr	w8, [x0, #0xe0]
+  d1c354: 35000048     	cbnz	w8, 0xd1c35c <__start_il2cpp+0x1beb24>
+  d1c358: 97f780aa     	bl	0xafc600 <WriteZStream+0xa30c>
+  d1c35c: f9400360     	ldr	x0, [x27]
+  d1c360: 9438507e     	bl	0x1b30558 <__start_il2cpp+0xfd2d20>  // Common.Singleton<ADMobSDK>$$get_Instance | Common.Singleton<AdmobImmersiveAD>$$get_Instance | Common.Singleton<AdsManager>$$get_Instance [shared generics]
+  d1c364: b40004a0     	cbz	x0, 0xd1c3f8 <__start_il2cpp+0x1bebc0>
+  d1c368: aa1703e1     	mov	x1, x23
+  d1c36c: aa1f03e2     	mov	x2, xzr
+  d1c370: 940eb951     	bl	0x10ca8b4 <__start_il2cpp+0x56d07c>  // Common.ResourcesManager$$LoadPrefab
+  d1c374: f9400388     	ldr	x8, [x28]
+  d1c378: aa0003f7     	mov	x23, x0
+  d1c37c: 3944cd09     	ldrb	w9, [x8, #0x133]
+  d1c380: 361000a9     	tbz	w9, #0x2, 0xd1c394 <__start_il2cpp+0x1beb5c>
+  d1c384: b940e109     	ldr	w9, [x8, #0xe0]
+  d1c388: 35000069     	cbnz	w9, 0xd1c394 <__start_il2cpp+0x1beb5c>
+  d1c38c: aa0803e0     	mov	x0, x8
+  d1c390: 97f7809c     	bl	0xafc600 <WriteZStream+0xa30c>
+  d1c394: f9400262     	ldr	x2, [x19]
+  d1c398: f94007e1     	ldr	x1, [sp, #0x8]
+  d1c39c: aa1703e0     	mov	x0, x23
+  d1c3a0: 941e632f     	bl	0x14b505c <__start_il2cpp+0x957824>  // UnityEngine.Object$$Instantiate<DebugPreset> | UnityEngine.Object$$Instantiate<GUIPointsShopItem> | UnityEngine.Object$$Instantiate<GameObject> [shared generics]
+  d1c3a4: b40002a0     	cbz	x0, 0xd1c3f8 <__start_il2cpp+0x1bebc0>
+  d1c3a8: f9400341     	ldr	x1, [x26]
+  d1c3ac: 940bbd96     	bl	0x100ba04 <__start_il2cpp+0x4ae1cc>  // UnityEngine.GameObject$$GetComponent<Animator> | UnityEngine.GameObject$$GetComponent<AnimatorPlayTime> | UnityEngine.GameObject$$GetComponent<AppearanceData> [shared generics]
+  d1c3b0: b4000254     	cbz	x20, 0xd1c3f8 <__start_il2cpp+0x1bebc0>
+  d1c3b4: aa0003e1     	mov	x1, x0
+  d1c3b8: aa1403e0     	mov	x0, x20
+  d1c3bc: 2a1603e2     	mov	w2, w22
+  d1c3c0: 97ffe053     	bl	0xd1450c <__start_il2cpp+0x1b6cd4>  // MainView$$BindButton
+  d1c3c4: b9401aa8     	ldr	w8, [x21, #0x18]
+  d1c3c8: 91000718     	add	x24, x24, #0x1
+  d1c3cc: 91004339     	add	x25, x25, #0x10
+  d1c3d0: eb28c31f     	cmp	x24, w8, sxtw
+  d1c3d4: 54fffacb     	b.lt	0xd1c32c <__start_il2cpp+0x1beaf4>
+  d1c3d8: a94a7bfd     	ldp	x29, x30, [sp, #0xa0]
+  d1c3dc: a9494ff4     	ldp	x20, x19, [sp, #0x90]
+  d1c3e0: a94857f6     	ldp	x22, x21, [sp, #0x80]
+  d1c3e4: a9475ff8     	ldp	x24, x23, [sp, #0x70]
+  d1c3e8: a94667fa     	ldp	x26, x25, [sp, #0x60]
+  d1c3ec: a9456ffc     	ldp	x28, x27, [sp, #0x50]
+  d1c3f0: 9102c3ff     	add	sp, sp, #0xb0
+  d1c3f4: d65f03c0     	ret
+  d1c3f8: 97f7808b     	bl	0xafc624 <WriteZStream+0xa330>
+  d1c3fc: 97f78095     	bl	0xafc650 <WriteZStream+0xa35c>
+  d1c400: aa1f03e1     	mov	x1, xzr
+  d1c404: 97f7807b     	bl	0xafc5f0 <WriteZStream+0xa2fc>

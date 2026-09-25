@@ -1,0 +1,27 @@
+
+C:\Users\ZGAMESVN\Downloads\Soccer-Unity-Recovery\Extracted\lib\arm64-v8a\libil2cpp.so:	file format elf64-littleaarch64
+
+Disassembly of section il2cpp:
+
+0000000000b5d838 <__start_il2cpp>:
+  c69e14: f81e0ff3     	str	x19, [sp, #-0x20]!
+  c69e18: a9017bfd     	stp	x29, x30, [sp, #0x10]
+  c69e1c: 910043fd     	add	x29, sp, #0x10
+  c69e20: d0014db3     	adrp	x19, 0x361f000
+  c69e24: 39432668     	ldrb	w8, [x19, #0xc9]
+  c69e28: 370000c8     	tbnz	w8, #0x0, 0xc69e40 <__start_il2cpp+0x10c608>
+  c69e2c: 90013b80     	adrp	x0, 0x33d9000
+  c69e30: f9412400     	ldr	x0, [x0, #0x248]  // GOT 0x33d9248 -> 0x34f1bc0: Method$MonoSingleton<ProfilePicGenerater>.get_Instance()
+  c69e34: 97fa49c6     	bl	0xafc54c <WriteZStream+0xa258>
+  c69e38: 320003e8     	orr	w8, wzr, #0x1
+  c69e3c: 39032668     	strb	w8, [x19, #0xc9]
+  c69e40: 90013b88     	adrp	x8, 0x33d9000
+  c69e44: f9412508     	ldr	x8, [x8, #0x248]  // GOT 0x33d9248 -> 0x34f1bc0: Method$MonoSingleton<ProfilePicGenerater>.get_Instance()
+  c69e48: f9400100     	ldr	x0, [x8]
+  c69e4c: 94357384     	bl	0x19c6c5c <__start_il2cpp+0xe69424>  // MonoSingleton<AndroidScreenRecorder>$$get_Instance | MonoSingleton<BannerLogger>$$get_Instance | MonoSingleton<GenerateBadgeRT>$$get_Instance [shared generics]
+  c69e50: b40000a0     	cbz	x0, 0xc69e64 <__start_il2cpp+0x10c62c>
+  c69e54: a9417bfd     	ldp	x29, x30, [sp, #0x10]
+  c69e58: aa1f03e1     	mov	x1, xzr
+  c69e5c: f84207f3     	ldr	x19, [sp], #0x20
+  c69e60: 14048dfc     	b	0xd8d650 <__start_il2cpp+0x22fe18>  // ProfilePicGenerater$$Init
+  c69e64: 97fa49f0     	bl	0xafc624 <WriteZStream+0xa330>

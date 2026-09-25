@@ -1,0 +1,564 @@
+
+C:\Users\ZGAMESVN\Downloads\Soccer-Unity-Recovery\Extracted\lib\arm64-v8a\libil2cpp.so:	file format elf64-littleaarch64
+
+Disassembly of section il2cpp:
+
+0000000000b5d838 <__start_il2cpp>:
+ 153c610: f81b0ff9     	str	x25, [sp, #-0x50]!
+ 153c614: a9015ff8     	stp	x24, x23, [sp, #0x10]
+ 153c618: a90257f6     	stp	x22, x21, [sp, #0x20]
+ 153c61c: a9034ff4     	stp	x20, x19, [sp, #0x30]
+ 153c620: a9047bfd     	stp	x29, x30, [sp, #0x40]
+ 153c624: 910103fd     	add	x29, sp, #0x40
+ 153c628: d0010734     	adrp	x20, 0x3622000
+ 153c62c: 396a3288     	ldrb	w8, [x20, #0xa8c]
+ 153c630: aa0003f3     	mov	x19, x0
+ 153c634: 37000c68     	tbnz	w8, #0x0, 0x153c7c0 <__start_il2cpp+0x9def88>
+ 153c638: d000f7e0     	adrp	x0, 0x343a000
+ 153c63c: f9417400     	ldr	x0, [x0, #0x2e8]  // GOT 0x343a2e8 -> 0x34cba80: ActionAutoGraphicQualityHelper_TypeInfo
+ 153c640: 97d6ffc3     	bl	0xafc54c <WriteZStream+0xa258>
+ 153c644: b000f540     	adrp	x0, 0x33e5000
+ 153c648: f9423400     	ldr	x0, [x0, #0x468]  // GOT 0x33e5468 -> 0x34d7b18: Method$System.Action<bool>..ctor()
+ 153c64c: 97d6ffc0     	bl	0xafc54c <WriteZStream+0xa258>
+ 153c650: b000f660     	adrp	x0, 0x3409000
+ 153c654: f946e800     	ldr	x0, [x0, #0xdd0]  // GOT 0x3409dd0 -> 0x34c5570: System.Action<bool>_TypeInfo
+ 153c658: 97d6ffbd     	bl	0xafc54c <WriteZStream+0xa258>
+ 153c65c: 9000f760     	adrp	x0, 0x3428000
+ 153c660: f945c400     	ldr	x0, [x0, #0xb88]  // GOT 0x3428b88 -> 0x34d8330: Method$System.Action<string, Action<SpriteAtlas>>..ctor()
+ 153c664: 97d6ffba     	bl	0xafc54c <WriteZStream+0xa258>
+ 153c668: b000f4c0     	adrp	x0, 0x33d5000
+ 153c66c: f945e000     	ldr	x0, [x0, #0xbc0]  // GOT 0x33d5bc0 -> 0x34c59f8: System.Action<string, Action<SpriteAtlas>>_TypeInfo
+ 153c670: 97d6ffb7     	bl	0xafc54c <WriteZStream+0xa258>
+ 153c674: f000f5e0     	adrp	x0, 0x33fb000
+ 153c678: f9462800     	ldr	x0, [x0, #0xc50]  // GOT 0x33fbc50 -> 0x34cbd40: UnityEngine.AndroidJavaClass_TypeInfo
+ 153c67c: 97d6ffb4     	bl	0xafc54c <WriteZStream+0xa258>
+ 153c680: d000f7c0     	adrp	x0, 0x3436000
+ 153c684: f9451c00     	ldr	x0, [x0, #0xa38]  // GOT 0x3436a38 -> 0x34f7c30: Method$UnityEngine.AndroidJavaObject.GetStatic<AndroidJavaObject>()
+ 153c688: 97d6ffb1     	bl	0xafc54c <WriteZStream+0xa258>
+ 153c68c: f000f7a0     	adrp	x0, 0x3433000
+ 153c690: f942c000     	ldr	x0, [x0, #0x580]  // GOT 0x3433580 -> 0x34cc190: Common.AutoGraphicQuality_TypeInfo
+ 153c694: 97d6ffae     	bl	0xafc54c <WriteZStream+0xa258>
+ 153c698: d000f5e0     	adrp	x0, 0x33fa000
+ 153c69c: f943bc00     	ldr	x0, [x0, #0x778]  // GOT 0x33fa778 -> 0x34ccfb8: UnityEngine.Debug_TypeInfo
+ 153c6a0: 97d6ffab     	bl	0xafc54c <WriteZStream+0xa258>
+ 153c6a4: d000f760     	adrp	x0, 0x342a000
+ 153c6a8: f945c400     	ldr	x0, [x0, #0xb88]  // GOT 0x342ab88 -> 0x34e5a58: Method$System.Func<bool>..ctor()
+ 153c6ac: 97d6ffa8     	bl	0xafc54c <WriteZStream+0xa258>
+ 153c6b0: f000f800     	adrp	x0, 0x343f000
+ 153c6b4: f9412c00     	ldr	x0, [x0, #0x258]  // GOT 0x343f258 -> 0x34e6058: Method$System.Func<string>..ctor()
+ 153c6b8: 97d6ffa5     	bl	0xafc54c <WriteZStream+0xa258>
+ 153c6bc: b000f740     	adrp	x0, 0x3425000
+ 153c6c0: f940d400     	ldr	x0, [x0, #0x1a8]  // GOT 0x34251a8 -> 0x34c7450: System.Func<string>_TypeInfo
+ 153c6c4: 97d6ffa2     	bl	0xafc54c <WriteZStream+0xa258>
+ 153c6c8: b000f4c0     	adrp	x0, 0x33d5000
+ 153c6cc: f945c000     	ldr	x0, [x0, #0xb80]  // GOT 0x33d5b80 -> 0x34c6eb0: System.Func<bool>_TypeInfo
+ 153c6d0: 97d6ff9f     	bl	0xafc54c <WriteZStream+0xa258>
+ 153c6d4: d000f620     	adrp	x0, 0x3402000
+ 153c6d8: f9471800     	ldr	x0, [x0, #0xe30]  // GOT 0x3402e30 -> 0x34ce530: UnityEngine.ILogger_TypeInfo
+ 153c6dc: 97d6ff9c     	bl	0xafc54c <WriteZStream+0xa258>
+ 153c6e0: f000f540     	adrp	x0, 0x33e7000
+ 153c6e4: f9477400     	ldr	x0, [x0, #0xee8]  // GOT 0x33e7ee8 -> 0x34cb3b8: object[]_TypeInfo
+ 153c6e8: 97d6ff99     	bl	0xafc54c <WriteZStream+0xa258>
+ 153c6ec: f000f7a0     	adrp	x0, 0x3433000
+ 153c6f0: f940ac00     	ldr	x0, [x0, #0x158]  // GOT 0x3433158 -> 0x34d00c0: PlayerSetting_TypeInfo
+ 153c6f4: 97d6ff96     	bl	0xafc54c <WriteZStream+0xa258>
+ 153c6f8: f000f6c0     	adrp	x0, 0x3417000
+ 153c6fc: f940a400     	ldr	x0, [x0, #0x148]  // GOT 0x3417148 -> 0x34f4980: Method$Common.Singleton<ResourcesManager>.get_Instance()
+ 153c700: 97d6ff93     	bl	0xafc54c <WriteZStream+0xa258>
+ 153c704: 9000f4e0     	adrp	x0, 0x33d8000
+ 153c708: f942c800     	ldr	x0, [x0, #0x590]  // GOT 0x33d8590 -> 0x34caa30: Common.Singleton<ResourcesManager>_TypeInfo
+ 153c70c: 97d6ff90     	bl	0xafc54c <WriteZStream+0xa258>
+ 153c710: d000f780     	adrp	x0, 0x342e000
+ 153c714: f9408000     	ldr	x0, [x0, #0x100]  // GOT 0x342e100 -> 0x34d0d38: SL.SoccerLegend_TypeInfo
+ 153c718: 97d6ff8d     	bl	0xafc54c <WriteZStream+0xa258>
+ 153c71c: d000f660     	adrp	x0, 0x340a000
+ 153c720: f9401800     	ldr	x0, [x0, #0x30]  // GOT 0x340a030 -> 0x34d0d40: Common.SoccerMatchAI_TypeInfo
+ 153c724: 97d6ff8a     	bl	0xafc54c <WriteZStream+0xa258>
+ 153c728: b000f6e0     	adrp	x0, 0x3419000
+ 153c72c: f9466c00     	ldr	x0, [x0, #0xcd8]  // GOT 0x3419cd8 -> 0x34d0de8: UnityEngine.U2D.SpriteAtlasManager_TypeInfo
+ 153c730: 97d6ff87     	bl	0xafc54c <WriteZStream+0xa258>
+ 153c734: f000f820     	adrp	x0, 0x3443000
+ 153c738: f943b800     	ldr	x0, [x0, #0x770]  // GOT 0x3443770 -> 0x34d0ea0: StartGame_TypeInfo
+ 153c73c: 97d6ff84     	bl	0xafc54c <WriteZStream+0xa258>
+ 153c740: d000f800     	adrp	x0, 0x343e000
+ 153c744: f9422400     	ldr	x0, [x0, #0x448]  // GOT 0x343e448 -> 0x35155e8: Method$UI_Load.<>c.<Awake>b__15_0()
+ 153c748: 97d6ff81     	bl	0xafc54c <WriteZStream+0xa258>
+ 153c74c: 9000f5e0     	adrp	x0, 0x33f8000
+ 153c750: f9464c00     	ldr	x0, [x0, #0xc98]  // GOT 0x33f8c98 -> 0x35155f0: Method$UI_Load.<>c.<Awake>b__15_1()
+ 153c754: 97d6ff7e     	bl	0xafc54c <WriteZStream+0xa258>
+ 153c758: 9000f760     	adrp	x0, 0x3428000
+ 153c75c: f9412800     	ldr	x0, [x0, #0x250]  // GOT 0x3428250 -> 0x35155f8: Method$UI_Load.<>c.<Awake>b__15_3()
+ 153c760: 97d6ff7b     	bl	0xafc54c <WriteZStream+0xa258>
+ 153c764: d000f5c0     	adrp	x0, 0x33f6000
+ 153c768: f942c000     	ldr	x0, [x0, #0x580]  // GOT 0x33f6580 -> 0x34d6168: UI_Load.<>c_TypeInfo
+ 153c76c: 97d6ff78     	bl	0xafc54c <WriteZStream+0xa258>
+ 153c770: d000f580     	adrp	x0, 0x33ee000
+ 153c774: f9415400     	ldr	x0, [x0, #0x2a8]  // GOT 0x33ee2a8 -> 0x350df88: Method$UI_Load.GetEngineParameters()
+ 153c778: 97d6ff75     	bl	0xafc54c <WriteZStream+0xa258>
+ 153c77c: 9000f700     	adrp	x0, 0x341c000
+ 153c780: f9462c00     	ldr	x0, [x0, #0xc58]  // GOT 0x341cc58 -> 0x350df78: Method$UI_Load.<Awake>b__15_2()
+ 153c784: 97d6ff72     	bl	0xafc54c <WriteZStream+0xa258>
+ 153c788: b000f6a0     	adrp	x0, 0x3411000
+ 153c78c: f9470400     	ldr	x0, [x0, #0xe08]  // GOT 0x3411e08 -> 0x3531ed0: init
+ 153c790: 97d6ff6f     	bl	0xafc54c <WriteZStream+0xa258>
+ 153c794: d000f500     	adrp	x0, 0x33de000
+ 153c798: f941ac00     	ldr	x0, [x0, #0x358]  // GOT 0x33de358 -> 0x352e8e8: com.unity3d.player.UnityPlayer
+ 153c79c: 97d6ff6c     	bl	0xafc54c <WriteZStream+0xa258>
+ 153c7a0: b000f480     	adrp	x0, 0x33cd000
+ 153c7a4: f9447800     	ldr	x0, [x0, #0x8f0]  // GOT 0x33cd8f0 -> 0x352e8f0: com.utils.notch.NotchUtils
+ 153c7a8: 97d6ff69     	bl	0xafc54c <WriteZStream+0xa258>
+ 153c7ac: d000f600     	adrp	x0, 0x33fe000
+ 153c7b0: f944b800     	ldr	x0, [x0, #0x970]  // GOT 0x33fe970 -> 0x352f000: currentActivity
+ 153c7b4: 97d6ff66     	bl	0xafc54c <WriteZStream+0xa258>
+ 153c7b8: 320003e8     	orr	w8, wzr, #0x1
+ 153c7bc: 392a3288     	strb	w8, [x20, #0xa8c]
+ 153c7c0: 9000f4f8     	adrp	x24, 0x33d8000
+ 153c7c4: f942cb18     	ldr	x24, [x24, #0x590]  // GOT 0x33d8590 -> 0x34caa30: Common.Singleton<ResourcesManager>_TypeInfo
+ 153c7c8: f9400300     	ldr	x0, [x24]
+ 153c7cc: 3944cc08     	ldrb	w8, [x0, #0x133]
+ 153c7d0: 36100088     	tbz	w8, #0x2, 0x153c7e0 <__start_il2cpp+0x9defa8>
+ 153c7d4: b940e008     	ldr	w8, [x0, #0xe0]
+ 153c7d8: 35000048     	cbnz	w8, 0x153c7e0 <__start_il2cpp+0x9defa8>
+ 153c7dc: 97d6ff89     	bl	0xafc600 <WriteZStream+0xa30c>
+ 153c7e0: f000f6d9     	adrp	x25, 0x3417000
+ 153c7e4: f940a739     	ldr	x25, [x25, #0x148]  // GOT 0x3417148 -> 0x34f4980: Method$Common.Singleton<ResourcesManager>.get_Instance()
+ 153c7e8: f9400320     	ldr	x0, [x25]
+ 153c7ec: 9417cf5b     	bl	0x1b30558 <__start_il2cpp+0xfd2d20>  // Common.Singleton<ADMobSDK>$$get_Instance | Common.Singleton<AdmobImmersiveAD>$$get_Instance | Common.Singleton<AdsManager>$$get_Instance [shared generics]
+ 153c7f0: d000f5d7     	adrp	x23, 0x33f6000
+ 153c7f4: f942c2f7     	ldr	x23, [x23, #0x580]  // GOT 0x33f6580 -> 0x34d6168: UI_Load.<>c_TypeInfo
+ 153c7f8: aa0003f4     	mov	x20, x0
+ 153c7fc: f94002e8     	ldr	x8, [x23]
+ 153c800: 3944cd09     	ldrb	w9, [x8, #0x133]
+ 153c804: 361000c9     	tbz	w9, #0x2, 0x153c81c <__start_il2cpp+0x9defe4>
+ 153c808: b940e109     	ldr	w9, [x8, #0xe0]
+ 153c80c: 35000089     	cbnz	w9, 0x153c81c <__start_il2cpp+0x9defe4>
+ 153c810: aa0803e0     	mov	x0, x8
+ 153c814: 97d6ff7b     	bl	0xafc600 <WriteZStream+0xa30c>
+ 153c818: f94002e8     	ldr	x8, [x23]
+ 153c81c: f9405d09     	ldr	x9, [x8, #0xb8]
+ 153c820: f9400535     	ldr	x21, [x9, #0x8]
+ 153c824: b5000395     	cbnz	x21, 0x153c894 <__start_il2cpp+0x9df05c>
+ 153c828: 3944cd0a     	ldrb	w10, [x8, #0x133]
+ 153c82c: 361000ea     	tbz	w10, #0x2, 0x153c848 <__start_il2cpp+0x9df010>
+ 153c830: b940e10a     	ldr	w10, [x8, #0xe0]
+ 153c834: 350000aa     	cbnz	w10, 0x153c848 <__start_il2cpp+0x9df010>
+ 153c838: aa0803e0     	mov	x0, x8
+ 153c83c: 97d6ff71     	bl	0xafc600 <WriteZStream+0xa30c>
+ 153c840: f94002e8     	ldr	x8, [x23]
+ 153c844: f9405d09     	ldr	x9, [x8, #0xb8]
+ 153c848: b000f668     	adrp	x8, 0x3409000
+ 153c84c: f9400136     	ldr	x22, [x9]
+ 153c850: f946e908     	ldr	x8, [x8, #0xdd0]  // GOT 0x3409dd0 -> 0x34c5570: System.Action<bool>_TypeInfo
+ 153c854: f9400100     	ldr	x0, [x8]
+ 153c858: 97d6ff71     	bl	0xafc61c <WriteZStream+0xa328>
+ 153c85c: d000f808     	adrp	x8, 0x343e000
+ 153c860: b000f549     	adrp	x9, 0x33e5000
+ 153c864: f9422508     	ldr	x8, [x8, #0x448]  // GOT 0x343e448 -> 0x35155e8: Method$UI_Load.<>c.<Awake>b__15_0()
+ 153c868: f9423529     	ldr	x9, [x9, #0x468]  // GOT 0x33e5468 -> 0x34d7b18: Method$System.Action<bool>..ctor()
+ 153c86c: aa1603e1     	mov	x1, x22
+ 153c870: aa0003f5     	mov	x21, x0
+ 153c874: f9400102     	ldr	x2, [x8]
+ 153c878: f9400123     	ldr	x3, [x9]
+ 153c87c: 9402d02d     	bl	0x15f0930 <__start_il2cpp+0xa930f8>  // System.Action<bool>$$.ctor
+ 153c880: f94002e8     	ldr	x8, [x23]
+ 153c884: aa1503e1     	mov	x1, x21
+ 153c888: f9405d00     	ldr	x0, [x8, #0xb8]
+ 153c88c: f8008c15     	str	x21, [x0, #0x8]!
+ 153c890: 97d6ff16     	bl	0xafc4e8 <WriteZStream+0xa1f4>
+ 153c894: b40030d4     	cbz	x20, 0x153ceac <__start_il2cpp+0x9df674>
+ 153c898: aa1403e0     	mov	x0, x20
+ 153c89c: aa1503e1     	mov	x1, x21
+ 153c8a0: aa1f03e2     	mov	x2, xzr
+ 153c8a4: 97ee3668     	bl	0x10ca244 <__start_il2cpp+0x56ca0c>  // Common.ResourcesManager$$add_OnInitialized
+ 153c8a8: 52800d00     	mov	w0, #0x68               // =104
+ 153c8ac: aa1f03e1     	mov	x1, xzr
+ 153c8b0: 941a6c69     	bl	0x1bd7a54 <__start_il2cpp+0x107a21c>  // ScreenTimeTrackerFactory$$Create
+ 153c8b4: aa1303f4     	mov	x20, x19
+ 153c8b8: f8090e80     	str	x0, [x20, #0x90]!
+ 153c8bc: aa0003e1     	mov	x1, x0
+ 153c8c0: aa1403e0     	mov	x0, x20
+ 153c8c4: 97d6ff09     	bl	0xafc4e8 <WriteZStream+0xa1f4>
+ 153c8c8: f9400280     	ldr	x0, [x20]
+ 153c8cc: b4002f00     	cbz	x0, 0x153ceac <__start_il2cpp+0x9df674>
+ 153c8d0: aa1f03e1     	mov	x1, xzr
+ 153c8d4: 941a6b95     	bl	0x1bd7728 <__start_il2cpp+0x1079ef0>  // ScreenTimeTracker$$Start
+ 153c8d8: aa1303e0     	mov	x0, x19
+ 153c8dc: 97ffff2e     	bl	0x153c594 <__start_il2cpp+0x9ded5c>  // UI_Load$$fakeLoadingBar
+ 153c8e0: aa0003e1     	mov	x1, x0
+ 153c8e4: aa1303e0     	mov	x0, x19
+ 153c8e8: aa1f03e2     	mov	x2, xzr
+ 153c8ec: 9407168e     	bl	0x1702324 <__start_il2cpp+0xba4aec>  // UnityEngine.MonoBehaviour$$StartCoroutine
+ 153c8f0: d000f7e8     	adrp	x8, 0x343a000
+ 153c8f4: f9417508     	ldr	x8, [x8, #0x2e8]  // GOT 0x343a2e8 -> 0x34cba80: ActionAutoGraphicQualityHelper_TypeInfo
+ 153c8f8: f9400100     	ldr	x0, [x8]
+ 153c8fc: 97d6ff48     	bl	0xafc61c <WriteZStream+0xa328>
+ 153c900: aa1f03e1     	mov	x1, xzr
+ 153c904: aa0003f4     	mov	x20, x0
+ 153c908: 940977db     	bl	0x179a874 <__start_il2cpp+0xc3d03c>  // ActionAutoGraphicQualityHelper$$.ctor
+ 153c90c: f000f7b5     	adrp	x21, 0x3433000
+ 153c910: f942c2b5     	ldr	x21, [x21, #0x580]  // GOT 0x3433580 -> 0x34cc190: Common.AutoGraphicQuality_TypeInfo
+ 153c914: f94002a0     	ldr	x0, [x21]
+ 153c918: 3944cc08     	ldrb	w8, [x0, #0x133]
+ 153c91c: 36100088     	tbz	w8, #0x2, 0x153c92c <__start_il2cpp+0x9df0f4>
+ 153c920: b940e008     	ldr	w8, [x0, #0xe0]
+ 153c924: 35000048     	cbnz	w8, 0x153c92c <__start_il2cpp+0x9df0f4>
+ 153c928: 97d6ff36     	bl	0xafc600 <WriteZStream+0xa30c>
+ 153c92c: d0010736     	adrp	x22, 0x3622000
+ 153c930: 396ac6c8     	ldrb	w8, [x22, #0xab1]
+ 153c934: 350000c8     	cbnz	w8, 0x153c94c <__start_il2cpp+0x9df114>
+ 153c938: f000f7a0     	adrp	x0, 0x3433000
+ 153c93c: f942c000     	ldr	x0, [x0, #0x580]  // GOT 0x3433580 -> 0x34cc190: Common.AutoGraphicQuality_TypeInfo
+ 153c940: 97d6ff03     	bl	0xafc54c <WriteZStream+0xa258>
+ 153c944: 320003e8     	orr	w8, wzr, #0x1
+ 153c948: 392ac6c8     	strb	w8, [x22, #0xab1]
+ 153c94c: f94002a0     	ldr	x0, [x21]
+ 153c950: 3944cc08     	ldrb	w8, [x0, #0x133]
+ 153c954: 361000a8     	tbz	w8, #0x2, 0x153c968 <__start_il2cpp+0x9df130>
+ 153c958: b940e008     	ldr	w8, [x0, #0xe0]
+ 153c95c: 35000068     	cbnz	w8, 0x153c968 <__start_il2cpp+0x9df130>
+ 153c960: 97d6ff28     	bl	0xafc600 <WriteZStream+0xa30c>
+ 153c964: f94002a0     	ldr	x0, [x21]
+ 153c968: f9405c00     	ldr	x0, [x0, #0xb8]
+ 153c96c: aa1403e1     	mov	x1, x20
+ 153c970: f8008c14     	str	x20, [x0, #0x8]!
+ 153c974: 97d6fedd     	bl	0xafc4e8 <WriteZStream+0xa1f4>
+ 153c978: aa1f03e0     	mov	x0, xzr
+ 153c97c: 97f7b644     	bl	0x132a28c <__start_il2cpp+0x7cca54>  // Common.AutoGraphicQuality$$EstimateQualityLevel
+ 153c980: aa1f03e1     	mov	x1, xzr
+ 153c984: 2a0003f4     	mov	w20, w0
+ 153c988: 97f7b886     	bl	0x132aba0 <__start_il2cpp+0x7cd368>  // Common.AutoGraphicQuality$$SetQualityLevel
+ 153c98c: 7100069f     	cmp	w20, #0x1
+ 153c990: 540001eb     	b.lt	0x153c9cc <__start_il2cpp+0x9df194>
+ 153c994: d000f788     	adrp	x8, 0x342e000
+ 153c998: f9408108     	ldr	x8, [x8, #0x100]  // GOT 0x342e100 -> 0x34d0d38: SL.SoccerLegend_TypeInfo
+ 153c99c: f9400100     	ldr	x0, [x8]
+ 153c9a0: 3944cc08     	ldrb	w8, [x0, #0x133]
+ 153c9a4: 36100088     	tbz	w8, #0x2, 0x153c9b4 <__start_il2cpp+0x9df17c>
+ 153c9a8: b940e008     	ldr	w8, [x0, #0xe0]
+ 153c9ac: 35000048     	cbnz	w8, 0x153c9b4 <__start_il2cpp+0x9df17c>
+ 153c9b0: 97d6ff14     	bl	0xafc600 <WriteZStream+0xa30c>
+ 153c9b4: aa1f03e0     	mov	x0, xzr
+ 153c9b8: 97e94b61     	bl	0xf8f73c <__start_il2cpp+0x431f04>  // SL.SoccerLegend$$IsLowMemoryDevice
+ 153c9bc: 37000080     	tbnz	w0, #0x0, 0x153c9cc <__start_il2cpp+0x9df194>
+ 153c9c0: 2a1f03e0     	mov	w0, wzr
+ 153c9c4: aa1f03e1     	mov	x1, xzr
+ 153c9c8: 94073915     	bl	0x170ae1c <__start_il2cpp+0xbad5e4>  // UnityEngine.QualitySettings$$set_masterTextureLimit
+ 153c9cc: f94002e0     	ldr	x0, [x23]
+ 153c9d0: 3944cc08     	ldrb	w8, [x0, #0x133]
+ 153c9d4: 361000a8     	tbz	w8, #0x2, 0x153c9e8 <__start_il2cpp+0x9df1b0>
+ 153c9d8: b940e008     	ldr	w8, [x0, #0xe0]
+ 153c9dc: 35000068     	cbnz	w8, 0x153c9e8 <__start_il2cpp+0x9df1b0>
+ 153c9e0: 97d6ff08     	bl	0xafc600 <WriteZStream+0xa30c>
+ 153c9e4: f94002e0     	ldr	x0, [x23]
+ 153c9e8: f9405c08     	ldr	x8, [x0, #0xb8]
+ 153c9ec: f9400914     	ldr	x20, [x8, #0x10]
+ 153c9f0: b5000374     	cbnz	x20, 0x153ca5c <__start_il2cpp+0x9df224>
+ 153c9f4: 3944cc09     	ldrb	w9, [x0, #0x133]
+ 153c9f8: 361000c9     	tbz	w9, #0x2, 0x153ca10 <__start_il2cpp+0x9df1d8>
+ 153c9fc: b940e009     	ldr	w9, [x0, #0xe0]
+ 153ca00: 35000089     	cbnz	w9, 0x153ca10 <__start_il2cpp+0x9df1d8>
+ 153ca04: 97d6feff     	bl	0xafc600 <WriteZStream+0xa30c>
+ 153ca08: f94002e8     	ldr	x8, [x23]
+ 153ca0c: f9405d08     	ldr	x8, [x8, #0xb8]
+ 153ca10: f9400115     	ldr	x21, [x8]
+ 153ca14: b000f4c8     	adrp	x8, 0x33d5000
+ 153ca18: f945e108     	ldr	x8, [x8, #0xbc0]  // GOT 0x33d5bc0 -> 0x34c59f8: System.Action<string, Action<SpriteAtlas>>_TypeInfo
+ 153ca1c: f9400100     	ldr	x0, [x8]
+ 153ca20: 97d6feff     	bl	0xafc61c <WriteZStream+0xa328>
+ 153ca24: 9000f5e8     	adrp	x8, 0x33f8000
+ 153ca28: 9000f769     	adrp	x9, 0x3428000
+ 153ca2c: f9464d08     	ldr	x8, [x8, #0xc98]  // GOT 0x33f8c98 -> 0x35155f0: Method$UI_Load.<>c.<Awake>b__15_1()
+ 153ca30: f945c529     	ldr	x9, [x9, #0xb88]  // GOT 0x3428b88 -> 0x34d8330: Method$System.Action<string, Action<SpriteAtlas>>..ctor()
+ 153ca34: aa1503e1     	mov	x1, x21
+ 153ca38: aa0003f4     	mov	x20, x0
+ 153ca3c: f9400102     	ldr	x2, [x8]
+ 153ca40: f9400123     	ldr	x3, [x9]
+ 153ca44: 9403781e     	bl	0x161aabc <__start_il2cpp+0xabd284>  // System.Action<List<string>, FACupGroupManager.TeamConfigs>$$.ctor | System.Action<int[][], List<int>>$$.ctor | System.Action<AdManagerInterstitialAd, LoadAdError>$$.ctor [shared generics]
+ 153ca48: f94002e8     	ldr	x8, [x23]
+ 153ca4c: aa1403e1     	mov	x1, x20
+ 153ca50: f9405d00     	ldr	x0, [x8, #0xb8]
+ 153ca54: f8010c14     	str	x20, [x0, #0x10]!
+ 153ca58: 97d6fea4     	bl	0xafc4e8 <WriteZStream+0xa1f4>
+ 153ca5c: b000f6e8     	adrp	x8, 0x3419000
+ 153ca60: f9466d08     	ldr	x8, [x8, #0xcd8]  // GOT 0x3419cd8 -> 0x34d0de8: UnityEngine.U2D.SpriteAtlasManager_TypeInfo
+ 153ca64: f9400100     	ldr	x0, [x8]
+ 153ca68: 3944cc08     	ldrb	w8, [x0, #0x133]
+ 153ca6c: 36100088     	tbz	w8, #0x2, 0x153ca7c <__start_il2cpp+0x9df244>
+ 153ca70: b940e008     	ldr	w8, [x0, #0xe0]
+ 153ca74: 35000048     	cbnz	w8, 0x153ca7c <__start_il2cpp+0x9df244>
+ 153ca78: 97d6fee2     	bl	0xafc600 <WriteZStream+0xa30c>
+ 153ca7c: aa1403e0     	mov	x0, x20
+ 153ca80: aa1f03e1     	mov	x1, xzr
+ 153ca84: 94076f3c     	bl	0x1718774 <__start_il2cpp+0xbbaf3c>  // UnityEngine.U2D.SpriteAtlasManager$$add_atlasRequested
+ 153ca88: f9400300     	ldr	x0, [x24]
+ 153ca8c: 3944cc08     	ldrb	w8, [x0, #0x133]
+ 153ca90: 36100088     	tbz	w8, #0x2, 0x153caa0 <__start_il2cpp+0x9df268>
+ 153ca94: b940e008     	ldr	w8, [x0, #0xe0]
+ 153ca98: 35000048     	cbnz	w8, 0x153caa0 <__start_il2cpp+0x9df268>
+ 153ca9c: 97d6fed9     	bl	0xafc600 <WriteZStream+0xa30c>
+ 153caa0: f9400320     	ldr	x0, [x25]
+ 153caa4: 9417cead     	bl	0x1b30558 <__start_il2cpp+0xfd2d20>  // Common.Singleton<ADMobSDK>$$get_Instance | Common.Singleton<AdmobImmersiveAD>$$get_Instance | Common.Singleton<AdsManager>$$get_Instance [shared generics]
+ 153caa8: b000f668     	adrp	x8, 0x3409000
+ 153caac: f946e908     	ldr	x8, [x8, #0xdd0]  // GOT 0x3409dd0 -> 0x34c5570: System.Action<bool>_TypeInfo
+ 153cab0: aa0003f4     	mov	x20, x0
+ 153cab4: f9400108     	ldr	x8, [x8]
+ 153cab8: aa0803e0     	mov	x0, x8
+ 153cabc: 97d6fed8     	bl	0xafc61c <WriteZStream+0xa328>
+ 153cac0: 9000f708     	adrp	x8, 0x341c000
+ 153cac4: b000f549     	adrp	x9, 0x33e5000
+ 153cac8: f9462d08     	ldr	x8, [x8, #0xc58]  // GOT 0x341cc58 -> 0x350df78: Method$UI_Load.<Awake>b__15_2()
+ 153cacc: f9423529     	ldr	x9, [x9, #0x468]  // GOT 0x33e5468 -> 0x34d7b18: Method$System.Action<bool>..ctor()
+ 153cad0: aa1303e1     	mov	x1, x19
+ 153cad4: aa0003f5     	mov	x21, x0
+ 153cad8: f9400102     	ldr	x2, [x8]
+ 153cadc: f9400123     	ldr	x3, [x9]
+ 153cae0: 9402cf94     	bl	0x15f0930 <__start_il2cpp+0xa930f8>  // System.Action<bool>$$.ctor
+ 153cae4: b4001e54     	cbz	x20, 0x153ceac <__start_il2cpp+0x9df674>
+ 153cae8: aa1403e0     	mov	x0, x20
+ 153caec: aa1503e1     	mov	x1, x21
+ 153caf0: aa1f03e2     	mov	x2, xzr
+ 153caf4: 97ee35d4     	bl	0x10ca244 <__start_il2cpp+0x56ca0c>  // Common.ResourcesManager$$add_OnInitialized
+ 153caf8: f000f7b3     	adrp	x19, 0x3433000
+ 153cafc: f940ae73     	ldr	x19, [x19, #0x158]  // GOT 0x3433158 -> 0x34d00c0: PlayerSetting_TypeInfo
+ 153cb00: f9400260     	ldr	x0, [x19]
+ 153cb04: 3944cc08     	ldrb	w8, [x0, #0x133]
+ 153cb08: 36100088     	tbz	w8, #0x2, 0x153cb18 <__start_il2cpp+0x9df2e0>
+ 153cb0c: b940e008     	ldr	w8, [x0, #0xe0]
+ 153cb10: 35000048     	cbnz	w8, 0x153cb18 <__start_il2cpp+0x9df2e0>
+ 153cb14: 97d6febb     	bl	0xafc600 <WriteZStream+0xa30c>
+ 153cb18: f0010714     	adrp	x20, 0x361f000
+ 153cb1c: 395e3e88     	ldrb	w8, [x20, #0x78f]
+ 153cb20: 350000c8     	cbnz	w8, 0x153cb38 <__start_il2cpp+0x9df300>
+ 153cb24: f000f7a0     	adrp	x0, 0x3433000
+ 153cb28: f940ac00     	ldr	x0, [x0, #0x158]  // GOT 0x3433158 -> 0x34d00c0: PlayerSetting_TypeInfo
+ 153cb2c: 97d6fe88     	bl	0xafc54c <WriteZStream+0xa258>
+ 153cb30: 320003e8     	orr	w8, wzr, #0x1
+ 153cb34: 391e3e88     	strb	w8, [x20, #0x78f]
+ 153cb38: f9400260     	ldr	x0, [x19]
+ 153cb3c: 3944cc08     	ldrb	w8, [x0, #0x133]
+ 153cb40: 361000a8     	tbz	w8, #0x2, 0x153cb54 <__start_il2cpp+0x9df31c>
+ 153cb44: b940e008     	ldr	w8, [x0, #0xe0]
+ 153cb48: 35000068     	cbnz	w8, 0x153cb54 <__start_il2cpp+0x9df31c>
+ 153cb4c: 97d6fead     	bl	0xafc600 <WriteZStream+0xa30c>
+ 153cb50: f9400260     	ldr	x0, [x19]
+ 153cb54: f9405c08     	ldr	x8, [x0, #0xb8]
+ 153cb58: 3940b508     	ldrb	w8, [x8, #0x2d]
+ 153cb5c: 340000c8     	cbz	w8, 0x153cb74 <__start_il2cpp+0x9df33c>
+ 153cb60: aa1f03e0     	mov	x0, xzr
+ 153cb64: 97df4ee1     	bl	0xd106e8 <__start_il2cpp+0x1b2eb0>  // FLUserSetting.LocalDataBase$$get_Data
+ 153cb68: b4001a20     	cbz	x0, 0x153ceac <__start_il2cpp+0x9df674>
+ 153cb6c: 39410008     	ldrb	w8, [x0, #0x40]
+ 153cb70: 350006e8     	cbnz	w8, 0x153cc4c <__start_il2cpp+0x9df414>
+ 153cb74: d000f5f3     	adrp	x19, 0x33fa000
+ 153cb78: f943be73     	ldr	x19, [x19, #0x778]  // GOT 0x33fa778 -> 0x34ccfb8: UnityEngine.Debug_TypeInfo
+ 153cb7c: f9400260     	ldr	x0, [x19]
+ 153cb80: 3944cc08     	ldrb	w8, [x0, #0x133]
+ 153cb84: 36100088     	tbz	w8, #0x2, 0x153cb94 <__start_il2cpp+0x9df35c>
+ 153cb88: b940e008     	ldr	w8, [x0, #0xe0]
+ 153cb8c: 35000048     	cbnz	w8, 0x153cb94 <__start_il2cpp+0x9df35c>
+ 153cb90: 97d6fe9c     	bl	0xafc600 <WriteZStream+0xa30c>
+ 153cb94: b0010734     	adrp	x20, 0x3621000
+ 153cb98: 396f4288     	ldrb	w8, [x20, #0xbd0]
+ 153cb9c: 350000c8     	cbnz	w8, 0x153cbb4 <__start_il2cpp+0x9df37c>
+ 153cba0: d000f5e0     	adrp	x0, 0x33fa000
+ 153cba4: f943bc00     	ldr	x0, [x0, #0x778]  // GOT 0x33fa778 -> 0x34ccfb8: UnityEngine.Debug_TypeInfo
+ 153cba8: 97d6fe69     	bl	0xafc54c <WriteZStream+0xa258>
+ 153cbac: 320003e8     	orr	w8, wzr, #0x1
+ 153cbb0: 392f4288     	strb	w8, [x20, #0xbd0]
+ 153cbb4: f9400260     	ldr	x0, [x19]
+ 153cbb8: 3944cc08     	ldrb	w8, [x0, #0x133]
+ 153cbbc: 361000a8     	tbz	w8, #0x2, 0x153cbd0 <__start_il2cpp+0x9df398>
+ 153cbc0: b940e008     	ldr	w8, [x0, #0xe0]
+ 153cbc4: 35000068     	cbnz	w8, 0x153cbd0 <__start_il2cpp+0x9df398>
+ 153cbc8: 97d6fe8e     	bl	0xafc600 <WriteZStream+0xa30c>
+ 153cbcc: f9400260     	ldr	x0, [x19]
+ 153cbd0: f9405c08     	ldr	x8, [x0, #0xb8]
+ 153cbd4: f9400513     	ldr	x19, [x8, #0x8]
+ 153cbd8: b40016b3     	cbz	x19, 0x153ceac <__start_il2cpp+0x9df674>
+ 153cbdc: d000f62a     	adrp	x10, 0x3402000
+ 153cbe0: f9400268     	ldr	x8, [x19]
+ 153cbe4: f947194a     	ldr	x10, [x10, #0xe30]  // GOT 0x3402e30 -> 0x34ce530: UnityEngine.ILogger_TypeInfo
+ 153cbe8: 79425509     	ldrh	w9, [x8, #0x12a]
+ 153cbec: f9400141     	ldr	x1, [x10]
+ 153cbf0: b4000169     	cbz	x9, 0x153cc1c <__start_il2cpp+0x9df3e4>
+ 153cbf4: f940590b     	ldr	x11, [x8, #0xb0]
+ 153cbf8: aa1f03ea     	mov	x10, xzr
+ 153cbfc: 9100216b     	add	x11, x11, #0x8
+ 153cc00: f85f816c     	ldur	x12, [x11, #-0x8]
+ 153cc04: eb01019f     	cmp	x12, x1
+ 153cc08: 54000120     	b.eq	0x153cc2c <__start_il2cpp+0x9df3f4>
+ 153cc0c: 9100054a     	add	x10, x10, #0x1
+ 153cc10: eb09015f     	cmp	x10, x9
+ 153cc14: 9100416b     	add	x11, x11, #0x10
+ 153cc18: 54ffff43     	b.lo	0x153cc00 <__start_il2cpp+0x9df3c8>
+ 153cc1c: 321f03e2     	orr	w2, wzr, #0x2
+ 153cc20: aa1303e0     	mov	x0, x19
+ 153cc24: 97d55c77     	bl	0xa93e00 <DllCanUnloadNow+0x5270>
+ 153cc28: 14000005     	b	0x153cc3c <__start_il2cpp+0x9df404>
+ 153cc2c: b9400169     	ldr	w9, [x11]
+ 153cc30: 11000929     	add	w9, w9, #0x2
+ 153cc34: 8b29d108     	add	x8, x8, w9, sxtw #4
+ 153cc38: 9104e100     	add	x0, x8, #0x138
+ 153cc3c: a9400808     	ldp	x8, x2, [x0]
+ 153cc40: aa1303e0     	mov	x0, x19
+ 153cc44: 2a1f03e1     	mov	w1, wzr
+ 153cc48: d63f0100     	blr	x8
+ 153cc4c: f000f836     	adrp	x22, 0x3443000
+ 153cc50: f943bad6     	ldr	x22, [x22, #0x770]  // GOT 0x3443770 -> 0x34d0ea0: StartGame_TypeInfo
+ 153cc54: f94002c0     	ldr	x0, [x22]
+ 153cc58: 3944cc08     	ldrb	w8, [x0, #0x133]
+ 153cc5c: 361000a8     	tbz	w8, #0x2, 0x153cc70 <__start_il2cpp+0x9df438>
+ 153cc60: b940e008     	ldr	w8, [x0, #0xe0]
+ 153cc64: 35000068     	cbnz	w8, 0x153cc70 <__start_il2cpp+0x9df438>
+ 153cc68: 97d6fe66     	bl	0xafc600 <WriteZStream+0xa30c>
+ 153cc6c: f94002c0     	ldr	x0, [x22]
+ 153cc70: f9405c08     	ldr	x8, [x0, #0xb8]
+ 153cc74: 39401108     	ldrb	w8, [x8, #0x4]
+ 153cc78: 35000728     	cbnz	w8, 0x153cd5c <__start_il2cpp+0x9df524>
+ 153cc7c: f000f5f4     	adrp	x20, 0x33fb000
+ 153cc80: f9462a94     	ldr	x20, [x20, #0xc50]  // GOT 0x33fbc50 -> 0x34cbd40: UnityEngine.AndroidJavaClass_TypeInfo
+ 153cc84: f9400280     	ldr	x0, [x20]
+ 153cc88: 97d6fe65     	bl	0xafc61c <WriteZStream+0xa328>
+ 153cc8c: b000f488     	adrp	x8, 0x33cd000
+ 153cc90: f9447908     	ldr	x8, [x8, #0x8f0]  // GOT 0x33cd8f0 -> 0x352e8f0: com.utils.notch.NotchUtils
+ 153cc94: aa1f03e2     	mov	x2, xzr
+ 153cc98: aa0003f3     	mov	x19, x0
+ 153cc9c: f9400101     	ldr	x1, [x8]
+ 153cca0: 94455cc4     	bl	0x2693fb0 <__start_il2cpp+0x1b36778>  // UnityEngine.AndroidJavaClass$$.ctor
+ 153cca4: b40005d3     	cbz	x19, 0x153cd5c <__start_il2cpp+0x9df524>
+ 153cca8: f9400280     	ldr	x0, [x20]
+ 153ccac: 97d6fe5c     	bl	0xafc61c <WriteZStream+0xa328>
+ 153ccb0: d000f508     	adrp	x8, 0x33de000
+ 153ccb4: f941ad08     	ldr	x8, [x8, #0x358]  // GOT 0x33de358 -> 0x352e8e8: com.unity3d.player.UnityPlayer
+ 153ccb8: aa1f03e2     	mov	x2, xzr
+ 153ccbc: aa0003f4     	mov	x20, x0
+ 153ccc0: f9400101     	ldr	x1, [x8]
+ 153ccc4: 94455cbb     	bl	0x2693fb0 <__start_il2cpp+0x1b36778>  // UnityEngine.AndroidJavaClass$$.ctor
+ 153ccc8: b4000f34     	cbz	x20, 0x153ceac <__start_il2cpp+0x9df674>
+ 153cccc: d000f608     	adrp	x8, 0x33fe000
+ 153ccd0: d000f7c9     	adrp	x9, 0x3436000
+ 153ccd4: f944b908     	ldr	x8, [x8, #0x970]  // GOT 0x33fe970 -> 0x352f000: currentActivity
+ 153ccd8: f9451d29     	ldr	x9, [x9, #0xa38]  // GOT 0x3436a38 -> 0x34f7c30: Method$UnityEngine.AndroidJavaObject.GetStatic<AndroidJavaObject>()
+ 153ccdc: aa1403e0     	mov	x0, x20
+ 153cce0: f9400101     	ldr	x1, [x8]
+ 153cce4: f9400122     	ldr	x2, [x9]
+ 153cce8: 97dffbbe     	bl	0xd3bbe0 <__start_il2cpp+0x1de3a8>  // UnityEngine.AndroidJavaObject$$GetStatic<AndroidJavaObject> | UnityEngine.AndroidJavaObject$$GetStatic<object> | UnityEngine.AndroidJavaObject$$GetStatic<string>
+ 153ccec: f000f548     	adrp	x8, 0x33e7000
+ 153ccf0: f9477508     	ldr	x8, [x8, #0xee8]  // GOT 0x33e7ee8 -> 0x34cb3b8: object[]_TypeInfo
+ 153ccf4: aa0003f5     	mov	x21, x0
+ 153ccf8: 320003e1     	orr	w1, wzr, #0x1
+ 153ccfc: f9400108     	ldr	x8, [x8]
+ 153cd00: aa0803e0     	mov	x0, x8
+ 153cd04: 97d6fe18     	bl	0xafc564 <WriteZStream+0xa270>
+ 153cd08: b4000d20     	cbz	x0, 0x153ceac <__start_il2cpp+0x9df674>
+ 153cd0c: aa0003f4     	mov	x20, x0
+ 153cd10: b40000d5     	cbz	x21, 0x153cd28 <__start_il2cpp+0x9df4f0>
+ 153cd14: f9400288     	ldr	x8, [x20]
+ 153cd18: aa1503e0     	mov	x0, x21
+ 153cd1c: f9402101     	ldr	x1, [x8, #0x40]
+ 153cd20: 97d6fe3b     	bl	0xafc60c <WriteZStream+0xa318>
+ 153cd24: b4000cc0     	cbz	x0, 0x153cebc <__start_il2cpp+0x9df684>
+ 153cd28: b9401a88     	ldr	w8, [x20, #0x18]
+ 153cd2c: 34000c28     	cbz	w8, 0x153ceb0 <__start_il2cpp+0x9df678>
+ 153cd30: aa1403e0     	mov	x0, x20
+ 153cd34: f8020c15     	str	x21, [x0, #0x20]!
+ 153cd38: aa1503e1     	mov	x1, x21
+ 153cd3c: 97d6fdeb     	bl	0xafc4e8 <WriteZStream+0xa1f4>
+ 153cd40: b000f6a8     	adrp	x8, 0x3411000
+ 153cd44: f9470508     	ldr	x8, [x8, #0xe08]  // GOT 0x3411e08 -> 0x3531ed0: init
+ 153cd48: aa1303e0     	mov	x0, x19
+ 153cd4c: aa1403e2     	mov	x2, x20
+ 153cd50: aa1f03e3     	mov	x3, xzr
+ 153cd54: f9400101     	ldr	x1, [x8]
+ 153cd58: 94458590     	bl	0x269e398 <__start_il2cpp+0x1b40b60>  // UnityEngine.AndroidJavaObject$$CallStatic
+ 153cd5c: f94002c0     	ldr	x0, [x22]
+ 153cd60: 3944cc08     	ldrb	w8, [x0, #0x133]
+ 153cd64: 361000a8     	tbz	w8, #0x2, 0x153cd78 <__start_il2cpp+0x9df540>
+ 153cd68: b940e008     	ldr	w8, [x0, #0xe0]
+ 153cd6c: 35000068     	cbnz	w8, 0x153cd78 <__start_il2cpp+0x9df540>
+ 153cd70: 97d6fe24     	bl	0xafc600 <WriteZStream+0xa30c>
+ 153cd74: f94002c0     	ldr	x0, [x22]
+ 153cd78: f9405c08     	ldr	x8, [x0, #0xb8]
+ 153cd7c: 39401108     	ldrb	w8, [x8, #0x4]
+ 153cd80: 340000e8     	cbz	w8, 0x153cd9c <__start_il2cpp+0x9df564>
+ 153cd84: a9447bfd     	ldp	x29, x30, [sp, #0x40]
+ 153cd88: a9434ff4     	ldp	x20, x19, [sp, #0x30]
+ 153cd8c: a94257f6     	ldp	x22, x21, [sp, #0x20]
+ 153cd90: a9415ff8     	ldp	x24, x23, [sp, #0x10]
+ 153cd94: f84507f9     	ldr	x25, [sp], #0x50
+ 153cd98: d65f03c0     	ret
+ 153cd9c: f94002e0     	ldr	x0, [x23]
+ 153cda0: 3944cc08     	ldrb	w8, [x0, #0x133]
+ 153cda4: 361000a8     	tbz	w8, #0x2, 0x153cdb8 <__start_il2cpp+0x9df580>
+ 153cda8: b940e008     	ldr	w8, [x0, #0xe0]
+ 153cdac: 35000068     	cbnz	w8, 0x153cdb8 <__start_il2cpp+0x9df580>
+ 153cdb0: 97d6fe14     	bl	0xafc600 <WriteZStream+0xa30c>
+ 153cdb4: f94002e0     	ldr	x0, [x23]
+ 153cdb8: f9405c08     	ldr	x8, [x0, #0xb8]
+ 153cdbc: f9400d13     	ldr	x19, [x8, #0x18]
+ 153cdc0: b5000373     	cbnz	x19, 0x153ce2c <__start_il2cpp+0x9df5f4>
+ 153cdc4: 3944cc09     	ldrb	w9, [x0, #0x133]
+ 153cdc8: 361000c9     	tbz	w9, #0x2, 0x153cde0 <__start_il2cpp+0x9df5a8>
+ 153cdcc: b940e009     	ldr	w9, [x0, #0xe0]
+ 153cdd0: 35000089     	cbnz	w9, 0x153cde0 <__start_il2cpp+0x9df5a8>
+ 153cdd4: 97d6fe0b     	bl	0xafc600 <WriteZStream+0xa30c>
+ 153cdd8: f94002e8     	ldr	x8, [x23]
+ 153cddc: f9405d08     	ldr	x8, [x8, #0xb8]
+ 153cde0: f9400114     	ldr	x20, [x8]
+ 153cde4: b000f4c8     	adrp	x8, 0x33d5000
+ 153cde8: f945c108     	ldr	x8, [x8, #0xb80]  // GOT 0x33d5b80 -> 0x34c6eb0: System.Func<bool>_TypeInfo
+ 153cdec: f9400100     	ldr	x0, [x8]
+ 153cdf0: 97d6fe0b     	bl	0xafc61c <WriteZStream+0xa328>
+ 153cdf4: 9000f768     	adrp	x8, 0x3428000
+ 153cdf8: d000f769     	adrp	x9, 0x342a000
+ 153cdfc: f9412908     	ldr	x8, [x8, #0x250]  // GOT 0x3428250 -> 0x35155f8: Method$UI_Load.<>c.<Awake>b__15_3()
+ 153ce00: f945c529     	ldr	x9, [x9, #0xb88]  // GOT 0x342ab88 -> 0x34e5a58: Method$System.Func<bool>..ctor()
+ 153ce04: aa1403e1     	mov	x1, x20
+ 153ce08: aa0003f3     	mov	x19, x0
+ 153ce0c: f9400102     	ldr	x2, [x8]
+ 153ce10: f9400123     	ldr	x3, [x9]
+ 153ce14: 94150255     	bl	0x1a7d768 <__start_il2cpp+0xf1ff30>  // System.Func<bool>$$.ctor
+ 153ce18: f94002e8     	ldr	x8, [x23]
+ 153ce1c: aa1303e1     	mov	x1, x19
+ 153ce20: f9405d00     	ldr	x0, [x8, #0xb8]
+ 153ce24: f8018c13     	str	x19, [x0, #0x18]!
+ 153ce28: 97d6fdb0     	bl	0xafc4e8 <WriteZStream+0xa1f4>
+ 153ce2c: b000f748     	adrp	x8, 0x3425000
+ 153ce30: f940d508     	ldr	x8, [x8, #0x1a8]  // GOT 0x34251a8 -> 0x34c7450: System.Func<string>_TypeInfo
+ 153ce34: f9400100     	ldr	x0, [x8]
+ 153ce38: 97d6fdf9     	bl	0xafc61c <WriteZStream+0xa328>
+ 153ce3c: d000f588     	adrp	x8, 0x33ee000
+ 153ce40: f000f809     	adrp	x9, 0x343f000
+ 153ce44: f9415508     	ldr	x8, [x8, #0x2a8]  // GOT 0x33ee2a8 -> 0x350df88: Method$UI_Load.GetEngineParameters()
+ 153ce48: f9412d29     	ldr	x9, [x9, #0x258]  // GOT 0x343f258 -> 0x34e6058: Method$System.Func<string>..ctor()
+ 153ce4c: aa1f03e1     	mov	x1, xzr
+ 153ce50: aa0003f4     	mov	x20, x0
+ 153ce54: f9400102     	ldr	x2, [x8]
+ 153ce58: f9400123     	ldr	x3, [x9]
+ 153ce5c: 94150466     	bl	0x1a7dff4 <__start_il2cpp+0xf207bc>  // System.Func<List<TeamWeights>>$$.ctor | System.Func<List<FormationTool.UIRole>>$$.ctor | System.Func<PlayAsyncOperation<ConfirmationDialogResult, AssetDeliveryErrorCode>>$$.ctor [shared generics]
+ 153ce60: d000f668     	adrp	x8, 0x340a000
+ 153ce64: f9401908     	ldr	x8, [x8, #0x30]  // GOT 0x340a030 -> 0x34d0d40: Common.SoccerMatchAI_TypeInfo
+ 153ce68: f9400100     	ldr	x0, [x8]
+ 153ce6c: 3944cc08     	ldrb	w8, [x0, #0x133]
+ 153ce70: 36100088     	tbz	w8, #0x2, 0x153ce80 <__start_il2cpp+0x9df648>
+ 153ce74: b940e008     	ldr	w8, [x0, #0xe0]
+ 153ce78: 35000048     	cbnz	w8, 0x153ce80 <__start_il2cpp+0x9df648>
+ 153ce7c: 97d6fde1     	bl	0xafc600 <WriteZStream+0xa30c>
+ 153ce80: aa1303e2     	mov	x2, x19
+ 153ce84: aa1403e3     	mov	x3, x20
+ 153ce88: a9447bfd     	ldp	x29, x30, [sp, #0x40]
+ 153ce8c: a9434ff4     	ldp	x20, x19, [sp, #0x30]
+ 153ce90: a94257f6     	ldp	x22, x21, [sp, #0x20]
+ 153ce94: a9415ff8     	ldp	x24, x23, [sp, #0x10]
+ 153ce98: aa1f03e0     	mov	x0, xzr
+ 153ce9c: aa1f03e1     	mov	x1, xzr
+ 153cea0: aa1f03e4     	mov	x4, xzr
+ 153cea4: f84507f9     	ldr	x25, [sp], #0x50
+ 153cea8: 17e94f3c     	b	0xf90b98 <__start_il2cpp+0x433360>  // Common.SoccerMatchAI$$StartEngine
+ 153ceac: 97d6fdde     	bl	0xafc624 <WriteZStream+0xa330>
+ 153ceb0: 97d6fde8     	bl	0xafc650 <WriteZStream+0xa35c>
+ 153ceb4: aa1f03e1     	mov	x1, xzr
+ 153ceb8: 97d6fdce     	bl	0xafc5f0 <WriteZStream+0xa2fc>
+ 153cebc: 97d6fde2     	bl	0xafc644 <WriteZStream+0xa350>
+ 153cec0: aa1f03e1     	mov	x1, xzr
+ 153cec4: 97d6fdcb     	bl	0xafc5f0 <WriteZStream+0xa2fc>

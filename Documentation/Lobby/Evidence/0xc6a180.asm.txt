@@ -1,0 +1,22 @@
+
+C:\Users\ZGAMESVN\Downloads\Soccer-Unity-Recovery\Extracted\lib\arm64-v8a\libil2cpp.so:	file format elf64-littleaarch64
+
+Disassembly of section il2cpp:
+
+0000000000b5d838 <__start_il2cpp>:
+  c6a180: f81e0ff3     	str	x19, [sp, #-0x20]!
+  c6a184: a9017bfd     	stp	x29, x30, [sp, #0x10]
+  c6a188: 910043fd     	add	x29, sp, #0x10
+  c6a18c: f0013bc0     	adrp	x0, 0x33e5000
+  c6a190: f947c800     	ldr	x0, [x0, #0xf90]  // GOT 0x33e5f90 -> 0x34cf9a8: System.NotSupportedException_TypeInfo
+  c6a194: 97fa48ef     	bl	0xafc550 <WriteZStream+0xa25c>
+  c6a198: 97fa4921     	bl	0xafc61c <WriteZStream+0xa328>
+  c6a19c: aa1f03e1     	mov	x1, xzr
+  c6a1a0: aa0003f3     	mov	x19, x0
+  c6a1a4: 944b3221     	bl	0x1f36a28 <__start_il2cpp+0x13d91f0>  // System.NotSupportedException$$.ctor
+  c6a1a8: 90013c80     	adrp	x0, 0x33fa000
+  c6a1ac: f942f400     	ldr	x0, [x0, #0x5e8]  // GOT 0x33fa5e8 -> 0x3515610: Method$UI_Load.<WaitSoundBundleReadyAndPlayBgm>d__16.System.Collections.IEnumerator.Reset()
+  c6a1b0: 97fa48e8     	bl	0xafc550 <WriteZStream+0xa25c>
+  c6a1b4: aa0003e1     	mov	x1, x0
+  c6a1b8: aa1303e0     	mov	x0, x19
+  c6a1bc: 97fa490d     	bl	0xafc5f0 <WriteZStream+0xa2fc>

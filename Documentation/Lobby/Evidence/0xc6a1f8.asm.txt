@@ -1,0 +1,104 @@
+
+C:\Users\ZGAMESVN\Downloads\Soccer-Unity-Recovery\Extracted\lib\arm64-v8a\libil2cpp.so:	file format elf64-littleaarch64
+
+Disassembly of section il2cpp:
+
+0000000000b5d838 <__start_il2cpp>:
+  c6a1f8: f81d0ff5     	str	x21, [sp, #-0x30]!
+  c6a1fc: a9014ff4     	stp	x20, x19, [sp, #0x10]
+  c6a200: a9027bfd     	stp	x29, x30, [sp, #0x20]
+  c6a204: 910083fd     	add	x29, sp, #0x20
+  c6a208: b0014db4     	adrp	x20, 0x361f000
+  c6a20c: 39433288     	ldrb	w8, [x20, #0xcc]
+  c6a210: aa0003f3     	mov	x19, x0
+  c6a214: 370000c8     	tbnz	w8, #0x0, 0xc6a22c <__start_il2cpp+0x10c9f4>
+  c6a218: b0013be0     	adrp	x0, 0x33e7000
+  c6a21c: f941a800     	ldr	x0, [x0, #0x350]  // GOT 0x33e7350 -> 0x34d1e20: UnityEngine.WaitForFixedUpdate_TypeInfo
+  c6a220: 97fa48cb     	bl	0xafc54c <WriteZStream+0xa258>
+  c6a224: 320003e8     	orr	w8, wzr, #0x1
+  c6a228: 39033288     	strb	w8, [x20, #0xcc]
+  c6a22c: b9401268     	ldr	w8, [x19, #0x10]
+  c6a230: f9401275     	ldr	x21, [x19, #0x20]
+  c6a234: 7100051f     	cmp	w8, #0x1
+  c6a238: 540001c0     	b.eq	0xc6a270 <__start_il2cpp+0x10ca38>
+  c6a23c: 350007a8     	cbnz	w8, 0xc6a330 <__start_il2cpp+0x10caf8>
+  c6a240: 12800008     	mov	w8, #-0x1               // =-1
+  c6a244: b9001268     	str	w8, [x19, #0x10]
+  c6a248: b40009b5     	cbz	x21, 0xc6a37c <__start_il2cpp+0x10cb44>
+  c6a24c: f9400ea0     	ldr	x0, [x21, #0x18]
+  c6a250: b4000960     	cbz	x0, 0xc6a37c <__start_il2cpp+0x10cb44>
+  c6a254: f9400008     	ldr	x8, [x0]
+  c6a258: f9421509     	ldr	x9, [x8, #0x428]
+  c6a25c: f9421901     	ldr	x1, [x8, #0x430]
+  c6a260: f000dac8     	adrp	x8, 0x27c5000
+  c6a264: bd40e900     	ldr	s0, [x8, #0xe8]
+  c6a268: d63f0120     	blr	x9
+  c6a26c: 1400002f     	b	0xc6a328 <__start_il2cpp+0x10caf0>
+  c6a270: 12800008     	mov	w8, #-0x1               // =-1
+  c6a274: b9001268     	str	w8, [x19, #0x10]
+  c6a278: b4000835     	cbz	x21, 0xc6a37c <__start_il2cpp+0x10cb44>
+  c6a27c: f9400eb4     	ldr	x20, [x21, #0x18]
+  c6a280: b40007f4     	cbz	x20, 0xc6a37c <__start_il2cpp+0x10cb44>
+  c6a284: f9400288     	ldr	x8, [x20]
+  c6a288: aa1403e0     	mov	x0, x20
+  c6a28c: f9420d09     	ldr	x9, [x8, #0x418]
+  c6a290: f9421101     	ldr	x1, [x8, #0x420]
+  c6a294: d63f0120     	blr	x9
+  c6a298: f9400288     	ldr	x8, [x20]
+  c6a29c: f000dac9     	adrp	x9, 0x27c5000
+  c6a2a0: bd40fd21     	ldr	s1, [x9, #0xfc]
+  c6a2a4: aa1403e0     	mov	x0, x20
+  c6a2a8: f9421509     	ldr	x9, [x8, #0x428]
+  c6a2ac: f9421901     	ldr	x1, [x8, #0x430]
+  c6a2b0: 1e212800     	fadd	s0, s0, s1
+  c6a2b4: d63f0120     	blr	x9
+  c6a2b8: f9400ea0     	ldr	x0, [x21, #0x18]
+  c6a2bc: b4000600     	cbz	x0, 0xc6a37c <__start_il2cpp+0x10cb44>
+  c6a2c0: f9400008     	ldr	x8, [x0]
+  c6a2c4: f9420d09     	ldr	x9, [x8, #0x418]
+  c6a2c8: f9421101     	ldr	x1, [x8, #0x420]
+  c6a2cc: d63f0120     	blr	x9
+  c6a2d0: f000dac8     	adrp	x8, 0x27c5000
+  c6a2d4: fd408d01     	ldr	d1, [x8, #0x118]
+  c6a2d8: 1e22c000     	fcvt	d0, s0
+  c6a2dc: 1e612000     	fcmp	d0, d1
+  c6a2e0: 5400024d     	b.le	0xc6a328 <__start_il2cpp+0x10caf0>
+  c6a2e4: f9400ea0     	ldr	x0, [x21, #0x18]
+  c6a2e8: b40004a0     	cbz	x0, 0xc6a37c <__start_il2cpp+0x10cb44>
+  c6a2ec: f9400008     	ldr	x8, [x0]
+  c6a2f0: f9420d09     	ldr	x9, [x8, #0x418]
+  c6a2f4: f9421101     	ldr	x1, [x8, #0x420]
+  c6a2f8: d63f0120     	blr	x9
+  c6a2fc: 1e2e1001     	fmov	s1, #1.00000000
+  c6a300: 1e212000     	fcmp	s0, s1
+  c6a304: 54000125     	b.pl	0xc6a328 <__start_il2cpp+0x10caf0>
+  c6a308: f9400ea0     	ldr	x0, [x21, #0x18]
+  c6a30c: b4000380     	cbz	x0, 0xc6a37c <__start_il2cpp+0x10cb44>
+  c6a310: f9400008     	ldr	x8, [x0]
+  c6a314: f9421509     	ldr	x9, [x8, #0x428]
+  c6a318: f9421901     	ldr	x1, [x8, #0x430]
+  c6a31c: d000dac8     	adrp	x8, 0x27c4000
+  c6a320: bd4a3d00     	ldr	s0, [x8, #0xa3c]
+  c6a324: 17ffffd1     	b	0xc6a268 <__start_il2cpp+0x10ca30>
+  c6a328: 3940aaa8     	ldrb	w8, [x21, #0x2a]
+  c6a32c: 34000068     	cbz	w8, 0xc6a338 <__start_il2cpp+0x10cb00>
+  c6a330: 2a1f03e0     	mov	w0, wzr
+  c6a334: 1400000e     	b	0xc6a36c <__start_il2cpp+0x10cb34>
+  c6a338: b0013be8     	adrp	x8, 0x33e7000
+  c6a33c: f941a908     	ldr	x8, [x8, #0x350]  // GOT 0x33e7350 -> 0x34d1e20: UnityEngine.WaitForFixedUpdate_TypeInfo
+  c6a340: f9400100     	ldr	x0, [x8]
+  c6a344: 97fa48b6     	bl	0xafc61c <WriteZStream+0xa328>
+  c6a348: aa1f03e1     	mov	x1, xzr
+  c6a34c: aa0003f4     	mov	x20, x0
+  c6a350: 9457996a     	bl	0x22508f8 <__start_il2cpp+0x16f30c0>  // UnityEngine.WaitForFixedUpdate$$.ctor
+  c6a354: f8018e74     	str	x20, [x19, #0x18]!
+  c6a358: aa1303e0     	mov	x0, x19
+  c6a35c: aa1403e1     	mov	x1, x20
+  c6a360: 97fa4862     	bl	0xafc4e8 <WriteZStream+0xa1f4>
+  c6a364: 320003e0     	orr	w0, wzr, #0x1
+  c6a368: b81f8260     	stur	w0, [x19, #-0x8]
+  c6a36c: a9427bfd     	ldp	x29, x30, [sp, #0x20]
+  c6a370: a9414ff4     	ldp	x20, x19, [sp, #0x10]
+  c6a374: f84307f5     	ldr	x21, [sp], #0x30
+  c6a378: d65f03c0     	ret
+  c6a37c: 97fa48aa     	bl	0xafc624 <WriteZStream+0xa330>

@@ -1,0 +1,111 @@
+
+C:\Users\ZGAMESVN\Downloads\Soccer-Unity-Recovery\Extracted\lib\arm64-v8a\libil2cpp.so:	file format elf64-littleaarch64
+
+Disassembly of section il2cpp:
+
+0000000000b5d838 <__start_il2cpp>:
+ 10d7ce8: f81e0ff3     	str	x19, [sp, #-0x20]!
+ 10d7cec: a9017bfd     	stp	x29, x30, [sp, #0x10]
+ 10d7cf0: 910043fd     	add	x29, sp, #0x10
+ 10d7cf4: b0012a53     	adrp	x19, 0x3620000
+ 10d7cf8: 397ca668     	ldrb	w8, [x19, #0xf29]
+ 10d7cfc: 37000428     	tbnz	w8, #0x0, 0x10d7d80 <__start_il2cpp+0x57a548>
+ 10d7d00: 900118e0     	adrp	x0, 0x33f3000
+ 10d7d04: f944c800     	ldr	x0, [x0, #0x990]  // GOT 0x33f3990 -> 0x34d08f8: ScenePath_TypeInfo
+ 10d7d08: 97e89211     	bl	0xafc54c <WriteZStream+0xa258>
+ 10d7d0c: b00118e0     	adrp	x0, 0x33f4000
+ 10d7d10: f9467c00     	ldr	x0, [x0, #0xcf8]  // GOT 0x33f4cf8 -> 0x3523778: Models/select_role/select_role
+ 10d7d14: 97e8920e     	bl	0xafc54c <WriteZStream+0xa258>
+ 10d7d18: 90011b40     	adrp	x0, 0x343f000
+ 10d7d1c: f9445000     	ldr	x0, [x0, #0x8a0]  // GOT 0x343f8a0 -> 0x35287d0: Timeline/prize/prize
+ 10d7d20: 97e8920b     	bl	0xafc54c <WriteZStream+0xa258>
+ 10d7d24: f0011880     	adrp	x0, 0x33ea000
+ 10d7d28: f941ac00     	ldr	x0, [x0, #0x358]  // GOT 0x33ea358 -> 0x3526538: Scenes/UI/GenProfilePic
+ 10d7d2c: 97e89208     	bl	0xafc54c <WriteZStream+0xa258>
+ 10d7d30: f0011940     	adrp	x0, 0x3402000
+ 10d7d34: f9445800     	ldr	x0, [x0, #0x8b0]  // GOT 0x34028b0 -> 0x3526550: Scenes/UI/Lobby
+ 10d7d38: 97e89205     	bl	0xafc54c <WriteZStream+0xa258>
+ 10d7d3c: d00117a0     	adrp	x0, 0x33cd000
+ 10d7d40: f943a800     	ldr	x0, [x0, #0x750]  // GOT 0x33cd750 -> 0x35362c8: stadium_demo/stadium_timeline
+ 10d7d44: 97e89202     	bl	0xafc54c <WriteZStream+0xa258>
+ 10d7d48: 90011b20     	adrp	x0, 0x343b000
+ 10d7d4c: f9430800     	ldr	x0, [x0, #0x610]  // GOT 0x343b610 -> 0x35287c8: Timeline/contract_renewal/contract_renewal
+ 10d7d50: 97e891ff     	bl	0xafc54c <WriteZStream+0xa258>
+ 10d7d54: f00118e0     	adrp	x0, 0x33f6000
+ 10d7d58: f941b800     	ldr	x0, [x0, #0x370]  // GOT 0x33f6370 -> 0x3526540: Scenes/UI/GenTrophyPic
+ 10d7d5c: 97e891fc     	bl	0xafc54c <WriteZStream+0xa258>
+ 10d7d60: b0011a00     	adrp	x0, 0x3418000
+ 10d7d64: f9429000     	ldr	x0, [x0, #0x520]  // GOT 0x3418520 -> 0x35287d8: Timeline/transfer_cloth/transfer_cloth
+ 10d7d68: 97e891f9     	bl	0xafc54c <WriteZStream+0xa258>
+ 10d7d6c: d0011a00     	adrp	x0, 0x3419000
+ 10d7d70: f9425800     	ldr	x0, [x0, #0x4b0]  // GOT 0x34194b0 -> 0x3526530: Scenes/TrophyRoom/TrophyRoom
+ 10d7d74: 97e891f6     	bl	0xafc54c <WriteZStream+0xa258>
+ 10d7d78: 320003e8     	orr	w8, wzr, #0x1
+ 10d7d7c: 393ca668     	strb	w8, [x19, #0xf29]
+ 10d7d80: 900118f3     	adrp	x19, 0x33f3000
+ 10d7d84: f944ca73     	ldr	x19, [x19, #0x990]  // GOT 0x33f3990 -> 0x34d08f8: ScenePath_TypeInfo
+ 10d7d88: f0011949     	adrp	x9, 0x3402000
+ 10d7d8c: f9400268     	ldr	x8, [x19]
+ 10d7d90: f9445929     	ldr	x9, [x9, #0x8b0]  // GOT 0x34028b0 -> 0x3526550: Scenes/UI/Lobby
+ 10d7d94: f9405d00     	ldr	x0, [x8, #0xb8]
+ 10d7d98: f9400121     	ldr	x1, [x9]
+ 10d7d9c: f9000001     	str	x1, [x0]
+ 10d7da0: 97e891d2     	bl	0xafc4e8 <WriteZStream+0xa1f4>
+ 10d7da4: f0011889     	adrp	x9, 0x33ea000
+ 10d7da8: f9400268     	ldr	x8, [x19]
+ 10d7dac: f941ad29     	ldr	x9, [x9, #0x358]  // GOT 0x33ea358 -> 0x3526538: Scenes/UI/GenProfilePic
+ 10d7db0: f9405d00     	ldr	x0, [x8, #0xb8]
+ 10d7db4: f9400121     	ldr	x1, [x9]
+ 10d7db8: f8008c01     	str	x1, [x0, #0x8]!
+ 10d7dbc: 97e891cb     	bl	0xafc4e8 <WriteZStream+0xa1f4>
+ 10d7dc0: d0011a09     	adrp	x9, 0x3419000
+ 10d7dc4: f9400268     	ldr	x8, [x19]
+ 10d7dc8: f9425929     	ldr	x9, [x9, #0x4b0]  // GOT 0x34194b0 -> 0x3526530: Scenes/TrophyRoom/TrophyRoom
+ 10d7dcc: f9405d00     	ldr	x0, [x8, #0xb8]
+ 10d7dd0: f9400121     	ldr	x1, [x9]
+ 10d7dd4: f8010c01     	str	x1, [x0, #0x10]!
+ 10d7dd8: 97e891c4     	bl	0xafc4e8 <WriteZStream+0xa1f4>
+ 10d7ddc: f00118e9     	adrp	x9, 0x33f6000
+ 10d7de0: f9400268     	ldr	x8, [x19]
+ 10d7de4: f941b929     	ldr	x9, [x9, #0x370]  // GOT 0x33f6370 -> 0x3526540: Scenes/UI/GenTrophyPic
+ 10d7de8: f9405d00     	ldr	x0, [x8, #0xb8]
+ 10d7dec: f9400121     	ldr	x1, [x9]
+ 10d7df0: f8018c01     	str	x1, [x0, #0x18]!
+ 10d7df4: 97e891bd     	bl	0xafc4e8 <WriteZStream+0xa1f4>
+ 10d7df8: 90011b49     	adrp	x9, 0x343f000
+ 10d7dfc: f9400268     	ldr	x8, [x19]
+ 10d7e00: f9445129     	ldr	x9, [x9, #0x8a0]  // GOT 0x343f8a0 -> 0x35287d0: Timeline/prize/prize
+ 10d7e04: f9405d00     	ldr	x0, [x8, #0xb8]
+ 10d7e08: f9400121     	ldr	x1, [x9]
+ 10d7e0c: f8020c01     	str	x1, [x0, #0x20]!
+ 10d7e10: 97e891b6     	bl	0xafc4e8 <WriteZStream+0xa1f4>
+ 10d7e14: d00117a9     	adrp	x9, 0x33cd000
+ 10d7e18: f9400268     	ldr	x8, [x19]
+ 10d7e1c: f943a929     	ldr	x9, [x9, #0x750]  // GOT 0x33cd750 -> 0x35362c8: stadium_demo/stadium_timeline
+ 10d7e20: f9405d00     	ldr	x0, [x8, #0xb8]
+ 10d7e24: f9400121     	ldr	x1, [x9]
+ 10d7e28: f8028c01     	str	x1, [x0, #0x28]!
+ 10d7e2c: 97e891af     	bl	0xafc4e8 <WriteZStream+0xa1f4>
+ 10d7e30: b0011a09     	adrp	x9, 0x3418000
+ 10d7e34: f9400268     	ldr	x8, [x19]
+ 10d7e38: f9429129     	ldr	x9, [x9, #0x520]  // GOT 0x3418520 -> 0x35287d8: Timeline/transfer_cloth/transfer_cloth
+ 10d7e3c: f9405d00     	ldr	x0, [x8, #0xb8]
+ 10d7e40: f9400121     	ldr	x1, [x9]
+ 10d7e44: f8030c01     	str	x1, [x0, #0x30]!
+ 10d7e48: 97e891a8     	bl	0xafc4e8 <WriteZStream+0xa1f4>
+ 10d7e4c: 90011b29     	adrp	x9, 0x343b000
+ 10d7e50: f9400268     	ldr	x8, [x19]
+ 10d7e54: f9430929     	ldr	x9, [x9, #0x610]  // GOT 0x343b610 -> 0x35287c8: Timeline/contract_renewal/contract_renewal
+ 10d7e58: f9405d00     	ldr	x0, [x8, #0xb8]
+ 10d7e5c: f9400121     	ldr	x1, [x9]
+ 10d7e60: f8038c01     	str	x1, [x0, #0x38]!
+ 10d7e64: 97e891a1     	bl	0xafc4e8 <WriteZStream+0xa1f4>
+ 10d7e68: b00118e9     	adrp	x9, 0x33f4000
+ 10d7e6c: f9400268     	ldr	x8, [x19]
+ 10d7e70: f9467d29     	ldr	x9, [x9, #0xcf8]  // GOT 0x33f4cf8 -> 0x3523778: Models/select_role/select_role
+ 10d7e74: f9405d00     	ldr	x0, [x8, #0xb8]
+ 10d7e78: f9400121     	ldr	x1, [x9]
+ 10d7e7c: f8040c01     	str	x1, [x0, #0x40]!
+ 10d7e80: a9417bfd     	ldp	x29, x30, [sp, #0x10]
+ 10d7e84: f84207f3     	ldr	x19, [sp], #0x20
+ 10d7e88: 17e89198     	b	0xafc4e8 <WriteZStream+0xa1f4>

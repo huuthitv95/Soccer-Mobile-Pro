@@ -1,0 +1,202 @@
+
+C:\Users\ZGAMESVN\Downloads\Soccer-Unity-Recovery\Extracted\lib\arm64-v8a\libil2cpp.so:	file format elf64-littleaarch64
+
+Disassembly of section il2cpp:
+
+0000000000b5d838 <__start_il2cpp>:
+  d1450c: a9bd57f6     	stp	x22, x21, [sp, #-0x30]!
+  d14510: a9014ff4     	stp	x20, x19, [sp, #0x10]
+  d14514: a9027bfd     	stp	x29, x30, [sp, #0x20]
+  d14518: 910083fd     	add	x29, sp, #0x20
+  d1451c: f0014856     	adrp	x22, 0x361f000
+  d14520: 3956e2c8     	ldrb	w8, [x22, #0x5b8]
+  d14524: 2a0203f5     	mov	w21, w2
+  d14528: aa0103f4     	mov	x20, x1
+  d1452c: aa0003f3     	mov	x19, x0
+  d14530: 37000428     	tbnz	w8, #0x0, 0xd145b4 <__start_il2cpp+0x1b6d7c>
+  d14534: 900136c0     	adrp	x0, 0x33ec000
+  d14538: f9466800     	ldr	x0, [x0, #0xcd0]  // GOT 0x33eccd0 -> 0x3503328: Method$UnityEngine.Component.GetComponent<Animator>()
+  d1453c: 97f7a004     	bl	0xafc54c <WriteZStream+0xa258>
+  d14540: b00135e0     	adrp	x0, 0x33d1000
+  d14544: f9438400     	ldr	x0, [x0, #0x708]  // GOT 0x33d1708 -> 0x35037b8: Method$UnityEngine.Component.GetComponent<UIShiny>()
+  d14548: 97f7a001     	bl	0xafc54c <WriteZStream+0xa258>
+  d1454c: b00138a0     	adrp	x0, 0x3429000
+  d14550: f9435800     	ldr	x0, [x0, #0x6b0]  // GOT 0x34296b0 -> 0x3509870: Method$MainView.OpenFriendlyMatch()
+  d14554: 97f79ffe     	bl	0xafc54c <WriteZStream+0xa258>
+  d14558: 90013720     	adrp	x0, 0x33f8000
+  d1455c: f943c000     	ldr	x0, [x0, #0x780]  // GOT 0x33f8780 -> 0x3509878: Method$MainView.OpenIapStore()
+  d14560: 97f79ffb     	bl	0xafc54c <WriteZStream+0xa258>
+  d14564: f0013920     	adrp	x0, 0x343b000
+  d14568: f941d400     	ldr	x0, [x0, #0x3a8]  // GOT 0x343b3a8 -> 0x3509880: Method$MainView.OpenMasterLeague()
+  d1456c: 97f79ff8     	bl	0xafc54c <WriteZStream+0xa258>
+  d14570: b00138c0     	adrp	x0, 0x342d000
+  d14574: f9460000     	ldr	x0, [x0, #0xc00]  // GOT 0x342dc00 -> 0x3509888: Method$MainView.OpenPlayerCareer()
+  d14578: 97f79ff5     	bl	0xafc54c <WriteZStream+0xa258>
+  d1457c: f00135c0     	adrp	x0, 0x33cf000
+  d14580: f9416000     	ldr	x0, [x0, #0x2c0]  // GOT 0x33cf2c0 -> 0x3509898: Method$MainView.OpenTraining()
+  d14584: 97f79ff2     	bl	0xafc54c <WriteZStream+0xa258>
+  d14588: d00138c0     	adrp	x0, 0x342e000
+  d1458c: f9420400     	ldr	x0, [x0, #0x408]  // GOT 0x342e408 -> 0x34d1ad0: UnityEngine.Events.UnityAction_TypeInfo
+  d14590: 97f79fef     	bl	0xafc54c <WriteZStream+0xa258>
+  d14594: 90013860     	adrp	x0, 0x3420000
+  d14598: f9400400     	ldr	x0, [x0, #0x8]  // GOT 0x3420008 -> 0x35353e8: saoguang
+  d1459c: 97f79fec     	bl	0xafc54c <WriteZStream+0xa258>
+  d145a0: f00136e0     	adrp	x0, 0x33f3000
+  d145a4: f9457c00     	ldr	x0, [x0, #0xaf8]  // GOT 0x33f3af8 -> 0x3536cd0: tip
+  d145a8: 97f79fe9     	bl	0xafc54c <WriteZStream+0xa258>
+  d145ac: 320003e8     	orr	w8, wzr, #0x1
+  d145b0: 3916e2c8     	strb	w8, [x22, #0x5b8]
+  d145b4: 710012bf     	cmp	w21, #0x4
+  d145b8: 54000de8     	b.hi	0xd14774 <__start_il2cpp+0x1b6f3c>
+  d145bc: b000d589     	adrp	x9, 0x27c5000
+  d145c0: 2a1503e8     	mov	w8, w21
+  d145c4: 911f9129     	add	x9, x9, #0x7e4
+  d145c8: b8a87928     	ldrsw	x8, [x9, x8, lsl #2]
+  d145cc: 8b090108     	add	x8, x8, x9
+  d145d0: d61f0100     	br	x8
+  d145d4: b4001234     	cbz	x20, 0xd14818 <__start_il2cpp+0x1b6fe0>
+  d145d8: d00138c8     	adrp	x8, 0x342e000
+  d145dc: f9407e94     	ldr	x20, [x20, #0xf8]
+  d145e0: f9420508     	ldr	x8, [x8, #0x408]  // GOT 0x342e408 -> 0x34d1ad0: UnityEngine.Events.UnityAction_TypeInfo
+  d145e4: f9400100     	ldr	x0, [x8]
+  d145e8: 97f7a00d     	bl	0xafc61c <WriteZStream+0xa328>
+  d145ec: b00138c8     	adrp	x8, 0x342d000
+  d145f0: f9460108     	ldr	x8, [x8, #0xc00]  // GOT 0x342dc00 -> 0x3509888: Method$MainView.OpenPlayerCareer()
+  d145f4: aa1303e1     	mov	x1, x19
+  d145f8: aa1f03e3     	mov	x3, xzr
+  d145fc: aa0003f5     	mov	x21, x0
+  d14600: f9400102     	ldr	x2, [x8]
+  d14604: 9454d990     	bl	0x224ac44 <__start_il2cpp+0x16ed40c>  // UnityEngine.Events.UnityAction$$.ctor
+  d14608: b4001094     	cbz	x20, 0xd14818 <__start_il2cpp+0x1b6fe0>
+  d1460c: aa1403e0     	mov	x0, x20
+  d14610: a9427bfd     	ldp	x29, x30, [sp, #0x20]
+  d14614: a9414ff4     	ldp	x20, x19, [sp, #0x10]
+  d14618: aa1503e1     	mov	x1, x21
+  d1461c: aa1f03e2     	mov	x2, xzr
+  d14620: a8c357f6     	ldp	x22, x21, [sp], #0x30
+  d14624: 1454da6b     	b	0x224afd0 <__start_il2cpp+0x16ed798>  // UnityEngine.Events.UnityEvent$$AddListener
+  d14628: b4000f94     	cbz	x20, 0xd14818 <__start_il2cpp+0x1b6fe0>
+  d1462c: d00138c8     	adrp	x8, 0x342e000
+  d14630: f9407e95     	ldr	x21, [x20, #0xf8]
+  d14634: f9420508     	ldr	x8, [x8, #0x408]  // GOT 0x342e408 -> 0x34d1ad0: UnityEngine.Events.UnityAction_TypeInfo
+  d14638: f9400100     	ldr	x0, [x8]
+  d1463c: 97f79ff8     	bl	0xafc61c <WriteZStream+0xa328>
+  d14640: f00135c8     	adrp	x8, 0x33cf000
+  d14644: f9416108     	ldr	x8, [x8, #0x2c0]  // GOT 0x33cf2c0 -> 0x3509898: Method$MainView.OpenTraining()
+  d14648: aa1f03e1     	mov	x1, xzr
+  d1464c: aa1f03e3     	mov	x3, xzr
+  d14650: aa0003f6     	mov	x22, x0
+  d14654: f9400102     	ldr	x2, [x8]
+  d14658: 9454d97b     	bl	0x224ac44 <__start_il2cpp+0x16ed40c>  // UnityEngine.Events.UnityAction$$.ctor
+  d1465c: b4000df5     	cbz	x21, 0xd14818 <__start_il2cpp+0x1b6fe0>
+  d14660: aa1503e0     	mov	x0, x21
+  d14664: aa1603e1     	mov	x1, x22
+  d14668: aa1f03e2     	mov	x2, xzr
+  d1466c: 9454da59     	bl	0x224afd0 <__start_il2cpp+0x16ed798>  // UnityEngine.Events.UnityEvent$$AddListener
+  d14670: b00135e8     	adrp	x8, 0x33d1000
+  d14674: f9438508     	ldr	x8, [x8, #0x708]  // GOT 0x33d1708 -> 0x35037b8: Method$UnityEngine.Component.GetComponent<UIShiny>()
+  d14678: aa1403e0     	mov	x0, x20
+  d1467c: f9400101     	ldr	x1, [x8]
+  d14680: 94047261     	bl	0xe31004 <__start_il2cpp+0x2d37cc>  // UnityEngine.Component$$GetComponent<ADButtonStateBase> | UnityEngine.Component$$GetComponent<ADButtonStyleABTest> | UnityEngine.Component$$GetComponent<Animation> [shared generics]
+  d14684: aa0003e1     	mov	x1, x0
+  d14688: f80d0e60     	str	x0, [x19, #0xd0]!
+  d1468c: 1400005e     	b	0xd14804 <__start_il2cpp+0x1b6fcc>
+  d14690: b4000c54     	cbz	x20, 0xd14818 <__start_il2cpp+0x1b6fe0>
+  d14694: d00138c8     	adrp	x8, 0x342e000
+  d14698: f9407e95     	ldr	x21, [x20, #0xf8]
+  d1469c: f9420508     	ldr	x8, [x8, #0x408]  // GOT 0x342e408 -> 0x34d1ad0: UnityEngine.Events.UnityAction_TypeInfo
+  d146a0: f9400100     	ldr	x0, [x8]
+  d146a4: 97f79fde     	bl	0xafc61c <WriteZStream+0xa328>
+  d146a8: b00138a8     	adrp	x8, 0x3429000
+  d146ac: f9435908     	ldr	x8, [x8, #0x6b0]  // GOT 0x34296b0 -> 0x3509870: Method$MainView.OpenFriendlyMatch()
+  d146b0: aa1303e1     	mov	x1, x19
+  d146b4: aa1f03e3     	mov	x3, xzr
+  d146b8: aa0003f6     	mov	x22, x0
+  d146bc: f9400102     	ldr	x2, [x8]
+  d146c0: 9454d961     	bl	0x224ac44 <__start_il2cpp+0x16ed40c>  // UnityEngine.Events.UnityAction$$.ctor
+  d146c4: b4000ab5     	cbz	x21, 0xd14818 <__start_il2cpp+0x1b6fe0>
+  d146c8: aa1503e0     	mov	x0, x21
+  d146cc: aa1603e1     	mov	x1, x22
+  d146d0: aa1f03e2     	mov	x2, xzr
+  d146d4: 9454da3f     	bl	0x224afd0 <__start_il2cpp+0x16ed798>  // UnityEngine.Events.UnityEvent$$AddListener
+  d146d8: aa1403e0     	mov	x0, x20
+  d146dc: aa1f03e1     	mov	x1, xzr
+  d146e0: 9436cbc6     	bl	0x1ac75f8 <__start_il2cpp+0xf69dc0>  // UnityEngine.Component$$get_transform
+  d146e4: b40009a0     	cbz	x0, 0xd14818 <__start_il2cpp+0x1b6fe0>
+  d146e8: 90013868     	adrp	x8, 0x3420000
+  d146ec: f9400508     	ldr	x8, [x8, #0x8]  // GOT 0x3420008 -> 0x35353e8: saoguang
+  d146f0: aa1f03e2     	mov	x2, xzr
+  d146f4: f9400101     	ldr	x1, [x8]
+  d146f8: 9454d7fe     	bl	0x224a6f0 <__start_il2cpp+0x16eceb8>  // UnityEngine.Transform$$Find
+  d146fc: b40008e0     	cbz	x0, 0xd14818 <__start_il2cpp+0x1b6fe0>
+  d14700: 900136c8     	adrp	x8, 0x33ec000
+  d14704: f9466908     	ldr	x8, [x8, #0xcd0]  // GOT 0x33eccd0 -> 0x3503328: Method$UnityEngine.Component.GetComponent<Animator>()
+  d14708: f9400101     	ldr	x1, [x8]
+  d1470c: 9404723e     	bl	0xe31004 <__start_il2cpp+0x2d37cc>  // UnityEngine.Component$$GetComponent<ADButtonStateBase> | UnityEngine.Component$$GetComponent<ADButtonStyleABTest> | UnityEngine.Component$$GetComponent<Animation> [shared generics]
+  d14710: aa0003e1     	mov	x1, x0
+  d14714: f80c8e60     	str	x0, [x19, #0xc8]!
+  d14718: 1400003b     	b	0xd14804 <__start_il2cpp+0x1b6fcc>
+  d1471c: b40007f4     	cbz	x20, 0xd14818 <__start_il2cpp+0x1b6fe0>
+  d14720: d00138c8     	adrp	x8, 0x342e000
+  d14724: f9407e95     	ldr	x21, [x20, #0xf8]
+  d14728: f9420508     	ldr	x8, [x8, #0x408]  // GOT 0x342e408 -> 0x34d1ad0: UnityEngine.Events.UnityAction_TypeInfo
+  d1472c: f9400100     	ldr	x0, [x8]
+  d14730: 97f79fbb     	bl	0xafc61c <WriteZStream+0xa328>
+  d14734: 90013728     	adrp	x8, 0x33f8000
+  d14738: f943c108     	ldr	x8, [x8, #0x780]  // GOT 0x33f8780 -> 0x3509878: Method$MainView.OpenIapStore()
+  d1473c: aa1303e1     	mov	x1, x19
+  d14740: aa1f03e3     	mov	x3, xzr
+  d14744: aa0003f6     	mov	x22, x0
+  d14748: f9400102     	ldr	x2, [x8]
+  d1474c: 9454d93e     	bl	0x224ac44 <__start_il2cpp+0x16ed40c>  // UnityEngine.Events.UnityAction$$.ctor
+  d14750: b4000655     	cbz	x21, 0xd14818 <__start_il2cpp+0x1b6fe0>
+  d14754: aa1503e0     	mov	x0, x21
+  d14758: aa1603e1     	mov	x1, x22
+  d1475c: aa1f03e2     	mov	x2, xzr
+  d14760: 9454da1c     	bl	0x224afd0 <__start_il2cpp+0x16ed798>  // UnityEngine.Events.UnityEvent$$AddListener
+  d14764: f80b8e74     	str	x20, [x19, #0xb8]!
+  d14768: aa1303e0     	mov	x0, x19
+  d1476c: aa1403e1     	mov	x1, x20
+  d14770: 14000026     	b	0xd14808 <__start_il2cpp+0x1b6fd0>
+  d14774: a9427bfd     	ldp	x29, x30, [sp, #0x20]
+  d14778: a9414ff4     	ldp	x20, x19, [sp, #0x10]
+  d1477c: a8c357f6     	ldp	x22, x21, [sp], #0x30
+  d14780: d65f03c0     	ret
+  d14784: b40004b4     	cbz	x20, 0xd14818 <__start_il2cpp+0x1b6fe0>
+  d14788: d00138c8     	adrp	x8, 0x342e000
+  d1478c: f9407e95     	ldr	x21, [x20, #0xf8]
+  d14790: f9420508     	ldr	x8, [x8, #0x408]  // GOT 0x342e408 -> 0x34d1ad0: UnityEngine.Events.UnityAction_TypeInfo
+  d14794: f9400100     	ldr	x0, [x8]
+  d14798: 97f79fa1     	bl	0xafc61c <WriteZStream+0xa328>
+  d1479c: f0013928     	adrp	x8, 0x343b000
+  d147a0: f941d508     	ldr	x8, [x8, #0x3a8]  // GOT 0x343b3a8 -> 0x3509880: Method$MainView.OpenMasterLeague()
+  d147a4: aa1303e1     	mov	x1, x19
+  d147a8: aa1f03e3     	mov	x3, xzr
+  d147ac: aa0003f6     	mov	x22, x0
+  d147b0: f9400102     	ldr	x2, [x8]
+  d147b4: 9454d924     	bl	0x224ac44 <__start_il2cpp+0x16ed40c>  // UnityEngine.Events.UnityAction$$.ctor
+  d147b8: b4000315     	cbz	x21, 0xd14818 <__start_il2cpp+0x1b6fe0>
+  d147bc: aa1503e0     	mov	x0, x21
+  d147c0: aa1603e1     	mov	x1, x22
+  d147c4: aa1f03e2     	mov	x2, xzr
+  d147c8: 9454da02     	bl	0x224afd0 <__start_il2cpp+0x16ed798>  // UnityEngine.Events.UnityEvent$$AddListener
+  d147cc: aa1403e0     	mov	x0, x20
+  d147d0: aa1f03e1     	mov	x1, xzr
+  d147d4: 9436cb89     	bl	0x1ac75f8 <__start_il2cpp+0xf69dc0>  // UnityEngine.Component$$get_transform
+  d147d8: b4000200     	cbz	x0, 0xd14818 <__start_il2cpp+0x1b6fe0>
+  d147dc: f00136e8     	adrp	x8, 0x33f3000
+  d147e0: f9457d08     	ldr	x8, [x8, #0xaf8]  // GOT 0x33f3af8 -> 0x3536cd0: tip
+  d147e4: aa1f03e2     	mov	x2, xzr
+  d147e8: f9400101     	ldr	x1, [x8]
+  d147ec: 9454d7c1     	bl	0x224a6f0 <__start_il2cpp+0x16eceb8>  // UnityEngine.Transform$$Find
+  d147f0: b4000140     	cbz	x0, 0xd14818 <__start_il2cpp+0x1b6fe0>
+  d147f4: aa1f03e1     	mov	x1, xzr
+  d147f8: 9436cb90     	bl	0x1ac7638 <__start_il2cpp+0xf69e00>  // UnityEngine.Component$$get_gameObject
+  d147fc: aa0003e1     	mov	x1, x0
+  d14800: f80c0e60     	str	x0, [x19, #0xc0]!
+  d14804: aa1303e0     	mov	x0, x19
+  d14808: a9427bfd     	ldp	x29, x30, [sp, #0x20]
+  d1480c: a9414ff4     	ldp	x20, x19, [sp, #0x10]
+  d14810: a8c357f6     	ldp	x22, x21, [sp], #0x30
+  d14814: 17f79f35     	b	0xafc4e8 <WriteZStream+0xa1f4>
+  d14818: 97f79f83     	bl	0xafc624 <WriteZStream+0xa330>

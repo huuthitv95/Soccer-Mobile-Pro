@@ -1,0 +1,51 @@
+
+C:\Users\ZGAMESVN\Downloads\Soccer-Unity-Recovery\Extracted\lib\arm64-v8a\libil2cpp.so:	file format elf64-littleaarch64
+
+Disassembly of section il2cpp:
+
+0000000000b5d838 <__start_il2cpp>:
+  c69e68: a9be4ff4     	stp	x20, x19, [sp, #-0x20]!
+  c69e6c: a9017bfd     	stp	x29, x30, [sp, #0x10]
+  c69e70: 910043fd     	add	x29, sp, #0x10
+  c69e74: d0014db4     	adrp	x20, 0x361f000
+  c69e78: 39432a88     	ldrb	w8, [x20, #0xca]
+  c69e7c: aa0003f3     	mov	x19, x0
+  c69e80: 37000188     	tbnz	w8, #0x0, 0xc69eb0 <__start_il2cpp+0x10c678>
+  c69e84: d0013e20     	adrp	x0, 0x342f000
+  c69e88: f9469400     	ldr	x0, [x0, #0xd28]  // GOT 0x342fd28 -> 0x34d7f88: Method$System.Action<SpriteAtlas>.Invoke()
+  c69e8c: 97fa49b0     	bl	0xafc54c <WriteZStream+0xa258>
+  c69e90: d0013d60     	adrp	x0, 0x3417000
+  c69e94: f940a400     	ldr	x0, [x0, #0x148]  // GOT 0x3417148 -> 0x34f4980: Method$Common.Singleton<ResourcesManager>.get_Instance()
+  c69e98: 97fa49ad     	bl	0xafc54c <WriteZStream+0xa258>
+  c69e9c: f0013b60     	adrp	x0, 0x33d8000
+  c69ea0: f942c800     	ldr	x0, [x0, #0x590]  // GOT 0x33d8590 -> 0x34caa30: Common.Singleton<ResourcesManager>_TypeInfo
+  c69ea4: 97fa49aa     	bl	0xafc54c <WriteZStream+0xa258>
+  c69ea8: 320003e8     	orr	w8, wzr, #0x1
+  c69eac: 39032a88     	strb	w8, [x20, #0xca]
+  c69eb0: f0013b68     	adrp	x8, 0x33d8000
+  c69eb4: f942c908     	ldr	x8, [x8, #0x590]  // GOT 0x33d8590 -> 0x34caa30: Common.Singleton<ResourcesManager>_TypeInfo
+  c69eb8: f9400100     	ldr	x0, [x8]
+  c69ebc: 3944cc08     	ldrb	w8, [x0, #0x133]
+  c69ec0: 36100088     	tbz	w8, #0x2, 0xc69ed0 <__start_il2cpp+0x10c698>
+  c69ec4: b940e008     	ldr	w8, [x0, #0xe0]
+  c69ec8: 35000048     	cbnz	w8, 0xc69ed0 <__start_il2cpp+0x10c698>
+  c69ecc: 97fa49cd     	bl	0xafc600 <WriteZStream+0xa30c>
+  c69ed0: d0013d68     	adrp	x8, 0x3417000
+  c69ed4: f940a508     	ldr	x8, [x8, #0x148]  // GOT 0x3417148 -> 0x34f4980: Method$Common.Singleton<ResourcesManager>.get_Instance()
+  c69ed8: f9400100     	ldr	x0, [x8]
+  c69edc: 943b199f     	bl	0x1b30558 <__start_il2cpp+0xfd2d20>  // Common.Singleton<ADMobSDK>$$get_Instance | Common.Singleton<AdmobImmersiveAD>$$get_Instance | Common.Singleton<AdsManager>$$get_Instance [shared generics]
+  c69ee0: b40001c0     	cbz	x0, 0xc69f18 <__start_il2cpp+0x10c6e0>
+  c69ee4: f9400a61     	ldr	x1, [x19, #0x10]
+  c69ee8: aa1f03e2     	mov	x2, xzr
+  c69eec: 94118358     	bl	0x10cac4c <__start_il2cpp+0x56d414>  // Common.ResourcesManager$$LoadSpriteAtlas
+  c69ef0: f9400e68     	ldr	x8, [x19, #0x18]
+  c69ef4: b4000128     	cbz	x8, 0xc69f18 <__start_il2cpp+0x10c6e0>
+  c69ef8: d0013e29     	adrp	x9, 0x342f000
+  c69efc: f9469529     	ldr	x9, [x9, #0xd28]  // GOT 0x342fd28 -> 0x34d7f88: Method$System.Action<SpriteAtlas>.Invoke()
+  c69f00: a9417bfd     	ldp	x29, x30, [sp, #0x10]
+  c69f04: aa0003e1     	mov	x1, x0
+  c69f08: aa0803e0     	mov	x0, x8
+  c69f0c: f9400122     	ldr	x2, [x9]
+  c69f10: a8c24ff4     	ldp	x20, x19, [sp], #0x20
+  c69f14: 14264016     	b	0x15f9f6c <__start_il2cpp+0xa9c734>  // System.Action<IEnumerable<FullPlayerStatisticsType>>$$Invoke | System.Action<LinkedListNode<ReplayFrameData>>$$Invoke | System.Action<List<KeyValuePair<RewardType, int>>>$$Invoke [shared generics]
+  c69f18: 97fa49c3     	bl	0xafc624 <WriteZStream+0xa330>
