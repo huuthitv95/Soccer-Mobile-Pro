@@ -1,0 +1,142 @@
+[
+  {
+    "source": "Assets/Scenes/UI/Launch.unity",
+    "sha256": "51b3502b69eca3fb452ba8ac7402a5e653deb3ee10849fcecd303c4893490044",
+    "reference": "Assets/Recovery/ReferenceScenes/Launch.Reference.unity",
+    "policy": "Every original GameObject inactive and Behaviour disabled before editor import; recovery overlay uses its own audited components.",
+    "disabledScripts": [
+      {
+        "guid": "04f84fc2003509a5e7e068ec1271cc40",
+        "path": "Assets/Scripts/UnityEngine.UI/UnityEngine/UI/Text.cs"
+      },
+      {
+        "guid": "1522d51f2e596a7eb84e5007260f43ac",
+        "path": "Assets/Scripts/UnityEngine.UI/UnityEngine/UI/Slider.cs"
+      },
+      {
+        "guid": "18d0a90695249463551c00f45766e642",
+        "path": "Assets/Scripts/UnityEngine.UI/UnityEngine/UI/Button.cs"
+      },
+      {
+        "guid": "2a84a6bd90c7eb594e110c389d93f072",
+        "path": "Assets/Scripts/UnityEngine.UI/UnityEngine/EventSystems/StandaloneInputModule.cs"
+      },
+      {
+        "guid": "3cf5a44414476512e00c3e7a2569a919",
+        "path": "Assets/Scripts/UnityEngine.UI/UnityEngine/UI/Image.cs"
+      },
+      {
+        "guid": "6dfc8ec6aebac6665d9781d273993f23",
+        "path": "Assets/Scripts/UnityEngine.UI/UnityEngine/UI/CanvasScaler.cs"
+      },
+      {
+        "guid": "86fe8f3fc59dc06ea6b45a1bbee64682",
+        "path": "Assets/Scripts/UnityEngine.UI/UnityEngine/UI/GraphicRaycaster.cs"
+      },
+      {
+        "guid": "af285829e0eca96159ac21282ec32189",
+        "path": "Assets/Scripts/Assembly-CSharp/UnityEngine/UI/Extensions/Gradient2.cs"
+      },
+      {
+        "guid": "ba2c49586942b2c63eaf5232b4e93bc3",
+        "path": "Assets/Scripts/UnityEngine.UI/UnityEngine/EventSystems/EventSystem.cs"
+      },
+      {
+        "guid": "dae0707bd1dbcea86dab95cb352fbc09",
+        "path": "Assets/Scripts/Assembly-CSharp/Tween_Rotation.cs"
+      },
+      {
+        "guid": "e787ac611ad6cb6b0ac408f9d0ed7a1f",
+        "path": "Assets/Scripts/Assembly-CSharp/StartGame.cs"
+      },
+      {
+        "guid": "e8e409e8334922a17386eb9aa03990a6",
+        "path": "Assets/Scripts/Assembly-CSharp/LicensedAssetController.cs"
+      }
+    ]
+  },
+  {
+    "source": "Assets/Scenes/UI/Start.unity",
+    "sha256": "47dafcbc51b6b3c81252e6a6c682e210689b3acb291ca35e2b91ad90dc9c37b0",
+    "reference": "Assets/Recovery/ReferenceScenes/Start.Reference.unity",
+    "policy": "Every original GameObject inactive and Behaviour disabled before editor import; recovery overlay uses its own audited components.",
+    "disabledScripts": [
+      {
+        "guid": "04f84fc2003509a5e7e068ec1271cc40",
+        "path": "Assets/Scripts/UnityEngine.UI/UnityEngine/UI/Text.cs"
+      },
+      {
+        "guid": "1522d51f2e596a7eb84e5007260f43ac",
+        "path": "Assets/Scripts/UnityEngine.UI/UnityEngine/UI/Slider.cs"
+      },
+      {
+        "guid": "18d0a90695249463551c00f45766e642",
+        "path": "Assets/Scripts/UnityEngine.UI/UnityEngine/UI/Button.cs"
+      },
+      {
+        "guid": "2a84a6bd90c7eb594e110c389d93f072",
+        "path": "Assets/Scripts/UnityEngine.UI/UnityEngine/EventSystems/StandaloneInputModule.cs"
+      },
+      {
+        "guid": "35b835ac7a370c2e66908840f7d2bf5d",
+        "path": "Assets/Scripts/Assembly-CSharp/AdmobADUnit.cs"
+      },
+      {
+        "guid": "3cf5a44414476512e00c3e7a2569a919",
+        "path": "Assets/Scripts/UnityEngine.UI/UnityEngine/UI/Image.cs"
+      },
+      {
+        "guid": "43ccd9d82aa44b2f400407c0bf86f5e8",
+        "path": "Assets/Scripts/Assembly-CSharp/GoogleGamesAuthenucate.cs"
+      },
+      {
+        "guid": "5028cd1e18b95871345091c4ebc223bb",
+        "path": "Assets/Scripts/Assembly-CSharp/UI_Load.cs"
+      },
+      {
+        "guid": "576de2e9724a2617526dabb484ab356e",
+        "path": "Assets/Scripts/Assembly-CSharp/PlayerSetting.cs"
+      },
+      {
+        "guid": "6dfc8ec6aebac6665d9781d273993f23",
+        "path": "Assets/Scripts/UnityEngine.UI/UnityEngine/UI/CanvasScaler.cs"
+      },
+      {
+        "guid": "6e474bb56e57854bdd40c94c71f1d888",
+        "path": "Assets/Scripts/Assembly-CSharp/AdjustSdk/Adjust.cs"
+      },
+      {
+        "guid": "86fe8f3fc59dc06ea6b45a1bbee64682",
+        "path": "Assets/Scripts/UnityEngine.UI/UnityEngine/UI/GraphicRaycaster.cs"
+      },
+      {
+        "guid": "92fb486eb3a347402954c4eb3c42bb4f",
+        "path": "Assets/Scripts/Assembly-CSharp/RemoteSync.cs"
+      },
+      {
+        "guid": "af285829e0eca96159ac21282ec32189",
+        "path": "Assets/Scripts/Assembly-CSharp/UnityEngine/UI/Extensions/Gradient2.cs"
+      },
+      {
+        "guid": "b7d6faa7c63a15fad332a3ca2f8fad04",
+        "path": "Assets/Scripts/Assembly-CSharp/UmpManager.cs"
+      },
+      {
+        "guid": "ba2c49586942b2c63eaf5232b4e93bc3",
+        "path": "Assets/Scripts/UnityEngine.UI/UnityEngine/EventSystems/EventSystem.cs"
+      },
+      {
+        "guid": "c46115a355a8476f5477c64abb873ed8",
+        "path": "Assets/Scripts/Assembly-CSharp/BannerSwitch.cs"
+      },
+      {
+        "guid": "dae0707bd1dbcea86dab95cb352fbc09",
+        "path": "Assets/Scripts/Assembly-CSharp/Tween_Rotation.cs"
+      },
+      {
+        "guid": "e8e409e8334922a17386eb9aa03990a6",
+        "path": "Assets/Scripts/Assembly-CSharp/LicensedAssetController.cs"
+      }
+    ]
+  }
+]
