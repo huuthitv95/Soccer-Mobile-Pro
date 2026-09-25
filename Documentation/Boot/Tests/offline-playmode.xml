@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="utf-8"?>
+<test-run id="2" testcasecount="4" result="Passed" total="4" passed="4" failed="0" inconclusive="0" skipped="0" asserts="0" engine-version="3.5.0.0" clr-version="4.0.30319.42000" start-time="2026-09-25 00:09:22Z" end-time="2026-09-25 00:09:22Z" duration="0,8811854">
+  <test-suite type="TestSuite" id="1000" name="Football 2026" fullname="Football 2026" runstate="Runnable" testcasecount="16" result="Passed" start-time="2026-09-25 00:09:22Z" end-time="2026-09-25 00:09:22Z" duration="0.881185" total="4" passed="4" failed="0" inconclusive="0" skipped="0" asserts="0">
+    <properties />
+    <test-suite type="Assembly" id="1023" name="Soccer.Recovery.OfflineUI.PlayModeTests.dll" fullname="C:/Users/ZGAMESVN/Downloads/Soccer-Mobile-Pro/Library/ScriptAssemblies/Soccer.Recovery.OfflineUI.PlayModeTests.dll" runstate="Runnable" testcasecount="4" result="Passed" start-time="2026-09-25 00:09:22Z" end-time="2026-09-25 00:09:22Z" duration="0.837750" total="4" passed="4" failed="0" inconclusive="0" skipped="0" asserts="0">
+      <properties>
+        <property name="_PID" value="29020" />
+        <property name="_APPDOMAIN" value="Unity Child Domain" />
+        <property name="platform" value="PlayMode" />
+      </properties>
+      <test-suite type="TestSuite" id="1024" name="Soccer" fullname="Soccer" runstate="Runnable" testcasecount="4" result="Passed" start-time="2026-09-25 00:09:22Z" end-time="2026-09-25 00:09:22Z" duration="0.837253" total="4" passed="4" failed="0" inconclusive="0" skipped="0" asserts="0">
+        <properties />
+        <test-suite type="TestSuite" id="1025" name="Recovery" fullname="Soccer.Recovery" runstate="Runnable" testcasecount="4" result="Passed" start-time="2026-09-25 00:09:22Z" end-time="2026-09-25 00:09:22Z" duration="0.836985" total="4" passed="4" failed="0" inconclusive="0" skipped="0" asserts="0">
+          <properties />
+          <test-suite type="TestSuite" id="1026" name="Tests" fullname="Soccer.Recovery.Tests" runstate="Runnable" testcasecount="4" result="Passed" start-time="2026-09-25 00:09:22Z" end-time="2026-09-25 00:09:22Z" duration="0.836760" total="4" passed="4" failed="0" inconclusive="0" skipped="0" asserts="0">
+            <properties />
+            <test-suite type="TestFixture" id="1018" name="OfflineUIPlayModeTests" fullname="Soccer.Recovery.Tests.OfflineUIPlayModeTests" classname="Soccer.Recovery.Tests.OfflineUIPlayModeTests" runstate="Runnable" testcasecount="4" result="Passed" start-time="2026-09-25 00:09:22Z" end-time="2026-09-25 00:09:22Z" duration="0.835846" total="4" passed="4" failed="0" inconclusive="0" skipped="0" asserts="0">
+              <properties />
+              <test-case id="1019" name="PointerClickChangesPanelsExactlyOnce" fullname="Soccer.Recovery.Tests.OfflineUIPlayModeTests.PointerClickChangesPanelsExactlyOnce" methodname="PointerClickChangesPanelsExactlyOnce" classname="Soccer.Recovery.Tests.OfflineUIPlayModeTests" runstate="Runnable" seed="826894687" result="Passed" start-time="2026-09-25 00:09:22Z" end-time="2026-09-25 00:09:22Z" duration="0.181246" asserts="0">
+                <properties>
+                  <property name="_JOINTYPE" value="UnityCombinatorial" />
+                </properties>
+              </test-case>
+              <test-case id="1021" name="ReloadAndReenableDoNotDuplicateListeners" fullname="Soccer.Recovery.Tests.OfflineUIPlayModeTests.ReloadAndReenableDoNotDuplicateListeners" methodname="ReloadAndReenableDoNotDuplicateListeners" classname="Soccer.Recovery.Tests.OfflineUIPlayModeTests" runstate="Runnable" seed="311147936" result="Passed" start-time="2026-09-25 00:09:22Z" end-time="2026-09-25 00:09:22Z" duration="0.046164" asserts="0">
+                <properties>
+                  <property name="_JOINTYPE" value="UnityCombinatorial" />
+                </properties>
+              </test-case>
+              <test-case id="1022" name="RenderAndRaycastAtBothAspectRatios" fullname="Soccer.Recovery.Tests.OfflineUIPlayModeTests.RenderAndRaycastAtBothAspectRatios" methodname="RenderAndRaycastAtBothAspectRatios" classname="Soccer.Recovery.Tests.OfflineUIPlayModeTests" runstate="Runnable" seed="235975207" result="Passed" start-time="2026-09-25 00:09:22Z" end-time="2026-09-25 00:09:22Z" duration="0.573618" asserts="0">
+                <properties>
+                  <property name="_JOINTYPE" value="UnityCombinatorial" />
+                </properties>
+              </test-case>
+              <test-case id="1020" name="SliderRespondsToPointerAndNotifiesOnce" fullname="Soccer.Recovery.Tests.OfflineUIPlayModeTests.SliderRespondsToPointerAndNotifiesOnce" methodname="SliderRespondsToPointerAndNotifiesOnce" classname="Soccer.Recovery.Tests.OfflineUIPlayModeTests" runstate="Runnable" seed="112777520" result="Passed" start-time="2026-09-25 00:09:22Z" end-time="2026-09-25 00:09:22Z" duration="0.023024" asserts="0">
+                <properties>
+                  <property name="_JOINTYPE" value="UnityCombinatorial" />
+                </properties>
+              </test-case>
+            </test-suite>
+          </test-suite>
+        </test-suite>
+      </test-suite>
+    </test-suite>
+  </test-suite>
+</test-run>
