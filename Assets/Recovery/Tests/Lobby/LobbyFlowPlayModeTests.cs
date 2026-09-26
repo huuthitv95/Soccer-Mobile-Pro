@@ -7,6 +7,7 @@ using NUnit.Framework;
 using Soccer.Recovery.Lobby;
 using UnityEditor.SceneManagement;
 using UnityEngine;
+using UnityEngine.Events;
 using UnityEngine.EventSystems;
 using UnityEngine.SceneManagement;
 using UnityEngine.TestTools;
@@ -154,8 +155,13 @@ namespace Soccer.Recovery.Tests
                 LobbyRecoveryRunConfiguration.NextProfile=new LobbyRecoveryProfile{Mode=mode};
                 yield return EditorSceneManager.LoadSceneAsyncInPlayMode("Assets/Recovery/Scenes/LobbyLaunch.unity",new LoadSceneParameters(LoadSceneMode.Single));
                 LobbyRecoveryTrace.Reset();
+                var lobbySceneLoaded=false;
+                UnityAction<Scene,LoadSceneMode> onSceneLoaded=(scene,loadMode)=>{if(scene.path=="Assets/Recovery/Scenes/LobbyOffline.unity")lobbySceneLoaded=true;};
+                SceneManager.sceneLoaded+=onSceneLoaded;
                 GameObject.Find("Begin offline startup").GetComponent<Button>().onClick.Invoke();
-                for(int i=0;i<1200 && SceneManager.GetActiveScene().path!="Assets/Recovery/Scenes/LobbyOffline.unity";i++) yield return null;
+                var deadline=Time.realtimeSinceStartup+10f;
+                while(!lobbySceneLoaded && Time.realtimeSinceStartup<deadline) yield return null;
+                SceneManager.sceneLoaded-=onSceneLoaded;
                 Assert.AreEqual("Assets/Recovery/Scenes/LobbyOffline.unity",SceneManager.GetActiveScene().path,
                     "Mode="+mode+"; trace="+string.Join(" | ",LobbyRecoveryTrace.Timeline));
                 Assert.AreEqual(1,LobbyRecoveryTrace.Count(LobbyRecoveryEvent.LobbyTransitionRequested));

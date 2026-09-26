@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="utf-8"?>
+<test-run id="2" testcasecount="7" result="Passed" total="7" passed="7" failed="0" inconclusive="0" skipped="0" asserts="0" engine-version="3.5.0.0" clr-version="4.0.30319.42000" start-time="2026-09-26 05:42:07Z" end-time="2026-09-26 05:42:08Z" duration="0,7562046">
+  <test-suite type="TestSuite" id="1000" name="Football 2026" fullname="Football 2026" runstate="Runnable" testcasecount="36" result="Passed" start-time="2026-09-26 05:42:07Z" end-time="2026-09-26 05:42:08Z" duration="0.756205" total="7" passed="7" failed="0" inconclusive="0" skipped="0" asserts="0">
+    <properties />
+    <test-suite type="Assembly" id="1026" name="Soccer.Recovery.GlobalConfig.PlayModeTests.dll" fullname="C:/Users/ZGAMESVN/Downloads/Soccer-Mobile-Pro/Library/ScriptAssemblies/Soccer.Recovery.GlobalConfig.PlayModeTests.dll" runstate="Runnable" testcasecount="7" result="Passed" start-time="2026-09-26 05:42:07Z" end-time="2026-09-26 05:42:08Z" duration="0.706791" total="7" passed="7" failed="0" inconclusive="0" skipped="0" asserts="0">
+      <properties>
+        <property name="_PID" value="18672" />
+        <property name="_APPDOMAIN" value="Unity Child Domain" />
+        <property name="platform" value="PlayMode" />
+      </properties>
+      <test-suite type="TestSuite" id="1027" name="Soccer" fullname="Soccer" runstate="Runnable" testcasecount="7" result="Passed" start-time="2026-09-26 05:42:07Z" end-time="2026-09-26 05:42:08Z" duration="0.706076" total="7" passed="7" failed="0" inconclusive="0" skipped="0" asserts="0">
+        <properties />
+        <test-suite type="TestSuite" id="1028" name="Recovery" fullname="Soccer.Recovery" runstate="Runnable" testcasecount="7" result="Passed" start-time="2026-09-26 05:42:07Z" end-time="2026-09-26 05:42:08Z" duration="0.705815" total="7" passed="7" failed="0" inconclusive="0" skipped="0" asserts="0">
+          <properties />
+          <test-suite type="TestSuite" id="1029" name="Tests" fullname="Soccer.Recovery.Tests" runstate="Runnable" testcasecount="7" result="Passed" start-time="2026-09-26 05:42:07Z" end-time="2026-09-26 05:42:08Z" duration="0.705561" total="7" passed="7" failed="0" inconclusive="0" skipped="0" asserts="0">
+            <properties />
+            <test-suite type="TestFixture" id="1018" name="GlobalConfigPlayModeTests" fullname="Soccer.Recovery.Tests.GlobalConfigPlayModeTests" classname="Soccer.Recovery.Tests.GlobalConfigPlayModeTests" runstate="Runnable" testcasecount="7" result="Passed" start-time="2026-09-26 05:42:07Z" end-time="2026-09-26 05:42:08Z" duration="0.704363" total="7" passed="7" failed="0" inconclusive="0" skipped="0" asserts="0">
+              <properties />
+              <test-case id="1022" name="CancelAndDefaultsAreTransactional" fullname="Soccer.Recovery.Tests.GlobalConfigPlayModeTests.CancelAndDefaultsAreTransactional" methodname="CancelAndDefaultsAreTransactional" classname="Soccer.Recovery.Tests.GlobalConfigPlayModeTests" runstate="Runnable" seed="156297989" result="Passed" start-time="2026-09-26 05:42:07Z" end-time="2026-09-26 05:42:08Z" duration="0.174977" asserts="0">
+                <properties>
+                  <property name="_JOINTYPE" value="UnityCombinatorial" />
+                </properties>
+              </test-case>
+              <test-case id="1023" name="CorruptAndFutureConfigArePreserved" fullname="Soccer.Recovery.Tests.GlobalConfigPlayModeTests.CorruptAndFutureConfigArePreserved" methodname="CorruptAndFutureConfigArePreserved" classname="Soccer.Recovery.Tests.GlobalConfigPlayModeTests" runstate="Runnable" seed="1476434018" result="Passed" start-time="2026-09-26 05:42:08Z" end-time="2026-09-26 05:42:08Z" duration="0.016413" asserts="0">
+                <properties>
+                  <property name="_JOINTYPE" value="UnityCombinatorial" />
+                </properties>
+              </test-case>
+              <test-case id="1021" name="InvalidNumberAndNameDoNotPersistOrApply" fullname="Soccer.Recovery.Tests.GlobalConfigPlayModeTests.InvalidNumberAndNameDoNotPersistOrApply" methodname="InvalidNumberAndNameDoNotPersistOrApply" classname="Soccer.Recovery.Tests.GlobalConfigPlayModeTests" runstate="Runnable" seed="1309759719" result="Passed" start-time="2026-09-26 05:42:08Z" end-time="2026-09-26 05:42:08Z" duration="0.010053" asserts="0">
+                <properties>
+                  <property name="_JOINTYPE" value="UnityCombinatorial" />
+                </properties>
+              </test-case>
+              <test-case id="1025" name="OriginalPrefabResolvesReplacementAndLobbyLaunchesIt" fullname="Soccer.Recovery.Tests.GlobalConfigPlayModeTests.OriginalPrefabResolvesReplacementAndLobbyLaunchesIt" methodname="OriginalPrefabResolvesReplacementAndLobbyLaunchesIt" classname="Soccer.Recovery.Tests.GlobalConfigPlayModeTests" runstate="Runnable" seed="261016181" result="Passed" start-time="2026-09-26 05:42:08Z" end-time="2026-09-26 05:42:08Z" duration="0.441192" asserts="0">
+                <properties>
+                  <property name="_JOINTYPE" value="UnityCombinatorial" />
+                </properties>
+                <output><![CDATA[Asset '26WorldCup': Transition '26WorldCup_open -> 26WorldCup_loop' in state '26WorldCup_open' doesn't have an Exit Time or any condition, transition will be ignored
+]]></output>
+              </test-case>
+              <test-case id="1019" name="PointerOpenCloseSearchAndReadOnlyFields" fullname="Soccer.Recovery.Tests.GlobalConfigPlayModeTests.PointerOpenCloseSearchAndReadOnlyFields" methodname="PointerOpenCloseSearchAndReadOnlyFields" classname="Soccer.Recovery.Tests.GlobalConfigPlayModeTests" runstate="Runnable" seed="280782902" result="Passed" start-time="2026-09-26 05:42:08Z" end-time="2026-09-26 05:42:08Z" duration="0.016761" asserts="0">
+                <properties>
+                  <property name="_JOINTYPE" value="UnityCombinatorial" />
+                </properties>
+              </test-case>
+              <test-case id="1020" name="SaveChangesAllFourConsumersAndReloads" fullname="Soccer.Recovery.Tests.GlobalConfigPlayModeTests.SaveChangesAllFourConsumersAndReloads" methodname="SaveChangesAllFourConsumersAndReloads" classname="Soccer.Recovery.Tests.GlobalConfigPlayModeTests" runstate="Runnable" seed="1077184954" result="Passed" start-time="2026-09-26 05:42:08Z" end-time="2026-09-26 05:42:08Z" duration="0.014266" asserts="0">
+                <properties>
+                  <property name="_JOINTYPE" value="UnityCombinatorial" />
+                </properties>
+              </test-case>
+              <test-case id="1024" name="StorageFailureKeepsAppliedConfiguration" fullname="Soccer.Recovery.Tests.GlobalConfigPlayModeTests.StorageFailureKeepsAppliedConfiguration" methodname="StorageFailureKeepsAppliedConfiguration" classname="Soccer.Recovery.Tests.GlobalConfigPlayModeTests" runstate="Runnable" seed="366121471" result="Passed" start-time="2026-09-26 05:42:08Z" end-time="2026-09-26 05:42:08Z" duration="0.016042" asserts="0">
+                <properties>
+                  <property name="_JOINTYPE" value="UnityCombinatorial" />
+                </properties>
+              </test-case>
+            </test-suite>
+          </test-suite>
+        </test-suite>
+      </test-suite>
+    </test-suite>
+  </test-suite>
+</test-run>

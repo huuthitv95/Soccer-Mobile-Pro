@@ -1,0 +1,46 @@
+{
+  "validationId": "LobbyValidation-20260926-054028-bcfa3b14",
+  "duringValidationChangedFiles": [],
+  "checks": [
+    {
+      "path": "Assets/gamedata/ui/windows/Win_GlobalConfig.prefab",
+      "sha256": "0d73cd094b52bc85c4bdb01680365c24b8cfeb49ee9ae2d662e2575625b10b2c",
+      "baselineSha256": "0d73cd094b52bc85c4bdb01680365c24b8cfeb49ee9ae2d662e2575625b10b2c",
+      "unchanged": true
+    },
+    {
+      "path": "Assets/gamedata/ui/windows/Win_GlobalConfig.prefab.meta",
+      "sha256": "e7591546d593cec8336aed9a6ea2ea8937aaf3c43905953a7a32efd6399acc6a",
+      "baselineSha256": "e7591546d593cec8336aed9a6ea2ea8937aaf3c43905953a7a32efd6399acc6a",
+      "unchanged": true
+    },
+    {
+      "path": "Packages/manifest.json",
+      "sha256": "546d373d2ff9f1cd2e57b07edb5a1095632c52da8112d3035f92731d18592ec0",
+      "unchangedDuringValidation": true
+    },
+    {
+      "path": "Packages/packages-lock.json",
+      "sha256": "b6efa1e23f92cf0c44459de981f6106eb51ce6da5f84cbcf854b2a8413cf052f",
+      "unchangedDuringValidation": true
+    },
+    {
+      "path": "ProjectSettings/ProjectVersion.txt",
+      "sha256": "5bab157b8690a843fc94ad1c221d351f36ee04cd6895cf8579f889efa1a21a82",
+      "unchangedDuringValidation": true
+    },
+    {
+      "path": "ProjectSettings/EditorBuildSettings.asset",
+      "sha256": "d343340e3dca633f7f298566d20f7ee0c8f6e6c76d28f9c8c4029033e3048bf7",
+      "unchangedDuringValidation": true
+    }
+  ],
+  "modifiedTrackedAssetPaths": [
+    "Assets/Recovery/Lobby/LobbyLoadedMarker.cs",
+    "Assets/Recovery/Lobby/Soccer.Recovery.Lobby.asmdef",
+    "Assets/Recovery/Scenes/LobbyOffline.unity",
+    "Assets/Recovery/Tests/Lobby/LobbyFlowPlayModeTests.cs"
+  ],
+  "trackedAssetsOutsideRecoveryUnchangedFromHead": true,
+  "scope": "Full nonignored working-tree hashes compared before/after; original prefab/meta compared with preserved baseline; tracked Assets/Packages/ProjectSettings changes checked against the existing GlobalConfig integration allowlist."
+}

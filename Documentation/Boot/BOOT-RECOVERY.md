@@ -1,5 +1,7 @@
 # Launch to Start recovery (Unity 2020.3.49f1)
 
+**Historical Boot milestone.** The behavior/evidence below describes this isolated Launch → Start harness. The later [offline milestone](../GlobalConfig/README.md) adds a separate Lobby harness and GlobalConfig replacement. Current validation expects zero missing scripts; `-ValidateLobbyFlow` now checks all 36 UI/Boot/Lobby/GlobalConfig tests. Earlier one-missing-script results below are historical, not the current acceptance baseline.
+
 Open **Recovery → Open Boot Recovery**, then Play. BootLaunch displays recovered Launch artwork and its font; the offline profile completes the cloud callback and the verified gates request BootStart. BootStart is the end of this milestone. Stop and Play starts a fresh recovery session.
 
 The implementation recovers StartGame control flow at the adapter boundary. Real cloud save, the native engine bootstrap, debug data export, SceneHelper's full multi-scene behavior, UI_Load, Lobby and gameplay remain unrecovered. A successful test is not a claim that these services work.

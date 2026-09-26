@@ -1,0 +1,82 @@
+{
+  "status": "Passed",
+  "project": "C:\\Users\\ZGAMESVN\\Downloads\\Soccer-Mobile-Pro",
+  "targetVersion": "2020.3.49f1",
+  "compilationSucceeded": true,
+  "offlineUiSucceeded": true,
+  "bootFlowSucceeded": true,
+  "lobbyFlowSucceeded": true,
+  "originalServicesRecovered": false,
+  "gameplayRecovered": false,
+  "knownMissingScripts": 0,
+  "run": "C:\\Users\\ZGAMESVN\\Downloads\\Soccer-Unity-Recovery\\Runs\\LobbyValidation-20260926-054028-bcfa3b14",
+  "validationId": "LobbyValidation-20260926-054028-bcfa3b14",
+  "globalConfigSucceeded": true,
+  "globalConfigTests": 7,
+  "sourceSnapshotBefore": "C:\\Users\\ZGAMESVN\\Downloads\\Soccer-Unity-Recovery\\Runs\\LobbyValidation-20260926-054028-bcfa3b14\\source-before.json",
+  "sourceSnapshotAfter": "C:\\Users\\ZGAMESVN\\Downloads\\Soccer-Unity-Recovery\\Runs\\LobbyValidation-20260926-054028-bcfa3b14\\source-after.json",
+  "inputsUnchanged": true,
+  "offlineUiTests": 4,
+  "bootFlowTests": 12,
+  "baseReport": "C:\\Users\\ZGAMESVN\\Downloads\\Soccer-Unity-Recovery\\Runs\\BootValidation-20260926-054039-80cf01a3\\boot-validation.json",
+  "assetIssues": [],
+  "artifacts": {
+    "compilationReport": "C:\\Users\\ZGAMESVN\\Downloads\\Soccer-Unity-Recovery\\Runs\\20260926-054039-be35fe93\\Reports\\recovery.json",
+    "offlineUiXml": "C:\\Users\\ZGAMESVN\\Downloads\\Soccer-Unity-Recovery\\Runs\\BootValidation-20260926-054039-80cf01a3\\offline-playmode.xml",
+    "offlineUiLog": "C:\\Users\\ZGAMESVN\\Downloads\\Soccer-Unity-Recovery\\Runs\\BootValidation-20260926-054039-80cf01a3\\offline-playmode.log",
+    "offlineUiScreenshots": [
+      "C:\\Users\\ZGAMESVN\\Downloads\\Soccer-Unity-Recovery\\Runs\\BootValidation-20260926-054039-80cf01a3\\welcome-1920x1080.png",
+      "C:\\Users\\ZGAMESVN\\Downloads\\Soccer-Unity-Recovery\\Runs\\BootValidation-20260926-054039-80cf01a3\\team-1920x1080.png",
+      "C:\\Users\\ZGAMESVN\\Downloads\\Soccer-Unity-Recovery\\Runs\\BootValidation-20260926-054039-80cf01a3\\welcome-2560x1080.png",
+      "C:\\Users\\ZGAMESVN\\Downloads\\Soccer-Unity-Recovery\\Runs\\BootValidation-20260926-054039-80cf01a3\\team-2560x1080.png"
+    ],
+    "bootXml": "C:\\Users\\ZGAMESVN\\Downloads\\Soccer-Unity-Recovery\\Runs\\BootValidation-20260926-054039-80cf01a3\\boot-playmode.xml",
+    "bootLog": "C:\\Users\\ZGAMESVN\\Downloads\\Soccer-Unity-Recovery\\Runs\\BootValidation-20260926-054039-80cf01a3\\boot-playmode.log",
+    "bootTraceDirectory": "C:\\Users\\ZGAMESVN\\Downloads\\Soccer-Unity-Recovery\\Runs\\BootValidation-20260926-054039-80cf01a3",
+    "lobbyXml": "C:\\Users\\ZGAMESVN\\Downloads\\Soccer-Unity-Recovery\\Runs\\LobbyValidation-20260926-054028-bcfa3b14\\lobby-playmode.xml",
+    "lobbyLog": "C:\\Users\\ZGAMESVN\\Downloads\\Soccer-Unity-Recovery\\Runs\\LobbyValidation-20260926-054028-bcfa3b14\\lobby-playmode.log",
+    "globalConfigXml": "C:\\Users\\ZGAMESVN\\Downloads\\Soccer-Unity-Recovery\\Runs\\LobbyValidation-20260926-054028-bcfa3b14\\globalconfig-playmode.xml",
+    "globalConfigLog": "C:\\Users\\ZGAMESVN\\Downloads\\Soccer-Unity-Recovery\\Runs\\LobbyValidation-20260926-054028-bcfa3b14\\globalconfig-playmode.log",
+    "globalConfigScreenshot": "C:\\Users\\ZGAMESVN\\Downloads\\Soccer-Unity-Recovery\\Runs\\LobbyValidation-20260926-054028-bcfa3b14\\globalconfig-lobby.png"
+  },
+  "lobbyFlowTests": 13,
+  "eventTraceDirectory": "C:\\Users\\ZGAMESVN\\Downloads\\Soccer-Unity-Recovery\\Runs\\LobbyValidation-20260926-054028-bcfa3b14\\EventTrace",
+  "eventTraceFiles": 13,
+  "totalPassedTests": 36,
+  "verifiedUtc": "2026-09-26T05:42:10.559995+00:00",
+  "pipelineContractChecks": 41,
+  "modeExclusivityPairs": 6,
+  "overwriteRefusalPassed": true,
+  "fingerprintedFiles": 71193,
+  "repositories": [
+    {
+      "root": "C:\\Users\\ZGAMESVN\\Downloads\\Soccer-Mobile-Pro",
+      "commit": "35dff3a239f413a5c20e0d57ee7b80939dcb833a",
+      "statusPorcelain": " M Assets/Recovery/Lobby/LobbyLoadedMarker.cs\n M Assets/Recovery/Lobby/Soccer.Recovery.Lobby.asmdef\n M Assets/Recovery/Scenes/LobbyOffline.unity\n M Assets/Recovery/Tests/Lobby/LobbyFlowPlayModeTests.cs\n M Documentation/Boot/BOOT-RECOVERY.md\n M Documentation/Lobby/LOBBY-RECOVERY.md\n M Documentation/MetadataProvenance/README.md\n M Documentation/OFFLINE-UI.md\n M README.md\n?? AGENTS.md\n?? Assets/Recovery/Editor/Lobby/GlobalConfigInstaller.cs\n?? Assets/Recovery/Editor/Lobby/GlobalConfigInstaller.cs.meta\n?? Assets/Recovery/GlobalConfig.meta\n?? Assets/Recovery/GlobalConfig/OfflineConfigStore.cs\n?? Assets/Recovery/GlobalConfig/OfflineConfigStore.cs.meta\n?? Assets/Recovery/GlobalConfig/OfflineConfigWindow.cs\n?? Assets/Recovery/GlobalConfig/OfflineConfigWindow.cs.meta\n?? Assets/Recovery/GlobalConfig/Soccer.Recovery.GlobalConfig.asmdef\n?? Assets/Recovery/GlobalConfig/Soccer.Recovery.GlobalConfig.asmdef.meta\n?? Assets/Recovery/Tests/GlobalConfig.meta\n?? Assets/Recovery/Tests/GlobalConfig/GlobalConfigPlayModeTests.cs\n?? Assets/Recovery/Tests/GlobalConfig/GlobalConfigPlayModeTests.cs.meta\n?? Assets/Recovery/Tests/GlobalConfig/Soccer.Recovery.GlobalConfig.PlayModeTests.asmdef\n?? Assets/Recovery/Tests/GlobalConfig/Soccer.Recovery.GlobalConfig.PlayModeTests.asmdef.meta\n?? Assets/Scripts/Assembly-CSharp/Win_GlobalConfig.cs\n?? Assets/Scripts/Assembly-CSharp/Win_GlobalConfig.cs.meta\n?? Documentation/GlobalConfig/AUDIT-20260926.md\n?? Documentation/GlobalConfig/Evidence/FINAL-REPORT.md\n?? Documentation/GlobalConfig/Evidence/assembly-comparison.json\n?? Documentation/GlobalConfig/Evidence/asset-comparison.json\n?? Documentation/GlobalConfig/Evidence/baseline.json\n?? Documentation/GlobalConfig/Evidence/independent-assets-audit.json\n?? Documentation/GlobalConfig/Evidence/sibling-schema-candidate.json\n?? Documentation/GlobalConfig/README.md\n?? Documentation/GlobalConfig/asset-integrity.json\n?? Documentation/GlobalConfig/boot-playmode.xml\n?? Documentation/GlobalConfig/globalconfig-lobby.png\n?? Documentation/GlobalConfig/globalconfig-playmode.xml\n?? Documentation/GlobalConfig/lobby-playmode.xml\n?? Documentation/GlobalConfig/offline-playmode.xml\n?? Documentation/GlobalConfig/validation.json\n"
+    },
+    {
+      "root": "C:\\Users\\ZGAMESVN\\Downloads\\Soccer-Mobile-Pro-APK",
+      "commit": "ffc6da86b935cffaeb60e62411b6fc66977eee46",
+      "statusPorcelain": " M .gitignore\n M README.md\n M Test-BootFlow.ps1\n M Test-BootFlowPipeline.ps1\n M Test-LobbyFlow.ps1\n M Test-OfflineUI.ps1\n M UNITY-RECOVERY.md\n?? AGENTS.md\n?? AUDIT-20260926.md\n?? Test-MilestonePipeline.ps1\n?? Tools/Capture-GlobalConfigRuntime.py\n?? Tools/Capture-RecoverySnapshot.py\n?? Tools/Finalize-GlobalConfigEvidence.py\n?? Tools/GlobalConfigAudit/GlobalConfigAudit.csproj\n?? Tools/GlobalConfigAudit/Program.cs\n?? Tools/RecoveryValidation.ps1\n?? app/src/main/META-INF/com/android/build/gradle/app-metadata.properties\n"
+    }
+  ],
+  "snapshotSha256": {
+    "source-before.json": "7176a0d41190a1ae0acc79f65f33c639358c10913b42caa284ce29f010bd90c2",
+    "source-after.json": "41390c418f48d9c9cdb5fcb94c0e24440f6c0ebba76abc5807d17ec7513d364f"
+  },
+  "portableArtifacts": {
+    "offline-playmode.xml": "743b6e7d7a5a60f62e9bd6be7eebd8f6348302c671bd4d5ca03005e21062e7fb",
+    "boot-playmode.xml": "e7651d242d22330ea255a25b03d413d1a307c644034a1eb5a6a07b97bea2465c",
+    "lobby-playmode.xml": "bafc2836cfebe97e99360e0894d37b1a58a8a95939b3b5c108f515177bfd143f",
+    "globalconfig-playmode.xml": "badb39205422202969538a3219faf992417fcaca035468c953d71b9d8463e077",
+    "globalconfig-lobby.png": "72f6ffc764330ec827b5befc1a1e44bb6787e59b6a9d21c5f95c76e0f388d098"
+  },
+  "visualReview": {
+    "image": "globalconfig-lobby.png",
+    "resolution": "1920x1080",
+    "panelControlsVisible": true,
+    "originalGameParityClaimed": false
+  },
+  "postValidationChanges": "Documentation, verification artifact handoff and Git metadata-whitespace policy only; runtime, validator sources and serialized metadata unchanged.",
+  "metadataContractTests": 6
+}

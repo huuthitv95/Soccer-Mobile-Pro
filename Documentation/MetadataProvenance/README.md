@@ -1,5 +1,7 @@
 # GlobalConfig identity and metadata provenance
 
+**Historical investigation.** The unchanged-artifact statements and missing-script baseline below describe this provenance audit before the functional replacement was added. See [the current GlobalConfig milestone](../GlobalConfig/README.md): the original prefab remains byte-identical and its GUID resolves to an explicit offline replacement. Zero missing scripts does not establish recovery of the original 76-byte layout or class behavior. Evidence files in this directory retain their original audit meaning.
+
 ## Result
 
 `Win_GlobalConfig` is a global-namespace type named by two byte-identical MonoScripts in the original APK, both naming `Assembly-CSharp.dll`. Identity is resolved; the component implementation is not recovered. No Assets, script GUIDs, original scenes or Build Settings were changed by this investigation.

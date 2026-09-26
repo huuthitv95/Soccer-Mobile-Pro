@@ -1,0 +1,85 @@
+<?xml version="1.0" encoding="utf-8"?>
+<test-run id="2" testcasecount="12" result="Passed" total="12" passed="12" failed="0" inconclusive="0" skipped="0" asserts="0" engine-version="3.5.0.0" clr-version="4.0.30319.42000" start-time="2026-09-26 05:41:43Z" end-time="2026-09-26 05:41:43Z" duration="0,5822129">
+  <test-suite type="TestSuite" id="1000" name="Football 2026" fullname="Football 2026" runstate="Runnable" testcasecount="36" result="Passed" start-time="2026-09-26 05:41:43Z" end-time="2026-09-26 05:41:43Z" duration="0.582213" total="12" passed="12" failed="0" inconclusive="0" skipped="0" asserts="0">
+    <properties />
+    <test-suite type="Assembly" id="1014" name="Soccer.Recovery.Boot.PlayModeTests.dll" fullname="C:/Users/ZGAMESVN/Downloads/Soccer-Mobile-Pro/Library/ScriptAssemblies/Soccer.Recovery.Boot.PlayModeTests.dll" runstate="Runnable" testcasecount="12" result="Passed" start-time="2026-09-26 05:41:43Z" end-time="2026-09-26 05:41:43Z" duration="0.538073" total="12" passed="12" failed="0" inconclusive="0" skipped="0" asserts="0">
+      <properties>
+        <property name="_PID" value="27880" />
+        <property name="_APPDOMAIN" value="Unity Child Domain" />
+        <property name="platform" value="PlayMode" />
+      </properties>
+      <test-suite type="TestSuite" id="1015" name="Soccer" fullname="Soccer" runstate="Runnable" testcasecount="12" result="Passed" start-time="2026-09-26 05:41:43Z" end-time="2026-09-26 05:41:43Z" duration="0.537404" total="12" passed="12" failed="0" inconclusive="0" skipped="0" asserts="0">
+        <properties />
+        <test-suite type="TestSuite" id="1016" name="Recovery" fullname="Soccer.Recovery" runstate="Runnable" testcasecount="12" result="Passed" start-time="2026-09-26 05:41:43Z" end-time="2026-09-26 05:41:43Z" duration="0.537150" total="12" passed="12" failed="0" inconclusive="0" skipped="0" asserts="0">
+          <properties />
+          <test-suite type="TestSuite" id="1017" name="Tests" fullname="Soccer.Recovery.Tests" runstate="Runnable" testcasecount="12" result="Passed" start-time="2026-09-26 05:41:43Z" end-time="2026-09-26 05:41:43Z" duration="0.536913" total="12" passed="12" failed="0" inconclusive="0" skipped="0" asserts="0">
+            <properties />
+            <test-suite type="TestFixture" id="1001" name="BootFlowPlayModeTests" fullname="Soccer.Recovery.Tests.BootFlowPlayModeTests" classname="Soccer.Recovery.Tests.BootFlowPlayModeTests" runstate="Runnable" testcasecount="12" result="Passed" start-time="2026-09-26 05:41:43Z" end-time="2026-09-26 05:41:43Z" duration="0.535762" total="12" passed="12" failed="0" inconclusive="0" skipped="0" asserts="0">
+              <properties />
+              <test-case id="1007" name="CloudBeforeNetworkCannotSkipGateAndDuplicateCannotReload" fullname="Soccer.Recovery.Tests.BootFlowPlayModeTests.CloudBeforeNetworkCannotSkipGateAndDuplicateCannotReload" methodname="CloudBeforeNetworkCannotSkipGateAndDuplicateCannotReload" classname="Soccer.Recovery.Tests.BootFlowPlayModeTests" runstate="Runnable" seed="100418372" result="Passed" start-time="2026-09-26 05:41:43Z" end-time="2026-09-26 05:41:43Z" duration="0.132337" asserts="0">
+                <properties>
+                  <property name="_JOINTYPE" value="UnityCombinatorial" />
+                </properties>
+              </test-case>
+              <test-case id="1012" name="FailureAlsoLoadsStartAsNativeCallbackSpecifies" fullname="Soccer.Recovery.Tests.BootFlowPlayModeTests.FailureAlsoLoadsStartAsNativeCallbackSpecifies" methodname="FailureAlsoLoadsStartAsNativeCallbackSpecifies" classname="Soccer.Recovery.Tests.BootFlowPlayModeTests" runstate="Runnable" seed="1723529585" result="Passed" start-time="2026-09-26 05:41:43Z" end-time="2026-09-26 05:41:43Z" duration="0.087856" asserts="0">
+                <properties>
+                  <property name="_JOINTYPE" value="UnityCombinatorial" />
+                </properties>
+              </test-case>
+              <test-case id="1009" name="FailurePreservesEarlierVersionError" fullname="Soccer.Recovery.Tests.BootFlowPlayModeTests.FailurePreservesEarlierVersionError" methodname="FailurePreservesEarlierVersionError" classname="Soccer.Recovery.Tests.BootFlowPlayModeTests" runstate="Runnable" seed="1059714041" result="Passed" start-time="2026-09-26 05:41:43Z" end-time="2026-09-26 05:41:43Z" duration="0.014692" asserts="0">
+                <properties>
+                  <property name="_JOINTYPE" value="UnityCombinatorial" />
+                </properties>
+              </test-case>
+              <test-case id="1008" name="FailureSetsInstallErrorAndCompletesGate" fullname="Soccer.Recovery.Tests.BootFlowPlayModeTests.FailureSetsInstallErrorAndCompletesGate" methodname="FailureSetsInstallErrorAndCompletesGate" classname="Soccer.Recovery.Tests.BootFlowPlayModeTests" runstate="Runnable" seed="1220987429" result="Passed" start-time="2026-09-26 05:41:43Z" end-time="2026-09-26 05:41:43Z" duration="0.015371" asserts="0">
+                <properties>
+                  <property name="_JOINTYPE" value="UnityCombinatorial" />
+                </properties>
+              </test-case>
+              <test-case id="1002" name="FirstProbeUnreachableOpensGateOnExactlySixtiethUpdate" fullname="Soccer.Recovery.Tests.BootFlowPlayModeTests.FirstProbeUnreachableOpensGateOnExactlySixtiethUpdate" methodname="FirstProbeUnreachableOpensGateOnExactlySixtiethUpdate" classname="Soccer.Recovery.Tests.BootFlowPlayModeTests" runstate="Runnable" seed="1788233655" result="Passed" start-time="2026-09-26 05:41:43Z" end-time="2026-09-26 05:41:43Z" duration="0.016201" asserts="0">
+                <properties>
+                  <property name="_JOINTYPE" value="UnityCombinatorial" />
+                </properties>
+              </test-case>
+              <test-case id="1006" name="PendingCallbackWatchdogDiagnosesWithoutAlteringRuntime" fullname="Soccer.Recovery.Tests.BootFlowPlayModeTests.PendingCallbackWatchdogDiagnosesWithoutAlteringRuntime" methodname="PendingCallbackWatchdogDiagnosesWithoutAlteringRuntime" classname="Soccer.Recovery.Tests.BootFlowPlayModeTests" runstate="Runnable" seed="310845357" result="Passed" start-time="2026-09-26 05:41:43Z" end-time="2026-09-26 05:41:43Z" duration="0.023426" asserts="0">
+                <properties>
+                  <property name="_JOINTYPE" value="UnityCombinatorial" />
+                </properties>
+              </test-case>
+              <test-case id="1003" name="PreviouslyRecordedProbeNeedsNoSixtyFrameDelay" fullname="Soccer.Recovery.Tests.BootFlowPlayModeTests.PreviouslyRecordedProbeNeedsNoSixtyFrameDelay" methodname="PreviouslyRecordedProbeNeedsNoSixtyFrameDelay" classname="Soccer.Recovery.Tests.BootFlowPlayModeTests" runstate="Runnable" seed="1243423110" result="Passed" start-time="2026-09-26 05:41:43Z" end-time="2026-09-26 05:41:43Z" duration="0.014543" asserts="0">
+                <properties>
+                  <property name="_JOINTYPE" value="UnityCombinatorial" />
+                </properties>
+              </test-case>
+              <test-case id="1010" name="ProgressUsesNativePercentScaleAndStopsAfterCompletion" fullname="Soccer.Recovery.Tests.BootFlowPlayModeTests.ProgressUsesNativePercentScaleAndStopsAfterCompletion" methodname="ProgressUsesNativePercentScaleAndStopsAfterCompletion" classname="Soccer.Recovery.Tests.BootFlowPlayModeTests" runstate="Runnable" seed="1785520982" result="Passed" start-time="2026-09-26 05:41:43Z" end-time="2026-09-26 05:41:43Z" duration="0.015575" asserts="0">
+                <properties>
+                  <property name="_JOINTYPE" value="UnityCombinatorial" />
+                </properties>
+              </test-case>
+              <test-case id="1004" name="ReachabilityShortCircuitsOutstandingDelay" fullname="Soccer.Recovery.Tests.BootFlowPlayModeTests.ReachabilityShortCircuitsOutstandingDelay" methodname="ReachabilityShortCircuitsOutstandingDelay" classname="Soccer.Recovery.Tests.BootFlowPlayModeTests" runstate="Runnable" seed="1145933883" result="Passed" start-time="2026-09-26 05:41:43Z" end-time="2026-09-26 05:41:43Z" duration="0.014486" asserts="0">
+                <properties>
+                  <property name="_JOINTYPE" value="UnityCombinatorial" />
+                </properties>
+              </test-case>
+              <test-case id="1005" name="SaveRootReadinessGatesCloudInvocation" fullname="Soccer.Recovery.Tests.BootFlowPlayModeTests.SaveRootReadinessGatesCloudInvocation" methodname="SaveRootReadinessGatesCloudInvocation" classname="Soccer.Recovery.Tests.BootFlowPlayModeTests" runstate="Runnable" seed="1092430785" result="Passed" start-time="2026-09-26 05:41:43Z" end-time="2026-09-26 05:41:43Z" duration="0.014432" asserts="0">
+                <properties>
+                  <property name="_JOINTYPE" value="UnityCombinatorial" />
+                </properties>
+              </test-case>
+              <test-case id="1011" name="SuccessLoadsStartAndAllowsOnlyAuditedComponents" fullname="Soccer.Recovery.Tests.BootFlowPlayModeTests.SuccessLoadsStartAndAllowsOnlyAuditedComponents" methodname="SuccessLoadsStartAndAllowsOnlyAuditedComponents" classname="Soccer.Recovery.Tests.BootFlowPlayModeTests" runstate="Runnable" seed="1742348389" result="Passed" start-time="2026-09-26 05:41:43Z" end-time="2026-09-26 05:41:43Z" duration="0.049928" asserts="0">
+                <properties>
+                  <property name="_JOINTYPE" value="UnityCombinatorial" />
+                </properties>
+              </test-case>
+              <test-case id="1013" name="ThreeRestartsIgnoreCallbacksFromDestroyedSessions" fullname="Soccer.Recovery.Tests.BootFlowPlayModeTests.ThreeRestartsIgnoreCallbacksFromDestroyedSessions" methodname="ThreeRestartsIgnoreCallbacksFromDestroyedSessions" classname="Soccer.Recovery.Tests.BootFlowPlayModeTests" runstate="Runnable" seed="2042342778" result="Passed" start-time="2026-09-26 05:41:43Z" end-time="2026-09-26 05:41:43Z" duration="0.122970" asserts="0">
+                <properties>
+                  <property name="_JOINTYPE" value="UnityCombinatorial" />
+                </properties>
+              </test-case>
+            </test-suite>
+          </test-suite>
+        </test-suite>
+      </test-suite>
+    </test-suite>
+  </test-suite>
+</test-run>

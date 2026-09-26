@@ -1862,6 +1862,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c61211e0c46eea545972ee38c189dc0a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  offlineConfigPrefab: {fileID: 1709254077376921, guid: 62ddd867b3b1c88428c024dda8aa1f55, type: 3}
 --- !u!4 &1495570833
 Transform:
   m_ObjectHideFlags: 0
@@ -2145,6 +2146,7 @@ MonoBehaviour:
   informationPanel: {fileID: 490638675}
   title: {fileID: 1501387436}
   body: {fileID: 23970916}
+  returnButton: {fileID: 0}
 --- !u!4 &1827374906
 Transform:
   m_ObjectHideFlags: 0

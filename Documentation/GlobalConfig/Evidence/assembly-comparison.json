@@ -1,0 +1,144 @@
+﻿[
+    {
+        "path":  "C:\\Users\\ZGAMESVN\\Downloads\\Soccer-Unity-Recovery\\Runs\\GlobalConfig-Final-20260925-222110\\Cpp2IL\\Assembly-CSharp.dll",
+        "sha256":  "BA1E3CC0CA81362DF2F55E2E713ADC792FC387009B487027AF5BE4AFCEE5561E",
+        "typeCount":  4167,
+        "matchingTypes":  [
+
+                          ],
+        "relatedTypes":  [
+                             {
+                                 "name":  "FLTest.GlobalConfigHelper",
+                                 "baseType":  "System.Object",
+                                 "fields":  [
+
+                                            ],
+                                 "methods":  [
+                                                 "GetGlobalConfig"
+                                             ]
+                             },
+                             {
+                                 "name":  "FLTest.GlobalConfig.SimpleGlobalConfig",
+                                 "baseType":  "System.Object",
+                                 "fields":  [
+                                                {
+                                                    "name":  "simpleConfig",
+                                                    "type":  "FLTest.GlobalConfig.SimpleGlobalConfig/SimpleConfig",
+                                                    "isStatic":  true
+                                                }
+                                            ],
+                                 "methods":  [
+                                                 "get_Config",
+                                                 "OnReloaded",
+                                                 ".cctor"
+                                             ]
+                             },
+                             {
+                                 "name":  "FLTest.GlobalConfig.SimpleGlobalConfig/SimpleConfig",
+                                 "baseType":  "System.Object",
+                                 "fields":  [
+                                                {
+                                                    "name":  "NativeOverlayAdWidth",
+                                                    "type":  "System.Single",
+                                                    "isStatic":  false
+                                                },
+                                                {
+                                                    "name":  "NativeOverlayAdHeight",
+                                                    "type":  "System.Single",
+                                                    "isStatic":  false
+                                                },
+                                                {
+                                                    "name":  "EnableStarPlayerAppearance",
+                                                    "type":  "System.Boolean",
+                                                    "isStatic":  false
+                                                },
+                                                {
+                                                    "name":  "EnableScreenTimeTrackerTester",
+                                                    "type":  "System.Boolean",
+                                                    "isStatic":  false
+                                                },
+                                                {
+                                                    "name":  "BlockRV",
+                                                    "type":  "System.Boolean",
+                                                    "isStatic":  false
+                                                }
+                                            ],
+                                 "methods":  [
+                                                 "SaveScreenTimeTrackerData",
+                                                 ".ctor"
+                                             ]
+                             }
+                         ]
+    },
+    {
+        "path":  "C:\\Users\\ZGAMESVN\\Downloads\\Soccer-Unity-Recovery\\Runs\\GlobalConfig-Final-20260925-222110\\Il2CppDumper\\DummyDll\\Assembly-CSharp.dll",
+        "sha256":  "AF4B88F718D9747FC8FD2A25360D7E01E6D4D446DD3ECC40153A14BBC8A449D7",
+        "typeCount":  4161,
+        "matchingTypes":  [
+
+                          ],
+        "relatedTypes":  [
+                             {
+                                 "name":  "FLTest.GlobalConfigHelper",
+                                 "baseType":  "System.Object",
+                                 "fields":  [
+
+                                            ],
+                                 "methods":  [
+                                                 "GetGlobalConfig"
+                                             ]
+                             },
+                             {
+                                 "name":  "FLTest.GlobalConfig.SimpleGlobalConfig",
+                                 "baseType":  "System.Object",
+                                 "fields":  [
+                                                {
+                                                    "name":  "simpleConfig",
+                                                    "type":  "FLTest.GlobalConfig.SimpleGlobalConfig/SimpleConfig",
+                                                    "isStatic":  true
+                                                }
+                                            ],
+                                 "methods":  [
+                                                 "get_Config",
+                                                 "OnReloaded",
+                                                 ".cctor"
+                                             ]
+                             },
+                             {
+                                 "name":  "FLTest.GlobalConfig.SimpleGlobalConfig/SimpleConfig",
+                                 "baseType":  "System.Object",
+                                 "fields":  [
+                                                {
+                                                    "name":  "NativeOverlayAdWidth",
+                                                    "type":  "System.Single",
+                                                    "isStatic":  false
+                                                },
+                                                {
+                                                    "name":  "NativeOverlayAdHeight",
+                                                    "type":  "System.Single",
+                                                    "isStatic":  false
+                                                },
+                                                {
+                                                    "name":  "EnableStarPlayerAppearance",
+                                                    "type":  "System.Boolean",
+                                                    "isStatic":  false
+                                                },
+                                                {
+                                                    "name":  "EnableScreenTimeTrackerTester",
+                                                    "type":  "System.Boolean",
+                                                    "isStatic":  false
+                                                },
+                                                {
+                                                    "name":  "BlockRV",
+                                                    "type":  "System.Boolean",
+                                                    "isStatic":  false
+                                                }
+                                            ],
+                                 "methods":  [
+                                                 "SaveScreenTimeTrackerData",
+                                                 ".ctor"
+                                             ]
+                             }
+                         ]
+    }
+]

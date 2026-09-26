@@ -1,5 +1,7 @@
 # Offline UI milestone
 
+The later [offline recovery milestone](GlobalConfig/README.md) validates UI, Boot, Lobby and GlobalConfig together (36 tests). The expected missing-script count is now zero through an explicitly labeled GlobalConfig replacement. Earlier one-missing-script results below are historical.
+
 Open the project in Unity **2020.3.49f1**, choose **Recovery > Open Offline UI**, then enter Play Mode. Scene: `Assets/Recovery/Scenes/OfflineUI.unity`. Original scenes and Build Settings are unchanged.
 
 The screen uses the recovered `loading_worldcup26` background, `badge_mancity` sprite and `BAHNSCHRIFT.ttf` font. The new `Soccer.Recovery.OfflineUI` assembly manages only the welcome/team panels and a preview slider. “Xem đội bóng” opens the sample team panel; “Quay lại” returns. Data is explicitly marked as an offline sample. No account, game bootstrap, ad, payment, network client or match simulation is invoked by this controller.

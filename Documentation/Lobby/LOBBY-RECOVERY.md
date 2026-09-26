@@ -1,5 +1,7 @@
 # Start → Lobby offline recovery
 
+**Current milestone:** [Boot → Start → Lobby → GlobalConfig](../GlobalConfig/README.md). `-ValidateLobbyFlow` now also runs all seven GlobalConfig tests (36 total), checks screenshots and records working-tree hashes. The original prefab's missing GUID now resolves to a labeled offline replacement; the baseline is zero missing scripts. The native investigation and earlier one-missing-script baseline below are historical. Original schema and services remain unrecovered.
+
 Open **Recovery → Open Lobby Recovery**, press **BẮT ĐẦU**, then let the explicit offline profile pass through Start to Lobby. In Lobby, the five recovery menu buttons open informational panels and return to the menu.
 
 This Editor harness targets Unity 2020.3.49f1. It reproduces the verified `UI_Load.Update` readiness boundary with synthetic gates and loads an isolated copy of the recovered `MainViewWithShop` visuals. It does not run `UI_Load`, `MainViewLoader`, `StartInit`, SceneHelper's original multi-scene behavior, gameplay, save files, or external services. Lobby action buttons are recovery overlay controls; their labels follow the IL2CPP menu names, but native PlayerCareer/legacy button prefab placement is not claimed as reconstructed.

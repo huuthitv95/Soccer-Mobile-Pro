@@ -1,0 +1,85 @@
+{
+  "sourceClass": "Win_Empty",
+  "sourcePathId": 1730457265849705995,
+  "targetPathId": 5332196853466566746,
+  "confidence": "Unverified sibling candidate: shared type hash does not prove original inheritance or methods",
+  "sourceByteSize": 108,
+  "sourceRawSha256": "5975178847ab76f37c6b6720a4a2a50df33f4c6f5ec8003984c9d6970ca02675",
+  "bytesConsumed": 108,
+  "roundTripByteSize": 32,
+  "roundTripMatchesSource": false,
+  "exposedFieldCount": 4,
+  "exposedFieldNames": [
+    "m_GameObject",
+    "m_Enabled",
+    "m_Script",
+    "m_Name"
+  ],
+  "assessment": "No usable sibling layout recovered: parsed value exposed only base header fields and/or failed raw round-trip.",
+  "fields": {
+    "name": "Base",
+    "type": "MonoBehaviour",
+    "aligned": false,
+    "value": null,
+    "children": [
+      {
+        "name": "m_GameObject",
+        "type": "PPtr\u003CGameObject\u003E",
+        "aligned": false,
+        "value": null,
+        "children": [
+          {
+            "name": "m_FileID",
+            "type": "int",
+            "aligned": false,
+            "value": 0,
+            "children": []
+          },
+          {
+            "name": "m_PathID",
+            "type": "SInt64",
+            "aligned": false,
+            "value": 4243916393718601748,
+            "children": []
+          }
+        ]
+      },
+      {
+        "name": "m_Enabled",
+        "type": "UInt8",
+        "aligned": true,
+        "value": 1,
+        "children": []
+      },
+      {
+        "name": "m_Script",
+        "type": "PPtr\u003CMonoScript\u003E",
+        "aligned": false,
+        "value": null,
+        "children": [
+          {
+            "name": "m_FileID",
+            "type": "int",
+            "aligned": false,
+            "value": 0,
+            "children": []
+          },
+          {
+            "name": "m_PathID",
+            "type": "SInt64",
+            "aligned": false,
+            "value": -4455874919314624434,
+            "children": []
+          }
+        ]
+      },
+      {
+        "name": "m_Name",
+        "type": "string",
+        "aligned": false,
+        "value": "",
+        "children": []
+      }
+    ]
+  }
+}

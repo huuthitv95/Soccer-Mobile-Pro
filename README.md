@@ -1,6 +1,8 @@
 # Soccer-Mobile-Pro
 
-Boot recovery: **Recovery → Open Boot Recovery**, then Play. See [verified native flow, offline adapters and remaining dependencies](Documentation/Boot/BOOT-RECOVERY.md). The Editor harness exercises Launch → Start gates with synthetic services; Lobby and gameplay remain unrecovered. Validate with the APK repository's `Recover-SoccerUnity.ps1 -ValidateBootFlow`.
+Current offline milestone: **Boot → Start → Lobby → GlobalConfig**, validated together with `Recover-SoccerUnity.ps1 -ValidateLobbyFlow` in the sibling APK/tools repo. See [scope, evidence and reproduction](Documentation/GlobalConfig/README.md). GlobalConfig is an explicitly labeled offline replacement; the expected baseline is now **zero missing scripts**. Original configuration behavior and gameplay remain unrecovered.
+
+Boot recovery: **Recovery → Open Boot Recovery**, then Play. See [verified native flow, offline adapters and remaining dependencies](Documentation/Boot/BOOT-RECOVERY.md). This isolated harness exercises Launch → Start gates with synthetic services; the separate Lobby recovery harness extends the flow. Validate Boot alone with the APK repository's `Recover-SoccerUnity.ps1 -ValidateBootFlow`.
 
 Offline UI milestone: see [opening instructions, controls and validation](Documentation/OFFLINE-UI.md). The isolated scene uses functional uGUI restored from the installed Unity 2020.3.49f1 source; original gameplay remains stubbed.
 
@@ -27,4 +29,4 @@ Close this project's Editor before validation:
 
 Historical APK source commits remain in this repository's history. Current Android source development belongs in the APK repository above. Recovery logs and machine-specific caches are kept locally.
 
-Validation after relocation (2026-09-24): Unity 2020.3.49f1 compiled successfully with no editor errors; all 18,054 original GUIDs were preserved and 35,429 asset/source/metadata files retained their hashes. `Soccer-Mobile-Pro.sln` contains 65 generated project entries. The remaining pre-existing missing script is in `Assets/gamedata/ui/windows/Win_GlobalConfig.prefab`; gameplay remains stubbed. Local detailed report: `Soccer-Unity-Recovery/Runs/20260924-141607-d84a8791/Reports/recovery.json`.
+Historical validation after relocation (2026-09-24): Unity 2020.3.49f1 compiled successfully with no editor errors; all 18,054 original GUIDs were preserved and 35,429 asset/source/metadata files retained their hashes. The generated solution then contained 65 project entries, and `Win_GlobalConfig.prefab` still had one missing script. That baseline is superseded by the [current 36-test offline milestone](Documentation/GlobalConfig/validation.json). The historical report remains at `Soccer-Unity-Recovery/Runs/20260924-141607-d84a8791/Reports/recovery.json`.

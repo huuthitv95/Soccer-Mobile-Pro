@@ -1,0 +1,93 @@
+<?xml version="1.0" encoding="utf-8"?>
+<test-run id="2" testcasecount="13" result="Passed" total="13" passed="13" failed="0" inconclusive="0" skipped="0" asserts="0" engine-version="3.5.0.0" clr-version="4.0.30319.42000" start-time="2026-09-26 05:41:55Z" end-time="2026-09-26 05:41:57Z" duration="1,1678225">
+  <test-suite type="TestSuite" id="1000" name="Football 2026" fullname="Football 2026" runstate="Runnable" testcasecount="36" result="Passed" start-time="2026-09-26 05:41:55Z" end-time="2026-09-26 05:41:57Z" duration="1.167823" total="13" passed="13" failed="0" inconclusive="0" skipped="0" asserts="0">
+    <properties />
+    <test-suite type="Assembly" id="1044" name="Soccer.Recovery.Lobby.PlayModeTests.dll" fullname="C:/Users/ZGAMESVN/Downloads/Soccer-Mobile-Pro/Library/ScriptAssemblies/Soccer.Recovery.Lobby.PlayModeTests.dll" runstate="Runnable" testcasecount="13" result="Passed" start-time="2026-09-26 05:41:55Z" end-time="2026-09-26 05:41:57Z" duration="1.122725" total="13" passed="13" failed="0" inconclusive="0" skipped="0" asserts="0">
+      <properties>
+        <property name="_PID" value="10244" />
+        <property name="_APPDOMAIN" value="Unity Child Domain" />
+        <property name="platform" value="PlayMode" />
+      </properties>
+      <test-suite type="TestSuite" id="1045" name="Soccer" fullname="Soccer" runstate="Runnable" testcasecount="13" result="Passed" start-time="2026-09-26 05:41:55Z" end-time="2026-09-26 05:41:57Z" duration="1.122154" total="13" passed="13" failed="0" inconclusive="0" skipped="0" asserts="0">
+        <properties />
+        <test-suite type="TestSuite" id="1046" name="Recovery" fullname="Soccer.Recovery" runstate="Runnable" testcasecount="13" result="Passed" start-time="2026-09-26 05:41:55Z" end-time="2026-09-26 05:41:57Z" duration="1.121934" total="13" passed="13" failed="0" inconclusive="0" skipped="0" asserts="0">
+          <properties />
+          <test-suite type="TestSuite" id="1047" name="Tests" fullname="Soccer.Recovery.Tests" runstate="Runnable" testcasecount="13" result="Passed" start-time="2026-09-26 05:41:55Z" end-time="2026-09-26 05:41:57Z" duration="1.121708" total="13" passed="13" failed="0" inconclusive="0" skipped="0" asserts="0">
+            <properties />
+            <test-suite type="TestFixture" id="1030" name="LobbyFlowPlayModeTests" fullname="Soccer.Recovery.Tests.LobbyFlowPlayModeTests" classname="Soccer.Recovery.Tests.LobbyFlowPlayModeTests" runstate="Runnable" testcasecount="13" result="Passed" start-time="2026-09-26 05:41:55Z" end-time="2026-09-26 05:41:57Z" duration="1.120624" total="13" passed="13" failed="0" inconclusive="0" skipped="0" asserts="0">
+              <properties />
+              <test-case id="1034" name="AbTestUsesVerifiedFiveSecondNativeFallback" fullname="Soccer.Recovery.Tests.LobbyFlowPlayModeTests.AbTestUsesVerifiedFiveSecondNativeFallback" methodname="AbTestUsesVerifiedFiveSecondNativeFallback" classname="Soccer.Recovery.Tests.LobbyFlowPlayModeTests" runstate="Runnable" seed="1759512096" result="Passed" start-time="2026-09-26 05:41:55Z" end-time="2026-09-26 05:41:55Z" duration="0.029271" asserts="0">
+                <properties>
+                  <property name="_JOINTYPE" value="UnityCombinatorial" />
+                </properties>
+              </test-case>
+              <test-case id="1036" name="AllReadyRequestsLobbyExactlyOnce" fullname="Soccer.Recovery.Tests.LobbyFlowPlayModeTests.AllReadyRequestsLobbyExactlyOnce" methodname="AllReadyRequestsLobbyExactlyOnce" classname="Soccer.Recovery.Tests.LobbyFlowPlayModeTests" runstate="Runnable" seed="1345569742" result="Passed" start-time="2026-09-26 05:41:55Z" end-time="2026-09-26 05:41:55Z" duration="0.002641" asserts="0">
+                <properties>
+                  <property name="_JOINTYPE" value="UnityCombinatorial" />
+                </properties>
+              </test-case>
+              <test-case id="1040" name="EndToEndLaunchStartLobbyLoadsOnceForEachOfflineProfile" fullname="Soccer.Recovery.Tests.LobbyFlowPlayModeTests.EndToEndLaunchStartLobbyLoadsOnceForEachOfflineProfile" methodname="EndToEndLaunchStartLobbyLoadsOnceForEachOfflineProfile" classname="Soccer.Recovery.Tests.LobbyFlowPlayModeTests" runstate="Runnable" seed="2079781775" result="Passed" start-time="2026-09-26 05:41:55Z" end-time="2026-09-26 05:41:56Z" duration="0.917176" asserts="0">
+                <properties>
+                  <property name="_JOINTYPE" value="UnityCombinatorial" />
+                </properties>
+                <output><![CDATA[Asset '26WorldCup': Transition '26WorldCup_open -> 26WorldCup_loop' in state '26WorldCup_open' doesn't have an Exit Time or any condition, transition will be ignored
+Asset '26WorldCup': Transition '26WorldCup_open -> 26WorldCup_loop' in state '26WorldCup_open' doesn't have an Exit Time or any condition, transition will be ignored
+]]></output>
+              </test-case>
+              <test-case id="1032" name="FailedDependencyStopsAndNamesFailure" fullname="Soccer.Recovery.Tests.LobbyFlowPlayModeTests.FailedDependencyStopsAndNamesFailure" methodname="FailedDependencyStopsAndNamesFailure" classname="Soccer.Recovery.Tests.LobbyFlowPlayModeTests" runstate="Runnable" seed="1384110670" result="Passed" start-time="2026-09-26 05:41:56Z" end-time="2026-09-26 05:41:56Z" duration="0.003040" asserts="0">
+                <properties>
+                  <property name="_JOINTYPE" value="UnityCombinatorial" />
+                </properties>
+              </test-case>
+              <test-case id="1038" name="LaunchNavigatorUsesOnlyRecoveryStart" fullname="Soccer.Recovery.Tests.LobbyFlowPlayModeTests.LaunchNavigatorUsesOnlyRecoveryStart" methodname="LaunchNavigatorUsesOnlyRecoveryStart" classname="Soccer.Recovery.Tests.LobbyFlowPlayModeTests" runstate="Runnable" seed="897216301" result="Passed" start-time="2026-09-26 05:41:56Z" end-time="2026-09-26 05:41:56Z" duration="0.002182" asserts="0">
+                <properties>
+                  <property name="_JOINTYPE" value="UnityCombinatorial" />
+                </properties>
+              </test-case>
+              <test-case id="1041" name="MenuButtonUsesEventSystemAndReturnsToLobby" fullname="Soccer.Recovery.Tests.LobbyFlowPlayModeTests.MenuButtonUsesEventSystemAndReturnsToLobby" methodname="MenuButtonUsesEventSystemAndReturnsToLobby" classname="Soccer.Recovery.Tests.LobbyFlowPlayModeTests" runstate="Runnable" seed="63895547" result="Passed" start-time="2026-09-26 05:41:56Z" end-time="2026-09-26 05:41:56Z" duration="0.060937" asserts="0">
+                <properties>
+                  <property name="_JOINTYPE" value="UnityCombinatorial" />
+                </properties>
+              </test-case>
+              <test-case id="1033" name="NativeResourcePressAndNotchGatesEachBlockUntilReady" fullname="Soccer.Recovery.Tests.LobbyFlowPlayModeTests.NativeResourcePressAndNotchGatesEachBlockUntilReady" methodname="NativeResourcePressAndNotchGatesEachBlockUntilReady" classname="Soccer.Recovery.Tests.LobbyFlowPlayModeTests" runstate="Runnable" seed="788483975" result="Passed" start-time="2026-09-26 05:41:56Z" end-time="2026-09-26 05:41:56Z" duration="0.010541" asserts="0">
+                <properties>
+                  <property name="_JOINTYPE" value="UnityCombinatorial" />
+                </properties>
+              </test-case>
+              <test-case id="1039" name="OriginalLobbySceneAndIsolatedPrefabReachableWithoutGameServices" fullname="Soccer.Recovery.Tests.LobbyFlowPlayModeTests.OriginalLobbySceneAndIsolatedPrefabReachableWithoutGameServices" methodname="OriginalLobbySceneAndIsolatedPrefabReachableWithoutGameServices" classname="Soccer.Recovery.Tests.LobbyFlowPlayModeTests" runstate="Runnable" seed="1869936934" result="Passed" start-time="2026-09-26 05:41:56Z" end-time="2026-09-26 05:41:57Z" duration="0.059673" asserts="0">
+                <properties>
+                  <property name="_JOINTYPE" value="UnityCombinatorial" />
+                </properties>
+              </test-case>
+              <test-case id="1031" name="PendingDependencyBlocksTransitionAndReportsWhichGate" fullname="Soccer.Recovery.Tests.LobbyFlowPlayModeTests.PendingDependencyBlocksTransitionAndReportsWhichGate" methodname="PendingDependencyBlocksTransitionAndReportsWhichGate" classname="Soccer.Recovery.Tests.LobbyFlowPlayModeTests" runstate="Runnable" seed="1566874342" result="Passed" start-time="2026-09-26 05:41:57Z" end-time="2026-09-26 05:41:57Z" duration="0.003518" asserts="0">
+                <properties>
+                  <property name="_JOINTYPE" value="UnityCombinatorial" />
+                </properties>
+              </test-case>
+              <test-case id="1035" name="PendingGateWatchdogIsTestOnlyAndHasNoRuntimeTimeout" fullname="Soccer.Recovery.Tests.LobbyFlowPlayModeTests.PendingGateWatchdogIsTestOnlyAndHasNoRuntimeTimeout" methodname="PendingGateWatchdogIsTestOnlyAndHasNoRuntimeTimeout" classname="Soccer.Recovery.Tests.LobbyFlowPlayModeTests" runstate="Runnable" seed="1798408182" result="Passed" start-time="2026-09-26 05:41:57Z" end-time="2026-09-26 05:41:57Z" duration="0.006661" asserts="0">
+                <properties>
+                  <property name="_JOINTYPE" value="UnityCombinatorial" />
+                </properties>
+              </test-case>
+              <test-case id="1042" name="PlayerCareerAndLegacyProfilesRemainDistinct" fullname="Soccer.Recovery.Tests.LobbyFlowPlayModeTests.PlayerCareerAndLegacyProfilesRemainDistinct" methodname="PlayerCareerAndLegacyProfilesRemainDistinct" classname="Soccer.Recovery.Tests.LobbyFlowPlayModeTests" runstate="Runnable" seed="1476454840" result="Passed" start-time="2026-09-26 05:41:57Z" end-time="2026-09-26 05:41:57Z" duration="0.002835" asserts="0">
+                <properties>
+                  <property name="_JOINTYPE" value="UnityCombinatorial" />
+                </properties>
+              </test-case>
+              <test-case id="1037" name="TeachingMatchBranchIsBlockedAndNeverLoadsLobby" fullname="Soccer.Recovery.Tests.LobbyFlowPlayModeTests.TeachingMatchBranchIsBlockedAndNeverLoadsLobby" methodname="TeachingMatchBranchIsBlockedAndNeverLoadsLobby" classname="Soccer.Recovery.Tests.LobbyFlowPlayModeTests" runstate="Runnable" seed="29409926" result="Passed" start-time="2026-09-26 05:41:57Z" end-time="2026-09-26 05:41:57Z" duration="0.002488" asserts="0">
+                <properties>
+                  <property name="_JOINTYPE" value="UnityCombinatorial" />
+                </properties>
+              </test-case>
+              <test-case id="1043" name="ThreeFreshSessionsDoNotRetainNavigationState" fullname="Soccer.Recovery.Tests.LobbyFlowPlayModeTests.ThreeFreshSessionsDoNotRetainNavigationState" methodname="ThreeFreshSessionsDoNotRetainNavigationState" classname="Soccer.Recovery.Tests.LobbyFlowPlayModeTests" runstate="Runnable" seed="474242161" result="Passed" start-time="2026-09-26 05:41:57Z" end-time="2026-09-26 05:41:57Z" duration="0.004435" asserts="0">
+                <properties>
+                  <property name="_JOINTYPE" value="UnityCombinatorial" />
+                </properties>
+              </test-case>
+            </test-suite>
+          </test-suite>
+        </test-suite>
+      </test-suite>
+    </test-suite>
+  </test-suite>
+</test-run>

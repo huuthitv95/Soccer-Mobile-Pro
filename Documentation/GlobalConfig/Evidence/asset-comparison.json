@@ -1,0 +1,38 @@
+{
+  "rawHexEqual": true,
+  "rawHashEqual": true,
+  "headerBytes": 32,
+  "tailBytes": 76,
+  "scripts": [
+    {
+      "pathId": 4126250031869780553,
+      "checks": {
+        "m_Name": true,
+        "m_ClassName": true,
+        "m_Namespace": true,
+        "m_AssemblyName": true,
+        "propertiesHash": true,
+        "rawHash": true
+      },
+      "propertiesHash": "ca05a555ae91149f32dd75c7e9937305"
+    },
+    {
+      "pathId": 2212,
+      "checks": {
+        "m_Name": true,
+        "m_ClassName": true,
+        "m_Namespace": true,
+        "m_AssemblyName": true,
+        "propertiesHash": true,
+        "rawHash": true
+      },
+      "propertiesHash": "ca05a555ae91149f32dd75c7e9937305"
+    }
+  ],
+  "unityPyScriptId": "32b474b53b9bd25a7cfc160d94513b98",
+  "unityPyTypeHash": "ca05a555ae91149f32dd75c7e9937305",
+  "scriptIdMatches": true,
+  "typeHashMatches": true,
+  "unityVersionRawUnityPy": "2020.3.49f1\n2",
+  "versionExplanation": "Both parsers read the literal serialized Unity version string 2020.3.49f1\\n2. The suffix is present in source data, not a template/parser-added version. Its producer-specific meaning is unknown; class database uses 2020.3.49f1."
+}

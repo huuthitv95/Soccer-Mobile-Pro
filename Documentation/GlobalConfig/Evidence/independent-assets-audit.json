@@ -1,0 +1,428 @@
+{
+  "parser": "AssetsTools.NET, Version=3.0.0.0, Culture=neutral, PublicKeyToken=null",
+  "serializedFile": "CAB-1c1efa063d09b96733e90f90a6c8464b",
+  "unityVersionRaw": "2020.3.49f1\n2",
+  "serializedVersion": 22,
+  "typeTreeEnabled": false,
+  "pathId": 5332196853466566746,
+  "byteSize": 108,
+  "typeIndex": 436,
+  "scriptTypeIndex": 338,
+  "scriptIdHash": "32b474b53b9bd25a7cfc160d94513b98",
+  "oldTypeHash": "ca05a555ae91149f32dd75c7e9937305",
+  "nodeCount": 0,
+  "headerBytesConsumed": 32,
+  "tailBytes": 76,
+  "header": {
+    "name": "Base",
+    "type": "MonoBehaviour",
+    "aligned": false,
+    "value": null,
+    "children": [
+      {
+        "name": "m_GameObject",
+        "type": "PPtr\u003CGameObject\u003E",
+        "aligned": false,
+        "value": null,
+        "children": [
+          {
+            "name": "m_FileID",
+            "type": "int",
+            "aligned": false,
+            "value": 0,
+            "children": []
+          },
+          {
+            "name": "m_PathID",
+            "type": "SInt64",
+            "aligned": false,
+            "value": 6675687275196727459,
+            "children": []
+          }
+        ]
+      },
+      {
+        "name": "m_Enabled",
+        "type": "UInt8",
+        "aligned": true,
+        "value": 1,
+        "children": []
+      },
+      {
+        "name": "m_Script",
+        "type": "PPtr\u003CMonoScript\u003E",
+        "aligned": false,
+        "value": null,
+        "children": [
+          {
+            "name": "m_FileID",
+            "type": "int",
+            "aligned": false,
+            "value": 0,
+            "children": []
+          },
+          {
+            "name": "m_PathID",
+            "type": "SInt64",
+            "aligned": false,
+            "value": 4126250031869780553,
+            "children": []
+          }
+        ]
+      },
+      {
+        "name": "m_Name",
+        "type": "string",
+        "aligned": false,
+        "value": "",
+        "children": []
+      }
+    ]
+  },
+  "scriptFileId": 0,
+  "scriptPathId": 4126250031869780553,
+  "rawHex": "00000000a340b21d35cea45c010000000000000049e20acc8a6243390000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000010000000100000000000000",
+  "rawSha256": "9d31bf90b73ed77a46e30991bb91e2e195faca5c443afac4fd2b318d3fffa10f",
+  "scripts": [
+    {
+      "file": "CAB-1c1efa063d09b96733e90f90a6c8464b",
+      "pathId": 4126250031869780553,
+      "byteSize": 88,
+      "rawHex": "1000000057696e5f476c6f62616c436f6e66696700000000ca05a555ae91149f32dd75c7e99373051000000057696e5f476c6f62616c436f6e6669670000000013000000417373656d626c792d4353686172702e646c6c00",
+      "rawSha256": "26cc72653d7f7a47dde108de4282baf9e54a53a32513a5b144b62b2a1e6e9196",
+      "fields": {
+        "name": "Base",
+        "type": "MonoScript",
+        "aligned": false,
+        "value": null,
+        "children": [
+          {
+            "name": "m_Name",
+            "type": "string",
+            "aligned": false,
+            "value": "Win_GlobalConfig",
+            "children": []
+          },
+          {
+            "name": "m_ExecutionOrder",
+            "type": "int",
+            "aligned": false,
+            "value": 0,
+            "children": []
+          },
+          {
+            "name": "m_PropertiesHash",
+            "type": "Hash128",
+            "aligned": false,
+            "value": null,
+            "children": [
+              {
+                "name": "bytes[0]",
+                "type": "UInt8",
+                "aligned": false,
+                "value": 202,
+                "children": []
+              },
+              {
+                "name": "bytes[1]",
+                "type": "UInt8",
+                "aligned": false,
+                "value": 5,
+                "children": []
+              },
+              {
+                "name": "bytes[2]",
+                "type": "UInt8",
+                "aligned": false,
+                "value": 165,
+                "children": []
+              },
+              {
+                "name": "bytes[3]",
+                "type": "UInt8",
+                "aligned": false,
+                "value": 85,
+                "children": []
+              },
+              {
+                "name": "bytes[4]",
+                "type": "UInt8",
+                "aligned": false,
+                "value": 174,
+                "children": []
+              },
+              {
+                "name": "bytes[5]",
+                "type": "UInt8",
+                "aligned": false,
+                "value": 145,
+                "children": []
+              },
+              {
+                "name": "bytes[6]",
+                "type": "UInt8",
+                "aligned": false,
+                "value": 20,
+                "children": []
+              },
+              {
+                "name": "bytes[7]",
+                "type": "UInt8",
+                "aligned": false,
+                "value": 159,
+                "children": []
+              },
+              {
+                "name": "bytes[8]",
+                "type": "UInt8",
+                "aligned": false,
+                "value": 50,
+                "children": []
+              },
+              {
+                "name": "bytes[9]",
+                "type": "UInt8",
+                "aligned": false,
+                "value": 221,
+                "children": []
+              },
+              {
+                "name": "bytes[10]",
+                "type": "UInt8",
+                "aligned": false,
+                "value": 117,
+                "children": []
+              },
+              {
+                "name": "bytes[11]",
+                "type": "UInt8",
+                "aligned": false,
+                "value": 199,
+                "children": []
+              },
+              {
+                "name": "bytes[12]",
+                "type": "UInt8",
+                "aligned": false,
+                "value": 233,
+                "children": []
+              },
+              {
+                "name": "bytes[13]",
+                "type": "UInt8",
+                "aligned": false,
+                "value": 147,
+                "children": []
+              },
+              {
+                "name": "bytes[14]",
+                "type": "UInt8",
+                "aligned": false,
+                "value": 115,
+                "children": []
+              },
+              {
+                "name": "bytes[15]",
+                "type": "UInt8",
+                "aligned": false,
+                "value": 5,
+                "children": []
+              }
+            ]
+          },
+          {
+            "name": "m_ClassName",
+            "type": "string",
+            "aligned": false,
+            "value": "Win_GlobalConfig",
+            "children": []
+          },
+          {
+            "name": "m_Namespace",
+            "type": "string",
+            "aligned": false,
+            "value": "",
+            "children": []
+          },
+          {
+            "name": "m_AssemblyName",
+            "type": "string",
+            "aligned": false,
+            "value": "Assembly-CSharp.dll",
+            "children": []
+          }
+        ]
+      }
+    },
+    {
+      "file": "globalgamemanagers.assets",
+      "pathId": 2212,
+      "byteSize": 88,
+      "rawHex": "1000000057696e5f476c6f62616c436f6e66696700000000ca05a555ae91149f32dd75c7e99373051000000057696e5f476c6f62616c436f6e6669670000000013000000417373656d626c792d4353686172702e646c6c00",
+      "rawSha256": "26cc72653d7f7a47dde108de4282baf9e54a53a32513a5b144b62b2a1e6e9196",
+      "fields": {
+        "name": "Base",
+        "type": "MonoScript",
+        "aligned": false,
+        "value": null,
+        "children": [
+          {
+            "name": "m_Name",
+            "type": "string",
+            "aligned": false,
+            "value": "Win_GlobalConfig",
+            "children": []
+          },
+          {
+            "name": "m_ExecutionOrder",
+            "type": "int",
+            "aligned": false,
+            "value": 0,
+            "children": []
+          },
+          {
+            "name": "m_PropertiesHash",
+            "type": "Hash128",
+            "aligned": false,
+            "value": null,
+            "children": [
+              {
+                "name": "bytes[0]",
+                "type": "UInt8",
+                "aligned": false,
+                "value": 202,
+                "children": []
+              },
+              {
+                "name": "bytes[1]",
+                "type": "UInt8",
+                "aligned": false,
+                "value": 5,
+                "children": []
+              },
+              {
+                "name": "bytes[2]",
+                "type": "UInt8",
+                "aligned": false,
+                "value": 165,
+                "children": []
+              },
+              {
+                "name": "bytes[3]",
+                "type": "UInt8",
+                "aligned": false,
+                "value": 85,
+                "children": []
+              },
+              {
+                "name": "bytes[4]",
+                "type": "UInt8",
+                "aligned": false,
+                "value": 174,
+                "children": []
+              },
+              {
+                "name": "bytes[5]",
+                "type": "UInt8",
+                "aligned": false,
+                "value": 145,
+                "children": []
+              },
+              {
+                "name": "bytes[6]",
+                "type": "UInt8",
+                "aligned": false,
+                "value": 20,
+                "children": []
+              },
+              {
+                "name": "bytes[7]",
+                "type": "UInt8",
+                "aligned": false,
+                "value": 159,
+                "children": []
+              },
+              {
+                "name": "bytes[8]",
+                "type": "UInt8",
+                "aligned": false,
+                "value": 50,
+                "children": []
+              },
+              {
+                "name": "bytes[9]",
+                "type": "UInt8",
+                "aligned": false,
+                "value": 221,
+                "children": []
+              },
+              {
+                "name": "bytes[10]",
+                "type": "UInt8",
+                "aligned": false,
+                "value": 117,
+                "children": []
+              },
+              {
+                "name": "bytes[11]",
+                "type": "UInt8",
+                "aligned": false,
+                "value": 199,
+                "children": []
+              },
+              {
+                "name": "bytes[12]",
+                "type": "UInt8",
+                "aligned": false,
+                "value": 233,
+                "children": []
+              },
+              {
+                "name": "bytes[13]",
+                "type": "UInt8",
+                "aligned": false,
+                "value": 147,
+                "children": []
+              },
+              {
+                "name": "bytes[14]",
+                "type": "UInt8",
+                "aligned": false,
+                "value": 115,
+                "children": []
+              },
+              {
+                "name": "bytes[15]",
+                "type": "UInt8",
+                "aligned": false,
+                "value": 5,
+                "children": []
+              }
+            ]
+          },
+          {
+            "name": "m_ClassName",
+            "type": "string",
+            "aligned": false,
+            "value": "Win_GlobalConfig",
+            "children": []
+          },
+          {
+            "name": "m_Namespace",
+            "type": "string",
+            "aligned": false,
+            "value": "",
+            "children": []
+          },
+          {
+            "name": "m_AssemblyName",
+            "type": "string",
+            "aligned": false,
+            "value": "Assembly-CSharp.dll",
+            "children": []
+          }
+        ]
+      }
+    }
+  ]
+}

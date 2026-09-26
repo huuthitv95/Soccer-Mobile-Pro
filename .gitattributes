@@ -1,2 +1,4 @@
 *.apk filter=lfs diff=lfs merge=lfs -text
 /AuxiliaryFiles/**/*.dll filter=lfs diff=lfs merge=lfs -text
+# Unity writes empty YAML scalars with a trailing space; preserve serialized metadata bytes.
+*.meta whitespace=-blank-at-eol
